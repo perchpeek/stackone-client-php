@@ -15,3 +15,7 @@ targets:
     stack-one:
         target: php
         source: stackone-specs
+        publish:
+            packagist:
+                username: stackone-devops
+                token: $packagist_token
