@@ -8,16 +8,17 @@ sources:
             - latest
     stackone-specs:
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:d10b8ccdd9d7b7eb00f39c5a786ebe0444509112c547d2cb00d6e2fc194d777b
-        sourceBlobDigest: sha256:d264db45b36e35c619cb8fe4926ab17c18d89fbda6dfc6f1dd122b730c45a571
+        sourceRevisionDigest: sha256:912f53a4b8677bcfd7279338c4f6fcaf9f4e404027ba845ffa21d1519e0da5c2
+        sourceBlobDigest: sha256:8f0b7c5276ee64402322308df535db171f287b59be7b2b7c532a5b714c17bece
         tags:
             - latest
+            - main
 targets:
     stack-one:
         source: stackone-specs
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:d10b8ccdd9d7b7eb00f39c5a786ebe0444509112c547d2cb00d6e2fc194d777b
-        sourceBlobDigest: sha256:d264db45b36e35c619cb8fe4926ab17c18d89fbda6dfc6f1dd122b730c45a571
+        sourceRevisionDigest: sha256:912f53a4b8677bcfd7279338c4f6fcaf9f4e404027ba845ffa21d1519e0da5c2
+        sourceBlobDigest: sha256:8f0b7c5276ee64402322308df535db171f287b59be7b2b7c532a5b714c17bece
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -36,3 +37,7 @@ workflow:
         stack-one:
             target: php
             source: stackone-specs
+            publish:
+                packagist:
+                    username: stackone-devops
+                    token: $packagist_token
