@@ -1,0 +1,11 @@
+# MessageMessageType
+
+Stackone enum identifying the type of message associated with the content.
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `value`                                                                                                      | [?Components\MessageValue](../../Models/Components/MessageValue.md)                                          | :heavy_minus_sign:                                                                                           | The unified message type.                                                                                    |                                                                                                              |
+| `sourceValue`                                                                                                | [string\|float\|bool\|Components\MessageSourceValue4\|array\|null](../../Models/Components/MessageSourceValue.md) | :heavy_minus_sign:                                                                                           | The original value from the provider used to derive the unified message type.                                | Email                                                                                                        |

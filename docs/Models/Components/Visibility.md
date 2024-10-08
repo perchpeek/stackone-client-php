@@ -1,0 +1,11 @@
+# Visibility
+
+Visibility of the note
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            | Example                                                                                                |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `value`                                                                                                | [?Components\NoteValue](../../Models/Components/NoteValue.md)                                          | :heavy_minus_sign:                                                                                     | The visibility of the notes.                                                                           | public                                                                                                 |
+| `sourceValue`                                                                                          | [string\|float\|bool\|Components\NoteSourceValue4\|array\|null](../../Models/Components/NoteSourceValue.md) | :heavy_minus_sign:                                                                                     | The source value of the notes visibility.                                                              | Public                                                                                                 |

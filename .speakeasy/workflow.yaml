@@ -1,0 +1,17 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    stackone-specs:
+        inputs:
+            - location: https://api.eu1.stackone.com/oas/stackone.json
+            - location: https://api.eu1.stackone.com/oas/hris.json
+            - location: https://api.eu1.stackone.com/oas/ats.json
+            - location: https://api.eu1.stackone.com/oas/crm.json
+            - location: https://api.eu1.stackone.com/oas/iam.json
+            - location: https://api.eu1.stackone.com/oas/marketing.json
+        registry:
+            location: registry.speakeasyapi.dev/stackone/stackone/stackone-specs
+targets:
+    stack-one:
+        target: php
+        source: stackone-specs

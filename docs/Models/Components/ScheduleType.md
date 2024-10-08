@@ -1,0 +1,11 @@
+# ScheduleType
+
+The schedule type
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    | Example                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                        | [?Components\CampaignValue](../../Models/Components/CampaignValue.md)                                          | :heavy_minus_sign:                                                                                             | The schedule type of the campaign.                                                                             | immediate                                                                                                      |
+| `sourceValue`                                                                                                  | [string\|float\|bool\|Components\CampaignSourceValue4\|array\|null](../../Models/Components/CampaignSourceValue.md) | :heavy_minus_sign:                                                                                             | The source value of the schedule type.                                                                         | Immediate                                                                                                      |

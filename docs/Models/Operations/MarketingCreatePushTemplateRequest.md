@@ -1,0 +1,9 @@
+# MarketingCreatePushTemplateRequest
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                                         | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | The account identifier                                                                                               |
+| `marketingCreatePushTemplateRequestDto`                                                                              | [Components\MarketingCreatePushTemplateRequestDto](../../Models/Components/MarketingCreatePushTemplateRequestDto.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |

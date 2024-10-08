@@ -1,0 +1,9 @@
+# MarketingCreateOmniChannelTemplateRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `xAccountId`                                                                                                 | *string*                                                                                                     | :heavy_check_mark:                                                                                           | The account identifier                                                                                       |
+| `marketingCreateTemplateRequestDto`                                                                          | [Components\MarketingCreateTemplateRequestDto](../../Models/Components/MarketingCreateTemplateRequestDto.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

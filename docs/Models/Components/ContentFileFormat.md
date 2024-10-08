@@ -1,0 +1,11 @@
+# ContentFileFormat
+
+The file format of the file
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `value`                                                                                                      | [?Components\ContentValue](../../Models/Components/ContentValue.md)                                          | :heavy_minus_sign:                                                                                           | The file format of the file, expressed as a file extension                                                   | pdf                                                                                                          |
+| `sourceValue`                                                                                                | [string\|float\|bool\|Components\ContentSourceValue4\|array\|null](../../Models/Components/ContentSourceValue.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          | abc                                                                                                          |

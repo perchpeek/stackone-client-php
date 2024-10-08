@@ -1,0 +1,35 @@
+# HrisDocumentApiModelSourceValue
+
+
+## Supported Types
+
+### `string`
+
+```php
+string $value = /* values here */
+```
+
+### `float`
+
+```php
+float $value = /* values here */
+```
+
+### `bool`
+
+```php
+bool $value = /* values here */
+```
+
+### `Components\HrisDocumentApiModelSourceValue4`
+
+```php
+Components\HrisDocumentApiModelSourceValue4 $value = /* values here */
+```
+
+### `array`
+
+```php
+array $value = /* values here */
+```
+

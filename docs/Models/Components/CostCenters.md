@@ -1,0 +1,9 @@
+# CostCenters
+
+
+## Fields
+
+| Field                    | Type                     | Required                 | Description              | Example                  |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `name`                   | *?string*                | :heavy_minus_sign:       | N/A                      | R&D                      |
+| `distributionPercentage` | *?float*                 | :heavy_minus_sign:       | N/A                      | 100                      |

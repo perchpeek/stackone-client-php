@@ -1,0 +1,11 @@
+# CreateHRISBenefitBenefitType
+
+The type of the benefit
+
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                          | [?Components\CreateHRISBenefitValue](../../Models/Components/CreateHRISBenefitValue.md)                                          | :heavy_minus_sign:                                                                                                               | The type of the benefit                                                                                                          |
+| `sourceValue`                                                                                                                    | [string\|float\|bool\|Components\CreateHRISBenefitSourceValue4\|array\|null](../../Models/Components/CreateHRISBenefitSourceValue.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |

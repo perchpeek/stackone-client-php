@@ -1,0 +1,38 @@
+speakeasyVersion: 1.411.1
+sources:
+    hris:
+        sourceNamespace: hris
+        sourceRevisionDigest: sha256:31d370332dc85ccbb2f9876eeda97d2a81cd84e0e487b9dd2c56a5f5a501176c
+        sourceBlobDigest: sha256:b1d60911be6eadd9d688a2c08fc83061ff2a0e9c60f1b68ca41367a51559873e
+        tags:
+            - latest
+    stackone-specs:
+        sourceNamespace: stackone-specs
+        sourceRevisionDigest: sha256:d10b8ccdd9d7b7eb00f39c5a786ebe0444509112c547d2cb00d6e2fc194d777b
+        sourceBlobDigest: sha256:d264db45b36e35c619cb8fe4926ab17c18d89fbda6dfc6f1dd122b730c45a571
+        tags:
+            - latest
+targets:
+    stack-one:
+        source: stackone-specs
+        sourceNamespace: stackone-specs
+        sourceRevisionDigest: sha256:d10b8ccdd9d7b7eb00f39c5a786ebe0444509112c547d2cb00d6e2fc194d777b
+        sourceBlobDigest: sha256:d264db45b36e35c619cb8fe4926ab17c18d89fbda6dfc6f1dd122b730c45a571
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        stackone-specs:
+            inputs:
+                - location: https://api.eu1.stackone.com/oas/stackone.json
+                - location: https://api.eu1.stackone.com/oas/hris.json
+                - location: https://api.eu1.stackone.com/oas/ats.json
+                - location: https://api.eu1.stackone.com/oas/crm.json
+                - location: https://api.eu1.stackone.com/oas/iam.json
+                - location: https://api.eu1.stackone.com/oas/marketing.json
+            registry:
+                location: registry.speakeasyapi.dev/stackone/stackone/stackone-specs
+    targets:
+        stack-one:
+            target: php
+            source: stackone-specs

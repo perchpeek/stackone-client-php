@@ -1,0 +1,11 @@
+# ApplicationAttachment
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `fileName`                                                        | *?string*                                                         | :heavy_minus_sign:                                                | The file name of the attachment.                                  | resume.pdf                                                        |
+| `content`                                                         | *?string*                                                         | :heavy_minus_sign:                                                | The content of the attachment.                                    | Base64 encoded content                                            |
+| `url`                                                             | *?string*                                                         | :heavy_minus_sign:                                                | The URL of the attachment.                                        | http://example.com/resume.pdf                                     |
+| `contentType`                                                     | [?Components\ContentType](../../Models/Components/ContentType.md) | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |

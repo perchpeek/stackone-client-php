@@ -1,0 +1,11 @@
+# Ethnicity
+
+The employee ethnicity
+
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                          | [?Components\EmployeeEthnicityValue](../../Models/Components/EmployeeEthnicityValue.md)                                          | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `sourceValue`                                                                                                                    | [string\|float\|bool\|Components\EmployeeSourceValueEthnicity4\|array\|null](../../Models/Components/EmployeeEthnicitySourceValue.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |

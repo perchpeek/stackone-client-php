@@ -1,0 +1,11 @@
+# JobStatus
+
+Status of the job
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          | Example                                                                                              |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `value`                                                                                              | [?Components\JobValue](../../Models/Components/JobValue.md)                                          | :heavy_minus_sign:                                                                                   | The status of the job.                                                                               | published                                                                                            |
+| `sourceValue`                                                                                        | [string\|float\|bool\|Components\JobSourceValue4\|array\|null](../../Models/Components/JobSourceValue.md) | :heavy_minus_sign:                                                                                   | The source value of the job status.                                                                  | Published                                                                                            |

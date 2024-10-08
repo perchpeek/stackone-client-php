@@ -1,0 +1,11 @@
+# ListType
+
+The list type
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            | Example                                                                                                |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `value`                                                                                                | [?Components\ListValue](../../Models/Components/ListValue.md)                                          | :heavy_minus_sign:                                                                                     | The type of the list.                                                                                  | contacts                                                                                               |
+| `sourceValue`                                                                                          | [string\|float\|bool\|Components\ListSourceValue4\|array\|null](../../Models/Components/ListSourceValue.md) | :heavy_minus_sign:                                                                                     | The source value of the list type.                                                                     | Contacts                                                                                               |

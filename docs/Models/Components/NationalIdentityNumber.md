@@ -1,0 +1,11 @@
+# NationalIdentityNumber
+
+The national identity number
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `value`                                                             | *?string*                                                           | :heavy_minus_sign:                                                  | N/A                                                                 | 123456789                                                           |
+| `type`                                                              | [?Components\EmployeeType](../../Models/Components/EmployeeType.md) | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |

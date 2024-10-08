@@ -1,0 +1,11 @@
+# HrisDocumentApiModelCategory
+
+The category of the the document
+
+
+## Fields
+
+| Field                                                                                                                                  | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                                | [?Components\HrisDocumentApiModelValue](../../Models/Components/HrisDocumentApiModelValue.md)                                          | :heavy_minus_sign:                                                                                                                     | The category of the file                                                                                                               |
+| `sourceValue`                                                                                                                          | [string\|float\|bool\|Components\HrisDocumentApiModelSourceValue4\|array\|null](../../Models/Components/HrisDocumentApiModelSourceValue.md) | :heavy_minus_sign:                                                                                                                     | N/A                                                                                                                                    |

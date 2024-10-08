@@ -1,0 +1,11 @@
+# AnswerType
+
+Type of the answer
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                    | [?Components\AnswerValue](../../Models/Components/AnswerValue.md)                                          | :heavy_minus_sign:                                                                                         | The type of the answer.                                                                                    | short_text                                                                                                 |
+| `sourceValue`                                                                                              | [string\|float\|bool\|Components\AnswerSourceValue4\|array\|null](../../Models/Components/AnswerSourceValue.md) | :heavy_minus_sign:                                                                                         | The source value of the answer type.                                                                       | Short Text                                                                                                 |

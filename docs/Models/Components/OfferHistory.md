@@ -1,0 +1,12 @@
+# OfferHistory
+
+
+## Fields
+
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   | Example                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `startDate`                                                   | [\DateTime](https://www.php.net/manual/en/class.datetime.php) | :heavy_minus_sign:                                            | Start Date of the offer                                       | 2021-01-01T01:01:01.000Z                                      |
+| `salary`                                                      | *?float*                                                      | :heavy_minus_sign:                                            | N/A                                                           |                                                               |
+| `currency`                                                    | *?string*                                                     | :heavy_minus_sign:                                            | N/A                                                           |                                                               |
+| `createdAt`                                                   | [\DateTime](https://www.php.net/manual/en/class.datetime.php) | :heavy_minus_sign:                                            | Date of creation                                              | 2021-01-01T01:01:01.000Z                                      |
+| `updatedAt`                                                   | [\DateTime](https://www.php.net/manual/en/class.datetime.php) | :heavy_minus_sign:                                            | Date of last update                                           | 2021-01-01T01:01:01.000Z                                      |

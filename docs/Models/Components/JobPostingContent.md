@@ -1,0 +1,10 @@
+# JobPostingContent
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `plain`                                                                                           | *?string*                                                                                         | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `html`                                                                                            | *?string*                                                                                         | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `sections`                                                                                        | array<[Components\JobPostingContentSection](../../Models/Components/JobPostingContentSection.md)> | :heavy_minus_sign:                                                                                | N/A                                                                                               |

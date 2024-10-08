@@ -1,0 +1,35 @@
+# TimeOffTypeSourceValue
+
+
+## Supported Types
+
+### `string`
+
+```php
+string $value = /* values here */
+```
+
+### `float`
+
+```php
+float $value = /* values here */
+```
+
+### `bool`
+
+```php
+bool $value = /* values here */
+```
+
+### `Components\TimeOffSourceValueType4`
+
+```php
+Components\TimeOffSourceValueType4 $value = /* values here */
+```
+
+### `array`
+
+```php
+array $value = /* values here */
+```
+

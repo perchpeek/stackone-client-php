@@ -1,0 +1,33 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: stackOne
+  maintainOpenAPIOrder: true
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  useClassNamesForArrayFields: true
+  fixes:
+    nameResolutionDec2023: true
+    parameterOrderingFeb2024: true
+    requestResponseComponentNamesFeb2024: true
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+php:
+  version: 0.1.0
+  clientServerStatusCodesAsErrors: true
+  flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Operations
+      shared: Models/Components
+      webhooks: Models/Webhooks
+  inputModelSuffix: input
+  laravelServiceProvider:
+    enabled: false
+    svcName: openapi
+  maxMethodParams: 4
+  namespace: StackOne\client
+  outputModelSuffix: output
+  packageName: stackone/client-sdk

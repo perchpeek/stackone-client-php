@@ -1,0 +1,10 @@
+# Content
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `url`                                                                          | *?string*                                                                      | :heavy_minus_sign:                                                             | URL where the file content is located                                          | https://example.com/file.pdf                                                   |
+| `unifiedUrl`                                                                   | *?string*                                                                      | :heavy_minus_sign:                                                             | Unified download URL for retrieving file content.                              | https://api.stackone.com/unified/hris/employees/12345/documents/67890/download |
+| `fileFormat`                                                                   | [?Components\ContentFileFormat](../../Models/Components/ContentFileFormat.md)  | :heavy_minus_sign:                                                             | The file format of the file                                                    |                                                                                |

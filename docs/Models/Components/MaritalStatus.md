@@ -1,0 +1,11 @@
+# MaritalStatus
+
+The employee marital status
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                                  | [?Components\EmployeeMaritalStatusValue](../../Models/Components/EmployeeMaritalStatusValue.md)                                          | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `sourceValue`                                                                                                                            | [string\|float\|bool\|Components\EmployeeSourceValueMaritalStatus4\|array\|null](../../Models/Components/EmployeeMaritalStatusSourceValue.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
