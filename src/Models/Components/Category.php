@@ -9,14 +9,79 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-enum Category: string
+class Category
 {
-    case Ats = 'ats';
-    case Hris = 'hris';
-    case HrisLegacy = 'hris-legacy';
-    case Crm = 'crm';
-    case Iam = 'iam';
-    case Marketing = 'marketing';
-    case Lms = 'lms';
-    case Stackone = 'stackone';
+    /**
+     * The ID associated with this category
+     *
+     * @var ?string $id
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
+     * Provider's unique identifier
+     *
+     * @var ?string $remoteId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteId = null;
+
+    /**
+     * Custom Unified Fields configured in your StackOne project
+     *
+     * @var ?array<string, mixed> $unifiedCustomFields
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $unifiedCustomFields = null;
+
+    /**
+     * The name associated with this category
+     *
+     * @var ?string $name
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('name')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * Whether the category is active and therefore available for use
+     *
+     * @var ?bool $active
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('active')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $active = null;
+
+    /**
+     * The hierarchal level of the category
+     *
+     * @var ?Level $level
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('level')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?Level $level = null;
+
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $remoteId
+     * @param  ?array<string, mixed>  $unifiedCustomFields
+     * @param  ?string  $name
+     * @param  ?bool  $active
+     * @param  ?Level  $level
+     */
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?Level $level = null)
+    {
+        $this->id = $id;
+        $this->remoteId = $remoteId;
+        $this->unifiedCustomFields = $unifiedCustomFields;
+        $this->name = $name;
+        $this->active = $active;
+        $this->level = $level;
+    }
 }

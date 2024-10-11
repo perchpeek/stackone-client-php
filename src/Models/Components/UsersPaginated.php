@@ -13,15 +13,6 @@ class UsersPaginated
 {
     /**
      *
-     * @var ?string $nextPage
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('next_page')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?string $nextPage = null;
-
-    /**
-     *
      * @var ?string $next
      */
     #[\JMS\Serializer\Annotation\SerializedName('next')]
@@ -31,10 +22,10 @@ class UsersPaginated
     /**
      * $data
      *
-     * @var array<User> $data
+     * @var array<LmsUser> $data
      */
     #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\User>')]
+    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LmsUser>')]
     public array $data;
 
     /**
@@ -48,15 +39,13 @@ class UsersPaginated
     public ?array $raw = null;
 
     /**
-     * @param  array<User>  $data
-     * @param  ?string  $nextPage
+     * @param  array<LmsUser>  $data
      * @param  ?string  $next
      * @param  ?array<RawResponse>  $raw
      */
-    public function __construct(array $data, ?string $nextPage = null, ?string $next = null, ?array $raw = null)
+    public function __construct(array $data, ?string $next = null, ?array $raw = null)
     {
         $this->data = $data;
-        $this->nextPage = $nextPage;
         $this->next = $next;
         $this->raw = $raw;
     }

@@ -230,6 +230,32 @@ if ($response->employeesPaginated !== null) {
 * [listPolicies](docs/sdks/iam/README.md#listpolicies) - List Policies
 * [getPolicy](docs/sdks/iam/README.md#getpolicy) - Get Policy
 
+### [lms](docs/sdks/lms/README.md)
+
+* [listCourses](docs/sdks/lms/README.md#listcourses) - List Courses
+* [getCourse](docs/sdks/lms/README.md#getcourse) - Get Course
+* [listUserAssignments](docs/sdks/lms/README.md#listuserassignments) - List User Assignments
+* [getUserAssignment](docs/sdks/lms/README.md#getuserassignment) - Get User Assignment
+* [batchUpsertContent](docs/sdks/lms/README.md#batchupsertcontent) - Batch Upsert Content
+* [listContent](docs/sdks/lms/README.md#listcontent) - List Content
+* [upsertContent](docs/sdks/lms/README.md#upsertcontent) - Upsert Content
+* [createContent](docs/sdks/lms/README.md#createcontent) - Create Content
+* [getContent](docs/sdks/lms/README.md#getcontent) - Get Content
+* [updateContent](docs/sdks/lms/README.md#updatecontent) - Update Content
+* [listUserCompletions](docs/sdks/lms/README.md#listusercompletions) - List User Completions
+* [createUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
+* [getUserCompletion](docs/sdks/lms/README.md#getusercompletion) - Get User Completion
+* [listCompletions](docs/sdks/lms/README.md#listcompletions) - List Completions
+* [getCompletion](docs/sdks/lms/README.md#getcompletion) - Get Completion
+* [getCategory](docs/sdks/lms/README.md#getcategory) - Get Category
+* [listCategories](docs/sdks/lms/README.md#listcategories) - List Categories
+* [listUsers](docs/sdks/lms/README.md#listusers) - List Users
+* [getUser](docs/sdks/lms/README.md#getuser) - Get User
+* [getSkill](docs/sdks/lms/README.md#getskill) - Get Skill
+* [listSkills](docs/sdks/lms/README.md#listskills) - List Skills
+* [listAssignments](docs/sdks/lms/README.md#listassignments) - List Assignments
+* [getAssignment](docs/sdks/lms/README.md#getassignment) - Get Assignment
+
 ### [marketing](docs/sdks/marketing/README.md)
 
 * [listEmailTemplates](docs/sdks/marketing/README.md#listemailtemplates) - List Email Templates

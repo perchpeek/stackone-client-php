@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 3759371f-a095-4585-b437-50529a0eb248
 management:
-  docChecksum: d21623bbcfc590312beca1ab827bd47f
+  docChecksum: 7e55fc6662c79e5c30a67970ff9c86dc
   docVersion: 1.0.0
   speakeasyVersion: 1.411.1
   generationVersion: 2.436.1
-  releaseVersion: 0.1.1
-  configChecksum: b734e1e9c749b3edb6bab5af82b6885e
+  releaseVersion: 0.3.0
+  configChecksum: fa3b463ca34cf3d9bef041fce3596142
   repoURL: https://github.com/StackOneHQ/stackone-client-php.git
   installationURL: https://github.com/StackOneHQ/stackone-client-php
   published: true
@@ -86,6 +86,13 @@ generatedFiles:
   - docs/Models/Components/AssessmentsResultsSourceValue4.md
   - docs/Models/Components/AssessmentsResultsSourceValueAttachments4.md
   - docs/Models/Components/AssessmentsResultsValue.md
+  - docs/Models/Components/Assignment.md
+  - docs/Models/Components/AssignmentResult.md
+  - docs/Models/Components/AssignmentStatusEnum.md
+  - docs/Models/Components/AssignmentStatusEnumSourceValue.md
+  - docs/Models/Components/AssignmentStatusEnumSourceValue4.md
+  - docs/Models/Components/AssignmentStatusEnumValue.md
+  - docs/Models/Components/AssignmentsPaginated.md
   - docs/Models/Components/AtsCreateApplicationRequestDto.md
   - docs/Models/Components/AtsCreateApplicationRequestDtoApplicationStatus.md
   - docs/Models/Components/AtsCreateApplicationRequestDtoCandidate.md
@@ -161,7 +168,12 @@ generatedFiles:
   - docs/Models/Components/CandidateResult.md
   - docs/Models/Components/CandidatesPaginated.md
   - docs/Models/Components/Categories.md
+  - docs/Models/Components/CategoriesPaginated.md
   - docs/Models/Components/Category.md
+  - docs/Models/Components/CategoryResult.md
+  - docs/Models/Components/CategorySourceValue.md
+  - docs/Models/Components/CategorySourceValue4.md
+  - docs/Models/Components/CategoryValue.md
   - docs/Models/Components/ChannelsEnum.md
   - docs/Models/Components/ChannelsEnumSourceValue.md
   - docs/Models/Components/ChannelsEnumSourceValue4.md
@@ -169,6 +181,13 @@ generatedFiles:
   - docs/Models/Components/CompaniesPaginated.md
   - docs/Models/Components/Company.md
   - docs/Models/Components/CompanyResult.md
+  - docs/Models/Components/Completion.md
+  - docs/Models/Components/CompletionResult.md
+  - docs/Models/Components/CompletionResult1.md
+  - docs/Models/Components/CompletionSourceValue.md
+  - docs/Models/Components/CompletionSourceValue4.md
+  - docs/Models/Components/CompletionValue.md
+  - docs/Models/Components/CompletionsPaginated.md
   - docs/Models/Components/Confidential.md
   - docs/Models/Components/ConnectSession.md
   - docs/Models/Components/ConnectSessionAuthenticate.md
@@ -196,6 +215,11 @@ generatedFiles:
   - docs/Models/Components/ContentBlockValue.md
   - docs/Models/Components/ContentBlocksPaginated.md
   - docs/Models/Components/ContentFileFormat.md
+  - docs/Models/Components/ContentLanguageEnum.md
+  - docs/Models/Components/ContentLanguageEnumSourceValue.md
+  - docs/Models/Components/ContentLanguageEnumValue.md
+  - docs/Models/Components/ContentPaginated.md
+  - docs/Models/Components/ContentResult.md
   - docs/Models/Components/ContentSourceValue.md
   - docs/Models/Components/ContentSourceValue4.md
   - docs/Models/Components/ContentType.md
@@ -203,11 +227,27 @@ generatedFiles:
   - docs/Models/Components/CostCenters.md
   - docs/Models/Components/Country.md
   - docs/Models/Components/CountryCodeEnum.md
+  - docs/Models/Components/Course.md
+  - docs/Models/Components/CourseActive.md
+  - docs/Models/Components/CourseActiveSourceValue.md
+  - docs/Models/Components/CourseActiveValue.md
+  - docs/Models/Components/CoursePaginated.md
+  - docs/Models/Components/CourseResult.md
+  - docs/Models/Components/CourseSourceValue.md
+  - docs/Models/Components/CourseSourceValue4.md
+  - docs/Models/Components/CourseSourceValueActive4.md
+  - docs/Models/Components/CourseType.md
+  - docs/Models/Components/CourseValue.md
   - docs/Models/Components/CreateAnswer.md
   - docs/Models/Components/CreateAnswerSourceValue.md
   - docs/Models/Components/CreateAnswerSourceValue4.md
   - docs/Models/Components/CreateAnswerType.md
   - docs/Models/Components/CreateAnswerValue.md
+  - docs/Models/Components/CreateCategoriesApiModel.md
+  - docs/Models/Components/CreateCategoriesApiModelLevel.md
+  - docs/Models/Components/CreateCategoriesApiModelSourceValue.md
+  - docs/Models/Components/CreateCategoriesApiModelSourceValue4.md
+  - docs/Models/Components/CreateCategoriesApiModelValue.md
   - docs/Models/Components/CreateEmploymentApiModel.md
   - docs/Models/Components/CreateEmploymentApiModelEmploymentContractType.md
   - docs/Models/Components/CreateEmploymentApiModelEmploymentContractTypeSourceValue.md
@@ -479,6 +519,7 @@ generatedFiles:
   - docs/Models/Components/IamGroupsPaginated.md
   - docs/Models/Components/IamMfaTypeEnum.md
   - docs/Models/Components/IamMfaTypeEnumSourceValue.md
+  - docs/Models/Components/IamMfaTypeEnumSourceValue4.md
   - docs/Models/Components/IamMfaTypeEnumValue.md
   - docs/Models/Components/IamPermission.md
   - docs/Models/Components/IamPermissionSourceValue.md
@@ -596,8 +637,10 @@ generatedFiles:
   - docs/Models/Components/JobValue.md
   - docs/Models/Components/JobsPaginated.md
   - docs/Models/Components/Label.md
+  - docs/Models/Components/Level.md
   - docs/Models/Components/LinkedAccount.md
   - docs/Models/Components/LinkedAccountMeta.md
+  - docs/Models/Components/LinkedAccountMetaCategory.md
   - docs/Models/Components/ListItem.md
   - docs/Models/Components/ListResult.md
   - docs/Models/Components/ListSourceValue.md
@@ -606,6 +649,27 @@ generatedFiles:
   - docs/Models/Components/ListType.md
   - docs/Models/Components/ListValue.md
   - docs/Models/Components/ListsPaginated.md
+  - docs/Models/Components/LmsBatchUpsertContentRequestDto.md
+  - docs/Models/Components/LmsCreateCompletionRequestDto.md
+  - docs/Models/Components/LmsCreateCompletionRequestDtoResult.md
+  - docs/Models/Components/LmsCreateCompletionRequestDtoSourceValue.md
+  - docs/Models/Components/LmsCreateCompletionRequestDtoSourceValue4.md
+  - docs/Models/Components/LmsCreateCompletionRequestDtoValue.md
+  - docs/Models/Components/LmsCreateContentRequestDto.md
+  - docs/Models/Components/LmsCreateContentRequestDtoActive.md
+  - docs/Models/Components/LmsCreateContentRequestDtoActive2.md
+  - docs/Models/Components/LmsCreateContentRequestDtoContentType.md
+  - docs/Models/Components/LmsCreateContentRequestDtoSourceValue.md
+  - docs/Models/Components/LmsCreateContentRequestDtoSourceValue4.md
+  - docs/Models/Components/LmsCreateContentRequestDtoValue.md
+  - docs/Models/Components/LmsUpsertContentRequestDto.md
+  - docs/Models/Components/LmsUpsertContentRequestDtoActive.md
+  - docs/Models/Components/LmsUpsertContentRequestDtoActive2.md
+  - docs/Models/Components/LmsUpsertContentRequestDtoContentType.md
+  - docs/Models/Components/LmsUpsertContentRequestDtoSourceValue.md
+  - docs/Models/Components/LmsUpsertContentRequestDtoSourceValue4.md
+  - docs/Models/Components/LmsUpsertContentRequestDtoValue.md
+  - docs/Models/Components/LmsUser.md
   - docs/Models/Components/LocationType.md
   - docs/Models/Components/MaritalStatus.md
   - docs/Models/Components/MarketingCreateContentBlocksRequestDto.md
@@ -707,6 +771,13 @@ generatedFiles:
   - docs/Models/Components/Secrets.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/SetupInformation.md
+  - docs/Models/Components/SkillResult.md
+  - docs/Models/Components/Skills.md
+  - docs/Models/Components/SkillsLevel.md
+  - docs/Models/Components/SkillsPaginated.md
+  - docs/Models/Components/SkillsSourceValue.md
+  - docs/Models/Components/SkillsSourceValue4.md
+  - docs/Models/Components/SkillsValue.md
   - docs/Models/Components/SmsMessageContents.md
   - docs/Models/Components/SmsMessages.md
   - docs/Models/Components/SmsMessagesMessageContent.md
@@ -752,7 +823,6 @@ generatedFiles:
   - docs/Models/Components/UnifiedUploadRequestDtoSourceValueConfidential4.md
   - docs/Models/Components/UnifiedUploadRequestDtoValue.md
   - docs/Models/Components/UpdateResult.md
-  - docs/Models/Components/User.md
   - docs/Models/Components/UserResult.md
   - docs/Models/Components/UsersPaginated.md
   - docs/Models/Components/Value.md
@@ -1039,6 +1109,61 @@ generatedFiles:
   - docs/Models/Operations/IamListUsersQueryParamFilter.md
   - docs/Models/Operations/IamListUsersRequest.md
   - docs/Models/Operations/IamListUsersResponse.md
+  - docs/Models/Operations/LmsBatchUpsertContentRequest.md
+  - docs/Models/Operations/LmsBatchUpsertContentResponse.md
+  - docs/Models/Operations/LmsCreateContentRequest.md
+  - docs/Models/Operations/LmsCreateContentResponse.md
+  - docs/Models/Operations/LmsCreateUserCompletionRequest.md
+  - docs/Models/Operations/LmsCreateUserCompletionResponse.md
+  - docs/Models/Operations/LmsGetAssignmentRequest.md
+  - docs/Models/Operations/LmsGetAssignmentResponse.md
+  - docs/Models/Operations/LmsGetCategoryRequest.md
+  - docs/Models/Operations/LmsGetCategoryResponse.md
+  - docs/Models/Operations/LmsGetCompletionRequest.md
+  - docs/Models/Operations/LmsGetCompletionResponse.md
+  - docs/Models/Operations/LmsGetContentRequest.md
+  - docs/Models/Operations/LmsGetContentResponse.md
+  - docs/Models/Operations/LmsGetCourseRequest.md
+  - docs/Models/Operations/LmsGetCourseResponse.md
+  - docs/Models/Operations/LmsGetSkillRequest.md
+  - docs/Models/Operations/LmsGetSkillResponse.md
+  - docs/Models/Operations/LmsGetUserAssignmentRequest.md
+  - docs/Models/Operations/LmsGetUserAssignmentResponse.md
+  - docs/Models/Operations/LmsGetUserCompletionRequest.md
+  - docs/Models/Operations/LmsGetUserCompletionResponse.md
+  - docs/Models/Operations/LmsGetUserRequest.md
+  - docs/Models/Operations/LmsGetUserResponse.md
+  - docs/Models/Operations/LmsListAssignmentsQueryParamFilter.md
+  - docs/Models/Operations/LmsListAssignmentsRequest.md
+  - docs/Models/Operations/LmsListAssignmentsResponse.md
+  - docs/Models/Operations/LmsListCategoriesQueryParamFilter.md
+  - docs/Models/Operations/LmsListCategoriesRequest.md
+  - docs/Models/Operations/LmsListCategoriesResponse.md
+  - docs/Models/Operations/LmsListCompletionsQueryParamFilter.md
+  - docs/Models/Operations/LmsListCompletionsRequest.md
+  - docs/Models/Operations/LmsListCompletionsResponse.md
+  - docs/Models/Operations/LmsListContentQueryParamFilter.md
+  - docs/Models/Operations/LmsListContentRequest.md
+  - docs/Models/Operations/LmsListContentResponse.md
+  - docs/Models/Operations/LmsListCoursesQueryParamFilter.md
+  - docs/Models/Operations/LmsListCoursesRequest.md
+  - docs/Models/Operations/LmsListCoursesResponse.md
+  - docs/Models/Operations/LmsListSkillsQueryParamFilter.md
+  - docs/Models/Operations/LmsListSkillsRequest.md
+  - docs/Models/Operations/LmsListSkillsResponse.md
+  - docs/Models/Operations/LmsListUserAssignmentsQueryParamFilter.md
+  - docs/Models/Operations/LmsListUserAssignmentsRequest.md
+  - docs/Models/Operations/LmsListUserAssignmentsResponse.md
+  - docs/Models/Operations/LmsListUserCompletionsQueryParamFilter.md
+  - docs/Models/Operations/LmsListUserCompletionsRequest.md
+  - docs/Models/Operations/LmsListUserCompletionsResponse.md
+  - docs/Models/Operations/LmsListUsersQueryParamFilter.md
+  - docs/Models/Operations/LmsListUsersRequest.md
+  - docs/Models/Operations/LmsListUsersResponse.md
+  - docs/Models/Operations/LmsUpdateContentRequest.md
+  - docs/Models/Operations/LmsUpdateContentResponse.md
+  - docs/Models/Operations/LmsUpsertContentRequest.md
+  - docs/Models/Operations/LmsUpsertContentResponse.md
   - docs/Models/Operations/MarketingCreateContentBlockRequest.md
   - docs/Models/Operations/MarketingCreateContentBlockResponse.md
   - docs/Models/Operations/MarketingCreateEmailTemplateRequest.md
@@ -1124,6 +1249,7 @@ generatedFiles:
   - docs/sdks/crm/README.md
   - docs/sdks/hris/README.md
   - docs/sdks/iam/README.md
+  - docs/sdks/lms/README.md
   - docs/sdks/marketing/README.md
   - docs/sdks/proxy/README.md
   - docs/sdks/stackone/README.md
@@ -1138,6 +1264,7 @@ generatedFiles:
   - src/Crm.php
   - src/Hris.php
   - src/Iam.php
+  - src/Lms.php
   - src/Marketing.php
   - src/Models/Components/ATSLocation.php
   - src/Models/Components/ATSLocationResult.php
@@ -1185,6 +1312,12 @@ generatedFiles:
   - src/Models/Components/AssessmentsResultsSourceValue4.php
   - src/Models/Components/AssessmentsResultsSourceValueAttachments4.php
   - src/Models/Components/AssessmentsResultsValue.php
+  - src/Models/Components/Assignment.php
+  - src/Models/Components/AssignmentResult.php
+  - src/Models/Components/AssignmentStatusEnum.php
+  - src/Models/Components/AssignmentStatusEnumSourceValue4.php
+  - src/Models/Components/AssignmentStatusEnumValue.php
+  - src/Models/Components/AssignmentsPaginated.php
   - src/Models/Components/AtsCreateApplicationRequestDto.php
   - src/Models/Components/AtsCreateApplicationRequestDtoApplicationStatus.php
   - src/Models/Components/AtsCreateApplicationRequestDtoCandidate.php
@@ -1248,13 +1381,23 @@ generatedFiles:
   - src/Models/Components/CandidateResult.php
   - src/Models/Components/CandidatesPaginated.php
   - src/Models/Components/Categories.php
+  - src/Models/Components/CategoriesPaginated.php
   - src/Models/Components/Category.php
+  - src/Models/Components/CategoryResult.php
+  - src/Models/Components/CategorySourceValue4.php
+  - src/Models/Components/CategoryValue.php
   - src/Models/Components/ChannelsEnum.php
   - src/Models/Components/ChannelsEnumSourceValue4.php
   - src/Models/Components/ChannelsEnumValue.php
   - src/Models/Components/CompaniesPaginated.php
   - src/Models/Components/Company.php
   - src/Models/Components/CompanyResult.php
+  - src/Models/Components/Completion.php
+  - src/Models/Components/CompletionResult.php
+  - src/Models/Components/CompletionResult1.php
+  - src/Models/Components/CompletionSourceValue4.php
+  - src/Models/Components/CompletionValue.php
+  - src/Models/Components/CompletionsPaginated.php
   - src/Models/Components/Confidential.php
   - src/Models/Components/ConnectSession.php
   - src/Models/Components/ConnectSessionAuthenticate.php
@@ -1279,16 +1422,33 @@ generatedFiles:
   - src/Models/Components/ContentBlockValue.php
   - src/Models/Components/ContentBlocksPaginated.php
   - src/Models/Components/ContentFileFormat.php
+  - src/Models/Components/ContentLanguageEnum.php
+  - src/Models/Components/ContentLanguageEnumValue.php
+  - src/Models/Components/ContentPaginated.php
+  - src/Models/Components/ContentResult.php
   - src/Models/Components/ContentSourceValue4.php
   - src/Models/Components/ContentType.php
   - src/Models/Components/ContentValue.php
   - src/Models/Components/CostCenters.php
   - src/Models/Components/Country.php
   - src/Models/Components/CountryCodeEnum.php
+  - src/Models/Components/Course.php
+  - src/Models/Components/CourseActive.php
+  - src/Models/Components/CourseActiveValue.php
+  - src/Models/Components/CoursePaginated.php
+  - src/Models/Components/CourseResult.php
+  - src/Models/Components/CourseSourceValue4.php
+  - src/Models/Components/CourseSourceValueActive4.php
+  - src/Models/Components/CourseType.php
+  - src/Models/Components/CourseValue.php
   - src/Models/Components/CreateAnswer.php
   - src/Models/Components/CreateAnswerSourceValue4.php
   - src/Models/Components/CreateAnswerType.php
   - src/Models/Components/CreateAnswerValue.php
+  - src/Models/Components/CreateCategoriesApiModel.php
+  - src/Models/Components/CreateCategoriesApiModelLevel.php
+  - src/Models/Components/CreateCategoriesApiModelSourceValue4.php
+  - src/Models/Components/CreateCategoriesApiModelValue.php
   - src/Models/Components/CreateEmploymentApiModel.php
   - src/Models/Components/CreateEmploymentApiModelEmploymentContractType.php
   - src/Models/Components/CreateEmploymentApiModelEmploymentContractTypeValue.php
@@ -1500,6 +1660,7 @@ generatedFiles:
   - src/Models/Components/IamGroupValue.php
   - src/Models/Components/IamGroupsPaginated.php
   - src/Models/Components/IamMfaTypeEnum.php
+  - src/Models/Components/IamMfaTypeEnumSourceValue4.php
   - src/Models/Components/IamMfaTypeEnumValue.php
   - src/Models/Components/IamPermission.php
   - src/Models/Components/IamPermissionSourceValue4.php
@@ -1597,8 +1758,10 @@ generatedFiles:
   - src/Models/Components/JobValue.php
   - src/Models/Components/JobsPaginated.php
   - src/Models/Components/Label.php
+  - src/Models/Components/Level.php
   - src/Models/Components/LinkedAccount.php
   - src/Models/Components/LinkedAccountMeta.php
+  - src/Models/Components/LinkedAccountMetaCategory.php
   - src/Models/Components/ListItem.php
   - src/Models/Components/ListResult.php
   - src/Models/Components/ListSourceValue4.php
@@ -1606,6 +1769,22 @@ generatedFiles:
   - src/Models/Components/ListType.php
   - src/Models/Components/ListValue.php
   - src/Models/Components/ListsPaginated.php
+  - src/Models/Components/LmsBatchUpsertContentRequestDto.php
+  - src/Models/Components/LmsCreateCompletionRequestDto.php
+  - src/Models/Components/LmsCreateCompletionRequestDtoResult.php
+  - src/Models/Components/LmsCreateCompletionRequestDtoSourceValue4.php
+  - src/Models/Components/LmsCreateCompletionRequestDtoValue.php
+  - src/Models/Components/LmsCreateContentRequestDto.php
+  - src/Models/Components/LmsCreateContentRequestDtoActive2.php
+  - src/Models/Components/LmsCreateContentRequestDtoContentType.php
+  - src/Models/Components/LmsCreateContentRequestDtoSourceValue4.php
+  - src/Models/Components/LmsCreateContentRequestDtoValue.php
+  - src/Models/Components/LmsUpsertContentRequestDto.php
+  - src/Models/Components/LmsUpsertContentRequestDtoActive2.php
+  - src/Models/Components/LmsUpsertContentRequestDtoContentType.php
+  - src/Models/Components/LmsUpsertContentRequestDtoSourceValue4.php
+  - src/Models/Components/LmsUpsertContentRequestDtoValue.php
+  - src/Models/Components/LmsUser.php
   - src/Models/Components/LocationType.php
   - src/Models/Components/MaritalStatus.php
   - src/Models/Components/MarketingCreateContentBlocksRequestDto.php
@@ -1696,6 +1875,12 @@ generatedFiles:
   - src/Models/Components/Secrets.php
   - src/Models/Components/Security.php
   - src/Models/Components/SetupInformation.php
+  - src/Models/Components/SkillResult.php
+  - src/Models/Components/Skills.php
+  - src/Models/Components/SkillsLevel.php
+  - src/Models/Components/SkillsPaginated.php
+  - src/Models/Components/SkillsSourceValue4.php
+  - src/Models/Components/SkillsValue.php
   - src/Models/Components/SmsMessageContents.php
   - src/Models/Components/SmsMessages.php
   - src/Models/Components/SmsMessagesMessageContent.php
@@ -1733,7 +1918,6 @@ generatedFiles:
   - src/Models/Components/UnifiedUploadRequestDtoSourceValueConfidential4.php
   - src/Models/Components/UnifiedUploadRequestDtoValue.php
   - src/Models/Components/UpdateResult.php
-  - src/Models/Components/User.php
   - src/Models/Components/UserResult.php
   - src/Models/Components/UsersPaginated.php
   - src/Models/Components/Value.php
@@ -2018,6 +2202,61 @@ generatedFiles:
   - src/Models/Operations/IamListUsersQueryParamFilter.php
   - src/Models/Operations/IamListUsersRequest.php
   - src/Models/Operations/IamListUsersResponse.php
+  - src/Models/Operations/LmsBatchUpsertContentRequest.php
+  - src/Models/Operations/LmsBatchUpsertContentResponse.php
+  - src/Models/Operations/LmsCreateContentRequest.php
+  - src/Models/Operations/LmsCreateContentResponse.php
+  - src/Models/Operations/LmsCreateUserCompletionRequest.php
+  - src/Models/Operations/LmsCreateUserCompletionResponse.php
+  - src/Models/Operations/LmsGetAssignmentRequest.php
+  - src/Models/Operations/LmsGetAssignmentResponse.php
+  - src/Models/Operations/LmsGetCategoryRequest.php
+  - src/Models/Operations/LmsGetCategoryResponse.php
+  - src/Models/Operations/LmsGetCompletionRequest.php
+  - src/Models/Operations/LmsGetCompletionResponse.php
+  - src/Models/Operations/LmsGetContentRequest.php
+  - src/Models/Operations/LmsGetContentResponse.php
+  - src/Models/Operations/LmsGetCourseRequest.php
+  - src/Models/Operations/LmsGetCourseResponse.php
+  - src/Models/Operations/LmsGetSkillRequest.php
+  - src/Models/Operations/LmsGetSkillResponse.php
+  - src/Models/Operations/LmsGetUserAssignmentRequest.php
+  - src/Models/Operations/LmsGetUserAssignmentResponse.php
+  - src/Models/Operations/LmsGetUserCompletionRequest.php
+  - src/Models/Operations/LmsGetUserCompletionResponse.php
+  - src/Models/Operations/LmsGetUserRequest.php
+  - src/Models/Operations/LmsGetUserResponse.php
+  - src/Models/Operations/LmsListAssignmentsQueryParamFilter.php
+  - src/Models/Operations/LmsListAssignmentsRequest.php
+  - src/Models/Operations/LmsListAssignmentsResponse.php
+  - src/Models/Operations/LmsListCategoriesQueryParamFilter.php
+  - src/Models/Operations/LmsListCategoriesRequest.php
+  - src/Models/Operations/LmsListCategoriesResponse.php
+  - src/Models/Operations/LmsListCompletionsQueryParamFilter.php
+  - src/Models/Operations/LmsListCompletionsRequest.php
+  - src/Models/Operations/LmsListCompletionsResponse.php
+  - src/Models/Operations/LmsListContentQueryParamFilter.php
+  - src/Models/Operations/LmsListContentRequest.php
+  - src/Models/Operations/LmsListContentResponse.php
+  - src/Models/Operations/LmsListCoursesQueryParamFilter.php
+  - src/Models/Operations/LmsListCoursesRequest.php
+  - src/Models/Operations/LmsListCoursesResponse.php
+  - src/Models/Operations/LmsListSkillsQueryParamFilter.php
+  - src/Models/Operations/LmsListSkillsRequest.php
+  - src/Models/Operations/LmsListSkillsResponse.php
+  - src/Models/Operations/LmsListUserAssignmentsQueryParamFilter.php
+  - src/Models/Operations/LmsListUserAssignmentsRequest.php
+  - src/Models/Operations/LmsListUserAssignmentsResponse.php
+  - src/Models/Operations/LmsListUserCompletionsQueryParamFilter.php
+  - src/Models/Operations/LmsListUserCompletionsRequest.php
+  - src/Models/Operations/LmsListUserCompletionsResponse.php
+  - src/Models/Operations/LmsListUsersQueryParamFilter.php
+  - src/Models/Operations/LmsListUsersRequest.php
+  - src/Models/Operations/LmsListUsersResponse.php
+  - src/Models/Operations/LmsUpdateContentRequest.php
+  - src/Models/Operations/LmsUpdateContentResponse.php
+  - src/Models/Operations/LmsUpsertContentRequest.php
+  - src/Models/Operations/LmsUpsertContentResponse.php
   - src/Models/Operations/MarketingCreateContentBlockRequest.php
   - src/Models/Operations/MarketingCreateContentBlockResponse.php
   - src/Models/Operations/MarketingCreateEmailTemplateRequest.php
@@ -3250,7 +3489,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}, {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}]}
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
   ats_get_user:
     "":
       parameters:
@@ -3262,7 +3501,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
   ats_list_job_postings:
     "":
       parameters:
@@ -3869,3 +4108,279 @@ examples:
       responses:
         "200":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
+  lms_list_courses:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,course_type,cover_url,url,active,duration,categories,skills,updated_at,created_at"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "16873-ENG-VIDEO-1", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "content_ids": ["16873-SOFTWARE-ENG-COURSE", "16874-SOFTWARE-ENG-COURSE"], "remote_content_ids": ["e3cb75bf-aa84-466e-a6c1-b8322b257a48", "e3cb75bf-aa84-466e-a6c1-b8322b257a49"], "title": "Software Engineer Lv 1", "description": "This course acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "cover_url": "https://www.googledrive.com/?v=16873", "url": "https://www.linkedinlearning.com/?v=16873", "duration": "P3Y6M4DT12H30M5S", "categories": [{"id": "12345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Technology", "active": true}], "skills": [{"id": "12345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Sales Techniques", "active": true}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z"}]}
+  lms_get_course:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,course_type,cover_url,url,active,duration,categories,skills,updated_at,created_at"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "16873-ENG-VIDEO-1", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "content_ids": ["16873-SOFTWARE-ENG-COURSE", "16874-SOFTWARE-ENG-COURSE"], "remote_content_ids": ["e3cb75bf-aa84-466e-a6c1-b8322b257a48", "e3cb75bf-aa84-466e-a6c1-b8322b257a49"], "title": "Software Engineer Lv 1", "description": "This course acts as learning content for software engineers.", "languages": [], "cover_url": "https://www.googledrive.com/?v=16873", "url": "https://www.linkedinlearning.com/?v=16873", "duration": "P3Y6M4DT12H30M5S", "categories": [{"id": "12345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Technology", "active": true}], "skills": [{"id": "12345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Sales Techniques", "active": true}], "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z"}}
+  lms_list_user_assignments:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+          user_id: "c28xyrc55866bvuv"
+          remote_user_id: "e3cb75bf-aa84-466e-a6c1-b8322b257a48"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}, {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}]}
+  lms_get_user_assignment:
+    speakeasy-default-lms-get-user-assignment:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query: {}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}}
+  lms_batch_upsert_content:
+    speakeasy-default-lms-batch-upsert-content:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"items": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "course_ids": ["16873-SOFTWARE-ENG-COURSE"], "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}, {"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "order": 1, "categories": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "active": true}]}, {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "course_ids": ["16873-SOFTWARE-ENG-COURSE"], "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [], "content_url": "https://www.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "order": 1, "categories": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "active": true}]}]}
+      responses:
+        "202":
+          application/json: {"statusCode": 202, "message": "Batch operation accepted", "timestamp": "2021-01-01T01:01:01.000Z", "errors": [["Missing field: name"], [], []]}
+  lms_list_content:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"url": "https://example.com/file.pdf", "unified_url": "https://api.stackone.com/unified/hris/employees/12345/documents/67890/download", "file_format": {"value": "pdf", "source_value": "abc"}}, {"url": "https://example.com/file.pdf", "unified_url": "https://api.stackone.com/unified/hris/employees/12345/documents/67890/download", "file_format": {"value": "pdf", "source_value": "abc"}}, {"url": "https://example.com/file.pdf", "unified_url": "https://api.stackone.com/unified/hris/employees/12345/documents/67890/download", "file_format": {"value": "pdf", "source_value": "abc"}}]}
+  lms_upsert_content:
+    speakeasy-default-lms-upsert-content:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "course_ids": ["16873-SOFTWARE-ENG-COURSE"], "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "order": 1, "categories": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "active": true}]}
+      responses:
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
+  lms_create_content:
+    speakeasy-default-lms-create-content:
+      parameters:
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "course_ids": ["16873-SOFTWARE-ENG-COURSE"], "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "order": 1, "categories": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "active": true}]}
+      responses:
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
+  lms_get_content:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"url": "https://example.com/file.pdf", "unified_url": "https://api.stackone.com/unified/hris/employees/12345/documents/67890/download", "file_format": {"value": "pdf", "source_value": "abc"}}}
+  lms_update_content:
+    speakeasy-default-lms-update-content:
+      parameters:
+        path:
+          id: "<id>"
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1", "course_ids": ["16873-SOFTWARE-ENG-COURSE"], "title": "Software Engineer Lv 1", "description": "This video acts as learning content for software engineers.", "languages": [{"value": "en_GB"}, {"value": "en_GB"}, {"value": "en_GB"}], "content_url": "https://www.youtube.com/watch?v=16873", "cover_url": "https://www.googledrive.com/?v=16873", "active": true, "duration": "P3Y6M4DT12H30M5S", "order": 1, "categories": [{"unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "active": true}]}
+      responses:
+        "201":
+          application/json: {"statusCode": 200, "message": "Record updated successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
+  lms_list_user_completions:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,external_id,remote_external_id,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
+  lms_create_user_completion:
+    speakeasy-default-lms-create-user-completion:
+      parameters:
+        path:
+          id: "<id>"
+        header:
+          x-account-id: "<id>"
+      requestBody:
+        application/json: {"passthrough": {"other_known_names": "John Doe"}, "external_id": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-COMPLETION", "content_external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-CONTENT", "content_id": "16873-ENG-VIDEO-1", "completed_at": "2021-07-21T14:00:00.000Z"}
+      responses:
+        "201":
+          application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
+  lms_get_user_completion:
+    speakeasy-default-lms-get-user-completion:
+      parameters:
+        path:
+          id: "<id>"
+          subResourceId: "<id>"
+        query: {}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_id": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-COMPLETION", "content_external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-CONTENT", "remote_external_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "content_id": "16873-ENG-VIDEO-1", "remote_content_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "course_id": "16873-ENG-COURSE-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}}
+  lms_list_completions:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,external_id,remote_external_id,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
+  lms_get_completion:
+    speakeasy-default-lms-get-completion:
+      parameters:
+        path:
+          id: "<id>"
+        query: {}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_id": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-COMPLETION", "content_external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-CONTENT", "remote_external_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "content_id": "16873-ENG-VIDEO-1", "remote_content_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "course_id": "16873-ENG-COURSE-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "completed_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "updated_at": "2021-07-21T14:00:00.000Z", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}}
+  lms_get_category:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,name,active,level"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Information-Technology", "active": true}}
+  lms_list_categories:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,name,active,level"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
+  lms_list_users:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}]}
+  lms_get_user:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,external_reference,active,email,phone_number,created_at,updated_at,name"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "external_reference": "al60043", "name": "John Dew", "email": "john@dew.com", "phone_number": "+1234567890", "active": true, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}}
+  lms_get_skill:
+    "":
+      parameters:
+        path:
+          id: "<id>"
+        query:
+          fields: "id,remote_id,name,active,level"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true}}
+  lms_list_skills:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,name,active,level"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true}, {"id": "16873-IT345", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Information-Technology", "active": true}]}
+  lms_list_assignments:
+    "":
+      parameters:
+        query:
+          fields: "id,remote_id,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status"
+          filter: {"updated_after": "2020-01-01T00:00:00.000Z"}
+          updated_after: "2020-01-01T00:00:00.000Z"
+          user_id: "c28xyrc55866bvuv"
+          remote_user_id: "e3cb75bf-aa84-466e-a6c1-b8322b257a48"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": []}
+  lms_get_assignment:
+    speakeasy-default-lms-get-assignment:
+      parameters:
+        path:
+          id: "<id>"
+        query: {}
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}}
