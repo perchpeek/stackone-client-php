@@ -1,0 +1,11 @@
+# CourseActive
+
+Whether the course is active and available for users.
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                | [?Components\CourseActiveValue](../../Models/Components/CourseActiveValue.md)                                          | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `sourceValue`                                                                                                          | [string\|float\|bool\|Components\CourseSourceValueActive4\|array\|null](../../Models/Components/CourseActiveSourceValue.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |

@@ -13,11 +13,11 @@ class UserResult
 {
     /**
      *
-     * @var User $data
+     * @var LmsUser $data
      */
     #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\User')]
-    public User $data;
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsUser')]
+    public LmsUser $data;
 
     /**
      * $raw
@@ -30,10 +30,10 @@ class UserResult
     public ?array $raw = null;
 
     /**
-     * @param  User  $data
+     * @param  LmsUser  $data
      * @param  ?array<RawResponse>  $raw
      */
-    public function __construct(User $data, ?array $raw = null)
+    public function __construct(LmsUser $data, ?array $raw = null)
     {
         $this->data = $data;
         $this->raw = $raw;

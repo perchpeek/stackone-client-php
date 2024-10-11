@@ -21,10 +21,10 @@ float $value = /* values here */
 bool $value = /* values here */
 ```
 
-### `Components\SourceValue4`
+### `Components\IamMfaTypeEnumSourceValue4`
 
 ```php
-Components\SourceValue4 $value = /* values here */
+Components\IamMfaTypeEnumSourceValue4 $value = /* values here */
 ```
 
 ### `array`

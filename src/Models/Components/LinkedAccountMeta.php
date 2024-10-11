@@ -20,11 +20,11 @@ class LinkedAccountMeta
 
     /**
      *
-     * @var Category $category
+     * @var LinkedAccountMetaCategory $category
      */
     #[\JMS\Serializer\Annotation\SerializedName('category')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Category')]
-    public Category $category;
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\LinkedAccountMetaCategory')]
+    public LinkedAccountMetaCategory $category;
 
     /**
      * $models
@@ -37,10 +37,10 @@ class LinkedAccountMeta
 
     /**
      * @param  string  $provider
-     * @param  Category  $category
+     * @param  LinkedAccountMetaCategory  $category
      * @param  array<string, mixed>  $models
      */
-    public function __construct(string $provider, Category $category, array $models)
+    public function __construct(string $provider, LinkedAccountMetaCategory $category, array $models)
     {
         $this->provider = $provider;
         $this->category = $category;
