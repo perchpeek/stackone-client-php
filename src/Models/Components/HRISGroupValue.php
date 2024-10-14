@@ -17,4 +17,5 @@ enum HRISGroupValue: string
     case Group = 'group';
     case Organization = 'organization';
     case UnmappedValue = 'unmapped_value';
+    case CostCenter = 'cost_center';
 }

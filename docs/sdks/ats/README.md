@@ -317,7 +317,6 @@ $atsUpdateApplicationRequestDto = new Components\AtsUpdateApplicationRequestDto(
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
-    rejectedReasonId: 'f223d7f6-908b-48f0-9237-b201c307f609',
     customFields: [
         new Components\ApplicationCustomFields(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',

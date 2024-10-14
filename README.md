@@ -205,8 +205,10 @@ if ($response->employeesPaginated !== null) {
 * [getBenefit](docs/sdks/hris/README.md#getbenefit) - Get Benefit
 * [listGroups](docs/sdks/hris/README.md#listgroups) - List Groups
 * [listDepartmentGroups](docs/sdks/hris/README.md#listdepartmentgroups) - List Department Groups
+* [listCostCenterGroups](docs/sdks/hris/README.md#listcostcentergroups) - List Cost Center Groups
 * [getGroup](docs/sdks/hris/README.md#getgroup) - Get Group
 * [getDepartmentGroup](docs/sdks/hris/README.md#getdepartmentgroup) - Get Department Group
+* [getCostCenterGroup](docs/sdks/hris/README.md#getcostcentergroup) - Get Cost Center Group
 * [listJobs](docs/sdks/hris/README.md#listjobs) - List Jobs
 * [getJob](docs/sdks/hris/README.md#getjob) - Get Job
 
