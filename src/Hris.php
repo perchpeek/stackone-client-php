@@ -1772,6 +1772,54 @@ class Hris
     }
 
     /**
+     * List Cost Center Groups
+     *
+     * @param  Operations\HrisListCostCenterGroupsRequest  $request
+     * @return Operations\HrisListCostCenterGroupsResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function listCostCenterGroups(
+        ?Operations\HrisListCostCenterGroupsRequest $request,
+    ): Operations\HrisListCostCenterGroupsResponse {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/cost_centers');
+        $options = ['http_errors' => false];
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\HrisListCostCenterGroupsRequest::class, $request));
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\HRISCostCenterPaginated', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\HrisListCostCenterGroupsResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    hrisCostCenterPaginated: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
      * Get Group
      *
      * @param  Operations\HrisGetGroupRequest  $request
@@ -1855,6 +1903,54 @@ class Hris
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     hrisDepartmentsResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Get Cost Center Group
+     *
+     * @param  Operations\HrisGetCostCenterGroupRequest  $request
+     * @return Operations\HrisGetCostCenterGroupResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function getCostCenterGroup(
+        ?Operations\HrisGetCostCenterGroupRequest $request,
+    ): Operations\HrisGetCostCenterGroupResponse {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/cost_centers/{id}', Operations\HrisGetCostCenterGroupRequest::class, $request);
+        $options = ['http_errors' => false];
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\HrisGetCostCenterGroupRequest::class, $request));
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\HRISCostCenterResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\HrisGetCostCenterGroupResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    hrisCostCenterResult: $obj);
 
                 return $response;
             } else {

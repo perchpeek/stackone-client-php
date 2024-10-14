@@ -39,8 +39,10 @@
 * [getBenefit](#getbenefit) - Get Benefit
 * [listGroups](#listgroups) - List Groups
 * [listDepartmentGroups](#listdepartmentgroups) - List Department Groups
+* [listCostCenterGroups](#listcostcentergroups) - List Cost Center Groups
 * [getGroup](#getgroup) - Get Group
 * [getDepartmentGroup](#getdepartmentgroup) - Get Department Group
+* [getCostCenterGroup](#getcostcentergroup) - Get Cost Center Group
 * [listJobs](#listjobs) - List Jobs
 * [getJob](#getjob) - Get Job
 
@@ -2279,6 +2281,61 @@ if ($response->hrisDepartmentsPaginated !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
+## listCostCenterGroups
+
+List Cost Center Groups
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\HrisListCostCenterGroupsRequest(
+    xAccountId: '<id>',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+    filter: new Operations\HrisListCostCenterGroupsQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$response = $sdk->hris->listCostCenterGroups(
+    request: $request
+);
+
+if ($response->hrisCostCenterPaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\HrisListCostCenterGroupsRequest](../../Models/Operations/HrisListCostCenterGroupsRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\HrisListCostCenterGroupsResponse](../../Models/Operations/HrisListCostCenterGroupsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
 ## getGroup
 
 Get Group
@@ -2378,6 +2435,59 @@ if ($response->hrisDepartmentsResult !== null) {
 ### Response
 
 **[?Operations\HrisGetDepartmentGroupResponse](../../Models/Operations/HrisGetDepartmentGroupResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## getCostCenterGroup
+
+Get Cost Center Group
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\HrisGetCostCenterGroupRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+);
+
+$response = $sdk->hris->getCostCenterGroup(
+    request: $request
+);
+
+if ($response->hrisCostCenterResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [Operations\HrisGetCostCenterGroupRequest](../../Models/Operations/HrisGetCostCenterGroupRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+
+### Response
+
+**[?Operations\HrisGetCostCenterGroupResponse](../../Models/Operations/HrisGetCostCenterGroupResponse.md)**
 
 ### Errors
 

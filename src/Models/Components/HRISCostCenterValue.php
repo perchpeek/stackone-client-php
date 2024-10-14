@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-enum IamGroupValue: string
+enum HRISCostCenterValue: string
 {
     case Workspace = 'workspace';
     case Team = 'team';

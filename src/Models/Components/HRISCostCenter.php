@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-class HRISDepartment
+class HRISCostCenter
 {
     /**
      * Unique identifier
@@ -89,14 +89,14 @@ class HRISDepartment
     public ?array $remoteOwnerIds = null;
 
     /**
-     * The type of the department group
+     * The type of the group
      *
-     * @var ?HRISDepartmentType $type
+     * @var ?HRISCostCenterType $type
      */
     #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HRISDepartmentType|null')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HRISCostCenterType|null')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?HRISDepartmentType $type = null;
+    public ?HRISCostCenterType $type = null;
 
     /**
      * @param  ?string  $id
@@ -107,9 +107,9 @@ class HRISDepartment
      * @param  ?array<string>  $remoteParentIds
      * @param  ?array<string>  $ownerIds
      * @param  ?array<string>  $remoteOwnerIds
-     * @param  ?HRISDepartmentType  $type
+     * @param  ?HRISCostCenterType  $type
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?array $parentIds = null, ?array $remoteParentIds = null, ?array $ownerIds = null, ?array $remoteOwnerIds = null, ?HRISDepartmentType $type = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?array $parentIds = null, ?array $remoteParentIds = null, ?array $ownerIds = null, ?array $remoteOwnerIds = null, ?HRISCostCenterType $type = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
