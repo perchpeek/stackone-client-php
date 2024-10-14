@@ -25,6 +25,7 @@ class AtsUpdateApplicationRequestDto
      * Unique identifier of the rejection reason
      *
      * @var ?string $rejectedReasonId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('rejected_reason_id')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]

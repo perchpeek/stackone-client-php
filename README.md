@@ -7,15 +7,6 @@
     </a>
 </div>
 
-
-## 🏗 **Welcome to your new SDK!** 🏗
-
-It has been generated successfully based on your OpenAPI spec. However, it is not yet ready for production use. Here are some next steps:
-- [ ] 🛠 Make your SDK feel handcrafted by [customizing it](https://www.speakeasyapi.dev/docs/customize-sdks)
-- [ ] ♻️ Refine your SDK quickly by iterating locally with the [Speakeasy CLI](https://github.com/speakeasy-api/speakeasy)
-- [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/advanced-setup/publish-sdks)
-- [ ] ✨ When ready to productionize, delete this section from the README
-
 <!-- Start Summary [summary] -->
 ## Summary
 
@@ -214,8 +205,10 @@ if ($response->employeesPaginated !== null) {
 * [getBenefit](docs/sdks/hris/README.md#getbenefit) - Get Benefit
 * [listGroups](docs/sdks/hris/README.md#listgroups) - List Groups
 * [listDepartmentGroups](docs/sdks/hris/README.md#listdepartmentgroups) - List Department Groups
+* [listCostCenterGroups](docs/sdks/hris/README.md#listcostcentergroups) - List Cost Center Groups
 * [getGroup](docs/sdks/hris/README.md#getgroup) - Get Group
 * [getDepartmentGroup](docs/sdks/hris/README.md#getdepartmentgroup) - Get Department Group
+* [getCostCenterGroup](docs/sdks/hris/README.md#getcostcentergroup) - Get Cost Center Group
 * [listJobs](docs/sdks/hris/README.md#listjobs) - List Jobs
 * [getJob](docs/sdks/hris/README.md#getjob) - Get Job
 
@@ -229,6 +222,32 @@ if ($response->employeesPaginated !== null) {
 * [getGroup](docs/sdks/iam/README.md#getgroup) - Get Group
 * [listPolicies](docs/sdks/iam/README.md#listpolicies) - List Policies
 * [getPolicy](docs/sdks/iam/README.md#getpolicy) - Get Policy
+
+### [lms](docs/sdks/lms/README.md)
+
+* [listCourses](docs/sdks/lms/README.md#listcourses) - List Courses
+* [getCourse](docs/sdks/lms/README.md#getcourse) - Get Course
+* [listUserAssignments](docs/sdks/lms/README.md#listuserassignments) - List User Assignments
+* [getUserAssignment](docs/sdks/lms/README.md#getuserassignment) - Get User Assignment
+* [batchUpsertContent](docs/sdks/lms/README.md#batchupsertcontent) - Batch Upsert Content
+* [listContent](docs/sdks/lms/README.md#listcontent) - List Content
+* [upsertContent](docs/sdks/lms/README.md#upsertcontent) - Upsert Content
+* [createContent](docs/sdks/lms/README.md#createcontent) - Create Content
+* [getContent](docs/sdks/lms/README.md#getcontent) - Get Content
+* [updateContent](docs/sdks/lms/README.md#updatecontent) - Update Content
+* [listUserCompletions](docs/sdks/lms/README.md#listusercompletions) - List User Completions
+* [createUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
+* [getUserCompletion](docs/sdks/lms/README.md#getusercompletion) - Get User Completion
+* [listCompletions](docs/sdks/lms/README.md#listcompletions) - List Completions
+* [getCompletion](docs/sdks/lms/README.md#getcompletion) - Get Completion
+* [getCategory](docs/sdks/lms/README.md#getcategory) - Get Category
+* [listCategories](docs/sdks/lms/README.md#listcategories) - List Categories
+* [listUsers](docs/sdks/lms/README.md#listusers) - List Users
+* [getUser](docs/sdks/lms/README.md#getuser) - Get User
+* [getSkill](docs/sdks/lms/README.md#getskill) - Get Skill
+* [listSkills](docs/sdks/lms/README.md#listskills) - List Skills
+* [listAssignments](docs/sdks/lms/README.md#listassignments) - List Assignments
+* [getAssignment](docs/sdks/lms/README.md#getassignment) - Get Assignment
 
 ### [marketing](docs/sdks/marketing/README.md)
 

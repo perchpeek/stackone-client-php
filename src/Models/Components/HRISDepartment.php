@@ -59,7 +59,7 @@ class HRISDepartment
     public ?array $parentIds = null;
 
     /**
-     * Provider's list of parent group ids of the given group
+     * Provider's list of parent group remote ids of the given group
      *
      * @var ?array<string> $remoteParentIds
      */
@@ -79,6 +79,16 @@ class HRISDepartment
     public ?array $ownerIds = null;
 
     /**
+     * The list of remote group owner ids of the given group
+     *
+     * @var ?array<string> $remoteOwnerIds
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('remote_owner_ids')]
+    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $remoteOwnerIds = null;
+
+    /**
      * The type of the department group
      *
      * @var ?HRISDepartmentType $type
@@ -96,9 +106,10 @@ class HRISDepartment
      * @param  ?array<string>  $parentIds
      * @param  ?array<string>  $remoteParentIds
      * @param  ?array<string>  $ownerIds
+     * @param  ?array<string>  $remoteOwnerIds
      * @param  ?HRISDepartmentType  $type
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?array $parentIds = null, ?array $remoteParentIds = null, ?array $ownerIds = null, ?HRISDepartmentType $type = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?array $parentIds = null, ?array $remoteParentIds = null, ?array $ownerIds = null, ?array $remoteOwnerIds = null, ?HRISDepartmentType $type = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -107,6 +118,7 @@ class HRISDepartment
         $this->parentIds = $parentIds;
         $this->remoteParentIds = $remoteParentIds;
         $this->ownerIds = $ownerIds;
+        $this->remoteOwnerIds = $remoteOwnerIds;
         $this->type = $type;
     }
 }

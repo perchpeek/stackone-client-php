@@ -29,9 +29,11 @@ class StackOne
 
     public Ats $ats;
 
-    public Crm $crm;
+    public Lms $lms;
 
     public Iam $iam;
+
+    public Crm $crm;
 
     public Marketing $marketing;
 
@@ -57,8 +59,9 @@ class StackOne
         $this->proxy = new Proxy($this->sdkConfiguration);
         $this->hris = new Hris($this->sdkConfiguration);
         $this->ats = new Ats($this->sdkConfiguration);
-        $this->crm = new Crm($this->sdkConfiguration);
+        $this->lms = new Lms($this->sdkConfiguration);
         $this->iam = new Iam($this->sdkConfiguration);
+        $this->crm = new Crm($this->sdkConfiguration);
         $this->marketing = new Marketing($this->sdkConfiguration);
     }
 }

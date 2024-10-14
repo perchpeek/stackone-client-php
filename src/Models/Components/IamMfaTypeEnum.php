@@ -23,18 +23,18 @@ class IamMfaTypeEnum
 
     /**
      *
-     * @var string|float|bool|SourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|IamMfaTypeEnumSourceValue4|array<mixed>|null $sourceValue
      */
     #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\SourceValue4|array<mixed>')]
+    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\IamMfaTypeEnumSourceValue4|array<mixed>')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|SourceValue4|array|null $sourceValue = null;
+    public string|float|bool|IamMfaTypeEnumSourceValue4|array|null $sourceValue = null;
 
     /**
      * @param  ?IamMfaTypeEnumValue  $value
-     * @param  string|float|bool|SourceValue4|array<mixed>|null  $sourceValue
+     * @param  string|float|bool|IamMfaTypeEnumSourceValue4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?IamMfaTypeEnumValue $value = null, string|float|bool|SourceValue4|array|null $sourceValue = null)
+    public function __construct(?IamMfaTypeEnumValue $value = null, string|float|bool|IamMfaTypeEnumSourceValue4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;
