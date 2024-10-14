@@ -40,5 +40,5 @@ workflow:
             source: stackone-specs
             publish:
                 packagist:
-                    username: stackone-devops
-                    token: $packagist_token
+                    username: $PACKAGIST_USERNAME
+                    token: $PACKAGIST_TOKEN
