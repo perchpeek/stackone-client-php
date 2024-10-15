@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.411.1
   generationVersion: 2.436.1
-  releaseVersion: 0.5.0
-  configChecksum: 1d91e84fd036456583abab84caf26398
+  releaseVersion: 0.7.0
+  configChecksum: 6e29f3a9a61536f752f2ae6863fde46f
   repoURL: https://github.com/StackOneHQ/stackone-client-php.git
   installationURL: https://github.com/StackOneHQ/stackone-client-php
   published: true
