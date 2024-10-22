@@ -32,7 +32,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 
 $response = $sdk->connectors->listConnectorsMeta(
-    include: 'field_path,unmapped_fields,resources,inactive,webhooks'
+    include: 'field_path,unmapped_fields,resources,inactive,webhooks,static_fields'
 );
 
 if ($response->connectorsMetas !== null) {
@@ -44,7 +44,7 @@ if ($response->connectorsMetas !== null) {
 
 | Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `include`                                                              | *?string*                                                              | :heavy_minus_sign:                                                     | The comma separated list of data that will be included in the response | field_path,unmapped_fields,resources,inactive,webhooks                 |
+| `include`                                                              | *?string*                                                              | :heavy_minus_sign:                                                     | The comma separated list of data that will be included in the response | field_path,unmapped_fields,resources,inactive,webhooks,static_fields   |
 
 ### Response
 
@@ -81,7 +81,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $response = $sdk->connectors->getConnectorMeta(
     provider: '<value>',
-    include: 'field_path,unmapped_fields,resources,inactive,webhooks'
+    include: 'field_path,unmapped_fields,resources,inactive,webhooks,static_fields'
 
 );
 
@@ -95,7 +95,7 @@ if ($response->connectorsMeta !== null) {
 | Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
 | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `provider`                                                             | *string*                                                               | :heavy_check_mark:                                                     | N/A                                                                    |                                                                        |
-| `include`                                                              | *?string*                                                              | :heavy_minus_sign:                                                     | The comma separated list of data that will be included in the response | field_path,unmapped_fields,resources,inactive,webhooks                 |
+| `include`                                                              | *?string*                                                              | :heavy_minus_sign:                                                     | The comma separated list of data that will be included in the response | field_path,unmapped_fields,resources,inactive,webhooks,static_fields   |
 
 ### Response
 

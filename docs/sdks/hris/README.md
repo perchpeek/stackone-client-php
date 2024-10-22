@@ -28,7 +28,9 @@
 * [listEmployments](#listemployments) - List Employments
 * [getEmployment](#getemployment) - Get Employment
 * [listEmployeeEmployments](#listemployeeemployments) - List Employee Employments
+* [createEmployeeEmployment](#createemployeeemployment) - Create Employee Employment
 * [getEmployeeEmployment](#getemployeeemployment) - Get Employee Employment
+* [updateEmployeeEmployment](#updateemployeeemployment) - Update Employee Employment
 * [listLocations](#listlocations) - List locations
 * [getLocation](#getlocation) - Get Location
 * [listTimeOffRequests](#listtimeoffrequests) - List time off requests
@@ -299,8 +301,6 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
                 sourceValue: 'Permanent',
             ),
             employmentContractType: new Components\CreateEmploymentApiModelEmploymentContractType(),
-            createdAt: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
-            updatedAt: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
         ),
     ],
     customFields: [
@@ -328,6 +328,9 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         type: new Components\HrisCreateEmployeeRequestDtoType(
             value: Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberValue::Ssn,
         ),
+        country: new Components\HrisCreateEmployeeRequestDtoCountry(
+            value: Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue::Us,
+        ),
     ),
     homeLocation: new Components\HrisCreateEmployeeRequestDtoHomeLocation(
         id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
@@ -337,7 +340,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         street2: 'Woolsthorpe by Colsterworth',
         city: 'Grantham',
         zipCode: 'NG33 5NR',
-        country: new Components\HrisCreateEmployeeRequestDtoCountry(
+        country: new Components\HrisCreateEmployeeRequestDtoHomeLocationCountry(
             value: Components\HrisCreateEmployeeRequestDtoHomeLocationValue::Us,
         ),
         passthrough: [
@@ -537,8 +540,6 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
                 sourceValue: 'Permanent',
             ),
             employmentContractType: new Components\CreateEmploymentApiModelEmploymentContractType(),
-            createdAt: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
-            updatedAt: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
         ),
     ],
     customFields: [
@@ -566,6 +567,9 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         type: new Components\HrisCreateEmployeeRequestDtoType(
             value: Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberValue::Ssn,
         ),
+        country: new Components\HrisCreateEmployeeRequestDtoCountry(
+            value: Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue::Us,
+        ),
     ),
     homeLocation: new Components\HrisCreateEmployeeRequestDtoHomeLocation(
         id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
@@ -575,7 +579,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         street2: 'Woolsthorpe by Colsterworth',
         city: 'Grantham',
         zipCode: 'NG33 5NR',
-        country: new Components\HrisCreateEmployeeRequestDtoCountry(
+        country: new Components\HrisCreateEmployeeRequestDtoHomeLocationCountry(
             value: Components\HrisCreateEmployeeRequestDtoHomeLocationValue::Us,
         ),
         passthrough: [
@@ -1666,6 +1670,87 @@ if ($response->employmentsPaginated !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
+## createEmployeeEmployment
+
+Create Employee Employment
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Utils;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
+    id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    unifiedCustomFields: [
+        'my_project_custom_field_1' => 'REF-1236',
+        'my_project_custom_field_2' => 'some other value',
+    ],
+    employeeId: '1687-3',
+    jobTitle: 'Software Engineer',
+    payRate: '40.00',
+    payPeriod: new Components\HrisCreateEmploymentRequestDtoPayPeriod(
+        value: Components\HrisCreateEmploymentRequestDtoValue::Hour,
+        sourceValue: 'Hour',
+    ),
+    payFrequency: new Components\HrisCreateEmploymentRequestDtoPayFrequency(
+        value: Components\HrisCreateEmploymentRequestDtoPayFrequencyValue::Hourly,
+        sourceValue: 'Hourly',
+    ),
+    payCurrency: 'USD',
+    effectiveDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
+    employmentType: new Components\HrisCreateEmploymentRequestDtoEmploymentType(
+        value: Components\HrisCreateEmploymentRequestDtoEmploymentTypeValue::Permanent,
+        sourceValue: 'Permanent',
+    ),
+    employmentContractType: new Components\HrisCreateEmploymentRequestDtoEmploymentContractType(),
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->hris->createEmployeeEmployment(
+    xAccountId: '<id>',
+    id: '<id>',
+    hrisCreateEmploymentRequestDto: $hrisCreateEmploymentRequestDto
+
+);
+
+if ($response->employmentResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `xAccountId`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | The account identifier                                                                                 |
+| `id`                                                                                                   | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `hrisCreateEmploymentRequestDto`                                                                       | [Components\HrisCreateEmploymentRequestDto](../../Models/Components/HrisCreateEmploymentRequestDto.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+
+### Response
+
+**[?Operations\HrisCreateEmployeeEmploymentResponse](../../Models/Operations/HrisCreateEmployeeEmploymentResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
 ## getEmployeeEmployment
 
 Get Employee Employment
@@ -1714,6 +1799,89 @@ if ($response->employmentResult !== null) {
 ### Response
 
 **[?Operations\HrisGetEmployeeEmploymentResponse](../../Models/Operations/HrisGetEmployeeEmploymentResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## updateEmployeeEmployment
+
+Update Employee Employment
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Utils;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
+    id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    unifiedCustomFields: [
+        'my_project_custom_field_1' => 'REF-1236',
+        'my_project_custom_field_2' => 'some other value',
+    ],
+    employeeId: '1687-3',
+    jobTitle: 'Software Engineer',
+    payRate: '40.00',
+    payPeriod: new Components\HrisCreateEmploymentRequestDtoPayPeriod(
+        value: Components\HrisCreateEmploymentRequestDtoValue::Hour,
+        sourceValue: 'Hour',
+    ),
+    payFrequency: new Components\HrisCreateEmploymentRequestDtoPayFrequency(
+        value: Components\HrisCreateEmploymentRequestDtoPayFrequencyValue::Hourly,
+        sourceValue: 'Hourly',
+    ),
+    payCurrency: 'USD',
+    effectiveDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
+    employmentType: new Components\HrisCreateEmploymentRequestDtoEmploymentType(
+        value: Components\HrisCreateEmploymentRequestDtoEmploymentTypeValue::Permanent,
+        sourceValue: 'Permanent',
+    ),
+    employmentContractType: new Components\HrisCreateEmploymentRequestDtoEmploymentContractType(),
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->hris->updateEmployeeEmployment(
+    xAccountId: '<id>',
+    id: '<id>',
+    subResourceId: '<id>',
+    hrisCreateEmploymentRequestDto: $hrisCreateEmploymentRequestDto
+
+);
+
+if ($response->employmentResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `xAccountId`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | The account identifier                                                                                 |
+| `id`                                                                                                   | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `subResourceId`                                                                                        | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `hrisCreateEmploymentRequestDto`                                                                       | [Components\HrisCreateEmploymentRequestDto](../../Models/Components/HrisCreateEmploymentRequestDto.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+
+### Response
+
+**[?Operations\HrisUpdateEmployeeEmploymentResponse](../../Models/Operations/HrisUpdateEmployeeEmploymentResponse.md)**
 
 ### Errors
 

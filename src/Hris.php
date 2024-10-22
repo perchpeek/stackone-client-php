@@ -1221,6 +1221,67 @@ class Hris
     }
 
     /**
+     * Create Employee Employment
+     *
+     * @param  string  $xAccountId
+     * @param  string  $id
+     * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
+     * @return Operations\HrisCreateEmployeeEmploymentResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function createEmployeeEmployment(
+        string $xAccountId,
+        string $id,
+        Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto,
+    ): Operations\HrisCreateEmployeeEmploymentResponse {
+        $request = new Operations\HrisCreateEmployeeEmploymentRequest(
+            xAccountId: $xAccountId,
+            id: $id,
+            hrisCreateEmploymentRequestDto: $hrisCreateEmploymentRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/employments', Operations\HrisCreateEmployeeEmploymentRequest::class, $request);
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'hrisCreateEmploymentRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $options = array_merge_recursive($options, $body);
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 201) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\EmploymentResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\HrisCreateEmployeeEmploymentResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    employmentResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
      * Get Employee Employment
      *
      * @param  Operations\HrisGetEmployeeEmploymentRequest  $request
@@ -1252,6 +1313,70 @@ class Hris
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\EmploymentResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\HrisGetEmployeeEmploymentResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    employmentResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Update Employee Employment
+     *
+     * @param  string  $xAccountId
+     * @param  string  $id
+     * @param  string  $subResourceId
+     * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
+     * @return Operations\HrisUpdateEmployeeEmploymentResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function updateEmployeeEmployment(
+        string $xAccountId,
+        string $id,
+        string $subResourceId,
+        Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto,
+    ): Operations\HrisUpdateEmployeeEmploymentResponse {
+        $request = new Operations\HrisUpdateEmployeeEmploymentRequest(
+            xAccountId: $xAccountId,
+            id: $id,
+            subResourceId: $subResourceId,
+            hrisCreateEmploymentRequestDto: $hrisCreateEmploymentRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/employments/{subResourceId}', Operations\HrisUpdateEmployeeEmploymentRequest::class, $request);
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'hrisCreateEmploymentRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $options = array_merge_recursive($options, $body);
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\EmploymentResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\HrisUpdateEmployeeEmploymentResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
