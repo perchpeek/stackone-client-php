@@ -30,12 +30,24 @@ class HrisCreateEmployeeRequestDtoNationalIdentityNumber
     public ?HrisCreateEmployeeRequestDtoType $type = null;
 
     /**
+     * The country code
+     *
+     * @var ?HrisCreateEmployeeRequestDtoCountry $country
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('country')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoCountry|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?HrisCreateEmployeeRequestDtoCountry $country = null;
+
+    /**
      * @param  ?string  $value
      * @param  ?HrisCreateEmployeeRequestDtoType  $type
+     * @param  ?HrisCreateEmployeeRequestDtoCountry  $country
      */
-    public function __construct(?string $value = null, ?HrisCreateEmployeeRequestDtoType $type = null)
+    public function __construct(?string $value = null, ?HrisCreateEmployeeRequestDtoType $type = null, ?HrisCreateEmployeeRequestDtoCountry $country = null)
     {
         $this->value = $value;
         $this->type = $type;
+        $this->country = $country;
     }
 }

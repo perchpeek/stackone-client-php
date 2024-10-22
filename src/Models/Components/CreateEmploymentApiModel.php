@@ -116,24 +116,6 @@ class CreateEmploymentApiModel
     public ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null;
 
     /**
-     * The created_at date
-     *
-     * @var ?\DateTime $createdAt
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $createdAt = null;
-
-    /**
-     * The updated_at date
-     *
-     * @var ?\DateTime $updatedAt
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $updatedAt = null;
-
-    /**
      * @param  ?string  $id
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $employeeId
@@ -145,10 +127,8 @@ class CreateEmploymentApiModel
      * @param  ?\DateTime  $effectiveDate
      * @param  ?CreateEmploymentApiModelEmploymentType  $employmentType
      * @param  ?CreateEmploymentApiModelEmploymentContractType  $employmentContractType
-     * @param  ?\DateTime  $createdAt
-     * @param  ?\DateTime  $updatedAt
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
@@ -161,7 +141,5 @@ class CreateEmploymentApiModel
         $this->effectiveDate = $effectiveDate;
         $this->employmentType = $employmentType;
         $this->employmentContractType = $employmentContractType;
-        $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
     }
 }

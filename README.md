@@ -194,7 +194,9 @@ if ($response->employeesPaginated !== null) {
 * [listEmployments](docs/sdks/hris/README.md#listemployments) - List Employments
 * [getEmployment](docs/sdks/hris/README.md#getemployment) - Get Employment
 * [listEmployeeEmployments](docs/sdks/hris/README.md#listemployeeemployments) - List Employee Employments
+* [createEmployeeEmployment](docs/sdks/hris/README.md#createemployeeemployment) - Create Employee Employment
 * [getEmployeeEmployment](docs/sdks/hris/README.md#getemployeeemployment) - Get Employee Employment
+* [updateEmployeeEmployment](docs/sdks/hris/README.md#updateemployeeemployment) - Update Employee Employment
 * [listLocations](docs/sdks/hris/README.md#listlocations) - List locations
 * [getLocation](docs/sdks/hris/README.md#getlocation) - Get Location
 * [listTimeOffRequests](docs/sdks/hris/README.md#listtimeoffrequests) - List time off requests
@@ -282,6 +284,10 @@ if ($response->employeesPaginated !== null) {
 
 * [proxyRequest](docs/sdks/proxy/README.md#proxyrequest) - Proxy Request
 
+
+### [webhooks](docs/sdks/webhooks/README.md)
+
+* [create](docs/sdks/webhooks/README.md#create)
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

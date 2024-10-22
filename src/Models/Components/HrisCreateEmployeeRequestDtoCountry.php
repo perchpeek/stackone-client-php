@@ -15,27 +15,27 @@ class HrisCreateEmployeeRequestDtoCountry
     /**
      * The ISO3166-1 Alpha2 Code of the Country
      *
-     * @var ?HrisCreateEmployeeRequestDtoHomeLocationValue $value
+     * @var ?HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue $value
      */
     #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocationValue|null')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue|null')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?HrisCreateEmployeeRequestDtoHomeLocationValue $value = null;
+    public ?HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue $value = null;
 
     /**
      *
-     * @var string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocation4|array<mixed>|null $sourceValue
+     * @var string|float|bool|HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array<mixed>|null $sourceValue
      */
     #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoSourceValueHomeLocation4|array<mixed>')]
+    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array<mixed>')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocation4|array|null $sourceValue = null;
+    public string|float|bool|HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array|null $sourceValue = null;
 
     /**
-     * @param  ?HrisCreateEmployeeRequestDtoHomeLocationValue  $value
-     * @param  string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocation4|array<mixed>|null  $sourceValue
+     * @param  ?HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue  $value
+     * @param  string|float|bool|HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?HrisCreateEmployeeRequestDtoHomeLocationValue $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocation4|array|null $sourceValue = null)
+    public function __construct(?HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

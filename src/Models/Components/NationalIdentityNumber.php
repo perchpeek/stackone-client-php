@@ -30,12 +30,24 @@ class NationalIdentityNumber
     public ?EmployeeType $type = null;
 
     /**
+     * The country code
+     *
+     * @var ?EmployeeNationalIdentityNumberCountry $country
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('country')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeNationalIdentityNumberCountry|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?EmployeeNationalIdentityNumberCountry $country = null;
+
+    /**
      * @param  ?string  $value
      * @param  ?EmployeeType  $type
+     * @param  ?EmployeeNationalIdentityNumberCountry  $country
      */
-    public function __construct(?string $value = null, ?EmployeeType $type = null)
+    public function __construct(?string $value = null, ?EmployeeType $type = null, ?EmployeeNationalIdentityNumberCountry $country = null)
     {
         $this->value = $value;
         $this->type = $type;
+        $this->country = $country;
     }
 }
