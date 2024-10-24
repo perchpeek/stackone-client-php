@@ -1217,3 +1217,4 @@ The file format of the file, expressed as a file extension
 | `Movie`                   | movie                     |
 | `Smv`                     | smv                       |
 | `Ice`                     | ice                       |
+| `Mht`                     | mht                       |

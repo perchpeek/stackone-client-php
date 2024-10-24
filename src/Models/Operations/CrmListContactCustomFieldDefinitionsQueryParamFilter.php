@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-/** LmsListAssignmentsQueryParamFilter - LMS Assignment Filter */
-class LmsListAssignmentsQueryParamFilter
+/** CrmListContactCustomFieldDefinitionsQueryParamFilter - Filter parameters that allow greater customisation of the list response */
+class CrmListContactCustomFieldDefinitionsQueryParamFilter
 {
     /**
      * Use a string with a date to only select results updated after that given date
@@ -21,20 +21,10 @@ class LmsListAssignmentsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * Filter to select assignment by completed status
-     *
-     * @var ?bool $completed
-     */
-    #[SpeakeasyMetadata('queryParam:name=completed')]
-    public ?bool $completed = null;
-
-    /**
      * @param  ?string  $updatedAfter
-     * @param  ?bool  $completed
      */
-    public function __construct(?string $updatedAfter = null, ?bool $completed = null)
+    public function __construct(?string $updatedAfter = null)
     {
         $this->updatedAfter = $updatedAfter;
-        $this->completed = $completed;
     }
 }

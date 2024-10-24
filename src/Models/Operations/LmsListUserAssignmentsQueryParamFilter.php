@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-/** LmsListUserAssignmentsQueryParamFilter - Filter parameters that allow greater customisation of the list response */
+/** LmsListUserAssignmentsQueryParamFilter - LMS Assignment Filter */
 class LmsListUserAssignmentsQueryParamFilter
 {
     /**
@@ -21,10 +21,20 @@ class LmsListUserAssignmentsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * Filter to select assignment by completed status
+     *
+     * @var ?bool $completed
      */
-    public function __construct(?string $updatedAfter = null)
+    #[SpeakeasyMetadata('queryParam:name=completed')]
+    public ?bool $completed = null;
+
+    /**
+     * @param  ?string  $updatedAfter
+     * @param  ?bool  $completed
+     */
+    public function __construct(?string $updatedAfter = null, ?bool $completed = null)
     {
         $this->updatedAfter = $updatedAfter;
+        $this->completed = $completed;
     }
 }

@@ -8,8 +8,8 @@ sources:
             - latest
     stackone-specs:
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:e39dc499bd4f7bf90c1303a85c8db3e4384c43f07534c94318060f757d78df89
-        sourceBlobDigest: sha256:9271988ef570b3576a487e576bd25a7e20eee4949599a414770e0d7117eb8fd6
+        sourceRevisionDigest: sha256:1557f3e0288e0d686e3dbffbd6639635c5a97b3032da79d8caa2e118c19bdcb6
+        sourceBlobDigest: sha256:1638ae8dd386735c28af116be1c90bde00ff539eae0d579a4d356f6c123f8823
         tags:
             - latest
             - main
@@ -17,8 +17,8 @@ targets:
     stack-one:
         source: stackone-specs
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:e39dc499bd4f7bf90c1303a85c8db3e4384c43f07534c94318060f757d78df89
-        sourceBlobDigest: sha256:9271988ef570b3576a487e576bd25a7e20eee4949599a414770e0d7117eb8fd6
+        sourceRevisionDigest: sha256:1557f3e0288e0d686e3dbffbd6639635c5a97b3032da79d8caa2e118c19bdcb6
+        sourceBlobDigest: sha256:1638ae8dd386735c28af116be1c90bde00ff539eae0d579a4d356f6c123f8823
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

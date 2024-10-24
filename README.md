@@ -168,6 +168,8 @@ if ($response->employeesPaginated !== null) {
 * [getAccount](docs/sdks/crm/README.md#getaccount) - Get Account
 * [listLists](docs/sdks/crm/README.md#listlists) - Get all Lists
 * [getList](docs/sdks/crm/README.md#getlist) - Get List
+* [listContactCustomFieldDefinitions](docs/sdks/crm/README.md#listcontactcustomfielddefinitions) - List Contact Custom Field Definitions
+* [getContactCustomFieldDefinition](docs/sdks/crm/README.md#getcontactcustomfielddefinition) - Get Contact Custom Field Definition
 
 ### [hris](docs/sdks/hris/README.md)
 
