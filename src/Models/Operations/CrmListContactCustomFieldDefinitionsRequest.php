@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-class LmsListAssignmentsRequest
+class CrmListContactCustomFieldDefinitionsRequest
 {
     /**
      * The account identifier
@@ -32,7 +32,7 @@ class LmsListAssignmentsRequest
      *
      * @var ?array<string, mixed> $proxy
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=proxy')]
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=proxy')]
     public ?array $proxy = null;
 
     /**
@@ -44,12 +44,12 @@ class LmsListAssignmentsRequest
     public ?string $fields = null;
 
     /**
-     * LMS Assignment Filter
+     * Filter parameters that allow greater customisation of the list response
      *
-     * @var ?LmsListAssignmentsQueryParamFilter $filter
+     * @var ?CrmListContactCustomFieldDefinitionsQueryParamFilter $filter
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=filter')]
-    public ?LmsListAssignmentsQueryParamFilter $filter = null;
+    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    public ?CrmListContactCustomFieldDefinitionsQueryParamFilter $filter = null;
 
     /**
      * The page number of the results to fetch
@@ -86,35 +86,27 @@ class LmsListAssignmentsRequest
     public ?string $updatedAfter = null;
 
     /**
-     * The user ID associated with this assignment
+     * The sync token to select the only updated results
      *
-     * @var ?string $userId
+     * @var ?string $syncToken
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=user_id')]
-    public ?string $userId = null;
-
-    /**
-     * Provider's unique identifier of the user related to the assignment
-     *
-     * @var ?string $remoteUserId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=remote_user_id')]
-    public ?string $remoteUserId = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sync_token')]
+    public ?string $syncToken = null;
 
     /**
      * @param  string  $xAccountId
      * @param  ?bool  $raw
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
-     * @param  ?LmsListAssignmentsQueryParamFilter  $filter
+     * @param  ?CrmListContactCustomFieldDefinitionsQueryParamFilter  $filter
      * @param  ?string  $page
      * @param  ?string  $pageSize
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
-     * @param  ?string  $userId
-     * @param  ?string  $remoteUserId
+     * @param  ?string  $syncToken
      */
-    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?LmsListAssignmentsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $userId = null, ?string $remoteUserId = null, ?bool $raw = false, ?string $pageSize = '25')
+    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?CrmListContactCustomFieldDefinitionsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?bool $raw = false, ?string $pageSize = '25')
     {
         $this->xAccountId = $xAccountId;
         $this->raw = $raw;
@@ -125,7 +117,6 @@ class LmsListAssignmentsRequest
         $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
-        $this->userId = $userId;
-        $this->remoteUserId = $remoteUserId;
+        $this->syncToken = $syncToken;
     }
 }
