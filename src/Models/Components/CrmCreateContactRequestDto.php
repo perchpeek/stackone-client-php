@@ -79,6 +79,16 @@ class CrmCreateContactRequestDto
     public ?array $accountIds = null;
 
     /**
+     * Contact custom fields
+     *
+     * @var ?array<ContactsCustomFields> $customFields
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContactsCustomFields>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $customFields = null;
+
+    /**
      * Value to pass through to the provider
      *
      * @var ?array<string, mixed> $passthrough
@@ -96,9 +106,10 @@ class CrmCreateContactRequestDto
      * @param  ?array<string>  $phoneNumbers
      * @param  ?array<string>  $dealIds
      * @param  ?array<string>  $accountIds
+     * @param  ?array<ContactsCustomFields>  $customFields
      * @param  ?array<string, mixed>  $passthrough
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $dealIds = null, ?array $accountIds = null, ?array $passthrough = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $dealIds = null, ?array $accountIds = null, ?array $customFields = null, ?array $passthrough = null)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -107,6 +118,7 @@ class CrmCreateContactRequestDto
         $this->phoneNumbers = $phoneNumbers;
         $this->dealIds = $dealIds;
         $this->accountIds = $accountIds;
+        $this->customFields = $customFields;
         $this->passthrough = $passthrough;
     }
 }

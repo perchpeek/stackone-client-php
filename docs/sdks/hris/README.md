@@ -301,6 +301,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
                 sourceValue: 'Permanent',
             ),
             employmentContractType: new Components\CreateEmploymentApiModelEmploymentContractType(),
+            timeWorked: 'P0Y0M0DT8H0M0S',
         ),
     ],
     customFields: [
@@ -540,6 +541,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
                 sourceValue: 'Permanent',
             ),
             employmentContractType: new Components\CreateEmploymentApiModelEmploymentContractType(),
+            timeWorked: 'P0Y0M0DT8H0M0S',
         ),
     ],
     customFields: [
@@ -1527,7 +1529,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $request = new Operations\HrisListEmploymentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
     filter: new Operations\HrisListEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1584,7 +1586,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\HrisGetEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
     expand: 'groups',
 );
 
@@ -1638,7 +1640,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\HrisListEmployeeEmploymentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
     filter: new Operations\HrisListEmployeeEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1716,6 +1718,7 @@ $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
         sourceValue: 'Permanent',
     ),
     employmentContractType: new Components\HrisCreateEmploymentRequestDtoEmploymentContractType(),
+    timeWorked: 'P0Y0M0DT8H0M0S',
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
@@ -1777,7 +1780,7 @@ $request = new Operations\HrisGetEmployeeEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
     expand: 'groups',
 );
 
@@ -1852,6 +1855,7 @@ $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
         sourceValue: 'Permanent',
     ),
     employmentContractType: new Components\HrisCreateEmploymentRequestDtoEmploymentContractType(),
+    timeWorked: 'P0Y0M0DT8H0M0S',
     passthrough: [
         'other_known_names' => 'John Doe',
     ],

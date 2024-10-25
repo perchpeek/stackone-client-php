@@ -111,6 +111,16 @@ $crmCreateContactRequestDto = new Components\CrmCreateContactRequestDto(
         'account-123',
         'account-456',
     ],
+    customFields: [
+        new Components\ContactsCustomFields(
+            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Training Completion Status',
+            value: 'Completed',
+            valueId: 'value_456',
+            remoteValueId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        ),
+    ],
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
@@ -236,6 +246,16 @@ $crmCreateContactRequestDto = new Components\CrmCreateContactRequestDto(
     accountIds: [
         'account-123',
         'account-456',
+    ],
+    customFields: [
+        new Components\ContactsCustomFields(
+            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Training Completion Status',
+            value: 'Completed',
+            valueId: 'value_456',
+            remoteValueId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        ),
     ],
     passthrough: [
         'other_known_names' => 'John Doe',

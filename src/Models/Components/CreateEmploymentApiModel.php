@@ -116,6 +116,15 @@ class CreateEmploymentApiModel
     public ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null;
 
     /**
+     * The time worked for the employee in ISO 8601 duration format
+     *
+     * @var ?string $timeWorked
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('time_worked')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $timeWorked = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $employeeId
@@ -127,8 +136,9 @@ class CreateEmploymentApiModel
      * @param  ?\DateTime  $effectiveDate
      * @param  ?CreateEmploymentApiModelEmploymentType  $employmentType
      * @param  ?CreateEmploymentApiModelEmploymentContractType  $employmentContractType
+     * @param  ?string  $timeWorked
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?string $timeWorked = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
@@ -141,5 +151,6 @@ class CreateEmploymentApiModel
         $this->effectiveDate = $effectiveDate;
         $this->employmentType = $employmentType;
         $this->employmentContractType = $employmentContractType;
+        $this->timeWorked = $timeWorked;
     }
 }
