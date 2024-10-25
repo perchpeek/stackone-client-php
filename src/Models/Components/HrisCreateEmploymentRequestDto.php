@@ -116,6 +116,15 @@ class HrisCreateEmploymentRequestDto
     public ?HrisCreateEmploymentRequestDtoEmploymentContractType $employmentContractType = null;
 
     /**
+     * The time worked for the employee in ISO 8601 duration format
+     *
+     * @var ?string $timeWorked
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('time_worked')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $timeWorked = null;
+
+    /**
      * Value to pass through to the provider
      *
      * @var ?array<string, mixed> $passthrough
@@ -137,9 +146,10 @@ class HrisCreateEmploymentRequestDto
      * @param  ?\DateTime  $effectiveDate
      * @param  ?HrisCreateEmploymentRequestDtoEmploymentType  $employmentType
      * @param  ?HrisCreateEmploymentRequestDtoEmploymentContractType  $employmentContractType
+     * @param  ?string  $timeWorked
      * @param  ?array<string, mixed>  $passthrough
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?HrisCreateEmploymentRequestDtoPayPeriod $payPeriod = null, ?HrisCreateEmploymentRequestDtoPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?HrisCreateEmploymentRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmploymentRequestDtoEmploymentContractType $employmentContractType = null, ?array $passthrough = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?HrisCreateEmploymentRequestDtoPayPeriod $payPeriod = null, ?HrisCreateEmploymentRequestDtoPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?HrisCreateEmploymentRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmploymentRequestDtoEmploymentContractType $employmentContractType = null, ?string $timeWorked = null, ?array $passthrough = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
@@ -152,6 +162,7 @@ class HrisCreateEmploymentRequestDto
         $this->effectiveDate = $effectiveDate;
         $this->employmentType = $employmentType;
         $this->employmentContractType = $employmentContractType;
+        $this->timeWorked = $timeWorked;
         $this->passthrough = $passthrough;
     }
 }
