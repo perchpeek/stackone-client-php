@@ -141,6 +141,24 @@ class Assignment
     public ?array $learningObjectType = null;
 
     /**
+     * The user ID associated with this assignment
+     *
+     * @var ?string $userId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('user_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $userId = null;
+
+    /**
+     * Provider's unique identifier of the user related to the assignment
+     *
+     * @var ?string $remoteUserId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('remote_user_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteUserId = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
@@ -155,8 +173,10 @@ class Assignment
      * @param  ?string  $dueDate
      * @param  ?array<AssignmentStatusEnum>  $status
      * @param  ?array<LearningObjectTypeEnum>  $learningObjectType
+     * @param  ?string  $userId
+     * @param  ?string  $remoteUserId
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?array $learningObjectType = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?array $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -172,5 +192,7 @@ class Assignment
         $this->dueDate = $dueDate;
         $this->status = $status;
         $this->learningObjectType = $learningObjectType;
+        $this->userId = $userId;
+        $this->remoteUserId = $remoteUserId;
     }
 }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 3759371f-a095-4585-b437-50529a0eb248
 management:
-  docChecksum: 6c3481e03acfe87993c1d1efc3ae0da4
+  docChecksum: 34a70ed0d6251757843df9279bd88d6d
   docVersion: 1.0.0
   speakeasyVersion: 1.411.1
   generationVersion: 2.436.1
-  releaseVersion: 0.13.0
-  configChecksum: 7c94cfa78ac8ce2c097d025fbe30dc3d
+  releaseVersion: 0.15.0
+  configChecksum: d6e2af27ec94abbf0faa26edd31ba1c6
   repoURL: https://github.com/StackOneHQ/stackone-client-php.git
   installationURL: https://github.com/StackOneHQ/stackone-client-php
   published: true
@@ -291,6 +291,7 @@ generatedFiles:
   - docs/Models/Components/CustomFieldDefinitionType.md
   - docs/Models/Components/CustomFieldDefinitionValue.md
   - docs/Models/Components/CustomFieldDefinitionsPaginated.md
+  - docs/Models/Components/DeleteResult.md
   - docs/Models/Components/Department.md
   - docs/Models/Components/DepartmentResult.md
   - docs/Models/Components/DepartmentsPaginated.md
@@ -1178,6 +1179,8 @@ generatedFiles:
   - docs/Models/Operations/LmsCreateContentResponse.md
   - docs/Models/Operations/LmsCreateUserCompletionRequest.md
   - docs/Models/Operations/LmsCreateUserCompletionResponse.md
+  - docs/Models/Operations/LmsDeleteContentRequest.md
+  - docs/Models/Operations/LmsDeleteContentResponse.md
   - docs/Models/Operations/LmsGetAssignmentRequest.md
   - docs/Models/Operations/LmsGetAssignmentResponse.md
   - docs/Models/Operations/LmsGetCategoryRequest.md
@@ -1548,6 +1551,7 @@ generatedFiles:
   - src/Models/Components/CustomFieldDefinitionType.php
   - src/Models/Components/CustomFieldDefinitionValue.php
   - src/Models/Components/CustomFieldDefinitionsPaginated.php
+  - src/Models/Components/DeleteResult.php
   - src/Models/Components/Department.php
   - src/Models/Components/DepartmentResult.php
   - src/Models/Components/DepartmentsPaginated.php
@@ -2325,6 +2329,8 @@ generatedFiles:
   - src/Models/Operations/LmsCreateContentResponse.php
   - src/Models/Operations/LmsCreateUserCompletionRequest.php
   - src/Models/Operations/LmsCreateUserCompletionResponse.php
+  - src/Models/Operations/LmsDeleteContentRequest.php
+  - src/Models/Operations/LmsDeleteContentResponse.php
   - src/Models/Operations/LmsGetAssignmentRequest.php
   - src/Models/Operations/LmsGetAssignmentResponse.php
   - src/Models/Operations/LmsGetCategoryRequest.php
@@ -4265,7 +4271,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}, {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}]}
+          application/json: {"data": [{"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}, {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}
   lms_get_user_assignment:
     speakeasy-default-lms-get-user-assignment:
       parameters:
@@ -4277,7 +4283,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}}
   lms_batch_upsert_content:
     speakeasy-default-lms-batch-upsert-content:
       parameters:
@@ -4501,7 +4507,7 @@ examples:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z"}}
+          application/json: {"data": {"id": "123456", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "course_id": "16873-ENG-1", "remote_course_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "learning_object_id": "e3gd34-23tr21-er234-345er56", "remote_learning_object_id": "e3cb55bf-aa84-466e-a6c1-b8302b257a49", "learning_object_external_reference": "e3gd34-23tr21-er234-345er56", "progress": "40", "updated_at": "2021-07-21T14:00:00.000Z", "created_at": "2021-07-21T14:00:00.000Z", "due_date": "2021-07-21T14:00:00.000Z", "user_id": "c28xyrc55866bvuv", "remote_user_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}}
   hris_list_cost_center_groups:
     "":
       parameters:
@@ -4589,3 +4595,13 @@ examples:
       responses:
         "200":
           application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "options": ["Not Started", "In Progress", "Completed", "Overdue"]}}
+  lms_delete_content:
+    speakeasy-default-lms-delete-content:
+      parameters:
+        path:
+          id: "<id>"
+        header:
+          x-account-id: "<id>"
+      responses:
+        "200":
+          application/json: {"statusCode": 200, "message": "Record deleted successfully.", "timestamp": "2021-01-01T01:01:01.000Z"}
