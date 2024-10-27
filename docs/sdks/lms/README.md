@@ -14,6 +14,7 @@
 * [upsertContent](#upsertcontent) - Upsert Content
 * [createContent](#createcontent) - Create Content
 * [getContent](#getcontent) - Get Content
+* [deleteContent](#deletecontent) - Delete Content
 * [updateContent](#updatecontent) - Update Content
 * [listUserCompletions](#listusercompletions) - List User Completions
 * [createUserCompletion](#createusercompletion) - Create User Completion
@@ -166,8 +167,6 @@ $request = new Operations\LmsListUserAssignmentsRequest(
     filter: new Operations\LmsListUserAssignmentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
-    userId: 'c28xyrc55866bvuv',
-    remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
 );
 
 $response = $sdk->lms->listUserAssignments(
@@ -602,6 +601,57 @@ if ($response->contentResult !== null) {
 ### Response
 
 **[?Operations\LmsGetContentResponse](../../Models/Operations/LmsGetContentResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## deleteContent
+
+Delete Content
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+
+
+$response = $sdk->lms->deleteContent(
+    xAccountId: '<id>',
+    id: '<id>'
+
+);
+
+if ($response->deleteResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `xAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
+| `id`                   | *string*               | :heavy_check_mark:     | N/A                    |
+
+### Response
+
+**[?Operations\LmsDeleteContentResponse](../../Models/Operations/LmsDeleteContentResponse.md)**
 
 ### Errors
 
@@ -1323,8 +1373,6 @@ $request = new Operations\LmsListAssignmentsRequest(
     filter: new Operations\LmsListAssignmentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
-    userId: 'c28xyrc55866bvuv',
-    remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
 );
 
 $response = $sdk->lms->listAssignments(

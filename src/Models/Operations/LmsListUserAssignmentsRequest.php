@@ -93,22 +93,6 @@ class LmsListUserAssignmentsRequest
     public ?string $updatedAfter = null;
 
     /**
-     * The user ID associated with this assignment
-     *
-     * @var ?string $userId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=user_id')]
-    public ?string $userId = null;
-
-    /**
-     * Provider's unique identifier of the user related to the assignment
-     *
-     * @var ?string $remoteUserId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=remote_user_id')]
-    public ?string $remoteUserId = null;
-
-    /**
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  ?bool  $raw
@@ -119,10 +103,8 @@ class LmsListUserAssignmentsRequest
      * @param  ?string  $pageSize
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
-     * @param  ?string  $userId
-     * @param  ?string  $remoteUserId
      */
-    public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?LmsListUserAssignmentsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $userId = null, ?string $remoteUserId = null, ?bool $raw = false, ?string $pageSize = '25')
+    public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?LmsListUserAssignmentsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?bool $raw = false, ?string $pageSize = '25')
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
@@ -134,7 +116,5 @@ class LmsListUserAssignmentsRequest
         $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
-        $this->userId = $userId;
-        $this->remoteUserId = $remoteUserId;
     }
 }

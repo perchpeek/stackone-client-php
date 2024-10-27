@@ -238,6 +238,7 @@ if ($response->employeesPaginated !== null) {
 * [upsertContent](docs/sdks/lms/README.md#upsertcontent) - Upsert Content
 * [createContent](docs/sdks/lms/README.md#createcontent) - Create Content
 * [getContent](docs/sdks/lms/README.md#getcontent) - Get Content
+* [deleteContent](docs/sdks/lms/README.md#deletecontent) - Delete Content
 * [updateContent](docs/sdks/lms/README.md#updatecontent) - Update Content
 * [listUserCompletions](docs/sdks/lms/README.md#listusercompletions) - List User Completions
 * [createUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
