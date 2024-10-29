@@ -61,17 +61,27 @@ class StackoneListLinkedAccountsRequest
     public ?array $accountIds = null;
 
     /**
+     * The status of the results to fetch
+     *
+     * @var ?array<string> $status
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
+    public ?array $status = null;
+
+    /**
      * @param  ?array<string>  $providers
      * @param  ?array<string>  $accountIds
+     * @param  ?array<string>  $status
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @param  ?string  $provider
      * @param  ?string  $originOwnerId
      */
-    public function __construct(?array $providers = null, ?array $accountIds = null, ?float $page = null, ?string $provider = null, ?string $originOwnerId = null, ?float $pageSize = 25)
+    public function __construct(?array $providers = null, ?array $accountIds = null, ?array $status = null, ?float $page = null, ?string $provider = null, ?string $originOwnerId = null, ?float $pageSize = 25)
     {
         $this->providers = $providers;
         $this->accountIds = $accountIds;
+        $this->status = $status;
         $this->page = $page;
         $this->pageSize = $pageSize;
         $this->provider = $provider;

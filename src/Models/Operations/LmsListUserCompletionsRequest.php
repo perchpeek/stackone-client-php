@@ -51,7 +51,7 @@ class LmsListUserCompletionsRequest
     public ?string $fields = null;
 
     /**
-     * Filter parameters that allow greater customisation of the list response
+     * LMS Completions Filter
      *
      * @var ?LmsListUserCompletionsQueryParamFilter $filter
      */

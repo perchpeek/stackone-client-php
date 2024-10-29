@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 3759371f-a095-4585-b437-50529a0eb248
 management:
-  docChecksum: 34a70ed0d6251757843df9279bd88d6d
+  docChecksum: 1ced6248d3a5705ca1be03fd53017368
   docVersion: 1.0.0
   speakeasyVersion: 1.411.1
   generationVersion: 2.436.1
-  releaseVersion: 0.17.0
-  configChecksum: 45fd8b4f092f4a1a5ee33b466fd27c89
+  releaseVersion: 0.19.0
+  configChecksum: d7a323a3979f18fc224f9e84c668142a
   repoURL: https://github.com/StackOneHQ/stackone-client-php.git
   installationURL: https://github.com/StackOneHQ/stackone-client-php
   published: true
@@ -720,6 +720,10 @@ generatedFiles:
   - docs/Models/Components/LocationType.md
   - docs/Models/Components/MaritalStatus.md
   - docs/Models/Components/MarketingCreateContentBlocksRequestDto.md
+  - docs/Models/Components/MarketingCreateContentBlocksRequestDtoSourceValue.md
+  - docs/Models/Components/MarketingCreateContentBlocksRequestDtoSourceValue4.md
+  - docs/Models/Components/MarketingCreateContentBlocksRequestDtoType.md
+  - docs/Models/Components/MarketingCreateContentBlocksRequestDtoValue.md
   - docs/Models/Components/MarketingCreateEmailTemplateRequestDto.md
   - docs/Models/Components/MarketingCreateInAppTemplateRequestDto.md
   - docs/Models/Components/MarketingCreatePushTemplateRequestDto.md
@@ -1892,6 +1896,9 @@ generatedFiles:
   - src/Models/Components/LocationType.php
   - src/Models/Components/MaritalStatus.php
   - src/Models/Components/MarketingCreateContentBlocksRequestDto.php
+  - src/Models/Components/MarketingCreateContentBlocksRequestDtoSourceValue4.php
+  - src/Models/Components/MarketingCreateContentBlocksRequestDtoType.php
+  - src/Models/Components/MarketingCreateContentBlocksRequestDtoValue.php
   - src/Models/Components/MarketingCreateEmailTemplateRequestDto.php
   - src/Models/Components/MarketingCreateInAppTemplateRequestDto.php
   - src/Models/Components/MarketingCreatePushTemplateRequestDto.php
@@ -4204,7 +4211,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"type": {"value": "html", "source_value": "text"}, "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "201":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
@@ -4228,7 +4235,7 @@ examples:
         header:
           x-account-id: "<id>"
       requestBody:
-        application/json: {"passthrough": {"other_known_names": "John Doe"}}
+        application/json: {"type": {"value": "html", "source_value": "text"}, "passthrough": {"other_known_names": "John Doe"}}
       responses:
         "200":
           application/json: {"statusCode": 201, "message": "Record created successfully.", "timestamp": "2021-01-01T01:01:01.000Z", "data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "external_reference": "SOFTWARE-ENG-LV1-TRAINING-VIDEO-1"}}
