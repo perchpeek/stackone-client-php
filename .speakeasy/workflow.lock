@@ -8,8 +8,8 @@ sources:
             - latest
     stackone-specs:
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:adc811db53466b5d20186348c39d63a4bc3ecb7e44d9e5315cc0ec35aae0a084
-        sourceBlobDigest: sha256:da183657d2f9502f7c95b3e7e8711f79bb32b5e05d3d39282b65691a41871b9d
+        sourceRevisionDigest: sha256:4bca5a895bf6b02994c7632693bbbf6a35bfa85484e01038047089d214c9fcfc
+        sourceBlobDigest: sha256:5a1b7a678c6179efc59af690ffb37543d5a3facb6d47cf714d40b643858597f8
         tags:
             - latest
             - main
@@ -17,8 +17,10 @@ targets:
     stack-one:
         source: stackone-specs
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:adc811db53466b5d20186348c39d63a4bc3ecb7e44d9e5315cc0ec35aae0a084
-        sourceBlobDigest: sha256:da183657d2f9502f7c95b3e7e8711f79bb32b5e05d3d39282b65691a41871b9d
+        sourceRevisionDigest: sha256:4bca5a895bf6b02994c7632693bbbf6a35bfa85484e01038047089d214c9fcfc
+        sourceBlobDigest: sha256:5a1b7a678c6179efc59af690ffb37543d5a3facb6d47cf714d40b643858597f8
+        codeSamplesNamespace: stackone-specs-code-samples
+        codeSamplesRevisionDigest: sha256:f0beecb7159776f59e568cf20351ca29b4c2c4bb0e0feaea71d11ba3d0c2dc6d
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -42,3 +44,7 @@ workflow:
                 packagist:
                     username: $PACKAGIST_USERNAME
                     token: $PACKAGIST_TOKEN
+            codeSamples:
+                output: ""
+                registry:
+                    location: registry.speakeasyapi.dev/stackone/stackone/stackone-specs-code-samples

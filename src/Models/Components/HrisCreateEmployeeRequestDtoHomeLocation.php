@@ -78,12 +78,12 @@ class HrisCreateEmployeeRequestDtoHomeLocation
     /**
      * The country code
      *
-     * @var ?HrisCreateEmployeeRequestDtoCountry $country
+     * @var ?HrisCreateEmployeeRequestDtoHomeLocationCountry $country
      */
     #[\JMS\Serializer\Annotation\SerializedName('country')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoCountry|null')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocationCountry|null')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?HrisCreateEmployeeRequestDtoCountry $country = null;
+    public ?HrisCreateEmployeeRequestDtoHomeLocationCountry $country = null;
 
     /**
      * Value to pass through to the provider
@@ -113,11 +113,11 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      * @param  ?string  $street2
      * @param  ?string  $city
      * @param  ?string  $zipCode
-     * @param  ?HrisCreateEmployeeRequestDtoCountry  $country
+     * @param  ?HrisCreateEmployeeRequestDtoHomeLocationCountry  $country
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?State  $state
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $zipCode = null, ?HrisCreateEmployeeRequestDtoCountry $country = null, ?array $passthrough = null, ?State $state = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $zipCode = null, ?HrisCreateEmployeeRequestDtoHomeLocationCountry $country = null, ?array $passthrough = null, ?State $state = null)
     {
         $this->id = $id;
         $this->name = $name;

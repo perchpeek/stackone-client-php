@@ -1222,4 +1222,5 @@ enum AtsDocumentApiModelValue: string
     case Movie = 'movie';
     case Smv = 'smv';
     case Ice = 'ice';
+    case Mht = 'mht';
 }

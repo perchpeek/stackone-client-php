@@ -116,22 +116,13 @@ class CreateEmploymentApiModel
     public ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null;
 
     /**
-     * The created_at date
+     * The time worked for the employee in ISO 8601 duration format
      *
-     * @var ?\DateTime $createdAt
+     * @var ?string $timeWorked
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
+    #[\JMS\Serializer\Annotation\SerializedName('time_worked')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $createdAt = null;
-
-    /**
-     * The updated_at date
-     *
-     * @var ?\DateTime $updatedAt
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $updatedAt = null;
+    public ?string $timeWorked = null;
 
     /**
      * @param  ?string  $id
@@ -145,10 +136,9 @@ class CreateEmploymentApiModel
      * @param  ?\DateTime  $effectiveDate
      * @param  ?CreateEmploymentApiModelEmploymentType  $employmentType
      * @param  ?CreateEmploymentApiModelEmploymentContractType  $employmentContractType
-     * @param  ?\DateTime  $createdAt
-     * @param  ?\DateTime  $updatedAt
+     * @param  ?string  $timeWorked
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?string $timeWorked = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
@@ -161,7 +151,6 @@ class CreateEmploymentApiModel
         $this->effectiveDate = $effectiveDate;
         $this->employmentType = $employmentType;
         $this->employmentContractType = $employmentContractType;
-        $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
+        $this->timeWorked = $timeWorked;
     }
 }

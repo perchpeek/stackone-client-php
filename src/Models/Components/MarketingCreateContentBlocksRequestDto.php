@@ -38,6 +38,16 @@ class MarketingCreateContentBlocksRequestDto
     public ?string $content = null;
 
     /**
+     * Stackone enum identifying the type of content block.
+     *
+     * @var ?MarketingCreateContentBlocksRequestDtoType $type
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('type')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\MarketingCreateContentBlocksRequestDtoType|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?MarketingCreateContentBlocksRequestDtoType $type = null;
+
+    /**
      * Value to pass through to the provider
      *
      * @var ?array<string, mixed> $passthrough
@@ -51,13 +61,15 @@ class MarketingCreateContentBlocksRequestDto
      * @param  ?string  $name
      * @param  ?array<string>  $tags
      * @param  ?string  $content
+     * @param  ?MarketingCreateContentBlocksRequestDtoType  $type
      * @param  ?array<string, mixed>  $passthrough
      */
-    public function __construct(?string $name = null, ?array $tags = null, ?string $content = null, ?array $passthrough = null)
+    public function __construct(?string $name = null, ?array $tags = null, ?string $content = null, ?MarketingCreateContentBlocksRequestDtoType $type = null, ?array $passthrough = null)
     {
         $this->name = $name;
         $this->tags = $tags;
         $this->content = $content;
+        $this->type = $type;
         $this->passthrough = $passthrough;
     }
 }

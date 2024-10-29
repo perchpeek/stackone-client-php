@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-/** LmsListCompletionsQueryParamFilter - Filter parameters that allow greater customisation of the list response */
+/** LmsListCompletionsQueryParamFilter - LMS Completions Filter */
 class LmsListCompletionsQueryParamFilter
 {
     /**
@@ -21,10 +21,20 @@ class LmsListCompletionsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * Filter to select completions by learning object type.
+     *
+     * @var ?string $learningObjectType
      */
-    public function __construct(?string $updatedAfter = null)
+    #[SpeakeasyMetadata('queryParam:name=learning_object_type')]
+    public ?string $learningObjectType = null;
+
+    /**
+     * @param  ?string  $updatedAfter
+     * @param  ?string  $learningObjectType
+     */
+    public function __construct(?string $updatedAfter = null, ?string $learningObjectType = null)
     {
         $this->updatedAfter = $updatedAfter;
+        $this->learningObjectType = $learningObjectType;
     }
 }

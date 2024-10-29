@@ -13,6 +13,8 @@
 * [getAccount](#getaccount) - Get Account
 * [listLists](#listlists) - Get all Lists
 * [getList](#getlist) - Get List
+* [listContactCustomFieldDefinitions](#listcontactcustomfielddefinitions) - List Contact Custom Field Definitions
+* [getContactCustomFieldDefinition](#getcontactcustomfielddefinition) - Get Contact Custom Field Definition
 
 ## listContacts
 
@@ -108,6 +110,16 @@ $crmCreateContactRequestDto = new Components\CrmCreateContactRequestDto(
     accountIds: [
         'account-123',
         'account-456',
+    ],
+    customFields: [
+        new Components\ContactsCustomFields(
+            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Training Completion Status',
+            value: 'Completed',
+            valueId: 'value_456',
+            remoteValueId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        ),
     ],
     passthrough: [
         'other_known_names' => 'John Doe',
@@ -234,6 +246,16 @@ $crmCreateContactRequestDto = new Components\CrmCreateContactRequestDto(
     accountIds: [
         'account-123',
         'account-456',
+    ],
+    customFields: [
+        new Components\ContactsCustomFields(
+            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Training Completion Status',
+            value: 'Completed',
+            valueId: 'value_456',
+            remoteValueId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        ),
     ],
     passthrough: [
         'other_known_names' => 'John Doe',
@@ -479,6 +501,117 @@ if ($response->listResult !== null) {
 ### Response
 
 **[?Operations\CrmGetListResponse](../../Models/Operations/CrmGetListResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## listContactCustomFieldDefinitions
+
+List Contact Custom Field Definitions
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\CrmListContactCustomFieldDefinitionsRequest(
+    xAccountId: '<id>',
+    fields: 'id,remote_id,name,description,type,options',
+    filter: new Operations\CrmListContactCustomFieldDefinitionsQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$response = $sdk->crm->listContactCustomFieldDefinitions(
+    request: $request
+);
+
+if ($response->customFieldDefinitionsPaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                       | [Operations\CrmListContactCustomFieldDefinitionsRequest](../../Models/Operations/CrmListContactCustomFieldDefinitionsRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+
+### Response
+
+**[?Operations\CrmListContactCustomFieldDefinitionsResponse](../../Models/Operations/CrmListContactCustomFieldDefinitionsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## getContactCustomFieldDefinition
+
+Get Contact Custom Field Definition
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\CrmGetContactCustomFieldDefinitionRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,name,description,type,options',
+    filter: new Operations\CrmGetContactCustomFieldDefinitionQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$response = $sdk->crm->getContactCustomFieldDefinition(
+    request: $request
+);
+
+if ($response->customFieldDefinitionResultApiModel !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                   | [Operations\CrmGetContactCustomFieldDefinitionRequest](../../Models/Operations/CrmGetContactCustomFieldDefinitionRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
+
+### Response
+
+**[?Operations\CrmGetContactCustomFieldDefinitionResponse](../../Models/Operations/CrmGetContactCustomFieldDefinitionResponse.md)**
 
 ### Errors
 

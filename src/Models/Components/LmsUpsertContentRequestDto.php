@@ -107,13 +107,23 @@ class LmsUpsertContentRequestDto
     public bool|LmsUpsertContentRequestDtoActive2|null $active = null;
 
     /**
-     * The duration of the content following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string
+     * The duration of the content following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string or the minimum unit accepted by the provider.
      *
      * @var ?string $duration
      */
     #[\JMS\Serializer\Annotation\SerializedName('duration')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $duration = null;
+
+    /**
+     * The content launch method associated with this content
+     *
+     * @var ?ContentLaunchMethod $contentLaunchMethod
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('content_launch_method')]
+    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\ContentLaunchMethod|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?ContentLaunchMethod $contentLaunchMethod = null;
 
     /**
      * The order of the individual content within a content grouping. This is not applicable for pushing individual content.
@@ -146,10 +156,11 @@ class LmsUpsertContentRequestDto
      * @param  ?string  $coverUrl
      * @param  bool|LmsUpsertContentRequestDtoActive2|null  $active
      * @param  ?string  $duration
+     * @param  ?ContentLaunchMethod  $contentLaunchMethod
      * @param  ?float  $order
      * @param  ?array<CreateCategoriesApiModel>  $categories
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsUpsertContentRequestDtoActive2|null $active = null, ?string $duration = null, ?float $order = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsUpsertContentRequestDtoActive2|null $active = null, ?string $duration = null, ?ContentLaunchMethod $contentLaunchMethod = null, ?float $order = null, ?array $categories = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -162,6 +173,7 @@ class LmsUpsertContentRequestDto
         $this->coverUrl = $coverUrl;
         $this->active = $active;
         $this->duration = $duration;
+        $this->contentLaunchMethod = $contentLaunchMethod;
         $this->order = $order;
         $this->categories = $categories;
     }

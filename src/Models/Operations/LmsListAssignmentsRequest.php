@@ -44,7 +44,7 @@ class LmsListAssignmentsRequest
     public ?string $fields = null;
 
     /**
-     * Filter parameters that allow greater customisation of the list response
+     * LMS Assignment Filter
      *
      * @var ?LmsListAssignmentsQueryParamFilter $filter
      */

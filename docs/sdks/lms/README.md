@@ -14,6 +14,7 @@
 * [upsertContent](#upsertcontent) - Upsert Content
 * [createContent](#createcontent) - Create Content
 * [getContent](#getcontent) - Get Content
+* [deleteContent](#deletecontent) - Delete Content
 * [updateContent](#updatecontent) - Update Content
 * [listUserCompletions](#listusercompletions) - List User Completions
 * [createUserCompletion](#createusercompletion) - Create User Completion
@@ -162,7 +163,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\LmsListUserAssignmentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status',
+    fields: 'id,remote_id,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference',
     filter: new Operations\LmsListUserAssignmentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -291,6 +292,7 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
             coverUrl: 'https://www.googledrive.com/?v=16873',
             active: true,
             duration: 'P3Y6M4DT12H30M5S',
+            contentLaunchMethod: new Components\ContentLaunchMethod(),
             order: 1,
             categories: [
                 new Components\CreateCategoriesApiModel(
@@ -358,7 +360,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order,content_launch_method',
     filter: new Operations\LmsListContentQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -430,6 +432,7 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
+    contentLaunchMethod: new Components\ContentLaunchMethod(),
     order: 1,
     categories: [
         new Components\CreateCategoriesApiModel(
@@ -512,6 +515,7 @@ $lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
+    contentLaunchMethod: new Components\LmsCreateContentRequestDtoContentLaunchMethod(),
     order: 1,
     categories: [
         new Components\CreateCategoriesApiModel(
@@ -578,7 +582,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\LmsGetContentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order,content_launch_method',
 );
 
 $response = $sdk->lms->getContent(
@@ -599,6 +603,57 @@ if ($response->contentResult !== null) {
 ### Response
 
 **[?Operations\LmsGetContentResponse](../../Models/Operations/LmsGetContentResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## deleteContent
+
+Delete Content
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+
+
+$response = $sdk->lms->deleteContent(
+    xAccountId: '<id>',
+    id: '<id>'
+
+);
+
+if ($response->deleteResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `xAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
+| `id`                   | *string*               | :heavy_check_mark:     | N/A                    |
+
+### Response
+
+**[?Operations\LmsDeleteContentResponse](../../Models/Operations/LmsDeleteContentResponse.md)**
 
 ### Errors
 
@@ -647,6 +702,7 @@ $lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
+    contentLaunchMethod: new Components\LmsCreateContentRequestDtoContentLaunchMethod(),
     order: 1,
     categories: [
         new Components\CreateCategoriesApiModel(
@@ -1315,7 +1371,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $request = new Operations\LmsListAssignmentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status',
+    fields: 'id,remote_id,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference',
     filter: new Operations\LmsListAssignmentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),

@@ -58,6 +58,42 @@ class Assignment
     public ?string $remoteCourseId = null;
 
     /**
+     * The learning_object_id associated with this assignment
+     *
+     * @var ?string $learningObjectId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('learning_object_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $learningObjectId = null;
+
+    /**
+     * Provider's unique identifier of the learning object related to the assignment
+     *
+     * @var ?string $remoteLearningObjectId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('remote_learning_object_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteLearningObjectId = null;
+
+    /**
+     * The learning_object_external_reference associated with this assignment
+     *
+     * @var ?string $learningObjectExternalReference
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('learning_object_external_reference')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $learningObjectExternalReference = null;
+
+    /**
+     * The progress associated with this assigment
+     *
+     * @var ?float $progress
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('progress')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $progress = null;
+
+    /**
      * The date the assignment was last updated
      *
      * @var ?string $updatedAt
@@ -95,26 +131,68 @@ class Assignment
     public ?array $status = null;
 
     /**
+     * The learning object type of the assignment
+     *
+     * @var ?array<LearningObjectTypeEnum> $learningObjectType
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('learning_object_type')]
+    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LearningObjectTypeEnum>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $learningObjectType = null;
+
+    /**
+     * The user ID associated with this assignment
+     *
+     * @var ?string $userId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('user_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $userId = null;
+
+    /**
+     * Provider's unique identifier of the user related to the assignment
+     *
+     * @var ?string $remoteUserId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('remote_user_id')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteUserId = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $courseId
      * @param  ?string  $remoteCourseId
+     * @param  ?string  $learningObjectId
+     * @param  ?string  $remoteLearningObjectId
+     * @param  ?string  $learningObjectExternalReference
+     * @param  ?float  $progress
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
      * @param  ?string  $dueDate
      * @param  ?array<AssignmentStatusEnum>  $status
+     * @param  ?array<LearningObjectTypeEnum>  $learningObjectType
+     * @param  ?string  $userId
+     * @param  ?string  $remoteUserId
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?array $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->courseId = $courseId;
         $this->remoteCourseId = $remoteCourseId;
+        $this->learningObjectId = $learningObjectId;
+        $this->remoteLearningObjectId = $remoteLearningObjectId;
+        $this->learningObjectExternalReference = $learningObjectExternalReference;
+        $this->progress = $progress;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;
         $this->dueDate = $dueDate;
         $this->status = $status;
+        $this->learningObjectType = $learningObjectType;
+        $this->userId = $userId;
+        $this->remoteUserId = $remoteUserId;
     }
 }

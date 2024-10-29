@@ -168,6 +168,8 @@ if ($response->employeesPaginated !== null) {
 * [getAccount](docs/sdks/crm/README.md#getaccount) - Get Account
 * [listLists](docs/sdks/crm/README.md#listlists) - Get all Lists
 * [getList](docs/sdks/crm/README.md#getlist) - Get List
+* [listContactCustomFieldDefinitions](docs/sdks/crm/README.md#listcontactcustomfielddefinitions) - List Contact Custom Field Definitions
+* [getContactCustomFieldDefinition](docs/sdks/crm/README.md#getcontactcustomfielddefinition) - Get Contact Custom Field Definition
 
 ### [hris](docs/sdks/hris/README.md)
 
@@ -194,7 +196,9 @@ if ($response->employeesPaginated !== null) {
 * [listEmployments](docs/sdks/hris/README.md#listemployments) - List Employments
 * [getEmployment](docs/sdks/hris/README.md#getemployment) - Get Employment
 * [listEmployeeEmployments](docs/sdks/hris/README.md#listemployeeemployments) - List Employee Employments
+* [createEmployeeEmployment](docs/sdks/hris/README.md#createemployeeemployment) - Create Employee Employment
 * [getEmployeeEmployment](docs/sdks/hris/README.md#getemployeeemployment) - Get Employee Employment
+* [updateEmployeeEmployment](docs/sdks/hris/README.md#updateemployeeemployment) - Update Employee Employment
 * [listLocations](docs/sdks/hris/README.md#listlocations) - List locations
 * [getLocation](docs/sdks/hris/README.md#getlocation) - Get Location
 * [listTimeOffRequests](docs/sdks/hris/README.md#listtimeoffrequests) - List time off requests
@@ -234,6 +238,7 @@ if ($response->employeesPaginated !== null) {
 * [upsertContent](docs/sdks/lms/README.md#upsertcontent) - Upsert Content
 * [createContent](docs/sdks/lms/README.md#createcontent) - Create Content
 * [getContent](docs/sdks/lms/README.md#getcontent) - Get Content
+* [deleteContent](docs/sdks/lms/README.md#deletecontent) - Delete Content
 * [updateContent](docs/sdks/lms/README.md#updatecontent) - Update Content
 * [listUserCompletions](docs/sdks/lms/README.md#listusercompletions) - List User Completions
 * [createUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
@@ -282,6 +287,10 @@ if ($response->employeesPaginated !== null) {
 
 * [proxyRequest](docs/sdks/proxy/README.md#proxyrequest) - Proxy Request
 
+
+### [webhooks](docs/sdks/webhooks/README.md)
+
+* [create](docs/sdks/webhooks/README.md#create)
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

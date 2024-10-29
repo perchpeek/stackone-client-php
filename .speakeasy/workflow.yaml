@@ -20,3 +20,7 @@ targets:
             packagist:
                 username: $PACKAGIST_USERNAME
                 token: $PACKAGIST_TOKEN
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/stackone/stackone/stackone-specs-code-samples
+            blocking: false
