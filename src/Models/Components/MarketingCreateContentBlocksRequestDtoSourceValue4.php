@@ -9,9 +9,10 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-enum LearningObjectTypeEnumValue: string
+class MarketingCreateContentBlocksRequestDtoSourceValue4
 {
-    case Content = 'content';
-    case Course = 'course';
-    case Collection = 'collection';
+
+    public function __construct()
+    {
+    }
 }

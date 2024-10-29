@@ -44,7 +44,7 @@ class LmsListCompletionsRequest
     public ?string $fields = null;
 
     /**
-     * Filter parameters that allow greater customisation of the list response
+     * LMS Completions Filter
      *
      * @var ?LmsListCompletionsQueryParamFilter $filter
      */

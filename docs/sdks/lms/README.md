@@ -167,6 +167,8 @@ $request = new Operations\LmsListUserAssignmentsRequest(
     filter: new Operations\LmsListUserAssignmentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
+    userId: 'c28xyrc55866bvuv',
+    remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
 );
 
 $response = $sdk->lms->listUserAssignments(
@@ -1373,6 +1375,8 @@ $request = new Operations\LmsListAssignmentsRequest(
     filter: new Operations\LmsListAssignmentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
+    userId: 'c28xyrc55866bvuv',
+    remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
 );
 
 $response = $sdk->lms->listAssignments(

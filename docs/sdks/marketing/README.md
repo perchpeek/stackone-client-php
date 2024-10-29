@@ -1413,6 +1413,10 @@ $security = new Components\Security(
 $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $marketingCreateContentBlocksRequestDto = new Components\MarketingCreateContentBlocksRequestDto(
+    type: new Components\MarketingCreateContentBlocksRequestDtoType(
+        value: Components\MarketingCreateContentBlocksRequestDtoValue::Html,
+        sourceValue: 'text',
+    ),
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
@@ -1521,6 +1525,10 @@ $security = new Components\Security(
 $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $marketingCreateContentBlocksRequestDto = new Components\MarketingCreateContentBlocksRequestDto(
+    type: new Components\MarketingCreateContentBlocksRequestDtoType(
+        value: Components\MarketingCreateContentBlocksRequestDtoValue::Html,
+        sourceValue: 'text',
+    ),
     passthrough: [
         'other_known_names' => 'John Doe',
     ],

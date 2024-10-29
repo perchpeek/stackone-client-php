@@ -3,8 +3,8 @@
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Content`      | content        |
-| `Course`       | course         |
-| `LearningPath` | learning_path  |
+| Name         | Value        |
+| ------------ | ------------ |
+| `Content`    | content      |
+| `Course`     | course       |
+| `Collection` | collection   |

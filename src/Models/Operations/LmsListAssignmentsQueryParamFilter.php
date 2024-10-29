@@ -29,12 +29,22 @@ class LmsListAssignmentsQueryParamFilter
     public ?bool $completed = null;
 
     /**
+     * Filter to select assignment by learning object type.
+     *
+     * @var ?string $learningObjectType
+     */
+    #[SpeakeasyMetadata('queryParam:name=learning_object_type')]
+    public ?string $learningObjectType = null;
+
+    /**
      * @param  ?string  $updatedAfter
      * @param  ?bool  $completed
+     * @param  ?string  $learningObjectType
      */
-    public function __construct(?string $updatedAfter = null, ?bool $completed = null)
+    public function __construct(?string $updatedAfter = null, ?bool $completed = null, ?string $learningObjectType = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->completed = $completed;
+        $this->learningObjectType = $learningObjectType;
     }
 }
