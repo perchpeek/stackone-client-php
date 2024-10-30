@@ -8,8 +8,8 @@ sources:
             - latest
     stackone-specs:
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:4bca5a895bf6b02994c7632693bbbf6a35bfa85484e01038047089d214c9fcfc
-        sourceBlobDigest: sha256:5a1b7a678c6179efc59af690ffb37543d5a3facb6d47cf714d40b643858597f8
+        sourceRevisionDigest: sha256:7adabaf35397428abe25e9aa991c3bdaf20ab8c14ad16bc21a0e8e813372040a
+        sourceBlobDigest: sha256:2855ab0fbb5c1dd5dc17d18488b3abe1fa4fb53eda70151d9440485c4826604f
         tags:
             - latest
             - main
@@ -17,10 +17,10 @@ targets:
     stack-one:
         source: stackone-specs
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:4bca5a895bf6b02994c7632693bbbf6a35bfa85484e01038047089d214c9fcfc
-        sourceBlobDigest: sha256:5a1b7a678c6179efc59af690ffb37543d5a3facb6d47cf714d40b643858597f8
+        sourceRevisionDigest: sha256:7adabaf35397428abe25e9aa991c3bdaf20ab8c14ad16bc21a0e8e813372040a
+        sourceBlobDigest: sha256:2855ab0fbb5c1dd5dc17d18488b3abe1fa4fb53eda70151d9440485c4826604f
         codeSamplesNamespace: stackone-specs-code-samples
-        codeSamplesRevisionDigest: sha256:f0beecb7159776f59e568cf20351ca29b4c2c4bb0e0feaea71d11ba3d0c2dc6d
+        codeSamplesRevisionDigest: sha256:dcec99fd1783e29516412a68def65d337a9ed1ef2672291d3ffb92e4110a40e4
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
