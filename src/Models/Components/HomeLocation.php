@@ -17,8 +17,8 @@ class HomeLocation
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -26,8 +26,8 @@ class HomeLocation
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -35,9 +35,9 @@ class HomeLocation
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -45,8 +45,8 @@ class HomeLocation
      *
      * @var ?string $employeeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employee_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $employeeId = null;
 
     /**
@@ -54,8 +54,8 @@ class HomeLocation
      *
      * @var ?string $remoteEmployeeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_employee_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_employee_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteEmployeeId = null;
 
     /**
@@ -63,8 +63,8 @@ class HomeLocation
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -72,8 +72,8 @@ class HomeLocation
      *
      * @var ?string $phoneNumber
      */
-    #[\JMS\Serializer\Annotation\SerializedName('phone_number')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $phoneNumber = null;
 
     /**
@@ -81,8 +81,8 @@ class HomeLocation
      *
      * @var ?string $street1
      */
-    #[\JMS\Serializer\Annotation\SerializedName('street_1')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('street_1')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $street1 = null;
 
     /**
@@ -90,8 +90,8 @@ class HomeLocation
      *
      * @var ?string $street2
      */
-    #[\JMS\Serializer\Annotation\SerializedName('street_2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('street_2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $street2 = null;
 
     /**
@@ -99,8 +99,8 @@ class HomeLocation
      *
      * @var ?string $city
      */
-    #[\JMS\Serializer\Annotation\SerializedName('city')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $city = null;
 
     /**
@@ -108,8 +108,8 @@ class HomeLocation
      *
      * @var ?string $state
      */
-    #[\JMS\Serializer\Annotation\SerializedName('state')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $state = null;
 
     /**
@@ -117,8 +117,8 @@ class HomeLocation
      *
      * @var ?string $zipCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('zip_code')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('zip_code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $zipCode = null;
 
     /**
@@ -126,9 +126,9 @@ class HomeLocation
      *
      * @var ?EmployeeHomeLocationCountry $country
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeHomeLocationCountry|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeHomeLocationCountry|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?EmployeeHomeLocationCountry $country = null;
 
     /**
@@ -136,9 +136,9 @@ class HomeLocation
      *
      * @var ?EmployeeHomeLocationLocationType $locationType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('location_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeHomeLocationLocationType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeHomeLocationLocationType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?EmployeeHomeLocationLocationType $locationType = null;
 
     /**
@@ -146,8 +146,8 @@ class HomeLocation
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -155,8 +155,8 @@ class HomeLocation
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

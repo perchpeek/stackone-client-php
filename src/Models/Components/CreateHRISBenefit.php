@@ -16,8 +16,8 @@ class CreateHRISBenefit
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class CreateHRISBenefit
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -34,9 +34,9 @@ class CreateHRISBenefit
      *
      * @var ?CreateHRISBenefitBenefitType $benefitType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('benefit_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateHRISBenefitBenefitType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('benefit_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateHRISBenefitBenefitType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateHRISBenefitBenefitType $benefitType = null;
 
     /**
@@ -44,8 +44,8 @@ class CreateHRISBenefit
      *
      * @var ?string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $provider = null;
 
     /**
@@ -53,8 +53,8 @@ class CreateHRISBenefit
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
 
     /**
@@ -62,8 +62,8 @@ class CreateHRISBenefit
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -71,8 +71,8 @@ class CreateHRISBenefit
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

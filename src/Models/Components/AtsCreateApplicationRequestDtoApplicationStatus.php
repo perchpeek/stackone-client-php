@@ -16,9 +16,9 @@ class AtsCreateApplicationRequestDtoApplicationStatus
      *
      * @var ?AtsCreateApplicationRequestDtoValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateApplicationRequestDtoValue $value = null;
 
     /**
@@ -26,9 +26,9 @@ class AtsCreateApplicationRequestDtoApplicationStatus
      *
      * @var string|float|bool|AtsCreateApplicationRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoSourceValue4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoSourceValue4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|AtsCreateApplicationRequestDtoSourceValue4|array|null $sourceValue = null;
 
     /**

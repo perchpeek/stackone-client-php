@@ -15,84 +15,84 @@ class PatchAccountExternalDto
      *
      * @var ?string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $provider = null;
 
     /**
      *
      * @var ?string $originOwnerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originOwnerId = null;
 
     /**
      *
      * @var ?string $originOwnerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originOwnerName = null;
 
     /**
      *
      * @var ?string $originUsername
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_username')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originUsername = null;
 
     /**
      *
      * @var ?PatchAccountExternalDtoCredentials $credentials
      */
-    #[\JMS\Serializer\Annotation\SerializedName('credentials')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\PatchAccountExternalDtoCredentials|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\PatchAccountExternalDtoCredentials|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?PatchAccountExternalDtoCredentials $credentials = null;
 
     /**
      *
      * @var ?PatchAccountExternalDtoSetupInformation $setupInformation
      */
-    #[\JMS\Serializer\Annotation\SerializedName('setup_information')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\PatchAccountExternalDtoSetupInformation|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('setup_information')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\PatchAccountExternalDtoSetupInformation|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?PatchAccountExternalDtoSetupInformation $setupInformation = null;
 
     /**
      *
      * @var ?Secrets $secrets
      */
-    #[\JMS\Serializer\Annotation\SerializedName('secrets')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Secrets|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('secrets')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Secrets|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Secrets $secrets = null;
 
     /**
      *
      * @var ?string $authenticationConfigKey
      */
-    #[\JMS\Serializer\Annotation\SerializedName('authentication_config_key')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('authentication_config_key')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $authenticationConfigKey = null;
 
     /**
      *
      * @var ?string $environment
      */
-    #[\JMS\Serializer\Annotation\SerializedName('environment')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('environment')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $environment = null;
 
     /**
      *
      * @var ?Label $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Label|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Label|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Label $label = null;
 
     /**

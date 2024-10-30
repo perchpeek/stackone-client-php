@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Ats
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -30,9 +30,8 @@ class Ats
      * @return Operations\AtsListApplicationsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listApplications(
-        ?Operations\AtsListApplicationsRequest $request,
-    ): Operations\AtsListApplicationsResponse {
+    public function listApplications(Operations\AtsListApplicationsRequest $request): Operations\AtsListApplicationsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications');
         $options = ['http_errors' => false];
@@ -74,15 +73,13 @@ class Ats
     /**
      * Create Application
      *
-     * @param  string  $xAccountId
      * @param  Components\AtsCreateApplicationRequestDto  $atsCreateApplicationRequestDto
+     * @param  string  $xAccountId
      * @return Operations\AtsCreateApplicationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createApplication(
-        string $xAccountId,
-        Components\AtsCreateApplicationRequestDto $atsCreateApplicationRequestDto,
-    ): Operations\AtsCreateApplicationResponse {
+    public function createApplication(Components\AtsCreateApplicationRequestDto $atsCreateApplicationRequestDto, string $xAccountId): Operations\AtsCreateApplicationResponse
+    {
         $request = new Operations\AtsCreateApplicationRequest(
             xAccountId: $xAccountId,
             atsCreateApplicationRequestDto: $atsCreateApplicationRequestDto,
@@ -136,9 +133,8 @@ class Ats
      * @return Operations\AtsGetApplicationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getApplication(
-        ?Operations\AtsGetApplicationRequest $request,
-    ): Operations\AtsGetApplicationResponse {
+    public function getApplication(Operations\AtsGetApplicationRequest $request): Operations\AtsGetApplicationResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}', Operations\AtsGetApplicationRequest::class, $request);
         $options = ['http_errors' => false];
@@ -180,17 +176,14 @@ class Ats
     /**
      * Update an Application
      *
+     * @param  Components\AtsUpdateApplicationRequestDto  $atsUpdateApplicationRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\AtsUpdateApplicationRequestDto  $atsUpdateApplicationRequestDto
      * @return Operations\AtsUpdateApplicationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateApplication(
-        string $xAccountId,
-        string $id,
-        Components\AtsUpdateApplicationRequestDto $atsUpdateApplicationRequestDto,
-    ): Operations\AtsUpdateApplicationResponse {
+    public function updateApplication(Components\AtsUpdateApplicationRequestDto $atsUpdateApplicationRequestDto, string $xAccountId, string $id): Operations\AtsUpdateApplicationResponse
+    {
         $request = new Operations\AtsUpdateApplicationRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -245,9 +238,8 @@ class Ats
      * @return Operations\AtsListApplicationsOffersResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listApplicationsOffers(
-        ?Operations\AtsListApplicationsOffersRequest $request,
-    ): Operations\AtsListApplicationsOffersResponse {
+    public function listApplicationsOffers(Operations\AtsListApplicationsOffersRequest $request): Operations\AtsListApplicationsOffersResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/offers', Operations\AtsListApplicationsOffersRequest::class, $request);
         $options = ['http_errors' => false];
@@ -289,17 +281,14 @@ class Ats
     /**
      * Move Application
      *
+     * @param  Components\AtsMoveApplicationRequestDto  $atsMoveApplicationRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\AtsMoveApplicationRequestDto  $atsMoveApplicationRequestDto
      * @return Operations\AtsMoveApplicationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function moveApplication(
-        string $xAccountId,
-        string $id,
-        Components\AtsMoveApplicationRequestDto $atsMoveApplicationRequestDto,
-    ): Operations\AtsMoveApplicationResponse {
+    public function moveApplication(Components\AtsMoveApplicationRequestDto $atsMoveApplicationRequestDto, string $xAccountId, string $id): Operations\AtsMoveApplicationResponse
+    {
         $request = new Operations\AtsMoveApplicationRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -350,17 +339,14 @@ class Ats
     /**
      * Reject Application
      *
+     * @param  Components\AtsRejectApplicationRequestDto  $atsRejectApplicationRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\AtsRejectApplicationRequestDto  $atsRejectApplicationRequestDto
      * @return Operations\AtsRejectApplicationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function rejectApplication(
-        string $xAccountId,
-        string $id,
-        Components\AtsRejectApplicationRequestDto $atsRejectApplicationRequestDto,
-    ): Operations\AtsRejectApplicationResponse {
+    public function rejectApplication(Components\AtsRejectApplicationRequestDto $atsRejectApplicationRequestDto, string $xAccountId, string $id): Operations\AtsRejectApplicationResponse
+    {
         $request = new Operations\AtsRejectApplicationRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -415,9 +401,8 @@ class Ats
      * @return Operations\AtsGetApplicationOfferResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getApplicationOffer(
-        ?Operations\AtsGetApplicationOfferRequest $request,
-    ): Operations\AtsGetApplicationOfferResponse {
+    public function getApplicationOffer(Operations\AtsGetApplicationOfferRequest $request): Operations\AtsGetApplicationOfferResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/offers/{subResourceId}', Operations\AtsGetApplicationOfferRequest::class, $request);
         $options = ['http_errors' => false];
@@ -463,9 +448,8 @@ class Ats
      * @return Operations\AtsListApplicationScorecardsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listApplicationScorecards(
-        ?Operations\AtsListApplicationScorecardsRequest $request,
-    ): Operations\AtsListApplicationScorecardsResponse {
+    public function listApplicationScorecards(Operations\AtsListApplicationScorecardsRequest $request): Operations\AtsListApplicationScorecardsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/scorecards', Operations\AtsListApplicationScorecardsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -511,9 +495,8 @@ class Ats
      * @return Operations\AtsGetApplicationScorecardResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getApplicationScorecard(
-        ?Operations\AtsGetApplicationScorecardRequest $request,
-    ): Operations\AtsGetApplicationScorecardResponse {
+    public function getApplicationScorecard(Operations\AtsGetApplicationScorecardRequest $request): Operations\AtsGetApplicationScorecardResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/scorecards/{subResourceId}', Operations\AtsGetApplicationScorecardRequest::class, $request);
         $options = ['http_errors' => false];
@@ -559,9 +542,8 @@ class Ats
      * @return Operations\AtsListApplicationsScheduledInterviewsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listApplicationsScheduledInterviews(
-        ?Operations\AtsListApplicationsScheduledInterviewsRequest $request,
-    ): Operations\AtsListApplicationsScheduledInterviewsResponse {
+    public function listApplicationsScheduledInterviews(Operations\AtsListApplicationsScheduledInterviewsRequest $request): Operations\AtsListApplicationsScheduledInterviewsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/scheduled_interviews', Operations\AtsListApplicationsScheduledInterviewsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -607,9 +589,8 @@ class Ats
      * @return Operations\AtsGetApplicationScheduledInterviewResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getApplicationScheduledInterview(
-        ?Operations\AtsGetApplicationScheduledInterviewRequest $request,
-    ): Operations\AtsGetApplicationScheduledInterviewResponse {
+    public function getApplicationScheduledInterview(Operations\AtsGetApplicationScheduledInterviewRequest $request): Operations\AtsGetApplicationScheduledInterviewResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/scheduled_interviews/{subResourceId}', Operations\AtsGetApplicationScheduledInterviewRequest::class, $request);
         $options = ['http_errors' => false];
@@ -651,17 +632,14 @@ class Ats
     /**
      * Upload Application Document
      *
+     * @param  Components\UnifiedUploadRequestDto  $unifiedUploadRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\UnifiedUploadRequestDto  $unifiedUploadRequestDto
      * @return Operations\AtsUploadApplicationDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function uploadApplicationDocument(
-        string $xAccountId,
-        string $id,
-        Components\UnifiedUploadRequestDto $unifiedUploadRequestDto,
-    ): Operations\AtsUploadApplicationDocumentResponse {
+    public function uploadApplicationDocument(Components\UnifiedUploadRequestDto $unifiedUploadRequestDto, string $xAccountId, string $id): Operations\AtsUploadApplicationDocumentResponse
+    {
         $request = new Operations\AtsUploadApplicationDocumentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -719,12 +697,8 @@ class Ats
      * @return Operations\AtsDownloadApplicationDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function downloadApplicationDocument(
-        string $xAccountId,
-        string $id,
-        string $subResourceId,
-        ?string $format = null,
-    ): Operations\AtsDownloadApplicationDocumentResponse {
+    public function downloadApplicationDocument(string $xAccountId, string $id, string $subResourceId, ?string $format = null): Operations\AtsDownloadApplicationDocumentResponse
+    {
         $request = new Operations\AtsDownloadApplicationDocumentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -774,9 +748,8 @@ class Ats
      * @return Operations\AtsListApplicationDocumentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listApplicationDocuments(
-        ?Operations\AtsListApplicationDocumentsRequest $request,
-    ): Operations\AtsListApplicationDocumentsResponse {
+    public function listApplicationDocuments(Operations\AtsListApplicationDocumentsRequest $request): Operations\AtsListApplicationDocumentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/documents', Operations\AtsListApplicationDocumentsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -822,9 +795,8 @@ class Ats
      * @return Operations\AtsGetApplicationDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getApplicationDocument(
-        ?Operations\AtsGetApplicationDocumentRequest $request,
-    ): Operations\AtsGetApplicationDocumentResponse {
+    public function getApplicationDocument(Operations\AtsGetApplicationDocumentRequest $request): Operations\AtsGetApplicationDocumentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/applications/{id}/documents/{subResourceId}', Operations\AtsGetApplicationDocumentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -870,9 +842,8 @@ class Ats
      * @return Operations\AtsListCandidatesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCandidates(
-        ?Operations\AtsListCandidatesRequest $request,
-    ): Operations\AtsListCandidatesResponse {
+    public function listCandidates(Operations\AtsListCandidatesRequest $request): Operations\AtsListCandidatesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/candidates');
         $options = ['http_errors' => false];
@@ -914,15 +885,13 @@ class Ats
     /**
      * Create Candidate
      *
-     * @param  string  $xAccountId
      * @param  Components\AtsCreateCandidateRequestDto  $atsCreateCandidateRequestDto
+     * @param  string  $xAccountId
      * @return Operations\AtsCreateCandidateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createCandidate(
-        string $xAccountId,
-        Components\AtsCreateCandidateRequestDto $atsCreateCandidateRequestDto,
-    ): Operations\AtsCreateCandidateResponse {
+    public function createCandidate(Components\AtsCreateCandidateRequestDto $atsCreateCandidateRequestDto, string $xAccountId): Operations\AtsCreateCandidateResponse
+    {
         $request = new Operations\AtsCreateCandidateRequest(
             xAccountId: $xAccountId,
             atsCreateCandidateRequestDto: $atsCreateCandidateRequestDto,
@@ -976,9 +945,8 @@ class Ats
      * @return Operations\AtsGetCandidateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCandidate(
-        ?Operations\AtsGetCandidateRequest $request,
-    ): Operations\AtsGetCandidateResponse {
+    public function getCandidate(Operations\AtsGetCandidateRequest $request): Operations\AtsGetCandidateResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/candidates/{id}', Operations\AtsGetCandidateRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1020,17 +988,14 @@ class Ats
     /**
      * Update Candidate
      *
+     * @param  Components\AtsUpdateCandidateRequestDto  $atsUpdateCandidateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\AtsUpdateCandidateRequestDto  $atsUpdateCandidateRequestDto
      * @return Operations\AtsUpdateCandidateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateCandidate(
-        string $xAccountId,
-        string $id,
-        Components\AtsUpdateCandidateRequestDto $atsUpdateCandidateRequestDto,
-    ): Operations\AtsUpdateCandidateResponse {
+    public function updateCandidate(Components\AtsUpdateCandidateRequestDto $atsUpdateCandidateRequestDto, string $xAccountId, string $id): Operations\AtsUpdateCandidateResponse
+    {
         $request = new Operations\AtsUpdateCandidateRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -1085,9 +1050,8 @@ class Ats
      * @return Operations\AtsListCandidateNotesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCandidateNotes(
-        ?Operations\AtsListCandidateNotesRequest $request,
-    ): Operations\AtsListCandidateNotesResponse {
+    public function listCandidateNotes(Operations\AtsListCandidateNotesRequest $request): Operations\AtsListCandidateNotesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/candidates/{id}/notes', Operations\AtsListCandidateNotesRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1129,17 +1093,14 @@ class Ats
     /**
      * Create Candidate Note
      *
+     * @param  Components\AtsCreateNotesRequestDto  $atsCreateNotesRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\AtsCreateNotesRequestDto  $atsCreateNotesRequestDto
      * @return Operations\AtsCreateCandidateNoteResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createCandidateNote(
-        string $xAccountId,
-        string $id,
-        Components\AtsCreateNotesRequestDto $atsCreateNotesRequestDto,
-    ): Operations\AtsCreateCandidateNoteResponse {
+    public function createCandidateNote(Components\AtsCreateNotesRequestDto $atsCreateNotesRequestDto, string $xAccountId, string $id): Operations\AtsCreateCandidateNoteResponse
+    {
         $request = new Operations\AtsCreateCandidateNoteRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -1194,9 +1155,8 @@ class Ats
      * @return Operations\AtsGetCandidateNoteResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCandidateNote(
-        ?Operations\AtsGetCandidateNoteRequest $request,
-    ): Operations\AtsGetCandidateNoteResponse {
+    public function getCandidateNote(Operations\AtsGetCandidateNoteRequest $request): Operations\AtsGetCandidateNoteResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/candidates/{id}/notes/{subResourceId}', Operations\AtsGetCandidateNoteRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1242,9 +1202,8 @@ class Ats
      * @return Operations\AtsListApplicationCustomFieldDefinitionsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listApplicationCustomFieldDefinitions(
-        ?Operations\AtsListApplicationCustomFieldDefinitionsRequest $request,
-    ): Operations\AtsListApplicationCustomFieldDefinitionsResponse {
+    public function listApplicationCustomFieldDefinitions(Operations\AtsListApplicationCustomFieldDefinitionsRequest $request): Operations\AtsListApplicationCustomFieldDefinitionsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/custom_field_definitions/applications');
         $options = ['http_errors' => false];
@@ -1290,9 +1249,8 @@ class Ats
      * @return Operations\AtsGetApplicationCustomFieldDefinitionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getApplicationCustomFieldDefinition(
-        ?Operations\AtsGetApplicationCustomFieldDefinitionRequest $request,
-    ): Operations\AtsGetApplicationCustomFieldDefinitionResponse {
+    public function getApplicationCustomFieldDefinition(Operations\AtsGetApplicationCustomFieldDefinitionRequest $request): Operations\AtsGetApplicationCustomFieldDefinitionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/custom_field_definitions/applications/{id}', Operations\AtsGetApplicationCustomFieldDefinitionRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1338,9 +1296,8 @@ class Ats
      * @return Operations\AtsListCandidateCustomFieldDefinitionsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCandidateCustomFieldDefinitions(
-        ?Operations\AtsListCandidateCustomFieldDefinitionsRequest $request,
-    ): Operations\AtsListCandidateCustomFieldDefinitionsResponse {
+    public function listCandidateCustomFieldDefinitions(Operations\AtsListCandidateCustomFieldDefinitionsRequest $request): Operations\AtsListCandidateCustomFieldDefinitionsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/custom_field_definitions/candidates');
         $options = ['http_errors' => false];
@@ -1386,9 +1343,8 @@ class Ats
      * @return Operations\AtsGetCandidateCustomFieldDefinitionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCandidateCustomFieldDefinition(
-        ?Operations\AtsGetCandidateCustomFieldDefinitionRequest $request,
-    ): Operations\AtsGetCandidateCustomFieldDefinitionResponse {
+    public function getCandidateCustomFieldDefinition(Operations\AtsGetCandidateCustomFieldDefinitionRequest $request): Operations\AtsGetCandidateCustomFieldDefinitionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/custom_field_definitions/candidates/{id}', Operations\AtsGetCandidateCustomFieldDefinitionRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1434,9 +1390,8 @@ class Ats
      * @return Operations\AtsListJobCustomFieldDefinitionsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listJobCustomFieldDefinitions(
-        ?Operations\AtsListJobCustomFieldDefinitionsRequest $request,
-    ): Operations\AtsListJobCustomFieldDefinitionsResponse {
+    public function listJobCustomFieldDefinitions(Operations\AtsListJobCustomFieldDefinitionsRequest $request): Operations\AtsListJobCustomFieldDefinitionsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/custom_field_definitions/jobs');
         $options = ['http_errors' => false];
@@ -1482,9 +1437,8 @@ class Ats
      * @return Operations\AtsGetJobCustomFieldDefinitionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getJobCustomFieldDefinition(
-        ?Operations\AtsGetJobCustomFieldDefinitionRequest $request,
-    ): Operations\AtsGetJobCustomFieldDefinitionResponse {
+    public function getJobCustomFieldDefinition(Operations\AtsGetJobCustomFieldDefinitionRequest $request): Operations\AtsGetJobCustomFieldDefinitionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/custom_field_definitions/jobs/{id}', Operations\AtsGetJobCustomFieldDefinitionRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1530,9 +1484,8 @@ class Ats
      * @return Operations\AtsListDepartmentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listDepartments(
-        ?Operations\AtsListDepartmentsRequest $request,
-    ): Operations\AtsListDepartmentsResponse {
+    public function listDepartments(Operations\AtsListDepartmentsRequest $request): Operations\AtsListDepartmentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/departments');
         $options = ['http_errors' => false];
@@ -1578,9 +1531,8 @@ class Ats
      * @return Operations\AtsGetDepartmentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getDepartment(
-        ?Operations\AtsGetDepartmentRequest $request,
-    ): Operations\AtsGetDepartmentResponse {
+    public function getDepartment(Operations\AtsGetDepartmentRequest $request): Operations\AtsGetDepartmentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/departments/{id}', Operations\AtsGetDepartmentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1626,9 +1578,8 @@ class Ats
      * @return Operations\AtsListInterviewStagesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listInterviewStages(
-        ?Operations\AtsListInterviewStagesRequest $request,
-    ): Operations\AtsListInterviewStagesResponse {
+    public function listInterviewStages(Operations\AtsListInterviewStagesRequest $request): Operations\AtsListInterviewStagesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/interview_stages');
         $options = ['http_errors' => false];
@@ -1674,9 +1625,8 @@ class Ats
      * @return Operations\AtsGetInterviewStageResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getInterviewStage(
-        ?Operations\AtsGetInterviewStageRequest $request,
-    ): Operations\AtsGetInterviewStageResponse {
+    public function getInterviewStage(Operations\AtsGetInterviewStageRequest $request): Operations\AtsGetInterviewStageResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/interview_stages/{id}', Operations\AtsGetInterviewStageRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1722,9 +1672,8 @@ class Ats
      * @return Operations\AtsListInterviewsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listInterviews(
-        ?Operations\AtsListInterviewsRequest $request,
-    ): Operations\AtsListInterviewsResponse {
+    public function listInterviews(Operations\AtsListInterviewsRequest $request): Operations\AtsListInterviewsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/interviews');
         $options = ['http_errors' => false];
@@ -1770,9 +1719,8 @@ class Ats
      * @return Operations\AtsGetInterviewResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getInterview(
-        ?Operations\AtsGetInterviewRequest $request,
-    ): Operations\AtsGetInterviewResponse {
+    public function getInterview(Operations\AtsGetInterviewRequest $request): Operations\AtsGetInterviewResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/interviews/{id}', Operations\AtsGetInterviewRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1818,9 +1766,8 @@ class Ats
      * @return Operations\AtsListJobsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listJobs(
-        ?Operations\AtsListJobsRequest $request,
-    ): Operations\AtsListJobsResponse {
+    public function listJobs(Operations\AtsListJobsRequest $request): Operations\AtsListJobsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/jobs');
         $options = ['http_errors' => false];
@@ -1862,15 +1809,13 @@ class Ats
     /**
      * Create Job
      *
-     * @param  string  $xAccountId
      * @param  Components\AtsCreateJobRequestDto  $atsCreateJobRequestDto
+     * @param  string  $xAccountId
      * @return Operations\AtsCreateJobResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createJob(
-        string $xAccountId,
-        Components\AtsCreateJobRequestDto $atsCreateJobRequestDto,
-    ): Operations\AtsCreateJobResponse {
+    public function createJob(Components\AtsCreateJobRequestDto $atsCreateJobRequestDto, string $xAccountId): Operations\AtsCreateJobResponse
+    {
         $request = new Operations\AtsCreateJobRequest(
             xAccountId: $xAccountId,
             atsCreateJobRequestDto: $atsCreateJobRequestDto,
@@ -1924,9 +1869,8 @@ class Ats
      * @return Operations\AtsGetJobResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getJob(
-        ?Operations\AtsGetJobRequest $request,
-    ): Operations\AtsGetJobResponse {
+    public function getJob(Operations\AtsGetJobRequest $request): Operations\AtsGetJobResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/jobs/{id}', Operations\AtsGetJobRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1968,17 +1912,14 @@ class Ats
     /**
      * Update Job
      *
+     * @param  Components\AtsUpdateJobRequestDto  $atsUpdateJobRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\AtsUpdateJobRequestDto  $atsUpdateJobRequestDto
      * @return Operations\AtsUpdateJobResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateJob(
-        string $xAccountId,
-        string $id,
-        Components\AtsUpdateJobRequestDto $atsUpdateJobRequestDto,
-    ): Operations\AtsUpdateJobResponse {
+    public function updateJob(Components\AtsUpdateJobRequestDto $atsUpdateJobRequestDto, string $xAccountId, string $id): Operations\AtsUpdateJobResponse
+    {
         $request = new Operations\AtsUpdateJobRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -2033,9 +1974,8 @@ class Ats
      * @return Operations\AtsListListsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listLists(
-        ?Operations\AtsListListsRequest $request,
-    ): Operations\AtsListListsResponse {
+    public function listLists(Operations\AtsListListsRequest $request): Operations\AtsListListsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/lists');
         $options = ['http_errors' => false];
@@ -2081,9 +2021,8 @@ class Ats
      * @return Operations\AtsGetListResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getList(
-        ?Operations\AtsGetListRequest $request,
-    ): Operations\AtsGetListResponse {
+    public function getList(Operations\AtsGetListRequest $request): Operations\AtsGetListResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/lists/{id}', Operations\AtsGetListRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2129,9 +2068,8 @@ class Ats
      * @return Operations\AtsListLocationsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listLocations(
-        ?Operations\AtsListLocationsRequest $request,
-    ): Operations\AtsListLocationsResponse {
+    public function listLocations(Operations\AtsListLocationsRequest $request): Operations\AtsListLocationsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/locations');
         $options = ['http_errors' => false];
@@ -2177,9 +2115,8 @@ class Ats
      * @return Operations\AtsGetLocationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getLocation(
-        ?Operations\AtsGetLocationRequest $request,
-    ): Operations\AtsGetLocationResponse {
+    public function getLocation(Operations\AtsGetLocationRequest $request): Operations\AtsGetLocationResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/locations/{id}', Operations\AtsGetLocationRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2225,9 +2162,8 @@ class Ats
      * @return Operations\AtsListRejectedReasonsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listRejectedReasons(
-        ?Operations\AtsListRejectedReasonsRequest $request,
-    ): Operations\AtsListRejectedReasonsResponse {
+    public function listRejectedReasons(Operations\AtsListRejectedReasonsRequest $request): Operations\AtsListRejectedReasonsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/rejected_reasons');
         $options = ['http_errors' => false];
@@ -2273,9 +2209,8 @@ class Ats
      * @return Operations\AtsGetRejectedReasonResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getRejectedReason(
-        ?Operations\AtsGetRejectedReasonRequest $request,
-    ): Operations\AtsGetRejectedReasonResponse {
+    public function getRejectedReason(Operations\AtsGetRejectedReasonRequest $request): Operations\AtsGetRejectedReasonResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/rejected_reasons/{id}', Operations\AtsGetRejectedReasonRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2321,9 +2256,8 @@ class Ats
      * @return Operations\AtsListUsersResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listUsers(
-        ?Operations\AtsListUsersRequest $request,
-    ): Operations\AtsListUsersResponse {
+    public function listUsers(Operations\AtsListUsersRequest $request): Operations\AtsListUsersResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/users');
         $options = ['http_errors' => false];
@@ -2369,9 +2303,8 @@ class Ats
      * @return Operations\AtsGetUserResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getUser(
-        ?Operations\AtsGetUserRequest $request,
-    ): Operations\AtsGetUserResponse {
+    public function getUser(Operations\AtsGetUserRequest $request): Operations\AtsGetUserResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/users/{id}', Operations\AtsGetUserRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2417,9 +2350,8 @@ class Ats
      * @return Operations\AtsListJobPostingsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listJobPostings(
-        ?Operations\AtsListJobPostingsRequest $request,
-    ): Operations\AtsListJobPostingsResponse {
+    public function listJobPostings(Operations\AtsListJobPostingsRequest $request): Operations\AtsListJobPostingsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/job_postings');
         $options = ['http_errors' => false];
@@ -2465,9 +2397,8 @@ class Ats
      * @return Operations\AtsGetJobPostingResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getJobPosting(
-        ?Operations\AtsGetJobPostingRequest $request,
-    ): Operations\AtsGetJobPostingResponse {
+    public function getJobPosting(Operations\AtsGetJobPostingRequest $request): Operations\AtsGetJobPostingResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/job_postings/{id}', Operations\AtsGetJobPostingRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2513,9 +2444,8 @@ class Ats
      * @return Operations\AtsListOffersResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listOffers(
-        ?Operations\AtsListOffersRequest $request,
-    ): Operations\AtsListOffersResponse {
+    public function listOffers(Operations\AtsListOffersRequest $request): Operations\AtsListOffersResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/offers');
         $options = ['http_errors' => false];
@@ -2557,15 +2487,13 @@ class Ats
     /**
      * Creates an offer
      *
-     * @param  string  $xAccountId
      * @param  Components\AtsCreateOfferRequestDto  $atsCreateOfferRequestDto
+     * @param  string  $xAccountId
      * @return Operations\AtsCreateOfferResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createOffer(
-        string $xAccountId,
-        Components\AtsCreateOfferRequestDto $atsCreateOfferRequestDto,
-    ): Operations\AtsCreateOfferResponse {
+    public function createOffer(Components\AtsCreateOfferRequestDto $atsCreateOfferRequestDto, string $xAccountId): Operations\AtsCreateOfferResponse
+    {
         $request = new Operations\AtsCreateOfferRequest(
             xAccountId: $xAccountId,
             atsCreateOfferRequestDto: $atsCreateOfferRequestDto,
@@ -2619,9 +2547,8 @@ class Ats
      * @return Operations\AtsGetOfferResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getOffer(
-        ?Operations\AtsGetOfferRequest $request,
-    ): Operations\AtsGetOfferResponse {
+    public function getOffer(Operations\AtsGetOfferRequest $request): Operations\AtsGetOfferResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/offers/{id}', Operations\AtsGetOfferRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2667,9 +2594,8 @@ class Ats
      * @return Operations\AtsListAssessmentsPackagesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listAssessmentsPackages(
-        ?Operations\AtsListAssessmentsPackagesRequest $request,
-    ): Operations\AtsListAssessmentsPackagesResponse {
+    public function listAssessmentsPackages(Operations\AtsListAssessmentsPackagesRequest $request): Operations\AtsListAssessmentsPackagesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/assessments/packages');
         $options = ['http_errors' => false];
@@ -2715,9 +2641,8 @@ class Ats
      * @return Operations\AtsGetAssessmentsPackageResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAssessmentsPackage(
-        ?Operations\AtsGetAssessmentsPackageRequest $request,
-    ): Operations\AtsGetAssessmentsPackageResponse {
+    public function getAssessmentsPackage(Operations\AtsGetAssessmentsPackageRequest $request): Operations\AtsGetAssessmentsPackageResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/assessments/packages/{id}', Operations\AtsGetAssessmentsPackageRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2763,9 +2688,8 @@ class Ats
      * @return Operations\AtsGetAssessmentsRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAssessmentsRequest(
-        ?Operations\AtsGetAssessmentsRequestRequest $request,
-    ): Operations\AtsGetAssessmentsRequestResponse {
+    public function getAssessmentsRequest(Operations\AtsGetAssessmentsRequestRequest $request): Operations\AtsGetAssessmentsRequestResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/assessments/orders/{id}', Operations\AtsGetAssessmentsRequestRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2811,9 +2735,8 @@ class Ats
      * @return Operations\AtsGetAssessmentsResultResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAssessmentsResult(
-        ?Operations\AtsGetAssessmentsResultRequest $request,
-    ): Operations\AtsGetAssessmentsResultResponse {
+    public function getAssessmentsResult(Operations\AtsGetAssessmentsResultRequest $request): Operations\AtsGetAssessmentsResultResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/assessments/orders/{id}/results', Operations\AtsGetAssessmentsResultRequest::class, $request);
         $options = ['http_errors' => false];

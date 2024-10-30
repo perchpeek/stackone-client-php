@@ -17,9 +17,9 @@ class AtsCreateNotesRequestDtoVisibility
      *
      * @var ?AtsCreateNotesRequestDtoValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateNotesRequestDtoValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateNotesRequestDtoValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateNotesRequestDtoValue $value = null;
 
     /**
@@ -27,9 +27,9 @@ class AtsCreateNotesRequestDtoVisibility
      *
      * @var string|float|bool|AtsCreateNotesRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AtsCreateNotesRequestDtoSourceValue4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AtsCreateNotesRequestDtoSourceValue4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|AtsCreateNotesRequestDtoSourceValue4|array|null $sourceValue = null;
 
     /**

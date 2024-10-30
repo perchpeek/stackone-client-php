@@ -16,8 +16,8 @@ class Assignment
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Assignment
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Assignment
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,8 +44,8 @@ class Assignment
      *
      * @var ?string $courseId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('course_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $courseId = null;
 
     /**
@@ -53,8 +53,8 @@ class Assignment
      *
      * @var ?string $remoteCourseId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_course_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteCourseId = null;
 
     /**
@@ -62,8 +62,8 @@ class Assignment
      *
      * @var ?string $learningObjectId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('learning_object_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $learningObjectId = null;
 
     /**
@@ -71,8 +71,8 @@ class Assignment
      *
      * @var ?string $remoteLearningObjectId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_learning_object_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_learning_object_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteLearningObjectId = null;
 
     /**
@@ -80,8 +80,8 @@ class Assignment
      *
      * @var ?string $learningObjectExternalReference
      */
-    #[\JMS\Serializer\Annotation\SerializedName('learning_object_external_reference')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $learningObjectExternalReference = null;
 
     /**
@@ -89,8 +89,8 @@ class Assignment
      *
      * @var ?float $progress
      */
-    #[\JMS\Serializer\Annotation\SerializedName('progress')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('progress')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $progress = null;
 
     /**
@@ -98,8 +98,8 @@ class Assignment
      *
      * @var ?string $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $updatedAt = null;
 
     /**
@@ -107,8 +107,8 @@ class Assignment
      *
      * @var ?string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $createdAt = null;
 
     /**
@@ -116,8 +116,8 @@ class Assignment
      *
      * @var ?string $dueDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('due_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $dueDate = null;
 
     /**
@@ -125,9 +125,9 @@ class Assignment
      *
      * @var ?array<AssignmentStatusEnum> $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AssignmentStatusEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AssignmentStatusEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $status = null;
 
     /**
@@ -135,9 +135,9 @@ class Assignment
      *
      * @var ?array<LearningObjectTypeEnum> $learningObjectType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('learning_object_type')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LearningObjectTypeEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LearningObjectTypeEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $learningObjectType = null;
 
     /**
@@ -145,8 +145,8 @@ class Assignment
      *
      * @var ?string $userId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('user_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $userId = null;
 
     /**
@@ -154,8 +154,8 @@ class Assignment
      *
      * @var ?string $remoteUserId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_user_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteUserId = null;
 
     /**

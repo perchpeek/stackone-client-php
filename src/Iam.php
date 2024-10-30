@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Operations;
 
 class Iam
@@ -17,7 +17,7 @@ class Iam
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -29,9 +29,8 @@ class Iam
      * @return Operations\IamListUsersResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listUsers(
-        ?Operations\IamListUsersRequest $request,
-    ): Operations\IamListUsersResponse {
+    public function listUsers(Operations\IamListUsersRequest $request): Operations\IamListUsersResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/users');
         $options = ['http_errors' => false];
@@ -77,9 +76,8 @@ class Iam
      * @return Operations\IamGetUserResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getUser(
-        ?Operations\IamGetUserRequest $request,
-    ): Operations\IamGetUserResponse {
+    public function getUser(Operations\IamGetUserRequest $request): Operations\IamGetUserResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/users/{id}', Operations\IamGetUserRequest::class, $request);
         $options = ['http_errors' => false];
@@ -125,9 +123,8 @@ class Iam
      * @return Operations\IamListRolesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listRoles(
-        ?Operations\IamListRolesRequest $request,
-    ): Operations\IamListRolesResponse {
+    public function listRoles(Operations\IamListRolesRequest $request): Operations\IamListRolesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/roles');
         $options = ['http_errors' => false];
@@ -173,9 +170,8 @@ class Iam
      * @return Operations\IamGetRoleResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getRole(
-        ?Operations\IamGetRoleRequest $request,
-    ): Operations\IamGetRoleResponse {
+    public function getRole(Operations\IamGetRoleRequest $request): Operations\IamGetRoleResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/roles/{id}', Operations\IamGetRoleRequest::class, $request);
         $options = ['http_errors' => false];
@@ -221,9 +217,8 @@ class Iam
      * @return Operations\IamListGroupsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listGroups(
-        ?Operations\IamListGroupsRequest $request,
-    ): Operations\IamListGroupsResponse {
+    public function listGroups(Operations\IamListGroupsRequest $request): Operations\IamListGroupsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/groups');
         $options = ['http_errors' => false];
@@ -269,9 +264,8 @@ class Iam
      * @return Operations\IamGetGroupResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getGroup(
-        ?Operations\IamGetGroupRequest $request,
-    ): Operations\IamGetGroupResponse {
+    public function getGroup(Operations\IamGetGroupRequest $request): Operations\IamGetGroupResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/groups/{id}', Operations\IamGetGroupRequest::class, $request);
         $options = ['http_errors' => false];
@@ -317,9 +311,8 @@ class Iam
      * @return Operations\IamListPoliciesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listPolicies(
-        ?Operations\IamListPoliciesRequest $request,
-    ): Operations\IamListPoliciesResponse {
+    public function listPolicies(Operations\IamListPoliciesRequest $request): Operations\IamListPoliciesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/policies');
         $options = ['http_errors' => false];
@@ -365,9 +358,8 @@ class Iam
      * @return Operations\IamGetPolicyResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getPolicy(
-        ?Operations\IamGetPolicyRequest $request,
-    ): Operations\IamGetPolicyResponse {
+    public function getPolicy(Operations\IamGetPolicyRequest $request): Operations\IamGetPolicyResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/iam/policies/{id}', Operations\IamGetPolicyRequest::class, $request);
         $options = ['http_errors' => false];

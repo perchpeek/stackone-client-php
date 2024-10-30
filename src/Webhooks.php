@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Webhooks
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -26,17 +26,14 @@ class Webhooks
     /**
      * create
      *
+     * @param  array<Components\CreateEvent>  $requestBody
      * @param  string  $xAccountId
      * @param  float  $id
-     * @param  array<Components\CreateEvent>  $requestBody
      * @return Operations\CreateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function create(
-        string $xAccountId,
-        float $id,
-        array $requestBody,
-    ): Operations\CreateResponse {
+    public function create(array $requestBody, string $xAccountId, float $id): Operations\CreateResponse
+    {
         $request = new Operations\CreateRequest(
             xAccountId: $xAccountId,
             id: $id,

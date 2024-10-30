@@ -15,16 +15,16 @@ class SmsMessagesMessageContent
      *
      * @var ?string $body
      */
-    #[\JMS\Serializer\Annotation\SerializedName('body')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $body = null;
 
     /**
      *
      * @var ?string $from
      */
-    #[\JMS\Serializer\Annotation\SerializedName('from')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $from = null;
 
     /**

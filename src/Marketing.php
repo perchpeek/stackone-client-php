@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Marketing
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -30,9 +30,8 @@ class Marketing
      * @return Operations\MarketingListEmailTemplatesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmailTemplates(
-        ?Operations\MarketingListEmailTemplatesRequest $request,
-    ): Operations\MarketingListEmailTemplatesResponse {
+    public function listEmailTemplates(Operations\MarketingListEmailTemplatesRequest $request): Operations\MarketingListEmailTemplatesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/email');
         $options = ['http_errors' => false];
@@ -74,15 +73,13 @@ class Marketing
     /**
      * Create Email Templates
      *
-     * @param  string  $xAccountId
      * @param  Components\MarketingCreateEmailTemplateRequestDto  $marketingCreateEmailTemplateRequestDto
+     * @param  string  $xAccountId
      * @return Operations\MarketingCreateEmailTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createEmailTemplate(
-        string $xAccountId,
-        Components\MarketingCreateEmailTemplateRequestDto $marketingCreateEmailTemplateRequestDto,
-    ): Operations\MarketingCreateEmailTemplateResponse {
+    public function createEmailTemplate(Components\MarketingCreateEmailTemplateRequestDto $marketingCreateEmailTemplateRequestDto, string $xAccountId): Operations\MarketingCreateEmailTemplateResponse
+    {
         $request = new Operations\MarketingCreateEmailTemplateRequest(
             xAccountId: $xAccountId,
             marketingCreateEmailTemplateRequestDto: $marketingCreateEmailTemplateRequestDto,
@@ -136,9 +133,8 @@ class Marketing
      * @return Operations\MarketingGetEmailTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmailTemplate(
-        ?Operations\MarketingGetEmailTemplateRequest $request,
-    ): Operations\MarketingGetEmailTemplateResponse {
+    public function getEmailTemplate(Operations\MarketingGetEmailTemplateRequest $request): Operations\MarketingGetEmailTemplateResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/email/{id}', Operations\MarketingGetEmailTemplateRequest::class, $request);
         $options = ['http_errors' => false];
@@ -180,17 +176,14 @@ class Marketing
     /**
      * Update Email Templates
      *
+     * @param  Components\MarketingCreateEmailTemplateRequestDto  $marketingCreateEmailTemplateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\MarketingCreateEmailTemplateRequestDto  $marketingCreateEmailTemplateRequestDto
      * @return Operations\MarketingUpdateEmailTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateEmailTemplate(
-        string $xAccountId,
-        string $id,
-        Components\MarketingCreateEmailTemplateRequestDto $marketingCreateEmailTemplateRequestDto,
-    ): Operations\MarketingUpdateEmailTemplateResponse {
+    public function updateEmailTemplate(Components\MarketingCreateEmailTemplateRequestDto $marketingCreateEmailTemplateRequestDto, string $xAccountId, string $id): Operations\MarketingUpdateEmailTemplateResponse
+    {
         $request = new Operations\MarketingUpdateEmailTemplateRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -245,9 +238,8 @@ class Marketing
      * @return Operations\MarketingListInAppTemplatesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listInAppTemplates(
-        ?Operations\MarketingListInAppTemplatesRequest $request,
-    ): Operations\MarketingListInAppTemplatesResponse {
+    public function listInAppTemplates(Operations\MarketingListInAppTemplatesRequest $request): Operations\MarketingListInAppTemplatesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/in_app');
         $options = ['http_errors' => false];
@@ -289,15 +281,13 @@ class Marketing
     /**
      * Create In-App Template
      *
-     * @param  string  $xAccountId
      * @param  Components\MarketingCreateInAppTemplateRequestDto  $marketingCreateInAppTemplateRequestDto
+     * @param  string  $xAccountId
      * @return Operations\MarketingCreateInAppTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createInAppTemplate(
-        string $xAccountId,
-        Components\MarketingCreateInAppTemplateRequestDto $marketingCreateInAppTemplateRequestDto,
-    ): Operations\MarketingCreateInAppTemplateResponse {
+    public function createInAppTemplate(Components\MarketingCreateInAppTemplateRequestDto $marketingCreateInAppTemplateRequestDto, string $xAccountId): Operations\MarketingCreateInAppTemplateResponse
+    {
         $request = new Operations\MarketingCreateInAppTemplateRequest(
             xAccountId: $xAccountId,
             marketingCreateInAppTemplateRequestDto: $marketingCreateInAppTemplateRequestDto,
@@ -351,9 +341,8 @@ class Marketing
      * @return Operations\MarketingGetInAppTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getInAppTemplate(
-        ?Operations\MarketingGetInAppTemplateRequest $request,
-    ): Operations\MarketingGetInAppTemplateResponse {
+    public function getInAppTemplate(Operations\MarketingGetInAppTemplateRequest $request): Operations\MarketingGetInAppTemplateResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/in_app/{id}', Operations\MarketingGetInAppTemplateRequest::class, $request);
         $options = ['http_errors' => false];
@@ -395,17 +384,14 @@ class Marketing
     /**
      * Update In-App Template
      *
+     * @param  Components\MarketingCreateInAppTemplateRequestDto  $marketingCreateInAppTemplateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\MarketingCreateInAppTemplateRequestDto  $marketingCreateInAppTemplateRequestDto
      * @return Operations\MarketingUpdateInAppTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateInAppTemplate(
-        string $xAccountId,
-        string $id,
-        Components\MarketingCreateInAppTemplateRequestDto $marketingCreateInAppTemplateRequestDto,
-    ): Operations\MarketingUpdateInAppTemplateResponse {
+    public function updateInAppTemplate(Components\MarketingCreateInAppTemplateRequestDto $marketingCreateInAppTemplateRequestDto, string $xAccountId, string $id): Operations\MarketingUpdateInAppTemplateResponse
+    {
         $request = new Operations\MarketingUpdateInAppTemplateRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -460,9 +446,8 @@ class Marketing
      * @return Operations\MarketingListSmsTemplatesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listSmsTemplates(
-        ?Operations\MarketingListSmsTemplatesRequest $request,
-    ): Operations\MarketingListSmsTemplatesResponse {
+    public function listSmsTemplates(Operations\MarketingListSmsTemplatesRequest $request): Operations\MarketingListSmsTemplatesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/sms');
         $options = ['http_errors' => false];
@@ -504,15 +489,13 @@ class Marketing
     /**
      * Create SMS Template
      *
-     * @param  string  $xAccountId
      * @param  Components\MarketingCreateSmsTemplateRequestDto  $marketingCreateSmsTemplateRequestDto
+     * @param  string  $xAccountId
      * @return Operations\MarketingCreateSmsTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createSmsTemplate(
-        string $xAccountId,
-        Components\MarketingCreateSmsTemplateRequestDto $marketingCreateSmsTemplateRequestDto,
-    ): Operations\MarketingCreateSmsTemplateResponse {
+    public function createSmsTemplate(Components\MarketingCreateSmsTemplateRequestDto $marketingCreateSmsTemplateRequestDto, string $xAccountId): Operations\MarketingCreateSmsTemplateResponse
+    {
         $request = new Operations\MarketingCreateSmsTemplateRequest(
             xAccountId: $xAccountId,
             marketingCreateSmsTemplateRequestDto: $marketingCreateSmsTemplateRequestDto,
@@ -566,9 +549,8 @@ class Marketing
      * @return Operations\MarketingGetSmsTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getSmsTemplate(
-        ?Operations\MarketingGetSmsTemplateRequest $request,
-    ): Operations\MarketingGetSmsTemplateResponse {
+    public function getSmsTemplate(Operations\MarketingGetSmsTemplateRequest $request): Operations\MarketingGetSmsTemplateResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/sms/{id}', Operations\MarketingGetSmsTemplateRequest::class, $request);
         $options = ['http_errors' => false];
@@ -610,17 +592,14 @@ class Marketing
     /**
      * Update SMS Template
      *
+     * @param  Components\MarketingCreateSmsTemplateRequestDto  $marketingCreateSmsTemplateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\MarketingCreateSmsTemplateRequestDto  $marketingCreateSmsTemplateRequestDto
      * @return Operations\MarketingUpdateSmsTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateSmsTemplate(
-        string $xAccountId,
-        string $id,
-        Components\MarketingCreateSmsTemplateRequestDto $marketingCreateSmsTemplateRequestDto,
-    ): Operations\MarketingUpdateSmsTemplateResponse {
+    public function updateSmsTemplate(Components\MarketingCreateSmsTemplateRequestDto $marketingCreateSmsTemplateRequestDto, string $xAccountId, string $id): Operations\MarketingUpdateSmsTemplateResponse
+    {
         $request = new Operations\MarketingUpdateSmsTemplateRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -676,9 +655,8 @@ class Marketing
      * @throws \StackOne\client\Models\Errors\SDKException
      * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    public function listOmniChannelTemplates(
-        ?Operations\MarketingListOmniChannelTemplatesRequest $request,
-    ): Operations\MarketingListOmniChannelTemplatesResponse {
+    public function listOmniChannelTemplates(Operations\MarketingListOmniChannelTemplatesRequest $request): Operations\MarketingListOmniChannelTemplatesResponse
+    {
         trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/omni_channel');
@@ -721,16 +699,14 @@ class Marketing
     /**
      * Create Omni-Channel Template
      *
-     * @param  string  $xAccountId
      * @param  Components\MarketingCreateTemplateRequestDto  $marketingCreateTemplateRequestDto
+     * @param  string  $xAccountId
      * @return Operations\MarketingCreateOmniChannelTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    public function createOmniChannelTemplate(
-        string $xAccountId,
-        Components\MarketingCreateTemplateRequestDto $marketingCreateTemplateRequestDto,
-    ): Operations\MarketingCreateOmniChannelTemplateResponse {
+    public function createOmniChannelTemplate(Components\MarketingCreateTemplateRequestDto $marketingCreateTemplateRequestDto, string $xAccountId): Operations\MarketingCreateOmniChannelTemplateResponse
+    {
         trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $request = new Operations\MarketingCreateOmniChannelTemplateRequest(
             xAccountId: $xAccountId,
@@ -786,9 +762,8 @@ class Marketing
      * @throws \StackOne\client\Models\Errors\SDKException
      * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    public function getOmniChannelTemplate(
-        ?Operations\MarketingGetOmniChannelTemplateRequest $request,
-    ): Operations\MarketingGetOmniChannelTemplateResponse {
+    public function getOmniChannelTemplate(Operations\MarketingGetOmniChannelTemplateRequest $request): Operations\MarketingGetOmniChannelTemplateResponse
+    {
         trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/omni_channel/{id}', Operations\MarketingGetOmniChannelTemplateRequest::class, $request);
@@ -831,18 +806,15 @@ class Marketing
     /**
      * Update Omni-Channel Template
      *
+     * @param  Components\MarketingCreateTemplateRequestDto  $marketingCreateTemplateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\MarketingCreateTemplateRequestDto  $marketingCreateTemplateRequestDto
      * @return Operations\MarketingUpdateOmniChannelTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    public function updateOmniChannelTemplate(
-        string $xAccountId,
-        string $id,
-        Components\MarketingCreateTemplateRequestDto $marketingCreateTemplateRequestDto,
-    ): Operations\MarketingUpdateOmniChannelTemplateResponse {
+    public function updateOmniChannelTemplate(Components\MarketingCreateTemplateRequestDto $marketingCreateTemplateRequestDto, string $xAccountId, string $id): Operations\MarketingUpdateOmniChannelTemplateResponse
+    {
         trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $request = new Operations\MarketingUpdateOmniChannelTemplateRequest(
             xAccountId: $xAccountId,
@@ -898,9 +870,8 @@ class Marketing
      * @return Operations\MarketingListPushTemplatesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listPushTemplates(
-        ?Operations\MarketingListPushTemplatesRequest $request,
-    ): Operations\MarketingListPushTemplatesResponse {
+    public function listPushTemplates(Operations\MarketingListPushTemplatesRequest $request): Operations\MarketingListPushTemplatesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/push');
         $options = ['http_errors' => false];
@@ -942,15 +913,13 @@ class Marketing
     /**
      * Create Push Template
      *
-     * @param  string  $xAccountId
      * @param  Components\MarketingCreatePushTemplateRequestDto  $marketingCreatePushTemplateRequestDto
+     * @param  string  $xAccountId
      * @return Operations\MarketingCreatePushTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createPushTemplate(
-        string $xAccountId,
-        Components\MarketingCreatePushTemplateRequestDto $marketingCreatePushTemplateRequestDto,
-    ): Operations\MarketingCreatePushTemplateResponse {
+    public function createPushTemplate(Components\MarketingCreatePushTemplateRequestDto $marketingCreatePushTemplateRequestDto, string $xAccountId): Operations\MarketingCreatePushTemplateResponse
+    {
         $request = new Operations\MarketingCreatePushTemplateRequest(
             xAccountId: $xAccountId,
             marketingCreatePushTemplateRequestDto: $marketingCreatePushTemplateRequestDto,
@@ -1004,9 +973,8 @@ class Marketing
      * @return Operations\MarketingGetPushTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getPushTemplate(
-        ?Operations\MarketingGetPushTemplateRequest $request,
-    ): Operations\MarketingGetPushTemplateResponse {
+    public function getPushTemplate(Operations\MarketingGetPushTemplateRequest $request): Operations\MarketingGetPushTemplateResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/templates/push/{id}', Operations\MarketingGetPushTemplateRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1048,17 +1016,14 @@ class Marketing
     /**
      * Update Push Template
      *
+     * @param  Components\MarketingCreatePushTemplateRequestDto  $marketingCreatePushTemplateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\MarketingCreatePushTemplateRequestDto  $marketingCreatePushTemplateRequestDto
      * @return Operations\MarketingUpdatePushTemplateResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updatePushTemplate(
-        string $xAccountId,
-        string $id,
-        Components\MarketingCreatePushTemplateRequestDto $marketingCreatePushTemplateRequestDto,
-    ): Operations\MarketingUpdatePushTemplateResponse {
+    public function updatePushTemplate(Components\MarketingCreatePushTemplateRequestDto $marketingCreatePushTemplateRequestDto, string $xAccountId, string $id): Operations\MarketingUpdatePushTemplateResponse
+    {
         $request = new Operations\MarketingUpdatePushTemplateRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -1113,9 +1078,8 @@ class Marketing
      * @return Operations\MarketingListCampaignsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCampaigns(
-        ?Operations\MarketingListCampaignsRequest $request,
-    ): Operations\MarketingListCampaignsResponse {
+    public function listCampaigns(Operations\MarketingListCampaignsRequest $request): Operations\MarketingListCampaignsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/campaigns');
         $options = ['http_errors' => false];
@@ -1161,9 +1125,8 @@ class Marketing
      * @return Operations\MarketingGetCampaignResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCampaign(
-        ?Operations\MarketingGetCampaignRequest $request,
-    ): Operations\MarketingGetCampaignResponse {
+    public function getCampaign(Operations\MarketingGetCampaignRequest $request): Operations\MarketingGetCampaignResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/campaigns/{id}', Operations\MarketingGetCampaignRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1209,9 +1172,8 @@ class Marketing
      * @return Operations\MarketingListContentBlocksResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listContentBlocks(
-        ?Operations\MarketingListContentBlocksRequest $request,
-    ): Operations\MarketingListContentBlocksResponse {
+    public function listContentBlocks(Operations\MarketingListContentBlocksRequest $request): Operations\MarketingListContentBlocksResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/content_blocks');
         $options = ['http_errors' => false];
@@ -1253,15 +1215,13 @@ class Marketing
     /**
      * Create Content Block
      *
-     * @param  string  $xAccountId
      * @param  Components\MarketingCreateContentBlocksRequestDto  $marketingCreateContentBlocksRequestDto
+     * @param  string  $xAccountId
      * @return Operations\MarketingCreateContentBlockResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createContentBlock(
-        string $xAccountId,
-        Components\MarketingCreateContentBlocksRequestDto $marketingCreateContentBlocksRequestDto,
-    ): Operations\MarketingCreateContentBlockResponse {
+    public function createContentBlock(Components\MarketingCreateContentBlocksRequestDto $marketingCreateContentBlocksRequestDto, string $xAccountId): Operations\MarketingCreateContentBlockResponse
+    {
         $request = new Operations\MarketingCreateContentBlockRequest(
             xAccountId: $xAccountId,
             marketingCreateContentBlocksRequestDto: $marketingCreateContentBlocksRequestDto,
@@ -1315,9 +1275,8 @@ class Marketing
      * @return Operations\MarketingGetContentBlockResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getContentBlock(
-        ?Operations\MarketingGetContentBlockRequest $request,
-    ): Operations\MarketingGetContentBlockResponse {
+    public function getContentBlock(Operations\MarketingGetContentBlockRequest $request): Operations\MarketingGetContentBlockResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/marketing/content_blocks/{id}', Operations\MarketingGetContentBlockRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1359,17 +1318,14 @@ class Marketing
     /**
      * Update Content Block
      *
+     * @param  Components\MarketingCreateContentBlocksRequestDto  $marketingCreateContentBlocksRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\MarketingCreateContentBlocksRequestDto  $marketingCreateContentBlocksRequestDto
      * @return Operations\MarketingUpdateContentBlockResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateContentBlock(
-        string $xAccountId,
-        string $id,
-        Components\MarketingCreateContentBlocksRequestDto $marketingCreateContentBlocksRequestDto,
-    ): Operations\MarketingUpdateContentBlockResponse {
+    public function updateContentBlock(Components\MarketingCreateContentBlocksRequestDto $marketingCreateContentBlocksRequestDto, string $xAccountId, string $id): Operations\MarketingUpdateContentBlockResponse
+    {
         $request = new Operations\MarketingUpdateContentBlockRequest(
             xAccountId: $xAccountId,
             id: $id,

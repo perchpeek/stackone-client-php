@@ -16,18 +16,18 @@ class CountryCodeEnum
      *
      * @var ?Value $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Value|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Value|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Value $value = null;
 
     /**
      *
      * @var string|float|bool|Four|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\Four|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\Four|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|Four|array|null $sourceValue = null;
 
     /**

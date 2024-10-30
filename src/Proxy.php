@@ -17,7 +17,7 @@ class Proxy
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -25,15 +25,13 @@ class Proxy
     /**
      * Proxy Request
      *
-     * @param  string  $xAccountId
      * @param  Components\ProxyRequestBody  $proxyRequestBody
+     * @param  string  $xAccountId
      * @return Operations\StackoneProxyRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function proxyRequest(
-        string $xAccountId,
-        Components\ProxyRequestBody $proxyRequestBody,
-    ): Operations\StackoneProxyRequestResponse {
+    public function proxyRequest(Components\ProxyRequestBody $proxyRequestBody, string $xAccountId): Operations\StackoneProxyRequestResponse
+    {
         $request = new Operations\StackoneProxyRequestRequest(
             xAccountId: $xAccountId,
             proxyRequestBody: $proxyRequestBody,

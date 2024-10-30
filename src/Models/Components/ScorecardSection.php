@@ -16,8 +16,8 @@ class ScorecardSection
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class ScorecardSection
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,8 +34,8 @@ class ScorecardSection
      *
      * @var ?string $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
 
     /**
@@ -43,9 +43,9 @@ class ScorecardSection
      *
      * @var ?array<Field> $fields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('fields')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Field>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Field>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $fields = null;
 
     /**

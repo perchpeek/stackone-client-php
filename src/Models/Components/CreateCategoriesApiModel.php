@@ -16,9 +16,9 @@ class CreateCategoriesApiModel
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -26,8 +26,8 @@ class CreateCategoriesApiModel
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -35,8 +35,8 @@ class CreateCategoriesApiModel
      *
      * @var ?bool $active
      */
-    #[\JMS\Serializer\Annotation\SerializedName('active')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $active = null;
 
     /**
@@ -44,9 +44,9 @@ class CreateCategoriesApiModel
      *
      * @var ?CreateCategoriesApiModelLevel $level
      */
-    #[\JMS\Serializer\Annotation\SerializedName('level')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelLevel|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelLevel|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateCategoriesApiModelLevel $level = null;
 
     /**

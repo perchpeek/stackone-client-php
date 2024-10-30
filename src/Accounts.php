@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Accounts
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -26,13 +26,12 @@ class Accounts
     /**
      * List Accounts
      *
-     * @param  Operations\StackoneListLinkedAccountsRequest  $request
+     * @param  ?Operations\StackoneListLinkedAccountsRequest  $request
      * @return Operations\StackoneListLinkedAccountsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listLinkedAccounts(
-        ?Operations\StackoneListLinkedAccountsRequest $request,
-    ): Operations\StackoneListLinkedAccountsResponse {
+    public function listLinkedAccounts(?Operations\StackoneListLinkedAccountsRequest $request = null): Operations\StackoneListLinkedAccountsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/accounts');
         $options = ['http_errors' => false];
@@ -74,9 +73,8 @@ class Accounts
      * @return Operations\StackoneGetAccountResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAccount(
-        string $id,
-    ): Operations\StackoneGetAccountResponse {
+    public function getAccount(string $id): Operations\StackoneGetAccountResponse
+    {
         $request = new Operations\StackoneGetAccountRequest(
             id: $id,
         );
@@ -120,9 +118,8 @@ class Accounts
      * @return Operations\StackoneDeleteAccountResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function deleteAccount(
-        string $id,
-    ): Operations\StackoneDeleteAccountResponse {
+    public function deleteAccount(string $id): Operations\StackoneDeleteAccountResponse
+    {
         $request = new Operations\StackoneDeleteAccountRequest(
             id: $id,
         );
@@ -162,15 +159,13 @@ class Accounts
     /**
      * Update Account
      *
-     * @param  string  $id
      * @param  Components\PatchAccountExternalDto  $patchAccountExternalDto
+     * @param  string  $id
      * @return Operations\StackoneUpdateAccountResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateAccount(
-        string $id,
-        Components\PatchAccountExternalDto $patchAccountExternalDto,
-    ): Operations\StackoneUpdateAccountResponse {
+    public function updateAccount(Components\PatchAccountExternalDto $patchAccountExternalDto, string $id): Operations\StackoneUpdateAccountResponse
+    {
         $request = new Operations\StackoneUpdateAccountRequest(
             id: $id,
             patchAccountExternalDto: $patchAccountExternalDto,
@@ -220,9 +215,8 @@ class Accounts
      * @return Operations\StackoneGetAccountMetaInfoResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAccountMetaInfo(
-        string $id,
-    ): Operations\StackoneGetAccountMetaInfoResponse {
+    public function getAccountMetaInfo(string $id): Operations\StackoneGetAccountMetaInfoResponse
+    {
         $request = new Operations\StackoneGetAccountMetaInfoRequest(
             id: $id,
         );

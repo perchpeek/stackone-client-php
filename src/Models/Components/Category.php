@@ -16,8 +16,8 @@ class Category
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Category
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Category
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,8 +44,8 @@ class Category
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -53,8 +53,8 @@ class Category
      *
      * @var ?bool $active
      */
-    #[\JMS\Serializer\Annotation\SerializedName('active')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $active = null;
 
     /**
@@ -62,9 +62,9 @@ class Category
      *
      * @var ?Level $level
      */
-    #[\JMS\Serializer\Annotation\SerializedName('level')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Level $level = null;
 
     /**

@@ -16,8 +16,8 @@ class Course
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Course
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Course
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,8 +44,8 @@ class Course
      *
      * @var ?string $externalReference
      */
-    #[\JMS\Serializer\Annotation\SerializedName('external_reference')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalReference = null;
 
     /**
@@ -53,9 +53,9 @@ class Course
      *
      * @var ?array<string> $contentIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $contentIds = null;
 
     /**
@@ -63,9 +63,9 @@ class Course
      *
      * @var ?array<string> $remoteContentIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_content_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_content_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $remoteContentIds = null;
 
     /**
@@ -73,8 +73,8 @@ class Course
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -82,8 +82,8 @@ class Course
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
 
     /**
@@ -91,9 +91,9 @@ class Course
      *
      * @var ?array<ContentLanguageEnum> $languages
      */
-    #[\JMS\Serializer\Annotation\SerializedName('languages')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContentLanguageEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContentLanguageEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $languages = null;
 
     /**
@@ -101,9 +101,9 @@ class Course
      *
      * @var ?CourseType $courseType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('course_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CourseType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('course_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CourseType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CourseType $courseType = null;
 
     /**
@@ -111,8 +111,8 @@ class Course
      *
      * @var ?string $coverUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('cover_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cover_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $coverUrl = null;
 
     /**
@@ -120,8 +120,8 @@ class Course
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
@@ -129,9 +129,9 @@ class Course
      *
      * @var ?CourseActive $active
      */
-    #[\JMS\Serializer\Annotation\SerializedName('active')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CourseActive|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CourseActive|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CourseActive $active = null;
 
     /**
@@ -139,8 +139,8 @@ class Course
      *
      * @var ?string $duration
      */
-    #[\JMS\Serializer\Annotation\SerializedName('duration')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('duration')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $duration = null;
 
     /**
@@ -148,9 +148,9 @@ class Course
      *
      * @var ?array<Category> $categories
      */
-    #[\JMS\Serializer\Annotation\SerializedName('categories')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Category>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Category>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $categories = null;
 
     /**
@@ -158,9 +158,9 @@ class Course
      *
      * @var ?array<Skills> $skills
      */
-    #[\JMS\Serializer\Annotation\SerializedName('skills')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Skills>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('skills')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Skills>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $skills = null;
 
     /**
@@ -168,8 +168,8 @@ class Course
      *
      * @var ?string $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $updatedAt = null;
 
     /**
@@ -177,8 +177,8 @@ class Course
      *
      * @var ?string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $createdAt = null;
 
     /**

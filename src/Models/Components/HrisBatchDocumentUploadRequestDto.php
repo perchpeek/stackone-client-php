@@ -16,8 +16,8 @@ class HrisBatchDocumentUploadRequestDto
      *
      * @var array<HrisDocumentsUploadRequestDto> $items
      */
-    #[\JMS\Serializer\Annotation\SerializedName('items')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\HrisDocumentsUploadRequestDto>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\HrisDocumentsUploadRequestDto>')]
     public array $items;
 
     /**

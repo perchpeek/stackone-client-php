@@ -16,8 +16,8 @@ class Scorecard
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Scorecard
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Scorecard
      *
      * @var ?array<ScorecardSection> $sections
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sections')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ScorecardSection>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sections')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ScorecardSection>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $sections = null;
 
     /**
@@ -44,8 +44,8 @@ class Scorecard
      *
      * @var ?string $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
 
     /**
@@ -53,8 +53,8 @@ class Scorecard
      *
      * @var ?string $candidateId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('candidate_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('candidate_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $candidateId = null;
 
     /**
@@ -62,8 +62,8 @@ class Scorecard
      *
      * @var ?string $remoteCandidateId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_candidate_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_candidate_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteCandidateId = null;
 
     /**
@@ -71,8 +71,8 @@ class Scorecard
      *
      * @var ?string $applicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $applicationId = null;
 
     /**
@@ -80,8 +80,8 @@ class Scorecard
      *
      * @var ?string $remoteApplicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteApplicationId = null;
 
     /**
@@ -89,8 +89,8 @@ class Scorecard
      *
      * @var ?string $interviewId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $interviewId = null;
 
     /**
@@ -98,8 +98,8 @@ class Scorecard
      *
      * @var ?string $remoteInterviewId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_interview_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_interview_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteInterviewId = null;
 
     /**
@@ -107,8 +107,8 @@ class Scorecard
      *
      * @var ?string $authorId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('author_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('author_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $authorId = null;
 
     /**
@@ -116,8 +116,8 @@ class Scorecard
      *
      * @var ?string $remoteAuthorId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_author_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_author_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteAuthorId = null;
 
     /**
@@ -125,9 +125,9 @@ class Scorecard
      *
      * @var ?OverallRecommendation $overallRecommendation
      */
-    #[\JMS\Serializer\Annotation\SerializedName('overall_recommendation')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\OverallRecommendation|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('overall_recommendation')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\OverallRecommendation|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?OverallRecommendation $overallRecommendation = null;
 
     /**
@@ -135,8 +135,8 @@ class Scorecard
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -144,8 +144,8 @@ class Scorecard
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

@@ -15,23 +15,23 @@ class StatusReason
      *
      * @var ?string $code
      */
-    #[\JMS\Serializer\Annotation\SerializedName('code')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $code = null;
 
     /**
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
 
     /**
      *
      * @var \DateTime $timestamp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
     public \DateTime $timestamp;
 
     /**

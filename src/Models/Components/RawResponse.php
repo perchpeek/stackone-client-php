@@ -15,22 +15,22 @@ class RawResponse
      *
      * @var string $method
      */
-    #[\JMS\Serializer\Annotation\SerializedName('method')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('method')]
     public string $method;
 
     /**
      *
      * @var string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
     public string $url;
 
     /**
      *
      * @var ?string $body
      */
-    #[\JMS\Serializer\Annotation\SerializedName('body')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $body = null;
 
     /**
@@ -38,9 +38,9 @@ class RawResponse
      *
      * @var ?array<string, mixed> $response
      */
-    #[\JMS\Serializer\Annotation\SerializedName('response')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('response')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $response = null;
 
     /**

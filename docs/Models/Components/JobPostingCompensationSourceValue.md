@@ -29,9 +29,9 @@ bool $value = /* values here */
 Components\JobPostingCompensationSourceValue4 $value = /* values here */
 ```
 
-### `array`
+### `array<mixed>`
 
 ```php
-array $value = /* values here */
+array<mixed> $value = /* values here */
 ```
 

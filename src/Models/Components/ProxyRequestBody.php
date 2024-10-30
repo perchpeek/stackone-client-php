@@ -16,8 +16,8 @@ class ProxyRequestBody
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
@@ -25,9 +25,9 @@ class ProxyRequestBody
      *
      * @var ?Method $method
      */
-    #[\JMS\Serializer\Annotation\SerializedName('method')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Method|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('method')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Method|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Method $method = null;
 
     /**
@@ -35,8 +35,8 @@ class ProxyRequestBody
      *
      * @var ?string $path
      */
-    #[\JMS\Serializer\Annotation\SerializedName('path')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $path = null;
 
     /**
@@ -44,9 +44,9 @@ class ProxyRequestBody
      *
      * @var ?array<string, mixed> $headers
      */
-    #[\JMS\Serializer\Annotation\SerializedName('headers')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('headers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $headers = null;
 
     /**
@@ -54,9 +54,9 @@ class ProxyRequestBody
      *
      * @var ?array<string, mixed> $body
      */
-    #[\JMS\Serializer\Annotation\SerializedName('body')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $body = null;
 
     /**

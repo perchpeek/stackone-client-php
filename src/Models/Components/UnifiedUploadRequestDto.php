@@ -16,8 +16,8 @@ class UnifiedUploadRequestDto
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -25,9 +25,9 @@ class UnifiedUploadRequestDto
      *
      * @var ?UnifiedUploadRequestDtoFileFormat $fileFormat
      */
-    #[\JMS\Serializer\Annotation\SerializedName('file_format')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\UnifiedUploadRequestDtoFileFormat|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('file_format')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\UnifiedUploadRequestDtoFileFormat|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?UnifiedUploadRequestDtoFileFormat $fileFormat = null;
 
     /**
@@ -35,8 +35,8 @@ class UnifiedUploadRequestDto
      *
      * @var ?string $content
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $content = null;
 
     /**
@@ -44,8 +44,8 @@ class UnifiedUploadRequestDto
      *
      * @var ?string $categoryId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('category_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $categoryId = null;
 
     /**
@@ -53,8 +53,8 @@ class UnifiedUploadRequestDto
      *
      * @var ?string $path
      */
-    #[\JMS\Serializer\Annotation\SerializedName('path')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $path = null;
 
     /**
@@ -62,9 +62,9 @@ class UnifiedUploadRequestDto
      *
      * @var ?UnifiedUploadRequestDtoCategory $category
      */
-    #[\JMS\Serializer\Annotation\SerializedName('category')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\UnifiedUploadRequestDtoCategory|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\UnifiedUploadRequestDtoCategory|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?UnifiedUploadRequestDtoCategory $category = null;
 
     /**
@@ -72,9 +72,9 @@ class UnifiedUploadRequestDto
      *
      * @var ?UnifiedUploadRequestDtoConfidential $confidential
      */
-    #[\JMS\Serializer\Annotation\SerializedName('confidential')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\UnifiedUploadRequestDtoConfidential|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\UnifiedUploadRequestDtoConfidential|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?UnifiedUploadRequestDtoConfidential $confidential = null;
 
     /**

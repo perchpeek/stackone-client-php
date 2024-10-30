@@ -16,8 +16,8 @@ class InterviewPart
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,17 +25,17 @@ class InterviewPart
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
      *
      * @var ?InterviewPartType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\InterviewPartType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\InterviewPartType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?InterviewPartType $type = null;
 
     /**
@@ -43,8 +43,8 @@ class InterviewPart
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -52,9 +52,9 @@ class InterviewPart
      *
      * @var ?array<string> $interviewerIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interviewer_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interviewer_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $interviewerIds = null;
 
     /**
@@ -62,9 +62,9 @@ class InterviewPart
      *
      * @var ?array<string> $remoteInterviewerIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_interviewer_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_interviewer_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $remoteInterviewerIds = null;
 
     /**
@@ -72,8 +72,8 @@ class InterviewPart
      *
      * @var ?string $meetingUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('meeting_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('meeting_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $meetingUrl = null;
 
     /**
@@ -81,8 +81,8 @@ class InterviewPart
      *
      * @var ?string $meetingProvider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('meeting_provider')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('meeting_provider')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $meetingProvider = null;
 
     /**
@@ -90,8 +90,8 @@ class InterviewPart
      *
      * @var ?\DateTime $startAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startAt = null;
 
     /**
@@ -99,8 +99,8 @@ class InterviewPart
      *
      * @var ?\DateTime $endAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('end_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $endAt = null;
 
     /**
@@ -108,8 +108,8 @@ class InterviewPart
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -117,8 +117,8 @@ class InterviewPart
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

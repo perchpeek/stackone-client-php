@@ -16,8 +16,8 @@ class SocialLink
      *
      * @var ?string $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $type = null;
 
     /**
@@ -25,8 +25,8 @@ class SocialLink
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**

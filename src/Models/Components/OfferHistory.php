@@ -16,24 +16,24 @@ class OfferHistory
      *
      * @var ?\DateTime $startDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startDate = null;
 
     /**
      *
      * @var ?float $salary
      */
-    #[\JMS\Serializer\Annotation\SerializedName('salary')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $salary = null;
 
     /**
      *
      * @var ?string $currency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
 
     /**
@@ -41,8 +41,8 @@ class OfferHistory
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -50,8 +50,8 @@ class OfferHistory
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

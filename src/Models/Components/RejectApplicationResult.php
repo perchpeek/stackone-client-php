@@ -15,29 +15,29 @@ class RejectApplicationResult
      *
      * @var float $statusCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('statusCode')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('statusCode')]
     public float $statusCode;
 
     /**
      *
      * @var string $message
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
     public string $message;
 
     /**
      *
      * @var \DateTime $timestamp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
     public \DateTime $timestamp;
 
     /**
      *
      * @var CreateResultDataApiModel $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateResultDataApiModel')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateResultDataApiModel')]
     public CreateResultDataApiModel $data;
 
     /**

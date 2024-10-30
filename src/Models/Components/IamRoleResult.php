@@ -15,8 +15,8 @@ class IamRoleResult
      *
      * @var IamRole $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\IamRole')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\IamRole')]
     public IamRole $data;
 
     /**
@@ -24,9 +24,9 @@ class IamRoleResult
      *
      * @var ?array<RawResponse> $raw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('raw')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\RawResponse>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('raw')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\RawResponse>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $raw = null;
 
     /**

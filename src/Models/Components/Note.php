@@ -16,8 +16,8 @@ class Note
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Note
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Note
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,9 +44,9 @@ class Note
      *
      * @var ?array<NoteContentApiModel> $content
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\NoteContentApiModel>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\NoteContentApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $content = null;
 
     /**
@@ -54,8 +54,8 @@ class Note
      *
      * @var ?string $authorId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('author_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('author_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $authorId = null;
 
     /**
@@ -63,8 +63,8 @@ class Note
      *
      * @var ?string $remoteAuthorId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_author_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_author_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteAuthorId = null;
 
     /**
@@ -72,9 +72,9 @@ class Note
      *
      * @var ?Visibility $visibility
      */
-    #[\JMS\Serializer\Annotation\SerializedName('visibility')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Visibility|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('visibility')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Visibility|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Visibility $visibility = null;
 
     /**
@@ -82,8 +82,8 @@ class Note
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -91,8 +91,8 @@ class Note
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**
@@ -100,8 +100,8 @@ class Note
      *
      * @var ?\DateTime $deletedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('deleted_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('deleted_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $deletedAt = null;
 
     /**

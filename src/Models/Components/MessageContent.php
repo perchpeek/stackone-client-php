@@ -15,40 +15,40 @@ class MessageContent
      *
      * @var ?string $subject
      */
-    #[\JMS\Serializer\Annotation\SerializedName('subject')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subject')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subject = null;
 
     /**
      *
      * @var ?string $body
      */
-    #[\JMS\Serializer\Annotation\SerializedName('body')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $body = null;
 
     /**
      *
      * @var ?string $from
      */
-    #[\JMS\Serializer\Annotation\SerializedName('from')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('from')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $from = null;
 
     /**
      *
      * @var ?string $replyTo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('reply-to')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reply-to')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $replyTo = null;
 
     /**
      *
      * @var ?string $preheader
      */
-    #[\JMS\Serializer\Annotation\SerializedName('preheader')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('preheader')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $preheader = null;
 
     /**

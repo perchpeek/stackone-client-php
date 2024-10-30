@@ -16,17 +16,17 @@ class Attachments
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
      *
      * @var ?AssessmentsResultsContentType $contentType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AssessmentsResultsContentType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AssessmentsResultsContentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AssessmentsResultsContentType $contentType = null;
 
     /**

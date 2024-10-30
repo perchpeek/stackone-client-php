@@ -15,8 +15,8 @@ class MarketingCreateEmailTemplateRequestDto
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -24,9 +24,9 @@ class MarketingCreateEmailTemplateRequestDto
      *
      * @var ?array<string> $tags
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tags')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $tags = null;
 
     /**
@@ -34,9 +34,9 @@ class MarketingCreateEmailTemplateRequestDto
      *
      * @var ?array<EmailMessages> $messages
      */
-    #[\JMS\Serializer\Annotation\SerializedName('messages')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\EmailMessages>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('messages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\EmailMessages>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $messages = null;
 
     /**
@@ -44,9 +44,9 @@ class MarketingCreateEmailTemplateRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

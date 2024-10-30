@@ -16,8 +16,8 @@ class Offer
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Offer
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,17 +34,17 @@ class Offer
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
      *
      * @var ?string $applicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $applicationId = null;
 
     /**
@@ -52,8 +52,8 @@ class Offer
      *
      * @var ?string $remoteApplicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteApplicationId = null;
 
     /**
@@ -61,33 +61,33 @@ class Offer
      *
      * @var ?\DateTime $startDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startDate = null;
 
     /**
      *
      * @var ?OfferStatus $offerStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('offer_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\OfferStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('offer_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\OfferStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?OfferStatus $offerStatus = null;
 
     /**
      *
      * @var ?float $salary
      */
-    #[\JMS\Serializer\Annotation\SerializedName('salary')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $salary = null;
 
     /**
      *
      * @var ?string $currency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
 
     /**
@@ -95,8 +95,8 @@ class Offer
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -104,8 +104,8 @@ class Offer
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**
@@ -113,9 +113,9 @@ class Offer
      *
      * @var ?array<OfferHistory> $offerHistory
      */
-    #[\JMS\Serializer\Annotation\SerializedName('offer_history')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\OfferHistory>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('offer_history')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\OfferHistory>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $offerHistory = null;
 
     /**

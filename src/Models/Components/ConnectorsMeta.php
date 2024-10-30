@@ -16,7 +16,7 @@ class ConnectorsMeta
      *
      * @var string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
     public string $provider;
 
     /**
@@ -24,7 +24,7 @@ class ConnectorsMeta
      *
      * @var string $providerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider_name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider_name')]
     public string $providerName;
 
     /**
@@ -32,8 +32,8 @@ class ConnectorsMeta
      *
      * @var ConnectorsMetaCategory $category
      */
-    #[\JMS\Serializer\Annotation\SerializedName('category')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\ConnectorsMetaCategory')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ConnectorsMetaCategory')]
     public ConnectorsMetaCategory $category;
 
     /**
@@ -41,8 +41,8 @@ class ConnectorsMeta
      *
      * @var ?bool $active
      */
-    #[\JMS\Serializer\Annotation\SerializedName('active')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $active = null;
 
     /**
@@ -50,8 +50,8 @@ class ConnectorsMeta
      *
      * @var array<string, mixed> $models
      */
-    #[\JMS\Serializer\Annotation\SerializedName('models')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('models')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
     public array $models;
 
     /**
@@ -59,9 +59,9 @@ class ConnectorsMeta
      *
      * @var ?Resources $resources
      */
-    #[\JMS\Serializer\Annotation\SerializedName('resources')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Resources|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('resources')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Resources|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Resources $resources = null;
 
     /**

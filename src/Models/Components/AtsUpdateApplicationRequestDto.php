@@ -16,9 +16,9 @@ class AtsUpdateApplicationRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**
@@ -27,8 +27,8 @@ class AtsUpdateApplicationRequestDto
      * @var ?string $rejectedReasonId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('rejected_reason_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rejected_reason_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rejectedReasonId = null;
 
     /**
@@ -36,27 +36,27 @@ class AtsUpdateApplicationRequestDto
      *
      * @var ?array<ApplicationCustomFields> $customFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ApplicationCustomFields>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ApplicationCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
     /**
      *
      * @var ?AtsUpdateApplicationRequestDtoApplicationStatus $applicationStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('application_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsUpdateApplicationRequestDtoApplicationStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsUpdateApplicationRequestDtoApplicationStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsUpdateApplicationRequestDtoApplicationStatus $applicationStatus = null;
 
     /**
      *
      * @var ?AtsUpdateApplicationRequestDtoSource $source
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsUpdateApplicationRequestDtoSource|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsUpdateApplicationRequestDtoSource|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsUpdateApplicationRequestDtoSource $source = null;
 
     /**
@@ -64,8 +64,8 @@ class AtsUpdateApplicationRequestDto
      *
      * @var ?string $interviewStageId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_stage_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $interviewStageId = null;
 
     /**

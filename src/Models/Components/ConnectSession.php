@@ -15,21 +15,21 @@ class ConnectSession
      *
      * @var float $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public float $id;
 
     /**
      *
      * @var float $organizationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('organization_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('organization_id')]
     public float $organizationId;
 
     /**
      *
      * @var string $projectId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('project_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('project_id')]
     public string $projectId;
 
     /**
@@ -37,62 +37,62 @@ class ConnectSession
      *
      * @var ?array<ConnectSessionCategories> $categories
      */
-    #[\JMS\Serializer\Annotation\SerializedName('categories')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ConnectSessionCategories>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ConnectSessionCategories>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $categories = null;
 
     /**
      *
      * @var ?string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $provider = null;
 
     /**
      *
      * @var string $originOwnerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
     public string $originOwnerId;
 
     /**
      *
      * @var string $originOwnerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
     public string $originOwnerName;
 
     /**
      *
      * @var ?string $originUsername
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_username')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originUsername = null;
 
     /**
      *
      * @var ?string $accountId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('account_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $accountId = null;
 
     /**
      *
      * @var ?string $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
 
     /**
      *
      * @var \DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     public \DateTime $createdAt;
 
     /**

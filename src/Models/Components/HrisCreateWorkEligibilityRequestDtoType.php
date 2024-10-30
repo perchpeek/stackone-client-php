@@ -15,18 +15,18 @@ class HrisCreateWorkEligibilityRequestDtoType
      *
      * @var ?HrisCreateWorkEligibilityRequestDtoTypeValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoTypeValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoTypeValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateWorkEligibilityRequestDtoTypeValue $value = null;
 
     /**
      *
      * @var string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceType4|array<mixed>|null $sourceType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_type')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoSourceType4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoSourceType4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceType4|array|null $sourceType = null;
 
     /**

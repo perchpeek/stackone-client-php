@@ -15,40 +15,40 @@ class AccountAddress
      *
      * @var ?string $street1
      */
-    #[\JMS\Serializer\Annotation\SerializedName('street_1')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('street_1')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $street1 = null;
 
     /**
      *
      * @var ?string $street2
      */
-    #[\JMS\Serializer\Annotation\SerializedName('street_2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('street_2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $street2 = null;
 
     /**
      *
      * @var ?string $city
      */
-    #[\JMS\Serializer\Annotation\SerializedName('city')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $city = null;
 
     /**
      *
      * @var ?string $state
      */
-    #[\JMS\Serializer\Annotation\SerializedName('state')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $state = null;
 
     /**
      *
      * @var ?string $zipCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('zip_code')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('zip_code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $zipCode = null;
 
     /**
@@ -56,9 +56,9 @@ class AccountAddress
      *
      * @var ?AccountAddressCountry $country
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountAddressCountry|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountAddressCountry|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AccountAddressCountry $country = null;
 
     /**
@@ -66,9 +66,9 @@ class AccountAddress
      *
      * @var ?AccountAddressLocationType $locationType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('location_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountAddressLocationType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountAddressLocationType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AccountAddressLocationType $locationType = null;
 
     /**

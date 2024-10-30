@@ -16,16 +16,16 @@ class CreateMessage
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -33,18 +33,18 @@ class CreateMessage
      *
      * @var ?CreateMessageMessageType $messageType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateMessageMessageType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateMessageMessageType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateMessageMessageType $messageType = null;
 
     /**
      *
      * @var SmsMessageContents|EmailMessageContents|PushMessageContents|null $messageContent
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message_content')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\SmsMessageContents|\StackOne\client\Models\Components\EmailMessageContents|\StackOne\client\Models\Components\PushMessageContents')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message_content')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SmsMessageContents|\StackOne\client\Models\Components\EmailMessageContents|\StackOne\client\Models\Components\PushMessageContents')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public SmsMessageContents|EmailMessageContents|PushMessageContents|null $messageContent = null;
 
     /**

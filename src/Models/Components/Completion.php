@@ -16,8 +16,8 @@ class Completion
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Completion
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Completion
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,8 +44,8 @@ class Completion
      *
      * @var ?string $externalId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('external_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalId = null;
 
     /**
@@ -53,8 +53,8 @@ class Completion
      *
      * @var ?string $contentExternalReference
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_external_reference')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $contentExternalReference = null;
 
     /**
@@ -62,8 +62,8 @@ class Completion
      *
      * @var ?string $remoteExternalId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_external_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_external_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteExternalId = null;
 
     /**
@@ -71,8 +71,8 @@ class Completion
      *
      * @var ?string $contentId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $contentId = null;
 
     /**
@@ -80,8 +80,8 @@ class Completion
      *
      * @var ?string $remoteContentId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_content_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_content_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteContentId = null;
 
     /**
@@ -89,8 +89,8 @@ class Completion
      *
      * @var ?string $courseId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('course_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $courseId = null;
 
     /**
@@ -98,8 +98,8 @@ class Completion
      *
      * @var ?string $remoteCourseId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_course_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteCourseId = null;
 
     /**
@@ -107,9 +107,9 @@ class Completion
      *
      * @var ?CompletionResult1 $result
      */
-    #[\JMS\Serializer\Annotation\SerializedName('result')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CompletionResult1|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('result')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CompletionResult1|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CompletionResult1 $result = null;
 
     /**
@@ -117,8 +117,8 @@ class Completion
      *
      * @var ?string $completedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('completed_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('completed_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $completedAt = null;
 
     /**
@@ -126,8 +126,8 @@ class Completion
      *
      * @var ?string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $createdAt = null;
 
     /**
@@ -135,8 +135,8 @@ class Completion
      *
      * @var ?string $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $updatedAt = null;
 
     /**
@@ -144,8 +144,8 @@ class Completion
      *
      * @var ?string $userId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('user_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $userId = null;
 
     /**
@@ -153,8 +153,8 @@ class Completion
      *
      * @var ?string $remoteUserId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_user_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteUserId = null;
 
     /**

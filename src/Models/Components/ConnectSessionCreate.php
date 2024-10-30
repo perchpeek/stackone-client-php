@@ -16,9 +16,9 @@ class ConnectSessionCreate
      *
      * @var ?array<Categories> $categories
      */
-    #[\JMS\Serializer\Annotation\SerializedName('categories')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Categories>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Categories>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $categories = null;
 
     /**
@@ -26,8 +26,8 @@ class ConnectSessionCreate
      *
      * @var ?string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $provider = null;
 
     /**
@@ -35,7 +35,7 @@ class ConnectSessionCreate
      *
      * @var string $originOwnerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
     public string $originOwnerId;
 
     /**
@@ -43,7 +43,7 @@ class ConnectSessionCreate
      *
      * @var string $originOwnerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
     public string $originOwnerName;
 
     /**
@@ -51,8 +51,8 @@ class ConnectSessionCreate
      *
      * @var ?string $originUsername
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_username')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originUsername = null;
 
     /**
@@ -60,8 +60,8 @@ class ConnectSessionCreate
      *
      * @var ?string $accountId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('account_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('account_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $accountId = null;
 
     /**
@@ -69,8 +69,8 @@ class ConnectSessionCreate
      *
      * @var ?float $expiresIn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expires_in')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expires_in')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $expiresIn = null;
 
     /**
@@ -78,9 +78,9 @@ class ConnectSessionCreate
      *
      * @var ?Metadata $metadata
      */
-    #[\JMS\Serializer\Annotation\SerializedName('metadata')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Metadata|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Metadata|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Metadata $metadata = null;
 
     /**
@@ -88,8 +88,8 @@ class ConnectSessionCreate
      *
      * @var ?bool $multiple
      */
-    #[\JMS\Serializer\Annotation\SerializedName('multiple')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('multiple')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $multiple = null;
 
     /**
@@ -97,8 +97,8 @@ class ConnectSessionCreate
      *
      * @var ?string $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
 
     /**

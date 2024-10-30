@@ -17,8 +17,8 @@ class UnifiedUploadRequestDtoCategory
      *
      * @var ?string $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $value = null;
 
     /**
@@ -26,8 +26,8 @@ class UnifiedUploadRequestDtoCategory
      *
      * @var ?string $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sourceValue = null;
 
     /**

@@ -16,17 +16,17 @@ class HrisCreateEmployeeRequestDtoNationalIdentityNumber
      *
      * @var ?string $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $value = null;
 
     /**
      *
      * @var ?HrisCreateEmployeeRequestDtoType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoType $type = null;
 
     /**
@@ -34,9 +34,9 @@ class HrisCreateEmployeeRequestDtoNationalIdentityNumber
      *
      * @var ?HrisCreateEmployeeRequestDtoCountry $country
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoCountry|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoCountry|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoCountry $country = null;
 
     /**

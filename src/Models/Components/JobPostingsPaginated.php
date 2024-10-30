@@ -16,16 +16,16 @@ class JobPostingsPaginated
      * @var ?string $nextPage
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('next_page')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('next_page')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nextPage = null;
 
     /**
      *
      * @var ?string $next
      */
-    #[\JMS\Serializer\Annotation\SerializedName('next')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $next = null;
 
     /**
@@ -33,8 +33,8 @@ class JobPostingsPaginated
      *
      * @var array<JobPosting> $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPosting>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPosting>')]
     public array $data;
 
     /**
@@ -42,9 +42,9 @@ class JobPostingsPaginated
      *
      * @var ?array<RawResponse> $raw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('raw')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\RawResponse>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('raw')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\RawResponse>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $raw = null;
 
     /**

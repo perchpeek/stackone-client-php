@@ -16,8 +16,8 @@ class CreateEmploymentApiModel
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,9 +25,9 @@ class CreateEmploymentApiModel
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -35,8 +35,8 @@ class CreateEmploymentApiModel
      *
      * @var ?string $employeeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employee_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $employeeId = null;
 
     /**
@@ -44,8 +44,8 @@ class CreateEmploymentApiModel
      *
      * @var ?string $jobTitle
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jobTitle = null;
 
     /**
@@ -53,8 +53,8 @@ class CreateEmploymentApiModel
      *
      * @var ?string $payRate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('pay_rate')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pay_rate')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $payRate = null;
 
     /**
@@ -62,9 +62,9 @@ class CreateEmploymentApiModel
      *
      * @var ?CreateEmploymentApiModelPayPeriod $payPeriod
      */
-    #[\JMS\Serializer\Annotation\SerializedName('pay_period')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelPayPeriod|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pay_period')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelPayPeriod|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateEmploymentApiModelPayPeriod $payPeriod = null;
 
     /**
@@ -72,9 +72,9 @@ class CreateEmploymentApiModel
      *
      * @var ?CreateEmploymentApiModelPayFrequency $payFrequency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('pay_frequency')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelPayFrequency|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pay_frequency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelPayFrequency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateEmploymentApiModelPayFrequency $payFrequency = null;
 
     /**
@@ -82,8 +82,8 @@ class CreateEmploymentApiModel
      *
      * @var ?string $payCurrency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('pay_currency')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pay_currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $payCurrency = null;
 
     /**
@@ -91,8 +91,8 @@ class CreateEmploymentApiModel
      *
      * @var ?\DateTime $effectiveDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('effective_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('effective_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $effectiveDate = null;
 
     /**
@@ -100,9 +100,9 @@ class CreateEmploymentApiModel
      *
      * @var ?CreateEmploymentApiModelEmploymentType $employmentType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelEmploymentType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelEmploymentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateEmploymentApiModelEmploymentType $employmentType = null;
 
     /**
@@ -110,9 +110,9 @@ class CreateEmploymentApiModel
      *
      * @var ?CreateEmploymentApiModelEmploymentContractType $employmentContractType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_contract_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelEmploymentContractType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_contract_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelEmploymentContractType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null;
 
     /**
@@ -120,8 +120,8 @@ class CreateEmploymentApiModel
      *
      * @var ?string $timeWorked
      */
-    #[\JMS\Serializer\Annotation\SerializedName('time_worked')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('time_worked')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $timeWorked = null;
 
     /**

@@ -16,9 +16,9 @@ class Result
      *
      * @var ?AssessmentsResultsValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AssessmentsResultsValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AssessmentsResultsValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AssessmentsResultsValue $value = null;
 
     /**
@@ -26,9 +26,9 @@ class Result
      *
      * @var string|float|bool|AssessmentsResultsSourceValue4|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AssessmentsResultsSourceValue4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AssessmentsResultsSourceValue4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|AssessmentsResultsSourceValue4|array|null $sourceValue = null;
 
     /**

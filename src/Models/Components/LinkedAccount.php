@@ -15,22 +15,22 @@ class LinkedAccount
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
      *
      * @var string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
     public string $provider;
 
     /**
      *
      * @var Status $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Status')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Status')]
     public Status $status;
 
     /**
@@ -38,71 +38,71 @@ class LinkedAccount
      *
      * @var ?array<StatusReason> $statusReasons
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status_reasons')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\StatusReason>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status_reasons')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\StatusReason>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $statusReasons = null;
 
     /**
      *
      * @var string $originOwnerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
     public string $originOwnerId;
 
     /**
      *
      * @var string $originOwnerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_owner_name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
     public string $originOwnerName;
 
     /**
      *
      * @var ?string $originUsername
      */
-    #[\JMS\Serializer\Annotation\SerializedName('origin_username')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originUsername = null;
 
     /**
      *
      * @var ?Credentials $credentials
      */
-    #[\JMS\Serializer\Annotation\SerializedName('credentials')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Credentials|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('credentials')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Credentials|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Credentials $credentials = null;
 
     /**
      *
      * @var ?SetupInformation $setupInformation
      */
-    #[\JMS\Serializer\Annotation\SerializedName('setup_information')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\SetupInformation|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('setup_information')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SetupInformation|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?SetupInformation $setupInformation = null;
 
     /**
      *
      * @var ?string $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
 
     /**
      *
      * @var \DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     public \DateTime $createdAt;
 
     /**
      *
      * @var \DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
     public \DateTime $updatedAt;
 
     /**

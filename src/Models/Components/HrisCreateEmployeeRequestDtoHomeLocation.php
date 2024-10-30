@@ -17,8 +17,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -26,8 +26,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -35,8 +35,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $phoneNumber
      */
-    #[\JMS\Serializer\Annotation\SerializedName('phone_number')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $phoneNumber = null;
 
     /**
@@ -44,8 +44,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $street1
      */
-    #[\JMS\Serializer\Annotation\SerializedName('street_1')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('street_1')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $street1 = null;
 
     /**
@@ -53,8 +53,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $street2
      */
-    #[\JMS\Serializer\Annotation\SerializedName('street_2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('street_2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $street2 = null;
 
     /**
@@ -62,8 +62,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $city
      */
-    #[\JMS\Serializer\Annotation\SerializedName('city')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $city = null;
 
     /**
@@ -71,8 +71,8 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?string $zipCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('zip_code')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('zip_code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $zipCode = null;
 
     /**
@@ -80,9 +80,9 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?HrisCreateEmployeeRequestDtoHomeLocationCountry $country
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocationCountry|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocationCountry|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoHomeLocationCountry $country = null;
 
     /**
@@ -90,9 +90,9 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**
@@ -100,9 +100,9 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      *
      * @var ?State $state
      */
-    #[\JMS\Serializer\Annotation\SerializedName('state')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\State|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('state')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\State|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?State $state = null;
 
     /**

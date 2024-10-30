@@ -16,9 +16,9 @@ class AtsCreateNotesRequestDto
      *
      * @var ?array<NoteContentApiModel> $content
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\NoteContentApiModel>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\NoteContentApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $content = null;
 
     /**
@@ -26,8 +26,8 @@ class AtsCreateNotesRequestDto
      *
      * @var ?string $authorId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('author_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('author_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $authorId = null;
 
     /**
@@ -35,9 +35,9 @@ class AtsCreateNotesRequestDto
      *
      * @var ?AtsCreateNotesRequestDtoVisibility $visibility
      */
-    #[\JMS\Serializer\Annotation\SerializedName('visibility')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateNotesRequestDtoVisibility|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('visibility')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateNotesRequestDtoVisibility|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateNotesRequestDtoVisibility $visibility = null;
 
     /**
@@ -45,9 +45,9 @@ class AtsCreateNotesRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

@@ -16,8 +16,8 @@ class JobHiringTeam
      *
      * @var ?string $userId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('user_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $userId = null;
 
     /**
@@ -25,8 +25,8 @@ class JobHiringTeam
      *
      * @var ?string $remoteUserId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_user_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteUserId = null;
 
     /**
@@ -34,8 +34,8 @@ class JobHiringTeam
      *
      * @var ?string $firstName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('first_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('first_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $firstName = null;
 
     /**
@@ -43,8 +43,8 @@ class JobHiringTeam
      *
      * @var ?string $lastName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lastName = null;
 
     /**
@@ -52,8 +52,8 @@ class JobHiringTeam
      *
      * @var ?string $email
      */
-    #[\JMS\Serializer\Annotation\SerializedName('email')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $email = null;
 
     /**
@@ -61,8 +61,8 @@ class JobHiringTeam
      *
      * @var ?string $role
      */
-    #[\JMS\Serializer\Annotation\SerializedName('role')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('role')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $role = null;
 
     /**

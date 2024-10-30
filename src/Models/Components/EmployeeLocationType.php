@@ -17,9 +17,9 @@ class EmployeeLocationType
      *
      * @var ?EmployeeWorkLocationLocationTypeValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeWorkLocationLocationTypeValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeWorkLocationLocationTypeValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?EmployeeWorkLocationLocationTypeValue $value = null;
 
     /**
@@ -27,9 +27,9 @@ class EmployeeLocationType
      *
      * @var string|float|bool|EmployeeSourceValueWorkLocationLocationType4|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\EmployeeSourceValueWorkLocationLocationType4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\EmployeeSourceValueWorkLocationLocationType4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|EmployeeSourceValueWorkLocationLocationType4|array|null $sourceValue = null;
 
     /**

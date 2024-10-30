@@ -292,6 +292,14 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
             coverUrl: 'https://www.googledrive.com/?v=16873',
             active: true,
             duration: 'P3Y6M4DT12H30M5S',
+            skills: [
+                new Components\Skills(
+                    id: '12345',
+                    remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+                    name: 'Sales Techniques',
+                    active: true,
+                ),
+            ],
             contentLaunchMethod: new Components\ContentLaunchMethod(),
             order: 1,
             categories: [
@@ -360,7 +368,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order,content_launch_method',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,skills,order,content_launch_method',
     filter: new Operations\LmsListContentQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -432,6 +440,14 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
+    skills: [
+        new Components\Skills(
+            id: '12345',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Sales Techniques',
+            active: true,
+        ),
+    ],
     contentLaunchMethod: new Components\ContentLaunchMethod(),
     order: 1,
     categories: [
@@ -515,6 +531,14 @@ $lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
+    skills: [
+        new Components\Skills(
+            id: '12345',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Sales Techniques',
+            active: true,
+        ),
+    ],
     contentLaunchMethod: new Components\LmsCreateContentRequestDtoContentLaunchMethod(),
     order: 1,
     categories: [
@@ -582,7 +606,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\LmsGetContentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,order,content_launch_method',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,skills,order,content_launch_method',
 );
 
 $response = $sdk->lms->getContent(
@@ -702,6 +726,14 @@ $lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
+    skills: [
+        new Components\Skills(
+            id: '12345',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Sales Techniques',
+            active: true,
+        ),
+    ],
     contentLaunchMethod: new Components\LmsCreateContentRequestDtoContentLaunchMethod(),
     order: 1,
     categories: [

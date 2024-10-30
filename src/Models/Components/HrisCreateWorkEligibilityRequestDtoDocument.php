@@ -16,8 +16,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,8 +34,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -43,8 +43,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?string $path
      */
-    #[\JMS\Serializer\Annotation\SerializedName('path')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $path = null;
 
     /**
@@ -52,9 +52,9 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?HrisCreateWorkEligibilityRequestDtoCategory $category
      */
-    #[\JMS\Serializer\Annotation\SerializedName('category')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoCategory|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoCategory|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateWorkEligibilityRequestDtoCategory $category = null;
 
     /**
@@ -63,9 +63,9 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      * @var ?array<Content> $contents
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('contents')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Content>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('contents')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Content>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $contents = null;
 
     /**
@@ -73,8 +73,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?string $categoryId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('category_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $categoryId = null;
 
     /**
@@ -82,8 +82,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -91,8 +91,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**
@@ -100,8 +100,8 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?string $remoteUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteUrl = null;
 
     /**
@@ -109,9 +109,9 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      *
      * @var ?HrisCreateWorkEligibilityRequestDtoFileFormat $fileFormat
      */
-    #[\JMS\Serializer\Annotation\SerializedName('file_format')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoFileFormat|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('file_format')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoFileFormat|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateWorkEligibilityRequestDtoFileFormat $fileFormat = null;
 
     /**

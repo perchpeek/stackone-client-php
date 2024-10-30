@@ -16,8 +16,8 @@ class AssessmentsResults
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class AssessmentsResults
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,26 +34,26 @@ class AssessmentsResults
      *
      * @var ?string $assessmentId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('assessment_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('assessment_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $assessmentId = null;
 
     /**
      *
      * @var ?AssessmentsResultsCandidate $candidate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('candidate')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AssessmentsResultsCandidate|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('candidate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AssessmentsResultsCandidate|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AssessmentsResultsCandidate $candidate = null;
 
     /**
      *
      * @var ?Score $score
      */
-    #[\JMS\Serializer\Annotation\SerializedName('score')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Score|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('score')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Score|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Score $score = null;
 
     /**
@@ -61,8 +61,8 @@ class AssessmentsResults
      *
      * @var ?\DateTime $assessmentDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('assessment_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('assessment_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $assessmentDate = null;
 
     /**
@@ -70,8 +70,8 @@ class AssessmentsResults
      *
      * @var ?\DateTime $submissionDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('submission_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('submission_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $submissionDate = null;
 
     /**
@@ -79,17 +79,17 @@ class AssessmentsResults
      *
      * @var ?string $summary
      */
-    #[\JMS\Serializer\Annotation\SerializedName('summary')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('summary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $summary = null;
 
     /**
      *
      * @var ?Result $result
      */
-    #[\JMS\Serializer\Annotation\SerializedName('result')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Result|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('result')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Result|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Result $result = null;
 
     /**
@@ -97,17 +97,17 @@ class AssessmentsResults
      *
      * @var ?string $resultUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('result_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('result_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $resultUrl = null;
 
     /**
      *
      * @var ?Attachments $attachments
      */
-    #[\JMS\Serializer\Annotation\SerializedName('attachments')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Attachments|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('attachments')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Attachments|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Attachments $attachments = null;
 
     /**

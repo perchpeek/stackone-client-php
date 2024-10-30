@@ -16,8 +16,8 @@ class TimeOff
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class TimeOff
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,8 +34,8 @@ class TimeOff
      *
      * @var ?string $employeeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employee_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $employeeId = null;
 
     /**
@@ -43,8 +43,8 @@ class TimeOff
      *
      * @var ?string $remoteEmployeeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_employee_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_employee_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteEmployeeId = null;
 
     /**
@@ -52,8 +52,8 @@ class TimeOff
      *
      * @var ?string $approverId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('approver_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('approver_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $approverId = null;
 
     /**
@@ -61,8 +61,8 @@ class TimeOff
      *
      * @var ?string $remoteApproverId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_approver_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_approver_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteApproverId = null;
 
     /**
@@ -70,9 +70,9 @@ class TimeOff
      *
      * @var ?TimeOffStatus $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\TimeOffStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\TimeOffStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?TimeOffStatus $status = null;
 
     /**
@@ -80,9 +80,9 @@ class TimeOff
      *
      * @var ?TimeOffType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\TimeOffType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\TimeOffType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?TimeOffType $type = null;
 
     /**
@@ -90,8 +90,8 @@ class TimeOff
      *
      * @var ?\DateTime $startDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startDate = null;
 
     /**
@@ -99,8 +99,8 @@ class TimeOff
      *
      * @var ?\DateTime $endDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('end_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $endDate = null;
 
     /**
@@ -108,9 +108,9 @@ class TimeOff
      *
      * @var bool|Two|null $startHalfDay
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_half_day')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Two')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_half_day')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Two')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Two|null $startHalfDay = null;
 
     /**
@@ -118,9 +118,9 @@ class TimeOff
      *
      * @var bool|EndHalfDay2|null $endHalfDay
      */
-    #[\JMS\Serializer\Annotation\SerializedName('end_half_day')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\EndHalfDay2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_half_day')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\EndHalfDay2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|EndHalfDay2|null $endHalfDay = null;
 
     /**
@@ -128,8 +128,8 @@ class TimeOff
      *
      * @var ?string $duration
      */
-    #[\JMS\Serializer\Annotation\SerializedName('duration')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('duration')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $duration = null;
 
     /**
@@ -137,8 +137,8 @@ class TimeOff
      *
      * @var ?\DateTime $createdDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdDate = null;
 
     /**
@@ -146,8 +146,8 @@ class TimeOff
      *
      * @var ?\DateTime $updatedDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedDate = null;
 
     /**

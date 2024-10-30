@@ -15,8 +15,8 @@ class InAppMessagesMessageContent
      *
      * @var ?string $body
      */
-    #[\JMS\Serializer\Annotation\SerializedName('body')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $body = null;
 
     /**

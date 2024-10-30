@@ -16,9 +16,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -26,8 +26,8 @@ class AtsCreateJobRequestDto
      *
      * @var ?string $code
      */
-    #[\JMS\Serializer\Annotation\SerializedName('code')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $code = null;
 
     /**
@@ -35,8 +35,8 @@ class AtsCreateJobRequestDto
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -45,8 +45,8 @@ class AtsCreateJobRequestDto
      * @var ?string $status
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $status = null;
 
     /**
@@ -54,9 +54,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?AtsCreateJobRequestDtoJobStatus $jobStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateJobRequestDtoJobStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateJobRequestDtoJobStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateJobRequestDtoJobStatus $jobStatus = null;
 
     /**
@@ -64,9 +64,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<string> $departmentIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('department_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $departmentIds = null;
 
     /**
@@ -74,9 +74,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<string> $locationIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('location_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $locationIds = null;
 
     /**
@@ -84,9 +84,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<JobHiringTeam> $hiringTeam
      */
-    #[\JMS\Serializer\Annotation\SerializedName('hiring_team')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobHiringTeam>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hiring_team')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobHiringTeam>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $hiringTeam = null;
 
     /**
@@ -94,9 +94,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<InterviewStage> $interviewStages
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_stages')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\InterviewStage>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\InterviewStage>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $interviewStages = null;
 
     /**
@@ -104,9 +104,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?AtsCreateJobRequestDtoConfidential $confidential
      */
-    #[\JMS\Serializer\Annotation\SerializedName('confidential')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateJobRequestDtoConfidential|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateJobRequestDtoConfidential|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateJobRequestDtoConfidential $confidential = null;
 
     /**
@@ -114,9 +114,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<JobCustomFields> $customFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobCustomFields>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
     /**
@@ -124,9 +124,9 @@ class AtsCreateJobRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

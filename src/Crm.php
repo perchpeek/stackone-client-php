@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Crm
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -30,9 +30,8 @@ class Crm
      * @return Operations\CrmListContactsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listContacts(
-        ?Operations\CrmListContactsRequest $request,
-    ): Operations\CrmListContactsResponse {
+    public function listContacts(Operations\CrmListContactsRequest $request): Operations\CrmListContactsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/contacts');
         $options = ['http_errors' => false];
@@ -74,15 +73,13 @@ class Crm
     /**
      * Creates a new Contact
      *
-     * @param  string  $xAccountId
      * @param  Components\CrmCreateContactRequestDto  $crmCreateContactRequestDto
+     * @param  string  $xAccountId
      * @return Operations\CrmCreateContactResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createContact(
-        string $xAccountId,
-        Components\CrmCreateContactRequestDto $crmCreateContactRequestDto,
-    ): Operations\CrmCreateContactResponse {
+    public function createContact(Components\CrmCreateContactRequestDto $crmCreateContactRequestDto, string $xAccountId): Operations\CrmCreateContactResponse
+    {
         $request = new Operations\CrmCreateContactRequest(
             xAccountId: $xAccountId,
             crmCreateContactRequestDto: $crmCreateContactRequestDto,
@@ -136,9 +133,8 @@ class Crm
      * @return Operations\CrmGetContactResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getContact(
-        ?Operations\CrmGetContactRequest $request,
-    ): Operations\CrmGetContactResponse {
+    public function getContact(Operations\CrmGetContactRequest $request): Operations\CrmGetContactResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/contacts/{id}', Operations\CrmGetContactRequest::class, $request);
         $options = ['http_errors' => false];
@@ -180,17 +176,14 @@ class Crm
     /**
      * Update Contact (early access)
      *
+     * @param  Components\CrmCreateContactRequestDto  $crmCreateContactRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\CrmCreateContactRequestDto  $crmCreateContactRequestDto
      * @return Operations\CrmUpdateContactResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateContact(
-        string $xAccountId,
-        string $id,
-        Components\CrmCreateContactRequestDto $crmCreateContactRequestDto,
-    ): Operations\CrmUpdateContactResponse {
+    public function updateContact(Components\CrmCreateContactRequestDto $crmCreateContactRequestDto, string $xAccountId, string $id): Operations\CrmUpdateContactResponse
+    {
         $request = new Operations\CrmUpdateContactRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -245,9 +238,8 @@ class Crm
      * @return Operations\CrmListAccountsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listAccounts(
-        ?Operations\CrmListAccountsRequest $request,
-    ): Operations\CrmListAccountsResponse {
+    public function listAccounts(Operations\CrmListAccountsRequest $request): Operations\CrmListAccountsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/accounts');
         $options = ['http_errors' => false];
@@ -293,9 +285,8 @@ class Crm
      * @return Operations\CrmGetAccountResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAccount(
-        ?Operations\CrmGetAccountRequest $request,
-    ): Operations\CrmGetAccountResponse {
+    public function getAccount(Operations\CrmGetAccountRequest $request): Operations\CrmGetAccountResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/accounts/{id}', Operations\CrmGetAccountRequest::class, $request);
         $options = ['http_errors' => false];
@@ -341,9 +332,8 @@ class Crm
      * @return Operations\CrmListListsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listLists(
-        ?Operations\CrmListListsRequest $request,
-    ): Operations\CrmListListsResponse {
+    public function listLists(Operations\CrmListListsRequest $request): Operations\CrmListListsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/lists');
         $options = ['http_errors' => false];
@@ -389,9 +379,8 @@ class Crm
      * @return Operations\CrmGetListResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getList(
-        ?Operations\CrmGetListRequest $request,
-    ): Operations\CrmGetListResponse {
+    public function getList(Operations\CrmGetListRequest $request): Operations\CrmGetListResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/lists/{id}', Operations\CrmGetListRequest::class, $request);
         $options = ['http_errors' => false];
@@ -437,9 +426,8 @@ class Crm
      * @return Operations\CrmListContactCustomFieldDefinitionsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listContactCustomFieldDefinitions(
-        ?Operations\CrmListContactCustomFieldDefinitionsRequest $request,
-    ): Operations\CrmListContactCustomFieldDefinitionsResponse {
+    public function listContactCustomFieldDefinitions(Operations\CrmListContactCustomFieldDefinitionsRequest $request): Operations\CrmListContactCustomFieldDefinitionsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/custom_field_definitions/contacts');
         $options = ['http_errors' => false];
@@ -485,9 +473,8 @@ class Crm
      * @return Operations\CrmGetContactCustomFieldDefinitionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getContactCustomFieldDefinition(
-        ?Operations\CrmGetContactCustomFieldDefinitionRequest $request,
-    ): Operations\CrmGetContactCustomFieldDefinitionResponse {
+    public function getContactCustomFieldDefinition(Operations\CrmGetContactCustomFieldDefinitionRequest $request): Operations\CrmGetContactCustomFieldDefinitionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/crm/custom_field_definitions/contacts/{id}', Operations\CrmGetContactCustomFieldDefinitionRequest::class, $request);
         $options = ['http_errors' => false];

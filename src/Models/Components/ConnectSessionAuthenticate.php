@@ -16,7 +16,7 @@ class ConnectSessionAuthenticate
      *
      * @var string $token
      */
-    #[\JMS\Serializer\Annotation\SerializedName('token')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('token')]
     public string $token;
 
     /**
