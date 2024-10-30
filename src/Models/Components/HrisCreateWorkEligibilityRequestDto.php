@@ -15,9 +15,9 @@ class HrisCreateWorkEligibilityRequestDto
      *
      * @var ?HrisCreateWorkEligibilityRequestDtoDocument $document
      */
-    #[\JMS\Serializer\Annotation\SerializedName('document')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoDocument|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('document')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoDocument|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateWorkEligibilityRequestDtoDocument $document = null;
 
     /**
@@ -25,50 +25,50 @@ class HrisCreateWorkEligibilityRequestDto
      *
      * @var ?HrisCreateWorkEligibilityRequestDtoIssuedBy $issuedBy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('issued_by')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoIssuedBy|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('issued_by')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoIssuedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateWorkEligibilityRequestDtoIssuedBy $issuedBy = null;
 
     /**
      *
      * @var ?string $number
      */
-    #[\JMS\Serializer\Annotation\SerializedName('number')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $number = null;
 
     /**
      *
      * @var ?string $subType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sub_type')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sub_type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subType = null;
 
     /**
      *
      * @var ?HrisCreateWorkEligibilityRequestDtoType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateWorkEligibilityRequestDtoType $type = null;
 
     /**
      *
      * @var ?\DateTime $validFrom
      */
-    #[\JMS\Serializer\Annotation\SerializedName('valid_from')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('valid_from')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $validFrom = null;
 
     /**
      *
      * @var ?\DateTime $validTo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('valid_to')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('valid_to')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $validTo = null;
 
     /**
@@ -76,9 +76,9 @@ class HrisCreateWorkEligibilityRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

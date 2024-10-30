@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Operations;
 
 class Connectors
@@ -17,7 +17,7 @@ class Connectors
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -29,9 +29,8 @@ class Connectors
      * @return Operations\StackoneListConnectorsMetaResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listConnectorsMeta(
-        ?string $include = null,
-    ): Operations\StackoneListConnectorsMetaResponse {
+    public function listConnectorsMeta(?string $include = null): Operations\StackoneListConnectorsMetaResponse
+    {
         $request = new Operations\StackoneListConnectorsMetaRequest(
             include: $include,
         );
@@ -77,10 +76,8 @@ class Connectors
      * @return Operations\StackoneGetConnectorMetaResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getConnectorMeta(
-        string $provider,
-        ?string $include = null,
-    ): Operations\StackoneGetConnectorMetaResponse {
+    public function getConnectorMeta(string $provider, ?string $include = null): Operations\StackoneGetConnectorMetaResponse
+    {
         $request = new Operations\StackoneGetConnectorMetaRequest(
             provider: $provider,
             include: $include,

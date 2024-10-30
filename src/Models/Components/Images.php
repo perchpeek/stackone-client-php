@@ -17,8 +17,8 @@ class Images
      *
      * @var ?string $logoUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('logo_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $logoUrl = null;
 
     /**
@@ -26,8 +26,8 @@ class Images
      *
      * @var ?string $originalLogoHorizontalUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('original_logo_horizontal_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('original_logo_horizontal_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $originalLogoHorizontalUrl = null;
 
     /**

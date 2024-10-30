@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class ConnectSessions
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -30,9 +30,8 @@ class ConnectSessions
      * @return Operations\StackoneCreateConnectSessionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createConnectSession(
-        Components\ConnectSessionCreate $request,
-    ): Operations\StackoneCreateConnectSessionResponse {
+    public function createConnectSession(Components\ConnectSessionCreate $request): Operations\StackoneCreateConnectSessionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/connect_sessions');
         $options = ['http_errors' => false];
@@ -78,9 +77,8 @@ class ConnectSessions
      * @return Operations\StackoneAuthenticateConnectSessionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function authenticateConnectSession(
-        Components\ConnectSessionAuthenticate $request,
-    ): Operations\StackoneAuthenticateConnectSessionResponse {
+    public function authenticateConnectSession(Components\ConnectSessionAuthenticate $request): Operations\StackoneAuthenticateConnectSessionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/connect_sessions/authenticate');
         $options = ['http_errors' => false];

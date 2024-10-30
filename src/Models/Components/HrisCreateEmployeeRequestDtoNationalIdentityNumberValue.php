@@ -17,6 +17,7 @@ enum HrisCreateEmployeeRequestDtoNationalIdentityNumberValue: string
     case Sin = 'sin';
     case Nid = 'nid';
     case Pin = 'pin';
+    case Pn = 'pn';
     case Umcn = 'umcn';
     case Pic = 'pic';
     case Ric = 'ric';
@@ -27,6 +28,7 @@ enum HrisCreateEmployeeRequestDtoNationalIdentityNumberValue: string
     case Aadhaar = 'aadhaar';
     case Epic = 'epic';
     case Ptn = 'ptn';
+    case Itin = 'itin';
     case Tin = 'tin';
     case Uprc = 'uprc';
     case Pcode = 'pcode';

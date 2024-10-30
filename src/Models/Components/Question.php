@@ -16,8 +16,8 @@ class Question
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,42 +25,42 @@ class Question
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
      *
      * @var ?QuestionType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\QuestionType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\QuestionType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?QuestionType $type = null;
 
     /**
      *
      * @var ?string $text
      */
-    #[\JMS\Serializer\Annotation\SerializedName('text')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('text')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $text = null;
 
     /**
      *
      * @var bool|QuestionRequired2|null $required
      */
-    #[\JMS\Serializer\Annotation\SerializedName('required')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\QuestionRequired2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('required')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\QuestionRequired2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|QuestionRequired2|null $required = null;
 
     /**
@@ -68,9 +68,9 @@ class Question
      *
      * @var ?array<QuestionMultipleChoiceAnswers> $multipleChoiceAnswers
      */
-    #[\JMS\Serializer\Annotation\SerializedName('multiple_choice_answers')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\QuestionMultipleChoiceAnswers>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('multiple_choice_answers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\QuestionMultipleChoiceAnswers>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $multipleChoiceAnswers = null;
 
     /**

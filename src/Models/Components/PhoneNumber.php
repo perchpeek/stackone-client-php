@@ -16,9 +16,9 @@ class PhoneNumber
      *
      * @var ?PhoneNumberType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\PhoneNumberType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\PhoneNumberType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?PhoneNumberType $type = null;
 
     /**
@@ -26,8 +26,8 @@ class PhoneNumber
      *
      * @var ?string $phone
      */
-    #[\JMS\Serializer\Annotation\SerializedName('phone')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $phone = null;
 
     /**

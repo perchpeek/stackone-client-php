@@ -15,8 +15,8 @@ class AtsCreateOfferRequestDto
      *
      * @var ?string $applicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $applicationId = null;
 
     /**
@@ -24,33 +24,33 @@ class AtsCreateOfferRequestDto
      *
      * @var ?\DateTime $startDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startDate = null;
 
     /**
      *
      * @var ?AtsCreateOfferRequestDtoOfferStatus $offerStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('offer_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateOfferRequestDtoOfferStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('offer_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateOfferRequestDtoOfferStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateOfferRequestDtoOfferStatus $offerStatus = null;
 
     /**
      *
      * @var ?float $salary
      */
-    #[\JMS\Serializer\Annotation\SerializedName('salary')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $salary = null;
 
     /**
      *
      * @var ?string $currency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
 
     /**
@@ -58,9 +58,9 @@ class AtsCreateOfferRequestDto
      *
      * @var ?array<OfferHistory> $offerHistory
      */
-    #[\JMS\Serializer\Annotation\SerializedName('offer_history')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\OfferHistory>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('offer_history')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\OfferHistory>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $offerHistory = null;
 
     /**
@@ -68,9 +68,9 @@ class AtsCreateOfferRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

@@ -15,24 +15,24 @@ class BatchResultApiModel
      *
      * @var ?float $statusCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('statusCode')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('statusCode')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $statusCode = null;
 
     /**
      *
      * @var ?string $message
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $message = null;
 
     /**
      *
      * @var ?\DateTime $timestamp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $timestamp = null;
 
     /**
@@ -40,9 +40,9 @@ class BatchResultApiModel
      *
      * @var ?array<array<string>> $errors
      */
-    #[\JMS\Serializer\Annotation\SerializedName('errors')]
-    #[\JMS\Serializer\Annotation\Type('array<array<string>>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('errors')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<array<string>>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $errors = null;
 
     /**

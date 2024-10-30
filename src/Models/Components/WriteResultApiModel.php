@@ -15,24 +15,24 @@ class WriteResultApiModel
      *
      * @var ?float $statusCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('statusCode')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('statusCode')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $statusCode = null;
 
     /**
      *
      * @var ?string $message
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $message = null;
 
     /**
      *
      * @var ?\DateTime $timestamp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $timestamp = null;
 
     /**
@@ -40,9 +40,9 @@ class WriteResultApiModel
      *
      * @var ?array<ProviderErrorApiModel> $providerErrors
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider_errors')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ProviderErrorApiModel>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider_errors')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ProviderErrorApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $providerErrors = null;
 
     /**

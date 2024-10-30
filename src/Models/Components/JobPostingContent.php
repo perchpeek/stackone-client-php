@@ -15,16 +15,16 @@ class JobPostingContent
      *
      * @var ?string $plain
      */
-    #[\JMS\Serializer\Annotation\SerializedName('plain')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('plain')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $plain = null;
 
     /**
      *
      * @var ?string $html
      */
-    #[\JMS\Serializer\Annotation\SerializedName('html')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('html')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $html = null;
 
     /**
@@ -32,9 +32,9 @@ class JobPostingContent
      *
      * @var ?array<JobPostingContentSection> $sections
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sections')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingContentSection>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sections')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingContentSection>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $sections = null;
 
     /**

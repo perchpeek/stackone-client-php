@@ -16,7 +16,7 @@ class CreateEvent
      *
      * @var string $event
      */
-    #[\JMS\Serializer\Annotation\SerializedName('event')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     public string $event;
 
     /**
@@ -24,7 +24,7 @@ class CreateEvent
      *
      * @var string $recordId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('record_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('record_id')]
     public string $recordId;
 
     /**

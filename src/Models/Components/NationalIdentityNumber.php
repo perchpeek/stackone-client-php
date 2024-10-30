@@ -16,17 +16,17 @@ class NationalIdentityNumber
      *
      * @var ?string $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $value = null;
 
     /**
      *
      * @var ?EmployeeType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?EmployeeType $type = null;
 
     /**
@@ -34,9 +34,9 @@ class NationalIdentityNumber
      *
      * @var ?EmployeeNationalIdentityNumberCountry $country
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeNationalIdentityNumberCountry|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmployeeNationalIdentityNumberCountry|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?EmployeeNationalIdentityNumberCountry $country = null;
 
     /**

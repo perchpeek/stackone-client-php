@@ -16,8 +16,8 @@ class JobPosting
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class JobPosting
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,17 +34,17 @@ class JobPosting
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -52,35 +52,35 @@ class JobPosting
      *
      * @var ?array<JobPostingLocation> $locations
      */
-    #[\JMS\Serializer\Annotation\SerializedName('locations')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingLocation>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('locations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingLocation>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $locations = null;
 
     /**
      *
      * @var ?Internal $internal
      */
-    #[\JMS\Serializer\Annotation\SerializedName('internal')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Internal|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('internal')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Internal|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Internal $internal = null;
 
     /**
      *
      * @var ?JobPostingStatus $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobPostingStatus $status = null;
 
     /**
      *
      * @var ?string $jobId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jobId = null;
 
     /**
@@ -88,17 +88,17 @@ class JobPosting
      *
      * @var ?string $remoteJobPostingId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_job_posting_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_job_posting_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteJobPostingId = null;
 
     /**
      *
      * @var ?JobPostingContent $content
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingContent|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingContent|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobPostingContent $content = null;
 
     /**
@@ -106,43 +106,43 @@ class JobPosting
      *
      * @var ?array<JobPostingCompensation> $compensation
      */
-    #[\JMS\Serializer\Annotation\SerializedName('compensation')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingCompensation>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('compensation')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingCompensation>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $compensation = null;
 
     /**
      *
      * @var ?JobPostingEmploymentType $employmentType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingEmploymentType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingEmploymentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobPostingEmploymentType $employmentType = null;
 
     /**
      *
      * @var ?JobPostingEmploymentContractType $employmentContractType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_contract_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingEmploymentContractType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_contract_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingEmploymentContractType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobPostingEmploymentContractType $employmentContractType = null;
 
     /**
      *
      * @var ?string $externalUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('external_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalUrl = null;
 
     /**
      *
      * @var ?string $externalApplyUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('external_apply_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_apply_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalApplyUrl = null;
 
     /**
@@ -150,9 +150,9 @@ class JobPosting
      *
      * @var ?array<JobPostingQuestionnaire> $questionnaires
      */
-    #[\JMS\Serializer\Annotation\SerializedName('questionnaires')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingQuestionnaire>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('questionnaires')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobPostingQuestionnaire>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $questionnaires = null;
 
     /**
@@ -160,8 +160,8 @@ class JobPosting
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -169,8 +169,8 @@ class JobPosting
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

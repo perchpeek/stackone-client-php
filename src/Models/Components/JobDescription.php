@@ -16,8 +16,8 @@ class JobDescription
      *
      * @var ?string $text
      */
-    #[\JMS\Serializer\Annotation\SerializedName('text')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('text')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $text = null;
 
     /**

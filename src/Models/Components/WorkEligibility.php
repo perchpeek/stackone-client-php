@@ -16,8 +16,8 @@ class WorkEligibility
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,50 +25,50 @@ class WorkEligibility
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
      *
      * @var ?WorkEligibilityType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\WorkEligibilityType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\WorkEligibilityType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?WorkEligibilityType $type = null;
 
     /**
      *
      * @var ?string $subType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sub_type')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sub_type')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $subType = null;
 
     /**
      *
      * @var ?Document $document
      */
-    #[\JMS\Serializer\Annotation\SerializedName('document')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Document|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('document')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Document|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Document $document = null;
 
     /**
      *
      * @var ?\DateTime $validFrom
      */
-    #[\JMS\Serializer\Annotation\SerializedName('valid_from')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('valid_from')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $validFrom = null;
 
     /**
      *
      * @var ?\DateTime $validTo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('valid_to')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('valid_to')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $validTo = null;
 
     /**
@@ -76,17 +76,17 @@ class WorkEligibility
      *
      * @var ?IssuedBy $issuedBy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('issued_by')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\IssuedBy|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('issued_by')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\IssuedBy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?IssuedBy $issuedBy = null;
 
     /**
      *
      * @var ?string $number
      */
-    #[\JMS\Serializer\Annotation\SerializedName('number')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $number = null;
 
     /**

@@ -16,7 +16,7 @@ class CreateEventResponse
      *
      * @var string $event
      */
-    #[\JMS\Serializer\Annotation\SerializedName('event')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     public string $event;
 
     /**
@@ -24,7 +24,7 @@ class CreateEventResponse
      *
      * @var string $recordId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('record_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('record_id')]
     public string $recordId;
 
     /**
@@ -32,7 +32,7 @@ class CreateEventResponse
      *
      * @var float $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     public float $status;
 
     /**
@@ -40,8 +40,8 @@ class CreateEventResponse
      *
      * @var ?string $message
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $message = null;
 
     /**

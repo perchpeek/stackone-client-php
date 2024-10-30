@@ -16,9 +16,9 @@ class LmsCreateCompletionRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**
@@ -26,8 +26,8 @@ class LmsCreateCompletionRequestDto
      *
      * @var ?string $externalId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('external_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalId = null;
 
     /**
@@ -35,8 +35,8 @@ class LmsCreateCompletionRequestDto
      *
      * @var ?string $contentExternalReference
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_external_reference')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $contentExternalReference = null;
 
     /**
@@ -44,8 +44,8 @@ class LmsCreateCompletionRequestDto
      *
      * @var ?string $contentId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $contentId = null;
 
     /**
@@ -53,9 +53,9 @@ class LmsCreateCompletionRequestDto
      *
      * @var ?LmsCreateCompletionRequestDtoResult $result
      */
-    #[\JMS\Serializer\Annotation\SerializedName('result')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsCreateCompletionRequestDtoResult|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('result')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsCreateCompletionRequestDtoResult|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LmsCreateCompletionRequestDtoResult $result = null;
 
     /**
@@ -63,8 +63,8 @@ class LmsCreateCompletionRequestDto
      *
      * @var ?string $completedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('completed_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('completed_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $completedAt = null;
 
     /**

@@ -16,8 +16,8 @@ class Job
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Job
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class Job
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,8 +44,8 @@ class Job
      *
      * @var ?string $code
      */
-    #[\JMS\Serializer\Annotation\SerializedName('code')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $code = null;
 
     /**
@@ -53,8 +53,8 @@ class Job
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -63,8 +63,8 @@ class Job
      * @var ?string $status
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $status = null;
 
     /**
@@ -72,9 +72,9 @@ class Job
      *
      * @var ?JobStatus $jobStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobStatus $jobStatus = null;
 
     /**
@@ -82,9 +82,9 @@ class Job
      *
      * @var ?array<string> $departmentIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('department_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $departmentIds = null;
 
     /**
@@ -92,9 +92,9 @@ class Job
      *
      * @var ?array<string> $remoteDepartmentIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_department_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_department_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $remoteDepartmentIds = null;
 
     /**
@@ -102,9 +102,9 @@ class Job
      *
      * @var ?array<string> $locationIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('location_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $locationIds = null;
 
     /**
@@ -112,9 +112,9 @@ class Job
      *
      * @var ?array<string> $remoteLocationIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_location_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_location_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $remoteLocationIds = null;
 
     /**
@@ -122,9 +122,9 @@ class Job
      *
      * @var ?array<JobHiringTeam> $hiringTeam
      */
-    #[\JMS\Serializer\Annotation\SerializedName('hiring_team')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobHiringTeam>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hiring_team')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobHiringTeam>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $hiringTeam = null;
 
     /**
@@ -132,9 +132,9 @@ class Job
      *
      * @var ?array<InterviewStage> $interviewStages
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_stages')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\InterviewStage>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\InterviewStage>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $interviewStages = null;
 
     /**
@@ -142,9 +142,9 @@ class Job
      *
      * @var ?JobConfidential $confidential
      */
-    #[\JMS\Serializer\Annotation\SerializedName('confidential')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobConfidential|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('confidential')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobConfidential|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobConfidential $confidential = null;
 
     /**
@@ -152,9 +152,9 @@ class Job
      *
      * @var ?array<JobCustomFields> $customFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobCustomFields>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
     /**
@@ -162,8 +162,8 @@ class Job
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -171,8 +171,8 @@ class Job
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

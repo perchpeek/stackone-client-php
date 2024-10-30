@@ -16,8 +16,8 @@ class AssessmentsResultsCandidate
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class AssessmentsResultsCandidate
      *
      * @var ?string $profileUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('profile_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('profile_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $profileUrl = null;
 
     /**

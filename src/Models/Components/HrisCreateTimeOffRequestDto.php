@@ -16,8 +16,8 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?string $employeeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employee_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $employeeId = null;
 
     /**
@@ -25,8 +25,8 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?string $approverId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('approver_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('approver_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $approverId = null;
 
     /**
@@ -34,9 +34,9 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?HrisCreateTimeOffRequestDtoStatus $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateTimeOffRequestDtoStatus $status = null;
 
     /**
@@ -44,9 +44,9 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?HrisCreateTimeOffRequestDtoType $type
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateTimeOffRequestDtoType $type = null;
 
     /**
@@ -54,8 +54,8 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?\DateTime $startDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startDate = null;
 
     /**
@@ -63,8 +63,8 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?\DateTime $endDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('end_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $endDate = null;
 
     /**
@@ -72,9 +72,9 @@ class HrisCreateTimeOffRequestDto
      *
      * @var bool|StartHalfDay2|null $startHalfDay
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_half_day')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\StartHalfDay2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_half_day')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\StartHalfDay2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|StartHalfDay2|null $startHalfDay = null;
 
     /**
@@ -82,9 +82,9 @@ class HrisCreateTimeOffRequestDto
      *
      * @var bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay
      */
-    #[\JMS\Serializer\Annotation\SerializedName('end_half_day')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoEndHalfDay2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_half_day')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoEndHalfDay2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay = null;
 
     /**
@@ -92,9 +92,9 @@ class HrisCreateTimeOffRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

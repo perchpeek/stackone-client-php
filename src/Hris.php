@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Hris
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -30,9 +30,8 @@ class Hris
      * @return Operations\HrisListCompaniesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCompanies(
-        ?Operations\HrisListCompaniesRequest $request,
-    ): Operations\HrisListCompaniesResponse {
+    public function listCompanies(Operations\HrisListCompaniesRequest $request): Operations\HrisListCompaniesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/companies');
         $options = ['http_errors' => false];
@@ -78,9 +77,8 @@ class Hris
      * @return Operations\HrisGetCompanyResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCompany(
-        ?Operations\HrisGetCompanyRequest $request,
-    ): Operations\HrisGetCompanyResponse {
+    public function getCompany(Operations\HrisGetCompanyRequest $request): Operations\HrisGetCompanyResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/companies/{id}', Operations\HrisGetCompanyRequest::class, $request);
         $options = ['http_errors' => false];
@@ -126,9 +124,8 @@ class Hris
      * @return Operations\HrisListEmployeesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployees(
-        ?Operations\HrisListEmployeesRequest $request,
-    ): Operations\HrisListEmployeesResponse {
+    public function listEmployees(Operations\HrisListEmployeesRequest $request): Operations\HrisListEmployeesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees');
         $options = ['http_errors' => false];
@@ -170,15 +167,13 @@ class Hris
     /**
      * Creates an employee
      *
-     * @param  string  $xAccountId
      * @param  Components\HrisCreateEmployeeRequestDto  $hrisCreateEmployeeRequestDto
+     * @param  string  $xAccountId
      * @return Operations\HrisCreateEmployeeResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createEmployee(
-        string $xAccountId,
-        Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto,
-    ): Operations\HrisCreateEmployeeResponse {
+    public function createEmployee(Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto, string $xAccountId): Operations\HrisCreateEmployeeResponse
+    {
         $request = new Operations\HrisCreateEmployeeRequest(
             xAccountId: $xAccountId,
             hrisCreateEmployeeRequestDto: $hrisCreateEmployeeRequestDto,
@@ -232,9 +227,8 @@ class Hris
      * @return Operations\HrisGetEmployeeResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployee(
-        ?Operations\HrisGetEmployeeRequest $request,
-    ): Operations\HrisGetEmployeeResponse {
+    public function getEmployee(Operations\HrisGetEmployeeRequest $request): Operations\HrisGetEmployeeResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}', Operations\HrisGetEmployeeRequest::class, $request);
         $options = ['http_errors' => false];
@@ -276,17 +270,14 @@ class Hris
     /**
      * Updates an employee
      *
+     * @param  Components\HrisCreateEmployeeRequestDto  $hrisCreateEmployeeRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisCreateEmployeeRequestDto  $hrisCreateEmployeeRequestDto
      * @return Operations\HrisUpdateEmployeeResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateEmployee(
-        string $xAccountId,
-        string $id,
-        Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto,
-    ): Operations\HrisUpdateEmployeeResponse {
+    public function updateEmployee(Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto, string $xAccountId, string $id): Operations\HrisUpdateEmployeeResponse
+    {
         $request = new Operations\HrisUpdateEmployeeRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -341,9 +332,8 @@ class Hris
      * @return Operations\HrisListEmployeeTimeOffRequestsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployeeTimeOffRequests(
-        ?Operations\HrisListEmployeeTimeOffRequestsRequest $request,
-    ): Operations\HrisListEmployeeTimeOffRequestsResponse {
+    public function listEmployeeTimeOffRequests(Operations\HrisListEmployeeTimeOffRequestsRequest $request): Operations\HrisListEmployeeTimeOffRequestsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/time_off', Operations\HrisListEmployeeTimeOffRequestsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -385,17 +375,14 @@ class Hris
     /**
      * Create Employee Time Off Request
      *
+     * @param  Components\HrisCreateTimeOffRequestDto  $hrisCreateTimeOffRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisCreateTimeOffRequestDto  $hrisCreateTimeOffRequestDto
      * @return Operations\HrisCreateEmployeeTimeOffRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createEmployeeTimeOffRequest(
-        string $xAccountId,
-        string $id,
-        Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto,
-    ): Operations\HrisCreateEmployeeTimeOffRequestResponse {
+    public function createEmployeeTimeOffRequest(Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto, string $xAccountId, string $id): Operations\HrisCreateEmployeeTimeOffRequestResponse
+    {
         $request = new Operations\HrisCreateEmployeeTimeOffRequestRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -450,9 +437,8 @@ class Hris
      * @return Operations\HrisGetEmployeesTimeOffRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployeesTimeOffRequest(
-        ?Operations\HrisGetEmployeesTimeOffRequestRequest $request,
-    ): Operations\HrisGetEmployeesTimeOffRequestResponse {
+    public function getEmployeesTimeOffRequest(Operations\HrisGetEmployeesTimeOffRequestRequest $request): Operations\HrisGetEmployeesTimeOffRequestResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/time_off/{subResourceId}', Operations\HrisGetEmployeesTimeOffRequestRequest::class, $request);
         $options = ['http_errors' => false];
@@ -494,17 +480,14 @@ class Hris
     /**
      * Batch Upload Employee Document
      *
+     * @param  Components\HrisBatchDocumentUploadRequestDto  $hrisBatchDocumentUploadRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisBatchDocumentUploadRequestDto  $hrisBatchDocumentUploadRequestDto
      * @return Operations\HrisBatchUploadEmployeeDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function batchUploadEmployeeDocument(
-        string $xAccountId,
-        string $id,
-        Components\HrisBatchDocumentUploadRequestDto $hrisBatchDocumentUploadRequestDto,
-    ): Operations\HrisBatchUploadEmployeeDocumentResponse {
+    public function batchUploadEmployeeDocument(Components\HrisBatchDocumentUploadRequestDto $hrisBatchDocumentUploadRequestDto, string $xAccountId, string $id): Operations\HrisBatchUploadEmployeeDocumentResponse
+    {
         $request = new Operations\HrisBatchUploadEmployeeDocumentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -555,17 +538,14 @@ class Hris
     /**
      * Upload Employee Document
      *
+     * @param  Components\HrisDocumentsUploadRequestDto  $hrisDocumentsUploadRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisDocumentsUploadRequestDto  $hrisDocumentsUploadRequestDto
      * @return Operations\HrisUploadEmployeeDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function uploadEmployeeDocument(
-        string $xAccountId,
-        string $id,
-        Components\HrisDocumentsUploadRequestDto $hrisDocumentsUploadRequestDto,
-    ): Operations\HrisUploadEmployeeDocumentResponse {
+    public function uploadEmployeeDocument(Components\HrisDocumentsUploadRequestDto $hrisDocumentsUploadRequestDto, string $xAccountId, string $id): Operations\HrisUploadEmployeeDocumentResponse
+    {
         $request = new Operations\HrisUploadEmployeeDocumentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -623,12 +603,8 @@ class Hris
      * @return Operations\HrisDownloadEmployeeDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function downloadEmployeeDocument(
-        string $xAccountId,
-        string $id,
-        string $subResourceId,
-        ?string $format = null,
-    ): Operations\HrisDownloadEmployeeDocumentResponse {
+    public function downloadEmployeeDocument(string $xAccountId, string $id, string $subResourceId, ?string $format = null): Operations\HrisDownloadEmployeeDocumentResponse
+    {
         $request = new Operations\HrisDownloadEmployeeDocumentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -678,9 +654,8 @@ class Hris
      * @return Operations\HrisListEmployeeDocumentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployeeDocuments(
-        ?Operations\HrisListEmployeeDocumentsRequest $request,
-    ): Operations\HrisListEmployeeDocumentsResponse {
+    public function listEmployeeDocuments(Operations\HrisListEmployeeDocumentsRequest $request): Operations\HrisListEmployeeDocumentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/documents', Operations\HrisListEmployeeDocumentsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -726,9 +701,8 @@ class Hris
      * @return Operations\HrisGetEmployeeDocumentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployeeDocument(
-        ?Operations\HrisGetEmployeeDocumentRequest $request,
-    ): Operations\HrisGetEmployeeDocumentResponse {
+    public function getEmployeeDocument(Operations\HrisGetEmployeeDocumentRequest $request): Operations\HrisGetEmployeeDocumentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/documents/{subResourceId}', Operations\HrisGetEmployeeDocumentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -774,9 +748,8 @@ class Hris
      * @return Operations\HrisListEmployeeCategoriesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployeeCategories(
-        ?Operations\HrisListEmployeeCategoriesRequest $request,
-    ): Operations\HrisListEmployeeCategoriesResponse {
+    public function listEmployeeCategories(Operations\HrisListEmployeeCategoriesRequest $request): Operations\HrisListEmployeeCategoriesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/documents/employee_categories');
         $options = ['http_errors' => false];
@@ -822,9 +795,8 @@ class Hris
      * @return Operations\HrisGetEmployeeDocumentCategoryResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployeeDocumentCategory(
-        ?Operations\HrisGetEmployeeDocumentCategoryRequest $request,
-    ): Operations\HrisGetEmployeeDocumentCategoryResponse {
+    public function getEmployeeDocumentCategory(Operations\HrisGetEmployeeDocumentCategoryRequest $request): Operations\HrisGetEmployeeDocumentCategoryResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/documents/employee_categories/{id}', Operations\HrisGetEmployeeDocumentCategoryRequest::class, $request);
         $options = ['http_errors' => false];
@@ -870,9 +842,8 @@ class Hris
      * @return Operations\HrisListEmployeeWorkEligibilityResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployeeWorkEligibility(
-        ?Operations\HrisListEmployeeWorkEligibilityRequest $request,
-    ): Operations\HrisListEmployeeWorkEligibilityResponse {
+    public function listEmployeeWorkEligibility(Operations\HrisListEmployeeWorkEligibilityRequest $request): Operations\HrisListEmployeeWorkEligibilityResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/work_eligibility', Operations\HrisListEmployeeWorkEligibilityRequest::class, $request);
         $options = ['http_errors' => false];
@@ -914,17 +885,14 @@ class Hris
     /**
      * Create Employee Work Eligibility Request
      *
+     * @param  Components\HrisCreateWorkEligibilityRequestDto  $hrisCreateWorkEligibilityRequestDto
      * @param  string  $id
      * @param  string  $xAccountId
-     * @param  Components\HrisCreateWorkEligibilityRequestDto  $hrisCreateWorkEligibilityRequestDto
      * @return Operations\HrisCreateEmployeeWorkEligibilityRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createEmployeeWorkEligibilityRequest(
-        string $id,
-        string $xAccountId,
-        Components\HrisCreateWorkEligibilityRequestDto $hrisCreateWorkEligibilityRequestDto,
-    ): Operations\HrisCreateEmployeeWorkEligibilityRequestResponse {
+    public function createEmployeeWorkEligibilityRequest(Components\HrisCreateWorkEligibilityRequestDto $hrisCreateWorkEligibilityRequestDto, string $id, string $xAccountId): Operations\HrisCreateEmployeeWorkEligibilityRequestResponse
+    {
         $request = new Operations\HrisCreateEmployeeWorkEligibilityRequestRequest(
             id: $id,
             xAccountId: $xAccountId,
@@ -979,9 +947,8 @@ class Hris
      * @return Operations\HrisGetEmployeesWorkEligibilityResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployeesWorkEligibility(
-        ?Operations\HrisGetEmployeesWorkEligibilityRequest $request,
-    ): Operations\HrisGetEmployeesWorkEligibilityResponse {
+    public function getEmployeesWorkEligibility(Operations\HrisGetEmployeesWorkEligibilityRequest $request): Operations\HrisGetEmployeesWorkEligibilityResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/work_eligibility/{subResourceId}', Operations\HrisGetEmployeesWorkEligibilityRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1023,19 +990,15 @@ class Hris
     /**
      * Update Employee Work Eligibility Request
      *
+     * @param  Components\HrisCreateWorkEligibilityRequestDto  $hrisCreateWorkEligibilityRequestDto
      * @param  string  $id
      * @param  string  $subResourceId
      * @param  string  $xAccountId
-     * @param  Components\HrisCreateWorkEligibilityRequestDto  $hrisCreateWorkEligibilityRequestDto
      * @return Operations\HrisUpdateEmployeeWorkEligibilityRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateEmployeeWorkEligibilityRequest(
-        string $id,
-        string $subResourceId,
-        string $xAccountId,
-        Components\HrisCreateWorkEligibilityRequestDto $hrisCreateWorkEligibilityRequestDto,
-    ): Operations\HrisUpdateEmployeeWorkEligibilityRequestResponse {
+    public function updateEmployeeWorkEligibilityRequest(Components\HrisCreateWorkEligibilityRequestDto $hrisCreateWorkEligibilityRequestDto, string $id, string $subResourceId, string $xAccountId): Operations\HrisUpdateEmployeeWorkEligibilityRequestResponse
+    {
         $request = new Operations\HrisUpdateEmployeeWorkEligibilityRequestRequest(
             id: $id,
             subResourceId: $subResourceId,
@@ -1083,9 +1046,8 @@ class Hris
      * @return Operations\HrisListEmploymentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployments(
-        ?Operations\HrisListEmploymentsRequest $request,
-    ): Operations\HrisListEmploymentsResponse {
+    public function listEmployments(Operations\HrisListEmploymentsRequest $request): Operations\HrisListEmploymentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employments');
         $options = ['http_errors' => false];
@@ -1131,9 +1093,8 @@ class Hris
      * @return Operations\HrisGetEmploymentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployment(
-        ?Operations\HrisGetEmploymentRequest $request,
-    ): Operations\HrisGetEmploymentResponse {
+    public function getEmployment(Operations\HrisGetEmploymentRequest $request): Operations\HrisGetEmploymentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employments/{id}', Operations\HrisGetEmploymentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1179,9 +1140,8 @@ class Hris
      * @return Operations\HrisListEmployeeEmploymentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listEmployeeEmployments(
-        ?Operations\HrisListEmployeeEmploymentsRequest $request,
-    ): Operations\HrisListEmployeeEmploymentsResponse {
+    public function listEmployeeEmployments(Operations\HrisListEmployeeEmploymentsRequest $request): Operations\HrisListEmployeeEmploymentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/employments', Operations\HrisListEmployeeEmploymentsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1223,17 +1183,14 @@ class Hris
     /**
      * Create Employee Employment
      *
+     * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
      * @return Operations\HrisCreateEmployeeEmploymentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createEmployeeEmployment(
-        string $xAccountId,
-        string $id,
-        Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto,
-    ): Operations\HrisCreateEmployeeEmploymentResponse {
+    public function createEmployeeEmployment(Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto, string $xAccountId, string $id): Operations\HrisCreateEmployeeEmploymentResponse
+    {
         $request = new Operations\HrisCreateEmployeeEmploymentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -1288,9 +1245,8 @@ class Hris
      * @return Operations\HrisGetEmployeeEmploymentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getEmployeeEmployment(
-        ?Operations\HrisGetEmployeeEmploymentRequest $request,
-    ): Operations\HrisGetEmployeeEmploymentResponse {
+    public function getEmployeeEmployment(Operations\HrisGetEmployeeEmploymentRequest $request): Operations\HrisGetEmployeeEmploymentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/employments/{subResourceId}', Operations\HrisGetEmployeeEmploymentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1332,19 +1288,15 @@ class Hris
     /**
      * Update Employee Employment
      *
+     * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  string  $subResourceId
-     * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
      * @return Operations\HrisUpdateEmployeeEmploymentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateEmployeeEmployment(
-        string $xAccountId,
-        string $id,
-        string $subResourceId,
-        Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto,
-    ): Operations\HrisUpdateEmployeeEmploymentResponse {
+    public function updateEmployeeEmployment(Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto, string $xAccountId, string $id, string $subResourceId): Operations\HrisUpdateEmployeeEmploymentResponse
+    {
         $request = new Operations\HrisUpdateEmployeeEmploymentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -1400,9 +1352,8 @@ class Hris
      * @return Operations\HrisListLocationsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listLocations(
-        ?Operations\HrisListLocationsRequest $request,
-    ): Operations\HrisListLocationsResponse {
+    public function listLocations(Operations\HrisListLocationsRequest $request): Operations\HrisListLocationsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/locations');
         $options = ['http_errors' => false];
@@ -1448,9 +1399,8 @@ class Hris
      * @return Operations\HrisGetLocationResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getLocation(
-        ?Operations\HrisGetLocationRequest $request,
-    ): Operations\HrisGetLocationResponse {
+    public function getLocation(Operations\HrisGetLocationRequest $request): Operations\HrisGetLocationResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/locations/{id}', Operations\HrisGetLocationRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1496,9 +1446,8 @@ class Hris
      * @return Operations\HrisListTimeOffRequestsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listTimeOffRequests(
-        ?Operations\HrisListTimeOffRequestsRequest $request,
-    ): Operations\HrisListTimeOffRequestsResponse {
+    public function listTimeOffRequests(Operations\HrisListTimeOffRequestsRequest $request): Operations\HrisListTimeOffRequestsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/time_off');
         $options = ['http_errors' => false];
@@ -1540,15 +1489,13 @@ class Hris
     /**
      * Creates a time off request
      *
-     * @param  string  $xAccountId
      * @param  Components\HrisCreateTimeOffRequestDto  $hrisCreateTimeOffRequestDto
+     * @param  string  $xAccountId
      * @return Operations\HrisCreateTimeOffRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createTimeOffRequest(
-        string $xAccountId,
-        Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto,
-    ): Operations\HrisCreateTimeOffRequestResponse {
+    public function createTimeOffRequest(Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto, string $xAccountId): Operations\HrisCreateTimeOffRequestResponse
+    {
         $request = new Operations\HrisCreateTimeOffRequestRequest(
             xAccountId: $xAccountId,
             hrisCreateTimeOffRequestDto: $hrisCreateTimeOffRequestDto,
@@ -1602,9 +1549,8 @@ class Hris
      * @return Operations\HrisGetTimeOffRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getTimeOffRequest(
-        ?Operations\HrisGetTimeOffRequestRequest $request,
-    ): Operations\HrisGetTimeOffRequestResponse {
+    public function getTimeOffRequest(Operations\HrisGetTimeOffRequestRequest $request): Operations\HrisGetTimeOffRequestResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/time_off/{id}', Operations\HrisGetTimeOffRequestRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1646,17 +1592,14 @@ class Hris
     /**
      * Update time off request
      *
+     * @param  Components\HrisCreateTimeOffRequestDto  $hrisCreateTimeOffRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisCreateTimeOffRequestDto  $hrisCreateTimeOffRequestDto
      * @return Operations\HrisUpdateTimeOffRequestResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateTimeOffRequest(
-        string $xAccountId,
-        string $id,
-        Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto,
-    ): Operations\HrisUpdateTimeOffRequestResponse {
+    public function updateTimeOffRequest(Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto, string $xAccountId, string $id): Operations\HrisUpdateTimeOffRequestResponse
+    {
         $request = new Operations\HrisUpdateTimeOffRequestRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -1711,9 +1654,8 @@ class Hris
      * @return Operations\HrisListBenefitsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listBenefits(
-        ?Operations\HrisListBenefitsRequest $request,
-    ): Operations\HrisListBenefitsResponse {
+    public function listBenefits(Operations\HrisListBenefitsRequest $request): Operations\HrisListBenefitsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/benefits');
         $options = ['http_errors' => false];
@@ -1759,9 +1701,8 @@ class Hris
      * @return Operations\HrisGetBenefitResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getBenefit(
-        ?Operations\HrisGetBenefitRequest $request,
-    ): Operations\HrisGetBenefitResponse {
+    public function getBenefit(Operations\HrisGetBenefitRequest $request): Operations\HrisGetBenefitResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/benefits/{id}', Operations\HrisGetBenefitRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1807,9 +1748,8 @@ class Hris
      * @return Operations\HrisListGroupsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listGroups(
-        ?Operations\HrisListGroupsRequest $request,
-    ): Operations\HrisListGroupsResponse {
+    public function listGroups(Operations\HrisListGroupsRequest $request): Operations\HrisListGroupsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups');
         $options = ['http_errors' => false];
@@ -1855,9 +1795,8 @@ class Hris
      * @return Operations\HrisListDepartmentGroupsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listDepartmentGroups(
-        ?Operations\HrisListDepartmentGroupsRequest $request,
-    ): Operations\HrisListDepartmentGroupsResponse {
+    public function listDepartmentGroups(Operations\HrisListDepartmentGroupsRequest $request): Operations\HrisListDepartmentGroupsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/departments');
         $options = ['http_errors' => false];
@@ -1903,9 +1842,8 @@ class Hris
      * @return Operations\HrisListCostCenterGroupsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCostCenterGroups(
-        ?Operations\HrisListCostCenterGroupsRequest $request,
-    ): Operations\HrisListCostCenterGroupsResponse {
+    public function listCostCenterGroups(Operations\HrisListCostCenterGroupsRequest $request): Operations\HrisListCostCenterGroupsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/cost_centers');
         $options = ['http_errors' => false];
@@ -1951,9 +1889,8 @@ class Hris
      * @return Operations\HrisGetGroupResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getGroup(
-        ?Operations\HrisGetGroupRequest $request,
-    ): Operations\HrisGetGroupResponse {
+    public function getGroup(Operations\HrisGetGroupRequest $request): Operations\HrisGetGroupResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/{id}', Operations\HrisGetGroupRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1999,9 +1936,8 @@ class Hris
      * @return Operations\HrisGetDepartmentGroupResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getDepartmentGroup(
-        ?Operations\HrisGetDepartmentGroupRequest $request,
-    ): Operations\HrisGetDepartmentGroupResponse {
+    public function getDepartmentGroup(Operations\HrisGetDepartmentGroupRequest $request): Operations\HrisGetDepartmentGroupResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/departments/{id}', Operations\HrisGetDepartmentGroupRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2047,9 +1983,8 @@ class Hris
      * @return Operations\HrisGetCostCenterGroupResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCostCenterGroup(
-        ?Operations\HrisGetCostCenterGroupRequest $request,
-    ): Operations\HrisGetCostCenterGroupResponse {
+    public function getCostCenterGroup(Operations\HrisGetCostCenterGroupRequest $request): Operations\HrisGetCostCenterGroupResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/groups/cost_centers/{id}', Operations\HrisGetCostCenterGroupRequest::class, $request);
         $options = ['http_errors' => false];
@@ -2095,9 +2030,8 @@ class Hris
      * @return Operations\HrisListJobsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listJobs(
-        ?Operations\HrisListJobsRequest $request,
-    ): Operations\HrisListJobsResponse {
+    public function listJobs(Operations\HrisListJobsRequest $request): Operations\HrisListJobsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/jobs');
         $options = ['http_errors' => false];
@@ -2143,9 +2077,8 @@ class Hris
      * @return Operations\HrisGetJobResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getJob(
-        ?Operations\HrisGetJobRequest $request,
-    ): Operations\HrisGetJobResponse {
+    public function getJob(Operations\HrisGetJobRequest $request): Operations\HrisGetJobResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/jobs/{id}', Operations\HrisGetJobRequest::class, $request);
         $options = ['http_errors' => false];

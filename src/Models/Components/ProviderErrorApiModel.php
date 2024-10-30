@@ -15,34 +15,34 @@ class ProviderErrorApiModel
      *
      * @var ?float $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $status = null;
 
     /**
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
      *
      * @var ?Raw $raw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('raw')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Raw|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('raw')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Raw|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Raw $raw = null;
 
     /**
      *
      * @var ?Headers $headers
      */
-    #[\JMS\Serializer\Annotation\SerializedName('headers')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Headers|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('headers')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Headers|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Headers $headers = null;
 
     /**

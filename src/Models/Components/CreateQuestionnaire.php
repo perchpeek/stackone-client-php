@@ -16,8 +16,8 @@ class CreateQuestionnaire
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,9 +25,9 @@ class CreateQuestionnaire
      *
      * @var ?array<CreateAnswer> $answers
      */
-    #[\JMS\Serializer\Annotation\SerializedName('answers')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateAnswer>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('answers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateAnswer>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $answers = null;
 
     /**

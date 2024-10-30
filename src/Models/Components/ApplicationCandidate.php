@@ -16,8 +16,8 @@ class ApplicationCandidate
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -25,8 +25,8 @@ class ApplicationCandidate
      *
      * @var ?string $firstName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('first_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('first_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $firstName = null;
 
     /**
@@ -34,8 +34,8 @@ class ApplicationCandidate
      *
      * @var ?string $lastName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lastName = null;
 
     /**
@@ -43,8 +43,8 @@ class ApplicationCandidate
      *
      * @var ?string $email
      */
-    #[\JMS\Serializer\Annotation\SerializedName('email')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $email = null;
 
     /**
@@ -52,9 +52,9 @@ class ApplicationCandidate
      *
      * @var ?array<CandidateEmail> $emails
      */
-    #[\JMS\Serializer\Annotation\SerializedName('emails')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CandidateEmail>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('emails')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CandidateEmail>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $emails = null;
 
     /**
@@ -62,9 +62,9 @@ class ApplicationCandidate
      *
      * @var ?array<PhoneNumber> $phoneNumbers
      */
-    #[\JMS\Serializer\Annotation\SerializedName('phone_numbers')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\PhoneNumber>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('phone_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\PhoneNumber>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $phoneNumbers = null;
 
     /**
@@ -72,9 +72,9 @@ class ApplicationCandidate
      *
      * @var ?array<SocialLink> $socialLinks
      */
-    #[\JMS\Serializer\Annotation\SerializedName('social_links')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\SocialLink>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('social_links')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\SocialLink>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $socialLinks = null;
 
     /**
@@ -82,8 +82,8 @@ class ApplicationCandidate
      *
      * @var ?string $company
      */
-    #[\JMS\Serializer\Annotation\SerializedName('company')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $company = null;
 
     /**
@@ -91,8 +91,8 @@ class ApplicationCandidate
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**

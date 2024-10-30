@@ -16,8 +16,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $firstName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('first_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('first_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $firstName = null;
 
     /**
@@ -25,8 +25,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $lastName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lastName = null;
 
     /**
@@ -34,8 +34,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -43,8 +43,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $displayName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('display_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('display_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $displayName = null;
 
     /**
@@ -52,8 +52,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $avatarUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('avatar_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('avatar_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $avatarUrl = null;
 
     /**
@@ -61,8 +61,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $personalEmail
      */
-    #[\JMS\Serializer\Annotation\SerializedName('personal_email')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('personal_email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $personalEmail = null;
 
     /**
@@ -70,8 +70,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $personalPhoneNumber
      */
-    #[\JMS\Serializer\Annotation\SerializedName('personal_phone_number')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('personal_phone_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $personalPhoneNumber = null;
 
     /**
@@ -79,8 +79,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $workEmail
      */
-    #[\JMS\Serializer\Annotation\SerializedName('work_email')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('work_email')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $workEmail = null;
 
     /**
@@ -88,8 +88,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $workPhoneNumber
      */
-    #[\JMS\Serializer\Annotation\SerializedName('work_phone_number')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('work_phone_number')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $workPhoneNumber = null;
 
     /**
@@ -97,8 +97,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $jobId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jobId = null;
 
     /**
@@ -106,8 +106,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $jobTitle
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jobTitle = null;
 
     /**
@@ -115,8 +115,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $departmentId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('department_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $departmentId = null;
 
     /**
@@ -124,8 +124,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $department
      */
-    #[\JMS\Serializer\Annotation\SerializedName('department')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $department = null;
 
     /**
@@ -133,8 +133,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $managerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('manager_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('manager_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $managerId = null;
 
     /**
@@ -142,9 +142,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoGender $gender
      */
-    #[\JMS\Serializer\Annotation\SerializedName('gender')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoGender|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('gender')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoGender|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoGender $gender = null;
 
     /**
@@ -152,9 +152,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoPreferredLanguage $preferredLanguage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('preferred_language')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoPreferredLanguage|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('preferred_language')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoPreferredLanguage|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null;
 
     /**
@@ -162,9 +162,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoEthnicity $ethnicity
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ethnicity')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEthnicity|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ethnicity')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEthnicity|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoEthnicity $ethnicity = null;
 
     /**
@@ -172,8 +172,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?\DateTime $dateOfBirth
      */
-    #[\JMS\Serializer\Annotation\SerializedName('date_of_birth')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('date_of_birth')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $dateOfBirth = null;
 
     /**
@@ -181,8 +181,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?\DateTime $birthday
      */
-    #[\JMS\Serializer\Annotation\SerializedName('birthday')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('birthday')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $birthday = null;
 
     /**
@@ -190,9 +190,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoMaritalStatus $maritalStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('marital_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoMaritalStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('marital_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoMaritalStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoMaritalStatus $maritalStatus = null;
 
     /**
@@ -200,9 +200,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoAvatar $avatar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('avatar')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoAvatar|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoAvatar|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoAvatar $avatar = null;
 
     /**
@@ -210,8 +210,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?\DateTime $hireDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('hire_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hire_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $hireDate = null;
 
     /**
@@ -219,8 +219,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?\DateTime $startDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startDate = null;
 
     /**
@@ -228,8 +228,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?float $tenure
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tenure')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenure')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $tenure = null;
 
     /**
@@ -237,8 +237,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?\DateTime $workAnniversary
      */
-    #[\JMS\Serializer\Annotation\SerializedName('work_anniversary')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('work_anniversary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $workAnniversary = null;
 
     /**
@@ -246,9 +246,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoEmploymentType $employmentType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEmploymentType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEmploymentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoEmploymentType $employmentType = null;
 
     /**
@@ -256,9 +256,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoEmploymentContractType $employmentContractType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_contract_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEmploymentContractType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_contract_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEmploymentContractType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoEmploymentContractType $employmentContractType = null;
 
     /**
@@ -266,9 +266,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoEmploymentStatus $employmentStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employment_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEmploymentStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employment_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoEmploymentStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoEmploymentStatus $employmentStatus = null;
 
     /**
@@ -276,8 +276,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?\DateTime $terminationDate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('termination_date')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('termination_date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $terminationDate = null;
 
     /**
@@ -285,8 +285,8 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?string $companyName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('company_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyName = null;
 
     /**
@@ -294,9 +294,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?array<CountryCodeEnum> $citizenships
      */
-    #[\JMS\Serializer\Annotation\SerializedName('citizenships')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CountryCodeEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('citizenships')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CountryCodeEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $citizenships = null;
 
     /**
@@ -304,9 +304,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?array<CreateEmploymentApiModel> $employments
      */
-    #[\JMS\Serializer\Annotation\SerializedName('employments')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateEmploymentApiModel>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('employments')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateEmploymentApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $employments = null;
 
     /**
@@ -314,9 +314,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?array<EmployeeCustomFields> $customFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\EmployeeCustomFields>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\EmployeeCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
     /**
@@ -324,9 +324,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?array<CreateHRISBenefit> $benefits
      */
-    #[\JMS\Serializer\Annotation\SerializedName('benefits')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateHRISBenefit>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('benefits')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateHRISBenefit>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $benefits = null;
 
     /**
@@ -334,9 +334,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber
      */
-    #[\JMS\Serializer\Annotation\SerializedName('national_identity_number')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoNationalIdentityNumber|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('national_identity_number')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoNationalIdentityNumber|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null;
 
     /**
@@ -344,9 +344,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoHomeLocation $homeLocation
      */
-    #[\JMS\Serializer\Annotation\SerializedName('home_location')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocation|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('home_location')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocation|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoHomeLocation $homeLocation = null;
 
     /**
@@ -354,9 +354,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?HrisCreateEmployeeRequestDtoWorkLocation $workLocation
      */
-    #[\JMS\Serializer\Annotation\SerializedName('work_location')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoWorkLocation|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('work_location')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoWorkLocation|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisCreateEmployeeRequestDtoWorkLocation $workLocation = null;
 
     /**
@@ -364,9 +364,9 @@ class HrisCreateEmployeeRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**

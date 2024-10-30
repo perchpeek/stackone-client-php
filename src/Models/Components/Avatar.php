@@ -16,16 +16,16 @@ class Avatar
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
      *
      * @var ?string $base64
      */
-    #[\JMS\Serializer\Annotation\SerializedName('base64')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('base64')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $base64 = null;
 
     /**

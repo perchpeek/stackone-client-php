@@ -16,8 +16,8 @@ class IamUser
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class IamUser
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,9 +34,9 @@ class IamUser
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -44,24 +44,24 @@ class IamUser
      *
      * @var ?string $primaryEmailAddress
      */
-    #[\JMS\Serializer\Annotation\SerializedName('primary_email_address')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('primary_email_address')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $primaryEmailAddress = null;
 
     /**
      *
      * @var ?string $firstName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('first_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('first_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $firstName = null;
 
     /**
      *
      * @var ?string $lastName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lastName = null;
 
     /**
@@ -69,16 +69,16 @@ class IamUser
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
      *
      * @var ?string $username
      */
-    #[\JMS\Serializer\Annotation\SerializedName('username')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $username = null;
 
     /**
@@ -86,9 +86,9 @@ class IamUser
      *
      * @var bool|IsBotUser2|null $isBotUser
      */
-    #[\JMS\Serializer\Annotation\SerializedName('is_bot_user')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\IsBotUser2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('is_bot_user')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\IsBotUser2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|IsBotUser2|null $isBotUser = null;
 
     /**
@@ -96,9 +96,9 @@ class IamUser
      *
      * @var ?array<IamRole> $roles
      */
-    #[\JMS\Serializer\Annotation\SerializedName('roles')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\IamRole>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('roles')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\IamRole>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $roles = null;
 
     /**
@@ -106,18 +106,18 @@ class IamUser
      *
      * @var ?array<IamGroup> $groups
      */
-    #[\JMS\Serializer\Annotation\SerializedName('groups')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\IamGroup>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('groups')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\IamGroup>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $groups = null;
 
     /**
      *
      * @var ?IamUserStatus $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\IamUserStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\IamUserStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?IamUserStatus $status = null;
 
     /**
@@ -125,8 +125,8 @@ class IamUser
      *
      * @var ?\DateTime $lastActiveAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_active_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_active_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $lastActiveAt = null;
 
     /**
@@ -134,8 +134,8 @@ class IamUser
      *
      * @var ?\DateTime $lastLoginAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_login_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_login_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $lastLoginAt = null;
 
     /**
@@ -143,8 +143,8 @@ class IamUser
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -152,8 +152,8 @@ class IamUser
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**
@@ -161,9 +161,9 @@ class IamUser
      *
      * @var ?array<IamMfaTypeEnum> $multiFactorEnabled
      */
-    #[\JMS\Serializer\Annotation\SerializedName('multi_factor_enabled')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\IamMfaTypeEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('multi_factor_enabled')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\IamMfaTypeEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $multiFactorEnabled = null;
 
     /**
@@ -171,9 +171,9 @@ class IamUser
      *
      * @var ?IamUserAvatar $avatar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('avatar')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\IamUserAvatar|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\IamUserAvatar|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?IamUserAvatar $avatar = null;
 
     /**

@@ -16,18 +16,18 @@ class LmsCreateContentRequestDtoContentType
      *
      * @var ?LmsCreateContentRequestDtoValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsCreateContentRequestDtoValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsCreateContentRequestDtoValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LmsCreateContentRequestDtoValue $value = null;
 
     /**
      *
      * @var string|float|bool|LmsCreateContentRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\LmsCreateContentRequestDtoSourceValue4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\LmsCreateContentRequestDtoSourceValue4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|LmsCreateContentRequestDtoSourceValue4|array|null $sourceValue = null;
 
     /**

@@ -16,9 +16,9 @@ class LmsUpsertContentRequestDto
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
@@ -26,8 +26,8 @@ class LmsUpsertContentRequestDto
      *
      * @var ?string $externalReference
      */
-    #[\JMS\Serializer\Annotation\SerializedName('external_reference')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalReference = null;
 
     /**
@@ -35,9 +35,9 @@ class LmsUpsertContentRequestDto
      *
      * @var ?array<string> $courseIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('course_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('course_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $courseIds = null;
 
     /**
@@ -45,8 +45,8 @@ class LmsUpsertContentRequestDto
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -54,8 +54,8 @@ class LmsUpsertContentRequestDto
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
 
     /**
@@ -63,9 +63,9 @@ class LmsUpsertContentRequestDto
      *
      * @var ?array<ContentLanguageEnum> $languages
      */
-    #[\JMS\Serializer\Annotation\SerializedName('languages')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContentLanguageEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContentLanguageEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $languages = null;
 
     /**
@@ -73,8 +73,8 @@ class LmsUpsertContentRequestDto
      *
      * @var ?string $contentUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $contentUrl = null;
 
     /**
@@ -82,9 +82,9 @@ class LmsUpsertContentRequestDto
      *
      * @var ?LmsUpsertContentRequestDtoContentType $contentType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsUpsertContentRequestDtoContentType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\LmsUpsertContentRequestDtoContentType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LmsUpsertContentRequestDtoContentType $contentType = null;
 
     /**
@@ -92,8 +92,8 @@ class LmsUpsertContentRequestDto
      *
      * @var ?string $coverUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('cover_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cover_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $coverUrl = null;
 
     /**
@@ -101,9 +101,9 @@ class LmsUpsertContentRequestDto
      *
      * @var bool|LmsUpsertContentRequestDtoActive2|null $active
      */
-    #[\JMS\Serializer\Annotation\SerializedName('active')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\LmsUpsertContentRequestDtoActive2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\LmsUpsertContentRequestDtoActive2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|LmsUpsertContentRequestDtoActive2|null $active = null;
 
     /**
@@ -111,18 +111,28 @@ class LmsUpsertContentRequestDto
      *
      * @var ?string $duration
      */
-    #[\JMS\Serializer\Annotation\SerializedName('duration')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('duration')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $duration = null;
+
+    /**
+     * The skills associated with this course
+     *
+     * @var ?array<Skills> $skills
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('skills')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Skills>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $skills = null;
 
     /**
      * The content launch method associated with this content
      *
      * @var ?ContentLaunchMethod $contentLaunchMethod
      */
-    #[\JMS\Serializer\Annotation\SerializedName('content_launch_method')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\ContentLaunchMethod|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_launch_method')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ContentLaunchMethod|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?ContentLaunchMethod $contentLaunchMethod = null;
 
     /**
@@ -130,8 +140,8 @@ class LmsUpsertContentRequestDto
      *
      * @var ?float $order
      */
-    #[\JMS\Serializer\Annotation\SerializedName('order')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('order')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $order = null;
 
     /**
@@ -139,9 +149,9 @@ class LmsUpsertContentRequestDto
      *
      * @var ?array<CreateCategoriesApiModel> $categories
      */
-    #[\JMS\Serializer\Annotation\SerializedName('categories')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateCategoriesApiModel>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('categories')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateCategoriesApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $categories = null;
 
     /**
@@ -156,11 +166,12 @@ class LmsUpsertContentRequestDto
      * @param  ?string  $coverUrl
      * @param  bool|LmsUpsertContentRequestDtoActive2|null  $active
      * @param  ?string  $duration
+     * @param  ?array<Skills>  $skills
      * @param  ?ContentLaunchMethod  $contentLaunchMethod
      * @param  ?float  $order
      * @param  ?array<CreateCategoriesApiModel>  $categories
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsUpsertContentRequestDtoActive2|null $active = null, ?string $duration = null, ?ContentLaunchMethod $contentLaunchMethod = null, ?float $order = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsUpsertContentRequestDtoActive2|null $active = null, ?string $duration = null, ?array $skills = null, ?ContentLaunchMethod $contentLaunchMethod = null, ?float $order = null, ?array $categories = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -173,6 +184,7 @@ class LmsUpsertContentRequestDto
         $this->coverUrl = $coverUrl;
         $this->active = $active;
         $this->duration = $duration;
+        $this->skills = $skills;
         $this->contentLaunchMethod = $contentLaunchMethod;
         $this->order = $order;
         $this->categories = $categories;

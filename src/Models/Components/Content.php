@@ -16,8 +16,8 @@ class Content
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
@@ -25,8 +25,8 @@ class Content
      *
      * @var ?string $unifiedUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $unifiedUrl = null;
 
     /**
@@ -34,9 +34,9 @@ class Content
      *
      * @var ?ContentFileFormat $fileFormat
      */
-    #[\JMS\Serializer\Annotation\SerializedName('file_format')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\ContentFileFormat|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('file_format')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ContentFileFormat|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?ContentFileFormat $fileFormat = null;
 
     /**

@@ -16,9 +16,9 @@ class JobPostingCompensationPayPeriod
      *
      * @var ?JobPostingCompensationPayPeriodValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingCompensationPayPeriodValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobPostingCompensationPayPeriodValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?JobPostingCompensationPayPeriodValue $value = null;
 
     /**
@@ -26,9 +26,9 @@ class JobPostingCompensationPayPeriod
      *
      * @var string|float|bool|JobPostingCompensationSourceValuePayPeriod4|array<mixed>|null $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\JobPostingCompensationSourceValuePayPeriod4|array<mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\JobPostingCompensationSourceValuePayPeriod4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|JobPostingCompensationSourceValuePayPeriod4|array|null $sourceValue = null;
 
     /**

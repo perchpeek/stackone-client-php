@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
@@ -18,7 +18,7 @@ class Lms
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }
@@ -30,9 +30,8 @@ class Lms
      * @return Operations\LmsListCoursesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCourses(
-        ?Operations\LmsListCoursesRequest $request,
-    ): Operations\LmsListCoursesResponse {
+    public function listCourses(Operations\LmsListCoursesRequest $request): Operations\LmsListCoursesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/courses');
         $options = ['http_errors' => false];
@@ -78,9 +77,8 @@ class Lms
      * @return Operations\LmsGetCourseResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCourse(
-        ?Operations\LmsGetCourseRequest $request,
-    ): Operations\LmsGetCourseResponse {
+    public function getCourse(Operations\LmsGetCourseRequest $request): Operations\LmsGetCourseResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/courses/{id}', Operations\LmsGetCourseRequest::class, $request);
         $options = ['http_errors' => false];
@@ -126,9 +124,8 @@ class Lms
      * @return Operations\LmsListUserAssignmentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listUserAssignments(
-        ?Operations\LmsListUserAssignmentsRequest $request,
-    ): Operations\LmsListUserAssignmentsResponse {
+    public function listUserAssignments(Operations\LmsListUserAssignmentsRequest $request): Operations\LmsListUserAssignmentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/users/{id}/assignments', Operations\LmsListUserAssignmentsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -174,9 +171,8 @@ class Lms
      * @return Operations\LmsGetUserAssignmentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getUserAssignment(
-        ?Operations\LmsGetUserAssignmentRequest $request,
-    ): Operations\LmsGetUserAssignmentResponse {
+    public function getUserAssignment(Operations\LmsGetUserAssignmentRequest $request): Operations\LmsGetUserAssignmentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/users/{id}/assignments/{subResourceId}', Operations\LmsGetUserAssignmentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -218,15 +214,13 @@ class Lms
     /**
      * Batch Upsert Content
      *
-     * @param  string  $xAccountId
      * @param  Components\LmsBatchUpsertContentRequestDto  $lmsBatchUpsertContentRequestDto
+     * @param  string  $xAccountId
      * @return Operations\LmsBatchUpsertContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function batchUpsertContent(
-        string $xAccountId,
-        Components\LmsBatchUpsertContentRequestDto $lmsBatchUpsertContentRequestDto,
-    ): Operations\LmsBatchUpsertContentResponse {
+    public function batchUpsertContent(Components\LmsBatchUpsertContentRequestDto $lmsBatchUpsertContentRequestDto, string $xAccountId): Operations\LmsBatchUpsertContentResponse
+    {
         $request = new Operations\LmsBatchUpsertContentRequest(
             xAccountId: $xAccountId,
             lmsBatchUpsertContentRequestDto: $lmsBatchUpsertContentRequestDto,
@@ -280,9 +274,8 @@ class Lms
      * @return Operations\LmsListContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listContent(
-        ?Operations\LmsListContentRequest $request,
-    ): Operations\LmsListContentResponse {
+    public function listContent(Operations\LmsListContentRequest $request): Operations\LmsListContentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/content');
         $options = ['http_errors' => false];
@@ -324,15 +317,13 @@ class Lms
     /**
      * Upsert Content
      *
-     * @param  string  $xAccountId
      * @param  Components\LmsUpsertContentRequestDto  $lmsUpsertContentRequestDto
+     * @param  string  $xAccountId
      * @return Operations\LmsUpsertContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function upsertContent(
-        string $xAccountId,
-        Components\LmsUpsertContentRequestDto $lmsUpsertContentRequestDto,
-    ): Operations\LmsUpsertContentResponse {
+    public function upsertContent(Components\LmsUpsertContentRequestDto $lmsUpsertContentRequestDto, string $xAccountId): Operations\LmsUpsertContentResponse
+    {
         $request = new Operations\LmsUpsertContentRequest(
             xAccountId: $xAccountId,
             lmsUpsertContentRequestDto: $lmsUpsertContentRequestDto,
@@ -382,15 +373,13 @@ class Lms
     /**
      * Create Content
      *
-     * @param  string  $xAccountId
      * @param  Components\LmsCreateContentRequestDto  $lmsCreateContentRequestDto
+     * @param  string  $xAccountId
      * @return Operations\LmsCreateContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createContent(
-        string $xAccountId,
-        Components\LmsCreateContentRequestDto $lmsCreateContentRequestDto,
-    ): Operations\LmsCreateContentResponse {
+    public function createContent(Components\LmsCreateContentRequestDto $lmsCreateContentRequestDto, string $xAccountId): Operations\LmsCreateContentResponse
+    {
         $request = new Operations\LmsCreateContentRequest(
             xAccountId: $xAccountId,
             lmsCreateContentRequestDto: $lmsCreateContentRequestDto,
@@ -444,9 +433,8 @@ class Lms
      * @return Operations\LmsGetContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getContent(
-        ?Operations\LmsGetContentRequest $request,
-    ): Operations\LmsGetContentResponse {
+    public function getContent(Operations\LmsGetContentRequest $request): Operations\LmsGetContentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/content/{id}', Operations\LmsGetContentRequest::class, $request);
         $options = ['http_errors' => false];
@@ -493,10 +481,8 @@ class Lms
      * @return Operations\LmsDeleteContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function deleteContent(
-        string $xAccountId,
-        string $id,
-    ): Operations\LmsDeleteContentResponse {
+    public function deleteContent(string $xAccountId, string $id): Operations\LmsDeleteContentResponse
+    {
         $request = new Operations\LmsDeleteContentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -541,17 +527,14 @@ class Lms
     /**
      * Update Content
      *
+     * @param  Components\LmsCreateContentRequestDto  $lmsCreateContentRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\LmsCreateContentRequestDto  $lmsCreateContentRequestDto
      * @return Operations\LmsUpdateContentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function updateContent(
-        string $xAccountId,
-        string $id,
-        Components\LmsCreateContentRequestDto $lmsCreateContentRequestDto,
-    ): Operations\LmsUpdateContentResponse {
+    public function updateContent(Components\LmsCreateContentRequestDto $lmsCreateContentRequestDto, string $xAccountId, string $id): Operations\LmsUpdateContentResponse
+    {
         $request = new Operations\LmsUpdateContentRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -606,9 +589,8 @@ class Lms
      * @return Operations\LmsListUserCompletionsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listUserCompletions(
-        ?Operations\LmsListUserCompletionsRequest $request,
-    ): Operations\LmsListUserCompletionsResponse {
+    public function listUserCompletions(Operations\LmsListUserCompletionsRequest $request): Operations\LmsListUserCompletionsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/users/{id}/completions', Operations\LmsListUserCompletionsRequest::class, $request);
         $options = ['http_errors' => false];
@@ -650,17 +632,14 @@ class Lms
     /**
      * Create User Completion
      *
+     * @param  Components\LmsCreateCompletionRequestDto  $lmsCreateCompletionRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\LmsCreateCompletionRequestDto  $lmsCreateCompletionRequestDto
      * @return Operations\LmsCreateUserCompletionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createUserCompletion(
-        string $xAccountId,
-        string $id,
-        Components\LmsCreateCompletionRequestDto $lmsCreateCompletionRequestDto,
-    ): Operations\LmsCreateUserCompletionResponse {
+    public function createUserCompletion(Components\LmsCreateCompletionRequestDto $lmsCreateCompletionRequestDto, string $xAccountId, string $id): Operations\LmsCreateUserCompletionResponse
+    {
         $request = new Operations\LmsCreateUserCompletionRequest(
             xAccountId: $xAccountId,
             id: $id,
@@ -715,9 +694,8 @@ class Lms
      * @return Operations\LmsGetUserCompletionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getUserCompletion(
-        ?Operations\LmsGetUserCompletionRequest $request,
-    ): Operations\LmsGetUserCompletionResponse {
+    public function getUserCompletion(Operations\LmsGetUserCompletionRequest $request): Operations\LmsGetUserCompletionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/users/{id}/completions/{subResourceId}', Operations\LmsGetUserCompletionRequest::class, $request);
         $options = ['http_errors' => false];
@@ -763,9 +741,8 @@ class Lms
      * @return Operations\LmsListCompletionsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCompletions(
-        ?Operations\LmsListCompletionsRequest $request,
-    ): Operations\LmsListCompletionsResponse {
+    public function listCompletions(Operations\LmsListCompletionsRequest $request): Operations\LmsListCompletionsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/completions');
         $options = ['http_errors' => false];
@@ -811,9 +788,8 @@ class Lms
      * @return Operations\LmsGetCompletionResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCompletion(
-        ?Operations\LmsGetCompletionRequest $request,
-    ): Operations\LmsGetCompletionResponse {
+    public function getCompletion(Operations\LmsGetCompletionRequest $request): Operations\LmsGetCompletionResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/completions/{id}', Operations\LmsGetCompletionRequest::class, $request);
         $options = ['http_errors' => false];
@@ -859,9 +835,8 @@ class Lms
      * @return Operations\LmsGetCategoryResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getCategory(
-        ?Operations\LmsGetCategoryRequest $request,
-    ): Operations\LmsGetCategoryResponse {
+    public function getCategory(Operations\LmsGetCategoryRequest $request): Operations\LmsGetCategoryResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/categories/{id}', Operations\LmsGetCategoryRequest::class, $request);
         $options = ['http_errors' => false];
@@ -907,9 +882,8 @@ class Lms
      * @return Operations\LmsListCategoriesResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listCategories(
-        ?Operations\LmsListCategoriesRequest $request,
-    ): Operations\LmsListCategoriesResponse {
+    public function listCategories(Operations\LmsListCategoriesRequest $request): Operations\LmsListCategoriesResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/categories');
         $options = ['http_errors' => false];
@@ -955,9 +929,8 @@ class Lms
      * @return Operations\LmsListUsersResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listUsers(
-        ?Operations\LmsListUsersRequest $request,
-    ): Operations\LmsListUsersResponse {
+    public function listUsers(Operations\LmsListUsersRequest $request): Operations\LmsListUsersResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/users');
         $options = ['http_errors' => false];
@@ -1003,9 +976,8 @@ class Lms
      * @return Operations\LmsGetUserResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getUser(
-        ?Operations\LmsGetUserRequest $request,
-    ): Operations\LmsGetUserResponse {
+    public function getUser(Operations\LmsGetUserRequest $request): Operations\LmsGetUserResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/users/{id}', Operations\LmsGetUserRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1051,9 +1023,8 @@ class Lms
      * @return Operations\LmsGetSkillResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getSkill(
-        ?Operations\LmsGetSkillRequest $request,
-    ): Operations\LmsGetSkillResponse {
+    public function getSkill(Operations\LmsGetSkillRequest $request): Operations\LmsGetSkillResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/skills/{id}', Operations\LmsGetSkillRequest::class, $request);
         $options = ['http_errors' => false];
@@ -1099,9 +1070,8 @@ class Lms
      * @return Operations\LmsListSkillsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listSkills(
-        ?Operations\LmsListSkillsRequest $request,
-    ): Operations\LmsListSkillsResponse {
+    public function listSkills(Operations\LmsListSkillsRequest $request): Operations\LmsListSkillsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/skills');
         $options = ['http_errors' => false];
@@ -1147,9 +1117,8 @@ class Lms
      * @return Operations\LmsListAssignmentsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listAssignments(
-        ?Operations\LmsListAssignmentsRequest $request,
-    ): Operations\LmsListAssignmentsResponse {
+    public function listAssignments(Operations\LmsListAssignmentsRequest $request): Operations\LmsListAssignmentsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/assignments');
         $options = ['http_errors' => false];
@@ -1195,9 +1164,8 @@ class Lms
      * @return Operations\LmsGetAssignmentResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function getAssignment(
-        ?Operations\LmsGetAssignmentRequest $request,
-    ): Operations\LmsGetAssignmentResponse {
+    public function getAssignment(Operations\LmsGetAssignmentRequest $request): Operations\LmsGetAssignmentResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/assignments/{id}', Operations\LmsGetAssignmentRequest::class, $request);
         $options = ['http_errors' => false];

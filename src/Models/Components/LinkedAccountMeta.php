@@ -15,15 +15,15 @@ class LinkedAccountMeta
      *
      * @var string $provider
      */
-    #[\JMS\Serializer\Annotation\SerializedName('provider')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
     public string $provider;
 
     /**
      *
      * @var LinkedAccountMetaCategory $category
      */
-    #[\JMS\Serializer\Annotation\SerializedName('category')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\LinkedAccountMetaCategory')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('category')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\LinkedAccountMetaCategory')]
     public LinkedAccountMetaCategory $category;
 
     /**
@@ -31,8 +31,8 @@ class LinkedAccountMeta
      *
      * @var array<string, mixed> $models
      */
-    #[\JMS\Serializer\Annotation\SerializedName('models')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('models')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
     public array $models;
 
     /**

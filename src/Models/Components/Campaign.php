@@ -16,8 +16,8 @@ class Campaign
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,16 +25,16 @@ class Campaign
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -42,8 +42,8 @@ class Campaign
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -51,16 +51,16 @@ class Campaign
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
 
     /**
@@ -68,9 +68,9 @@ class Campaign
      *
      * @var ?ScheduleType $scheduleType
      */
-    #[\JMS\Serializer\Annotation\SerializedName('schedule_type')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\ScheduleType|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('schedule_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ScheduleType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?ScheduleType $scheduleType = null;
 
     /**
@@ -78,27 +78,27 @@ class Campaign
      *
      * @var ?CampaignStatus $status
      */
-    #[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\CampaignStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CampaignStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?CampaignStatus $status = null;
 
     /**
      *
      * @var bool|Archived2|null $archived
      */
-    #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Archived2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Archived2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Archived2|null $archived = null;
 
     /**
      *
      * @var bool|Draft2|null $draft
      */
-    #[\JMS\Serializer\Annotation\SerializedName('draft')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Draft2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('draft')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Draft2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Draft2|null $draft = null;
 
     /**
@@ -106,9 +106,9 @@ class Campaign
      *
      * @var ?array<ChannelsEnum> $channels
      */
-    #[\JMS\Serializer\Annotation\SerializedName('channels')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ChannelsEnum>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('channels')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ChannelsEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $channels = null;
 
     /**
@@ -116,8 +116,8 @@ class Campaign
      *
      * @var ?\DateTime $firstSentAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('first_sent_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('first_sent_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $firstSentAt = null;
 
     /**
@@ -125,8 +125,8 @@ class Campaign
      *
      * @var ?\DateTime $lastSentAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('last_sent_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('last_sent_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $lastSentAt = null;
 
     /**
@@ -134,9 +134,9 @@ class Campaign
      *
      * @var ?array<string> $tags
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tags')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $tags = null;
 
     /**
@@ -144,9 +144,9 @@ class Campaign
      *
      * @var ?array<Message> $messages
      */
-    #[\JMS\Serializer\Annotation\SerializedName('messages')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Message>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('messages')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Message>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $messages = null;
 
     /**

@@ -16,8 +16,8 @@ class Interview
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,8 +25,8 @@ class Interview
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
@@ -34,17 +34,17 @@ class Interview
      *
      * @var ?array<string, mixed> $unifiedCustomFields
      */
-    #[\JMS\Serializer\Annotation\SerializedName('unified_custom_fields')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('unified_custom_fields')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
 
     /**
      *
      * @var ?string $applicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $applicationId = null;
 
     /**
@@ -52,16 +52,16 @@ class Interview
      *
      * @var ?string $remoteApplicationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_application_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_application_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteApplicationId = null;
 
     /**
      *
      * @var ?string $interviewStageId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_stage_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $interviewStageId = null;
 
     /**
@@ -69,26 +69,26 @@ class Interview
      *
      * @var ?string $remoteInterviewStageId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_interview_stage_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_interview_stage_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteInterviewStageId = null;
 
     /**
      *
      * @var ?InterviewInterviewStage $interviewStage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_stage')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\InterviewInterviewStage|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\InterviewInterviewStage|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?InterviewInterviewStage $interviewStage = null;
 
     /**
      *
      * @var ?InterviewInterviewStatus $interviewStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\InterviewInterviewStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\InterviewInterviewStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?InterviewInterviewStatus $interviewStatus = null;
 
     /**
@@ -96,9 +96,9 @@ class Interview
      *
      * @var ?array<string> $interviewerIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interviewer_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interviewer_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $interviewerIds = null;
 
     /**
@@ -106,9 +106,9 @@ class Interview
      *
      * @var ?array<string> $remoteInterviewerIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_interviewer_ids')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_interviewer_ids')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $remoteInterviewerIds = null;
 
     /**
@@ -116,9 +116,9 @@ class Interview
      *
      * @var ?array<InterviewPart> $interviewParts
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_parts')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\InterviewPart>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_parts')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\InterviewPart>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $interviewParts = null;
 
     /**
@@ -126,9 +126,9 @@ class Interview
      *
      * @var ?array<Interviewer> $interviewers
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interviewers')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Interviewer>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interviewers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Interviewer>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $interviewers = null;
 
     /**
@@ -136,8 +136,8 @@ class Interview
      *
      * @var ?\DateTime $startAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('start_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('start_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $startAt = null;
 
     /**
@@ -145,16 +145,16 @@ class Interview
      *
      * @var ?\DateTime $endAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('end_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('end_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $endAt = null;
 
     /**
      *
      * @var ?string $meetingUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('meeting_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('meeting_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $meetingUrl = null;
 
     /**
@@ -162,8 +162,8 @@ class Interview
      *
      * @var ?\DateTime $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('created_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $createdAt = null;
 
     /**
@@ -171,8 +171,8 @@ class Interview
      *
      * @var ?\DateTime $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updated_at')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?\DateTime $updatedAt = null;
 
     /**

@@ -16,9 +16,9 @@ class AtsMoveApplicationRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**
@@ -26,8 +26,8 @@ class AtsMoveApplicationRequestDto
      *
      * @var ?string $interviewStageId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('interview_stage_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $interviewStageId = null;
 
     /**

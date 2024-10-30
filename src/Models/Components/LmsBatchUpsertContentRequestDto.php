@@ -16,8 +16,8 @@ class LmsBatchUpsertContentRequestDto
      *
      * @var array<LmsUpsertContentRequestDto> $items
      */
-    #[\JMS\Serializer\Annotation\SerializedName('items')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LmsUpsertContentRequestDto>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('items')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LmsUpsertContentRequestDto>')]
     public array $items;
 
     /**

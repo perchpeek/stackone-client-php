@@ -15,8 +15,8 @@ class CompletionsPaginated
      *
      * @var ?string $next
      */
-    #[\JMS\Serializer\Annotation\SerializedName('next')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $next = null;
 
     /**
@@ -24,8 +24,8 @@ class CompletionsPaginated
      *
      * @var array<Completion> $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Completion>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Completion>')]
     public array $data;
 
     /**
@@ -33,9 +33,9 @@ class CompletionsPaginated
      *
      * @var ?array<RawResponse> $raw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('raw')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\RawResponse>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('raw')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\RawResponse>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $raw = null;
 
     /**

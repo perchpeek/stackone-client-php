@@ -16,9 +16,9 @@ class AtsCreateApplicationRequestDto
      *
      * @var ?array<string, mixed> $passthrough
      */
-    #[\JMS\Serializer\Annotation\SerializedName('passthrough')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('passthrough')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passthrough = null;
 
     /**
@@ -26,8 +26,8 @@ class AtsCreateApplicationRequestDto
      *
      * @var ?string $jobId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('job_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jobId = null;
 
     /**
@@ -35,17 +35,17 @@ class AtsCreateApplicationRequestDto
      *
      * @var ?string $locationId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('location_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('location_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $locationId = null;
 
     /**
      *
      * @var ?AtsCreateApplicationRequestDtoApplicationStatus $applicationStatus
      */
-    #[\JMS\Serializer\Annotation\SerializedName('application_status')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoApplicationStatus|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoApplicationStatus|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateApplicationRequestDtoApplicationStatus $applicationStatus = null;
 
     /**
@@ -53,18 +53,18 @@ class AtsCreateApplicationRequestDto
      *
      * @var ?array<CreateQuestionnaire> $questionnaires
      */
-    #[\JMS\Serializer\Annotation\SerializedName('questionnaires')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateQuestionnaire>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('questionnaires')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateQuestionnaire>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $questionnaires = null;
 
     /**
      *
      * @var ?AtsCreateApplicationRequestDtoSource $source
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoSource|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoSource|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateApplicationRequestDtoSource $source = null;
 
     /**
@@ -72,8 +72,8 @@ class AtsCreateApplicationRequestDto
      *
      * @var ?string $candidateId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('candidate_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('candidate_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $candidateId = null;
 
     /**
@@ -81,9 +81,9 @@ class AtsCreateApplicationRequestDto
      *
      * @var ?AtsCreateApplicationRequestDtoCandidate $candidate
      */
-    #[\JMS\Serializer\Annotation\SerializedName('candidate')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoCandidate|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('candidate')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AtsCreateApplicationRequestDtoCandidate|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?AtsCreateApplicationRequestDtoCandidate $candidate = null;
 
     /**

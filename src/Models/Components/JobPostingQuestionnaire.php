@@ -16,8 +16,8 @@ class JobPostingQuestionnaire
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -25,25 +25,25 @@ class JobPostingQuestionnaire
      *
      * @var ?string $remoteId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('remote_id')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteId = null;
 
     /**
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
      *
      * @var bool|Internal2|null $internal
      */
-    #[\JMS\Serializer\Annotation\SerializedName('internal')]
-    #[\JMS\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Internal2')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('internal')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Internal2')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Internal2|null $internal = null;
 
     /**
@@ -51,9 +51,9 @@ class JobPostingQuestionnaire
      *
      * @var ?array<Question> $questions
      */
-    #[\JMS\Serializer\Annotation\SerializedName('questions')]
-    #[\JMS\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Question>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('questions')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Question>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $questions = null;
 
     /**

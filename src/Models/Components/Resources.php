@@ -17,9 +17,9 @@ class Resources
      *
      * @var ?Images $images
      */
-    #[\JMS\Serializer\Annotation\SerializedName('images')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\Images|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('images')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Images|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Images $images = null;
 
     /**

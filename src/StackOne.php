@@ -53,7 +53,7 @@ class StackOne
      * @param  SDKConfiguration  $sdkConfiguration
      */
     public function __construct(
-        private SDKConfiguration $sdkConfiguration,
+        public SDKConfiguration $sdkConfiguration,
     ) {
         $this->connectSessions = new ConnectSessions($this->sdkConfiguration);
         $this->accounts = new Accounts($this->sdkConfiguration);

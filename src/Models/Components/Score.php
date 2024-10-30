@@ -16,8 +16,8 @@ class Score
      *
      * @var ?string $label
      */
-    #[\JMS\Serializer\Annotation\SerializedName('label')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
 
     /**
@@ -25,8 +25,8 @@ class Score
      *
      * @var ?string $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $value = null;
 
     /**
@@ -34,8 +34,8 @@ class Score
      *
      * @var ?string $min
      */
-    #[\JMS\Serializer\Annotation\SerializedName('min')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('min')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $min = null;
 
     /**
@@ -43,8 +43,8 @@ class Score
      *
      * @var ?string $max
      */
-    #[\JMS\Serializer\Annotation\SerializedName('max')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('max')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $max = null;
 
     /**

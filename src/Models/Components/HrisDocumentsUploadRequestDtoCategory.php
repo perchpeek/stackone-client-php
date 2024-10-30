@@ -17,9 +17,9 @@ class HrisDocumentsUploadRequestDtoCategory
      *
      * @var ?HrisDocumentsUploadRequestDtoCategoryValue $value
      */
-    #[\JMS\Serializer\Annotation\SerializedName('value')]
-    #[\JMS\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisDocumentsUploadRequestDtoCategoryValue|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisDocumentsUploadRequestDtoCategoryValue|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisDocumentsUploadRequestDtoCategoryValue $value = null;
 
     /**
@@ -27,8 +27,8 @@ class HrisDocumentsUploadRequestDtoCategory
      *
      * @var ?string $sourceValue
      */
-    #[\JMS\Serializer\Annotation\SerializedName('source_value')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sourceValue = null;
 
     /**
