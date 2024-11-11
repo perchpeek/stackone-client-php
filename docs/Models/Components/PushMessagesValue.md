@@ -3,7 +3,19 @@
 The unified message type.
 
 
-## Fields
+## Values
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Name            | Value           |
+| --------------- | --------------- |
+| `Email`         | email           |
+| `Sms`           | sms             |
+| `Push`          | push            |
+| `WebPush`       | web_push        |
+| `IosPush`       | ios_push        |
+| `AndroidPush`   | android_push    |
+| `AppPush`       | app_push        |
+| `OmniChannel`   | omni_channel    |
+| `ContentBlock`  | content_block   |
+| `InApp`         | in_app          |
+| `Unknown`       | unknown         |
+| `UnmappedValue` | unmapped_value  |

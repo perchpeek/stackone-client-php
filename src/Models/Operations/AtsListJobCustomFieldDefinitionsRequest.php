@@ -86,15 +86,6 @@ class AtsListJobCustomFieldDefinitionsRequest
     public ?string $updatedAfter = null;
 
     /**
-     * The sync token to select the only updated results
-     *
-     * @var ?string $syncToken
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sync_token')]
-    public ?string $syncToken = null;
-
-    /**
      * @param  string  $xAccountId
      * @param  ?bool  $raw
      * @param  ?array<string, mixed>  $proxy
@@ -104,9 +95,8 @@ class AtsListJobCustomFieldDefinitionsRequest
      * @param  ?string  $pageSize
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
-     * @param  ?string  $syncToken
      */
-    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?AtsListJobCustomFieldDefinitionsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?bool $raw = false, ?string $pageSize = '25')
+    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?AtsListJobCustomFieldDefinitionsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?bool $raw = false, ?string $pageSize = '25')
     {
         $this->xAccountId = $xAccountId;
         $this->raw = $raw;
@@ -117,6 +107,5 @@ class AtsListJobCustomFieldDefinitionsRequest
         $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
-        $this->syncToken = $syncToken;
     }
 }

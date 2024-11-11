@@ -129,10 +129,10 @@ class Contact
     /**
      * Contact custom fields
      *
-     * @var ?array<ContactsCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContactsCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -167,7 +167,7 @@ class Contact
      * @param  ?array<string>  $remoteDealIds
      * @param  ?array<string>  $accountIds
      * @param  ?array<string>  $remoteAccountIds
-     * @param  ?array<ContactsCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      */

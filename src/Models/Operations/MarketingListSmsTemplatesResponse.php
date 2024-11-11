@@ -35,21 +35,21 @@ class MarketingListSmsTemplatesResponse
     /**
      * The list of SMS templates was retrieved.
      *
-     * @var ?Components\TemplatesPaginated $templatesPaginated
+     * @var ?Components\SmsTemplatesPaginated $smsTemplatesPaginated
      */
-    public ?Components\TemplatesPaginated $templatesPaginated = null;
+    public ?Components\SmsTemplatesPaginated $smsTemplatesPaginated = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplatesPaginated  $templatesPaginated
+     * @param  ?Components\SmsTemplatesPaginated  $smsTemplatesPaginated
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplatesPaginated $templatesPaginated = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SmsTemplatesPaginated $smsTemplatesPaginated = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templatesPaginated = $templatesPaginated;
+        $this->smsTemplatesPaginated = $smsTemplatesPaginated;
     }
 }

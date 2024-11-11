@@ -35,21 +35,21 @@ class MarketingListInAppTemplatesResponse
     /**
      * The list of in-app templates was retrieved.
      *
-     * @var ?Components\TemplatesPaginated $templatesPaginated
+     * @var ?Components\InAppTemplatesPaginated $inAppTemplatesPaginated
      */
-    public ?Components\TemplatesPaginated $templatesPaginated = null;
+    public ?Components\InAppTemplatesPaginated $inAppTemplatesPaginated = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplatesPaginated  $templatesPaginated
+     * @param  ?Components\InAppTemplatesPaginated  $inAppTemplatesPaginated
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplatesPaginated $templatesPaginated = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\InAppTemplatesPaginated $inAppTemplatesPaginated = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templatesPaginated = $templatesPaginated;
+        $this->inAppTemplatesPaginated = $inAppTemplatesPaginated;
     }
 }

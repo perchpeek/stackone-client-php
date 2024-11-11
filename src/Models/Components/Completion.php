@@ -158,6 +158,43 @@ class Completion
     public ?string $remoteUserId = null;
 
     /**
+     * The learning object type of the assignment
+     *
+     * @var ?CompletionLearningObjectType $learningObjectType
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CompletionLearningObjectType|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CompletionLearningObjectType $learningObjectType = null;
+
+    /**
+     * The learning_object_id associated with this assignment
+     *
+     * @var ?string $learningObjectId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $learningObjectId = null;
+
+    /**
+     * Provider's unique identifier of the learning object related to the assignment
+     *
+     * @var ?string $remoteLearningObjectId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_learning_object_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteLearningObjectId = null;
+
+    /**
+     * The learning_object_external_reference associated with this assignment
+     *
+     * @var ?string $learningObjectExternalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $learningObjectExternalReference = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
@@ -174,8 +211,12 @@ class Completion
      * @param  ?string  $updatedAt
      * @param  ?string  $userId
      * @param  ?string  $remoteUserId
+     * @param  ?CompletionLearningObjectType  $learningObjectType
+     * @param  ?string  $learningObjectId
+     * @param  ?string  $remoteLearningObjectId
+     * @param  ?string  $learningObjectExternalReference
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $userId = null, ?string $remoteUserId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $userId = null, ?string $remoteUserId = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -193,5 +234,9 @@ class Completion
         $this->updatedAt = $updatedAt;
         $this->userId = $userId;
         $this->remoteUserId = $remoteUserId;
+        $this->learningObjectType = $learningObjectType;
+        $this->learningObjectId = $learningObjectId;
+        $this->remoteLearningObjectId = $remoteLearningObjectId;
+        $this->learningObjectExternalReference = $learningObjectExternalReference;
     }
 }

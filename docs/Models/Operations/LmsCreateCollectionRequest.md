@@ -1,0 +1,9 @@
+# LmsCreateCollectionRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | The account identifier                                                                               |
+| `lmsCreateCollectionRequestDto`                                                                      | [Components\LmsCreateCollectionRequestDto](../../Models/Components/LmsCreateCollectionRequestDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

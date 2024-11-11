@@ -156,10 +156,10 @@ class AtsUpdateCandidateRequestDto
     /**
      * The candidate custom fields
      *
-     * @var ?array<CandidateCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CandidateCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -179,7 +179,7 @@ class AtsUpdateCandidateRequestDto
      * @param  ?array<string>  $applicationIds
      * @param  ?\DateTime  $hiredAt
      * @param  ?string  $country
-     * @param  ?array<CandidateCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      */
     public function __construct(?array $passthrough = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?array $emails = null, ?array $socialLinks = null, ?string $phone = null, ?array $phoneNumbers = null, ?string $company = null, ?string $title = null, ?array $applicationIds = null, ?\DateTime $hiredAt = null, ?string $country = null, ?array $customFields = null)
     {

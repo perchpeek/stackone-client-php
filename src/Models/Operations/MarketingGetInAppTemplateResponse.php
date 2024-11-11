@@ -35,21 +35,21 @@ class MarketingGetInAppTemplateResponse
     /**
      * The in-app template with the given identifier was retrieved.
      *
-     * @var ?Components\TemplateResult $templateResult
+     * @var ?Components\InAppTemplateResult $inAppTemplateResult
      */
-    public ?Components\TemplateResult $templateResult = null;
+    public ?Components\InAppTemplateResult $inAppTemplateResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplateResult  $templateResult
+     * @param  ?Components\InAppTemplateResult  $inAppTemplateResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplateResult $templateResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\InAppTemplateResult $inAppTemplateResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templateResult = $templateResult;
+        $this->inAppTemplateResult = $inAppTemplateResult;
     }
 }

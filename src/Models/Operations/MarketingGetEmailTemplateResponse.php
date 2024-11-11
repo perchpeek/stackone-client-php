@@ -35,21 +35,21 @@ class MarketingGetEmailTemplateResponse
     /**
      * The email template with the given identifier was retrieved.
      *
-     * @var ?Components\TemplateResult $templateResult
+     * @var ?Components\EmailTemplateResult $emailTemplateResult
      */
-    public ?Components\TemplateResult $templateResult = null;
+    public ?Components\EmailTemplateResult $emailTemplateResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplateResult  $templateResult
+     * @param  ?Components\EmailTemplateResult  $emailTemplateResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplateResult $templateResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\EmailTemplateResult $emailTemplateResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templateResult = $templateResult;
+        $this->emailTemplateResult = $emailTemplateResult;
     }
 }

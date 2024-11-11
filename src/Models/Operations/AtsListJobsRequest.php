@@ -44,7 +44,7 @@ class AtsListJobsRequest
     public ?string $fields = null;
 
     /**
-     * Filter parameters that allow greater customisation of the list response
+     * ATS Jobs filters
      *
      * @var ?AtsListJobsQueryParamFilter $filter
      */

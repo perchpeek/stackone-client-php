@@ -5,17 +5,16 @@
 
 ### Available Operations
 
+* [batchUpsertCourse](#batchupsertcourse) - Batch Upsert Course
 * [listCourses](#listcourses) - List Courses
+* [upsertCourse](#upsertcourse) - Upsert Course
 * [getCourse](#getcourse) - Get Course
 * [listUserAssignments](#listuserassignments) - List User Assignments
 * [getUserAssignment](#getuserassignment) - Get User Assignment
 * [batchUpsertContent](#batchupsertcontent) - Batch Upsert Content
 * [listContent](#listcontent) - List Content
 * [upsertContent](#upsertcontent) - Upsert Content
-* [createContent](#createcontent) - Create Content
 * [getContent](#getcontent) - Get Content
-* [deleteContent](#deletecontent) - Delete Content
-* [updateContent](#updatecontent) - Update Content
 * [listUserCompletions](#listusercompletions) - List User Completions
 * [createUserCompletion](#createusercompletion) - Create User Completion
 * [getUserCompletion](#getusercompletion) - Get User Completion
@@ -29,6 +28,109 @@
 * [listSkills](#listskills) - List Skills
 * [listAssignments](#listassignments) - List Assignments
 * [getAssignment](#getassignment) - Get Assignment
+* [createCollection](#createcollection) - Create Collection
+* [updateCollection](#updatecollection) - Update Collection
+
+## batchUpsertCourse
+
+Batch Upsert Course
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
+    items: [
+        new Components\LmsUpsertCourseRequestDto(
+            unifiedCustomFields: [
+                'my_project_custom_field_1' => 'REF-1236',
+                'my_project_custom_field_2' => 'some other value',
+            ],
+            externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
+            contentIds: [
+                '16873-SOFTWARE-ENG-Content',
+            ],
+            title: 'Software Engineer Lv 1',
+            description: 'This course acts as learning content for software engineers.',
+            languages: [
+                new Components\LanguageEnum(
+                    value: Components\LanguageEnumValue::EnGB,
+                ),
+            ],
+            coverUrl: 'https://www.googledrive.com/?v=16873',
+            url: 'https://www.linkedinlearning.com/?v=16873',
+            active: true,
+            duration: 'P3Y6M4DT12H30M5S',
+            skills: [
+                new Components\CreateSkillsApiModel(
+                    id: 'cx2367ndc8dgsbjhka9ry4',
+                    remoteId: 'SE-001',
+                    name: 'Software Engineering',
+                ),
+            ],
+            updatedAt: '2021-07-21T14:00:00.000Z',
+            createdAt: '2021-07-21T14:00:00.000Z',
+            categories: [
+                new Components\CreateCategoriesApiModel(
+                    unifiedCustomFields: [
+                        'my_project_custom_field_1' => 'REF-1236',
+                        'my_project_custom_field_2' => 'some other value',
+                    ],
+                    name: 'Technology',
+                ),
+            ],
+            content: [
+                new Components\CreateContentApiModel(
+                    title: 'Software Engineer Lv 1',
+                    description: 'This video acts as learning content for software engineers.',
+                    contentUrl: 'https://www.youtube.com/watch?v=16873',
+                    order: 1,
+                ),
+            ],
+        ),
+    ],
+);
+
+$response = $sdk->lms->batchUpsertCourse(
+    xAccountId: '<id>',
+    lmsBatchUpsertCourseRequestDto: $lmsBatchUpsertCourseRequestDto
+
+);
+
+if ($response->batchResultApiModel !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `xAccountId`                                                                                           | *string*                                                                                               | :heavy_check_mark:                                                                                     | The account identifier                                                                                 |
+| `lmsBatchUpsertCourseRequestDto`                                                                       | [Components\LmsBatchUpsertCourseRequestDto](../../Models/Components/LmsBatchUpsertCourseRequestDto.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+
+### Response
+
+**[?Operations\LmsBatchUpsertCourseResponse](../../Models/Operations/LmsBatchUpsertCourseResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
 ## listCourses
 
@@ -54,7 +156,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $request = new Operations\LmsListCoursesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,course_type,cover_url,url,active,duration,categories,skills,updated_at,created_at',
+    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content',
     filter: new Operations\LmsListCoursesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -78,6 +180,103 @@ if ($response->coursePaginated !== null) {
 ### Response
 
 **[?Operations\LmsListCoursesResponse](../../Models/Operations/LmsListCoursesResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## upsertCourse
+
+Upsert Course
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
+    unifiedCustomFields: [
+        'my_project_custom_field_1' => 'REF-1236',
+        'my_project_custom_field_2' => 'some other value',
+    ],
+    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
+    contentIds: [
+        '16873-SOFTWARE-ENG-Content',
+    ],
+    title: 'Software Engineer Lv 1',
+    description: 'This course acts as learning content for software engineers.',
+    languages: [
+        new Components\LanguageEnum(
+            value: Components\LanguageEnumValue::EnGB,
+        ),
+    ],
+    coverUrl: 'https://www.googledrive.com/?v=16873',
+    url: 'https://www.linkedinlearning.com/?v=16873',
+    active: true,
+    duration: 'P3Y6M4DT12H30M5S',
+    skills: [
+        new Components\CreateSkillsApiModel(
+            id: 'cx2367ndc8dgsbjhka9ry4',
+            remoteId: 'SE-001',
+            name: 'Software Engineering',
+        ),
+    ],
+    updatedAt: '2021-07-21T14:00:00.000Z',
+    createdAt: '2021-07-21T14:00:00.000Z',
+    categories: [
+        new Components\CreateCategoriesApiModel(
+            unifiedCustomFields: [
+                'my_project_custom_field_1' => 'REF-1236',
+                'my_project_custom_field_2' => 'some other value',
+            ],
+            name: 'Technology',
+        ),
+    ],
+    content: [
+        new Components\CreateContentApiModel(
+            title: 'Software Engineer Lv 1',
+            description: 'This video acts as learning content for software engineers.',
+            contentUrl: 'https://www.youtube.com/watch?v=16873',
+            order: 1,
+        ),
+    ],
+);
+
+$response = $sdk->lms->upsertCourse(
+    xAccountId: '<id>',
+    lmsUpsertCourseRequestDto: $lmsUpsertCourseRequestDto
+
+);
+
+if ($response->createResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                 | *string*                                                                                     | :heavy_check_mark:                                                                           | The account identifier                                                                       |
+| `lmsUpsertCourseRequestDto`                                                                  | [Components\LmsUpsertCourseRequestDto](../../Models/Components/LmsUpsertCourseRequestDto.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+
+### Response
+
+**[?Operations\LmsUpsertCourseResponse](../../Models/Operations/LmsUpsertCourseResponse.md)**
 
 ### Errors
 
@@ -110,7 +309,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\LmsGetCourseRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,course_type,cover_url,url,active,duration,categories,skills,updated_at,created_at',
+    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content',
 );
 
 $response = $sdk->lms->getCourse(
@@ -284,8 +483,8 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
             title: 'Software Engineer Lv 1',
             description: 'This video acts as learning content for software engineers.',
             languages: [
-                new Components\ContentLanguageEnum(
-                    value: Components\ContentLanguageEnumValue::EnGB,
+                new Components\LanguageEnum(
+                    value: Components\LanguageEnumValue::EnGB,
                 ),
             ],
             contentUrl: 'https://www.youtube.com/watch?v=16873',
@@ -293,11 +492,10 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
             active: true,
             duration: 'P3Y6M4DT12H30M5S',
             skills: [
-                new Components\Skills(
-                    id: '12345',
-                    remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-                    name: 'Sales Techniques',
-                    active: true,
+                new Components\CreateSkillsApiModel(
+                    id: 'cx2367ndc8dgsbjhka9ry4',
+                    remoteId: 'SE-001',
+                    name: 'Software Engineering',
                 ),
             ],
             contentLaunchMethod: new Components\ContentLaunchMethod(),
@@ -309,7 +507,6 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                         'my_project_custom_field_2' => 'some other value',
                     ],
                     name: 'Technology',
-                    active: true,
                 ),
             ],
         ),
@@ -368,7 +565,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,skills,order,content_launch_method',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,order,content_launch_method,categories,skills,updated_at,created_at',
     filter: new Operations\LmsListContentQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -432,8 +629,8 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
     title: 'Software Engineer Lv 1',
     description: 'This video acts as learning content for software engineers.',
     languages: [
-        new Components\ContentLanguageEnum(
-            value: Components\ContentLanguageEnumValue::EnGB,
+        new Components\LanguageEnum(
+            value: Components\LanguageEnumValue::EnGB,
         ),
     ],
     contentUrl: 'https://www.youtube.com/watch?v=16873',
@@ -441,11 +638,10 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
     skills: [
-        new Components\Skills(
-            id: '12345',
-            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            name: 'Sales Techniques',
-            active: true,
+        new Components\CreateSkillsApiModel(
+            id: 'cx2367ndc8dgsbjhka9ry4',
+            remoteId: 'SE-001',
+            name: 'Software Engineering',
         ),
     ],
     contentLaunchMethod: new Components\ContentLaunchMethod(),
@@ -457,7 +653,6 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
                 'my_project_custom_field_2' => 'some other value',
             ],
             name: 'Technology',
-            active: true,
         ),
     ],
 );
@@ -490,97 +685,6 @@ if ($response->createResult !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
-## createContent
-
-Create Content
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use StackOne\client;
-use StackOne\client\Models\Components;
-
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
-
-$lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
-    unifiedCustomFields: [
-        'my_project_custom_field_1' => 'REF-1236',
-        'my_project_custom_field_2' => 'some other value',
-    ],
-    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
-    courseIds: [
-        '16873-SOFTWARE-ENG-COURSE',
-    ],
-    title: 'Software Engineer Lv 1',
-    description: 'This video acts as learning content for software engineers.',
-    languages: [
-        new Components\ContentLanguageEnum(
-            value: Components\ContentLanguageEnumValue::EnGB,
-        ),
-    ],
-    contentUrl: 'https://www.youtube.com/watch?v=16873',
-    coverUrl: 'https://www.googledrive.com/?v=16873',
-    active: true,
-    duration: 'P3Y6M4DT12H30M5S',
-    skills: [
-        new Components\Skills(
-            id: '12345',
-            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            name: 'Sales Techniques',
-            active: true,
-        ),
-    ],
-    contentLaunchMethod: new Components\LmsCreateContentRequestDtoContentLaunchMethod(),
-    order: 1,
-    categories: [
-        new Components\CreateCategoriesApiModel(
-            unifiedCustomFields: [
-                'my_project_custom_field_1' => 'REF-1236',
-                'my_project_custom_field_2' => 'some other value',
-            ],
-            name: 'Technology',
-            active: true,
-        ),
-    ],
-);
-
-$response = $sdk->lms->createContent(
-    xAccountId: '<id>',
-    lmsCreateContentRequestDto: $lmsCreateContentRequestDto
-
-);
-
-if ($response->createResult !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `xAccountId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The account identifier                                                                         |
-| `lmsCreateContentRequestDto`                                                                   | [Components\LmsCreateContentRequestDto](../../Models/Components/LmsCreateContentRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
-
-### Response
-
-**[?Operations\LmsCreateContentResponse](../../Models/Operations/LmsCreateContentResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
-
 ## getContent
 
 Get Content
@@ -606,7 +710,7 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 $request = new Operations\LmsGetContentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,categories,skills,order,content_launch_method',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,languages,content_url,content_type,cover_url,active,duration,order,content_launch_method,categories,skills,updated_at,created_at',
 );
 
 $response = $sdk->lms->getContent(
@@ -627,150 +731,6 @@ if ($response->contentResult !== null) {
 ### Response
 
 **[?Operations\LmsGetContentResponse](../../Models/Operations/LmsGetContentResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
-
-## deleteContent
-
-Delete Content
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use StackOne\client;
-use StackOne\client\Models\Components;
-
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
-
-
-
-$response = $sdk->lms->deleteContent(
-    xAccountId: '<id>',
-    id: '<id>'
-
-);
-
-if ($response->deleteResult !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `xAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
-| `id`                   | *string*               | :heavy_check_mark:     | N/A                    |
-
-### Response
-
-**[?Operations\LmsDeleteContentResponse](../../Models/Operations/LmsDeleteContentResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
-
-## updateContent
-
-Update Content
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use StackOne\client;
-use StackOne\client\Models\Components;
-
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
-
-$lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
-    unifiedCustomFields: [
-        'my_project_custom_field_1' => 'REF-1236',
-        'my_project_custom_field_2' => 'some other value',
-    ],
-    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
-    courseIds: [
-        '16873-SOFTWARE-ENG-COURSE',
-    ],
-    title: 'Software Engineer Lv 1',
-    description: 'This video acts as learning content for software engineers.',
-    languages: [
-        new Components\ContentLanguageEnum(
-            value: Components\ContentLanguageEnumValue::EnGB,
-        ),
-    ],
-    contentUrl: 'https://www.youtube.com/watch?v=16873',
-    coverUrl: 'https://www.googledrive.com/?v=16873',
-    active: true,
-    duration: 'P3Y6M4DT12H30M5S',
-    skills: [
-        new Components\Skills(
-            id: '12345',
-            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            name: 'Sales Techniques',
-            active: true,
-        ),
-    ],
-    contentLaunchMethod: new Components\LmsCreateContentRequestDtoContentLaunchMethod(),
-    order: 1,
-    categories: [
-        new Components\CreateCategoriesApiModel(
-            unifiedCustomFields: [
-                'my_project_custom_field_1' => 'REF-1236',
-                'my_project_custom_field_2' => 'some other value',
-            ],
-            name: 'Technology',
-            active: true,
-        ),
-    ],
-);
-
-$response = $sdk->lms->updateContent(
-    xAccountId: '<id>',
-    id: '<id>',
-    lmsCreateContentRequestDto: $lmsCreateContentRequestDto
-
-);
-
-if ($response->updateResult !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `xAccountId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The account identifier                                                                         |
-| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `lmsCreateContentRequestDto`                                                                   | [Components\LmsCreateContentRequestDto](../../Models/Components/LmsCreateContentRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
-
-### Response
-
-**[?Operations\LmsUpdateContentResponse](../../Models/Operations/LmsUpdateContentResponse.md)**
 
 ### Errors
 
@@ -1481,6 +1441,176 @@ if ($response->assignmentResult !== null) {
 ### Response
 
 **[?Operations\LmsGetAssignmentResponse](../../Models/Operations/LmsGetAssignmentResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## createCollection
+
+Create Collection
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$lmsCreateCollectionRequestDto = new Components\LmsCreateCollectionRequestDto(
+    unifiedCustomFields: [
+        'my_project_custom_field_1' => 'REF-1236',
+        'my_project_custom_field_2' => 'some other value',
+    ],
+    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-collection-1',
+    learningObjectIds: [
+        '16873-SOFTWARE-ENG-COURSE',
+        '16874-SOFTWARE-ENG-COURSE',
+    ],
+    remoteLearningObjectIds: [
+        'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        'e3cb75bf-aa84-466e-a6c1-b8322b257a49',
+    ],
+    title: 'Software Engineer Lv 1 Collection',
+    description: 'This collection acts as learning pathway for software engineers.',
+    coverUrl: 'https://www.googledrive.com/?v=16873',
+    skills: [
+        new Components\CreateSkillsApiModel(
+            id: '16873-IT345',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Technology',
+        ),
+    ],
+    categories: [
+        new Components\CreateCategoriesApiModel(
+            unifiedCustomFields: [
+                'my_project_custom_field_1' => 'REF-1236',
+                'my_project_custom_field_2' => 'some other value',
+            ],
+            name: 'Technology',
+        ),
+    ],
+);
+
+$response = $sdk->lms->createCollection(
+    xAccountId: '<id>',
+    lmsCreateCollectionRequestDto: $lmsCreateCollectionRequestDto
+
+);
+
+if ($response->createResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | The account identifier                                                                               |
+| `lmsCreateCollectionRequestDto`                                                                      | [Components\LmsCreateCollectionRequestDto](../../Models/Components/LmsCreateCollectionRequestDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+
+### Response
+
+**[?Operations\LmsCreateCollectionResponse](../../Models/Operations/LmsCreateCollectionResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## updateCollection
+
+Update Collection
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$lmsCreateCollectionRequestDto = new Components\LmsCreateCollectionRequestDto(
+    unifiedCustomFields: [
+        'my_project_custom_field_1' => 'REF-1236',
+        'my_project_custom_field_2' => 'some other value',
+    ],
+    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-collection-1',
+    learningObjectIds: [
+        '16873-SOFTWARE-ENG-COURSE',
+        '16874-SOFTWARE-ENG-COURSE',
+    ],
+    remoteLearningObjectIds: [
+        'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        'e3cb75bf-aa84-466e-a6c1-b8322b257a49',
+    ],
+    title: 'Software Engineer Lv 1 Collection',
+    description: 'This collection acts as learning pathway for software engineers.',
+    coverUrl: 'https://www.googledrive.com/?v=16873',
+    skills: [
+        new Components\CreateSkillsApiModel(
+            id: '16873-IT345',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Technology',
+        ),
+    ],
+    categories: [
+        new Components\CreateCategoriesApiModel(
+            unifiedCustomFields: [
+                'my_project_custom_field_1' => 'REF-1236',
+                'my_project_custom_field_2' => 'some other value',
+            ],
+            name: 'Technology',
+        ),
+    ],
+);
+
+$response = $sdk->lms->updateCollection(
+    xAccountId: '<id>',
+    id: '<id>',
+    lmsCreateCollectionRequestDto: $lmsCreateCollectionRequestDto
+
+);
+
+if ($response->updateResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | The account identifier                                                                               |
+| `id`                                                                                                 | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `lmsCreateCollectionRequestDto`                                                                      | [Components\LmsCreateCollectionRequestDto](../../Models/Components/LmsCreateCollectionRequestDto.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+
+### Response
+
+**[?Operations\LmsUpdateCollectionResponse](../../Models/Operations/LmsUpdateCollectionResponse.md)**
 
 ### Errors
 

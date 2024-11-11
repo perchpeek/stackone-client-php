@@ -133,12 +133,12 @@ class Assignment
     /**
      * The learning object type of the assignment
      *
-     * @var ?array<LearningObjectTypeEnum> $learningObjectType
+     * @var ?LearningObjectType $learningObjectType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LearningObjectTypeEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\LearningObjectType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $learningObjectType = null;
+    public ?LearningObjectType $learningObjectType = null;
 
     /**
      * The user ID associated with this assignment
@@ -172,11 +172,11 @@ class Assignment
      * @param  ?string  $createdAt
      * @param  ?string  $dueDate
      * @param  ?array<AssignmentStatusEnum>  $status
-     * @param  ?array<LearningObjectTypeEnum>  $learningObjectType
+     * @param  ?LearningObjectType  $learningObjectType
      * @param  ?string  $userId
      * @param  ?string  $remoteUserId
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?array $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?LearningObjectType $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

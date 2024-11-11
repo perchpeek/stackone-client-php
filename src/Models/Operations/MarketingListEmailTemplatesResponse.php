@@ -35,21 +35,21 @@ class MarketingListEmailTemplatesResponse
     /**
      * The list of email templates was retrieved.
      *
-     * @var ?Components\TemplatesPaginated $templatesPaginated
+     * @var ?Components\EmailTemplatesPaginated $emailTemplatesPaginated
      */
-    public ?Components\TemplatesPaginated $templatesPaginated = null;
+    public ?Components\EmailTemplatesPaginated $emailTemplatesPaginated = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplatesPaginated  $templatesPaginated
+     * @param  ?Components\EmailTemplatesPaginated  $emailTemplatesPaginated
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplatesPaginated $templatesPaginated = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\EmailTemplatesPaginated $emailTemplatesPaginated = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templatesPaginated = $templatesPaginated;
+        $this->emailTemplatesPaginated = $emailTemplatesPaginated;
     }
 }

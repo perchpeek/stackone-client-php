@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-/** AtsListJobsQueryParamFilter - Filter parameters that allow greater customisation of the list response */
+/** AtsListJobsQueryParamFilter - ATS Jobs filters */
 class AtsListJobsQueryParamFilter
 {
     /**
@@ -21,10 +21,20 @@ class AtsListJobsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * The status of the job
+     *
+     * @var ?Status $status
      */
-    public function __construct(?string $updatedAfter = null)
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?Status $status = null;
+
+    /**
+     * @param  ?string  $updatedAfter
+     * @param  ?Status  $status
+     */
+    public function __construct(?string $updatedAfter = null, ?Status $status = null)
     {
         $this->updatedAfter = $updatedAfter;
+        $this->status = $status;
     }
 }

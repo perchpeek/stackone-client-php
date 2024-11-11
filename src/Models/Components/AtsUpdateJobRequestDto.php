@@ -112,10 +112,10 @@ class AtsUpdateJobRequestDto
     /**
      * The job custom fields
      *
-     * @var ?array<JobCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -140,7 +140,7 @@ class AtsUpdateJobRequestDto
      * @param  ?array<JobHiringTeam>  $hiringTeam
      * @param  ?array<InterviewStage>  $interviewStages
      * @param  ?AtsUpdateJobRequestDtoConfidential  $confidential
-     * @param  ?array<JobCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      * @param  ?array<string, mixed>  $passthrough
      */
     public function __construct(?array $unifiedCustomFields = null, ?string $code = null, ?string $title = null, ?string $status = null, ?AtsUpdateJobRequestDtoJobStatus $jobStatus = null, ?array $departmentIds = null, ?array $locationIds = null, ?array $hiringTeam = null, ?array $interviewStages = null, ?AtsUpdateJobRequestDtoConfidential $confidential = null, ?array $customFields = null, ?array $passthrough = null)
