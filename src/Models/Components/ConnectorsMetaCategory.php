@@ -20,4 +20,5 @@ enum ConnectorsMetaCategory: string
     case Marketing = 'marketing';
     case Lms = 'lms';
     case Stackone = 'stackone';
+    case FileStorage = 'file-storage';
 }

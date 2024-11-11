@@ -409,10 +409,10 @@ class Employee
     /**
      * The employee custom fields
      *
-     * @var ?array<EmployeeCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\EmployeeCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -506,7 +506,7 @@ class Employee
      * @param  ?WorkLocation  $workLocation
      * @param  ?EmployeeCompany  $company
      * @param  ?array<Employment>  $employments
-     * @param  ?array<EmployeeCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      * @param  ?array<HRISBenefit>  $benefits
      * @param  ?string  $employeeNumber
      * @param  ?NationalIdentityNumber  $nationalIdentityNumber

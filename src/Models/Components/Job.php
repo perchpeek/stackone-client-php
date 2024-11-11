@@ -150,10 +150,10 @@ class Job
     /**
      * The job custom fields
      *
-     * @var ?array<JobCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\JobCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -190,7 +190,7 @@ class Job
      * @param  ?array<JobHiringTeam>  $hiringTeam
      * @param  ?array<InterviewStage>  $interviewStages
      * @param  ?JobConfidential  $confidential
-     * @param  ?array<JobCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      */

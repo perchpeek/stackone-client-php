@@ -229,17 +229,16 @@ if ($response->employeesPaginated !== null) {
 
 ### [lms](docs/sdks/lms/README.md)
 
+* [batchUpsertCourse](docs/sdks/lms/README.md#batchupsertcourse) - Batch Upsert Course
 * [listCourses](docs/sdks/lms/README.md#listcourses) - List Courses
+* [upsertCourse](docs/sdks/lms/README.md#upsertcourse) - Upsert Course
 * [getCourse](docs/sdks/lms/README.md#getcourse) - Get Course
 * [listUserAssignments](docs/sdks/lms/README.md#listuserassignments) - List User Assignments
 * [getUserAssignment](docs/sdks/lms/README.md#getuserassignment) - Get User Assignment
 * [batchUpsertContent](docs/sdks/lms/README.md#batchupsertcontent) - Batch Upsert Content
 * [listContent](docs/sdks/lms/README.md#listcontent) - List Content
 * [upsertContent](docs/sdks/lms/README.md#upsertcontent) - Upsert Content
-* [createContent](docs/sdks/lms/README.md#createcontent) - Create Content
 * [getContent](docs/sdks/lms/README.md#getcontent) - Get Content
-* [deleteContent](docs/sdks/lms/README.md#deletecontent) - Delete Content
-* [updateContent](docs/sdks/lms/README.md#updatecontent) - Update Content
 * [listUserCompletions](docs/sdks/lms/README.md#listusercompletions) - List User Completions
 * [createUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
 * [getUserCompletion](docs/sdks/lms/README.md#getusercompletion) - Get User Completion
@@ -253,6 +252,8 @@ if ($response->employeesPaginated !== null) {
 * [listSkills](docs/sdks/lms/README.md#listskills) - List Skills
 * [listAssignments](docs/sdks/lms/README.md#listassignments) - List Assignments
 * [getAssignment](docs/sdks/lms/README.md#getassignment) - Get Assignment
+* [createCollection](docs/sdks/lms/README.md#createcollection) - Create Collection
+* [updateCollection](docs/sdks/lms/README.md#updatecollection) - Update Collection
 
 ### [marketing](docs/sdks/marketing/README.md)
 
@@ -311,9 +312,9 @@ By default an API error will raise a `Errors\SDKException` exception, which has 
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `createConnectSession` method throws the following exceptions:
 
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+| Error Type          | Status Code | Content Type |
+| ------------------- | ----------- | ------------ |
+| Errors\SDKException | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
@@ -339,12 +340,13 @@ try {
         categories: [
             Components\Categories::Ats,
             Components\Categories::Hris,
-            Components\Categories::HrisLegacy,
+            Components\Categories::Crm,
             Components\Categories::Crm,
             Components\Categories::Iam,
             Components\Categories::Marketing,
             Components\Categories::Lms,
             Components\Categories::Ats,
+            Components\Categories::Lms,
         ],
     );
 
@@ -365,22 +367,50 @@ try {
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.stackone.com` | None |
-
-
-
-
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+The default server can also be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()
+    ->setServerURL("https://api.stackone.com")
+    ->setSecurity($security)->build();
+
+$request = new Components\ConnectSessionCreate(
+    originOwnerId: '<id>',
+    originOwnerName: '<value>',
+    categories: [
+        Components\Categories::Ats,
+        Components\Categories::Hris,
+        Components\Categories::Crm,
+        Components\Categories::Crm,
+        Components\Categories::Iam,
+        Components\Categories::Marketing,
+        Components\Categories::Lms,
+        Components\Categories::Ats,
+        Components\Categories::Lms,
+    ],
+);
+
+$response = $sdk->connectSessions->createConnectSession(
+    request: $request
+);
+
+if ($response->connectSessionToken !== null) {
+    // handle response
+}
+```
 <!-- End Server Selection [server] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

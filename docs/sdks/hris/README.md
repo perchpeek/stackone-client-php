@@ -305,7 +305,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         ),
     ],
     customFields: [
-        new Components\EmployeeCustomFields(
+        new Components\CustomFields(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             name: 'Training Completion Status',
@@ -545,7 +545,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         ),
     ],
     customFields: [
-        new Components\EmployeeCustomFields(
+        new Components\CustomFields(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             name: 'Training Completion Status',

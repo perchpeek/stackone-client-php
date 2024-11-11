@@ -9,11 +9,19 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** InAppMessagesValue - The unified message type. */
-class InAppMessagesValue
+/** The unified message type. */
+enum InAppMessagesValue: string
 {
-
-    public function __construct()
-    {
-    }
+    case Email = 'email';
+    case Sms = 'sms';
+    case Push = 'push';
+    case WebPush = 'web_push';
+    case IosPush = 'ios_push';
+    case AndroidPush = 'android_push';
+    case AppPush = 'app_push';
+    case OmniChannel = 'omni_channel';
+    case ContentBlock = 'content_block';
+    case InApp = 'in_app';
+    case Unknown = 'unknown';
+    case UnmappedValue = 'unmapped_value';
 }

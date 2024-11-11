@@ -35,21 +35,21 @@ class MarketingGetPushTemplateResponse
     /**
      * The push template with the given identifier was retrieved.
      *
-     * @var ?Components\TemplateResult $templateResult
+     * @var ?Components\PushTemplateResult $pushTemplateResult
      */
-    public ?Components\TemplateResult $templateResult = null;
+    public ?Components\PushTemplateResult $pushTemplateResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplateResult  $templateResult
+     * @param  ?Components\PushTemplateResult  $pushTemplateResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplateResult $templateResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\PushTemplateResult $pushTemplateResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templateResult = $templateResult;
+        $this->pushTemplateResult = $pushTemplateResult;
     }
 }

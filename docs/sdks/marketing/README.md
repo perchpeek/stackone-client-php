@@ -66,7 +66,7 @@ $response = $sdk->marketing->listEmailTemplates(
     request: $request
 );
 
-if ($response->templatesPaginated !== null) {
+if ($response->emailTemplatesPaginated !== null) {
     // handle response
 }
 ```
@@ -114,6 +114,7 @@ $marketingCreateEmailTemplateRequestDto = new Components\MarketingCreateEmailTem
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\MessageType(
+                value: Components\EmailMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -183,7 +184,7 @@ $response = $sdk->marketing->getEmailTemplate(
     request: $request
 );
 
-if ($response->templateResult !== null) {
+if ($response->emailTemplateResult !== null) {
     // handle response
 }
 ```
@@ -231,6 +232,7 @@ $marketingCreateEmailTemplateRequestDto = new Components\MarketingCreateEmailTem
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\MessageType(
+                value: Components\EmailMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -304,7 +306,7 @@ $response = $sdk->marketing->listInAppTemplates(
     request: $request
 );
 
-if ($response->templatesPaginated !== null) {
+if ($response->inAppTemplatesPaginated !== null) {
     // handle response
 }
 ```
@@ -352,6 +354,7 @@ $marketingCreateInAppTemplateRequestDto = new Components\MarketingCreateInAppTem
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\InAppMessagesMessageType(
+                value: Components\InAppMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -421,7 +424,7 @@ $response = $sdk->marketing->getInAppTemplate(
     request: $request
 );
 
-if ($response->templateResult !== null) {
+if ($response->inAppTemplateResult !== null) {
     // handle response
 }
 ```
@@ -469,6 +472,7 @@ $marketingCreateInAppTemplateRequestDto = new Components\MarketingCreateInAppTem
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\InAppMessagesMessageType(
+                value: Components\InAppMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -542,7 +546,7 @@ $response = $sdk->marketing->listSmsTemplates(
     request: $request
 );
 
-if ($response->templatesPaginated !== null) {
+if ($response->smsTemplatesPaginated !== null) {
     // handle response
 }
 ```
@@ -590,6 +594,7 @@ $marketingCreateSmsTemplateRequestDto = new Components\MarketingCreateSmsTemplat
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\SmsMessagesMessageType(
+                value: Components\SmsMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -659,7 +664,7 @@ $response = $sdk->marketing->getSmsTemplate(
     request: $request
 );
 
-if ($response->templateResult !== null) {
+if ($response->smsTemplateResult !== null) {
     // handle response
 }
 ```
@@ -707,6 +712,7 @@ $marketingCreateSmsTemplateRequestDto = new Components\MarketingCreateSmsTemplat
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\SmsMessagesMessageType(
+                value: Components\SmsMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -831,6 +837,7 @@ $marketingCreateTemplateRequestDto = new Components\MarketingCreateTemplateReque
         new Components\CreateMessage(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\CreateMessageMessageType(
+                value: Components\CreateMessageValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -951,6 +958,7 @@ $marketingCreateTemplateRequestDto = new Components\MarketingCreateTemplateReque
         new Components\CreateMessage(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\CreateMessageMessageType(
+                value: Components\CreateMessageValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -1024,7 +1032,7 @@ $response = $sdk->marketing->listPushTemplates(
     request: $request
 );
 
-if ($response->templatesPaginated !== null) {
+if ($response->pushTemplatesPaginated !== null) {
     // handle response
 }
 ```
@@ -1072,6 +1080,7 @@ $marketingCreatePushTemplateRequestDto = new Components\MarketingCreatePushTempl
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\PushMessagesMessageType(
+                value: Components\PushMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -1141,7 +1150,7 @@ $response = $sdk->marketing->getPushTemplate(
     request: $request
 );
 
-if ($response->templateResult !== null) {
+if ($response->pushTemplateResult !== null) {
     // handle response
 }
 ```
@@ -1189,6 +1198,7 @@ $marketingCreatePushTemplateRequestDto = new Components\MarketingCreatePushTempl
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
             messageType: new Components\PushMessagesMessageType(
+                value: Components\PushMessagesValue::Email,
                 sourceValue: 'Email',
             ),
         ),
@@ -1482,7 +1492,7 @@ $response = $sdk->marketing->getContentBlock(
     request: $request
 );
 
-if ($response->contentBlocksPaginated !== null) {
+if ($response->contentBlockResult !== null) {
     // handle response
 }
 ```

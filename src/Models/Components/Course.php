@@ -12,7 +12,7 @@ namespace StackOne\client\Models\Components;
 class Course
 {
     /**
-     * The ID associated with this course
+     * Unique identifier
      *
      * @var ?string $id
      */
@@ -89,22 +89,12 @@ class Course
     /**
      * The languages associated with this course
      *
-     * @var ?array<ContentLanguageEnum> $languages
+     * @var ?array<LanguageEnum> $languages
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContentLanguageEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LanguageEnum>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $languages = null;
-
-    /**
-     * The media type for the course
-     *
-     * @var ?CourseType $courseType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('course_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CourseType|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CourseType $courseType = null;
 
     /**
      * The URL of the thumbnail image associated with the course.
@@ -127,12 +117,11 @@ class Course
     /**
      * Whether the course is active and available for users.
      *
-     * @var ?CourseActive $active
+     * @var ?bool $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CourseActive|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CourseActive $active = null;
+    public ?bool $active = null;
 
     /**
      * The duration of the course following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string
@@ -190,18 +179,17 @@ class Course
      * @param  ?array<string>  $remoteContentIds
      * @param  ?string  $title
      * @param  ?string  $description
-     * @param  ?array<ContentLanguageEnum>  $languages
-     * @param  ?CourseType  $courseType
+     * @param  ?array<LanguageEnum>  $languages
      * @param  ?string  $coverUrl
      * @param  ?string  $url
-     * @param  ?CourseActive  $active
+     * @param  ?bool  $active
      * @param  ?string  $duration
      * @param  ?array<Category>  $categories
      * @param  ?array<Skills>  $skills
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?CourseType $courseType = null, ?string $coverUrl = null, ?string $url = null, ?CourseActive $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -212,7 +200,6 @@ class Course
         $this->title = $title;
         $this->description = $description;
         $this->languages = $languages;
-        $this->courseType = $courseType;
         $this->coverUrl = $coverUrl;
         $this->url = $url;
         $this->active = $active;

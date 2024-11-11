@@ -24,6 +24,62 @@ class Lms
     }
 
     /**
+     * Batch Upsert Course
+     *
+     * @param  Components\LmsBatchUpsertCourseRequestDto  $lmsBatchUpsertCourseRequestDto
+     * @param  string  $xAccountId
+     * @return Operations\LmsBatchUpsertCourseResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function batchUpsertCourse(Components\LmsBatchUpsertCourseRequestDto $lmsBatchUpsertCourseRequestDto, string $xAccountId): Operations\LmsBatchUpsertCourseResponse
+    {
+        $request = new Operations\LmsBatchUpsertCourseRequest(
+            xAccountId: $xAccountId,
+            lmsBatchUpsertCourseRequestDto: $lmsBatchUpsertCourseRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/courses/batch');
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'lmsBatchUpsertCourseRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $options = array_merge_recursive($options, $body);
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 202) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\BatchResultApiModel', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\LmsBatchUpsertCourseResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    batchResultApiModel: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
      * List Courses
      *
      * @param  Operations\LmsListCoursesRequest  $request
@@ -58,6 +114,62 @@ class Lms
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     coursePaginated: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Upsert Course
+     *
+     * @param  Components\LmsUpsertCourseRequestDto  $lmsUpsertCourseRequestDto
+     * @param  string  $xAccountId
+     * @return Operations\LmsUpsertCourseResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function upsertCourse(Components\LmsUpsertCourseRequestDto $lmsUpsertCourseRequestDto, string $xAccountId): Operations\LmsUpsertCourseResponse
+    {
+        $request = new Operations\LmsUpsertCourseRequest(
+            xAccountId: $xAccountId,
+            lmsUpsertCourseRequestDto: $lmsUpsertCourseRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/courses');
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'lmsUpsertCourseRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $options = array_merge_recursive($options, $body);
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('PUT', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 201) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\CreateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\LmsUpsertCourseResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    createResult: $obj);
 
                 return $response;
             } else {
@@ -371,62 +483,6 @@ class Lms
     }
 
     /**
-     * Create Content
-     *
-     * @param  Components\LmsCreateContentRequestDto  $lmsCreateContentRequestDto
-     * @param  string  $xAccountId
-     * @return Operations\LmsCreateContentResponse
-     * @throws \StackOne\client\Models\Errors\SDKException
-     */
-    public function createContent(Components\LmsCreateContentRequestDto $lmsCreateContentRequestDto, string $xAccountId): Operations\LmsCreateContentResponse
-    {
-        $request = new Operations\LmsCreateContentRequest(
-            xAccountId: $xAccountId,
-            lmsCreateContentRequestDto: $lmsCreateContentRequestDto,
-        );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/content');
-        $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'lmsCreateContentRequestDto', 'json');
-        if ($body === null) {
-            throw new \Exception('Request body is required');
-        }
-        $options = array_merge_recursive($options, $body);
-        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
-        if (! array_key_exists('headers', $options)) {
-            $options['headers'] = [];
-        }
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-
-
-        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-        if ($statusCode == 201) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\CreateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\LmsCreateContentResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    createResult: $obj);
-
-                return $response;
-            } else {
-                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
-            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } else {
-            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        }
-    }
-
-    /**
      * Get Content
      *
      * @param  Operations\LmsGetContentRequest  $request
@@ -461,115 +517,6 @@ class Lms
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     contentResult: $obj);
-
-                return $response;
-            } else {
-                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
-            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } else {
-            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        }
-    }
-
-    /**
-     * Delete Content
-     *
-     * @param  string  $xAccountId
-     * @param  string  $id
-     * @return Operations\LmsDeleteContentResponse
-     * @throws \StackOne\client\Models\Errors\SDKException
-     */
-    public function deleteContent(string $xAccountId, string $id): Operations\LmsDeleteContentResponse
-    {
-        $request = new Operations\LmsDeleteContentRequest(
-            xAccountId: $xAccountId,
-            id: $id,
-        );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/content/{id}', Operations\LmsDeleteContentRequest::class, $request);
-        $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
-        if (! array_key_exists('headers', $options)) {
-            $options['headers'] = [];
-        }
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-
-
-        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-        if ($statusCode == 200) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\DeleteResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\LmsDeleteContentResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    deleteResult: $obj);
-
-                return $response;
-            } else {
-                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-            }
-        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
-            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        } else {
-            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
-        }
-    }
-
-    /**
-     * Update Content
-     *
-     * @param  Components\LmsCreateContentRequestDto  $lmsCreateContentRequestDto
-     * @param  string  $xAccountId
-     * @param  string  $id
-     * @return Operations\LmsUpdateContentResponse
-     * @throws \StackOne\client\Models\Errors\SDKException
-     */
-    public function updateContent(Components\LmsCreateContentRequestDto $lmsCreateContentRequestDto, string $xAccountId, string $id): Operations\LmsUpdateContentResponse
-    {
-        $request = new Operations\LmsUpdateContentRequest(
-            xAccountId: $xAccountId,
-            id: $id,
-            lmsCreateContentRequestDto: $lmsCreateContentRequestDto,
-        );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/content/{id}', Operations\LmsUpdateContentRequest::class, $request);
-        $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'lmsCreateContentRequestDto', 'json');
-        if ($body === null) {
-            throw new \Exception('Request body is required');
-        }
-        $options = array_merge_recursive($options, $body);
-        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
-        if (! array_key_exists('headers', $options)) {
-            $options['headers'] = [];
-        }
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-
-
-        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-        if ($statusCode == 201) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\UpdateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\LmsUpdateContentResponse(
-                    statusCode: $statusCode,
-                    contentType: $contentType,
-                    rawResponse: $httpResponse,
-                    updateResult: $obj);
 
                 return $response;
             } else {
@@ -1192,6 +1139,120 @@ class Lms
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     assignmentResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Create Collection
+     *
+     * @param  Components\LmsCreateCollectionRequestDto  $lmsCreateCollectionRequestDto
+     * @param  string  $xAccountId
+     * @return Operations\LmsCreateCollectionResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function createCollection(Components\LmsCreateCollectionRequestDto $lmsCreateCollectionRequestDto, string $xAccountId): Operations\LmsCreateCollectionResponse
+    {
+        $request = new Operations\LmsCreateCollectionRequest(
+            xAccountId: $xAccountId,
+            lmsCreateCollectionRequestDto: $lmsCreateCollectionRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/collections');
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'lmsCreateCollectionRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $options = array_merge_recursive($options, $body);
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 201) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\CreateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\LmsCreateCollectionResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    createResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400 || $statusCode == 403 || $statusCode == 412 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode == 501 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Update Collection
+     *
+     * @param  Components\LmsCreateCollectionRequestDto  $lmsCreateCollectionRequestDto
+     * @param  string  $xAccountId
+     * @param  string  $id
+     * @return Operations\LmsUpdateCollectionResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function updateCollection(Components\LmsCreateCollectionRequestDto $lmsCreateCollectionRequestDto, string $xAccountId, string $id): Operations\LmsUpdateCollectionResponse
+    {
+        $request = new Operations\LmsUpdateCollectionRequest(
+            xAccountId: $xAccountId,
+            id: $id,
+            lmsCreateCollectionRequestDto: $lmsCreateCollectionRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/lms/collections/{id}', Operations\LmsUpdateCollectionRequest::class, $request);
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'lmsCreateCollectionRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $options = array_merge_recursive($options, $body);
+        $options = array_merge_recursive($options, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $options)) {
+            $options['headers'] = [];
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
+
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 201) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\StackOne\client\Models\Components\UpdateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\LmsUpdateCollectionResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    updateResult: $obj);
 
                 return $response;
             } else {

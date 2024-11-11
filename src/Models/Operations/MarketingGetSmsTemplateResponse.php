@@ -35,21 +35,21 @@ class MarketingGetSmsTemplateResponse
     /**
      * The SMS template with the given identifier was retrieved.
      *
-     * @var ?Components\TemplateResult $templateResult
+     * @var ?Components\SmsTemplateResult $smsTemplateResult
      */
-    public ?Components\TemplateResult $templateResult = null;
+    public ?Components\SmsTemplateResult $smsTemplateResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TemplateResult  $templateResult
+     * @param  ?Components\SmsTemplateResult  $smsTemplateResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplateResult $templateResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SmsTemplateResult $smsTemplateResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->templateResult = $templateResult;
+        $this->smsTemplateResult = $smsTemplateResult;
     }
 }

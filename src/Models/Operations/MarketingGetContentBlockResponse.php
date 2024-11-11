@@ -35,21 +35,21 @@ class MarketingGetContentBlockResponse
     /**
      * The Content Block with the given identifier was retrieved
      *
-     * @var ?Components\ContentBlocksPaginated $contentBlocksPaginated
+     * @var ?Components\ContentBlockResult $contentBlockResult
      */
-    public ?Components\ContentBlocksPaginated $contentBlocksPaginated = null;
+    public ?Components\ContentBlockResult $contentBlockResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\ContentBlocksPaginated  $contentBlocksPaginated
+     * @param  ?Components\ContentBlockResult  $contentBlockResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ContentBlocksPaginated $contentBlocksPaginated = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ContentBlockResult $contentBlockResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->contentBlocksPaginated = $contentBlocksPaginated;
+        $this->contentBlockResult = $contentBlockResult;
     }
 }

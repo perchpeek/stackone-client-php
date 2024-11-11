@@ -174,10 +174,10 @@ class Candidate
     /**
      * The candidate custom fields
      *
-     * @var ?array<CandidateCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CandidateCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -217,7 +217,7 @@ class Candidate
      * @param  ?array<string>  $remoteApplicationIds
      * @param  ?\DateTime  $hiredAt
      * @param  ?string  $country
-     * @param  ?array<CandidateCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      */

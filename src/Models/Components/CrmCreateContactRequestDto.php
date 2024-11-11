@@ -81,10 +81,10 @@ class CrmCreateContactRequestDto
     /**
      * Contact custom fields
      *
-     * @var ?array<ContactsCustomFields> $customFields
+     * @var ?array<CustomFields> $customFields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('custom_fields')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContactsCustomFields>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CustomFields>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $customFields = null;
 
@@ -106,7 +106,7 @@ class CrmCreateContactRequestDto
      * @param  ?array<string>  $phoneNumbers
      * @param  ?array<string>  $dealIds
      * @param  ?array<string>  $accountIds
-     * @param  ?array<ContactsCustomFields>  $customFields
+     * @param  ?array<CustomFields>  $customFields
      * @param  ?array<string, mixed>  $passthrough
      */
     public function __construct(?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $dealIds = null, ?array $accountIds = null, ?array $customFields = null, ?array $passthrough = null)

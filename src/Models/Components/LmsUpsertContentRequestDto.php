@@ -61,10 +61,10 @@ class LmsUpsertContentRequestDto
     /**
      * The languages associated with this content
      *
-     * @var ?array<ContentLanguageEnum> $languages
+     * @var ?array<LanguageEnum> $languages
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('languages')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\ContentLanguageEnum>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LanguageEnum>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $languages = null;
 
@@ -99,12 +99,11 @@ class LmsUpsertContentRequestDto
     /**
      * Whether the content is active and available for users.
      *
-     * @var bool|LmsUpsertContentRequestDtoActive2|null $active
+     * @var ?bool $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\LmsUpsertContentRequestDtoActive2')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public bool|LmsUpsertContentRequestDtoActive2|null $active = null;
+    public ?bool $active = null;
 
     /**
      * The duration of the content following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string or the minimum unit accepted by the provider.
@@ -116,12 +115,12 @@ class LmsUpsertContentRequestDto
     public ?string $duration = null;
 
     /**
-     * The skills associated with this course
+     * The skills associated with this content
      *
-     * @var ?array<Skills> $skills
+     * @var ?array<CreateSkillsApiModel> $skills
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('skills')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Skills>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateSkillsApiModel>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $skills = null;
 
@@ -160,18 +159,18 @@ class LmsUpsertContentRequestDto
      * @param  ?array<string>  $courseIds
      * @param  ?string  $title
      * @param  ?string  $description
-     * @param  ?array<ContentLanguageEnum>  $languages
+     * @param  ?array<LanguageEnum>  $languages
      * @param  ?string  $contentUrl
      * @param  ?LmsUpsertContentRequestDtoContentType  $contentType
      * @param  ?string  $coverUrl
-     * @param  bool|LmsUpsertContentRequestDtoActive2|null  $active
+     * @param  ?bool  $active
      * @param  ?string  $duration
-     * @param  ?array<Skills>  $skills
+     * @param  ?array<CreateSkillsApiModel>  $skills
      * @param  ?ContentLaunchMethod  $contentLaunchMethod
      * @param  ?float  $order
      * @param  ?array<CreateCategoriesApiModel>  $categories
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsUpsertContentRequestDtoActive2|null $active = null, ?string $duration = null, ?array $skills = null, ?ContentLaunchMethod $contentLaunchMethod = null, ?float $order = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?ContentLaunchMethod $contentLaunchMethod = null, ?float $order = null, ?array $categories = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;

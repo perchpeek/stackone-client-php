@@ -31,35 +31,12 @@ class CreateCategoriesApiModel
     public ?string $name = null;
 
     /**
-     * Whether the category is active and therefore available for use
-     *
-     * @var ?bool $active
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $active = null;
-
-    /**
-     * The hierarchal level of the category
-     *
-     * @var ?CreateCategoriesApiModelLevel $level
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelLevel|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreateCategoriesApiModelLevel $level = null;
-
-    /**
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
-     * @param  ?bool  $active
-     * @param  ?CreateCategoriesApiModelLevel  $level
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?CreateCategoriesApiModelLevel $level = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $name = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->name = $name;
-        $this->active = $active;
-        $this->level = $level;
     }
 }
