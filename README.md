@@ -205,6 +205,8 @@ if ($response->employeesPaginated !== null) {
 * [createTimeOffRequest](docs/sdks/hris/README.md#createtimeoffrequest) - Creates a time off request
 * [getTimeOffRequest](docs/sdks/hris/README.md#gettimeoffrequest) - Get time off request
 * [updateTimeOffRequest](docs/sdks/hris/README.md#updatetimeoffrequest) - Update time off request
+* [listTimeOffTypes](docs/sdks/hris/README.md#listtimeofftypes) - List time off types
+* [getTimeOffType](docs/sdks/hris/README.md#gettimeofftype) - Get time off type
 * [listBenefits](docs/sdks/hris/README.md#listbenefits) - List benefits
 * [getBenefit](docs/sdks/hris/README.md#getbenefit) - Get Benefit
 * [listGroups](docs/sdks/hris/README.md#listgroups) - List Groups

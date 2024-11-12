@@ -40,24 +40,6 @@ class Assignment
     public ?array $unifiedCustomFields = null;
 
     /**
-     * The course ID associated with this assignment
-     *
-     * @var ?string $courseId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('course_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $courseId = null;
-
-    /**
-     * Provider's unique identifier of the course related to the assignment
-     *
-     * @var ?string $remoteCourseId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_course_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $remoteCourseId = null;
-
-    /**
      * The learning_object_id associated with this assignment
      *
      * @var ?string $learningObjectId
@@ -159,11 +141,29 @@ class Assignment
     public ?string $remoteUserId = null;
 
     /**
+     * The course ID associated with this assignment
+     *
+     * @var ?string $courseId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $courseId = null;
+
+    /**
+     * Provider's unique identifier of the course related to the assignment
+     *
+     * @var ?string $remoteCourseId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteCourseId = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
-     * @param  ?string  $courseId
-     * @param  ?string  $remoteCourseId
      * @param  ?string  $learningObjectId
      * @param  ?string  $remoteLearningObjectId
      * @param  ?string  $learningObjectExternalReference
@@ -175,14 +175,14 @@ class Assignment
      * @param  ?LearningObjectType  $learningObjectType
      * @param  ?string  $userId
      * @param  ?string  $remoteUserId
+     * @param  ?string  $courseId
+     * @param  ?string  $remoteCourseId
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $courseId = null, ?string $remoteCourseId = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?LearningObjectType $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?array $status = null, ?LearningObjectType $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
-        $this->courseId = $courseId;
-        $this->remoteCourseId = $remoteCourseId;
         $this->learningObjectId = $learningObjectId;
         $this->remoteLearningObjectId = $remoteLearningObjectId;
         $this->learningObjectExternalReference = $learningObjectExternalReference;
@@ -194,5 +194,7 @@ class Assignment
         $this->learningObjectType = $learningObjectType;
         $this->userId = $userId;
         $this->remoteUserId = $remoteUserId;
+        $this->courseId = $courseId;
+        $this->remoteCourseId = $remoteCourseId;
     }
 }

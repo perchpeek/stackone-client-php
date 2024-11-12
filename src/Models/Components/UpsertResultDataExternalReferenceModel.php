@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-class CreateResultDataApiModel
+class UpsertResultDataExternalReferenceModel
 {
     /**
      * Unique identifier
@@ -30,12 +30,23 @@ class CreateResultDataApiModel
     public ?string $remoteId = null;
 
     /**
+     * The external identifier
+     *
+     * @var ?string $externalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalReference = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
+     * @param  ?string  $externalReference
      */
-    public function __construct(?string $id = null, ?string $remoteId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $externalReference = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
+        $this->externalReference = $externalReference;
     }
 }

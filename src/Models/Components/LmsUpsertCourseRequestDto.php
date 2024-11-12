@@ -115,24 +115,6 @@ class LmsUpsertCourseRequestDto
     public ?array $skills = null;
 
     /**
-     * The date on which the course was last updated.
-     *
-     * @var ?string $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $updatedAt = null;
-
-    /**
-     * The date on which the course was created.
-     *
-     * @var ?string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdAt = null;
-
-    /**
      * The categories associated with this course
      *
      * @var ?array<CreateCategoriesApiModel> $categories
@@ -164,12 +146,10 @@ class LmsUpsertCourseRequestDto
      * @param  ?bool  $active
      * @param  ?string  $duration
      * @param  ?array<CreateSkillsApiModel>  $skills
-     * @param  ?string  $updatedAt
-     * @param  ?string  $createdAt
      * @param  ?array<CreateCategoriesApiModel>  $categories
      * @param  ?array<CreateContentApiModel>  $content
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?string $updatedAt = null, ?string $createdAt = null, ?array $categories = null, ?array $content = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?array $categories = null, ?array $content = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -182,8 +162,6 @@ class LmsUpsertCourseRequestDto
         $this->active = $active;
         $this->duration = $duration;
         $this->skills = $skills;
-        $this->updatedAt = $updatedAt;
-        $this->createdAt = $createdAt;
         $this->categories = $categories;
         $this->content = $content;
     }

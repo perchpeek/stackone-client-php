@@ -81,8 +81,6 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
                     name: 'Software Engineering',
                 ),
             ],
-            updatedAt: '2021-07-21T14:00:00.000Z',
-            createdAt: '2021-07-21T14:00:00.000Z',
             categories: [
                 new Components\CreateCategoriesApiModel(
                     unifiedCustomFields: [
@@ -235,8 +233,6 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
             name: 'Software Engineering',
         ),
     ],
-    updatedAt: '2021-07-21T14:00:00.000Z',
-    createdAt: '2021-07-21T14:00:00.000Z',
     categories: [
         new Components\CreateCategoriesApiModel(
             unifiedCustomFields: [
@@ -262,7 +258,7 @@ $response = $sdk->lms->upsertCourse(
 
 );
 
-if ($response->createResult !== null) {
+if ($response->upsertResult !== null) {
     // handle response
 }
 ```
@@ -663,7 +659,7 @@ $response = $sdk->lms->upsertContent(
 
 );
 
-if ($response->createResult !== null) {
+if ($response->upsertResult !== null) {
     // handle response
 }
 ```
@@ -819,10 +815,9 @@ $lmsCreateCompletionRequestDto = new Components\LmsCreateCompletionRequestDto(
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
-    externalId: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-COMPLETION',
-    contentExternalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1-CONTENT',
-    contentId: '16873-ENG-VIDEO-1',
     completedAt: '2021-07-21T14:00:00.000Z',
+    learningObjectId: 'e3gd34-23tr21-er234-345er56',
+    learningObjectExternalReference: 'learning-content-123',
 );
 
 $response = $sdk->lms->createUserCompletion(

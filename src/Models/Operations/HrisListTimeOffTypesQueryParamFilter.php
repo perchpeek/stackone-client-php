@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-/** HrisListTimeOffRequestsQueryParamFilter - HRIS Time Off filters */
-class HrisListTimeOffRequestsQueryParamFilter
+/** HrisListTimeOffTypesQueryParamFilter - Filter parameters that allow greater customisation of the list response */
+class HrisListTimeOffTypesQueryParamFilter
 {
     /**
      * Use a string with a date to only select results updated after that given date
@@ -21,20 +21,10 @@ class HrisListTimeOffRequestsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * List of time off type ids to filter by.
-     *
-     * @var ?array<string> $type
-     */
-    #[SpeakeasyMetadata('queryParam:name=type')]
-    public ?array $type = null;
-
-    /**
      * @param  ?string  $updatedAfter
-     * @param  ?array<string>  $type
      */
-    public function __construct(?string $updatedAfter = null, ?array $type = null)
+    public function __construct(?string $updatedAfter = null)
     {
         $this->updatedAfter = $updatedAfter;
-        $this->type = $type;
     }
 }

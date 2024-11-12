@@ -24,18 +24,18 @@ class IssuedBy
 
     /**
      *
-     * @var string|float|bool|WorkEligibilitySourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|WorkEligibilitySourceValueIssuedBy4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\WorkEligibilitySourceValue4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\WorkEligibilitySourceValueIssuedBy4|array<mixed>')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|WorkEligibilitySourceValue4|array|null $sourceValue = null;
+    public string|float|bool|WorkEligibilitySourceValueIssuedBy4|array|null $sourceValue = null;
 
     /**
      * @param  ?WorkEligibilityIssuedByValue  $value
-     * @param  string|float|bool|WorkEligibilitySourceValue4|array<mixed>|null  $sourceValue
+     * @param  string|float|bool|WorkEligibilitySourceValueIssuedBy4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?WorkEligibilityIssuedByValue $value = null, string|float|bool|WorkEligibilitySourceValue4|array|null $sourceValue = null)
+    public function __construct(?WorkEligibilityIssuedByValue $value = null, string|float|bool|WorkEligibilitySourceValueIssuedBy4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

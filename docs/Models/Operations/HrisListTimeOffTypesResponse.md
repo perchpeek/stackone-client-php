@@ -1,4 +1,4 @@
-# LmsUpsertCourseResponse
+# HrisListTimeOffTypesResponse
 
 
 ## Fields
@@ -8,4 +8,4 @@
 | `contentType`                                                                                                | *string*                                                                                                     | :heavy_check_mark:                                                                                           | HTTP response content type for this operation                                                                |
 | `statusCode`                                                                                                 | *int*                                                                                                        | :heavy_check_mark:                                                                                           | HTTP response status code for this operation                                                                 |
 | `rawResponse`                                                                                                | [\Psr\Http\Message\ResponseInterface](https://www.php-fig.org/psr/psr-7/#33-psrhttpmessageresponseinterface) | :heavy_check_mark:                                                                                           | Raw HTTP response; suitable for custom response parsing                                                      |
-| `upsertResult`                                                                                               | [?Components\UpsertResult](../../Models/Components/UpsertResult.md)                                          | :heavy_minus_sign:                                                                                           | The course was upserted successfully.                                                                        |
+| `referencePaginated`                                                                                         | [?Components\ReferencePaginated](../../Models/Components/ReferencePaginated.md)                              | :heavy_minus_sign:                                                                                           | The list of time off types was retrieved.                                                                    |

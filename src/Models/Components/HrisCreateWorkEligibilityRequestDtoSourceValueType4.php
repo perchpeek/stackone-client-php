@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-class WorkEligibilitySourceValueDocumentCategory4
+class HrisCreateWorkEligibilityRequestDtoSourceValueType4
 {
 
     public function __construct()

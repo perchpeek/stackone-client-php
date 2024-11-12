@@ -1,4 +1,4 @@
-# WorkEligibilityDocumentCategorySourceValue
+# WorkEligibilityIssuedBySourceValue
 
 
 ## Supported Types
@@ -21,10 +21,10 @@ float $value = /* values here */
 bool $value = /* values here */
 ```
 
-### `Components\WorkEligibilitySourceValueDocumentCategory4`
+### `Components\WorkEligibilitySourceValueIssuedBy4`
 
 ```php
-Components\WorkEligibilitySourceValueDocumentCategory4 $value = /* values here */
+Components\WorkEligibilitySourceValueIssuedBy4 $value = /* values here */
 ```
 
 ### `array<mixed>`
