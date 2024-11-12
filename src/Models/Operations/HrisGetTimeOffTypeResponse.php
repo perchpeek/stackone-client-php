@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Models\Components;
-class LmsUpsertContentResponse
+class HrisGetTimeOffTypeResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,23 +33,23 @@ class LmsUpsertContentResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The content was upserted successfully.
+     * The time off type with the given identifier was retrieved.
      *
-     * @var ?Components\UpsertResult $upsertResult
+     * @var ?Components\ReferenceResult $referenceResult
      */
-    public ?Components\UpsertResult $upsertResult = null;
+    public ?Components\ReferenceResult $referenceResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\UpsertResult  $upsertResult
+     * @param  ?Components\ReferenceResult  $referenceResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UpsertResult $upsertResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ReferenceResult $referenceResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->upsertResult = $upsertResult;
+        $this->referenceResult = $referenceResult;
     }
 }

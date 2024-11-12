@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-class SourceType4
+class WorkEligibilitySourceValueDocumentFileFormat4
 {
 
     public function __construct()

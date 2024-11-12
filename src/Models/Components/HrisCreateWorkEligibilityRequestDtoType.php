@@ -22,20 +22,20 @@ class HrisCreateWorkEligibilityRequestDtoType
 
     /**
      *
-     * @var string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceType4|array<mixed>|null $sourceType
+     * @var string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValueType4|array<mixed>|null $sourceValue
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('source_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoSourceType4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HrisCreateWorkEligibilityRequestDtoSourceValueType4|array<mixed>')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceType4|array|null $sourceType = null;
+    public string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValueType4|array|null $sourceValue = null;
 
     /**
      * @param  ?HrisCreateWorkEligibilityRequestDtoTypeValue  $value
-     * @param  string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceType4|array<mixed>|null  $sourceType
+     * @param  string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValueType4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?HrisCreateWorkEligibilityRequestDtoTypeValue $value = null, string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceType4|array|null $sourceType = null)
+    public function __construct(?HrisCreateWorkEligibilityRequestDtoTypeValue $value = null, string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValueType4|array|null $sourceValue = null)
     {
         $this->value = $value;
-        $this->sourceType = $sourceType;
+        $this->sourceValue = $sourceValue;
     }
 }

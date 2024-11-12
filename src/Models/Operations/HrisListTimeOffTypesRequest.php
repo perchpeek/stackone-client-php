@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 use StackOne\client\Utils\SpeakeasyMetadata;
-class HrisListEmployeeTimeOffRequestsRequest
+class HrisListTimeOffTypesRequest
 {
     /**
      * The account identifier
@@ -18,13 +18,6 @@ class HrisListEmployeeTimeOffRequestsRequest
      */
     #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-account-id')]
     public string $xAccountId;
-
-    /**
-     *
-     * @var string $id
-     */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
-    public string $id;
 
     /**
      * Indicates that the raw request result is returned
@@ -51,12 +44,12 @@ class HrisListEmployeeTimeOffRequestsRequest
     public ?string $fields = null;
 
     /**
-     * HRIS Time Off filters
+     * Filter parameters that allow greater customisation of the list response
      *
-     * @var ?HrisListEmployeeTimeOffRequestsQueryParamFilter $filter
+     * @var ?HrisListTimeOffTypesQueryParamFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
-    public ?HrisListEmployeeTimeOffRequestsQueryParamFilter $filter = null;
+    public ?HrisListTimeOffTypesQueryParamFilter $filter = null;
 
     /**
      * The page number of the results to fetch
@@ -94,20 +87,18 @@ class HrisListEmployeeTimeOffRequestsRequest
 
     /**
      * @param  string  $xAccountId
-     * @param  string  $id
      * @param  ?bool  $raw
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
-     * @param  ?HrisListEmployeeTimeOffRequestsQueryParamFilter  $filter
+     * @param  ?HrisListTimeOffTypesQueryParamFilter  $filter
      * @param  ?string  $page
      * @param  ?string  $pageSize
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
      */
-    public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?HrisListEmployeeTimeOffRequestsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?bool $raw = false, ?string $pageSize = '25')
+    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?HrisListTimeOffTypesQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?bool $raw = false, ?string $pageSize = '25')
     {
         $this->xAccountId = $xAccountId;
-        $this->id = $id;
         $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;

@@ -40,69 +40,6 @@ class Completion
     public ?array $unifiedCustomFields = null;
 
     /**
-     * The external ID associated with this completion
-     *
-     * @var ?string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('external_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalId = null;
-
-    /**
-     * The external reference associated with this content
-     *
-     * @var ?string $contentExternalReference
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('content_external_reference')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $contentExternalReference = null;
-
-    /**
-     * Provider's unique identifier of the content external reference
-     *
-     * @var ?string $remoteExternalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_external_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $remoteExternalId = null;
-
-    /**
-     * The content ID associated with this completion
-     *
-     * @var ?string $contentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('content_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $contentId = null;
-
-    /**
-     * Provider's unique identifier of the content associated with the completion
-     *
-     * @var ?string $remoteContentId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_content_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $remoteContentId = null;
-
-    /**
-     * The course ID associated with this completion
-     *
-     * @var ?string $courseId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('course_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $courseId = null;
-
-    /**
-     * Provider's unique identifier of the course associated with the completion
-     *
-     * @var ?string $remoteCourseId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_course_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $remoteCourseId = null;
-
-    /**
      * The result of the completion
      *
      * @var ?CompletionResult1 $result
@@ -138,24 +75,6 @@ class Completion
     #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $updatedAt = null;
-
-    /**
-     * The user ID associated with this completion
-     *
-     * @var ?string $userId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('user_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $userId = null;
-
-    /**
-     * Provider's unique identifier of the user related to the completion
-     *
-     * @var ?string $remoteUserId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_user_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $remoteUserId = null;
 
     /**
      * The learning object type of the assignment
@@ -195,9 +114,107 @@ class Completion
     public ?string $learningObjectExternalReference = null;
 
     /**
+     * The user ID associated with this completion
+     *
+     * @var ?string $userId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $userId = null;
+
+    /**
+     * Provider's unique identifier of the user related to the completion
+     *
+     * @var ?string $remoteUserId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_user_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteUserId = null;
+
+    /**
+     * The external ID associated with this completion
+     *
+     * @var ?string $externalId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalId = null;
+
+    /**
+     * The external reference associated with this content
+     *
+     * @var ?string $contentExternalReference
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $contentExternalReference = null;
+
+    /**
+     * Provider's unique identifier of the content external reference
+     *
+     * @var ?string $remoteExternalId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_external_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteExternalId = null;
+
+    /**
+     * The content ID associated with this completion
+     *
+     * @var ?string $contentId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('content_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $contentId = null;
+
+    /**
+     * Provider's unique identifier of the content associated with the completion
+     *
+     * @var ?string $remoteContentId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_content_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteContentId = null;
+
+    /**
+     * The course ID associated with this completion
+     *
+     * @var ?string $courseId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $courseId = null;
+
+    /**
+     * Provider's unique identifier of the course associated with the completion
+     *
+     * @var ?string $remoteCourseId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_course_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteCourseId = null;
+
+    /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
+     * @param  ?CompletionResult1  $result
+     * @param  ?string  $completedAt
+     * @param  ?string  $createdAt
+     * @param  ?string  $updatedAt
+     * @param  ?CompletionLearningObjectType  $learningObjectType
+     * @param  ?string  $learningObjectId
+     * @param  ?string  $remoteLearningObjectId
+     * @param  ?string  $learningObjectExternalReference
+     * @param  ?string  $userId
+     * @param  ?string  $remoteUserId
      * @param  ?string  $externalId
      * @param  ?string  $contentExternalReference
      * @param  ?string  $remoteExternalId
@@ -205,22 +222,22 @@ class Completion
      * @param  ?string  $remoteContentId
      * @param  ?string  $courseId
      * @param  ?string  $remoteCourseId
-     * @param  ?CompletionResult1  $result
-     * @param  ?string  $completedAt
-     * @param  ?string  $createdAt
-     * @param  ?string  $updatedAt
-     * @param  ?string  $userId
-     * @param  ?string  $remoteUserId
-     * @param  ?CompletionLearningObjectType  $learningObjectType
-     * @param  ?string  $learningObjectId
-     * @param  ?string  $remoteLearningObjectId
-     * @param  ?string  $learningObjectExternalReference
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $userId = null, ?string $remoteUserId = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
+        $this->result = $result;
+        $this->completedAt = $completedAt;
+        $this->createdAt = $createdAt;
+        $this->updatedAt = $updatedAt;
+        $this->learningObjectType = $learningObjectType;
+        $this->learningObjectId = $learningObjectId;
+        $this->remoteLearningObjectId = $remoteLearningObjectId;
+        $this->learningObjectExternalReference = $learningObjectExternalReference;
+        $this->userId = $userId;
+        $this->remoteUserId = $remoteUserId;
         $this->externalId = $externalId;
         $this->contentExternalReference = $contentExternalReference;
         $this->remoteExternalId = $remoteExternalId;
@@ -228,15 +245,5 @@ class Completion
         $this->remoteContentId = $remoteContentId;
         $this->courseId = $courseId;
         $this->remoteCourseId = $remoteCourseId;
-        $this->result = $result;
-        $this->completedAt = $completedAt;
-        $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
-        $this->userId = $userId;
-        $this->remoteUserId = $remoteUserId;
-        $this->learningObjectType = $learningObjectType;
-        $this->learningObjectId = $learningObjectId;
-        $this->remoteLearningObjectId = $remoteLearningObjectId;
-        $this->learningObjectExternalReference = $learningObjectExternalReference;
     }
 }

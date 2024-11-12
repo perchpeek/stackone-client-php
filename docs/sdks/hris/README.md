@@ -37,6 +37,8 @@
 * [createTimeOffRequest](#createtimeoffrequest) - Creates a time off request
 * [getTimeOffRequest](#gettimeoffrequest) - Get time off request
 * [updateTimeOffRequest](#updatetimeoffrequest) - Update time off request
+* [listTimeOffTypes](#listtimeofftypes) - List time off types
+* [getTimeOffType](#gettimeofftype) - Get time off type
 * [listBenefits](#listbenefits) - List benefits
 * [getBenefit](#getbenefit) - Get Benefit
 * [listGroups](#listgroups) - List Groups
@@ -2228,6 +2230,114 @@ if ($response->createResult !== null) {
 ### Response
 
 **[?Operations\HrisUpdateTimeOffRequestResponse](../../Models/Operations/HrisUpdateTimeOffRequestResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## listTimeOffTypes
+
+List time off types
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\HrisListTimeOffTypesRequest(
+    xAccountId: '<id>',
+    fields: 'id,remote_id,name,active',
+    filter: new Operations\HrisListTimeOffTypesQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$response = $sdk->hris->listTimeOffTypes(
+    request: $request
+);
+
+if ($response->referencePaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                       | [Operations\HrisListTimeOffTypesRequest](../../Models/Operations/HrisListTimeOffTypesRequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+### Response
+
+**[?Operations\HrisListTimeOffTypesResponse](../../Models/Operations/HrisListTimeOffTypesResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## getTimeOffType
+
+Get time off type
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\HrisGetTimeOffTypeRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,name,active',
+);
+
+$response = $sdk->hris->getTimeOffType(
+    request: $request
+);
+
+if ($response->referenceResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\HrisGetTimeOffTypeRequest](../../Models/Operations/HrisGetTimeOffTypeRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+### Response
+
+**[?Operations\HrisGetTimeOffTypeResponse](../../Models/Operations/HrisGetTimeOffTypeResponse.md)**
 
 ### Errors
 

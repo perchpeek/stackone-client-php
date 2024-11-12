@@ -1,4 +1,4 @@
-# SourceType
+# WorkEligibilityDocumentFileFormatSourceValue
 
 
 ## Supported Types
@@ -21,10 +21,10 @@ float $value = /* values here */
 bool $value = /* values here */
 ```
 
-### `Components\SourceType4`
+### `Components\WorkEligibilitySourceValueDocumentFileFormat4`
 
 ```php
-Components\SourceType4 $value = /* values here */
+Components\WorkEligibilitySourceValueDocumentFileFormat4 $value = /* values here */
 ```
 
 ### `array<mixed>`

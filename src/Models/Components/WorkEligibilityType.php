@@ -22,20 +22,20 @@ class WorkEligibilityType
 
     /**
      *
-     * @var string|float|bool|SourceType4|array<mixed>|null $sourceType
+     * @var string|float|bool|WorkEligibilitySourceValue4|array<mixed>|null $sourceValue
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('source_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\SourceType4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\WorkEligibilitySourceValue4|array<mixed>')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|SourceType4|array|null $sourceType = null;
+    public string|float|bool|WorkEligibilitySourceValue4|array|null $sourceValue = null;
 
     /**
      * @param  ?WorkEligibilityValue  $value
-     * @param  string|float|bool|SourceType4|array<mixed>|null  $sourceType
+     * @param  string|float|bool|WorkEligibilitySourceValue4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?WorkEligibilityValue $value = null, string|float|bool|SourceType4|array|null $sourceType = null)
+    public function __construct(?WorkEligibilityValue $value = null, string|float|bool|WorkEligibilitySourceValue4|array|null $sourceValue = null)
     {
         $this->value = $value;
-        $this->sourceType = $sourceType;
+        $this->sourceValue = $sourceValue;
     }
 }

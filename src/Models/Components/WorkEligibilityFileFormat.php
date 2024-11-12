@@ -24,18 +24,18 @@ class WorkEligibilityFileFormat
 
     /**
      *
-     * @var string|float|bool|WorkEligibilitySourceValueDocument4|array<mixed>|null $sourceValue
+     * @var string|float|bool|WorkEligibilitySourceValueDocumentFileFormat4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\WorkEligibilitySourceValueDocument4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\WorkEligibilitySourceValueDocumentFileFormat4|array<mixed>')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|WorkEligibilitySourceValueDocument4|array|null $sourceValue = null;
+    public string|float|bool|WorkEligibilitySourceValueDocumentFileFormat4|array|null $sourceValue = null;
 
     /**
      * @param  ?WorkEligibilityDocumentValue  $value
-     * @param  string|float|bool|WorkEligibilitySourceValueDocument4|array<mixed>|null  $sourceValue
+     * @param  string|float|bool|WorkEligibilitySourceValueDocumentFileFormat4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?WorkEligibilityDocumentValue $value = null, string|float|bool|WorkEligibilitySourceValueDocument4|array|null $sourceValue = null)
+    public function __construct(?WorkEligibilityDocumentValue $value = null, string|float|bool|WorkEligibilitySourceValueDocumentFileFormat4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

@@ -1,4 +1,4 @@
-# HrisCreateWorkEligibilityRequestDtoSourceType
+# HrisCreateWorkEligibilityRequestDtoTypeSourceValue
 
 
 ## Supported Types
@@ -21,10 +21,10 @@ float $value = /* values here */
 bool $value = /* values here */
 ```
 
-### `Components\HrisCreateWorkEligibilityRequestDtoSourceType4`
+### `Components\HrisCreateWorkEligibilityRequestDtoSourceValueType4`
 
 ```php
-Components\HrisCreateWorkEligibilityRequestDtoSourceType4 $value = /* values here */
+Components\HrisCreateWorkEligibilityRequestDtoSourceValueType4 $value = /* values here */
 ```
 
 ### `array<mixed>`

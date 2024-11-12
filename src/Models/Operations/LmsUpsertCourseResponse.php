@@ -35,21 +35,21 @@ class LmsUpsertCourseResponse
     /**
      * The course was upserted successfully.
      *
-     * @var ?Components\CreateResult $createResult
+     * @var ?Components\UpsertResult $upsertResult
      */
-    public ?Components\CreateResult $createResult = null;
+    public ?Components\UpsertResult $upsertResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\CreateResult  $createResult
+     * @param  ?Components\UpsertResult  $upsertResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateResult $createResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UpsertResult $upsertResult = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->createResult = $createResult;
+        $this->upsertResult = $upsertResult;
     }
 }
