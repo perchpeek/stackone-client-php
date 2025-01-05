@@ -255,6 +255,7 @@ The Locale Code of the language
 | `GaIE`  | ga_IE   |
 | `GnPY`  | gn_PY   |
 | `GnAR`  | gn_AR   |
+| `GuIN`  | gu_IN   |
 | `GvIM`  | gv_IM   |
 | `HeIL`  | he_IL   |
 | `HiIN`  | hi_IN   |
@@ -296,6 +297,7 @@ The Locale Code of the language
 | `MiNZ`  | mi_NZ   |
 | `MKMK`  | mk_MK   |
 | `MNMN`  | mn_MN   |
+| `MrIN`  | mr_IN   |
 | `MsBN`  | ms_BN   |
 | `MsMY`  | ms_MY   |
 | `MsSG`  | ms_SG   |
@@ -355,9 +357,11 @@ The Locale Code of the language
 | `RuTM`  | ru_TM   |
 | `RuUZ`  | ru_UZ   |
 | `RWRW`  | rw_RW   |
+| `SESE`  | se_SE   |
 | `SgCF`  | sg_CF   |
 | `SiLK`  | si_LK   |
 | `SKSK`  | sk_SK   |
+| `SlSI`  | sl_SI   |
 | `SmAS`  | sm_AS   |
 | `SmWS`  | sm_WS   |
 | `SnZW`  | sn_ZW   |
@@ -385,6 +389,7 @@ The Locale Code of the language
 | `TaMY`  | ta_MY   |
 | `TaSG`  | ta_SG   |
 | `TaLK`  | ta_LK   |
+| `TeIN`  | te_IN   |
 | `TgTJ`  | tg_TJ   |
 | `THTH`  | th_TH   |
 | `TiER`  | ti_ER   |

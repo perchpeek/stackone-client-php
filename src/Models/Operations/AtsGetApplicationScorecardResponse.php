@@ -33,6 +33,13 @@ class AtsGetApplicationScorecardResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The scorecard related to the application with the given identifiers was retrieved.
      *
      * @var ?Components\ScorecardsResult $scorecardsResult
@@ -43,13 +50,15 @@ class AtsGetApplicationScorecardResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?Components\ScorecardsResult  $scorecardsResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ScorecardsResult $scorecardsResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ScorecardsResult $scorecardsResult = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->scorecardsResult = $scorecardsResult;
     }
 }

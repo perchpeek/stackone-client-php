@@ -12,14 +12,6 @@ namespace StackOne\client\Models\Components;
 class CategoriesPaginated
 {
     /**
-     *
-     * @var ?string $next
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $next = null;
-
-    /**
      * $data
      *
      * @var array<Category> $data
@@ -27,6 +19,14 @@ class CategoriesPaginated
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Category>')]
     public array $data;
+
+    /**
+     *
+     * @var ?string $next
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $next = null;
 
     /**
      * $raw

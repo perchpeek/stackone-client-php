@@ -33,6 +33,13 @@ class HrisListEmployeeWorkEligibilityResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The work eligibility of the employee with the given identifier were retrieved.
      *
      * @var ?Components\WorkEligibilityPaginated $workEligibilityPaginated
@@ -43,13 +50,15 @@ class HrisListEmployeeWorkEligibilityResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?Components\WorkEligibilityPaginated  $workEligibilityPaginated
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\WorkEligibilityPaginated $workEligibilityPaginated = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\WorkEligibilityPaginated $workEligibilityPaginated = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->workEligibilityPaginated = $workEligibilityPaginated;
     }
 }

@@ -20,14 +20,6 @@ class HrisListEmployeesRequest
     public string $xAccountId;
 
     /**
-     * Indicates that the raw request result is returned
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
      *
      * @var ?array<string, mixed> $proxy
@@ -46,10 +38,10 @@ class HrisListEmployeesRequest
     /**
      * HRIS Employees filters
      *
-     * @var ?QueryParamFilter $filter
+     * @var ?HrisListEmployeesQueryParamFilter $filter
      */
     #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
-    public ?QueryParamFilter $filter = null;
+    public ?HrisListEmployeesQueryParamFilter $filter = null;
 
     /**
      * The page number of the results to fetch
@@ -59,14 +51,6 @@ class HrisListEmployeesRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
     public ?string $page = null;
-
-    /**
-     * The number of results per page
-     *
-     * @var ?string $pageSize
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
-    public ?string $pageSize = null;
 
     /**
      * The unified cursor
@@ -102,11 +86,27 @@ class HrisListEmployeesRequest
     public ?string $include = null;
 
     /**
+     * Indicates that the raw request result is returned
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
+     * The number of results per page
+     *
+     * @var ?string $pageSize
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
+    public ?string $pageSize = null;
+
+    /**
      * @param  string  $xAccountId
      * @param  ?bool  $raw
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
-     * @param  ?QueryParamFilter  $filter
+     * @param  ?HrisListEmployeesQueryParamFilter  $filter
      * @param  ?string  $page
      * @param  ?string  $pageSize
      * @param  ?string  $next
@@ -114,18 +114,18 @@ class HrisListEmployeesRequest
      * @param  ?string  $expand
      * @param  ?string  $include
      */
-    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?QueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $expand = null, ?string $include = null, ?bool $raw = false, ?string $pageSize = '25')
+    public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?HrisListEmployeesQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $expand = null, ?string $include = null, ?bool $raw = false, ?string $pageSize = '25')
     {
         $this->xAccountId = $xAccountId;
-        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
         $this->filter = $filter;
         $this->page = $page;
-        $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
         $this->expand = $expand;
         $this->include = $include;
+        $this->raw = $raw;
+        $this->pageSize = $pageSize;
     }
 }

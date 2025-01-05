@@ -8,30 +8,45 @@ The source value of the employment type.
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
 ### `float`
 
 ```php
+/**
+* @var float
+*/
 float $value = /* values here */
 ```
 
 ### `bool`
 
 ```php
+/**
+* @var bool
+*/
 bool $value = /* values here */
 ```
 
 ### `Components\JobPostingSourceValueEmploymentType4`
 
 ```php
+/**
+* @var Components\JobPostingSourceValueEmploymentType4
+*/
 Components\JobPostingSourceValueEmploymentType4 $value = /* values here */
 ```
 
-### `array<mixed>`
+### `array`
 
 ```php
-array<mixed> $value = /* values here */
+/**
+* @var array<mixed>
+*/
+array $value = /* values here */
 ```
 

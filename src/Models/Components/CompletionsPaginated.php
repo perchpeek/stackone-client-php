@@ -12,14 +12,6 @@ namespace StackOne\client\Models\Components;
 class CompletionsPaginated
 {
     /**
-     *
-     * @var ?string $next
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $next = null;
-
-    /**
      * $data
      *
      * @var array<Completion> $data
@@ -27,6 +19,14 @@ class CompletionsPaginated
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Completion>')]
     public array $data;
+
+    /**
+     *
+     * @var ?string $next
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $next = null;
 
     /**
      * $raw

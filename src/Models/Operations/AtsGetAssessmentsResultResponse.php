@@ -33,23 +33,32 @@ class AtsGetAssessmentsResultResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The assessments result with the given identifier was retrieved.
      *
-     * @var ?Components\AssessmentsResultsResult $assessmentsResultsResult
+     * @var ?Components\AssessmentResultsResult $assessmentResultsResult
      */
-    public ?Components\AssessmentsResultsResult $assessmentsResultsResult = null;
+    public ?Components\AssessmentResultsResult $assessmentResultsResult = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\AssessmentsResultsResult  $assessmentsResultsResult
+     * @param  array<string, array<string>>  $headers
+     * @param  ?Components\AssessmentResultsResult  $assessmentResultsResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AssessmentsResultsResult $assessmentsResultsResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AssessmentResultsResult $assessmentResultsResult = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->assessmentsResultsResult = $assessmentsResultsResult;
+        $this->headers = $headers;
+        $this->assessmentResultsResult = $assessmentResultsResult;
     }
 }

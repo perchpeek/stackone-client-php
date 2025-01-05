@@ -29,20 +29,20 @@ class HrisUpdateEmployeeRequest
 
     /**
      *
-     * @var Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto
+     * @var Components\HrisUpdateEmployeeRequestDto $hrisUpdateEmployeeRequestDto
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto;
+    public Components\HrisUpdateEmployeeRequestDto $hrisUpdateEmployeeRequestDto;
 
     /**
      * @param  string  $xAccountId
      * @param  string  $id
-     * @param  Components\HrisCreateEmployeeRequestDto  $hrisCreateEmployeeRequestDto
+     * @param  Components\HrisUpdateEmployeeRequestDto  $hrisUpdateEmployeeRequestDto
      */
-    public function __construct(string $xAccountId, string $id, Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto)
+    public function __construct(string $xAccountId, string $id, Components\HrisUpdateEmployeeRequestDto $hrisUpdateEmployeeRequestDto)
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
-        $this->hrisCreateEmployeeRequestDto = $hrisCreateEmployeeRequestDto;
+        $this->hrisUpdateEmployeeRequestDto = $hrisUpdateEmployeeRequestDto;
     }
 }

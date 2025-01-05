@@ -5,15 +5,15 @@
 
 ### Available Operations
 
-* [listLinkedAccounts](#listlinkedaccounts) - List Accounts
-* [getAccount](#getaccount) - Get Account
 * [deleteAccount](#deleteaccount) - Delete Account
-* [updateAccount](#updateaccount) - Update Account
+* [getAccount](#getaccount) - Get Account
 * [getAccountMetaInfo](#getaccountmetainfo) - Get meta information of the account
+* [listLinkedAccounts](#listlinkedaccounts) - List Accounts
+* [updateAccount](#updateaccount) - Update Account
 
-## listLinkedAccounts
+## deleteAccount
 
-List Accounts
+Delete Account
 
 ### Example Usage
 
@@ -24,7 +24,6 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
-use StackOne\client\Models\Operations;
 
 $security = new Components\Security(
     username: '',
@@ -33,26 +32,26 @@ $security = new Components\Security(
 
 $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
-$request = new Operations\StackoneListLinkedAccountsRequest();
 
-$response = $sdk->accounts->listLinkedAccounts(
-    request: $request
+
+$response = $sdk->accounts->deleteAccount(
+    id: '<id>'
 );
 
-if ($response->linkedAccounts !== null) {
+if ($response->linkedAccount !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [Operations\StackoneListLinkedAccountsRequest](../../Models/Operations/StackoneListLinkedAccountsRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *string*           | :heavy_check_mark: | N/A                |
 
 ### Response
 
-**[?Operations\StackoneListLinkedAccountsResponse](../../Models/Operations/StackoneListLinkedAccountsResponse.md)**
+**[?Operations\StackoneDeleteAccountResponse](../../Models/Operations/StackoneDeleteAccountResponse.md)**
 
 ### Errors
 
@@ -108,9 +107,9 @@ if ($response->linkedAccount !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
-## deleteAccount
+## getAccountMetaInfo
 
-Delete Account
+Get meta information of the account
 
 ### Example Usage
 
@@ -131,11 +130,11 @@ $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
 
 
-$response = $sdk->accounts->deleteAccount(
+$response = $sdk->accounts->getAccountMetaInfo(
     id: '<id>'
 );
 
-if ($response->linkedAccount !== null) {
+if ($response->linkedAccountMeta !== null) {
     // handle response
 }
 ```
@@ -148,7 +147,56 @@ if ($response->linkedAccount !== null) {
 
 ### Response
 
-**[?Operations\StackoneDeleteAccountResponse](../../Models/Operations/StackoneDeleteAccountResponse.md)**
+**[?Operations\StackoneGetAccountMetaInfoResponse](../../Models/Operations/StackoneGetAccountMetaInfoResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## listLinkedAccounts
+
+List Accounts
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\StackoneListLinkedAccountsRequest();
+
+$response = $sdk->accounts->listLinkedAccounts(
+    request: $request
+);
+
+if ($response->linkedAccounts !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                   | [Operations\StackoneListLinkedAccountsRequest](../../Models/Operations/StackoneListLinkedAccountsRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+### Response
+
+**[?Operations\StackoneListLinkedAccountsResponse](../../Models/Operations/StackoneListLinkedAccountsResponse.md)**
 
 ### Errors
 
@@ -200,54 +248,6 @@ if ($response->linkedAccount !== null) {
 ### Response
 
 **[?Operations\StackoneUpdateAccountResponse](../../Models/Operations/StackoneUpdateAccountResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
-
-## getAccountMetaInfo
-
-Get meta information of the account
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use StackOne\client;
-use StackOne\client\Models\Components;
-
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
-
-
-
-$response = $sdk->accounts->getAccountMetaInfo(
-    id: '<id>'
-);
-
-if ($response->linkedAccountMeta !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *string*           | :heavy_check_mark: | N/A                |
-
-### Response
-
-**[?Operations\StackoneGetAccountMetaInfoResponse](../../Models/Operations/StackoneGetAccountMetaInfoResponse.md)**
 
 ### Errors
 

@@ -37,15 +37,6 @@ class ConnectorsMeta
     public ConnectorsMetaCategory $category;
 
     /**
-     * Whether this provider has been enabled on the integrations page for the current project
-     *
-     * @var ?bool $active
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $active = null;
-
-    /**
      * $models
      *
      * @var array<string, mixed> $models
@@ -53,6 +44,15 @@ class ConnectorsMeta
     #[\Speakeasy\Serializer\Annotation\SerializedName('models')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>')]
     public array $models;
+
+    /**
+     * Whether this provider has been enabled on the integrations page for the current project
+     *
+     * @var ?bool $active
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $active = null;
 
     /**
      * Resources for this provider, such as image assets

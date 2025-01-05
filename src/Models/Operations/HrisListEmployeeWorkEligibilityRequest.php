@@ -19,12 +19,12 @@ class HrisListEmployeeWorkEligibilityRequest
     public string $id;
 
     /**
-     * Indicates that the raw request result is returned
+     * The account identifier
      *
-     * @var ?bool $raw
+     * @var string $xAccountId
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-account-id')]
+    public string $xAccountId;
 
     /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
@@ -60,14 +60,6 @@ class HrisListEmployeeWorkEligibilityRequest
     public ?string $page = null;
 
     /**
-     * The number of results per page
-     *
-     * @var ?string $pageSize
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
-    public ?string $pageSize = null;
-
-    /**
      * The unified cursor
      *
      * @var ?string $next
@@ -85,12 +77,20 @@ class HrisListEmployeeWorkEligibilityRequest
     public ?string $updatedAfter = null;
 
     /**
-     * The account identifier
+     * Indicates that the raw request result is returned
      *
-     * @var string $xAccountId
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-account-id')]
-    public string $xAccountId;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
+     * The number of results per page
+     *
+     * @var ?string $pageSize
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
+    public ?string $pageSize = null;
 
     /**
      * @param  string  $id
@@ -108,13 +108,13 @@ class HrisListEmployeeWorkEligibilityRequest
     {
         $this->id = $id;
         $this->xAccountId = $xAccountId;
-        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
         $this->filter = $filter;
         $this->page = $page;
-        $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
+        $this->raw = $raw;
+        $this->pageSize = $pageSize;
     }
 }

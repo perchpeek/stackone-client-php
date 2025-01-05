@@ -21,15 +21,6 @@ class CreateSkillsApiModel
     public ?string $id = null;
 
     /**
-     * Provider's unique identifier
-     *
-     * @var ?string $remoteId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $remoteId = null;
-
-    /**
      * The name associated with this skill
      *
      * @var ?string $name
@@ -39,14 +30,24 @@ class CreateSkillsApiModel
     public ?string $name = null;
 
     /**
-     * @param  ?string  $id
-     * @param  ?string  $remoteId
-     * @param  ?string  $name
+     * The hierarchal level of the skill
+     *
+     * @var ?CreateSkillsApiModelLevel $level
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null)
+    #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateSkillsApiModelLevel|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateSkillsApiModelLevel $level = null;
+
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $name
+     * @param  ?CreateSkillsApiModelLevel  $level
+     */
+    public function __construct(?string $id = null, ?string $name = null, ?CreateSkillsApiModelLevel $level = null)
     {
         $this->id = $id;
-        $this->remoteId = $remoteId;
         $this->name = $name;
+        $this->level = $level;
     }
 }

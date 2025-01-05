@@ -33,6 +33,13 @@ class HrisUploadEmployeeDocumentResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The document related to the employee with the given identifier was uploaded.
      *
      * @var ?Components\WriteResultApiModel $writeResultApiModel
@@ -43,13 +50,15 @@ class HrisUploadEmployeeDocumentResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?Components\WriteResultApiModel  $writeResultApiModel
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\WriteResultApiModel $writeResultApiModel = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\WriteResultApiModel $writeResultApiModel = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->writeResultApiModel = $writeResultApiModel;
     }
 }

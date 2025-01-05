@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace StackOne\client;
 
+use StackOne\client\Utils\Retry;
+
 /**
  * StackOneBuilder is used to configure and build an instance of the SDK.
  */
@@ -26,7 +28,7 @@ class StackOneBuilder
      */
     public function setClient(\GuzzleHttp\ClientInterface $client): StackOneBuilder
     {
-        $this->sdkConfig->defaultClient = $client;
+        $this->sdkConfig->client = $client;
 
         return $this;
     }
@@ -40,6 +42,8 @@ class StackOneBuilder
     public function setSecurity(Models\Components\Security $security): StackOneBuilder
     {
         $this->sdkConfig->security = $security;
+
+        $this->sdkConfig->securitySource = fn () => $security;
 
         return $this;
     }
@@ -85,6 +89,13 @@ class StackOneBuilder
         return $this;
     }
 
+    public function setRetryConfig(Retry\RetryConfig $config): StackOneBuilder
+    {
+        $this->sdkConfig->retryConfig = $config;
+
+        return $this;
+    }
+
     /**
      * build is used to build the SDK with any of the configured options.
      *
@@ -92,16 +103,13 @@ class StackOneBuilder
      */
     public function build(): StackOne
     {
-        if ($this->sdkConfig->defaultClient === null) {
-            $this->sdkConfig->defaultClient = new \GuzzleHttp\Client([
+        if ($this->sdkConfig->client === null) {
+            $this->sdkConfig->client = new \GuzzleHttp\Client([
                 'timeout' => 60,
             ]);
         }
         if ($this->sdkConfig->hasSecurity()) {
-            $this->sdkConfig->securityClient = Utils\Utils::configureSecurityClient($this->sdkConfig->defaultClient, $this->sdkConfig->getSecurity());
-        }
-        if ($this->sdkConfig->securityClient === null) {
-            $this->sdkConfig->securityClient = $this->sdkConfig->defaultClient;
+            $this->sdkConfig->client = Utils\Utils::configureSecurityClient($this->sdkConfig->client, $this->sdkConfig->getSecurity());
         }
 
         return new StackOne($this->sdkConfig);

@@ -6,30 +6,45 @@
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
 ### `float`
 
 ```php
+/**
+* @var float
+*/
 float $value = /* values here */
 ```
 
 ### `bool`
 
 ```php
+/**
+* @var bool
+*/
 bool $value = /* values here */
 ```
 
 ### `Components\HrisCreateEmployeeRequestDtoSourceValueEmploymentStatus4`
 
 ```php
+/**
+* @var Components\HrisCreateEmployeeRequestDtoSourceValueEmploymentStatus4
+*/
 Components\HrisCreateEmployeeRequestDtoSourceValueEmploymentStatus4 $value = /* values here */
 ```
 
-### `array<mixed>`
+### `array`
 
 ```php
-array<mixed> $value = /* values here */
+/**
+* @var array<mixed>
+*/
+array $value = /* values here */
 ```
 

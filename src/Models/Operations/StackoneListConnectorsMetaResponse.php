@@ -33,6 +33,13 @@ class StackoneListConnectorsMetaResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The list of connectors meta information was retrieved.
      *
      * @var ?array<Components\ConnectorsMeta> $connectorsMetas
@@ -43,13 +50,15 @@ class StackoneListConnectorsMetaResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?array<Components\ConnectorsMeta>  $connectorsMetas
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $connectorsMetas = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $connectorsMetas = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->connectorsMetas = $connectorsMetas;
     }
 }

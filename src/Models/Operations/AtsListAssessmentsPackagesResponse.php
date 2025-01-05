@@ -33,23 +33,32 @@ class AtsListAssessmentsPackagesResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The list of assessments packages was retrieved.
      *
-     * @var ?Components\AssessmentsPackagesPaginated $assessmentsPackagesPaginated
+     * @var ?Components\AssessmentPackagePaginated $assessmentPackagePaginated
      */
-    public ?Components\AssessmentsPackagesPaginated $assessmentsPackagesPaginated = null;
+    public ?Components\AssessmentPackagePaginated $assessmentPackagePaginated = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\AssessmentsPackagesPaginated  $assessmentsPackagesPaginated
+     * @param  array<string, array<string>>  $headers
+     * @param  ?Components\AssessmentPackagePaginated  $assessmentPackagePaginated
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AssessmentsPackagesPaginated $assessmentsPackagesPaginated = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AssessmentPackagePaginated $assessmentPackagePaginated = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->assessmentsPackagesPaginated = $assessmentsPackagesPaginated;
+        $this->headers = $headers;
+        $this->assessmentPackagePaginated = $assessmentPackagePaginated;
     }
 }

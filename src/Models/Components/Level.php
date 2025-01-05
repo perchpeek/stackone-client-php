@@ -14,27 +14,27 @@ class Level
 {
     /**
      *
-     * @var ?CategoryValue $value
+     * @var ?CreateCategoriesApiModelValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CategoryValue $value = null;
+    public ?CreateCategoriesApiModelValue $value = null;
 
     /**
      *
-     * @var string|float|bool|CategorySourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|CreateCategoriesApiModelSourceValue4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CategorySourceValue4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CreateCategoriesApiModelSourceValue4|array<mixed>')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|CategorySourceValue4|array|null $sourceValue = null;
+    public string|float|bool|CreateCategoriesApiModelSourceValue4|array|null $sourceValue = null;
 
     /**
-     * @param  ?CategoryValue  $value
-     * @param  string|float|bool|CategorySourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?CreateCategoriesApiModelValue  $value
+     * @param  string|float|bool|CreateCategoriesApiModelSourceValue4|array<mixed>|null  $sourceValue
      */
-    public function __construct(?CategoryValue $value = null, string|float|bool|CategorySourceValue4|array|null $sourceValue = null)
+    public function __construct(?CreateCategoriesApiModelValue $value = null, string|float|bool|CreateCategoriesApiModelSourceValue4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

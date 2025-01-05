@@ -152,6 +152,7 @@ enum HrisCreateEmployeeRequestDtoNationalIdentityNumberValue: string
     case Curp = 'curp';
     case Imss = 'imss';
     case Rfc = 'rfc';
+    case Ein = 'ein';
     case Other = 'other';
     case Unknown = 'unknown';
 }

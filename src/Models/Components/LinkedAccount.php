@@ -34,16 +34,6 @@ class LinkedAccount
     public Status $status;
 
     /**
-     * $statusReasons
-     *
-     * @var ?array<StatusReason> $statusReasons
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status_reasons')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\StatusReason>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $statusReasons = null;
-
-    /**
      *
      * @var string $originOwnerId
      */
@@ -56,6 +46,30 @@ class LinkedAccount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
     public string $originOwnerName;
+
+    /**
+     *
+     * @var \DateTime $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    public \DateTime $createdAt;
+
+    /**
+     *
+     * @var \DateTime $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    public \DateTime $updatedAt;
+
+    /**
+     * $statusReasons
+     *
+     * @var ?array<StatusReason> $statusReasons
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status_reasons')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\StatusReason>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $statusReasons = null;
 
     /**
      *
@@ -90,20 +104,6 @@ class LinkedAccount
     #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
-
-    /**
-     *
-     * @var \DateTime $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    public \DateTime $createdAt;
-
-    /**
-     *
-     * @var \DateTime $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
-    public \DateTime $updatedAt;
 
     /**
      * @param  string  $id

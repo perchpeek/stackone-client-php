@@ -60,12 +60,12 @@ class Category
     /**
      * The hierarchal level of the category
      *
-     * @var ?Level $level
+     * @var ?CategoryLevel $level
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryLevel|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Level $level = null;
+    public ?CategoryLevel $level = null;
 
     /**
      * @param  ?string  $id
@@ -73,9 +73,9 @@ class Category
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
      * @param  ?bool  $active
-     * @param  ?Level  $level
+     * @param  ?CategoryLevel  $level
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?Level $level = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?CategoryLevel $level = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

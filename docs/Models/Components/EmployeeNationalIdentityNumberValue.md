@@ -147,5 +147,6 @@ The type of the national identity number
 | `Curp`               | curp                 |
 | `Imss`               | imss                 |
 | `Rfc`                | rfc                  |
+| `Ein`                | ein                  |
 | `Other`              | other                |
 | `Unknown`            | unknown              |

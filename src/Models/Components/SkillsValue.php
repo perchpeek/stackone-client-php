@@ -13,4 +13,5 @@ enum SkillsValue: string
 {
     case Primary = 'primary';
     case Secondary = 'secondary';
+    case Tertiary = 'tertiary';
 }
