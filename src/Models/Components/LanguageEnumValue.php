@@ -260,6 +260,7 @@ enum LanguageEnumValue: string
     case GaIE = 'ga_IE';
     case GnPY = 'gn_PY';
     case GnAR = 'gn_AR';
+    case GuIN = 'gu_IN';
     case GvIM = 'gv_IM';
     case HeIL = 'he_IL';
     case HiIN = 'hi_IN';
@@ -301,6 +302,7 @@ enum LanguageEnumValue: string
     case MiNZ = 'mi_NZ';
     case MKMK = 'mk_MK';
     case MNMN = 'mn_MN';
+    case MrIN = 'mr_IN';
     case MsBN = 'ms_BN';
     case MsMY = 'ms_MY';
     case MsSG = 'ms_SG';
@@ -360,9 +362,11 @@ enum LanguageEnumValue: string
     case RuTM = 'ru_TM';
     case RuUZ = 'ru_UZ';
     case RWRW = 'rw_RW';
+    case SESE = 'se_SE';
     case SgCF = 'sg_CF';
     case SiLK = 'si_LK';
     case SKSK = 'sk_SK';
+    case SlSI = 'sl_SI';
     case SmAS = 'sm_AS';
     case SmWS = 'sm_WS';
     case SnZW = 'sn_ZW';
@@ -390,6 +394,7 @@ enum LanguageEnumValue: string
     case TaMY = 'ta_MY';
     case TaSG = 'ta_SG';
     case TaLK = 'ta_LK';
+    case TeIN = 'te_IN';
     case TgTJ = 'tg_TJ';
     case THTH = 'th_TH';
     case TiER = 'ti_ER';

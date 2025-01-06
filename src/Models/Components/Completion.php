@@ -40,6 +40,15 @@ class Completion
     public ?array $unifiedCustomFields = null;
 
     /**
+     * The external reference associated with this completion
+     *
+     * @var ?string $externalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalReference = null;
+
+    /**
      * The result of the completion
      *
      * @var ?CompletionResult1 $result
@@ -77,7 +86,7 @@ class Completion
     public ?string $updatedAt = null;
 
     /**
-     * The learning object type of the assignment
+     * The learning object type of the completion
      *
      * @var ?CompletionLearningObjectType $learningObjectType
      */
@@ -87,7 +96,7 @@ class Completion
     public ?CompletionLearningObjectType $learningObjectType = null;
 
     /**
-     * The learning_object_id associated with this assignment
+     * The id of the learning object associated with this completion
      *
      * @var ?string $learningObjectId
      */
@@ -96,7 +105,7 @@ class Completion
     public ?string $learningObjectId = null;
 
     /**
-     * Provider's unique identifier of the learning object related to the assignment
+     * Provider's unique identifier of the learning object related to the completion
      *
      * @var ?string $remoteLearningObjectId
      */
@@ -105,7 +114,7 @@ class Completion
     public ?string $remoteLearningObjectId = null;
 
     /**
-     * The learning_object_external_reference associated with this assignment
+     * The external reference of the learning object associated with this completion
      *
      * @var ?string $learningObjectExternalReference
      */
@@ -205,6 +214,7 @@ class Completion
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
+     * @param  ?string  $externalReference
      * @param  ?CompletionResult1  $result
      * @param  ?string  $completedAt
      * @param  ?string  $createdAt
@@ -223,11 +233,12 @@ class Completion
      * @param  ?string  $courseId
      * @param  ?string  $remoteCourseId
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
+        $this->externalReference = $externalReference;
         $this->result = $result;
         $this->completedAt = $completedAt;
         $this->createdAt = $createdAt;

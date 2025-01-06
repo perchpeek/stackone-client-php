@@ -13,6 +13,13 @@ class StatusReason
 {
     /**
      *
+     * @var \DateTime $timestamp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    public \DateTime $timestamp;
+
+    /**
+     *
      * @var ?string $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
@@ -26,13 +33,6 @@ class StatusReason
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
-
-    /**
-     *
-     * @var \DateTime $timestamp
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
-    public \DateTime $timestamp;
 
     /**
      * @param  \DateTime  $timestamp

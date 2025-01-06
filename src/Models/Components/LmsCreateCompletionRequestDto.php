@@ -22,6 +22,15 @@ class LmsCreateCompletionRequestDto
     public ?array $passthrough = null;
 
     /**
+     * The external reference associated with this completion
+     *
+     * @var ?string $externalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalReference = null;
+
+    /**
      * The result of the completion
      *
      * @var ?LmsCreateCompletionRequestDtoResult $result
@@ -41,7 +50,7 @@ class LmsCreateCompletionRequestDto
     public ?string $completedAt = null;
 
     /**
-     * The learning_object_id associated with this assignment
+     * The id of the learning object associated with this completion
      *
      * @var ?string $learningObjectId
      */
@@ -50,7 +59,7 @@ class LmsCreateCompletionRequestDto
     public ?string $learningObjectId = null;
 
     /**
-     * The learning_object_external_reference associated with this assignment
+     * The external reference of the learning object associated with this completion
      *
      * @var ?string $learningObjectExternalReference
      */
@@ -90,6 +99,7 @@ class LmsCreateCompletionRequestDto
 
     /**
      * @param  ?array<string, mixed>  $passthrough
+     * @param  ?string  $externalReference
      * @param  ?LmsCreateCompletionRequestDtoResult  $result
      * @param  ?string  $completedAt
      * @param  ?string  $learningObjectId
@@ -98,9 +108,10 @@ class LmsCreateCompletionRequestDto
      * @param  ?string  $contentExternalReference
      * @param  ?string  $contentId
      */
-    public function __construct(?array $passthrough = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?string $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $contentId = null)
+    public function __construct(?array $passthrough = null, ?string $externalReference = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?string $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $contentId = null)
     {
         $this->passthrough = $passthrough;
+        $this->externalReference = $externalReference;
         $this->result = $result;
         $this->completedAt = $completedAt;
         $this->learningObjectId = $learningObjectId;

@@ -27,14 +27,6 @@ class HrisListEmployeeEmploymentsRequest
     public string $id;
 
     /**
-     * Indicates that the raw request result is returned
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
      *
      * @var ?array<string, mixed> $proxy
@@ -68,14 +60,6 @@ class HrisListEmployeeEmploymentsRequest
     public ?string $page = null;
 
     /**
-     * The number of results per page
-     *
-     * @var ?string $pageSize
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
-    public ?string $pageSize = null;
-
-    /**
      * The unified cursor
      *
      * @var ?string $next
@@ -101,6 +85,22 @@ class HrisListEmployeeEmploymentsRequest
     public ?string $expand = null;
 
     /**
+     * Indicates that the raw request result is returned
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
+     * The number of results per page
+     *
+     * @var ?string $pageSize
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
+    public ?string $pageSize = null;
+
+    /**
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  ?bool  $raw
@@ -117,14 +117,14 @@ class HrisListEmployeeEmploymentsRequest
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
-        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
         $this->filter = $filter;
         $this->page = $page;
-        $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
         $this->expand = $expand;
+        $this->raw = $raw;
+        $this->pageSize = $pageSize;
     }
 }

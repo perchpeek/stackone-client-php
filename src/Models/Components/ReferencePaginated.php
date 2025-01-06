@@ -12,6 +12,15 @@ namespace StackOne\client\Models\Components;
 class ReferencePaginated
 {
     /**
+     * $data
+     *
+     * @var array<Reference> $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Reference>')]
+    public array $data;
+
+    /**
      *
      * @var ?string $nextPage
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -27,15 +36,6 @@ class ReferencePaginated
     #[\Speakeasy\Serializer\Annotation\SerializedName('next')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $next = null;
-
-    /**
-     * $data
-     *
-     * @var array<Reference> $data
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Reference>')]
-    public array $data;
 
     /**
      * $raw

@@ -33,6 +33,27 @@ class ConnectSession
     public string $projectId;
 
     /**
+     *
+     * @var string $originOwnerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
+    public string $originOwnerId;
+
+    /**
+     *
+     * @var string $originOwnerName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
+    public string $originOwnerName;
+
+    /**
+     *
+     * @var \DateTime $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    public \DateTime $createdAt;
+
+    /**
      * $categories
      *
      * @var ?array<ConnectSessionCategories> $categories
@@ -49,20 +70,6 @@ class ConnectSession
     #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $provider = null;
-
-    /**
-     *
-     * @var string $originOwnerId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
-    public string $originOwnerId;
-
-    /**
-     *
-     * @var string $originOwnerName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
-    public string $originOwnerName;
 
     /**
      *
@@ -87,13 +94,6 @@ class ConnectSession
     #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
-
-    /**
-     *
-     * @var \DateTime $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
-    public \DateTime $createdAt;
 
     /**
      * @param  float  $id

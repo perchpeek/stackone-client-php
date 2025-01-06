@@ -33,6 +33,13 @@ class HrisGetBenefitResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The Benefit with the given identifier was retrieved.
      *
      * @var ?Components\HRISBenefitResult $hrisBenefitResult
@@ -43,13 +50,15 @@ class HrisGetBenefitResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?Components\HRISBenefitResult  $hrisBenefitResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISBenefitResult $hrisBenefitResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISBenefitResult $hrisBenefitResult = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->hrisBenefitResult = $hrisBenefitResult;
     }
 }

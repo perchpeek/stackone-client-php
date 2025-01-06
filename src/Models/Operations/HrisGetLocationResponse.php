@@ -33,6 +33,13 @@ class HrisGetLocationResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The Location with the given identifier was retrieved.
      *
      * @var ?Components\HRISLocationResult $hrisLocationResult
@@ -43,13 +50,15 @@ class HrisGetLocationResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?Components\HRISLocationResult  $hrisLocationResult
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISLocationResult $hrisLocationResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISLocationResult $hrisLocationResult = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->hrisLocationResult = $hrisLocationResult;
     }
 }

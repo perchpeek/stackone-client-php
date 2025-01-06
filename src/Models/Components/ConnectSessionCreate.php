@@ -12,6 +12,22 @@ namespace StackOne\client\Models\Components;
 class ConnectSessionCreate
 {
     /**
+     * The origin owner identifier
+     *
+     * @var string $originOwnerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
+    public string $originOwnerId;
+
+    /**
+     * The origin owner name
+     *
+     * @var string $originOwnerName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
+    public string $originOwnerName;
+
+    /**
      * The categories of the provider to connect to
      *
      * @var ?array<Categories> $categories
@@ -29,22 +45,6 @@ class ConnectSessionCreate
     #[\Speakeasy\Serializer\Annotation\SerializedName('provider')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $provider = null;
-
-    /**
-     * The origin owner identifier
-     *
-     * @var string $originOwnerId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_id')]
-    public string $originOwnerId;
-
-    /**
-     * The origin owner name
-     *
-     * @var string $originOwnerName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('origin_owner_name')]
-    public string $originOwnerName;
 
     /**
      * The origin username
@@ -65,15 +65,6 @@ class ConnectSessionCreate
     public ?string $accountId = null;
 
     /**
-     * How long the session should be valid for in seconds
-     *
-     * @var ?float $expiresIn
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('expires_in')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $expiresIn = null;
-
-    /**
      * The metadata for the connection
      *
      * @var ?Metadata $metadata
@@ -84,15 +75,6 @@ class ConnectSessionCreate
     public ?Metadata $metadata = null;
 
     /**
-     * If set, this connect session will allow creation of multiple accounts with the same origin owner id and provider. Has no effect if account_id is set.
-     *
-     * @var ?bool $multiple
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('multiple')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $multiple = null;
-
-    /**
      * The label to be applied to the account associated with this connect session.
      *
      * @var ?string $label
@@ -100,6 +82,24 @@ class ConnectSessionCreate
     #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $label = null;
+
+    /**
+     * How long the session should be valid for in seconds
+     *
+     * @var ?float $expiresIn
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expires_in')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $expiresIn = null;
+
+    /**
+     * If set, this connect session will allow creation of multiple accounts with the same origin owner id and provider. Has no effect if account_id is set.
+     *
+     * @var ?bool $multiple
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('multiple')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $multiple = null;
 
     /**
      * @param  string  $originOwnerId
@@ -121,9 +121,9 @@ class ConnectSessionCreate
         $this->provider = $provider;
         $this->originUsername = $originUsername;
         $this->accountId = $accountId;
-        $this->expiresIn = $expiresIn;
         $this->metadata = $metadata;
-        $this->multiple = $multiple;
         $this->label = $label;
+        $this->expiresIn = $expiresIn;
+        $this->multiple = $multiple;
     }
 }

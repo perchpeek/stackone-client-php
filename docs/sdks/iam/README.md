@@ -5,74 +5,18 @@
 
 ### Available Operations
 
-* [listUsers](#listusers) - List Users
-* [getUser](#getuser) - Get User
-* [listRoles](#listroles) - List Roles
-* [getRole](#getrole) - Get Role
-* [listGroups](#listgroups) - List Groups
 * [getGroup](#getgroup) - Get Group
-* [listPolicies](#listpolicies) - List Policies
 * [getPolicy](#getpolicy) - Get Policy
+* [getRole](#getrole) - Get Role
+* [getUser](#getuser) - Get User
+* [listGroups](#listgroups) - List Groups
+* [listPolicies](#listpolicies) - List Policies
+* [listRoles](#listroles) - List Roles
+* [listUsers](#listusers) - List Users
 
-## listUsers
+## getGroup
 
-List Users
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use StackOne\client;
-use StackOne\client\Models\Components;
-use StackOne\client\Models\Operations;
-
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
-
-$request = new Operations\IamListUsersRequest(
-    xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
-    filter: new Operations\IamListUsersQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-    ),
-    expand: 'roles,groups',
-);
-
-$response = $sdk->iam->listUsers(
-    request: $request
-);
-
-if ($response->iamUsersPaginated !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `$request`                                                                       | [Operations\IamListUsersRequest](../../Models/Operations/IamListUsersRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-
-### Response
-
-**[?Operations\IamListUsersResponse](../../Models/Operations/IamListUsersResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
-
-## getUser
-
-Get User
+Get Group
 
 ### Example Usage
 
@@ -92,31 +36,31 @@ $security = new Components\Security(
 
 $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
-$request = new Operations\IamGetUserRequest(
+$request = new Operations\IamGetGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
-    expand: 'roles,groups',
+    fields: 'id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at',
+    expand: 'roles',
 );
 
-$response = $sdk->iam->getUser(
+$response = $sdk->iam->getGroup(
     request: $request
 );
 
-if ($response->iamUserResult !== null) {
+if ($response->iamGroupResult !== null) {
     // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `$request`                                                                   | [Operations\IamGetUserRequest](../../Models/Operations/IamGetUserRequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `$request`                                                                     | [Operations\IamGetGroupRequest](../../Models/Operations/IamGetGroupRequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 ### Response
 
-**[?Operations\IamGetUserResponse](../../Models/Operations/IamGetUserResponse.md)**
+**[?Operations\IamGetGroupResponse](../../Models/Operations/IamGetGroupResponse.md)**
 
 ### Errors
 
@@ -124,9 +68,9 @@ if ($response->iamUserResult !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
-## listRoles
+## getPolicy
 
-List Roles
+Get Policy
 
 ### Example Usage
 
@@ -146,20 +90,18 @@ $security = new Components\Security(
 
 $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
-$request = new Operations\IamListRolesRequest(
+$request = new Operations\IamGetPolicyRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,policies,description,created_at,updated_at',
-    filter: new Operations\IamListRolesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-    ),
-    expand: 'policies',
+    id: '<id>',
+    fields: 'id,remote_id,name,permissions,description,created_at,updated_at',
+    expand: 'permissions',
 );
 
-$response = $sdk->iam->listRoles(
+$response = $sdk->iam->getPolicy(
     request: $request
 );
 
-if ($response->iamRolesPaginated !== null) {
+if ($response->iamPolicyResult !== null) {
     // handle response
 }
 ```
@@ -168,11 +110,11 @@ if ($response->iamRolesPaginated !== null) {
 
 | Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `$request`                                                                       | [Operations\IamListRolesRequest](../../Models/Operations/IamListRolesRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `$request`                                                                       | [Operations\IamGetPolicyRequest](../../Models/Operations/IamGetPolicyRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 ### Response
 
-**[?Operations\IamListRolesResponse](../../Models/Operations/IamListRolesResponse.md)**
+**[?Operations\IamGetPolicyResponse](../../Models/Operations/IamGetPolicyResponse.md)**
 
 ### Errors
 
@@ -227,6 +169,60 @@ if ($response->iamRoleResult !== null) {
 ### Response
 
 **[?Operations\IamGetRoleResponse](../../Models/Operations/IamGetRoleResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## getUser
+
+Get User
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\IamGetUserRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
+    expand: 'roles,groups',
+);
+
+$response = $sdk->iam->getUser(
+    request: $request
+);
+
+if ($response->iamUserResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `$request`                                                                   | [Operations\IamGetUserRequest](../../Models/Operations/IamGetUserRequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+
+### Response
+
+**[?Operations\IamGetUserResponse](../../Models/Operations/IamGetUserResponse.md)**
 
 ### Errors
 
@@ -290,60 +286,6 @@ if ($response->iamGroupsPaginated !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
-## getGroup
-
-Get Group
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use StackOne\client;
-use StackOne\client\Models\Components;
-use StackOne\client\Models\Operations;
-
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
-
-$request = new Operations\IamGetGroupRequest(
-    xAccountId: '<id>',
-    id: '<id>',
-    fields: 'id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at',
-    expand: 'roles',
-);
-
-$response = $sdk->iam->getGroup(
-    request: $request
-);
-
-if ($response->iamGroupResult !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `$request`                                                                     | [Operations\IamGetGroupRequest](../../Models/Operations/IamGetGroupRequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-
-### Response
-
-**[?Operations\IamGetGroupResponse](../../Models/Operations/IamGetGroupResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\SDKException | 4XX, 5XX            | \*/\*               |
-
 ## listPolicies
 
 List Policies
@@ -400,9 +342,9 @@ if ($response->iamPoliciesPaginated !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
-## getPolicy
+## listRoles
 
-Get Policy
+List Roles
 
 ### Example Usage
 
@@ -422,18 +364,20 @@ $security = new Components\Security(
 
 $sdk = client\StackOne::builder()->setSecurity($security)->build();
 
-$request = new Operations\IamGetPolicyRequest(
+$request = new Operations\IamListRolesRequest(
     xAccountId: '<id>',
-    id: '<id>',
-    fields: 'id,remote_id,name,permissions,description,created_at,updated_at',
-    expand: 'permissions',
+    fields: 'id,remote_id,name,type,policies,description,created_at,updated_at',
+    filter: new Operations\IamListRolesQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+    expand: 'policies',
 );
 
-$response = $sdk->iam->getPolicy(
+$response = $sdk->iam->listRoles(
     request: $request
 );
 
-if ($response->iamPolicyResult !== null) {
+if ($response->iamRolesPaginated !== null) {
     // handle response
 }
 ```
@@ -442,11 +386,67 @@ if ($response->iamPolicyResult !== null) {
 
 | Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `$request`                                                                       | [Operations\IamGetPolicyRequest](../../Models/Operations/IamGetPolicyRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `$request`                                                                       | [Operations\IamListRolesRequest](../../Models/Operations/IamListRolesRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 ### Response
 
-**[?Operations\IamGetPolicyResponse](../../Models/Operations/IamGetPolicyResponse.md)**
+**[?Operations\IamListRolesResponse](../../Models/Operations/IamListRolesResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## listUsers
+
+List Users
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$security = new Components\Security(
+    username: '',
+    password: '',
+);
+
+$sdk = client\StackOne::builder()->setSecurity($security)->build();
+
+$request = new Operations\IamListUsersRequest(
+    xAccountId: '<id>',
+    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
+    filter: new Operations\IamListUsersQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+    expand: 'roles,groups',
+);
+
+$response = $sdk->iam->listUsers(
+    request: $request
+);
+
+if ($response->iamUsersPaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `$request`                                                                       | [Operations\IamListUsersRequest](../../Models/Operations/IamListUsersRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+
+### Response
+
+**[?Operations\IamListUsersResponse](../../Models/Operations/IamListUsersResponse.md)**
 
 ### Errors
 

@@ -33,6 +33,13 @@ class AtsGetApplicationCustomFieldDefinitionResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * The application custom field definition was retrieved.
      *
      * @var ?Components\CustomFieldDefinitionResultApiModel $customFieldDefinitionResultApiModel
@@ -43,13 +50,15 @@ class AtsGetApplicationCustomFieldDefinitionResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  array<string, array<string>>  $headers
      * @param  ?Components\CustomFieldDefinitionResultApiModel  $customFieldDefinitionResultApiModel
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CustomFieldDefinitionResultApiModel $customFieldDefinitionResultApiModel = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CustomFieldDefinitionResultApiModel $customFieldDefinitionResultApiModel = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
+        $this->headers = $headers;
         $this->customFieldDefinitionResultApiModel = $customFieldDefinitionResultApiModel;
     }
 }

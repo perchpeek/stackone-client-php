@@ -26,12 +26,12 @@ class HrisGetEmployeesWorkEligibilityRequest
     public string $subResourceId;
 
     /**
-     * Indicates that the raw request result is returned
+     * The account identifier
      *
-     * @var ?bool $raw
+     * @var string $xAccountId
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
+    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-account-id')]
+    public string $xAccountId;
 
     /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
@@ -50,12 +50,12 @@ class HrisGetEmployeesWorkEligibilityRequest
     public ?string $fields = null;
 
     /**
-     * The account identifier
+     * Indicates that the raw request result is returned
      *
-     * @var string $xAccountId
+     * @var ?bool $raw
      */
-    #[SpeakeasyMetadata('header:style=simple,explode=false,name=x-account-id')]
-    public string $xAccountId;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
 
     /**
      * @param  string  $id
@@ -70,8 +70,8 @@ class HrisGetEmployeesWorkEligibilityRequest
         $this->id = $id;
         $this->subResourceId = $subResourceId;
         $this->xAccountId = $xAccountId;
-        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
+        $this->raw = $raw;
     }
 }

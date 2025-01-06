@@ -21,30 +21,30 @@ class LmsListAssignmentsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * Filter to select assignment by completed status
+     * Filter to select assignment by status
      *
-     * @var ?bool $completed
+     * @var ?LmsListAssignmentsQueryParamStatus $status
      */
-    #[SpeakeasyMetadata('queryParam:name=completed')]
-    public ?bool $completed = null;
+    #[SpeakeasyMetadata('queryParam:name=status')]
+    public ?LmsListAssignmentsQueryParamStatus $status = null;
 
     /**
      * Filter to select assignment by learning object type.
      *
-     * @var ?string $learningObjectType
+     * @var ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType
      */
     #[SpeakeasyMetadata('queryParam:name=learning_object_type')]
-    public ?string $learningObjectType = null;
+    public ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType = null;
 
     /**
      * @param  ?string  $updatedAfter
-     * @param  ?bool  $completed
-     * @param  ?string  $learningObjectType
+     * @param  ?LmsListAssignmentsQueryParamStatus  $status
+     * @param  ?LmsListAssignmentsQueryParamLearningObjectType  $learningObjectType
      */
-    public function __construct(?string $updatedAfter = null, ?bool $completed = null, ?string $learningObjectType = null)
+    public function __construct(?string $updatedAfter = null, ?LmsListAssignmentsQueryParamStatus $status = null, ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType = null)
     {
         $this->updatedAfter = $updatedAfter;
-        $this->completed = $completed;
+        $this->status = $status;
         $this->learningObjectType = $learningObjectType;
     }
 }

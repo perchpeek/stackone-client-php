@@ -6,30 +6,45 @@
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
 ### `float`
 
 ```php
+/**
+* @var float
+*/
 float $value = /* values here */
 ```
 
 ### `bool`
 
 ```php
+/**
+* @var bool
+*/
 bool $value = /* values here */
 ```
 
 ### `Components\CompletionSourceValueLearningObjectType4`
 
 ```php
+/**
+* @var Components\CompletionSourceValueLearningObjectType4
+*/
 Components\CompletionSourceValueLearningObjectType4 $value = /* values here */
 ```
 
-### `array<mixed>`
+### `array`
 
 ```php
-array<mixed> $value = /* values here */
+/**
+* @var array<mixed>
+*/
+array $value = /* values here */
 ```
 

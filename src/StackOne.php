@@ -66,5 +66,7 @@ class StackOne
         $this->iam = new Iam($this->sdkConfiguration);
         $this->crm = new Crm($this->sdkConfiguration);
         $this->marketing = new Marketing($this->sdkConfiguration);
+        $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
+
     }
 }

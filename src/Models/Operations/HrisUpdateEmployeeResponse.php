@@ -33,23 +33,32 @@ class HrisUpdateEmployeeResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
+     * $headers
+     *
+     * @var array<string, array<string>> $headers
+     */
+    public array $headers;
+
+    /**
      * Record updated successfully
      *
-     * @var ?Components\CreateResult $createResult
+     * @var ?Components\UpdateEmployeeApiModel $updateEmployeeApiModel
      */
-    public ?Components\CreateResult $createResult = null;
+    public ?Components\UpdateEmployeeApiModel $updateEmployeeApiModel = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\CreateResult  $createResult
+     * @param  array<string, array<string>>  $headers
+     * @param  ?Components\UpdateEmployeeApiModel  $updateEmployeeApiModel
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateResult $createResult = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UpdateEmployeeApiModel $updateEmployeeApiModel = null, ?array $headers = [])
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->createResult = $createResult;
+        $this->headers = $headers;
+        $this->updateEmployeeApiModel = $updateEmployeeApiModel;
     }
 }

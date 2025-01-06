@@ -8,30 +8,45 @@ The source value of the answer type.
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
 ### `float`
 
 ```php
+/**
+* @var float
+*/
 float $value = /* values here */
 ```
 
 ### `bool`
 
 ```php
+/**
+* @var bool
+*/
 bool $value = /* values here */
 ```
 
 ### `Components\AnswerSourceValue4`
 
 ```php
+/**
+* @var Components\AnswerSourceValue4
+*/
 Components\AnswerSourceValue4 $value = /* values here */
 ```
 
-### `array<mixed>`
+### `array`
 
 ```php
-array<mixed> $value = /* values here */
+/**
+* @var array<mixed>
+*/
+array $value = /* values here */
 ```
 

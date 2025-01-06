@@ -21,16 +21,6 @@ class ProxyRequestBody
     public ?string $url = null;
 
     /**
-     * The method of the request
-     *
-     * @var ?Method $method
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('method')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Method|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Method $method = null;
-
-    /**
      * The path of the request including any query paramters
      *
      * @var ?string $path
@@ -60,6 +50,16 @@ class ProxyRequestBody
     public ?array $body = null;
 
     /**
+     * The method of the request
+     *
+     * @var ?Method $method
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('method')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Method|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Method $method = null;
+
+    /**
      * @param  ?string  $url
      * @param  ?Method  $method
      * @param  ?string  $path
@@ -69,9 +69,9 @@ class ProxyRequestBody
     public function __construct(?string $url = null, ?string $path = null, ?array $body = null, ?Method $method = Method::Get, ?array $headers = null)
     {
         $this->url = $url;
-        $this->method = $method;
         $this->path = $path;
         $this->headers = $headers;
         $this->body = $body;
+        $this->method = $method;
     }
 }

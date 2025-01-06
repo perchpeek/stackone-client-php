@@ -88,16 +88,6 @@ class LmsCreateCollectionRequestDto
     public ?string $coverUrl = null;
 
     /**
-     * The skills associated with this content
-     *
-     * @var ?array<CreateSkillsApiModel> $skills
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('skills')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateSkillsApiModel>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $skills = null;
-
-    /**
      * The categories associated with this content
      *
      * @var ?array<CreateCategoriesApiModel> $categories
@@ -108,6 +98,16 @@ class LmsCreateCollectionRequestDto
     public ?array $categories = null;
 
     /**
+     * The skills associated with this content
+     *
+     * @var ?array<CreateSkillsApiModel> $skills
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('skills')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateSkillsApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $skills = null;
+
+    /**
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $externalReference
      * @param  ?array<string>  $learningObjectIds
@@ -116,10 +116,10 @@ class LmsCreateCollectionRequestDto
      * @param  ?string  $description
      * @param  ?array<string>  $languages
      * @param  ?string  $coverUrl
-     * @param  ?array<CreateSkillsApiModel>  $skills
      * @param  ?array<CreateCategoriesApiModel>  $categories
+     * @param  ?array<CreateSkillsApiModel>  $skills
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $learningObjectIds = null, ?array $remoteLearningObjectIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?array $skills = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $learningObjectIds = null, ?array $remoteLearningObjectIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?array $categories = null, ?array $skills = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -129,7 +129,7 @@ class LmsCreateCollectionRequestDto
         $this->description = $description;
         $this->languages = $languages;
         $this->coverUrl = $coverUrl;
-        $this->skills = $skills;
         $this->categories = $categories;
+        $this->skills = $skills;
     }
 }

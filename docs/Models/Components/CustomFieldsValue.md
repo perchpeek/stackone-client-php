@@ -8,30 +8,45 @@ The value associated with the custom field.
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
 ### `float`
 
 ```php
+/**
+* @var float
+*/
 float $value = /* values here */
 ```
 
 ### `bool`
 
 ```php
+/**
+* @var bool
+*/
 bool $value = /* values here */
 ```
 
 ### `Components\Value4`
 
 ```php
+/**
+* @var Components\Value4
+*/
 Components\Value4 $value = /* values here */
 ```
 
-### `array<mixed>`
+### `array`
 
 ```php
-array<mixed> $value = /* values here */
+/**
+* @var array<mixed>
+*/
+array $value = /* values here */
 ```
 

@@ -27,14 +27,6 @@ class HrisGetEmployeeRequest
     public string $id;
 
     /**
-     * Indicates that the raw request result is returned
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
      *
      * @var ?array<string, mixed> $proxy
@@ -67,6 +59,14 @@ class HrisGetEmployeeRequest
     public ?string $include = null;
 
     /**
+     * Indicates that the raw request result is returned
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  ?bool  $raw
@@ -79,10 +79,10 @@ class HrisGetEmployeeRequest
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
-        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
         $this->expand = $expand;
         $this->include = $include;
+        $this->raw = $raw;
     }
 }

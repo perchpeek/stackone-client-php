@@ -12,6 +12,15 @@ namespace StackOne\client\Models\Components;
 class CreateCategoriesApiModel
 {
     /**
+     * The ID associated with this category
+     *
+     * @var ?string $id
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $id = null;
+
+    /**
      * Custom Unified Fields configured in your StackOne project
      *
      * @var ?array<string, mixed> $unifiedCustomFields
@@ -31,12 +40,26 @@ class CreateCategoriesApiModel
     public ?string $name = null;
 
     /**
+     * The hierarchal level of the category
+     *
+     * @var ?Level $level
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Level $level = null;
+
+    /**
+     * @param  ?string  $id
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
+     * @param  ?Level  $level
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $name = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $name = null, ?Level $level = null)
     {
+        $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->name = $name;
+        $this->level = $level;
     }
 }
