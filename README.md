@@ -55,12 +55,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
@@ -204,6 +206,8 @@ if ($response->connectSession !== null) {
 * [listRejectedReasons](docs/sdks/ats/README.md#listrejectedreasons) - List Rejected Reasons
 * [listUsers](docs/sdks/ats/README.md#listusers) - List Users
 * [moveApplication](docs/sdks/ats/README.md#moveapplication) - Move Application
+* [orderAssessmentsRequest](docs/sdks/ats/README.md#orderassessmentsrequest) - Order Assessments Request
+* [orderBackgroundCheckRequest](docs/sdks/ats/README.md#orderbackgroundcheckrequest) - Order Background Check Request
 * [rejectApplication](docs/sdks/ats/README.md#rejectapplication) - Reject Application
 * [updateApplication](docs/sdks/ats/README.md#updateapplication) - Update an Application
 * [updateApplicationNote](docs/sdks/ats/README.md#updateapplicationnote) - Update an Application Note
@@ -258,6 +262,7 @@ if ($response->connectSession !== null) {
 * [getGroup](docs/sdks/hris/README.md#getgroup) - Get Group
 * [getJob](docs/sdks/hris/README.md#getjob) - Get Job
 * [getLocation](docs/sdks/hris/README.md#getlocation) - Get Location
+* [getTimeEntries](docs/sdks/hris/README.md#gettimeentries) - Get Time Entry
 * [getTimeOffRequest](docs/sdks/hris/README.md#gettimeoffrequest) - Get time off request
 * [getTimeOffType](docs/sdks/hris/README.md#gettimeofftype) - Get time off type
 * [listBenefits](docs/sdks/hris/README.md#listbenefits) - List benefits
@@ -275,6 +280,7 @@ if ($response->connectSession !== null) {
 * [listGroups](docs/sdks/hris/README.md#listgroups) - List Groups
 * [listJobs](docs/sdks/hris/README.md#listjobs) - List Jobs
 * [listLocations](docs/sdks/hris/README.md#listlocations) - List locations
+* [listTimeEntries](docs/sdks/hris/README.md#listtimeentries) - List Time Entries
 * [listTimeOffRequests](docs/sdks/hris/README.md#listtimeoffrequests) - List time off requests
 * [listTimeOffTypes](docs/sdks/hris/README.md#listtimeofftypes) - List time off types
 * [updateEmployee](docs/sdks/hris/README.md#updateemployee) - Updates an employee
@@ -357,10 +363,6 @@ if ($response->connectSession !== null) {
 * [proxyRequest](docs/sdks/proxy/README.md#proxyrequest) - Proxy Request
 
 
-### [webhooks](docs/sdks/webhooks/README.md)
-
-* [create](docs/sdks/webhooks/README.md#create)
-
 </details>
 <!-- End Available Resources and Operations [operations] -->
 
@@ -380,12 +382,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
@@ -440,12 +444,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 try {
     $request = new Components\ConnectSessionAuthenticate(
@@ -480,14 +486,15 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
 $sdk = client\StackOne::builder()
     ->setServerURL('https://api.stackone.com')
-    ->setSecurity($security)->build();
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Components\ConnectSessionAuthenticate(
     token: '<value>',

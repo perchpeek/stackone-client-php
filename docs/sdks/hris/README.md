@@ -27,6 +27,7 @@
 * [getGroup](#getgroup) - Get Group
 * [getJob](#getjob) - Get Job
 * [getLocation](#getlocation) - Get Location
+* [getTimeEntries](#gettimeentries) - Get Time Entry
 * [getTimeOffRequest](#gettimeoffrequest) - Get time off request
 * [getTimeOffType](#gettimeofftype) - Get time off type
 * [listBenefits](#listbenefits) - List benefits
@@ -44,6 +45,7 @@
 * [listGroups](#listgroups) - List Groups
 * [listJobs](#listjobs) - List Jobs
 * [listLocations](#listlocations) - List locations
+* [listTimeEntries](#listtimeentries) - List Time Entries
 * [listTimeOffRequests](#listtimeoffrequests) - List time off requests
 * [listTimeOffTypes](#listtimeofftypes) - List time off types
 * [updateEmployee](#updateemployee) - Updates an employee
@@ -66,12 +68,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisBatchDocumentUploadRequestDto = new Components\HrisBatchDocumentUploadRequestDto(
     items: [
@@ -138,12 +142,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
     firstName: 'Issac',
@@ -317,12 +323,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
     id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
@@ -390,12 +398,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateTimeOffRequestDto = new Components\HrisCreateTimeOffRequestDto(
     employeeId: '1687-3',
@@ -454,12 +464,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateWorkEligibilityRequestDto = new Components\HrisCreateWorkEligibilityRequestDto(
     document: new Components\HrisCreateWorkEligibilityRequestDtoDocument(
@@ -535,12 +547,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateTimeOffRequestDto = new Components\HrisCreateTimeOffRequestDto(
     employeeId: '1687-3',
@@ -596,12 +610,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 
 
@@ -652,12 +668,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetBenefitRequest(
     xAccountId: '<id>',
@@ -705,12 +723,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetCompanyRequest(
     xAccountId: '<id>',
@@ -758,12 +778,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetCostCenterGroupRequest(
     xAccountId: '<id>',
@@ -811,12 +833,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetDepartmentGroupRequest(
     xAccountId: '<id>',
@@ -864,12 +888,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeeRequest(
     xAccountId: '<id>',
@@ -919,12 +945,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeeCustomFieldDefinitionRequest(
     xAccountId: '<id>',
@@ -975,12 +1003,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeeDocumentRequest(
     xAccountId: '<id>',
@@ -1029,12 +1059,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeeDocumentCategoryRequest(
     xAccountId: '<id>',
@@ -1082,18 +1114,20 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeeEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
     expand: 'groups',
 );
 
@@ -1137,12 +1171,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeesTimeOffRequestRequest(
     xAccountId: '<id>',
@@ -1191,12 +1227,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmployeesWorkEligibilityRequest(
     id: '<id>',
@@ -1245,17 +1283,19 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
     expand: 'groups',
 );
 
@@ -1299,12 +1339,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetGroupRequest(
     xAccountId: '<id>',
@@ -1352,12 +1394,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetJobRequest(
     xAccountId: '<id>',
@@ -1405,12 +1449,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetLocationRequest(
     xAccountId: '<id>',
@@ -1443,6 +1489,61 @@ if ($response->hrisLocationResult !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
+## getTimeEntries
+
+Get Time Entry
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisGetTimeEntriesRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at',
+);
+
+$response = $sdk->hris->getTimeEntries(
+    request: $request
+);
+
+if ($response->timeEntriesResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\HrisGetTimeEntriesRequest](../../Models/Operations/HrisGetTimeEntriesRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+### Response
+
+**[?Operations\HrisGetTimeEntriesResponse](../../Models/Operations/HrisGetTimeEntriesResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
 ## getTimeOffRequest
 
 Get time off request
@@ -1458,12 +1559,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetTimeOffRequestRequest(
     xAccountId: '<id>',
@@ -1511,12 +1614,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisGetTimeOffTypeRequest(
     xAccountId: '<id>',
@@ -1564,12 +1669,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListBenefitsRequest(
     xAccountId: '<id>',
@@ -1619,12 +1726,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListCompaniesRequest(
     xAccountId: '<id>',
@@ -1674,12 +1783,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListCostCenterGroupsRequest(
     xAccountId: '<id>',
@@ -1729,12 +1840,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListDepartmentGroupsRequest(
     xAccountId: '<id>',
@@ -1784,12 +1897,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeeCategoriesRequest(
     xAccountId: '<id>',
@@ -1839,12 +1954,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeeCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
@@ -1894,12 +2011,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeeDocumentsRequest(
     xAccountId: '<id>',
@@ -1950,17 +2069,19 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeeEmploymentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmployeeEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -2007,12 +2128,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeeTimeOffRequestsRequest(
     xAccountId: '<id>',
@@ -2063,12 +2186,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeeWorkEligibilityRequest(
     id: '<id>',
@@ -2119,12 +2244,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
@@ -2179,16 +2306,18 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListEmploymentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -2235,12 +2364,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListGroupsRequest(
     xAccountId: '<id>',
@@ -2290,12 +2421,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListJobsRequest(
     xAccountId: '<id>',
@@ -2345,12 +2478,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListLocationsRequest(
     xAccountId: '<id>',
@@ -2385,6 +2520,65 @@ if ($response->hrisLocationsPaginated !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
+## listTimeEntries
+
+List Time Entries
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisListTimeEntriesRequest(
+    xAccountId: '<id>',
+    fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at',
+    filter: new Operations\HrisListTimeEntriesQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+        startTime: '2020-01-01T00:00:00.000Z',
+        endTime: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$response = $sdk->hris->listTimeEntries(
+    request: $request
+);
+
+if ($response->timeEntriesPaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `$request`                                                                                     | [Operations\HrisListTimeEntriesRequest](../../Models/Operations/HrisListTimeEntriesRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+
+### Response
+
+**[?Operations\HrisListTimeEntriesResponse](../../Models/Operations/HrisListTimeEntriesResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
 ## listTimeOffRequests
 
 List time off requests
@@ -2400,12 +2594,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListTimeOffRequestsRequest(
     xAccountId: '<id>',
@@ -2455,12 +2651,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\HrisListTimeOffTypesRequest(
     xAccountId: '<id>',
@@ -2510,12 +2708,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisUpdateEmployeeRequestDto = new Components\HrisUpdateEmployeeRequestDto(
     firstName: 'Issac',
@@ -2551,25 +2751,6 @@ $hrisUpdateEmployeeRequestDto = new Components\HrisUpdateEmployeeRequestDto(
     citizenships: [
         new Components\CountryCodeEnum(
             value: Components\Value::Us,
-        ),
-    ],
-    employments: [
-        new Components\CreateEmploymentApiModel(
-            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            unifiedCustomFields: [
-                'my_project_custom_field_1' => 'REF-1236',
-                'my_project_custom_field_2' => 'some other value',
-            ],
-            employeeId: '1687-3',
-            jobTitle: 'Software Engineer',
-            payRate: '40.00',
-            payPeriod: new Components\CreateEmploymentApiModelPayPeriod(),
-            payFrequency: new Components\CreateEmploymentApiModelPayFrequency(),
-            payCurrency: 'USD',
-            effectiveDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
-            employmentType: new Components\CreateEmploymentApiModelEmploymentType(),
-            employmentContractType: new Components\CreateEmploymentApiModelEmploymentContractType(),
-            timeWorked: 'P0Y0M0DT8H0M0S',
         ),
     ],
     customFields: [
@@ -2684,12 +2865,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
     id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
@@ -2759,12 +2942,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateWorkEligibilityRequestDto = new Components\HrisCreateWorkEligibilityRequestDto(
     document: new Components\HrisCreateWorkEligibilityRequestDtoDocument(
@@ -2842,12 +3027,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisCreateTimeOffRequestDto = new Components\HrisCreateTimeOffRequestDto(
     employeeId: '1687-3',
@@ -2905,12 +3092,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $hrisDocumentsUploadRequestDto = new Components\HrisDocumentsUploadRequestDto(
     name: 'weather-forecast',

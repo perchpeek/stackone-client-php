@@ -21,8 +21,6 @@ class StackOne
 
     public Accounts $accounts;
 
-    public Webhooks $webhooks;
-
     public Connectors $connectors;
 
     public Proxy $proxy;
@@ -57,7 +55,6 @@ class StackOne
     ) {
         $this->connectSessions = new ConnectSessions($this->sdkConfiguration);
         $this->accounts = new Accounts($this->sdkConfiguration);
-        $this->webhooks = new Webhooks($this->sdkConfiguration);
         $this->connectors = new Connectors($this->sdkConfiguration);
         $this->proxy = new Proxy($this->sdkConfiguration);
         $this->hris = new Hris($this->sdkConfiguration);

@@ -46,12 +46,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateContentBlocksRequestDto = new Components\MarketingCreateContentBlocksRequestDto(
     type: new Components\MarketingCreateContentBlocksRequestDtoType(
@@ -105,12 +107,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateEmailTemplateRequestDto = new Components\MarketingCreateEmailTemplateRequestDto(
     messages: [
@@ -170,12 +174,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateInAppTemplateRequestDto = new Components\MarketingCreateInAppTemplateRequestDto(
     messages: [
@@ -237,12 +243,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateTemplateRequestDto = new Components\MarketingCreateTemplateRequestDto(
     messages: [
@@ -301,12 +309,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreatePushTemplateRequestDto = new Components\MarketingCreatePushTemplateRequestDto(
     messages: [
@@ -366,12 +376,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateSmsTemplateRequestDto = new Components\MarketingCreateSmsTemplateRequestDto(
     messages: [
@@ -432,12 +444,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetCampaignRequest(
     xAccountId: '<id>',
@@ -485,12 +499,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetContentBlockRequest(
     xAccountId: '<id>',
@@ -538,12 +554,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetEmailTemplateRequest(
     xAccountId: '<id>',
@@ -591,12 +609,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetInAppTemplateRequest(
     xAccountId: '<id>',
@@ -646,12 +666,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetOmniChannelTemplateRequest(
     xAccountId: '<id>',
@@ -699,12 +721,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetPushTemplateRequest(
     xAccountId: '<id>',
@@ -752,12 +776,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingGetSmsTemplateRequest(
     xAccountId: '<id>',
@@ -805,12 +831,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListCampaignsRequest(
     xAccountId: '<id>',
@@ -860,12 +888,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListContentBlocksRequest(
     xAccountId: '<id>',
@@ -915,12 +945,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListEmailTemplatesRequest(
     xAccountId: '<id>',
@@ -970,12 +1002,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListInAppTemplatesRequest(
     xAccountId: '<id>',
@@ -1027,12 +1061,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListOmniChannelTemplatesRequest(
     xAccountId: '<id>',
@@ -1082,12 +1118,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListPushTemplatesRequest(
     xAccountId: '<id>',
@@ -1137,12 +1175,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\MarketingListSmsTemplatesRequest(
     xAccountId: '<id>',
@@ -1191,12 +1231,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateContentBlocksRequestDto = new Components\MarketingCreateContentBlocksRequestDto(
     type: new Components\MarketingCreateContentBlocksRequestDtoType(
@@ -1252,12 +1294,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateEmailTemplateRequestDto = new Components\MarketingCreateEmailTemplateRequestDto(
     messages: [
@@ -1319,12 +1363,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateInAppTemplateRequestDto = new Components\MarketingCreateInAppTemplateRequestDto(
     messages: [
@@ -1388,12 +1434,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateTemplateRequestDto = new Components\MarketingCreateTemplateRequestDto(
     messages: [
@@ -1454,12 +1502,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreatePushTemplateRequestDto = new Components\MarketingCreatePushTemplateRequestDto(
     messages: [
@@ -1521,12 +1571,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $marketingCreateSmsTemplateRequestDto = new Components\MarketingCreateSmsTemplateRequestDto(
     messages: [

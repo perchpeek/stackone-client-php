@@ -9,7 +9,11 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** EmploymentEmploymentType - The type of employment (e.g., contractor, permanent) */
+/**
+ * EmploymentEmploymentType - The type of employment (e.g., contractor, permanent)
+ *
+ * @deprecated  class: This will be removed in a future release, please migrate away from it as soon as possible.
+ */
 class EmploymentEmploymentType
 {
     /**
@@ -28,7 +32,7 @@ class EmploymentEmploymentType
      * @var string|float|bool|EmploymentSourceValueEmploymentType4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\EmploymentSourceValueEmploymentType4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\EmploymentSourceValueEmploymentType4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|EmploymentSourceValueEmploymentType4|array|null $sourceValue = null;
 

@@ -58,10 +58,10 @@ class CustomFieldDefinition
     /**
      * An array of possible options for the custom field.
      *
-     * @var ?array<mixed> $options
+     * @var ?array<string|float|bool|Four|array<mixed>> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string|float|bool|\StackOne\client\Models\Components\Four|array<mixed>>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $options = null;
 
@@ -71,7 +71,7 @@ class CustomFieldDefinition
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?Type  $type
-     * @param  ?array<mixed>  $options
+     * @param  ?array<string|float|bool|Four|array<mixed>>  $options
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?Type $type = null, ?array $options = null)
     {

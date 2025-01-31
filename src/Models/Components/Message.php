@@ -52,7 +52,7 @@ class Message
      * @var MessageContentSmsMessageContents|MessageContentEmailMessageContents|MessageContentPushMessageContents|null $messageContent
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('message_content')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\MessageContentSmsMessageContents|\StackOne\client\Models\Components\MessageContentEmailMessageContents|\StackOne\client\Models\Components\MessageContentPushMessageContents')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\MessageContentSmsMessageContents|\StackOne\client\Models\Components\MessageContentEmailMessageContents|\StackOne\client\Models\Components\MessageContentPushMessageContents|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public MessageContentSmsMessageContents|MessageContentEmailMessageContents|MessageContentPushMessageContents|null $messageContent = null;
 

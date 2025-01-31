@@ -29,12 +29,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamGetGroupRequest(
     xAccountId: '<id>',
@@ -83,12 +85,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamGetPolicyRequest(
     xAccountId: '<id>',
@@ -137,12 +141,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamGetRoleRequest(
     xAccountId: '<id>',
@@ -191,12 +197,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamGetUserRequest(
     xAccountId: '<id>',
@@ -245,12 +253,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamListGroupsRequest(
     xAccountId: '<id>',
@@ -301,12 +311,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamListPoliciesRequest(
     xAccountId: '<id>',
@@ -357,12 +369,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamListRolesRequest(
     xAccountId: '<id>',
@@ -413,12 +427,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\IamListUsersRequest(
     xAccountId: '<id>',

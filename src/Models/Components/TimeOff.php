@@ -109,7 +109,7 @@ class TimeOff
      * @var bool|Two|null $startHalfDay
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_half_day')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Two')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Two|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Two|null $startHalfDay = null;
 
@@ -119,7 +119,7 @@ class TimeOff
      * @var bool|EndHalfDay2|null $endHalfDay
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_half_day')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\EndHalfDay2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\EndHalfDay2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|EndHalfDay2|null $endHalfDay = null;
 

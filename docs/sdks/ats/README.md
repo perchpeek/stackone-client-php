@@ -65,6 +65,8 @@
 * [listRejectedReasons](#listrejectedreasons) - List Rejected Reasons
 * [listUsers](#listusers) - List Users
 * [moveApplication](#moveapplication) - Move Application
+* [orderAssessmentsRequest](#orderassessmentsrequest) - Order Assessments Request
+* [orderBackgroundCheckRequest](#orderbackgroundcheckrequest) - Order Background Check Request
 * [rejectApplication](#rejectapplication) - Reject Application
 * [updateApplication](#updateapplication) - Update an Application
 * [updateApplicationNote](#updateapplicationnote) - Update an Application Note
@@ -87,12 +89,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateApplicationRequestDto = new Components\AtsCreateApplicationRequestDto(
     passthrough: [
@@ -202,12 +206,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateNotesRequestDto = new Components\AtsCreateNotesRequestDto(
     content: [
@@ -266,12 +272,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateBackgroundCheckPackagesRequestDto = new Components\AtsCreateBackgroundCheckPackagesRequestDto(
     name: 'Test 1',
@@ -330,12 +338,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateCandidateRequestDto = new Components\AtsCreateCandidateRequestDto(
     passthrough: [
@@ -414,12 +424,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateNotesRequestDto = new Components\AtsCreateNotesRequestDto(
     content: [
@@ -479,12 +491,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateJobRequestDto = new Components\AtsCreateJobRequestDto(
     unifiedCustomFields: [
@@ -587,12 +601,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsCreateOfferRequestDto = new Components\AtsCreateOfferRequestDto(
     startDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
@@ -654,12 +670,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 
 
@@ -710,12 +728,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationRequest(
     xAccountId: '<id>',
@@ -765,12 +785,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationCustomFieldDefinitionRequest(
     xAccountId: '<id>',
@@ -821,12 +843,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationDocumentRequest(
     xAccountId: '<id>',
@@ -875,12 +899,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationNoteRequest(
     xAccountId: '<id>',
@@ -929,12 +955,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationOfferRequest(
     xAccountId: '<id>',
@@ -983,12 +1011,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationScheduledInterviewRequest(
     xAccountId: '<id>',
@@ -1037,12 +1067,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetApplicationScorecardRequest(
     xAccountId: '<id>',
@@ -1091,12 +1123,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetAssessmentsPackageRequest(
     xAccountId: '<id>',
@@ -1143,12 +1177,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetAssessmentsRequestRequest(
     xAccountId: '<id>',
@@ -1196,12 +1232,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetAssessmentsResultRequest(
     xAccountId: '<id>',
@@ -1249,12 +1287,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetBackgroundCheckPackageRequest(
     xAccountId: '<id>',
@@ -1302,12 +1342,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetBackgroundCheckRequestRequest(
     xAccountId: '<id>',
@@ -1355,12 +1397,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetBackgroundCheckResultRequest(
     xAccountId: '<id>',
@@ -1408,12 +1452,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetCandidateRequest(
     xAccountId: '<id>',
@@ -1462,12 +1508,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetCandidateCustomFieldDefinitionRequest(
     xAccountId: '<id>',
@@ -1518,12 +1566,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetCandidateNoteRequest(
     xAccountId: '<id>',
@@ -1572,12 +1622,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetDepartmentRequest(
     xAccountId: '<id>',
@@ -1625,12 +1677,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetInterviewRequest(
     xAccountId: '<id>',
@@ -1678,12 +1732,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetInterviewStageRequest(
     xAccountId: '<id>',
@@ -1731,12 +1787,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetJobRequest(
     xAccountId: '<id>',
@@ -1786,12 +1844,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetJobCustomFieldDefinitionRequest(
     xAccountId: '<id>',
@@ -1842,12 +1902,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetJobPostingRequest(
     xAccountId: '<id>',
@@ -1896,12 +1958,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetListRequest(
     xAccountId: '<id>',
@@ -1949,12 +2013,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetLocationRequest(
     xAccountId: '<id>',
@@ -2002,12 +2068,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetOfferRequest(
     xAccountId: '<id>',
@@ -2055,12 +2123,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetRejectedReasonRequest(
     xAccountId: '<id>',
@@ -2108,12 +2178,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsGetUserRequest(
     xAccountId: '<id>',
@@ -2161,12 +2233,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
@@ -2216,12 +2290,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationDocumentsRequest(
     xAccountId: '<id>',
@@ -2272,12 +2348,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationNotesRequest(
     xAccountId: '<id>',
@@ -2328,12 +2406,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationScorecardsRequest(
     xAccountId: '<id>',
@@ -2384,12 +2464,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationsRequest(
     xAccountId: '<id>',
@@ -2442,12 +2524,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationsOffersRequest(
     xAccountId: '<id>',
@@ -2498,12 +2582,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListApplicationsScheduledInterviewsRequest(
     xAccountId: '<id>',
@@ -2554,12 +2640,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListAssessmentsPackagesRequest(
     xAccountId: '<id>',
@@ -2608,12 +2696,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListBackgroundCheckPackagesRequest(
     xAccountId: '<id>',
@@ -2663,12 +2753,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListBackgroundCheckRequestRequest(
     xAccountId: '<id>',
@@ -2718,12 +2810,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListCandidateCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
@@ -2773,12 +2867,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListCandidateNotesRequest(
     xAccountId: '<id>',
@@ -2829,12 +2925,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListCandidatesRequest(
     xAccountId: '<id>',
@@ -2886,12 +2984,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListDepartmentsRequest(
     xAccountId: '<id>',
@@ -2941,12 +3041,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListInterviewStagesRequest(
     xAccountId: '<id>',
@@ -2996,12 +3098,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListInterviewsRequest(
     xAccountId: '<id>',
@@ -3052,12 +3156,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListJobCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
@@ -3107,12 +3213,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListJobPostingsRequest(
     xAccountId: '<id>',
@@ -3164,12 +3272,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListJobsRequest(
     xAccountId: '<id>',
@@ -3222,12 +3332,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListListsRequest(
     xAccountId: '<id>',
@@ -3277,12 +3389,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListLocationsRequest(
     xAccountId: '<id>',
@@ -3332,12 +3446,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListOffersRequest(
     xAccountId: '<id>',
@@ -3387,12 +3503,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListRejectedReasonsRequest(
     xAccountId: '<id>',
@@ -3442,12 +3560,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\AtsListUsersRequest(
     xAccountId: '<id>',
@@ -3496,12 +3616,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsMoveApplicationRequestDto = new Components\AtsMoveApplicationRequestDto(
     passthrough: [
@@ -3540,6 +3662,251 @@ if ($response->moveApplicationResult !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\SDKException | 4XX, 5XX            | \*/\*               |
 
+## orderAssessmentsRequest
+
+Order Assessments Request
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$atsCreateCandidatesAssessmentsRequestDto = new Components\AtsCreateCandidatesAssessmentsRequestDto(
+    id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    package: new Components\AtsCreateCandidatesAssessmentsRequestDtoPackage(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        name: 'Test 1',
+        description: 'Skills test to gauge a candidate\'s proficiency in job-specific skills',
+    ),
+    application: new Components\AtsCreateCandidatesAssessmentsRequestDtoApplication(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        applicationStatus: new Components\AtsCreateCandidatesAssessmentsRequestDtoApplicationStatus(
+            value: Components\AtsCreateCandidatesAssessmentsRequestDtoValue::Hired,
+            sourceValue: 'Hired',
+        ),
+        passthrough: [
+            'other_known_names' => 'John Doe',
+        ],
+    ),
+    job: new Components\AtsCreateCandidatesAssessmentsRequestDtoJob(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        title: 'Software Engineer',
+        hiringTeam: [
+            new Components\JobHiringTeam(
+                userId: '123456',
+                remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'john.doe@gmail.com',
+                role: 'Software Engineer',
+            ),
+        ],
+        passthrough: [
+            'other_known_names' => 'John Doe',
+        ],
+    ),
+    candidate: new Components\AtsCreateCandidatesAssessmentsRequestDtoCandidate(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        firstName: 'Romain',
+        lastName: 'Sestier',
+        emails: [
+            new Components\CandidateEmail(
+                type: 'personal',
+                value: 'sestier.romain123@gmail.com',
+            ),
+        ],
+        passthrough: [
+            'other_known_names' => 'John Doe',
+        ],
+        profileUrl: 'https://exmaple.com/candidate?id=xyz',
+    ),
+    requester: new Components\Requester(
+        userId: '123456',
+        remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'john.doe@gmail.com',
+        role: 'Software Engineer',
+    ),
+    resultsUpdateUrl: 'https://exmaple.com/integrations/results/update',
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->ats->orderAssessmentsRequest(
+    xAccountId: '<id>',
+    atsCreateCandidatesAssessmentsRequestDto: $atsCreateCandidatesAssessmentsRequestDto
+
+);
+
+if ($response->createAssessmentOrderResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                                               | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | The account identifier                                                                                                     |
+| `atsCreateCandidatesAssessmentsRequestDto`                                                                                 | [Components\AtsCreateCandidatesAssessmentsRequestDto](../../Models/Components/AtsCreateCandidatesAssessmentsRequestDto.md) | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
+
+### Response
+
+**[?Operations\AtsOrderAssessmentsRequestResponse](../../Models/Operations/AtsOrderAssessmentsRequestResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## orderBackgroundCheckRequest
+
+Order Background Check Request
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$atsCreateBackgroundCheckOrderRequestDto = new Components\AtsCreateBackgroundCheckOrderRequestDto(
+    id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    application: new Components\AtsCreateBackgroundCheckOrderRequestDtoApplication(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        applicationStatus: new Components\AtsCreateBackgroundCheckOrderRequestDtoApplicationStatus(
+            value: Components\AtsCreateBackgroundCheckOrderRequestDtoValue::Hired,
+            sourceValue: 'Hired',
+        ),
+        passthrough: [
+            'other_known_names' => 'John Doe',
+        ],
+    ),
+    job: new Components\AtsCreateBackgroundCheckOrderRequestDtoJob(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        title: 'Software Engineer',
+        hiringTeam: [
+            new Components\JobHiringTeam(
+                userId: '123456',
+                remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'john.doe@gmail.com',
+                role: 'Software Engineer',
+            ),
+        ],
+        passthrough: [
+            'other_known_names' => 'John Doe',
+        ],
+    ),
+    candidate: new Components\AtsCreateBackgroundCheckOrderRequestDtoCandidate(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        firstName: 'Romain',
+        lastName: 'Sestier',
+        emails: [
+            new Components\CandidateEmail(
+                type: 'personal',
+                value: 'sestier.romain123@gmail.com',
+            ),
+        ],
+        passthrough: [
+            'other_known_names' => 'John Doe',
+        ],
+        profileUrl: 'https://exmaple.com/candidate?id=xyz',
+    ),
+    requester: new Components\AtsCreateBackgroundCheckOrderRequestDtoRequester(
+        userId: '123456',
+        remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'john.doe@gmail.com',
+        role: 'Software Engineer',
+    ),
+    resultsUpdateUrl: 'https://exmaple.com/integrations/results/update',
+    package: new Components\AtsCreateBackgroundCheckOrderRequestDtoPackage(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        name: 'Test 1',
+        description: 'Skills test to gauge a candidate\'s proficiency in job-specific skills',
+        tests: [
+            new Components\Package(
+                id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+                remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+                name: 'Test 1',
+                description: 'Skills test to gauge a candidate\'s proficiency in job-specific skills',
+            ),
+        ],
+    ),
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->ats->orderBackgroundCheckRequest(
+    xAccountId: '<id>',
+    atsCreateBackgroundCheckOrderRequestDto: $atsCreateBackgroundCheckOrderRequestDto
+
+);
+
+if ($response->createBackgroundCheckOrderResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `xAccountId`                                                                                                             | *string*                                                                                                                 | :heavy_check_mark:                                                                                                       | The account identifier                                                                                                   |
+| `atsCreateBackgroundCheckOrderRequestDto`                                                                                | [Components\AtsCreateBackgroundCheckOrderRequestDto](../../Models/Components/AtsCreateBackgroundCheckOrderRequestDto.md) | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      |
+
+### Response
+
+**[?Operations\AtsOrderBackgroundCheckRequestResponse](../../Models/Operations/AtsOrderBackgroundCheckRequestResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
 ## rejectApplication
 
 Reject Application
@@ -3554,12 +3921,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsRejectApplicationRequestDto = new Components\AtsRejectApplicationRequestDto(
     passthrough: [
@@ -3612,12 +3981,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsUpdateApplicationRequestDto = new Components\AtsUpdateApplicationRequestDto(
     passthrough: [
@@ -3688,12 +4059,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsUpdateNotesRequestDto = new Components\AtsUpdateNotesRequestDto(
     content: [
@@ -3755,12 +4128,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsUpdateCandidateRequestDto = new Components\AtsUpdateCandidateRequestDto(
     passthrough: [
@@ -3856,12 +4231,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Utils;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $atsUpdateJobRequestDto = new Components\AtsUpdateJobRequestDto(
     unifiedCustomFields: [
@@ -3965,12 +4342,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $unifiedUploadRequestDto = new Components\UnifiedUploadRequestDto(
     name: 'weather-forecast',

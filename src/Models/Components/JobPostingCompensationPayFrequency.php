@@ -27,7 +27,7 @@ class JobPostingCompensationPayFrequency
      * @var string|float|bool|JobPostingCompensationSourceValuePayFrequency4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\JobPostingCompensationSourceValuePayFrequency4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\JobPostingCompensationSourceValuePayFrequency4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|JobPostingCompensationSourceValuePayFrequency4|array|null $sourceValue = null;
 

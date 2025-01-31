@@ -24,7 +24,7 @@ class AtsListBackgroundCheckPackagesRequest
      *
      * @var ?array<string, mixed> $proxy
      */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=proxy')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=proxy')]
     public ?array $proxy = null;
 
     /**
@@ -40,7 +40,7 @@ class AtsListBackgroundCheckPackagesRequest
      *
      * @var ?AtsListBackgroundCheckPackagesQueryParamFilter $filter
      */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=filter')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=filter')]
     public ?AtsListBackgroundCheckPackagesQueryParamFilter $filter = null;
 
     /**
