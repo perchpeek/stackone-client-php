@@ -64,7 +64,7 @@ class Field
      * @var bool|Required2|null $required
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('required')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Required2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Required2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Required2|null $required = null;
 

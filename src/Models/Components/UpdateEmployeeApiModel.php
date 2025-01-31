@@ -300,16 +300,6 @@ class UpdateEmployeeApiModel
     public ?array $citizenships = null;
 
     /**
-     * The employee employments
-     *
-     * @var ?array<CreateEmploymentApiModel> $employments
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('employments')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CreateEmploymentApiModel>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $employments = null;
-
-    /**
      * The employee custom fields
      *
      * @var ?array<CustomFields> $customFields
@@ -400,7 +390,6 @@ class UpdateEmployeeApiModel
      * @param  ?\DateTime  $terminationDate
      * @param  ?string  $companyName
      * @param  ?array<CountryCodeEnum>  $citizenships
-     * @param  ?array<CreateEmploymentApiModel>  $employments
      * @param  ?array<CustomFields>  $customFields
      * @param  ?array<CreateHRISBenefit>  $benefits
      * @param  ?string  $employeeNumber
@@ -408,7 +397,7 @@ class UpdateEmployeeApiModel
      * @param  ?UpdateEmployeeApiModelHomeLocation  $homeLocation
      * @param  ?UpdateEmployeeApiModelWorkLocation  $workLocation
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $department = null, ?string $managerId = null, ?UpdateEmployeeApiModelGender $gender = null, ?UpdateEmployeeApiModelPreferredLanguage $preferredLanguage = null, ?UpdateEmployeeApiModelEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?UpdateEmployeeApiModelMaritalStatus $maritalStatus = null, ?UpdateEmployeeApiModelAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?UpdateEmployeeApiModelEmploymentType $employmentType = null, ?UpdateEmployeeApiModelEmploymentContractType $employmentContractType = null, ?UpdateEmployeeApiModelEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?array $citizenships = null, ?array $employments = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?UpdateEmployeeApiModelNationalIdentityNumber $nationalIdentityNumber = null, ?UpdateEmployeeApiModelHomeLocation $homeLocation = null, ?UpdateEmployeeApiModelWorkLocation $workLocation = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $department = null, ?string $managerId = null, ?UpdateEmployeeApiModelGender $gender = null, ?UpdateEmployeeApiModelPreferredLanguage $preferredLanguage = null, ?UpdateEmployeeApiModelEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?UpdateEmployeeApiModelMaritalStatus $maritalStatus = null, ?UpdateEmployeeApiModelAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?UpdateEmployeeApiModelEmploymentType $employmentType = null, ?UpdateEmployeeApiModelEmploymentContractType $employmentContractType = null, ?UpdateEmployeeApiModelEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?array $citizenships = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?UpdateEmployeeApiModelNationalIdentityNumber $nationalIdentityNumber = null, ?UpdateEmployeeApiModelHomeLocation $homeLocation = null, ?UpdateEmployeeApiModelWorkLocation $workLocation = null)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -441,7 +430,6 @@ class UpdateEmployeeApiModel
         $this->terminationDate = $terminationDate;
         $this->companyName = $companyName;
         $this->citizenships = $citizenships;
-        $this->employments = $employments;
         $this->customFields = $customFields;
         $this->benefits = $benefits;
         $this->employeeNumber = $employeeNumber;

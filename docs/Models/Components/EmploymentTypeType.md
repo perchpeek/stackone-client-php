@@ -1,0 +1,11 @@
+# EmploymentTypeType
+
+The type of employment (e.g., contractor, permanent)
+
+
+## Fields
+
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                    | [?Components\EmploymentTypeValue](../../Models/Components/EmploymentTypeValue.md)                                          | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |
+| `sourceValue`                                                                                                              | [string\|float\|bool\|Components\EmploymentSourceValueType4\|array\|null](../../Models/Components/EmploymentTypeSourceValue.md) | :heavy_minus_sign:                                                                                                         | N/A                                                                                                                        |

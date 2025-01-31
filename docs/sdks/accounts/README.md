@@ -25,12 +25,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 
 
@@ -73,12 +75,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 
 
@@ -121,12 +125,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 
 
@@ -170,12 +176,14 @@ use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Operations\StackoneListLinkedAccountsRequest();
 
@@ -218,12 +226,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $patchAccountExternalDto = new Components\PatchAccountExternalDto();
 

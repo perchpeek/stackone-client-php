@@ -24,7 +24,7 @@ class AtsListBackgroundCheckRequestRequest
      *
      * @var ?array<string, mixed> $proxy
      */
-    #[SpeakeasyMetadata('queryParam:style=deepObject,explode=true,name=proxy')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=proxy')]
     public ?array $proxy = null;
 
     /**

@@ -1,0 +1,13 @@
+# Location
+
+The location of the time entry
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             | Example                                                                                 |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `id`                                                                                    | *?string*                                                                               | :heavy_minus_sign:                                                                      | The reference id                                                                        | 1687-3                                                                                  |
+| `remoteId`                                                                              | *?string*                                                                               | :heavy_minus_sign:                                                                      | Provider's unique identifier                                                            | 8187e5da-dc77-475e-9949-af0f1fa4e4e3                                                    |
+| `name`                                                                                  | *?string*                                                                               | :heavy_minus_sign:                                                                      | The reference name                                                                      | 1687-4                                                                                  |
+| `active`                                                                                | [bool\|Components\TimeEntriesActive2\|null](../../Models/Components/TimeEntriesActive.md) | :heavy_minus_sign:                                                                      | The reference status                                                                    | true                                                                                    |

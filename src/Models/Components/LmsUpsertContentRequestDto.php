@@ -59,13 +59,14 @@ class LmsUpsertContentRequestDto
     public ?string $description = null;
 
     /**
-     * A short description or summary for the content
+     * The additional_data associated with this content
      *
-     * @var ?string $shortDescription
+     * @var ?array<AdditionalData> $additionalData
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('short_description')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additional_data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AdditionalData>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $shortDescription = null;
+    public ?array $additionalData = null;
 
     /**
      * The languages associated with this content
@@ -152,6 +153,16 @@ class LmsUpsertContentRequestDto
     public ?string $provider = null;
 
     /**
+     * A short description or summary for the content
+     *
+     * @var ?string $shortDescription
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('short_description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $shortDescription = null;
+
+    /**
      * The categories associated with this content
      *
      * @var ?array<CreateCategoriesApiModel> $categories
@@ -167,7 +178,7 @@ class LmsUpsertContentRequestDto
      * @param  ?array<string>  $courseIds
      * @param  ?string  $title
      * @param  ?string  $description
-     * @param  ?string  $shortDescription
+     * @param  ?array<AdditionalData>  $additionalData
      * @param  ?array<LanguageEnum>  $languages
      * @param  ?string  $contentUrl
      * @param  ?LmsUpsertContentRequestDtoContentType  $contentType
@@ -177,16 +188,17 @@ class LmsUpsertContentRequestDto
      * @param  ?array<CreateSkillsApiModel>  $skills
      * @param  ?float  $order
      * @param  ?string  $provider
+     * @param  ?string  $shortDescription
      * @param  ?array<CreateCategoriesApiModel>  $categories
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?string $shortDescription = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $provider = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $courseIds = null, ?string $title = null, ?string $description = null, ?array $additionalData = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $provider = null, ?string $shortDescription = null, ?array $categories = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
         $this->courseIds = $courseIds;
         $this->title = $title;
         $this->description = $description;
-        $this->shortDescription = $shortDescription;
+        $this->additionalData = $additionalData;
         $this->languages = $languages;
         $this->contentUrl = $contentUrl;
         $this->contentType = $contentType;
@@ -196,6 +208,7 @@ class LmsUpsertContentRequestDto
         $this->skills = $skills;
         $this->order = $order;
         $this->provider = $provider;
+        $this->shortDescription = $shortDescription;
         $this->categories = $categories;
     }
 }

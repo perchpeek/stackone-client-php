@@ -44,7 +44,7 @@ class Reference
      * @var bool|Active2|null $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Active2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Active2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Active2|null $active = null;
 

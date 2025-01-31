@@ -124,6 +124,7 @@ class Employee
      * The employee job id
      *
      * @var ?string $jobId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('job_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -133,6 +134,7 @@ class Employee
      * The employee job title
      *
      * @var ?string $jobTitle
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('job_title')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -142,6 +144,7 @@ class Employee
      * The employee job description
      *
      * @var ?JobDescription $jobDescription
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('job_description')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JobDescription|null')]
@@ -152,6 +155,7 @@ class Employee
      * The employee department id
      *
      * @var ?string $departmentId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -161,6 +165,7 @@ class Employee
      * The employee department
      *
      * @var ?string $department
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('department')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -180,6 +185,7 @@ class Employee
      * The employee cost centers
      *
      * @var ?array<CostCenters> $costCenters
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('cost_centers')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\CostCenters>|null')]
@@ -190,6 +196,7 @@ class Employee
      * The employee manager ID
      *
      * @var ?string $managerId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('manager_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -285,6 +292,7 @@ class Employee
      * The employee start date
      *
      * @var ?\DateTime $startDate
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -312,6 +320,7 @@ class Employee
      * The employee employment type
      *
      * @var ?EmploymentType $employmentType
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employment_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmploymentType|null')]
@@ -322,6 +331,7 @@ class Employee
      * The employment work schedule type (e.g., full-time, part-time)
      *
      * @var ?EmploymentContractType $employmentContractType
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('employment_contract_type')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmploymentContractType|null')]

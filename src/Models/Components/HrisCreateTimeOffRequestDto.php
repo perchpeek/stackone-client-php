@@ -73,7 +73,7 @@ class HrisCreateTimeOffRequestDto
      * @var bool|StartHalfDay2|null $startHalfDay
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_half_day')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\StartHalfDay2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\StartHalfDay2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|StartHalfDay2|null $startHalfDay = null;
 
@@ -83,7 +83,7 @@ class HrisCreateTimeOffRequestDto
      * @var bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_half_day')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoEndHalfDay2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoEndHalfDay2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay = null;
 

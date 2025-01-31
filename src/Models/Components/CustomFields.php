@@ -44,7 +44,7 @@ class CustomFields
      * @var string|float|bool|Value4|array<mixed>|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\Value4|array<mixed>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\Value4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|float|bool|Value4|array|null $value = null;
 

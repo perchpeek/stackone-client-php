@@ -87,7 +87,7 @@ class IamUser
      * @var bool|IsBotUser2|null $isBotUser
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('is_bot_user')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\IsBotUser2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\IsBotUser2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|IsBotUser2|null $isBotUser = null;
 

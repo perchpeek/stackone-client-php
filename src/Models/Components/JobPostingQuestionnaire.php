@@ -42,7 +42,7 @@ class JobPostingQuestionnaire
      * @var bool|Internal2|null $internal
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('internal')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Internal2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Internal2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Internal2|null $internal = null;
 

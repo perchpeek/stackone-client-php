@@ -22,12 +22,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Components\ConnectSessionAuthenticate(
     token: '<value>',
@@ -72,12 +74,14 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 
-$security = new Components\Security(
-    username: '',
-    password: '',
-);
-
-$sdk = client\StackOne::builder()->setSecurity($security)->build();
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
 
 $request = new Components\ConnectSessionCreate(
     originOwnerId: '<id>',

@@ -88,7 +88,7 @@ class Campaign
      * @var bool|Archived2|null $archived
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Archived2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Archived2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Archived2|null $archived = null;
 
@@ -97,7 +97,7 @@ class Campaign
      * @var bool|Draft2|null $draft
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('draft')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Draft2')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Draft2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public bool|Draft2|null $draft = null;
 
