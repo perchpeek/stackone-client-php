@@ -137,6 +137,7 @@ class CreateEmploymentApiModel
      * @param  ?CreateEmploymentApiModelEmploymentType  $employmentType
      * @param  ?CreateEmploymentApiModelEmploymentContractType  $employmentContractType
      * @param  ?string  $timeWorked
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?string $timeWorked = null)
     {

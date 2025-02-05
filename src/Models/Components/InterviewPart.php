@@ -134,6 +134,7 @@ class InterviewPart
      * @param  ?\DateTime  $endAt
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?InterviewPartType $type = null, ?string $title = null, ?array $interviewerIds = null, ?array $remoteInterviewerIds = null, ?string $meetingUrl = null, ?string $meetingProvider = null, ?\DateTime $startAt = null, ?\DateTime $endAt = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

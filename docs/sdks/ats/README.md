@@ -70,6 +70,8 @@
 * [rejectApplication](#rejectapplication) - Reject Application
 * [updateApplication](#updateapplication) - Update an Application
 * [updateApplicationNote](#updateapplicationnote) - Update an Application Note
+* [updateAssessmentsResult](#updateassessmentsresult) - Update Assessments Result
+* [updateBackgroundCheckResult](#updatebackgroundcheckresult) - Update Background Check Result
 * [updateCandidate](#updatecandidate) - Update Candidate
 * [updateJob](#updatejob) - Update Job
 * [uploadApplicationDocument](#uploadapplicationdocument) - Upload Application Document
@@ -2250,12 +2252,15 @@ $request = new Operations\AtsListApplicationCustomFieldDefinitionsRequest(
     ),
 );
 
-$response = $sdk->ats->listApplicationCustomFieldDefinitions(
+$responses = $sdk->ats->listApplicationCustomFieldDefinitions(
     request: $request
 );
 
-if ($response->customFieldDefinitionsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2308,12 +2313,15 @@ $request = new Operations\AtsListApplicationDocumentsRequest(
     ),
 );
 
-$response = $sdk->ats->listApplicationDocuments(
+$responses = $sdk->ats->listApplicationDocuments(
     request: $request
 );
 
-if ($response->atsDocumentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2366,12 +2374,15 @@ $request = new Operations\AtsListApplicationNotesRequest(
     ),
 );
 
-$response = $sdk->ats->listApplicationNotes(
+$responses = $sdk->ats->listApplicationNotes(
     request: $request
 );
 
-if ($response->notesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2424,12 +2435,15 @@ $request = new Operations\AtsListApplicationScorecardsRequest(
     ),
 );
 
-$response = $sdk->ats->listApplicationScorecards(
+$responses = $sdk->ats->listApplicationScorecards(
     request: $request
 );
 
-if ($response->scorecardsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2484,12 +2498,15 @@ $request = new Operations\AtsListApplicationsRequest(
     include: 'attachments,custom_fields',
 );
 
-$response = $sdk->ats->listApplications(
+$responses = $sdk->ats->listApplications(
     request: $request
 );
 
-if ($response->applicationsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2542,12 +2559,15 @@ $request = new Operations\AtsListApplicationsOffersRequest(
     ),
 );
 
-$response = $sdk->ats->listApplicationsOffers(
+$responses = $sdk->ats->listApplicationsOffers(
     request: $request
 );
 
-if ($response->offersPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2600,12 +2620,15 @@ $request = new Operations\AtsListApplicationsScheduledInterviewsRequest(
     ),
 );
 
-$response = $sdk->ats->listApplicationsScheduledInterviews(
+$responses = $sdk->ats->listApplicationsScheduledInterviews(
     request: $request
 );
 
-if ($response->scheduledInterviewsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2656,12 +2679,15 @@ $request = new Operations\AtsListAssessmentsPackagesRequest(
     ),
 );
 
-$response = $sdk->ats->listAssessmentsPackages(
+$responses = $sdk->ats->listAssessmentsPackages(
     request: $request
 );
 
-if ($response->assessmentPackagePaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2713,12 +2739,15 @@ $request = new Operations\AtsListBackgroundCheckPackagesRequest(
     ),
 );
 
-$response = $sdk->ats->listBackgroundCheckPackages(
+$responses = $sdk->ats->listBackgroundCheckPackages(
     request: $request
 );
 
-if ($response->backgroundCheckPackagePaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2770,12 +2799,15 @@ $request = new Operations\AtsListBackgroundCheckRequestRequest(
     ),
 );
 
-$response = $sdk->ats->listBackgroundCheckRequest(
+$responses = $sdk->ats->listBackgroundCheckRequest(
     request: $request
 );
 
-if ($response->backgroundCheckOrderPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2827,12 +2859,15 @@ $request = new Operations\AtsListCandidateCustomFieldDefinitionsRequest(
     ),
 );
 
-$response = $sdk->ats->listCandidateCustomFieldDefinitions(
+$responses = $sdk->ats->listCandidateCustomFieldDefinitions(
     request: $request
 );
 
-if ($response->customFieldDefinitionsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2885,12 +2920,15 @@ $request = new Operations\AtsListCandidateNotesRequest(
     ),
 );
 
-$response = $sdk->ats->listCandidateNotes(
+$responses = $sdk->ats->listCandidateNotes(
     request: $request
 );
 
-if ($response->notesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2944,12 +2982,15 @@ $request = new Operations\AtsListCandidatesRequest(
     include: 'custom_fields',
 );
 
-$response = $sdk->ats->listCandidates(
+$responses = $sdk->ats->listCandidates(
     request: $request
 );
 
-if ($response->candidatesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3001,12 +3042,15 @@ $request = new Operations\AtsListDepartmentsRequest(
     ),
 );
 
-$response = $sdk->ats->listDepartments(
+$responses = $sdk->ats->listDepartments(
     request: $request
 );
 
-if ($response->departmentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3058,12 +3102,15 @@ $request = new Operations\AtsListInterviewStagesRequest(
     ),
 );
 
-$response = $sdk->ats->listInterviewStages(
+$responses = $sdk->ats->listInterviewStages(
     request: $request
 );
 
-if ($response->interviewStagesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3116,12 +3163,15 @@ $request = new Operations\AtsListInterviewsRequest(
     ),
 );
 
-$response = $sdk->ats->listInterviews(
+$responses = $sdk->ats->listInterviews(
     request: $request
 );
 
-if ($response->interviewsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3173,12 +3223,15 @@ $request = new Operations\AtsListJobCustomFieldDefinitionsRequest(
     ),
 );
 
-$response = $sdk->ats->listJobCustomFieldDefinitions(
+$responses = $sdk->ats->listJobCustomFieldDefinitions(
     request: $request
 );
 
-if ($response->customFieldDefinitionsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3232,12 +3285,15 @@ $request = new Operations\AtsListJobPostingsRequest(
     include: 'questionnaires',
 );
 
-$response = $sdk->ats->listJobPostings(
+$responses = $sdk->ats->listJobPostings(
     request: $request
 );
 
-if ($response->jobPostingsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3292,12 +3348,15 @@ $request = new Operations\AtsListJobsRequest(
     include: 'custom_fields',
 );
 
-$response = $sdk->ats->listJobs(
+$responses = $sdk->ats->listJobs(
     request: $request
 );
 
-if ($response->jobsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3349,12 +3408,15 @@ $request = new Operations\AtsListListsRequest(
     ),
 );
 
-$response = $sdk->ats->listLists(
+$responses = $sdk->ats->listLists(
     request: $request
 );
 
-if ($response->listsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3406,12 +3468,15 @@ $request = new Operations\AtsListLocationsRequest(
     ),
 );
 
-$response = $sdk->ats->listLocations(
+$responses = $sdk->ats->listLocations(
     request: $request
 );
 
-if ($response->atsLocationsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3463,12 +3528,15 @@ $request = new Operations\AtsListOffersRequest(
     ),
 );
 
-$response = $sdk->ats->listOffers(
+$responses = $sdk->ats->listOffers(
     request: $request
 );
 
-if ($response->offersPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3520,12 +3588,15 @@ $request = new Operations\AtsListRejectedReasonsRequest(
     ),
 );
 
-$response = $sdk->ats->listRejectedReasons(
+$responses = $sdk->ats->listRejectedReasons(
     request: $request
 );
 
-if ($response->rejectedReasonsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3577,12 +3648,15 @@ $request = new Operations\AtsListUsersRequest(
     ),
 );
 
-$response = $sdk->ats->listUsers(
+$responses = $sdk->ats->listUsers(
     request: $request
 );
 
-if ($response->usersPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -4106,6 +4180,182 @@ if ($response->updateResult !== null) {
 ### Response
 
 **[?Operations\AtsUpdateApplicationNoteResponse](../../Models/Operations/AtsUpdateApplicationNoteResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## updateAssessmentsResult
+
+Update Assessments Result
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Utils;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$atsUpdateCandidatesAssessmentsResultsRequestDto = new Components\AtsUpdateCandidatesAssessmentsResultsRequestDto(
+    id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    score: new Components\Score(
+        label: 'Percentage',
+        value: '80',
+        min: '0',
+        max: '100',
+    ),
+    startDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
+    submissionDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
+    summary: 'Test is passed',
+    result: new Components\Result(
+        value: Components\AtsUpdateCandidatesAssessmentsResultsRequestDtoValue::Passed,
+        sourceValue: 'Passed',
+    ),
+    resultUrl: 'https://exmaple.com/result?id=xyz',
+    attachments: [
+        new Components\Attachment(
+            url: 'http://example.com/resume.pdf',
+            contentType: new Components\AttachmentContentType(
+                value: Components\AttachmentValue::Text,
+                sourceValue: 'Text',
+            ),
+        ),
+    ],
+    candidate: new Components\AtsUpdateCandidatesAssessmentsResultsRequestDtoCandidate(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        profileUrl: 'https://exmaple.com/candidate?id=xyz',
+    ),
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->ats->updateAssessmentsResult(
+    xAccountId: '<id>',
+    id: '<id>',
+    atsUpdateCandidatesAssessmentsResultsRequestDto: $atsUpdateCandidatesAssessmentsResultsRequestDto
+
+);
+
+if ($response->updateResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                                                             | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | The account identifier                                                                                                                   |
+| `id`                                                                                                                                     | *string*                                                                                                                                 | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `atsUpdateCandidatesAssessmentsResultsRequestDto`                                                                                        | [Components\AtsUpdateCandidatesAssessmentsResultsRequestDto](../../Models/Components/AtsUpdateCandidatesAssessmentsResultsRequestDto.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+
+### Response
+
+**[?Operations\AtsUpdateAssessmentsResultResponse](../../Models/Operations/AtsUpdateAssessmentsResultResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## updateBackgroundCheckResult
+
+Update Background Check Result
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Utils;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$atsUpdateBackgroundCheckResultRequestDto = new Components\AtsUpdateBackgroundCheckResultRequestDto(
+    id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    score: new Components\AtsUpdateBackgroundCheckResultRequestDtoScore(
+        label: 'Percentage',
+        value: '80',
+        min: '0',
+        max: '100',
+    ),
+    startDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
+    submissionDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
+    summary: 'Test is passed',
+    result: new Components\AtsUpdateBackgroundCheckResultRequestDtoResult(
+        value: Components\AtsUpdateBackgroundCheckResultRequestDtoValue::Passed,
+        sourceValue: 'Passed',
+    ),
+    resultUrl: 'https://exmaple.com/result?id=xyz',
+    attachments: [
+        new Components\Attachment(
+            url: 'http://example.com/resume.pdf',
+            contentType: new Components\AttachmentContentType(
+                value: Components\AttachmentValue::Text,
+                sourceValue: 'Text',
+            ),
+        ),
+    ],
+    candidate: new Components\AtsUpdateBackgroundCheckResultRequestDtoCandidate(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        profileUrl: 'https://exmaple.com/candidate?id=xyz',
+    ),
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->ats->updateBackgroundCheckResult(
+    xAccountId: '<id>',
+    id: '<id>',
+    atsUpdateBackgroundCheckResultRequestDto: $atsUpdateBackgroundCheckResultRequestDto
+
+);
+
+if ($response->updateResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                                               | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | The account identifier                                                                                                     |
+| `id`                                                                                                                       | *string*                                                                                                                   | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
+| `atsUpdateBackgroundCheckResultRequestDto`                                                                                 | [Components\AtsUpdateBackgroundCheckResultRequestDto](../../Models/Components/AtsUpdateBackgroundCheckResultRequestDto.md) | :heavy_check_mark:                                                                                                         | N/A                                                                                                                        |
+
+### Response
+
+**[?Operations\AtsUpdateBackgroundCheckResultResponse](../../Models/Operations/AtsUpdateBackgroundCheckResultResponse.md)**
 
 ### Errors
 

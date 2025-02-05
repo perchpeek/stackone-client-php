@@ -34,6 +34,7 @@ class AtsCreateOfferRequestDtoOfferStatus
     /**
      * @param  ?AtsCreateOfferRequestDtoValue  $value
      * @param  string|float|bool|AtsCreateOfferRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsCreateOfferRequestDtoValue $value = null, string|float|bool|AtsCreateOfferRequestDtoSourceValue4|array|null $sourceValue = null)
     {

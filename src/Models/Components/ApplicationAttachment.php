@@ -52,6 +52,7 @@ class ApplicationAttachment
      * @param  ?string  $content
      * @param  ?string  $url
      * @param  ?ContentType  $contentType
+     * @phpstan-pure
      */
     public function __construct(?string $fileName = null, ?string $content = null, ?string $url = null, ?ContentType $contentType = null)
     {

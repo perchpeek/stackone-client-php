@@ -34,6 +34,7 @@ class IamUserFileFormat
     /**
      * @param  ?IamUserAvatarValue  $value
      * @param  string|float|bool|IamUserSourceValueAvatarFileFormat4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamUserAvatarValue $value = null, string|float|bool|IamUserSourceValueAvatarFileFormat4|array|null $sourceValue = null)
     {

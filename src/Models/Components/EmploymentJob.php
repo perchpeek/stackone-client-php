@@ -74,6 +74,7 @@ class EmploymentJob
      * @param  ?Description  $description
      * @param  ?string  $ownerId
      * @param  ?string  $parentId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $title = null, ?Description $description = null, ?string $ownerId = null, ?string $parentId = null)
     {

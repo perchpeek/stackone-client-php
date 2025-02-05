@@ -123,6 +123,7 @@ class AtsListJobsRequest
      * @param  ?string  $syncToken
      * @param  ?string  $expand
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?AtsListJobsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?string $expand = null, ?string $include = null, ?bool $raw = false, ?string $pageSize = '25')
     {

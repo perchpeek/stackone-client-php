@@ -148,6 +148,7 @@ class HrisCreateEmploymentRequestDto
      * @param  ?HrisCreateEmploymentRequestDtoEmploymentContractType  $employmentContractType
      * @param  ?string  $timeWorked
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?HrisCreateEmploymentRequestDtoPayPeriod $payPeriod = null, ?HrisCreateEmploymentRequestDtoPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?HrisCreateEmploymentRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmploymentRequestDtoEmploymentContractType $employmentContractType = null, ?string $timeWorked = null, ?array $passthrough = null)
     {

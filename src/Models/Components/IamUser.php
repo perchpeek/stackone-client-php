@@ -195,6 +195,7 @@ class IamUser
      * @param  ?\DateTime  $updatedAt
      * @param  ?array<IamMfaTypeEnum>  $multiFactorEnabled
      * @param  ?IamUserAvatar  $avatar
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $primaryEmailAddress = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $username = null, bool|IsBotUser2|null $isBotUser = null, ?array $roles = null, ?array $groups = null, ?IamUserStatus $status = null, ?\DateTime $lastActiveAt = null, ?\DateTime $lastLoginAt = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $multiFactorEnabled = null, ?IamUserAvatar $avatar = null)
     {

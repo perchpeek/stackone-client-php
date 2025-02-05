@@ -32,6 +32,7 @@ class NoteResult
     /**
      * @param  Note  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Note $data, ?array $raw = null)
     {

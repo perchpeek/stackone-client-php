@@ -33,6 +33,7 @@ class IamMfaTypeEnum
     /**
      * @param  ?IamMfaTypeEnumValue  $value
      * @param  string|float|bool|IamMfaTypeEnumSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamMfaTypeEnumValue $value = null, string|float|bool|IamMfaTypeEnumSourceValue4|array|null $sourceValue = null)
     {

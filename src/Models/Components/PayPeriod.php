@@ -35,6 +35,7 @@ class PayPeriod
     /**
      * @param  ?EmploymentValue  $value
      * @param  string|float|bool|EmploymentSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmploymentValue $value = null, string|float|bool|EmploymentSourceValue4|array|null $sourceValue = null)
     {

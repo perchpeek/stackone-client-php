@@ -72,6 +72,7 @@ class Template
      * @param  ?array<string>  $tags
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?array $tags = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

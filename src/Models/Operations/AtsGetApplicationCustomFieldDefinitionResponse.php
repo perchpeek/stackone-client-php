@@ -52,6 +52,7 @@ class AtsGetApplicationCustomFieldDefinitionResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CustomFieldDefinitionResultApiModel  $customFieldDefinitionResultApiModel
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CustomFieldDefinitionResultApiModel $customFieldDefinitionResultApiModel = null, ?array $headers = [])
     {

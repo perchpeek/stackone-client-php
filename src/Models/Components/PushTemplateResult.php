@@ -32,6 +32,7 @@ class PushTemplateResult
     /**
      * @param  PushTemplate  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(PushTemplate $data, ?array $raw = null)
     {

@@ -33,6 +33,7 @@ class LearningObjectType
     /**
      * @param  ?AssignmentLearningObjectTypeValue  $value
      * @param  string|float|bool|AssignmentSourceValueLearningObjectType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AssignmentLearningObjectTypeValue $value = null, string|float|bool|AssignmentSourceValueLearningObjectType4|array|null $sourceValue = null)
     {

@@ -33,6 +33,7 @@ class State
     /**
      * @param  ?HrisCreateEmployeeRequestDtoHomeLocationStateValue  $value
      * @param  string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocationState4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateEmployeeRequestDtoHomeLocationStateValue $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocationState4|array|null $sourceValue = null)
     {

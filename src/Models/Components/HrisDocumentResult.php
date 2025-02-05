@@ -32,6 +32,7 @@ class HrisDocumentResult
     /**
      * @param  HrisDocumentApiModel  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(HrisDocumentApiModel $data, ?array $raw = null)
     {

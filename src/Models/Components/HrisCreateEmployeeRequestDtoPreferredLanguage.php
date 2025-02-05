@@ -34,6 +34,7 @@ class HrisCreateEmployeeRequestDtoPreferredLanguage
     /**
      * @param  ?HrisCreateEmployeeRequestDtoPreferredLanguageValue  $value
      * @param  string|float|bool|HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateEmployeeRequestDtoPreferredLanguageValue $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValuePreferredLanguage4|array|null $sourceValue = null)
     {

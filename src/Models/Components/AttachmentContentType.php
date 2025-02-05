@@ -34,6 +34,7 @@ class AttachmentContentType
     /**
      * @param  ?AttachmentValue  $value
      * @param  string|float|bool|AttachmentSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AttachmentValue $value = null, string|float|bool|AttachmentSourceValue4|array|null $sourceValue = null)
     {

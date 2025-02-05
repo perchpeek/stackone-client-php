@@ -113,6 +113,7 @@ class BackgroundCheckResult
      * @param  ?BackgroundCheckResultResult  $result
      * @param  ?string  $resultUrl
      * @param  ?array<Attachment>  $attachments
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?BackgroundCheckResultCandidate $candidate = null, ?BackgroundCheckResultScore $score = null, ?\DateTime $startDate = null, ?\DateTime $submissionDate = null, ?string $summary = null, ?BackgroundCheckResultResult $result = null, ?string $resultUrl = null, ?array $attachments = null)
     {

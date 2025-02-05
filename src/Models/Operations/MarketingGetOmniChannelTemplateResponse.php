@@ -52,6 +52,7 @@ class MarketingGetOmniChannelTemplateResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\TemplateResult  $templateResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TemplateResult $templateResult = null, ?array $headers = [])
     {

@@ -34,6 +34,7 @@ class Country
     /**
      * @param  ?HRISLocationValue  $value
      * @param  string|float|bool|HRISLocationSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HRISLocationValue $value = null, string|float|bool|HRISLocationSourceValue4|array|null $sourceValue = null)
     {

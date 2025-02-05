@@ -32,6 +32,7 @@ class AtsDocumentResult
     /**
      * @param  AtsDocumentApiModel  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(AtsDocumentApiModel $data, ?array $raw = null)
     {

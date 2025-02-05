@@ -50,6 +50,7 @@ class AtsListJobsQueryParamFilter
      * @param  ?string  $createdAfter
      * @param  ?Status  $status
      * @param  ?JobStatus  $jobStatus
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $createdAfter = null, ?Status $status = null, ?JobStatus $jobStatus = null)
     {

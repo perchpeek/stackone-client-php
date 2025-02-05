@@ -180,6 +180,7 @@ class AtsUpdateCandidateRequestDto
      * @param  ?\DateTime  $hiredAt
      * @param  ?string  $country
      * @param  ?array<CustomFields>  $customFields
+     * @phpstan-pure
      */
     public function __construct(?array $passthrough = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?array $emails = null, ?array $socialLinks = null, ?string $phone = null, ?array $phoneNumbers = null, ?string $company = null, ?string $title = null, ?array $applicationIds = null, ?\DateTime $hiredAt = null, ?string $country = null, ?array $customFields = null)
     {

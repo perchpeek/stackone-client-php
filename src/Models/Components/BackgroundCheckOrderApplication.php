@@ -53,6 +53,7 @@ class BackgroundCheckOrderApplication
      * @param  ?string  $remoteId
      * @param  ?BackgroundCheckOrderApplicationStatus  $applicationStatus
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?BackgroundCheckOrderApplicationStatus $applicationStatus = null, ?array $passthrough = null)
     {

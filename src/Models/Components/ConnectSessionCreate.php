@@ -112,6 +112,7 @@ class ConnectSessionCreate
      * @param  ?Metadata  $metadata
      * @param  ?bool  $multiple
      * @param  ?string  $label
+     * @phpstan-pure
      */
     public function __construct(string $originOwnerId, string $originOwnerName, ?array $categories = null, ?string $provider = null, ?string $originUsername = null, ?string $accountId = null, ?Metadata $metadata = null, ?string $label = null, ?float $expiresIn = 1800, ?bool $multiple = false)
     {

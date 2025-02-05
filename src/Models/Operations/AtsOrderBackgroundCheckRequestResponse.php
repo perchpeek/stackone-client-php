@@ -52,6 +52,7 @@ class AtsOrderBackgroundCheckRequestResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CreateBackgroundCheckOrderResult  $createBackgroundCheckOrderResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CreateBackgroundCheckOrderResult $createBackgroundCheckOrderResult = null, ?array $headers = [])
     {

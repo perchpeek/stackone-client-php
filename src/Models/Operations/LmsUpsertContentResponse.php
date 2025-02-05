@@ -52,6 +52,7 @@ class LmsUpsertContentResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\UpsertResult  $upsertResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\UpsertResult $upsertResult = null, ?array $headers = [])
     {

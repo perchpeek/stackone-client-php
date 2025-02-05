@@ -33,6 +33,7 @@ class Type
     /**
      * @param  ?CustomFieldDefinitionValue  $value
      * @param  string|float|bool|CustomFieldDefinitionSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CustomFieldDefinitionValue $value = null, string|float|bool|CustomFieldDefinitionSourceValue4|array|null $sourceValue = null)
     {

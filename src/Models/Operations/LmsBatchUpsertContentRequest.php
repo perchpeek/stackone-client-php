@@ -30,6 +30,7 @@ class LmsBatchUpsertContentRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\LmsBatchUpsertContentRequestDto  $lmsBatchUpsertContentRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\LmsBatchUpsertContentRequestDto $lmsBatchUpsertContentRequestDto)
     {

@@ -33,6 +33,7 @@ class AtsDocumentApiModelCategory
     /**
      * @param  ?string  $value
      * @param  string|float|bool|AtsDocumentApiModelSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?string $value = null, string|float|bool|AtsDocumentApiModelSourceValue4|array|null $sourceValue = null)
     {

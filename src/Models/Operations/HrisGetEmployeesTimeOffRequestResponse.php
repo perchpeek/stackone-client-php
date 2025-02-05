@@ -52,6 +52,7 @@ class HrisGetEmployeesTimeOffRequestResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\TimeOffResult  $timeOffResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TimeOffResult $timeOffResult = null, ?array $headers = [])
     {

@@ -47,11 +47,16 @@ class LmsListCategoriesResponse
     public ?Components\CategoriesPaginated $categoriesPaginated = null;
 
     /**
+     * @var \Closure(string): ?LmsListCategoriesResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CategoriesPaginated  $categoriesPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CategoriesPaginated $categoriesPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class LmsListCategoriesResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->categoriesPaginated = $categoriesPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?LmsListCategoriesResponse
+     */
+    public function __call($name, $args): ?LmsListCategoriesResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

@@ -105,6 +105,7 @@ class AtsListUsersRequest
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
      * @param  ?string  $syncToken
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?AtsListUsersQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?bool $raw = false, ?string $pageSize = '25')
     {

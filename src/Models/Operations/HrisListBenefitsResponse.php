@@ -47,11 +47,16 @@ class HrisListBenefitsResponse
     public ?Components\HRISBenefitsPaginated $hrisBenefitsPaginated = null;
 
     /**
+     * @var \Closure(string): ?HrisListBenefitsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\HRISBenefitsPaginated  $hrisBenefitsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISBenefitsPaginated $hrisBenefitsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class HrisListBenefitsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->hrisBenefitsPaginated = $hrisBenefitsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisListBenefitsResponse
+     */
+    public function __call($name, $args): ?HrisListBenefitsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

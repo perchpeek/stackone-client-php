@@ -34,6 +34,7 @@ class InterviewPartType
     /**
      * @param  ?InterviewPartValue  $value
      * @param  string|float|bool|InterviewPartSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?InterviewPartValue $value = null, string|float|bool|InterviewPartSourceValue4|array|null $sourceValue = null)
     {

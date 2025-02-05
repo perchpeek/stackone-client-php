@@ -38,6 +38,7 @@ class AtsMoveApplicationRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\AtsMoveApplicationRequestDto  $atsMoveApplicationRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\AtsMoveApplicationRequestDto $atsMoveApplicationRequestDto)
     {

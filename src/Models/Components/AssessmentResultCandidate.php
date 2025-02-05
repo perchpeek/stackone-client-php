@@ -42,6 +42,7 @@ class AssessmentResultCandidate
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?string  $profileUrl
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $profileUrl = null)
     {

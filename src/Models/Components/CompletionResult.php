@@ -32,6 +32,7 @@ class CompletionResult
     /**
      * @param  Completion  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Completion $data, ?array $raw = null)
     {

@@ -34,6 +34,7 @@ class CreateHRISBenefitBenefitType
     /**
      * @param  ?CreateHRISBenefitValue  $value
      * @param  string|float|bool|CreateHRISBenefitSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CreateHRISBenefitValue $value = null, string|float|bool|CreateHRISBenefitSourceValue4|array|null $sourceValue = null)
     {

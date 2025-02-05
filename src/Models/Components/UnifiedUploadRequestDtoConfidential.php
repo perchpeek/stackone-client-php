@@ -34,6 +34,7 @@ class UnifiedUploadRequestDtoConfidential
     /**
      * @param  ?UnifiedUploadRequestDtoConfidentialValue  $value
      * @param  string|float|bool|UnifiedUploadRequestDtoSourceValueConfidential4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?UnifiedUploadRequestDtoConfidentialValue $value = null, string|float|bool|UnifiedUploadRequestDtoSourceValueConfidential4|array|null $sourceValue = null)
     {

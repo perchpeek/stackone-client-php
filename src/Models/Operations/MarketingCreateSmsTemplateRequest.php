@@ -30,6 +30,7 @@ class MarketingCreateSmsTemplateRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\MarketingCreateSmsTemplateRequestDto  $marketingCreateSmsTemplateRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\MarketingCreateSmsTemplateRequestDto $marketingCreateSmsTemplateRequestDto)
     {

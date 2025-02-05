@@ -32,6 +32,7 @@ class OffersResult
     /**
      * @param  Offer  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Offer $data, ?array $raw = null)
     {

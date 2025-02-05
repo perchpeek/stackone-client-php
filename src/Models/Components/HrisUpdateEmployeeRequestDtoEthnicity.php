@@ -33,6 +33,7 @@ class HrisUpdateEmployeeRequestDtoEthnicity
     /**
      * @param  ?HrisUpdateEmployeeRequestDtoEthnicityValue  $value
      * @param  string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueEthnicity4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisUpdateEmployeeRequestDtoEthnicityValue $value = null, string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueEthnicity4|array|null $sourceValue = null)
     {

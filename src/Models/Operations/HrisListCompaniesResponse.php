@@ -47,11 +47,16 @@ class HrisListCompaniesResponse
     public ?Components\CompaniesPaginated $companiesPaginated = null;
 
     /**
+     * @var \Closure(string): ?HrisListCompaniesResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CompaniesPaginated  $companiesPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CompaniesPaginated $companiesPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class HrisListCompaniesResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->companiesPaginated = $companiesPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisListCompaniesResponse
+     */
+    public function __call($name, $args): ?HrisListCompaniesResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

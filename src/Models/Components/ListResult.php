@@ -32,6 +32,7 @@ class ListResult
     /**
      * @param  ListT  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(ListT $data, ?array $raw = null)
     {

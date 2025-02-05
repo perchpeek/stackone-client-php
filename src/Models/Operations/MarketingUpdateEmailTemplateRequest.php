@@ -38,6 +38,7 @@ class MarketingUpdateEmailTemplateRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\MarketingCreateEmailTemplateRequestDto  $marketingCreateEmailTemplateRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\MarketingCreateEmailTemplateRequestDto $marketingCreateEmailTemplateRequestDto)
     {

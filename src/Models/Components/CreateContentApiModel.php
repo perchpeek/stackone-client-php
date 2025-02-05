@@ -52,6 +52,7 @@ class CreateContentApiModel
      * @param  ?string  $description
      * @param  ?string  $contentUrl
      * @param  ?float  $order
+     * @phpstan-pure
      */
     public function __construct(?string $title = null, ?string $description = null, ?string $contentUrl = null, ?float $order = null)
     {

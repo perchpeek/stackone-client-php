@@ -149,6 +149,7 @@ class HrisDocumentApiModel
      * @param  ?HrisDocumentApiModelFileFormat  $fileFormat
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?HrisDocumentApiModelType  $type
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $path = null, ?HrisDocumentApiModelCategory $category = null, ?array $contents = null, ?string $categoryId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $remoteUrl = null, ?HrisDocumentApiModelFileFormat $fileFormat = null, ?array $unifiedCustomFields = null, ?HrisDocumentApiModelType $type = null)
     {

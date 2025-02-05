@@ -32,6 +32,7 @@ class UserResult
     /**
      * @param  LmsUser  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(LmsUser $data, ?array $raw = null)
     {

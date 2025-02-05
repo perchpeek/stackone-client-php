@@ -33,6 +33,7 @@ class CreateQuestionnaire
     /**
      * @param  ?string  $id
      * @param  ?array<CreateAnswer>  $answers
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?array $answers = null)
     {

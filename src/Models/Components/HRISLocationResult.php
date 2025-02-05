@@ -32,6 +32,7 @@ class HRISLocationResult
     /**
      * @param  HRISLocation  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(HRISLocation $data, ?array $raw = null)
     {

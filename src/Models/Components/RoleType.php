@@ -33,6 +33,7 @@ class RoleType
     /**
      * @param  ?EmploymentManagerApiModelValue  $value
      * @param  string|float|bool|EmploymentManagerApiModelSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmploymentManagerApiModelValue $value = null, string|float|bool|EmploymentManagerApiModelSourceValue4|array|null $sourceValue = null)
     {

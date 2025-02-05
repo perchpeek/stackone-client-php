@@ -33,6 +33,7 @@ class Ethnicity
     /**
      * @param  ?EmployeeEthnicityValue  $value
      * @param  string|float|bool|EmployeeSourceValueEthnicity4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmployeeEthnicityValue $value = null, string|float|bool|EmployeeSourceValueEthnicity4|array|null $sourceValue = null)
     {

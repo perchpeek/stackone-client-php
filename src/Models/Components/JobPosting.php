@@ -192,6 +192,7 @@ class JobPosting
      * @param  ?array<JobPostingQuestionnaire>  $questionnaires
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $title = null, ?array $locations = null, ?Internal $internal = null, ?JobPostingStatus $status = null, ?string $jobId = null, ?string $remoteJobPostingId = null, ?JobPostingContent $content = null, ?array $compensation = null, ?JobPostingEmploymentType $employmentType = null, ?JobPostingEmploymentContractType $employmentContractType = null, ?string $externalUrl = null, ?string $externalApplyUrl = null, ?array $questionnaires = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

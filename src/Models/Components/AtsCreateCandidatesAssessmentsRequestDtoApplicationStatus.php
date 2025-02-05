@@ -34,6 +34,7 @@ class AtsCreateCandidatesAssessmentsRequestDtoApplicationStatus
     /**
      * @param  ?AtsCreateCandidatesAssessmentsRequestDtoValue  $value
      * @param  string|float|bool|AtsCreateCandidatesAssessmentsRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsCreateCandidatesAssessmentsRequestDtoValue $value = null, string|float|bool|AtsCreateCandidatesAssessmentsRequestDtoSourceValue4|array|null $sourceValue = null)
     {

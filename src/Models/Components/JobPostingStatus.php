@@ -34,6 +34,7 @@ class JobPostingStatus
     /**
      * @param  ?JobPostingValue  $value
      * @param  string|float|bool|JobPostingSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?JobPostingValue $value = null, string|float|bool|JobPostingSourceValue4|array|null $sourceValue = null)
     {

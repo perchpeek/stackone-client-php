@@ -52,6 +52,7 @@ class HrisGetGroupResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\HRISGroupsResult  $hrisGroupsResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISGroupsResult $hrisGroupsResult = null, ?array $headers = [])
     {

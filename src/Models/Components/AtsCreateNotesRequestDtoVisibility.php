@@ -35,6 +35,7 @@ class AtsCreateNotesRequestDtoVisibility
     /**
      * @param  ?AtsCreateNotesRequestDtoValue  $value
      * @param  string|float|bool|AtsCreateNotesRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsCreateNotesRequestDtoValue $value = null, string|float|bool|AtsCreateNotesRequestDtoSourceValue4|array|null $sourceValue = null)
     {

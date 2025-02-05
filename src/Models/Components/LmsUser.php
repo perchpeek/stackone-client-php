@@ -113,6 +113,7 @@ class LmsUser
      * @param  ?bool  $active
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $name = null, ?string $email = null, ?string $phoneNumber = null, ?bool $active = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

@@ -34,6 +34,7 @@ class UnifiedUploadRequestDtoFileFormat
     /**
      * @param  ?UnifiedUploadRequestDtoValue  $value
      * @param  string|float|bool|UnifiedUploadRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?UnifiedUploadRequestDtoValue $value = null, string|float|bool|UnifiedUploadRequestDtoSourceValue4|array|null $sourceValue = null)
     {

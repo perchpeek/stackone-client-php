@@ -29,6 +29,7 @@ class StackoneUpdateAccountRequest
     /**
      * @param  string  $id
      * @param  Components\PatchAccountExternalDto  $patchAccountExternalDto
+     * @phpstan-pure
      */
     public function __construct(string $id, Components\PatchAccountExternalDto $patchAccountExternalDto)
     {

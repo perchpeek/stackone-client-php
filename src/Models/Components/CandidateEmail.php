@@ -32,6 +32,7 @@ class CandidateEmail
     /**
      * @param  ?string  $type
      * @param  ?string  $value
+     * @phpstan-pure
      */
     public function __construct(?string $type = null, ?string $value = null)
     {

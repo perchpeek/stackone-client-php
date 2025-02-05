@@ -22,6 +22,7 @@ class AtsListJobCustomFieldDefinitionsQueryParamFilter
 
     /**
      * @param  ?string  $updatedAfter
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null)
     {

@@ -60,6 +60,7 @@ class OfferHistory
      * @param  ?string  $currency
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?\DateTime $startDate = null, ?float $salary = null, ?string $currency = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

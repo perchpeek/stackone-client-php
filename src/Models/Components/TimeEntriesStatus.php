@@ -33,6 +33,7 @@ class TimeEntriesStatus
     /**
      * @param  ?TimeEntriesValue  $value
      * @param  string|float|bool|TimeEntriesSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?TimeEntriesValue $value = null, string|float|bool|TimeEntriesSourceValue4|array|null $sourceValue = null)
     {

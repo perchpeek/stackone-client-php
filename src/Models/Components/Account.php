@@ -151,6 +151,7 @@ class Account
      * @param  ?array<string>  $phoneNumbers
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $ownerId = null, ?string $remoteOwnerId = null, ?string $name = null, ?string $description = null, ?array $industries = null, ?string $annualRevenue = null, ?string $website = null, ?array $addresses = null, ?array $phoneNumbers = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

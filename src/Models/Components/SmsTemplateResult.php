@@ -32,6 +32,7 @@ class SmsTemplateResult
     /**
      * @param  SmsTemplate  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(SmsTemplate $data, ?array $raw = null)
     {

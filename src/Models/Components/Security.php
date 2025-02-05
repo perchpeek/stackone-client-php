@@ -28,6 +28,7 @@ class Security
     /**
      * @param  string  $username
      * @param  string  $password
+     * @phpstan-pure
      */
     public function __construct(string $username, string $password)
     {

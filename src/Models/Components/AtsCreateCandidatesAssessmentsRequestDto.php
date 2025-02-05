@@ -93,6 +93,7 @@ class AtsCreateCandidatesAssessmentsRequestDto
      * @param  ?Requester  $requester
      * @param  ?string  $resultsUpdateUrl
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?AtsCreateCandidatesAssessmentsRequestDtoPackage $package = null, ?AtsCreateCandidatesAssessmentsRequestDtoApplication $application = null, ?AtsCreateCandidatesAssessmentsRequestDtoJob $job = null, ?AtsCreateCandidatesAssessmentsRequestDtoCandidate $candidate = null, ?Requester $requester = null, ?string $resultsUpdateUrl = null, ?array $passthrough = null)
     {

@@ -30,6 +30,7 @@ class AtsOrderAssessmentsRequestRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\AtsCreateCandidatesAssessmentsRequestDto  $atsCreateCandidatesAssessmentsRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\AtsCreateCandidatesAssessmentsRequestDto $atsCreateCandidatesAssessmentsRequestDto)
     {

@@ -52,6 +52,7 @@ class AssessmentResultScore
      * @param  ?string  $value
      * @param  ?string  $min
      * @param  ?string  $max
+     * @phpstan-pure
      */
     public function __construct(?string $label = null, ?string $value = null, ?string $min = null, ?string $max = null)
     {

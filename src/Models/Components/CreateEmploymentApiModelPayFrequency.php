@@ -35,6 +35,7 @@ class CreateEmploymentApiModelPayFrequency
     /**
      * @param  ?CreateEmploymentApiModelPayFrequencyValue  $value
      * @param  string|float|bool|CreateEmploymentApiModelSourceValuePayFrequency4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CreateEmploymentApiModelPayFrequencyValue $value = null, string|float|bool|CreateEmploymentApiModelSourceValuePayFrequency4|array|null $sourceValue = null)
     {

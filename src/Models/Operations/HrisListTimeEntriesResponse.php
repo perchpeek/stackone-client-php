@@ -47,11 +47,16 @@ class HrisListTimeEntriesResponse
     public ?Components\TimeEntriesPaginated $timeEntriesPaginated = null;
 
     /**
+     * @var \Closure(string): ?HrisListTimeEntriesResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\TimeEntriesPaginated  $timeEntriesPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TimeEntriesPaginated $timeEntriesPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class HrisListTimeEntriesResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->timeEntriesPaginated = $timeEntriesPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisListTimeEntriesResponse
+     */
+    public function __call($name, $args): ?HrisListTimeEntriesResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

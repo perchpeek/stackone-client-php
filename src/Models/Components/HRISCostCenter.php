@@ -108,6 +108,7 @@ class HRISCostCenter
      * @param  ?array<string>  $ownerIds
      * @param  ?array<string>  $remoteOwnerIds
      * @param  ?HRISCostCenterType  $type
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?array $parentIds = null, ?array $remoteParentIds = null, ?array $ownerIds = null, ?array $remoteOwnerIds = null, ?HRISCostCenterType $type = null)
     {

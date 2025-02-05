@@ -30,6 +30,7 @@ class CrmCreateContactRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\CrmCreateContactRequestDto  $crmCreateContactRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\CrmCreateContactRequestDto $crmCreateContactRequestDto)
     {

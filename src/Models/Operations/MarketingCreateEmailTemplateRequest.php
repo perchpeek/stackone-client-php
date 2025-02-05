@@ -30,6 +30,7 @@ class MarketingCreateEmailTemplateRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\MarketingCreateEmailTemplateRequestDto  $marketingCreateEmailTemplateRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\MarketingCreateEmailTemplateRequestDto $marketingCreateEmailTemplateRequestDto)
     {

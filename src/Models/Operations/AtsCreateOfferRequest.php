@@ -30,6 +30,7 @@ class AtsCreateOfferRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\AtsCreateOfferRequestDto  $atsCreateOfferRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\AtsCreateOfferRequestDto $atsCreateOfferRequestDto)
     {

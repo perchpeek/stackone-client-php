@@ -43,6 +43,7 @@ class Questionnaire
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<Answer>  $answers
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $answers = null)
     {

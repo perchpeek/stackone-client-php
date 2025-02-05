@@ -33,6 +33,7 @@ class UpdateEmployeeApiModelWorkLocationState
     /**
      * @param  ?UpdateEmployeeApiModelWorkLocationStateValue  $value
      * @param  string|float|bool|UpdateEmployeeApiModelSourceValueWorkLocationState4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?UpdateEmployeeApiModelWorkLocationStateValue $value = null, string|float|bool|UpdateEmployeeApiModelSourceValueWorkLocationState4|array|null $sourceValue = null)
     {

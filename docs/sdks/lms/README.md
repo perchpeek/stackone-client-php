@@ -10,6 +10,7 @@
 * [createCollection](#createcollection) - Create Collection
 * [createUserAssignment](#createuserassignment) - Create User Assignment
 * [createUserCompletion](#createusercompletion) - Create User Completion
+* [deleteUserCompletion](#deleteusercompletion) - Delete User Completion
 * [getAssignment](#getassignment) - Get Assignment
 * [getCategory](#getcategory) - Get Category
 * [getCompletion](#getcompletion) - Get Completion
@@ -63,16 +64,13 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                 'my_project_custom_field_2' => 'some other value',
             ],
             externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
-            courseIds: [
-                '16873-SOFTWARE-ENG-COURSE',
-            ],
             title: 'Software Engineer Lv 1',
             description: 'This video acts as learning content for software engineers.',
             additionalData: [
                 new Components\AdditionalData(
                     id: 'learning_outcomes',
                     remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-                    value: new Components\AdditionalDataValue(),
+                    value: 'This is additional data',
                 ),
             ],
             languages: [
@@ -91,7 +89,6 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                 ),
             ],
             order: 1,
-            provider: 'Content Provider',
             categories: [
                 new Components\CreateCategoriesApiModel(
                     id: '16873-IT345',
@@ -168,9 +165,6 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
                 'my_project_custom_field_2' => 'some other value',
             ],
             externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
-            contentIds: [
-                '16873-SOFTWARE-ENG-Content',
-            ],
             title: 'Software Engineer Lv 1',
             description: 'This course acts as learning content for software engineers.',
             languages: [
@@ -182,7 +176,6 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
             url: 'https://www.linkedinlearning.com/?v=16873',
             active: true,
             duration: 'P3Y6M4DT12H30M5S',
-            provider: 'Course Provider',
             categories: [
                 new Components\CreateCategoriesApiModel(
                     id: '16873-IT345',
@@ -200,6 +193,9 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
                 new Components\CreateSkillsApiModel(
                     id: '16873-IT345',
                     name: 'Information-Technology',
+                    language: new Components\CreateSkillsApiModelLanguage(
+                        value: Components\CreateSkillsApiModelLanguageValue::EnGB,
+                    ),
                 ),
             ],
             content: [
@@ -299,6 +295,9 @@ $lmsCreateCollectionRequestDto = new Components\LmsCreateCollectionRequestDto(
         new Components\CreateSkillsApiModel(
             id: '16873-IT345',
             name: 'Information-Technology',
+            language: new Components\CreateSkillsApiModelLanguage(
+                value: Components\CreateSkillsApiModelLanguageValue::EnGB,
+            ),
         ),
     ],
 );
@@ -358,7 +357,6 @@ $lmsCreateAssignmentRequestDto = new Components\LmsCreateAssignmentRequestDto(
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
-    externalReference: 'e3gd34-23tr21-er234-345er56',
     learningObjectId: 'e3gd34-23tr21-er234-345er56',
     learningObjectExternalReference: 'learning-content-123',
     progress: 40,
@@ -426,7 +424,6 @@ $lmsCreateCompletionRequestDto = new Components\LmsCreateCompletionRequestDto(
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
-    externalReference: 'e3gd34-23tr21-er234-345er56',
     completedAt: '2021-07-21T14:00:00.000Z',
     learningObjectId: 'e3gd34-23tr21-er234-345er56',
     learningObjectExternalReference: 'learning-content-123',
@@ -455,6 +452,61 @@ if ($response->createResult !== null) {
 ### Response
 
 **[?Operations\LmsCreateUserCompletionResponse](../../Models/Operations/LmsCreateUserCompletionResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## deleteUserCompletion
+
+Delete User Completion
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+
+
+$response = $sdk->lms->deleteUserCompletion(
+    xAccountId: '<id>',
+    id: '<id>',
+    subResourceId: '<id>'
+
+);
+
+if ($response->deleteResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `xAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
+| `id`                   | *string*               | :heavy_check_mark:     | N/A                    |
+| `subResourceId`        | *string*               | :heavy_check_mark:     | N/A                    |
+
+### Response
+
+**[?Operations\LmsDeleteUserCompletionResponse](../../Models/Operations/LmsDeleteUserCompletionResponse.md)**
 
 ### Errors
 
@@ -543,7 +595,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetCategoryRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active,level,language',
+    fields: 'id,remote_id,name,active,hierarchy,level,language',
 );
 
 $response = $sdk->lms->getCategory(
@@ -652,7 +704,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetContentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,short_description,additional_data,languages,content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
 );
 
 $response = $sdk->lms->getContent(
@@ -762,7 +814,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetSkillRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active,level',
+    fields: 'id,remote_id,name,active,level,language,hierarchy,competency',
 );
 
 $response = $sdk->lms->getSkill(
@@ -989,12 +1041,15 @@ $request = new Operations\LmsListAssignmentsRequest(
     remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
 );
 
-$response = $sdk->lms->listAssignments(
+$responses = $sdk->lms->listAssignments(
     request: $request
 );
 
-if ($response->assignmentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1040,18 +1095,21 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListCategoriesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active,level,language',
+    fields: 'id,remote_id,name,active,hierarchy,level,language',
     filter: new Operations\LmsListCategoriesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
 );
 
-$response = $sdk->lms->listCategories(
+$responses = $sdk->lms->listCategories(
     request: $request
 );
 
-if ($response->categoriesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1103,12 +1161,15 @@ $request = new Operations\LmsListCompletionsRequest(
     ),
 );
 
-$response = $sdk->lms->listCompletions(
+$responses = $sdk->lms->listCompletions(
     request: $request
 );
 
-if ($response->completionsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1154,18 +1215,21 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,short_description,additional_data,languages,content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
     filter: new Operations\LmsListContentQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
 );
 
-$response = $sdk->lms->listContent(
+$responses = $sdk->lms->listContent(
     request: $request
 );
 
-if ($response->contentPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1217,12 +1281,15 @@ $request = new Operations\LmsListCoursesRequest(
     ),
 );
 
-$response = $sdk->lms->listCourses(
+$responses = $sdk->lms->listCourses(
     request: $request
 );
 
-if ($response->coursePaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1268,18 +1335,21 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListSkillsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active,level',
+    fields: 'id,remote_id,name,active,level,language,hierarchy,competency',
     filter: new Operations\LmsListSkillsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
 );
 
-$response = $sdk->lms->listSkills(
+$responses = $sdk->lms->listSkills(
     request: $request
 );
 
-if ($response->skillsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1334,12 +1404,15 @@ $request = new Operations\LmsListUserAssignmentsRequest(
     remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
 );
 
-$response = $sdk->lms->listUserAssignments(
+$responses = $sdk->lms->listUserAssignments(
     request: $request
 );
 
-if ($response->assignmentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1392,12 +1465,15 @@ $request = new Operations\LmsListUserCompletionsRequest(
     ),
 );
 
-$response = $sdk->lms->listUserCompletions(
+$responses = $sdk->lms->listUserCompletions(
     request: $request
 );
 
-if ($response->completionsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1449,12 +1525,15 @@ $request = new Operations\LmsListUsersRequest(
     ),
 );
 
-$response = $sdk->lms->listUsers(
+$responses = $sdk->lms->listUsers(
     request: $request
 );
 
-if ($response->usersPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1531,6 +1610,9 @@ $lmsCreateCollectionRequestDto = new Components\LmsCreateCollectionRequestDto(
         new Components\CreateSkillsApiModel(
             id: '16873-IT345',
             name: 'Information-Technology',
+            language: new Components\CreateSkillsApiModelLanguage(
+                value: Components\CreateSkillsApiModelLanguageValue::EnGB,
+            ),
         ),
     ],
 );
@@ -1594,16 +1676,13 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
         'my_project_custom_field_2' => 'some other value',
     ],
     externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
-    courseIds: [
-        '16873-SOFTWARE-ENG-COURSE',
-    ],
     title: 'Software Engineer Lv 1',
     description: 'This video acts as learning content for software engineers.',
     additionalData: [
         new Components\AdditionalData(
             id: 'learning_outcomes',
             remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            value: new Components\AdditionalDataValue(),
+            value: 'This is additional data',
         ),
     ],
     languages: [
@@ -1622,7 +1701,6 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
         ),
     ],
     order: 1,
-    provider: 'Content Provider',
     categories: [
         new Components\CreateCategoriesApiModel(
             id: '16873-IT345',
@@ -1695,9 +1773,6 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
         'my_project_custom_field_2' => 'some other value',
     ],
     externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
-    contentIds: [
-        '16873-SOFTWARE-ENG-Content',
-    ],
     title: 'Software Engineer Lv 1',
     description: 'This course acts as learning content for software engineers.',
     languages: [
@@ -1709,7 +1784,6 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
     url: 'https://www.linkedinlearning.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
-    provider: 'Course Provider',
     categories: [
         new Components\CreateCategoriesApiModel(
             id: '16873-IT345',
@@ -1727,6 +1801,9 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
         new Components\CreateSkillsApiModel(
             id: '16873-IT345',
             name: 'Information-Technology',
+            language: new Components\CreateSkillsApiModelLanguage(
+                value: Components\CreateSkillsApiModelLanguageValue::EnGB,
+            ),
         ),
     ],
     content: [

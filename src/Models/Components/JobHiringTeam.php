@@ -72,6 +72,7 @@ class JobHiringTeam
      * @param  ?string  $lastName
      * @param  ?string  $email
      * @param  ?string  $role
+     * @phpstan-pure
      */
     public function __construct(?string $userId = null, ?string $remoteUserId = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $role = null)
     {

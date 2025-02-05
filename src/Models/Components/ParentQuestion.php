@@ -64,6 +64,7 @@ class ParentQuestion
      * @param  ?array<string>  $optionIds
      * @param  ?array<string>  $remoteOptionIds
      * @param  ?ConditionType  $conditionType
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $optionIds = null, ?array $remoteOptionIds = null, ?ConditionType $conditionType = null)
     {

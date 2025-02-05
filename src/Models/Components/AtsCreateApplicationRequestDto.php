@@ -105,6 +105,7 @@ class AtsCreateApplicationRequestDto
      * @param  ?AtsCreateApplicationRequestDtoSource  $source
      * @param  ?string  $candidateId
      * @param  ?AtsCreateApplicationRequestDtoCandidate  $candidate
+     * @phpstan-pure
      */
     public function __construct(?array $passthrough = null, ?string $jobId = null, ?string $jobPostingId = null, ?string $locationId = null, ?AtsCreateApplicationRequestDtoApplicationStatus $applicationStatus = null, ?array $questionnaires = null, ?AtsCreateApplicationRequestDtoSource $source = null, ?string $candidateId = null, ?AtsCreateApplicationRequestDtoCandidate $candidate = null)
     {

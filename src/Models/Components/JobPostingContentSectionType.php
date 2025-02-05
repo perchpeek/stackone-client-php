@@ -34,6 +34,7 @@ class JobPostingContentSectionType
     /**
      * @param  ?JobPostingContentSectionValue  $value
      * @param  string|float|bool|JobPostingContentSectionSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?JobPostingContentSectionValue $value = null, string|float|bool|JobPostingContentSectionSourceValue4|array|null $sourceValue = null)
     {

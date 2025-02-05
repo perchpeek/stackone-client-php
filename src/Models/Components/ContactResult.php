@@ -32,6 +32,7 @@ class ContactResult
     /**
      * @param  Contact  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Contact $data, ?array $raw = null)
     {

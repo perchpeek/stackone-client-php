@@ -47,11 +47,16 @@ class MarketingListContentBlocksResponse
     public ?Components\ContentBlocksPaginated $contentBlocksPaginated = null;
 
     /**
+     * @var \Closure(string): ?MarketingListContentBlocksResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ContentBlocksPaginated  $contentBlocksPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ContentBlocksPaginated $contentBlocksPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class MarketingListContentBlocksResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->contentBlocksPaginated = $contentBlocksPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?MarketingListContentBlocksResponse
+     */
+    public function __call($name, $args): ?MarketingListContentBlocksResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

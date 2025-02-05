@@ -156,6 +156,7 @@ class TimeEntries
      * @param  ?Location  $location
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?float $hoursWorked = null, ?float $breakDuration = null, ?TimeEntriesStatus $status = null, ?LaborType $laborType = null, ?Location $location = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

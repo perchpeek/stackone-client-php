@@ -35,6 +35,7 @@ class ScheduleType
     /**
      * @param  ?CampaignValue  $value
      * @param  string|float|bool|CampaignSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CampaignValue $value = null, string|float|bool|CampaignSourceValue4|array|null $sourceValue = null)
     {

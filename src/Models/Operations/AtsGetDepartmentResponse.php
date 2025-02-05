@@ -52,6 +52,7 @@ class AtsGetDepartmentResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\DepartmentResult  $departmentResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DepartmentResult $departmentResult = null, ?array $headers = [])
     {

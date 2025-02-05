@@ -40,6 +40,7 @@ class LmsListAssignmentsQueryParamFilter
      * @param  ?string  $updatedAfter
      * @param  ?LmsListAssignmentsQueryParamStatus  $status
      * @param  ?LmsListAssignmentsQueryParamLearningObjectType  $learningObjectType
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?LmsListAssignmentsQueryParamStatus $status = null, ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType = null)
     {

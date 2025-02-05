@@ -35,6 +35,7 @@ class LocationType
     /**
      * @param  ?HRISLocationLocationTypeValue  $value
      * @param  string|float|bool|HRISLocationSourceValueLocationType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HRISLocationLocationTypeValue $value = null, string|float|bool|HRISLocationSourceValueLocationType4|array|null $sourceValue = null)
     {

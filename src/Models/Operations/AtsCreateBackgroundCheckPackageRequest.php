@@ -30,6 +30,7 @@ class AtsCreateBackgroundCheckPackageRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\AtsCreateBackgroundCheckPackagesRequestDto  $atsCreateBackgroundCheckPackagesRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\AtsCreateBackgroundCheckPackagesRequestDto $atsCreateBackgroundCheckPackagesRequestDto)
     {

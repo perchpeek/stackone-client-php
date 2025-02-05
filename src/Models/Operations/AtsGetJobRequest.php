@@ -74,6 +74,7 @@ class AtsGetJobRequest
      * @param  ?string  $fields
      * @param  ?string  $expand
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?string $expand = null, ?string $include = null, ?bool $raw = false)
     {

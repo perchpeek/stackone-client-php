@@ -22,15 +22,6 @@ class LmsCreateCompletionRequestDto
     public ?array $passthrough = null;
 
     /**
-     * The external reference associated with this completion
-     *
-     * @var ?string $externalReference
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalReference = null;
-
-    /**
      * The result of the completion
      *
      * @var ?LmsCreateCompletionRequestDtoResult $result
@@ -50,7 +41,7 @@ class LmsCreateCompletionRequestDto
     public ?string $completedAt = null;
 
     /**
-     * The id of the learning object associated with this completion
+     * The id of the learning object associated with this completion. This is not required unless specified in an integration.
      *
      * @var ?string $learningObjectId
      */
@@ -59,23 +50,13 @@ class LmsCreateCompletionRequestDto
     public ?string $learningObjectId = null;
 
     /**
-     * The external reference of the learning object associated with this completion
+     * The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
      *
      * @var ?string $learningObjectExternalReference
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $learningObjectExternalReference = null;
-
-    /**
-     * The external ID associated with this completion
-     *
-     * @var ?string $externalId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('external_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalId = null;
 
     /**
      * The external reference associated with this content
@@ -99,24 +80,21 @@ class LmsCreateCompletionRequestDto
 
     /**
      * @param  ?array<string, mixed>  $passthrough
-     * @param  ?string  $externalReference
      * @param  ?LmsCreateCompletionRequestDtoResult  $result
      * @param  ?string  $completedAt
      * @param  ?string  $learningObjectId
      * @param  ?string  $learningObjectExternalReference
-     * @param  ?string  $externalId
      * @param  ?string  $contentExternalReference
      * @param  ?string  $contentId
+     * @phpstan-pure
      */
-    public function __construct(?array $passthrough = null, ?string $externalReference = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?string $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $contentId = null)
+    public function __construct(?array $passthrough = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?string $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $contentExternalReference = null, ?string $contentId = null)
     {
         $this->passthrough = $passthrough;
-        $this->externalReference = $externalReference;
         $this->result = $result;
         $this->completedAt = $completedAt;
         $this->learningObjectId = $learningObjectId;
         $this->learningObjectExternalReference = $learningObjectExternalReference;
-        $this->externalId = $externalId;
         $this->contentExternalReference = $contentExternalReference;
         $this->contentId = $contentId;
     }

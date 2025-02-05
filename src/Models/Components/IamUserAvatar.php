@@ -127,6 +127,7 @@ class IamUserAvatar
      * @param  ?\DateTime  $updatedAt
      * @param  ?string  $remoteUrl
      * @param  ?IamUserFileFormat  $fileFormat
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $path = null, ?IamUserCategory $category = null, ?array $contents = null, ?string $categoryId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $remoteUrl = null, ?IamUserFileFormat $fileFormat = null)
     {

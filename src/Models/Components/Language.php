@@ -34,6 +34,7 @@ class Language
     /**
      * @param  ?CreateCategoriesApiModelLanguageValue  $value
      * @param  string|float|bool|CreateCategoriesApiModelSourceValueLanguage4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CreateCategoriesApiModelLanguageValue $value = null, string|float|bool|CreateCategoriesApiModelSourceValueLanguage4|array|null $sourceValue = null)
     {

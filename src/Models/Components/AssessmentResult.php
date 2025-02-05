@@ -113,6 +113,7 @@ class AssessmentResult
      * @param  ?AssessmentResultResult  $result
      * @param  ?string  $resultUrl
      * @param  ?array<Attachment>  $attachments
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?AssessmentResultCandidate $candidate = null, ?AssessmentResultScore $score = null, ?\DateTime $startDate = null, ?\DateTime $submissionDate = null, ?string $summary = null, ?AssessmentResultResult $result = null, ?string $resultUrl = null, ?array $attachments = null)
     {

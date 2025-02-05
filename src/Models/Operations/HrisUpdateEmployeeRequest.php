@@ -38,6 +38,7 @@ class HrisUpdateEmployeeRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\HrisUpdateEmployeeRequestDto  $hrisUpdateEmployeeRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\HrisUpdateEmployeeRequestDto $hrisUpdateEmployeeRequestDto)
     {

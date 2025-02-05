@@ -68,6 +68,7 @@ class Interviewer
      * @param  ?string  $lastName
      * @param  ?string  $name
      * @param  ?string  $email
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $email = null)
     {

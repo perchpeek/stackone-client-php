@@ -118,6 +118,7 @@ class LinkedAccount
      * @param  ?Credentials  $credentials
      * @param  ?SetupInformation  $setupInformation
      * @param  ?string  $label
+     * @phpstan-pure
      */
     public function __construct(string $id, string $provider, Status $status, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, \DateTime $updatedAt, ?array $statusReasons = null, ?string $originUsername = null, ?Credentials $credentials = null, ?SetupInformation $setupInformation = null, ?string $label = null)
     {

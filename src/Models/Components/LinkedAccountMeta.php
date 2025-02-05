@@ -39,6 +39,7 @@ class LinkedAccountMeta
      * @param  string  $provider
      * @param  LinkedAccountMetaCategory  $category
      * @param  array<string, mixed>  $models
+     * @phpstan-pure
      */
     public function __construct(string $provider, LinkedAccountMetaCategory $category, array $models)
     {

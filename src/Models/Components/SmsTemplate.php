@@ -63,6 +63,7 @@ class SmsTemplate
      * @param  ?string  $name
      * @param  ?array<string>  $tags
      * @param  ?array<SmsMessages>  $messages
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?array $tags = null, ?array $messages = null)
     {

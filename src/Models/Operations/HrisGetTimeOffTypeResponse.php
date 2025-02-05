@@ -52,6 +52,7 @@ class HrisGetTimeOffTypeResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ReferenceResult  $referenceResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ReferenceResult $referenceResult = null, ?array $headers = [])
     {

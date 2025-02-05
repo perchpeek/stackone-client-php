@@ -32,6 +32,7 @@ class HRISBenefitResult
     /**
      * @param  HRISBenefit  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(HRISBenefit $data, ?array $raw = null)
     {

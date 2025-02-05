@@ -126,6 +126,7 @@ class Document
      * @param  ?\DateTime  $updatedAt
      * @param  ?string  $remoteUrl
      * @param  ?WorkEligibilityFileFormat  $fileFormat
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $path = null, ?WorkEligibilityCategory $category = null, ?array $contents = null, ?string $categoryId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $remoteUrl = null, ?WorkEligibilityFileFormat $fileFormat = null)
     {

@@ -32,6 +32,7 @@ class ApplicationResult
     /**
      * @param  Application  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Application $data, ?array $raw = null)
     {

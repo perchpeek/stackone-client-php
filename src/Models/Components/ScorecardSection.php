@@ -53,6 +53,7 @@ class ScorecardSection
      * @param  ?string  $remoteId
      * @param  ?string  $label
      * @param  ?array<Field>  $fields
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $label = null, ?array $fields = null)
     {

@@ -54,6 +54,7 @@ class Role
      * @param  ?string  $remoteId
      * @param  ?string  $label
      * @param  ?RoleType  $roleType
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $label = null, ?RoleType $roleType = null)
     {

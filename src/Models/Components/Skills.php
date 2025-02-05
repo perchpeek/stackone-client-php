@@ -50,7 +50,38 @@ class Skills
     /**
      * The hierarchal level of the skill
      *
+     * @var ?SkillsHierarchy $hierarchy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hierarchy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SkillsHierarchy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SkillsHierarchy $hierarchy = null;
+
+    /**
+     * The user competency level of the skill ranked out of 5
+     *
+     * @var ?SkillsCompetency $competency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('competency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SkillsCompetency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SkillsCompetency $competency = null;
+
+    /**
+     * The language associated with this skill
+     *
+     * @var ?SkillsLanguage $language
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SkillsLanguage|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SkillsLanguage $language = null;
+
+    /**
+     * The hierarchal level of the skill
+     *
      * @var ?SkillsLevel $level
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SkillsLevel|null')]
@@ -62,14 +93,21 @@ class Skills
      * @param  ?string  $remoteId
      * @param  ?string  $name
      * @param  ?bool  $active
+     * @param  ?SkillsHierarchy  $hierarchy
+     * @param  ?SkillsCompetency  $competency
+     * @param  ?SkillsLanguage  $language
      * @param  ?SkillsLevel  $level
+     * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?bool $active = null, ?SkillsLevel $level = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?bool $active = null, ?SkillsHierarchy $hierarchy = null, ?SkillsCompetency $competency = null, ?SkillsLanguage $language = null, ?SkillsLevel $level = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->name = $name;
         $this->active = $active;
+        $this->hierarchy = $hierarchy;
+        $this->competency = $competency;
+        $this->language = $language;
         $this->level = $level;
     }
 }

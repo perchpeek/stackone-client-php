@@ -31,6 +31,7 @@ class LmsListUsersQueryParamFilter
     /**
      * @param  ?string  $updatedAfter
      * @param  ?string  $email
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $email = null)
     {

@@ -99,6 +99,7 @@ class WorkEligibility
      * @param  ?\DateTime  $validTo
      * @param  ?IssuedBy  $issuedBy
      * @param  ?string  $number
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?WorkEligibilityType $type = null, ?string $subType = null, ?Document $document = null, ?\DateTime $validFrom = null, ?\DateTime $validTo = null, ?IssuedBy $issuedBy = null, ?string $number = null)
     {

@@ -35,6 +35,7 @@ class HrisCreateEmploymentRequestDtoPayPeriod
     /**
      * @param  ?HrisCreateEmploymentRequestDtoValue  $value
      * @param  string|float|bool|HrisCreateEmploymentRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateEmploymentRequestDtoValue $value = null, string|float|bool|HrisCreateEmploymentRequestDtoSourceValue4|array|null $sourceValue = null)
     {

@@ -131,6 +131,7 @@ class Offer
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?array<OfferHistory>  $offerHistory
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $applicationId = null, ?string $remoteApplicationId = null, ?\DateTime $startDate = null, ?OfferStatus $offerStatus = null, ?float $salary = null, ?string $currency = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $offerHistory = null)
     {

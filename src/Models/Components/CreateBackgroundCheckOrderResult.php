@@ -42,6 +42,7 @@ class CreateBackgroundCheckOrderResult
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?string  $testUrl
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $testUrl = null)
     {

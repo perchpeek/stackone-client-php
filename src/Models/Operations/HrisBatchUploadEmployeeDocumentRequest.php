@@ -38,6 +38,7 @@ class HrisBatchUploadEmployeeDocumentRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\HrisBatchDocumentUploadRequestDto  $hrisBatchDocumentUploadRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\HrisBatchDocumentUploadRequestDto $hrisBatchDocumentUploadRequestDto)
     {

@@ -164,6 +164,7 @@ class Scorecard
      * @param  ?OverallRecommendation  $overallRecommendation
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $sections = null, ?string $label = null, ?string $candidateId = null, ?string $remoteCandidateId = null, ?string $applicationId = null, ?string $remoteApplicationId = null, ?string $interviewId = null, ?string $remoteInterviewId = null, ?string $authorId = null, ?string $remoteAuthorId = null, ?OverallRecommendation $overallRecommendation = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

@@ -34,6 +34,7 @@ class PreferredLanguage
     /**
      * @param  ?EmployeePreferredLanguageValue  $value
      * @param  string|float|bool|EmployeeSourceValuePreferredLanguage4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmployeePreferredLanguageValue $value = null, string|float|bool|EmployeeSourceValuePreferredLanguage4|array|null $sourceValue = null)
     {

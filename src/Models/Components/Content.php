@@ -43,6 +43,7 @@ class Content
      * @param  ?string  $url
      * @param  ?string  $unifiedUrl
      * @param  ?ContentFileFormat  $fileFormat
+     * @phpstan-pure
      */
     public function __construct(?string $url = null, ?string $unifiedUrl = null, ?ContentFileFormat $fileFormat = null)
     {

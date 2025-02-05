@@ -33,6 +33,7 @@ class IamPermissionType
     /**
      * @param  ?IamPermissionValue  $value
      * @param  string|float|bool|IamPermissionSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamPermissionValue $value = null, string|float|bool|IamPermissionSourceValue4|array|null $sourceValue = null)
     {

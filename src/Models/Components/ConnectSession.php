@@ -107,6 +107,7 @@ class ConnectSession
      * @param  ?string  $originUsername
      * @param  ?string  $accountId
      * @param  ?string  $label
+     * @phpstan-pure
      */
     public function __construct(float $id, float $organizationId, string $projectId, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, ?array $categories = null, ?string $provider = null, ?string $originUsername = null, ?string $accountId = null, ?string $label = null)
     {

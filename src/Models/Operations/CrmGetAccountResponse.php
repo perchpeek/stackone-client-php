@@ -52,6 +52,7 @@ class CrmGetAccountResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\AccountResult  $accountResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AccountResult $accountResult = null, ?array $headers = [])
     {

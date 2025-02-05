@@ -33,6 +33,7 @@ class AssignmentStatus
     /**
      * @param  ?AssignmentValue  $value
      * @param  string|float|bool|AssignmentSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AssignmentValue $value = null, string|float|bool|AssignmentSourceValue4|array|null $sourceValue = null)
     {

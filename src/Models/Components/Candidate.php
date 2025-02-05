@@ -220,6 +220,7 @@ class Candidate
      * @param  ?array<CustomFields>  $customFields
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?array $emails = null, ?array $socialLinks = null, ?string $phone = null, ?array $phoneNumbers = null, ?string $company = null, ?string $title = null, ?array $applicationIds = null, ?array $remoteApplicationIds = null, ?\DateTime $hiredAt = null, ?string $country = null, ?array $customFields = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

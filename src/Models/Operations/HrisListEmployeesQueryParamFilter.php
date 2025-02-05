@@ -40,6 +40,7 @@ class HrisListEmployeesQueryParamFilter
      * @param  ?string  $updatedAfter
      * @param  ?string  $email
      * @param  ?string  $employeeNumber
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $email = null, ?string $employeeNumber = null)
     {

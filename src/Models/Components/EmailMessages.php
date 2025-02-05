@@ -61,6 +61,7 @@ class EmailMessages
      * @param  ?string  $name
      * @param  ?MessageType  $messageType
      * @param  ?MessageContent  $messageContent
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?MessageType $messageType = null, ?MessageContent $messageContent = null)
     {

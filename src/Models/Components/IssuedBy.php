@@ -34,6 +34,7 @@ class IssuedBy
     /**
      * @param  ?WorkEligibilityIssuedByValue  $value
      * @param  string|float|bool|WorkEligibilitySourceValueIssuedBy4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?WorkEligibilityIssuedByValue $value = null, string|float|bool|WorkEligibilitySourceValueIssuedBy4|array|null $sourceValue = null)
     {

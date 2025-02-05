@@ -35,6 +35,7 @@ class ListType
     /**
      * @param  ?ListValue  $value
      * @param  string|float|bool|ListSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?ListValue $value = null, string|float|bool|ListSourceValue4|array|null $sourceValue = null)
     {

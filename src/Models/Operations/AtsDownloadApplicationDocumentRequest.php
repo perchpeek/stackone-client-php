@@ -46,6 +46,7 @@ class AtsDownloadApplicationDocumentRequest
      * @param  string  $id
      * @param  string  $subResourceId
      * @param  ?string  $format
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, string $subResourceId, ?string $format = null)
     {

@@ -32,6 +32,7 @@ class IamGroupType
     /**
      * @param  ?IamGroupValue  $value
      * @param  string|float|bool|IamGroupSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamGroupValue $value = null, string|float|bool|IamGroupSourceValue4|array|null $sourceValue = null)
     {

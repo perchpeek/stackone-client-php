@@ -84,6 +84,7 @@ class EmployeeCompany
      * @param  ?string  $displayName
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $displayName = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

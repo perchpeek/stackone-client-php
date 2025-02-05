@@ -38,6 +38,7 @@ class HrisCreateEmployeeWorkEligibilityRequestRequest
      * @param  string  $id
      * @param  string  $xAccountId
      * @param  Components\HrisCreateWorkEligibilityRequestDto  $hrisCreateWorkEligibilityRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $id, string $xAccountId, Components\HrisCreateWorkEligibilityRequestDto $hrisCreateWorkEligibilityRequestDto)
     {

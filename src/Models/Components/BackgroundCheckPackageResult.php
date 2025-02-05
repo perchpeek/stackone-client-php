@@ -32,6 +32,7 @@ class BackgroundCheckPackageResult
     /**
      * @param  BackgroundCheckPackage  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(BackgroundCheckPackage $data, ?array $raw = null)
     {

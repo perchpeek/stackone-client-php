@@ -34,6 +34,7 @@ class AtsCreateBackgroundCheckOrderRequestDtoApplicationStatus
     /**
      * @param  ?AtsCreateBackgroundCheckOrderRequestDtoValue  $value
      * @param  string|float|bool|AtsCreateBackgroundCheckOrderRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsCreateBackgroundCheckOrderRequestDtoValue $value = null, string|float|bool|AtsCreateBackgroundCheckOrderRequestDtoSourceValue4|array|null $sourceValue = null)
     {

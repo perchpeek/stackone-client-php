@@ -52,6 +52,7 @@ class HrisListEmployeeCustomFieldDefinitionsResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CustomFieldDefinitionsPaginated  $customFieldDefinitionsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CustomFieldDefinitionsPaginated $customFieldDefinitionsPaginated = null, ?array $headers = [])
     {

@@ -52,6 +52,7 @@ class LmsGetCompletionResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CompletionResult  $completionResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CompletionResult $completionResult = null, ?array $headers = [])
     {

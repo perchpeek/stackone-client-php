@@ -52,6 +52,7 @@ class AtsMoveApplicationResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\MoveApplicationResult  $moveApplicationResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\MoveApplicationResult $moveApplicationResult = null, ?array $headers = [])
     {

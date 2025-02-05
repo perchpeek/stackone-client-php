@@ -34,6 +34,7 @@ class HrisDocumentApiModelFileFormat
     /**
      * @param  ?HrisDocumentApiModelFileFormatValue  $value
      * @param  string|float|bool|HrisDocumentApiModelSourceValueFileFormat4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisDocumentApiModelFileFormatValue $value = null, string|float|bool|HrisDocumentApiModelSourceValueFileFormat4|array|null $sourceValue = null)
     {

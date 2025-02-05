@@ -34,6 +34,7 @@ class RejectedReasonType
     /**
      * @param  ?RejectedReasonValue  $value
      * @param  string|float|bool|RejectedReasonSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?RejectedReasonValue $value = null, string|float|bool|RejectedReasonSourceValue4|array|null $sourceValue = null)
     {

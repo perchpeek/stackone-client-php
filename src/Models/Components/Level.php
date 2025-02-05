@@ -9,32 +9,37 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** Level - The hierarchal level of the category */
+/**
+ * Level - The hierarchal level of the category
+ *
+ * @deprecated  class: This will be removed in a future release, please migrate away from it as soon as possible.
+ */
 class Level
 {
     /**
      *
-     * @var ?CreateCategoriesApiModelValue $value
+     * @var ?CreateCategoriesApiModelLevelValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelLevelValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreateCategoriesApiModelValue $value = null;
+    public ?CreateCategoriesApiModelLevelValue $value = null;
 
     /**
      *
-     * @var string|float|bool|CreateCategoriesApiModelSourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|CreateCategoriesApiModelSourceValueLevel4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CreateCategoriesApiModelSourceValue4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CreateCategoriesApiModelSourceValueLevel4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|CreateCategoriesApiModelSourceValue4|array|null $sourceValue = null;
+    public string|float|bool|CreateCategoriesApiModelSourceValueLevel4|array|null $sourceValue = null;
 
     /**
-     * @param  ?CreateCategoriesApiModelValue  $value
-     * @param  string|float|bool|CreateCategoriesApiModelSourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?CreateCategoriesApiModelLevelValue  $value
+     * @param  string|float|bool|CreateCategoriesApiModelSourceValueLevel4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
-    public function __construct(?CreateCategoriesApiModelValue $value = null, string|float|bool|CreateCategoriesApiModelSourceValue4|array|null $sourceValue = null)
+    public function __construct(?CreateCategoriesApiModelLevelValue $value = null, string|float|bool|CreateCategoriesApiModelSourceValueLevel4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

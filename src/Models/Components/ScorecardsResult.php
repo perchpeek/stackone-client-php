@@ -32,6 +32,7 @@ class ScorecardsResult
     /**
      * @param  Scorecard  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Scorecard $data, ?array $raw = null)
     {

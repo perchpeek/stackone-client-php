@@ -33,6 +33,7 @@ class LmsUpsertContentRequestDtoContentType
     /**
      * @param  ?LmsUpsertContentRequestDtoValue  $value
      * @param  string|float|bool|LmsUpsertContentRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?LmsUpsertContentRequestDtoValue $value = null, string|float|bool|LmsUpsertContentRequestDtoSourceValue4|array|null $sourceValue = null)
     {

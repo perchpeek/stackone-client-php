@@ -32,6 +32,7 @@ class InAppTemplateResult
     /**
      * @param  InAppTemplate  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(InAppTemplate $data, ?array $raw = null)
     {

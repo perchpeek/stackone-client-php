@@ -30,6 +30,7 @@ class HrisCreateEmployeeRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\HrisCreateEmployeeRequestDto  $hrisCreateEmployeeRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\HrisCreateEmployeeRequestDto $hrisCreateEmployeeRequestDto)
     {

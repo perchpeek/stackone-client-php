@@ -85,6 +85,7 @@ class HrisDocumentsUploadRequestDto
      * @param  ?string  $path
      * @param  ?HrisDocumentsUploadRequestDtoCategory  $category
      * @param  ?Confidential  $confidential
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?FileFormat $fileFormat = null, ?string $content = null, ?string $categoryId = null, ?string $path = null, ?HrisDocumentsUploadRequestDtoCategory $category = null, ?Confidential $confidential = null)
     {

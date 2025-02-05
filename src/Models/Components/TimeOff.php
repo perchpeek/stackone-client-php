@@ -166,6 +166,7 @@ class TimeOff
      * @param  ?string  $duration
      * @param  ?\DateTime  $createdDate
      * @param  ?\DateTime  $updatedDate
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $approverId = null, ?string $remoteApproverId = null, ?TimeOffStatus $status = null, ?TimeOffType $type = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, bool|Two|null $startHalfDay = null, bool|EndHalfDay2|null $endHalfDay = null, ?string $duration = null, ?\DateTime $createdDate = null, ?\DateTime $updatedDate = null)
     {

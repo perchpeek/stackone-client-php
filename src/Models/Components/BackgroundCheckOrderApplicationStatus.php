@@ -34,6 +34,7 @@ class BackgroundCheckOrderApplicationStatus
     /**
      * @param  ?BackgroundCheckOrderValue  $value
      * @param  string|float|bool|BackgroundCheckOrderSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?BackgroundCheckOrderValue $value = null, string|float|bool|BackgroundCheckOrderSourceValue4|array|null $sourceValue = null)
     {

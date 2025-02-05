@@ -47,11 +47,16 @@ class MarketingListSmsTemplatesResponse
     public ?Components\SmsTemplatesPaginated $smsTemplatesPaginated = null;
 
     /**
+     * @var \Closure(string): ?MarketingListSmsTemplatesResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\SmsTemplatesPaginated  $smsTemplatesPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SmsTemplatesPaginated $smsTemplatesPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class MarketingListSmsTemplatesResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->smsTemplatesPaginated = $smsTemplatesPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?MarketingListSmsTemplatesResponse
+     */
+    public function __call($name, $args): ?MarketingListSmsTemplatesResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

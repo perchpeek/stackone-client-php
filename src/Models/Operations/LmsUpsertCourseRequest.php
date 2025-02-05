@@ -30,6 +30,7 @@ class LmsUpsertCourseRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\LmsUpsertCourseRequestDto  $lmsUpsertCourseRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\LmsUpsertCourseRequestDto $lmsUpsertCourseRequestDto)
     {

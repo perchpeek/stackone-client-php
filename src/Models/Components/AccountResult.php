@@ -32,6 +32,7 @@ class AccountResult
     /**
      * @param  Account  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Account $data, ?array $raw = null)
     {

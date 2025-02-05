@@ -34,6 +34,7 @@ class InterviewInterviewStatus
     /**
      * @param  ?InterviewValue  $value
      * @param  string|float|bool|InterviewSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?InterviewValue $value = null, string|float|bool|InterviewSourceValue4|array|null $sourceValue = null)
     {

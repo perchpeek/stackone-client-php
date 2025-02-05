@@ -35,6 +35,7 @@ class CreateEmploymentApiModelPayPeriod
     /**
      * @param  ?CreateEmploymentApiModelValue  $value
      * @param  string|float|bool|CreateEmploymentApiModelSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CreateEmploymentApiModelValue $value = null, string|float|bool|CreateEmploymentApiModelSourceValue4|array|null $sourceValue = null)
     {

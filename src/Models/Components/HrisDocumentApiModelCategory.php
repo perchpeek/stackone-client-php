@@ -34,6 +34,7 @@ class HrisDocumentApiModelCategory
     /**
      * @param  ?HrisDocumentApiModelValue  $value
      * @param  string|float|bool|HrisDocumentApiModelSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisDocumentApiModelValue $value = null, string|float|bool|HrisDocumentApiModelSourceValue4|array|null $sourceValue = null)
     {

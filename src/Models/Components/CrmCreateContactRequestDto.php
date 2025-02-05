@@ -108,6 +108,7 @@ class CrmCreateContactRequestDto
      * @param  ?array<string>  $accountIds
      * @param  ?array<CustomFields>  $customFields
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $dealIds = null, ?array $accountIds = null, ?array $customFields = null, ?array $passthrough = null)
     {

@@ -32,6 +32,7 @@ class ContentBlockResult
     /**
      * @param  ContentBlock  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(ContentBlock $data, ?array $raw = null)
     {

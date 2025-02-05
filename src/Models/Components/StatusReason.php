@@ -38,6 +38,7 @@ class StatusReason
      * @param  \DateTime  $timestamp
      * @param  ?string  $code
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(\DateTime $timestamp, ?string $code = null, ?string $description = null)
     {

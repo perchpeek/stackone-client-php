@@ -52,6 +52,7 @@ class AtsGetCandidateResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CandidateResult  $candidateResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CandidateResult $candidateResult = null, ?array $headers = [])
     {

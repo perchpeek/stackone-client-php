@@ -32,6 +32,7 @@ class AssessmentResultsResult
     /**
      * @param  AssessmentResult  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(AssessmentResult $data, ?array $raw = null)
     {

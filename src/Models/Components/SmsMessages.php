@@ -61,6 +61,7 @@ class SmsMessages
      * @param  ?string  $name
      * @param  ?SmsMessagesMessageType  $messageType
      * @param  ?SmsMessagesMessageContent  $messageContent
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?SmsMessagesMessageType $messageType = null, ?SmsMessagesMessageContent $messageContent = null)
     {

@@ -21,6 +21,7 @@ class InAppMessagesMessageContent
 
     /**
      * @param  ?string  $body
+     * @phpstan-pure
      */
     public function __construct(?string $body = null)
     {

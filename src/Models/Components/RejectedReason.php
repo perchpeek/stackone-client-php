@@ -74,6 +74,7 @@ class RejectedReason
      * @param  ?string  $label
      * @param  ?string  $type
      * @param  ?RejectedReasonType  $rejectedReasonType
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $label = null, ?string $type = null, ?RejectedReasonType $rejectedReasonType = null)
     {

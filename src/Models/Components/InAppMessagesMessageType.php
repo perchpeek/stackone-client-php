@@ -34,6 +34,7 @@ class InAppMessagesMessageType
     /**
      * @param  ?InAppMessagesValue  $value
      * @param  string|float|bool|InAppMessagesSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?InAppMessagesValue $value = null, string|float|bool|InAppMessagesSourceValue4|array|null $sourceValue = null)
     {

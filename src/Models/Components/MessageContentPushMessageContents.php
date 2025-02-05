@@ -39,6 +39,7 @@ class MessageContentPushMessageContents
      * @param  ?string  $title
      * @param  ?string  $subtitle
      * @param  ?string  $body
+     * @phpstan-pure
      */
     public function __construct(?string $title = null, ?string $subtitle = null, ?string $body = null)
     {

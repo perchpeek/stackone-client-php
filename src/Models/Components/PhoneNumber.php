@@ -33,6 +33,7 @@ class PhoneNumber
     /**
      * @param  ?PhoneNumberType  $type
      * @param  ?string  $phone
+     * @phpstan-pure
      */
     public function __construct(?PhoneNumberType $type = null, ?string $phone = null)
     {

@@ -52,6 +52,7 @@ class AtsGetOfferResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\OffersResult  $offersResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\OffersResult $offersResult = null, ?array $headers = [])
     {

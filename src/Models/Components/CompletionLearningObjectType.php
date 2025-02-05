@@ -33,6 +33,7 @@ class CompletionLearningObjectType
     /**
      * @param  ?CompletionLearningObjectTypeValue  $value
      * @param  string|float|bool|CompletionSourceValueLearningObjectType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CompletionLearningObjectTypeValue $value = null, string|float|bool|CompletionSourceValueLearningObjectType4|array|null $sourceValue = null)
     {

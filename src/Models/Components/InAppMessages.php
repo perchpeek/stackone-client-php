@@ -61,6 +61,7 @@ class InAppMessages
      * @param  ?string  $name
      * @param  ?InAppMessagesMessageType  $messageType
      * @param  ?InAppMessagesMessageContent  $messageContent
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?InAppMessagesMessageType $messageType = null, ?InAppMessagesMessageContent $messageContent = null)
     {

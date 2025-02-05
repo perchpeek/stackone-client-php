@@ -32,6 +32,7 @@ class HRISCostCenterResult
     /**
      * @param  HRISCostCenter  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(HRISCostCenter $data, ?array $raw = null)
     {

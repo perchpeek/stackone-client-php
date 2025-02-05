@@ -33,6 +33,7 @@ class LanguageEnum
     /**
      * @param  ?LanguageEnumValue  $value
      * @param  string|float|bool|LanguageEnumSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?LanguageEnumValue $value = null, string|float|bool|LanguageEnumSourceValue4|array|null $sourceValue = null)
     {

@@ -40,6 +40,7 @@ class CreateCostCenterApiModel
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?float  $distributionPercentage
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?float $distributionPercentage = null)
     {

@@ -43,6 +43,7 @@ class EmploymentManagerApiModel
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?Role  $role
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?Role $role = null)
     {

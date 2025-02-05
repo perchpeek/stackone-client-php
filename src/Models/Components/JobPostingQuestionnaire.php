@@ -62,6 +62,7 @@ class JobPostingQuestionnaire
      * @param  ?string  $name
      * @param  bool|Internal2|null  $internal
      * @param  ?array<Question>  $questions
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, bool|Internal2|null $internal = null, ?array $questions = null)
     {

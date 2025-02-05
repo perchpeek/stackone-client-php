@@ -35,6 +35,7 @@ class AccountAddressCountry
     /**
      * @param  ?AccountAddressValue  $value
      * @param  string|float|bool|AccountAddressSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AccountAddressValue $value = null, string|float|bool|AccountAddressSourceValue4|array|null $sourceValue = null)
     {

@@ -49,6 +49,7 @@ class HrisListTimeEntriesQueryParamFilter
      * @param  ?string  $employeeId
      * @param  ?string  $startTime
      * @param  ?string  $endTime
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $employeeId = null, ?string $startTime = null, ?string $endTime = null)
     {

@@ -60,6 +60,7 @@ class JobPostingContentSection
      * @param  ?JobPostingContentSectionType  $type
      * @param  ?string  $label
      * @param  ?string  $content
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?JobPostingContentSectionType $type = null, ?string $label = null, ?string $content = null)
     {

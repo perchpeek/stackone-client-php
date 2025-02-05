@@ -79,6 +79,7 @@ class AccountAddress
      * @param  ?string  $zipCode
      * @param  ?AccountAddressCountry  $country
      * @param  ?AccountAddressLocationType  $locationType
+     * @phpstan-pure
      */
     public function __construct(?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $state = null, ?string $zipCode = null, ?AccountAddressCountry $country = null, ?AccountAddressLocationType $locationType = null)
     {

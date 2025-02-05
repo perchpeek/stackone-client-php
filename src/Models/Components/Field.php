@@ -75,6 +75,7 @@ class Field
      * @param  ?FieldType  $type
      * @param  ?array<string>  $values
      * @param  bool|Required2|null  $required
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $label = null, ?FieldType $type = null, ?array $values = null, bool|Required2|null $required = null)
     {

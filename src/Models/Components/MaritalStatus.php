@@ -33,6 +33,7 @@ class MaritalStatus
     /**
      * @param  ?EmployeeMaritalStatusValue  $value
      * @param  string|float|bool|EmployeeSourceValueMaritalStatus4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmployeeMaritalStatusValue $value = null, string|float|bool|EmployeeSourceValueMaritalStatus4|array|null $sourceValue = null)
     {

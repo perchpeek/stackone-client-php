@@ -34,6 +34,7 @@ class JobPostingCompensationPayPeriod
     /**
      * @param  ?JobPostingCompensationPayPeriodValue  $value
      * @param  string|float|bool|JobPostingCompensationSourceValuePayPeriod4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?JobPostingCompensationPayPeriodValue $value = null, string|float|bool|JobPostingCompensationSourceValuePayPeriod4|array|null $sourceValue = null)
     {

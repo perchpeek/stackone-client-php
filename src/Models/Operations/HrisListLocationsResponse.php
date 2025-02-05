@@ -47,11 +47,16 @@ class HrisListLocationsResponse
     public ?Components\HRISLocationsPaginated $hrisLocationsPaginated = null;
 
     /**
+     * @var \Closure(string): ?HrisListLocationsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\HRISLocationsPaginated  $hrisLocationsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISLocationsPaginated $hrisLocationsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class HrisListLocationsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->hrisLocationsPaginated = $hrisLocationsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisListLocationsResponse
+     */
+    public function __call($name, $args): ?HrisListLocationsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

@@ -32,6 +32,7 @@ class AssignmentResult
     /**
      * @param  Assignment  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Assignment $data, ?array $raw = null)
     {

@@ -109,6 +109,7 @@ class IamGroup
      * @param  ?string  $remoteParentId
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?IamGroupType $type = null, ?array $roles = null, ?string $parentId = null, ?string $remoteParentId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

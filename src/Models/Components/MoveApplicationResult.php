@@ -45,6 +45,7 @@ class MoveApplicationResult
      * @param  string  $message
      * @param  \DateTime  $timestamp
      * @param  CreateResultDataApiModel  $data
+     * @phpstan-pure
      */
     public function __construct(float $statusCode, string $message, \DateTime $timestamp, CreateResultDataApiModel $data)
     {

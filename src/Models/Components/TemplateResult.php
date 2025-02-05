@@ -32,6 +32,7 @@ class TemplateResult
     /**
      * @param  Template  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Template $data, ?array $raw = null)
     {

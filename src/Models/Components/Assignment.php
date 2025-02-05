@@ -43,13 +43,14 @@ class Assignment
      * The external reference associated with this assignment
      *
      * @var ?string $externalReference
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalReference = null;
 
     /**
-     * The learning_object_id associated with this assignment
+     * The learning_object_id associated with this assignment. This is not required unless specified in an integration.
      *
      * @var ?string $learningObjectId
      */
@@ -67,7 +68,7 @@ class Assignment
     public ?string $remoteLearningObjectId = null;
 
     /**
-     * The external reference of the learning object associated with this assignment
+     * The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments.
      *
      * @var ?string $learningObjectExternalReference
      */
@@ -187,6 +188,7 @@ class Assignment
      * @param  ?string  $remoteUserId
      * @param  ?string  $courseId
      * @param  ?string  $remoteCourseId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?AssignmentStatus $status = null, ?LearningObjectType $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {

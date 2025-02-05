@@ -53,6 +53,7 @@ class AssessmentOrderApplication
      * @param  ?string  $remoteId
      * @param  ?AssessmentOrderApplicationStatus  $applicationStatus
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?AssessmentOrderApplicationStatus $applicationStatus = null, ?array $passthrough = null)
     {

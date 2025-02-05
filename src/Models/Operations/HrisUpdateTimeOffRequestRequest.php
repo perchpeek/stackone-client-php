@@ -38,6 +38,7 @@ class HrisUpdateTimeOffRequestRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\HrisCreateTimeOffRequestDto  $hrisCreateTimeOffRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\HrisCreateTimeOffRequestDto $hrisCreateTimeOffRequestDto)
     {

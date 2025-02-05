@@ -32,6 +32,7 @@ class HRISDepartmentsResult
     /**
      * @param  HRISDepartment  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(HRISDepartment $data, ?array $raw = null)
     {

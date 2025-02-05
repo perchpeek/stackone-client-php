@@ -33,6 +33,7 @@ class CompletionResult1
     /**
      * @param  ?CompletionValue  $value
      * @param  string|float|bool|CompletionSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CompletionValue $value = null, string|float|bool|CompletionSourceValue4|array|null $sourceValue = null)
     {

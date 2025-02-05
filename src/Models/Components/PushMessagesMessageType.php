@@ -34,6 +34,7 @@ class PushMessagesMessageType
     /**
      * @param  ?PushMessagesValue  $value
      * @param  string|float|bool|PushMessagesSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?PushMessagesValue $value = null, string|float|bool|PushMessagesSourceValue4|array|null $sourceValue = null)
     {

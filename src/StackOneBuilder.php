@@ -41,8 +41,6 @@ class StackOneBuilder
      */
     public function setSecurity(Models\Components\Security $security): StackOneBuilder
     {
-        $this->sdkConfig->security = $security;
-
         $this->sdkConfig->securitySource = fn () => $security;
 
         return $this;

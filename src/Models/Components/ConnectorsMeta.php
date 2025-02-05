@@ -71,6 +71,7 @@ class ConnectorsMeta
      * @param  array<string, mixed>  $models
      * @param  ?bool  $active
      * @param  ?Resources  $resources
+     * @phpstan-pure
      */
     public function __construct(string $provider, string $providerName, ConnectorsMetaCategory $category, array $models, ?bool $active = null, ?Resources $resources = null)
     {

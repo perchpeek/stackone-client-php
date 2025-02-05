@@ -14,9 +14,7 @@ class SDKConfiguration
     public ?\GuzzleHttp\ClientInterface $client = null;
 
     public Hooks\SDKHooks $hooks;
-    public ?Models\Components\Security $security = null;
-
-    /** @var pure-Closure(): Models\Components\Security */
+    /** @var ?pure-Closure(): Models\Components\Security */
     public ?\Closure $securitySource = null;
     public string $serverUrl = '';
 
@@ -26,11 +24,11 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '1.0.0';
 
-    public string $sdkVersion = '0.23.3';
+    public string $sdkVersion = '0.24.0';
 
-    public string $genVersion = '2.500.4';
+    public string $genVersion = '2.503.2';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.23.3 2.500.4 1.0.0 stackone/client-sdk';
+    public string $userAgent = 'speakeasy-sdk/php 0.24.0 2.503.2 1.0.0 stackone/client-sdk';
 
     public ?RetryConfig $retryConfig = null;
 
@@ -54,18 +52,12 @@ class SDKConfiguration
     }
     public function hasSecurity(): bool
     {
-        return $this->security !== null || $this->securitySource !== null;
+        return $this->securitySource !== null;
     }
 
     public function getSecurity(): ?Models\Components\Security
     {
-        if ($this->securitySource !== null) {
-            $security = $this->securitySource->call($this);
-
-            return $security;
-        } else {
-            return $this->security;
-        }
+        return $this->securitySource->call($this);
     }
 
     /**

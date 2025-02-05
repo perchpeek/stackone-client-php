@@ -52,6 +52,7 @@ class AtsGetInterviewResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\InterviewsResult  $interviewsResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\InterviewsResult $interviewsResult = null, ?array $headers = [])
     {

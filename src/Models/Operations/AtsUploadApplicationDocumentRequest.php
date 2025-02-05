@@ -38,6 +38,7 @@ class AtsUploadApplicationDocumentRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\UnifiedUploadRequestDto  $unifiedUploadRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\UnifiedUploadRequestDto $unifiedUploadRequestDto)
     {

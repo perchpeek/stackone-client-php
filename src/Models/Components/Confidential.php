@@ -34,6 +34,7 @@ class Confidential
     /**
      * @param  ?HrisDocumentsUploadRequestDtoConfidentialValue  $value
      * @param  string|float|bool|HrisDocumentsUploadRequestDtoSourceValueConfidential4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisDocumentsUploadRequestDtoConfidentialValue $value = null, string|float|bool|HrisDocumentsUploadRequestDtoSourceValueConfidential4|array|null $sourceValue = null)
     {

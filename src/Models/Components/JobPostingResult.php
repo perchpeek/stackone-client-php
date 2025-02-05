@@ -32,6 +32,7 @@ class JobPostingResult
     /**
      * @param  JobPosting  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(JobPosting $data, ?array $raw = null)
     {

@@ -52,6 +52,7 @@ class IamGetPolicyResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\IamPolicyResult  $iamPolicyResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IamPolicyResult $iamPolicyResult = null, ?array $headers = [])
     {

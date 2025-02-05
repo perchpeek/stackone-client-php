@@ -149,6 +149,7 @@ class AtsDocumentApiModel
      * @param  ?AtsDocumentApiModelFileFormat  $fileFormat
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?AtsDocumentApiModelType  $type
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $path = null, ?AtsDocumentApiModelCategory $category = null, ?array $contents = null, ?string $categoryId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $remoteUrl = null, ?AtsDocumentApiModelFileFormat $fileFormat = null, ?array $unifiedCustomFields = null, ?AtsDocumentApiModelType $type = null)
     {

@@ -54,6 +54,7 @@ class ContractType
      * @param  ?string  $remoteId
      * @param  ?string  $label
      * @param  ?EmploymentContractTypeContractType  $contractType
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $label = null, ?EmploymentContractTypeContractType $contractType = null)
     {

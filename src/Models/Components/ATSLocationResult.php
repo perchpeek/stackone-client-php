@@ -32,6 +32,7 @@ class ATSLocationResult
     /**
      * @param  ATSLocation  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(ATSLocation $data, ?array $raw = null)
     {

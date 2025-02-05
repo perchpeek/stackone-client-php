@@ -32,6 +32,7 @@ class CustomFieldDefinitionResultApiModel
     /**
      * @param  CustomFieldDefinition  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(CustomFieldDefinition $data, ?array $raw = null)
     {

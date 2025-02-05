@@ -33,6 +33,7 @@ class IamUserStatus
     /**
      * @param  ?IamUserValue  $value
      * @param  string|float|bool|IamUserSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamUserValue $value = null, string|float|bool|IamUserSourceValue4|array|null $sourceValue = null)
     {

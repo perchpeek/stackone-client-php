@@ -65,6 +65,7 @@ class ProxyRequestBody
      * @param  ?string  $path
      * @param  ?array<string, mixed>  $headers
      * @param  ?array<string, mixed>  $body
+     * @phpstan-pure
      */
     public function __construct(?string $url = null, ?string $path = null, ?array $body = null, ?Method $method = Method::Get, ?array $headers = null)
     {

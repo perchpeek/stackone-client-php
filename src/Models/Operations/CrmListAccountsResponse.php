@@ -47,11 +47,16 @@ class CrmListAccountsResponse
     public ?Components\AccountsPaginated $accountsPaginated = null;
 
     /**
+     * @var \Closure(string): ?CrmListAccountsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\AccountsPaginated  $accountsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\AccountsPaginated $accountsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class CrmListAccountsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->accountsPaginated = $accountsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?CrmListAccountsResponse
+     */
+    public function __call($name, $args): ?CrmListAccountsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

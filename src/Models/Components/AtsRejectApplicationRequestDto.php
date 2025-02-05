@@ -33,6 +33,7 @@ class AtsRejectApplicationRequestDto
     /**
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?string  $rejectedReasonId
+     * @phpstan-pure
      */
     public function __construct(?array $passthrough = null, ?string $rejectedReasonId = null)
     {

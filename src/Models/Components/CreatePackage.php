@@ -32,6 +32,7 @@ class CreatePackage
     /**
      * @param  ?string  $name
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $description = null)
     {

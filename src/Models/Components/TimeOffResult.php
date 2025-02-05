@@ -32,6 +32,7 @@ class TimeOffResult
     /**
      * @param  TimeOff  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(TimeOff $data, ?array $raw = null)
     {

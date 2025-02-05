@@ -21,6 +21,7 @@ class StackoneListConnectorsMetaRequest
 
     /**
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(?string $include = null)
     {

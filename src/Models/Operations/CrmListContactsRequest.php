@@ -104,6 +104,7 @@ class CrmListContactsRequest
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?CrmListContactsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $include = null, ?bool $raw = false, ?string $pageSize = '25')
     {

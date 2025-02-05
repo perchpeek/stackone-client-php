@@ -24,6 +24,7 @@ class Resources
 
     /**
      * @param  ?Images  $images
+     * @phpstan-pure
      */
     public function __construct(?Images $images = null)
     {

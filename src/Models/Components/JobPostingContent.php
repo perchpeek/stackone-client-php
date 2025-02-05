@@ -41,6 +41,7 @@ class JobPostingContent
      * @param  ?string  $plain
      * @param  ?string  $html
      * @param  ?array<JobPostingContentSection>  $sections
+     * @phpstan-pure
      */
     public function __construct(?string $plain = null, ?string $html = null, ?array $sections = null)
     {

@@ -32,6 +32,7 @@ class CategoryResult
     /**
      * @param  Category  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Category $data, ?array $raw = null)
     {

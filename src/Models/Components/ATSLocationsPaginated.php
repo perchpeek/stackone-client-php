@@ -52,6 +52,7 @@ class ATSLocationsPaginated
      * @param  ?string  $nextPage
      * @param  ?string  $next
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(array $data, ?string $nextPage = null, ?string $next = null, ?array $raw = null)
     {

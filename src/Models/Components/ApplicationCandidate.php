@@ -105,6 +105,7 @@ class ApplicationCandidate
      * @param  ?array<SocialLink>  $socialLinks
      * @param  ?string  $company
      * @param  ?string  $title
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $socialLinks = null, ?string $company = null, ?string $title = null)
     {

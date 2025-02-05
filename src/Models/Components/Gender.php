@@ -33,6 +33,7 @@ class Gender
     /**
      * @param  ?EmployeeValue  $value
      * @param  string|float|bool|EmployeeSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmployeeValue $value = null, string|float|bool|EmployeeSourceValue4|array|null $sourceValue = null)
     {

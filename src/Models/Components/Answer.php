@@ -54,6 +54,7 @@ class Answer
      * @param  ?string  $remoteId
      * @param  ?AnswerType  $type
      * @param  ?array<string>  $values
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?AnswerType $type = null, ?array $values = null)
     {
