@@ -32,6 +32,7 @@ class IamPolicyResult
     /**
      * @param  IamPolicy  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(IamPolicy $data, ?array $raw = null)
     {

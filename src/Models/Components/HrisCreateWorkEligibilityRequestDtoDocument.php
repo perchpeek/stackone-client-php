@@ -126,6 +126,7 @@ class HrisCreateWorkEligibilityRequestDtoDocument
      * @param  ?\DateTime  $updatedAt
      * @param  ?string  $remoteUrl
      * @param  ?HrisCreateWorkEligibilityRequestDtoFileFormat  $fileFormat
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $path = null, ?HrisCreateWorkEligibilityRequestDtoCategory $category = null, ?array $contents = null, ?string $categoryId = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $remoteUrl = null, ?HrisCreateWorkEligibilityRequestDtoFileFormat $fileFormat = null)
     {

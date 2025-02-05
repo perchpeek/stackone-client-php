@@ -106,6 +106,7 @@ class PatchAccountExternalDto
      * @param  ?string  $authenticationConfigKey
      * @param  ?string  $environment
      * @param  ?Label  $label
+     * @phpstan-pure
      */
     public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?PatchAccountExternalDtoSetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null)
     {

@@ -32,6 +32,7 @@ class EmailTemplateResult
     /**
      * @param  EmailTemplate  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(EmailTemplate $data, ?array $raw = null)
     {

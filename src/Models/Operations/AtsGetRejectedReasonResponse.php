@@ -52,6 +52,7 @@ class AtsGetRejectedReasonResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\RejectedReasonResult  $rejectedReasonResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\RejectedReasonResult $rejectedReasonResult = null, ?array $headers = [])
     {

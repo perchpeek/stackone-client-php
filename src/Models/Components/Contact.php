@@ -170,6 +170,7 @@ class Contact
      * @param  ?array<CustomFields>  $customFields
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $firstName = null, ?string $lastName = null, ?string $companyName = null, ?array $emails = null, ?array $phoneNumbers = null, ?array $dealIds = null, ?array $remoteDealIds = null, ?array $accountIds = null, ?array $remoteAccountIds = null, ?array $customFields = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

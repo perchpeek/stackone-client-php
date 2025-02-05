@@ -22,6 +22,7 @@ class LmsBatchUpsertCourseRequestDto
 
     /**
      * @param  array<LmsUpsertCourseRequestDto>  $items
+     * @phpstan-pure
      */
     public function __construct(array $items)
     {

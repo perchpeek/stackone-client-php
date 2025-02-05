@@ -32,6 +32,7 @@ class ContentResult
     /**
      * @param  Content  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Content $data, ?array $raw = null)
     {

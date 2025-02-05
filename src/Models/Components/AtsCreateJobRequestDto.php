@@ -142,6 +142,7 @@ class AtsCreateJobRequestDto
      * @param  ?AtsCreateJobRequestDtoConfidential  $confidential
      * @param  ?array<CustomFields>  $customFields
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?array $unifiedCustomFields = null, ?string $code = null, ?string $title = null, ?string $status = null, ?AtsCreateJobRequestDtoJobStatus $jobStatus = null, ?array $departmentIds = null, ?array $locationIds = null, ?array $hiringTeam = null, ?array $interviewStages = null, ?AtsCreateJobRequestDtoConfidential $confidential = null, ?array $customFields = null, ?array $passthrough = null)
     {

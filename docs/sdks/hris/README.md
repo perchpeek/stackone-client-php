@@ -27,6 +27,7 @@
 * [getGroup](#getgroup) - Get Group
 * [getJob](#getjob) - Get Job
 * [getLocation](#getlocation) - Get Location
+* [getTeamGroup](#getteamgroup) - Get Team Group
 * [getTimeEntries](#gettimeentries) - Get Time Entry
 * [getTimeOffRequest](#gettimeoffrequest) - Get time off request
 * [getTimeOffType](#gettimeofftype) - Get time off type
@@ -45,6 +46,7 @@
 * [listGroups](#listgroups) - List Groups
 * [listJobs](#listjobs) - List Jobs
 * [listLocations](#listlocations) - List locations
+* [listTeamGroups](#listteamgroups) - List Team Groups
 * [listTimeEntries](#listtimeentries) - List Time Entries
 * [listTimeOffRequests](#listtimeoffrequests) - List time off requests
 * [listTimeOffTypes](#listtimeofftypes) - List time off types
@@ -1127,7 +1129,7 @@ $request = new Operations\HrisGetEmployeeEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
     expand: 'groups',
 );
 
@@ -1295,7 +1297,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
     expand: 'groups',
 );
 
@@ -1482,6 +1484,61 @@ if ($response->hrisLocationResult !== null) {
 ### Response
 
 **[?Operations\HrisGetLocationResponse](../../Models/Operations/HrisGetLocationResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## getTeamGroup
+
+Get Team Group
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisGetTeamGroupRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+);
+
+$response = $sdk->hris->getTeamGroup(
+    request: $request
+);
+
+if ($response->hrisTeamsResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `$request`                                                                               | [Operations\HrisGetTeamGroupRequest](../../Models/Operations/HrisGetTeamGroupRequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+
+### Response
+
+**[?Operations\HrisGetTeamGroupResponse](../../Models/Operations/HrisGetTeamGroupResponse.md)**
 
 ### Errors
 
@@ -1686,12 +1743,15 @@ $request = new Operations\HrisListBenefitsRequest(
     ),
 );
 
-$response = $sdk->hris->listBenefits(
+$responses = $sdk->hris->listBenefits(
     request: $request
 );
 
-if ($response->hrisBenefitsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1743,12 +1803,15 @@ $request = new Operations\HrisListCompaniesRequest(
     ),
 );
 
-$response = $sdk->hris->listCompanies(
+$responses = $sdk->hris->listCompanies(
     request: $request
 );
 
-if ($response->companiesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1800,12 +1863,15 @@ $request = new Operations\HrisListCostCenterGroupsRequest(
     ),
 );
 
-$response = $sdk->hris->listCostCenterGroups(
+$responses = $sdk->hris->listCostCenterGroups(
     request: $request
 );
 
-if ($response->hrisCostCenterPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1857,12 +1923,15 @@ $request = new Operations\HrisListDepartmentGroupsRequest(
     ),
 );
 
-$response = $sdk->hris->listDepartmentGroups(
+$responses = $sdk->hris->listDepartmentGroups(
     request: $request
 );
 
-if ($response->hrisDepartmentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1914,12 +1983,15 @@ $request = new Operations\HrisListEmployeeCategoriesRequest(
     ),
 );
 
-$response = $sdk->hris->listEmployeeCategories(
+$responses = $sdk->hris->listEmployeeCategories(
     request: $request
 );
 
-if ($response->referencePaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2029,12 +2101,15 @@ $request = new Operations\HrisListEmployeeDocumentsRequest(
     ),
 );
 
-$response = $sdk->hris->listEmployeeDocuments(
+$responses = $sdk->hris->listEmployeeDocuments(
     request: $request
 );
 
-if ($response->hrisDocumentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2081,19 +2156,22 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeEmploymentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmployeeEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
     expand: 'groups',
 );
 
-$response = $sdk->hris->listEmployeeEmployments(
+$responses = $sdk->hris->listEmployeeEmployments(
     request: $request
 );
 
-if ($response->employmentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2146,12 +2224,15 @@ $request = new Operations\HrisListEmployeeTimeOffRequestsRequest(
     ),
 );
 
-$response = $sdk->hris->listEmployeeTimeOffRequests(
+$responses = $sdk->hris->listEmployeeTimeOffRequests(
     request: $request
 );
 
-if ($response->timeOffPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2204,12 +2285,15 @@ $request = new Operations\HrisListEmployeeWorkEligibilityRequest(
     ),
 );
 
-$response = $sdk->hris->listEmployeeWorkEligibility(
+$responses = $sdk->hris->listEmployeeWorkEligibility(
     request: $request
 );
 
-if ($response->workEligibilityPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2317,19 +2401,22 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmploymentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
     expand: 'groups',
 );
 
-$response = $sdk->hris->listEmployments(
+$responses = $sdk->hris->listEmployments(
     request: $request
 );
 
-if ($response->employmentsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2381,12 +2468,15 @@ $request = new Operations\HrisListGroupsRequest(
     ),
 );
 
-$response = $sdk->hris->listGroups(
+$responses = $sdk->hris->listGroups(
     request: $request
 );
 
-if ($response->hrisGroupsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2438,12 +2528,15 @@ $request = new Operations\HrisListJobsRequest(
     ),
 );
 
-$response = $sdk->hris->listJobs(
+$responses = $sdk->hris->listJobs(
     request: $request
 );
 
-if ($response->jobsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2495,12 +2588,15 @@ $request = new Operations\HrisListLocationsRequest(
     ),
 );
 
-$response = $sdk->hris->listLocations(
+$responses = $sdk->hris->listLocations(
     request: $request
 );
 
-if ($response->hrisLocationsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2513,6 +2609,63 @@ if ($response->hrisLocationsPaginated !== null) {
 ### Response
 
 **[?Operations\HrisListLocationsResponse](../../Models/Operations/HrisListLocationsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## listTeamGroups
+
+List Team Groups
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisListTeamGroupsRequest(
+    xAccountId: '<id>',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+    filter: new Operations\HrisListTeamGroupsQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$response = $sdk->hris->listTeamGroups(
+    request: $request
+);
+
+if ($response->hrisTeamsPaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\HrisListTeamGroupsRequest](../../Models/Operations/HrisListTeamGroupsRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+### Response
+
+**[?Operations\HrisListTeamGroupsResponse](../../Models/Operations/HrisListTeamGroupsResponse.md)**
 
 ### Errors
 
@@ -2554,12 +2707,15 @@ $request = new Operations\HrisListTimeEntriesRequest(
     ),
 );
 
-$response = $sdk->hris->listTimeEntries(
+$responses = $sdk->hris->listTimeEntries(
     request: $request
 );
 
-if ($response->timeEntriesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2611,12 +2767,15 @@ $request = new Operations\HrisListTimeOffRequestsRequest(
     ),
 );
 
-$response = $sdk->hris->listTimeOffRequests(
+$responses = $sdk->hris->listTimeOffRequests(
     request: $request
 );
 
-if ($response->timeOffPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -2668,12 +2827,15 @@ $request = new Operations\HrisListTimeOffTypesRequest(
     ),
 );
 
-$response = $sdk->hris->listTimeOffTypes(
+$responses = $sdk->hris->listTimeOffTypes(
     request: $request
 );
 
-if ($response->referencePaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

@@ -52,6 +52,7 @@ class LmsGetSkillResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\SkillResult  $skillResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SkillResult $skillResult = null, ?array $headers = [])
     {

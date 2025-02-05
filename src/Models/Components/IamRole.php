@@ -89,6 +89,7 @@ class IamRole
      * @param  ?array<IamPolicy>  $policies
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?IamRoleType $type = null, ?array $policies = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

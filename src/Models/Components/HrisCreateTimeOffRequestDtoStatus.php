@@ -33,6 +33,7 @@ class HrisCreateTimeOffRequestDtoStatus
     /**
      * @param  ?HrisCreateTimeOffRequestDtoValue  $value
      * @param  string|float|bool|HrisCreateTimeOffRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateTimeOffRequestDtoValue $value = null, string|float|bool|HrisCreateTimeOffRequestDtoSourceValue4|array|null $sourceValue = null)
     {

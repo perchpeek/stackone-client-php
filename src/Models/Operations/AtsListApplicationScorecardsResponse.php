@@ -47,11 +47,16 @@ class AtsListApplicationScorecardsResponse
     public ?Components\ScorecardsPaginated $scorecardsPaginated = null;
 
     /**
+     * @var \Closure(string): ?AtsListApplicationScorecardsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ScorecardsPaginated  $scorecardsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ScorecardsPaginated $scorecardsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class AtsListApplicationScorecardsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->scorecardsPaginated = $scorecardsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AtsListApplicationScorecardsResponse
+     */
+    public function __call($name, $args): ?AtsListApplicationScorecardsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

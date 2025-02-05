@@ -52,6 +52,7 @@ class CreateMessage
      * @param  ?string  $name
      * @param  ?CreateMessageMessageType  $messageType
      * @param  SmsMessageContents|EmailMessageContents|PushMessageContents|null  $messageContent
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?CreateMessageMessageType $messageType = null, SmsMessageContents|EmailMessageContents|PushMessageContents|null $messageContent = null)
     {

@@ -32,6 +32,7 @@ class WorkEligibilityResult
     /**
      * @param  WorkEligibility  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(WorkEligibility $data, ?array $raw = null)
     {

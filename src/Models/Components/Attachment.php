@@ -32,6 +32,7 @@ class Attachment
     /**
      * @param  ?string  $url
      * @param  ?AttachmentContentType  $contentType
+     * @phpstan-pure
      */
     public function __construct(?string $url = null, ?AttachmentContentType $contentType = null)
     {

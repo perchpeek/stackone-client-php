@@ -35,6 +35,7 @@ class PayFrequency
     /**
      * @param  ?EmploymentPayFrequencyValue  $value
      * @param  string|float|bool|EmploymentSourceValuePayFrequency4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmploymentPayFrequencyValue $value = null, string|float|bool|EmploymentSourceValuePayFrequency4|array|null $sourceValue = null)
     {

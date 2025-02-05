@@ -54,6 +54,7 @@ class Location
      * @param  ?string  $remoteId
      * @param  ?string  $name
      * @param  bool|TimeEntriesActive2|null  $active
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, bool|TimeEntriesActive2|null $active = null)
     {

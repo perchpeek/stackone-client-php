@@ -9,32 +9,37 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** CreateSkillsApiModelLevel - The hierarchal level of the skill */
+/**
+ * CreateSkillsApiModelLevel - The hierarchal level of the skill
+ *
+ * @deprecated  class: This will be removed in a future release, please migrate away from it as soon as possible.
+ */
 class CreateSkillsApiModelLevel
 {
     /**
      *
-     * @var ?CreateSkillsApiModelValue $value
+     * @var ?CreateSkillsApiModelLevelValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateSkillsApiModelValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateSkillsApiModelLevelValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreateSkillsApiModelValue $value = null;
+    public ?CreateSkillsApiModelLevelValue $value = null;
 
     /**
      *
-     * @var string|float|bool|CreateSkillsApiModelSourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|CreateSkillsApiModelSourceValueLevel4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CreateSkillsApiModelSourceValue4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CreateSkillsApiModelSourceValueLevel4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|CreateSkillsApiModelSourceValue4|array|null $sourceValue = null;
+    public string|float|bool|CreateSkillsApiModelSourceValueLevel4|array|null $sourceValue = null;
 
     /**
-     * @param  ?CreateSkillsApiModelValue  $value
-     * @param  string|float|bool|CreateSkillsApiModelSourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?CreateSkillsApiModelLevelValue  $value
+     * @param  string|float|bool|CreateSkillsApiModelSourceValueLevel4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
-    public function __construct(?CreateSkillsApiModelValue $value = null, string|float|bool|CreateSkillsApiModelSourceValue4|array|null $sourceValue = null)
+    public function __construct(?CreateSkillsApiModelLevelValue $value = null, string|float|bool|CreateSkillsApiModelSourceValueLevel4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

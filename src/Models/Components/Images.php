@@ -33,6 +33,7 @@ class Images
     /**
      * @param  ?string  $logoUrl
      * @param  ?string  $originalLogoHorizontalUrl
+     * @phpstan-pure
      */
     public function __construct(?string $logoUrl = null, ?string $originalLogoHorizontalUrl = null)
     {

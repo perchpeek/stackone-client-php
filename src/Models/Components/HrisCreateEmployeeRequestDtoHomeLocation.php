@@ -116,6 +116,7 @@ class HrisCreateEmployeeRequestDtoHomeLocation
      * @param  ?HrisCreateEmployeeRequestDtoHomeLocationCountry  $country
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?State  $state
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $zipCode = null, ?HrisCreateEmployeeRequestDtoHomeLocationCountry $country = null, ?array $passthrough = null, ?State $state = null)
     {

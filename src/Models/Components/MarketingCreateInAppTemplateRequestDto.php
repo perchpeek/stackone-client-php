@@ -54,6 +54,7 @@ class MarketingCreateInAppTemplateRequestDto
      * @param  ?array<string>  $tags
      * @param  ?array<InAppMessages>  $messages
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?array $tags = null, ?array $messages = null, ?array $passthrough = null)
     {

@@ -35,6 +35,7 @@ class CampaignStatus
     /**
      * @param  ?CampaignStatusValue  $value
      * @param  string|float|bool|CampaignSourceValueStatus4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CampaignStatusValue $value = null, string|float|bool|CampaignSourceValueStatus4|array|null $sourceValue = null)
     {

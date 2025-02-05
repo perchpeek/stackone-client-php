@@ -116,6 +116,7 @@ class UpdateEmployeeApiModelHomeLocation
      * @param  ?UpdateEmployeeApiModelHomeLocationCountry  $country
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?UpdateEmployeeApiModelState  $state
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $zipCode = null, ?UpdateEmployeeApiModelHomeLocationCountry $country = null, ?array $passthrough = null, ?UpdateEmployeeApiModelState $state = null)
     {

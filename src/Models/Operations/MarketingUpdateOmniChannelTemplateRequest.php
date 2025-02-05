@@ -38,6 +38,7 @@ class MarketingUpdateOmniChannelTemplateRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\MarketingCreateTemplateRequestDto  $marketingCreateTemplateRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\MarketingCreateTemplateRequestDto $marketingCreateTemplateRequestDto)
     {

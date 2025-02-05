@@ -52,6 +52,7 @@ class IamGetUserResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\IamUserResult  $iamUserResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IamUserResult $iamUserResult = null, ?array $headers = [])
     {

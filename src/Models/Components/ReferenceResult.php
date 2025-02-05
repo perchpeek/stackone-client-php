@@ -32,6 +32,7 @@ class ReferenceResult
     /**
      * @param  Reference  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Reference $data, ?array $raw = null)
     {

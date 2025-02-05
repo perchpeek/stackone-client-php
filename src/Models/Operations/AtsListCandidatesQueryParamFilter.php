@@ -40,6 +40,7 @@ class AtsListCandidatesQueryParamFilter
      * @param  ?string  $updatedAfter
      * @param  ?string  $createdAfter
      * @param  ?string  $email
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $createdAfter = null, ?string $email = null)
     {

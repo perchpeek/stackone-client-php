@@ -91,6 +91,7 @@ class Question
      * @param  bool|QuestionRequired2|null  $required
      * @param  ?array<QuestionMultipleChoiceAnswers>  $multipleChoiceAnswers
      * @param  ?ParentQuestion  $parentQuestion
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?QuestionType $type = null, ?string $text = null, bool|QuestionRequired2|null $required = null, ?array $multipleChoiceAnswers = null, ?ParentQuestion $parentQuestion = null)
     {

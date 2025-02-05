@@ -46,6 +46,7 @@ class AtsUpdateApplicationNoteRequest
      * @param  string  $id
      * @param  string  $subResourceId
      * @param  Components\AtsUpdateNotesRequestDto  $atsUpdateNotesRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, string $subResourceId, Components\AtsUpdateNotesRequestDto $atsUpdateNotesRequestDto)
     {

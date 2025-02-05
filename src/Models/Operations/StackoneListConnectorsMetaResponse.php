@@ -52,6 +52,7 @@ class StackoneListConnectorsMetaResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?array<Components\ConnectorsMeta>  $connectorsMetas
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $connectorsMetas = null, ?array $headers = [])
     {

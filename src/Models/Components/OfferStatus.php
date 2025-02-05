@@ -34,6 +34,7 @@ class OfferStatus
     /**
      * @param  ?OfferValue  $value
      * @param  string|float|bool|OfferSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?OfferValue $value = null, string|float|bool|OfferSourceValue4|array|null $sourceValue = null)
     {

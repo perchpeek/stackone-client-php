@@ -52,6 +52,7 @@ class MarketingGetContentBlockResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ContentBlockResult  $contentBlockResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ContentBlockResult $contentBlockResult = null, ?array $headers = [])
     {

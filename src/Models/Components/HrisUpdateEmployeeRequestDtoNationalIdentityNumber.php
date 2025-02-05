@@ -43,6 +43,7 @@ class HrisUpdateEmployeeRequestDtoNationalIdentityNumber
      * @param  ?string  $value
      * @param  ?HrisUpdateEmployeeRequestDtoType  $type
      * @param  ?HrisUpdateEmployeeRequestDtoCountry  $country
+     * @phpstan-pure
      */
     public function __construct(?string $value = null, ?HrisUpdateEmployeeRequestDtoType $type = null, ?HrisUpdateEmployeeRequestDtoCountry $country = null)
     {

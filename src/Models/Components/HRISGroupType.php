@@ -33,6 +33,7 @@ class HRISGroupType
     /**
      * @param  ?HRISGroupValue  $value
      * @param  string|float|bool|HRISGroupSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HRISGroupValue $value = null, string|float|bool|HRISGroupSourceValue4|array|null $sourceValue = null)
     {

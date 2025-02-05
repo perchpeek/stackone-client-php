@@ -356,12 +356,15 @@ $request = new Operations\CrmListAccountsRequest(
     ),
 );
 
-$response = $sdk->crm->listAccounts(
+$responses = $sdk->crm->listAccounts(
     request: $request
 );
 
-if ($response->accountsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -413,12 +416,15 @@ $request = new Operations\CrmListContactCustomFieldDefinitionsRequest(
     ),
 );
 
-$response = $sdk->crm->listContactCustomFieldDefinitions(
+$responses = $sdk->crm->listContactCustomFieldDefinitions(
     request: $request
 );
 
-if ($response->customFieldDefinitionsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -471,12 +477,15 @@ $request = new Operations\CrmListContactsRequest(
     include: 'custom_fields',
 );
 
-$response = $sdk->crm->listContacts(
+$responses = $sdk->crm->listContacts(
     request: $request
 );
 
-if ($response->contactsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -528,12 +537,15 @@ $request = new Operations\CrmListListsRequest(
     ),
 );
 
-$response = $sdk->crm->listLists(
+$responses = $sdk->crm->listLists(
     request: $request
 );
 
-if ($response->listsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

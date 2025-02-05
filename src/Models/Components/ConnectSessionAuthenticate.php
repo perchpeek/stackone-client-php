@@ -21,6 +21,7 @@ class ConnectSessionAuthenticate
 
     /**
      * @param  string  $token
+     * @phpstan-pure
      */
     public function __construct(string $token)
     {

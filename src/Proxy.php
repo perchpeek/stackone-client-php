@@ -12,6 +12,8 @@ use StackOne\client\Hooks\HookContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 use StackOne\client\Utils\Options;
+use StackOne\client\Utils\Retry;
+use StackOne\client\Utils\Retry\RetryUtils;
 
 class Proxy
 {
@@ -54,6 +56,31 @@ class Proxy
      */
     public function proxyRequest(Components\ProxyRequestBody $proxyRequestBody, string $xAccountId, ?Options $options = null): Operations\StackoneProxyRequestResponse
     {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
         $request = new Operations\StackoneProxyRequestRequest(
             xAccountId: $xAccountId,
             proxyRequestBody: $proxyRequestBody,
@@ -79,7 +106,7 @@ class Proxy
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;

@@ -54,6 +54,7 @@ class MarketingCreateTemplateRequestDto
      * @param  ?string  $name
      * @param  ?array<string>  $tags
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?array $messages = null, ?string $name = null, ?array $tags = null, ?array $passthrough = null)
     {

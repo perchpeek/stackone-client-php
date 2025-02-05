@@ -34,6 +34,7 @@ class HrisCreateWorkEligibilityRequestDtoIssuedBy
     /**
      * @param  ?HrisCreateWorkEligibilityRequestDtoValue  $value
      * @param  string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateWorkEligibilityRequestDtoValue $value = null, string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValue4|array|null $sourceValue = null)
     {

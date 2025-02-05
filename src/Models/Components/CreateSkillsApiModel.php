@@ -32,7 +32,38 @@ class CreateSkillsApiModel
     /**
      * The hierarchal level of the skill
      *
+     * @var ?CreateSkillsApiModelHierarchy $hierarchy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hierarchy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateSkillsApiModelHierarchy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateSkillsApiModelHierarchy $hierarchy = null;
+
+    /**
+     * The user competency level of the skill ranked out of 5
+     *
+     * @var ?Competency $competency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('competency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Competency|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Competency $competency = null;
+
+    /**
+     * The language associated with this skill
+     *
+     * @var ?CreateSkillsApiModelLanguage $language
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateSkillsApiModelLanguage|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateSkillsApiModelLanguage $language = null;
+
+    /**
+     * The hierarchal level of the skill
+     *
      * @var ?CreateSkillsApiModelLevel $level
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateSkillsApiModelLevel|null')]
@@ -42,12 +73,19 @@ class CreateSkillsApiModel
     /**
      * @param  ?string  $id
      * @param  ?string  $name
+     * @param  ?CreateSkillsApiModelHierarchy  $hierarchy
+     * @param  ?Competency  $competency
+     * @param  ?CreateSkillsApiModelLanguage  $language
      * @param  ?CreateSkillsApiModelLevel  $level
+     * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?CreateSkillsApiModelLevel $level = null)
+    public function __construct(?string $id = null, ?string $name = null, ?CreateSkillsApiModelHierarchy $hierarchy = null, ?Competency $competency = null, ?CreateSkillsApiModelLanguage $language = null, ?CreateSkillsApiModelLevel $level = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->hierarchy = $hierarchy;
+        $this->competency = $competency;
+        $this->language = $language;
         $this->level = $level;
     }
 }

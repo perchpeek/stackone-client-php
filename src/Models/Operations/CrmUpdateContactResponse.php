@@ -52,6 +52,7 @@ class CrmUpdateContactResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ContactResult  $contactResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ContactResult $contactResult = null, ?array $headers = [])
     {

@@ -52,6 +52,7 @@ class IamGetRoleResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\IamRoleResult  $iamRoleResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IamRoleResult $iamRoleResult = null, ?array $headers = [])
     {

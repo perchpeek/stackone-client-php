@@ -38,6 +38,7 @@ class MarketingUpdatePushTemplateRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\MarketingCreatePushTemplateRequestDto  $marketingCreatePushTemplateRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\MarketingCreatePushTemplateRequestDto $marketingCreatePushTemplateRequestDto)
     {

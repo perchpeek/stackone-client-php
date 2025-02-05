@@ -30,6 +30,7 @@ class SmsMessageContents
     /**
      * @param  ?string  $body
      * @param  ?string  $from
+     * @phpstan-pure
      */
     public function __construct(?string $body = null, ?string $from = null)
     {

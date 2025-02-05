@@ -34,6 +34,7 @@ class ApplicationStatus
     /**
      * @param  ?ApplicationValue  $value
      * @param  string|float|bool|ApplicationSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?ApplicationValue $value = null, string|float|bool|ApplicationSourceValue4|array|null $sourceValue = null)
     {

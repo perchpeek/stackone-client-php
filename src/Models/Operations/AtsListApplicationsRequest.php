@@ -133,6 +133,7 @@ class AtsListApplicationsRequest
      * @param  ?string  $expand
      * @param  ?string  $include
      * @param  ?string  $jobId
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?AtsListApplicationsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?string $expand = null, ?string $include = null, ?string $jobId = null, ?bool $raw = false, ?string $pageSize = '25')
     {

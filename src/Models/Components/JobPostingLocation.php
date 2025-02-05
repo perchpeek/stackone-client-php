@@ -41,6 +41,7 @@ class JobPostingLocation
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?string  $name
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null)
     {

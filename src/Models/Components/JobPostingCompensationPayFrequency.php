@@ -34,6 +34,7 @@ class JobPostingCompensationPayFrequency
     /**
      * @param  ?JobPostingCompensationPayFrequencyValue  $value
      * @param  string|float|bool|JobPostingCompensationSourceValuePayFrequency4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?JobPostingCompensationPayFrequencyValue $value = null, string|float|bool|JobPostingCompensationSourceValuePayFrequency4|array|null $sourceValue = null)
     {

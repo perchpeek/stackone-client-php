@@ -47,11 +47,16 @@ class HrisListEmploymentsResponse
     public ?Components\EmploymentsPaginated $employmentsPaginated = null;
 
     /**
+     * @var \Closure(string): ?HrisListEmploymentsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\EmploymentsPaginated  $employmentsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\EmploymentsPaginated $employmentsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class HrisListEmploymentsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->employmentsPaginated = $employmentsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisListEmploymentsResponse
+     */
+    public function __call($name, $args): ?HrisListEmploymentsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

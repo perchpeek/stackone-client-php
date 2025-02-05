@@ -73,6 +73,7 @@ class CustomFields
      * @param  string|float|bool|Value4|array<mixed>|null  $value
      * @param  ?string  $valueId
      * @param  ?string  $remoteValueId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, string|float|bool|Value4|array|null $value = null, ?string $valueId = null, ?string $remoteValueId = null)
     {

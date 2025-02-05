@@ -38,6 +38,7 @@ class AtsCreateCandidateNoteRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\AtsCreateNotesRequestDto  $atsCreateNotesRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\AtsCreateNotesRequestDto $atsCreateNotesRequestDto)
     {

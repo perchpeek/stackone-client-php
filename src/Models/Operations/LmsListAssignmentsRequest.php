@@ -113,6 +113,7 @@ class LmsListAssignmentsRequest
      * @param  ?string  $updatedAfter
      * @param  ?string  $userId
      * @param  ?string  $remoteUserId
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?LmsListAssignmentsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $userId = null, ?string $remoteUserId = null, ?bool $raw = false, ?string $pageSize = '25')
     {

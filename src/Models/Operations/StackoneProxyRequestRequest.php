@@ -31,6 +31,7 @@ class StackoneProxyRequestRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\ProxyRequestBody  $proxyRequestBody
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\ProxyRequestBody $proxyRequestBody)
     {

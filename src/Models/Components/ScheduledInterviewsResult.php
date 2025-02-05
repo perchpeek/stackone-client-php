@@ -32,6 +32,7 @@ class ScheduledInterviewsResult
     /**
      * @param  ScheduledInterview  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(ScheduledInterview $data, ?array $raw = null)
     {

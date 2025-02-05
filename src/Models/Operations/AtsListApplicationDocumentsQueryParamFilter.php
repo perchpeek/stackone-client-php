@@ -31,6 +31,7 @@ class AtsListApplicationDocumentsQueryParamFilter
     /**
      * @param  ?string  $updatedAfter
      * @param  ?string  $type
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $type = null)
     {

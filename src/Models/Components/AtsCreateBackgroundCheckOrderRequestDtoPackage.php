@@ -63,6 +63,7 @@ class AtsCreateBackgroundCheckOrderRequestDtoPackage
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?array<Package>  $tests
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?array $tests = null)
     {

@@ -32,6 +32,7 @@ class WorkEligibilityType
     /**
      * @param  ?WorkEligibilityValue  $value
      * @param  string|float|bool|WorkEligibilitySourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?WorkEligibilityValue $value = null, string|float|bool|WorkEligibilitySourceValue4|array|null $sourceValue = null)
     {

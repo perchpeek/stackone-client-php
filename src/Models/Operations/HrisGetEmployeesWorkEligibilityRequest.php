@@ -64,6 +64,7 @@ class HrisGetEmployeesWorkEligibilityRequest
      * @param  ?bool  $raw
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(string $id, string $subResourceId, string $xAccountId, ?array $proxy = null, ?string $fields = null, ?bool $raw = false)
     {

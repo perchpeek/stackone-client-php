@@ -35,6 +35,7 @@ class ContentBlockStatus
     /**
      * @param  ?ContentBlockStatusValue  $value
      * @param  string|float|bool|ContentBlockSourceValueStatus4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?ContentBlockStatusValue $value = null, string|float|bool|ContentBlockSourceValueStatus4|array|null $sourceValue = null)
     {

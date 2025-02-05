@@ -34,6 +34,7 @@ class ChannelsEnum
     /**
      * @param  ?ChannelsEnumValue  $value
      * @param  string|float|bool|ChannelsEnumSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?ChannelsEnumValue $value = null, string|float|bool|ChannelsEnumSourceValue4|array|null $sourceValue = null)
     {

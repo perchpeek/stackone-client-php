@@ -34,6 +34,7 @@ class HrisDocumentsUploadRequestDtoCategory
     /**
      * @param  ?HrisDocumentsUploadRequestDtoCategoryValue  $value
      * @param  ?string  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisDocumentsUploadRequestDtoCategoryValue $value = null, ?string $sourceValue = null)
     {

@@ -32,6 +32,7 @@ class BackgroundCheckOrderResult
     /**
      * @param  BackgroundCheckOrder  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(BackgroundCheckOrder $data, ?array $raw = null)
     {

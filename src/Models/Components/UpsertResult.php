@@ -45,6 +45,7 @@ class UpsertResult
      * @param  string  $message
      * @param  \DateTime  $timestamp
      * @param  UpsertResultDataExternalReferenceModel  $data
+     * @phpstan-pure
      */
     public function __construct(float $statusCode, string $message, \DateTime $timestamp, UpsertResultDataExternalReferenceModel $data)
     {

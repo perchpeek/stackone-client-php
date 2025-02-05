@@ -103,6 +103,7 @@ class AtsCreateBackgroundCheckOrderRequestDto
      * @param  ?string  $resultsUpdateUrl
      * @param  ?AtsCreateBackgroundCheckOrderRequestDtoPackage  $package
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?AtsCreateBackgroundCheckOrderRequestDtoApplication $application = null, ?AtsCreateBackgroundCheckOrderRequestDtoJob $job = null, ?AtsCreateBackgroundCheckOrderRequestDtoCandidate $candidate = null, ?AtsCreateBackgroundCheckOrderRequestDtoRequester $requester = null, ?string $resultsUpdateUrl = null, ?AtsCreateBackgroundCheckOrderRequestDtoPackage $package = null, ?array $passthrough = null)
     {

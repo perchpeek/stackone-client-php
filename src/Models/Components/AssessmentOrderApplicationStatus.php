@@ -34,6 +34,7 @@ class AssessmentOrderApplicationStatus
     /**
      * @param  ?AssessmentOrderValue  $value
      * @param  string|float|bool|AssessmentOrderSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AssessmentOrderValue $value = null, string|float|bool|AssessmentOrderSourceValue4|array|null $sourceValue = null)
     {

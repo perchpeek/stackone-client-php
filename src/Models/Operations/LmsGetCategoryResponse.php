@@ -52,6 +52,7 @@ class LmsGetCategoryResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CategoryResult  $categoryResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CategoryResult $categoryResult = null, ?array $headers = [])
     {

@@ -32,6 +32,7 @@ class CampaignResult
     /**
      * @param  Campaign  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Campaign $data, ?array $raw = null)
     {

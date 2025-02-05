@@ -60,7 +60,18 @@ class Category
     /**
      * The hierarchal level of the category
      *
+     * @var ?CategoryHierarchy $hierarchy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hierarchy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryHierarchy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CategoryHierarchy $hierarchy = null;
+
+    /**
+     * The hierarchal level of the category
+     *
      * @var ?CategoryLevel $level
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryLevel|null')]
@@ -83,16 +94,19 @@ class Category
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
      * @param  ?bool  $active
+     * @param  ?CategoryHierarchy  $hierarchy
      * @param  ?CategoryLevel  $level
      * @param  ?CategoryLanguage  $language
+     * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?CategoryLevel $level = null, ?CategoryLanguage $language = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?CategoryHierarchy $hierarchy = null, ?CategoryLevel $level = null, ?CategoryLanguage $language = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->name = $name;
         $this->active = $active;
+        $this->hierarchy = $hierarchy;
         $this->level = $level;
         $this->language = $language;
     }

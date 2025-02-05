@@ -9,8 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** AdditionalDataValue - The value of the additional data */
-class AdditionalDataValue
+class CreateSkillsApiModelSourceValueLevel4
 {
 
     public function __construct()

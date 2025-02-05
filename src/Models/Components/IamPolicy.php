@@ -80,6 +80,7 @@ class IamPolicy
      * @param  ?string  $description
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?array $permissions = null, ?string $description = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

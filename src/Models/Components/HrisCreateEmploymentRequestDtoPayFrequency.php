@@ -35,6 +35,7 @@ class HrisCreateEmploymentRequestDtoPayFrequency
     /**
      * @param  ?HrisCreateEmploymentRequestDtoPayFrequencyValue  $value
      * @param  string|float|bool|HrisCreateEmploymentRequestDtoSourceValuePayFrequency4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateEmploymentRequestDtoPayFrequencyValue $value = null, string|float|bool|HrisCreateEmploymentRequestDtoSourceValuePayFrequency4|array|null $sourceValue = null)
     {

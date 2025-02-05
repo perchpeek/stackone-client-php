@@ -13,6 +13,8 @@ use StackOne\client\Hooks\HookContext;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
 use StackOne\client\Utils\Options;
+use StackOne\client\Utils\Retry;
+use StackOne\client\Utils\Retry\RetryUtils;
 
 class Accounts
 {
@@ -54,6 +56,31 @@ class Accounts
      */
     public function deleteAccount(string $id, ?Options $options = null): Operations\StackoneDeleteAccountResponse
     {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
         $request = new Operations\StackoneDeleteAccountRequest(
             id: $id,
         );
@@ -69,7 +96,7 @@ class Accounts
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -118,6 +145,31 @@ class Accounts
      */
     public function getAccount(string $id, ?Options $options = null): Operations\StackoneGetAccountResponse
     {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
         $request = new Operations\StackoneGetAccountRequest(
             id: $id,
         );
@@ -133,7 +185,7 @@ class Accounts
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -182,6 +234,31 @@ class Accounts
      */
     public function getAccountMetaInfo(string $id, ?Options $options = null): Operations\StackoneGetAccountMetaInfoResponse
     {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
         $request = new Operations\StackoneGetAccountMetaInfoRequest(
             id: $id,
         );
@@ -197,7 +274,7 @@ class Accounts
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -246,6 +323,31 @@ class Accounts
      */
     public function listLinkedAccounts(?Operations\StackoneListLinkedAccountsRequest $request = null, ?Options $options = null): Operations\StackoneListLinkedAccountsResponse
     {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/accounts');
         $urlOverride = null;
@@ -261,7 +363,7 @@ class Accounts
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;
@@ -311,6 +413,31 @@ class Accounts
      */
     public function updateAccount(Components\PatchAccountExternalDto $patchAccountExternalDto, string $id, ?Options $options = null): Operations\StackoneUpdateAccountResponse
     {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
         $request = new Operations\StackoneUpdateAccountRequest(
             id: $id,
             patchAccountExternalDto: $patchAccountExternalDto,
@@ -332,7 +459,7 @@ class Accounts
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             $httpResponse = $res;

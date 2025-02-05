@@ -35,6 +35,7 @@ class Visibility
     /**
      * @param  ?NoteValue  $value
      * @param  string|float|bool|NoteSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?NoteValue $value = null, string|float|bool|NoteSourceValue4|array|null $sourceValue = null)
     {

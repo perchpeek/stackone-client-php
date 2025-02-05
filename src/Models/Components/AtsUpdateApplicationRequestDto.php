@@ -75,6 +75,7 @@ class AtsUpdateApplicationRequestDto
      * @param  ?AtsUpdateApplicationRequestDtoApplicationStatus  $applicationStatus
      * @param  ?AtsUpdateApplicationRequestDtoSource  $source
      * @param  ?string  $interviewStageId
+     * @phpstan-pure
      */
     public function __construct(?array $passthrough = null, ?string $rejectedReasonId = null, ?array $customFields = null, ?AtsUpdateApplicationRequestDtoApplicationStatus $applicationStatus = null, ?AtsUpdateApplicationRequestDtoSource $source = null, ?string $interviewStageId = null)
     {

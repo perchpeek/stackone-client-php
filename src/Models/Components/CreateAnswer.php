@@ -44,6 +44,7 @@ class CreateAnswer
      * @param  ?string  $id
      * @param  ?CreateAnswerType  $type
      * @param  ?array<string>  $values
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?CreateAnswerType $type = null, ?array $values = null)
     {

@@ -87,6 +87,7 @@ class JobPostingCompensation
      * @param  ?string  $value
      * @param  ?string  $minValue
      * @param  ?string  $maxValue
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?JobPostingCompensationType $type = null, ?JobPostingCompensationPayPeriod $payPeriod = null, ?JobPostingCompensationPayFrequency $payFrequency = null, ?string $currency = null, ?string $value = null, ?string $minValue = null, ?string $maxValue = null)
     {

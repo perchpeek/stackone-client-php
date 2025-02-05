@@ -65,6 +65,7 @@ class IamGetRoleRequest
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
      * @param  ?string  $expand
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?string $expand = null, ?bool $raw = false)
     {

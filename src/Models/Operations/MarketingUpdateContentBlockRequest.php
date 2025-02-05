@@ -38,6 +38,7 @@ class MarketingUpdateContentBlockRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\MarketingCreateContentBlocksRequestDto  $marketingCreateContentBlocksRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\MarketingCreateContentBlocksRequestDto $marketingCreateContentBlocksRequestDto)
     {

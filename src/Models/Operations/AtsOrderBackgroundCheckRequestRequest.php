@@ -30,6 +30,7 @@ class AtsOrderBackgroundCheckRequestRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\AtsCreateBackgroundCheckOrderRequestDto  $atsCreateBackgroundCheckOrderRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\AtsCreateBackgroundCheckOrderRequestDto $atsCreateBackgroundCheckOrderRequestDto)
     {

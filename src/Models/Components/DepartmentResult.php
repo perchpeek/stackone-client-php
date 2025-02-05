@@ -32,6 +32,7 @@ class DepartmentResult
     /**
      * @param  Department  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Department $data, ?array $raw = null)
     {

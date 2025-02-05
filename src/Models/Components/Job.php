@@ -193,6 +193,7 @@ class Job
      * @param  ?array<CustomFields>  $customFields
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $code = null, ?string $title = null, ?string $status = null, ?JobStatus $jobStatus = null, ?array $departmentIds = null, ?array $remoteDepartmentIds = null, ?array $locationIds = null, ?array $remoteLocationIds = null, ?array $hiringTeam = null, ?array $interviewStages = null, ?JobConfidential $confidential = null, ?array $customFields = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

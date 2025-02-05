@@ -52,6 +52,7 @@ class StackoneAuthenticateConnectSessionResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ConnectSession  $connectSession
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ConnectSession $connectSession = null, ?array $headers = [])
     {

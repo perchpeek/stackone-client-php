@@ -35,6 +35,7 @@ class MarketingCreateContentBlocksRequestDtoType
     /**
      * @param  ?MarketingCreateContentBlocksRequestDtoValue  $value
      * @param  string|float|bool|MarketingCreateContentBlocksRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?MarketingCreateContentBlocksRequestDtoValue $value = null, string|float|bool|MarketingCreateContentBlocksRequestDtoSourceValue4|array|null $sourceValue = null)
     {

@@ -32,6 +32,7 @@ class SkillResult
     /**
      * @param  Skills  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Skills $data, ?array $raw = null)
     {

@@ -34,6 +34,7 @@ class WorkEligibilityFileFormat
     /**
      * @param  ?WorkEligibilityDocumentValue  $value
      * @param  string|float|bool|WorkEligibilitySourceValueDocumentFileFormat4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?WorkEligibilityDocumentValue $value = null, string|float|bool|WorkEligibilitySourceValueDocumentFileFormat4|array|null $sourceValue = null)
     {

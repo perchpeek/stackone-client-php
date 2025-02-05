@@ -43,6 +43,7 @@ class UpdateEmployeeApiModelNationalIdentityNumber
      * @param  ?string  $value
      * @param  ?UpdateEmployeeApiModelType  $type
      * @param  ?UpdateEmployeeApiModelCountry  $country
+     * @phpstan-pure
      */
     public function __construct(?string $value = null, ?UpdateEmployeeApiModelType $type = null, ?UpdateEmployeeApiModelCountry $country = null)
     {

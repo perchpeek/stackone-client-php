@@ -47,11 +47,16 @@ class HrisListEmployeeWorkEligibilityResponse
     public ?Components\WorkEligibilityPaginated $workEligibilityPaginated = null;
 
     /**
+     * @var \Closure(string): ?HrisListEmployeeWorkEligibilityResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\WorkEligibilityPaginated  $workEligibilityPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\WorkEligibilityPaginated $workEligibilityPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class HrisListEmployeeWorkEligibilityResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->workEligibilityPaginated = $workEligibilityPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?HrisListEmployeeWorkEligibilityResponse
+     */
+    public function __call($name, $args): ?HrisListEmployeeWorkEligibilityResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

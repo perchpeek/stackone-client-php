@@ -33,6 +33,7 @@ class IamResourceType
     /**
      * @param  ?IamResourceValue  $value
      * @param  string|float|bool|IamResourceSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamResourceValue $value = null, string|float|bool|IamResourceSourceValue4|array|null $sourceValue = null)
     {

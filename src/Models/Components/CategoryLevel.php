@@ -9,32 +9,37 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** CategoryLevel - The hierarchal level of the category */
+/**
+ * CategoryLevel - The hierarchal level of the category
+ *
+ * @deprecated  class: This will be removed in a future release, please migrate away from it as soon as possible.
+ */
 class CategoryLevel
 {
     /**
      *
-     * @var ?CategoryValue $value
+     * @var ?CategoryLevelValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryLevelValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CategoryValue $value = null;
+    public ?CategoryLevelValue $value = null;
 
     /**
      *
-     * @var string|float|bool|CategorySourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|CategorySourceValueLevel4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CategorySourceValue4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CategorySourceValueLevel4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|CategorySourceValue4|array|null $sourceValue = null;
+    public string|float|bool|CategorySourceValueLevel4|array|null $sourceValue = null;
 
     /**
-     * @param  ?CategoryValue  $value
-     * @param  string|float|bool|CategorySourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?CategoryLevelValue  $value
+     * @param  string|float|bool|CategorySourceValueLevel4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
-    public function __construct(?CategoryValue $value = null, string|float|bool|CategorySourceValue4|array|null $sourceValue = null)
+    public function __construct(?CategoryLevelValue $value = null, string|float|bool|CategorySourceValueLevel4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

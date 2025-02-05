@@ -33,6 +33,7 @@ class CountryCodeEnum
     /**
      * @param  ?Value  $value
      * @param  string|float|bool|SourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?Value $value = null, string|float|bool|SourceValue4|array|null $sourceValue = null)
     {

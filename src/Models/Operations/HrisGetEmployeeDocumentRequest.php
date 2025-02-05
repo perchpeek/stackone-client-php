@@ -64,6 +64,7 @@ class HrisGetEmployeeDocumentRequest
      * @param  ?bool  $raw
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, string $subResourceId, ?array $proxy = null, ?string $fields = null, ?bool $raw = false)
     {

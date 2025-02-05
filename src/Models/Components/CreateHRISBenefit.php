@@ -83,6 +83,7 @@ class CreateHRISBenefit
      * @param  ?string  $description
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $name = null, ?CreateHRISBenefitBenefitType $benefitType = null, ?string $provider = null, ?string $description = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

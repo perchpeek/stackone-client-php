@@ -34,6 +34,7 @@ class UpdateEmployeeApiModelPreferredLanguage
     /**
      * @param  ?UpdateEmployeeApiModelPreferredLanguageValue  $value
      * @param  string|float|bool|UpdateEmployeeApiModelSourceValuePreferredLanguage4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?UpdateEmployeeApiModelPreferredLanguageValue $value = null, string|float|bool|UpdateEmployeeApiModelSourceValuePreferredLanguage4|array|null $sourceValue = null)
     {

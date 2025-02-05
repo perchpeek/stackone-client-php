@@ -29,6 +29,7 @@ class StackoneGetConnectorMetaRequest
     /**
      * @param  string  $provider
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(string $provider, ?string $include = null)
     {

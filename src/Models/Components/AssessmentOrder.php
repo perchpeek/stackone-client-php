@@ -92,6 +92,7 @@ class AssessmentOrder
      * @param  ?AssessmentOrderCandidate  $candidate
      * @param  ?AssessmentOrderRequester  $requester
      * @param  ?string  $resultsUpdateUrl
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?AssessmentOrderPackage $package = null, ?AssessmentOrderApplication $application = null, ?AssessmentOrderJob $job = null, ?AssessmentOrderCandidate $candidate = null, ?AssessmentOrderRequester $requester = null, ?string $resultsUpdateUrl = null)
     {

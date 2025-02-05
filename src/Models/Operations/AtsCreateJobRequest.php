@@ -30,6 +30,7 @@ class AtsCreateJobRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\AtsCreateJobRequestDto  $atsCreateJobRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\AtsCreateJobRequestDto $atsCreateJobRequestDto)
     {

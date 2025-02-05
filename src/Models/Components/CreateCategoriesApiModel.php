@@ -42,7 +42,18 @@ class CreateCategoriesApiModel
     /**
      * The hierarchal level of the category
      *
+     * @var ?Hierarchy $hierarchy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('hierarchy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Hierarchy|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Hierarchy $hierarchy = null;
+
+    /**
+     * The hierarchal level of the category
+     *
      * @var ?Level $level
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
@@ -63,14 +74,17 @@ class CreateCategoriesApiModel
      * @param  ?string  $id
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
+     * @param  ?Hierarchy  $hierarchy
      * @param  ?Level  $level
      * @param  ?Language  $language
+     * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $name = null, ?Level $level = null, ?Language $language = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $name = null, ?Hierarchy $hierarchy = null, ?Level $level = null, ?Language $language = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->name = $name;
+        $this->hierarchy = $hierarchy;
         $this->level = $level;
         $this->language = $language;
     }

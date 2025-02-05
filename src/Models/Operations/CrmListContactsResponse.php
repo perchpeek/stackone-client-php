@@ -47,11 +47,16 @@ class CrmListContactsResponse
     public ?Components\ContactsPaginated $contactsPaginated = null;
 
     /**
+     * @var \Closure(string): ?CrmListContactsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ContactsPaginated  $contactsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ContactsPaginated $contactsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class CrmListContactsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->contactsPaginated = $contactsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?CrmListContactsResponse
+     */
+    public function __call($name, $args): ?CrmListContactsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

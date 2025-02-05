@@ -32,6 +32,7 @@ class IamUserResult
     /**
      * @param  IamUser  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(IamUser $data, ?array $raw = null)
     {

@@ -42,6 +42,7 @@ class UsersPaginated
      * @param  array<LmsUser>  $data
      * @param  ?string  $next
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(array $data, ?string $next = null, ?array $raw = null)
     {

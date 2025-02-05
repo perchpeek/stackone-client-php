@@ -25,13 +25,14 @@ class LmsCreateAssignmentRequestDto
      * The external reference associated with this assignment
      *
      * @var ?string $externalReference
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalReference = null;
 
     /**
-     * The learning_object_id associated with this assignment
+     * The learning_object_id associated with this assignment. This is not required unless specified in an integration.
      *
      * @var ?string $learningObjectId
      */
@@ -40,7 +41,7 @@ class LmsCreateAssignmentRequestDto
     public ?string $learningObjectId = null;
 
     /**
-     * The external reference of the learning object associated with this assignment
+     * The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments.
      *
      * @var ?string $learningObjectExternalReference
      */
@@ -94,6 +95,7 @@ class LmsCreateAssignmentRequestDto
      * @param  ?string  $createdAt
      * @param  ?string  $dueDate
      * @param  ?LmsCreateAssignmentRequestDtoStatus  $status
+     * @phpstan-pure
      */
     public function __construct(?array $passthrough = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $createdAt = null, ?string $dueDate = null, ?LmsCreateAssignmentRequestDtoStatus $status = null)
     {

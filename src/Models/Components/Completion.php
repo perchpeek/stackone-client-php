@@ -43,6 +43,7 @@ class Completion
      * The external reference associated with this completion
      *
      * @var ?string $externalReference
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -96,7 +97,7 @@ class Completion
     public ?CompletionLearningObjectType $learningObjectType = null;
 
     /**
-     * The id of the learning object associated with this completion
+     * The id of the learning object associated with this completion. This is not required unless specified in an integration.
      *
      * @var ?string $learningObjectId
      */
@@ -114,7 +115,7 @@ class Completion
     public ?string $remoteLearningObjectId = null;
 
     /**
-     * The external reference of the learning object associated with this completion
+     * The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
      *
      * @var ?string $learningObjectExternalReference
      */
@@ -232,6 +233,7 @@ class Completion
      * @param  ?string  $remoteContentId
      * @param  ?string  $courseId
      * @param  ?string  $remoteCourseId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {

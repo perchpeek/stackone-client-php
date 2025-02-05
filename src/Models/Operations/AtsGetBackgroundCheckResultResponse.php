@@ -52,6 +52,7 @@ class AtsGetBackgroundCheckResultResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\BackgroundCheckResultsResult  $backgroundCheckResultsResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\BackgroundCheckResultsResult $backgroundCheckResultsResult = null, ?array $headers = [])
     {

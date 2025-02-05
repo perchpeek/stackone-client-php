@@ -32,6 +32,7 @@ class CandidateResult
     /**
      * @param  Candidate  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Candidate $data, ?array $raw = null)
     {

@@ -31,6 +31,7 @@ class LmsListCompletionsQueryParamFilter
     /**
      * @param  ?string  $updatedAfter
      * @param  ?LmsListCompletionsQueryParamLearningObjectType  $learningObjectType
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?LmsListCompletionsQueryParamLearningObjectType $learningObjectType = null)
     {

@@ -53,6 +53,7 @@ class Reference
      * @param  ?string  $remoteId
      * @param  ?string  $name
      * @param  bool|Active2|null  $active
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, bool|Active2|null $active = null)
     {

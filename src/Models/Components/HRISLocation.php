@@ -175,6 +175,7 @@ class HRISLocation
      * @param  ?LocationType  $locationType
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $state = null, ?string $zipCode = null, ?Country $country = null, ?LocationType $locationType = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

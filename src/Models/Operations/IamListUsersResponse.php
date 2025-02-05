@@ -47,11 +47,16 @@ class IamListUsersResponse
     public ?Components\IamUsersPaginated $iamUsersPaginated = null;
 
     /**
+     * @var \Closure(string): ?IamListUsersResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\IamUsersPaginated  $iamUsersPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IamUsersPaginated $iamUsersPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class IamListUsersResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->iamUsersPaginated = $iamUsersPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?IamListUsersResponse
+     */
+    public function __call($name, $args): ?IamListUsersResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

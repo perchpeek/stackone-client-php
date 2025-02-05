@@ -271,12 +271,15 @@ $request = new Operations\IamListGroupsRequest(
     expand: 'roles',
 );
 
-$response = $sdk->iam->listGroups(
+$responses = $sdk->iam->listGroups(
     request: $request
 );
 
-if ($response->iamGroupsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -329,12 +332,15 @@ $request = new Operations\IamListPoliciesRequest(
     expand: 'permissions',
 );
 
-$response = $sdk->iam->listPolicies(
+$responses = $sdk->iam->listPolicies(
     request: $request
 );
 
-if ($response->iamPoliciesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -387,12 +393,15 @@ $request = new Operations\IamListRolesRequest(
     expand: 'policies',
 );
 
-$response = $sdk->iam->listRoles(
+$responses = $sdk->iam->listRoles(
     request: $request
 );
 
-if ($response->iamRolesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -445,12 +454,15 @@ $request = new Operations\IamListUsersRequest(
     expand: 'roles,groups',
 );
 
-$response = $sdk->iam->listUsers(
+$responses = $sdk->iam->listUsers(
     request: $request
 );
 
-if ($response->iamUsersPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

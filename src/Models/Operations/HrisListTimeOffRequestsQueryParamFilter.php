@@ -31,6 +31,7 @@ class HrisListTimeOffRequestsQueryParamFilter
     /**
      * @param  ?string  $updatedAfter
      * @param  ?array<string>  $type
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?array $type = null)
     {

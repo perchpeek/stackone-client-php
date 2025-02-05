@@ -54,6 +54,7 @@ class AtsCreateBackgroundCheckPackagesRequestDto
      * @param  ?string  $description
      * @param  ?array<CreatePackage>  $tests
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $description = null, ?array $tests = null, ?array $passthrough = null)
     {

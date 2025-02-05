@@ -34,6 +34,7 @@ class HrisCreateWorkEligibilityRequestDtoFileFormat
     /**
      * @param  ?HrisCreateWorkEligibilityRequestDtoDocumentValue  $value
      * @param  string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValueDocument4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateWorkEligibilityRequestDtoDocumentValue $value = null, string|float|bool|HrisCreateWorkEligibilityRequestDtoSourceValueDocument4|array|null $sourceValue = null)
     {

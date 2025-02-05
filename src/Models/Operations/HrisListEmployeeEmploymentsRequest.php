@@ -112,6 +112,7 @@ class HrisListEmployeeEmploymentsRequest
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
      * @param  ?string  $expand
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?HrisListEmployeeEmploymentsQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $expand = null, ?bool $raw = false, ?string $pageSize = '25')
     {

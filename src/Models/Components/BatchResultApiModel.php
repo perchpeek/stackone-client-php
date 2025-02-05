@@ -50,6 +50,7 @@ class BatchResultApiModel
      * @param  ?string  $message
      * @param  ?\DateTime  $timestamp
      * @param  ?array<array<string>>  $errors
+     * @phpstan-pure
      */
     public function __construct(?float $statusCode = null, ?string $message = null, ?\DateTime $timestamp = null, ?array $errors = null)
     {

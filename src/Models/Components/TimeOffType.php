@@ -33,6 +33,7 @@ class TimeOffType
     /**
      * @param  ?TimeOffTypeValue  $value
      * @param  string|float|bool|TimeOffSourceValueType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?TimeOffTypeValue $value = null, string|float|bool|TimeOffSourceValueType4|array|null $sourceValue = null)
     {

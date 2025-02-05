@@ -848,12 +848,15 @@ $request = new Operations\MarketingListCampaignsRequest(
     ),
 );
 
-$response = $sdk->marketing->listCampaigns(
+$responses = $sdk->marketing->listCampaigns(
     request: $request
 );
 
-if ($response->campaignsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -905,12 +908,15 @@ $request = new Operations\MarketingListContentBlocksRequest(
     ),
 );
 
-$response = $sdk->marketing->listContentBlocks(
+$responses = $sdk->marketing->listContentBlocks(
     request: $request
 );
 
-if ($response->contentBlocksPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -962,12 +968,15 @@ $request = new Operations\MarketingListEmailTemplatesRequest(
     ),
 );
 
-$response = $sdk->marketing->listEmailTemplates(
+$responses = $sdk->marketing->listEmailTemplates(
     request: $request
 );
 
-if ($response->emailTemplatesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1019,12 +1028,15 @@ $request = new Operations\MarketingListInAppTemplatesRequest(
     ),
 );
 
-$response = $sdk->marketing->listInAppTemplates(
+$responses = $sdk->marketing->listInAppTemplates(
     request: $request
 );
 
-if ($response->inAppTemplatesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1078,12 +1090,15 @@ $request = new Operations\MarketingListOmniChannelTemplatesRequest(
     ),
 );
 
-$response = $sdk->marketing->listOmniChannelTemplates(
+$responses = $sdk->marketing->listOmniChannelTemplates(
     request: $request
 );
 
-if ($response->templatesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1135,12 +1150,15 @@ $request = new Operations\MarketingListPushTemplatesRequest(
     ),
 );
 
-$response = $sdk->marketing->listPushTemplates(
+$responses = $sdk->marketing->listPushTemplates(
     request: $request
 );
 
-if ($response->pushTemplatesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -1192,12 +1210,15 @@ $request = new Operations\MarketingListSmsTemplatesRequest(
     ),
 );
 
-$response = $sdk->marketing->listSmsTemplates(
+$responses = $sdk->marketing->listSmsTemplates(
     request: $request
 );
 
-if ($response->smsTemplatesPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

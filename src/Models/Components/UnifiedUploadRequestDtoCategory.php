@@ -33,6 +33,7 @@ class UnifiedUploadRequestDtoCategory
     /**
      * @param  ?string  $value
      * @param  ?string  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?string $value = null, ?string $sourceValue = null)
     {

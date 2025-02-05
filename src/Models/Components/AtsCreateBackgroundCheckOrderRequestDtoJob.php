@@ -64,6 +64,7 @@ class AtsCreateBackgroundCheckOrderRequestDtoJob
      * @param  ?string  $title
      * @param  ?array<JobHiringTeam>  $hiringTeam
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $title = null, ?array $hiringTeam = null, ?array $passthrough = null)
     {

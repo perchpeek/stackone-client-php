@@ -53,6 +53,7 @@ class AtsCreateCandidatesAssessmentsRequestDtoApplication
      * @param  ?string  $remoteId
      * @param  ?AtsCreateCandidatesAssessmentsRequestDtoApplicationStatus  $applicationStatus
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?AtsCreateCandidatesAssessmentsRequestDtoApplicationStatus $applicationStatus = null, ?array $passthrough = null)
     {

@@ -287,6 +287,7 @@ class Employment
      * @param  ?EmploymentType1  $type
      * @param  ?ContractType  $contractType
      * @param  ?array<EmploymentManagerApiModel>  $manager
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?PayPeriod $payPeriod = null, ?PayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?EmploymentEmploymentType $employmentType = null, ?EmploymentEmploymentContractType $employmentContractType = null, ?string $timeWorked = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?bool $active = null, ?EmploymentDepartment $department = null, ?CostCenter $costCenter = null, ?Division $division = null, ?EmploymentJob $job = null, ?EmploymentType1 $type = null, ?ContractType $contractType = null, ?array $manager = null)
     {

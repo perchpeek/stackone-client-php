@@ -115,6 +115,7 @@ class Note
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $deletedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?array $content = null, ?string $authorId = null, ?string $remoteAuthorId = null, ?Visibility $visibility = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?\DateTime $deletedAt = null)
     {

@@ -304,6 +304,7 @@ class Application
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?array<CustomFields>  $customFields
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $candidateId = null, ?string $remoteCandidateId = null, ?string $jobId = null, ?string $remoteJobId = null, ?ApplicationInterviewStage $interviewStage = null, ?string $interviewStageId = null, ?string $remoteInterviewStageId = null, ?array $rejectedReasons = null, ?array $rejectedReasonIds = null, ?array $remoteRejectedReasonIds = null, ?\DateTime $rejectedAt = null, ?string $locationId = null, ?string $remoteLocationId = null, ?array $locationIds = null, ?array $remoteLocationIds = null, ?ApplicationStatus $applicationStatus = null, ?array $questionnaires = null, ?ApplicationCandidate $candidate = null, ?array $attachments = null, ?array $documents = null, ?array $resultLinks = null, ?Source $source = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $customFields = null)
     {

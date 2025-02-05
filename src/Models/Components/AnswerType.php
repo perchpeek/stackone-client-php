@@ -35,6 +35,7 @@ class AnswerType
     /**
      * @param  ?AnswerValue  $value
      * @param  string|float|bool|AnswerSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AnswerValue $value = null, string|float|bool|AnswerSourceValue4|array|null $sourceValue = null)
     {

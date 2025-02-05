@@ -90,6 +90,7 @@ class IamPermission
      * @param  ?string  $description
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?IamPermissionType $type = null, ?array $resources = null, ?string $description = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

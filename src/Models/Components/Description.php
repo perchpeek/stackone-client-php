@@ -22,6 +22,7 @@ class Description
 
     /**
      * @param  ?string  $text
+     * @phpstan-pure
      */
     public function __construct(?string $text = null)
     {

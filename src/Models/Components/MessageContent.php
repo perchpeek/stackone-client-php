@@ -57,6 +57,7 @@ class MessageContent
      * @param  ?string  $from
      * @param  ?string  $replyTo
      * @param  ?string  $preheader
+     * @phpstan-pure
      */
     public function __construct(?string $subject = null, ?string $body = null, ?string $from = null, ?string $replyTo = null, ?string $preheader = null)
     {

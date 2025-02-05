@@ -61,6 +61,7 @@ class PushMessages
      * @param  ?string  $name
      * @param  ?PushMessagesMessageType  $messageType
      * @param  ?PushMessagesMessageContent  $messageContent
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?PushMessagesMessageType $messageType = null, ?PushMessagesMessageContent $messageContent = null)
     {

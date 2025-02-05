@@ -52,6 +52,7 @@ class Department
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null)
     {

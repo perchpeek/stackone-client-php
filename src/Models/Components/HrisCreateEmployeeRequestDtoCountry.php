@@ -34,6 +34,7 @@ class HrisCreateEmployeeRequestDtoCountry
     /**
      * @param  ?HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue  $value
      * @param  string|float|bool|HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValueNationalIdentityNumberCountry4|array|null $sourceValue = null)
     {

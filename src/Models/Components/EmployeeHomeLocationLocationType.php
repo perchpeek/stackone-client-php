@@ -35,6 +35,7 @@ class EmployeeHomeLocationLocationType
     /**
      * @param  ?EmployeeHomeLocationLocationTypeValue  $value
      * @param  string|float|bool|EmployeeSourceValueHomeLocationLocationType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmployeeHomeLocationLocationTypeValue $value = null, string|float|bool|EmployeeSourceValueHomeLocationLocationType4|array|null $sourceValue = null)
     {

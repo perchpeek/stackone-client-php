@@ -50,6 +50,7 @@ class ProviderErrorApiModel
      * @param  ?string  $url
      * @param  ?Raw  $raw
      * @param  ?Headers  $headers
+     * @phpstan-pure
      */
     public function __construct(?float $status = null, ?string $url = null, ?Raw $raw = null, ?Headers $headers = null)
     {

@@ -32,6 +32,7 @@ class CourseResult
     /**
      * @param  Course  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Course $data, ?array $raw = null)
     {

@@ -34,6 +34,7 @@ class ContentFileFormat
     /**
      * @param  ?ContentValue  $value
      * @param  string|float|bool|ContentSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?ContentValue $value = null, string|float|bool|ContentSourceValue4|array|null $sourceValue = null)
     {

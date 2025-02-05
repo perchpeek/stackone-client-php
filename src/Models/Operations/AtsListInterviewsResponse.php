@@ -47,11 +47,16 @@ class AtsListInterviewsResponse
     public ?Components\InterviewsPaginated $interviewsPaginated = null;
 
     /**
+     * @var \Closure(string): ?AtsListInterviewsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\InterviewsPaginated  $interviewsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\InterviewsPaginated $interviewsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class AtsListInterviewsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->interviewsPaginated = $interviewsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AtsListInterviewsResponse
+     */
+    public function __call($name, $args): ?AtsListInterviewsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

@@ -38,6 +38,7 @@ class LmsUpdateCollectionRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\LmsCreateCollectionRequestDto  $lmsCreateCollectionRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\LmsCreateCollectionRequestDto $lmsCreateCollectionRequestDto)
     {

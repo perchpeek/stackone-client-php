@@ -32,6 +32,7 @@ class IamRoleType
     /**
      * @param  ?IamRoleValue  $value
      * @param  string|float|bool|IamRoleSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?IamRoleValue $value = null, string|float|bool|IamRoleSourceValue4|array|null $sourceValue = null)
     {

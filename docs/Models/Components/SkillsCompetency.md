@@ -1,0 +1,11 @@
+# SkillsCompetency
+
+The user competency level of the skill ranked out of 5
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `value`                                                                                                                        | [?Components\SkillsCompetencyValue](../../Models/Components/SkillsCompetencyValue.md)                                          | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
+| `sourceValue`                                                                                                                  | [string\|float\|bool\|Components\SkillsSourceValueCompetency4\|array\|null](../../Models/Components/SkillsCompetencySourceValue.md) | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |

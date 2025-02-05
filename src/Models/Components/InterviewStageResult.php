@@ -32,6 +32,7 @@ class InterviewStageResult
     /**
      * @param  InterviewStage  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(InterviewStage $data, ?array $raw = null)
     {

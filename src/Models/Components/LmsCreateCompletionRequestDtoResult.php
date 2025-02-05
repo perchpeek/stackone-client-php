@@ -33,6 +33,7 @@ class LmsCreateCompletionRequestDtoResult
     /**
      * @param  ?LmsCreateCompletionRequestDtoValue  $value
      * @param  string|float|bool|LmsCreateCompletionRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?LmsCreateCompletionRequestDtoValue $value = null, string|float|bool|LmsCreateCompletionRequestDtoSourceValue4|array|null $sourceValue = null)
     {

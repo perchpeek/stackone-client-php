@@ -32,6 +32,7 @@ class AssessmentOrderResult
     /**
      * @param  AssessmentOrder  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(AssessmentOrder $data, ?array $raw = null)
     {

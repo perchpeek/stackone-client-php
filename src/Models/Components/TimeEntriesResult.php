@@ -32,6 +32,7 @@ class TimeEntriesResult
     /**
      * @param  TimeEntries  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(TimeEntries $data, ?array $raw = null)
     {

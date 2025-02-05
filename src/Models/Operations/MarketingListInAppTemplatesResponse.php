@@ -47,11 +47,16 @@ class MarketingListInAppTemplatesResponse
     public ?Components\InAppTemplatesPaginated $inAppTemplatesPaginated = null;
 
     /**
+     * @var \Closure(string): ?MarketingListInAppTemplatesResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\InAppTemplatesPaginated  $inAppTemplatesPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\InAppTemplatesPaginated $inAppTemplatesPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class MarketingListInAppTemplatesResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->inAppTemplatesPaginated = $inAppTemplatesPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?MarketingListInAppTemplatesResponse
+     */
+    public function __call($name, $args): ?MarketingListInAppTemplatesResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

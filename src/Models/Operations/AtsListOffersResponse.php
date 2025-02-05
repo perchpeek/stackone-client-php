@@ -47,11 +47,16 @@ class AtsListOffersResponse
     public ?Components\OffersPaginated $offersPaginated = null;
 
     /**
+     * @var \Closure(string): ?AtsListOffersResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\OffersPaginated  $offersPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\OffersPaginated $offersPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class AtsListOffersResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->offersPaginated = $offersPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AtsListOffersResponse
+     */
+    public function __call($name, $args): ?AtsListOffersResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

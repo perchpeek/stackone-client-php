@@ -62,6 +62,7 @@ class Message
      * @param  ?string  $name
      * @param  ?MessageMessageType  $messageType
      * @param  MessageContentSmsMessageContents|MessageContentEmailMessageContents|MessageContentPushMessageContents|null  $messageContent
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?MessageMessageType $messageType = null, MessageContentSmsMessageContents|MessageContentEmailMessageContents|MessageContentPushMessageContents|null $messageContent = null)
     {

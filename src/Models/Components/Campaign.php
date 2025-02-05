@@ -165,6 +165,7 @@ class Campaign
      * @param  ?\DateTime  $lastSentAt
      * @param  ?array<string>  $tags
      * @param  ?array<Message>  $messages
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?string $description = null, ?ScheduleType $scheduleType = null, ?CampaignStatus $status = null, bool|Archived2|null $archived = null, bool|Draft2|null $draft = null, ?array $channels = null, ?\DateTime $firstSentAt = null, ?\DateTime $lastSentAt = null, ?array $tags = null, ?array $messages = null)
     {

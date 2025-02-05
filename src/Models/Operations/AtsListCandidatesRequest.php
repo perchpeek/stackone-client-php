@@ -114,6 +114,7 @@ class AtsListCandidatesRequest
      * @param  ?string  $updatedAfter
      * @param  ?string  $syncToken
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?AtsListCandidatesQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?string $include = null, ?bool $raw = false, ?string $pageSize = '25')
     {

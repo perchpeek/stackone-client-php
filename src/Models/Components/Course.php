@@ -198,6 +198,7 @@ class Course
      * @param  ?string  $provider
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $provider = null, ?string $updatedAt = null, ?string $createdAt = null)
     {

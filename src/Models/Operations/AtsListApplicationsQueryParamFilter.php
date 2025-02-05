@@ -49,6 +49,7 @@ class AtsListApplicationsQueryParamFilter
      * @param  ?string  $createdAfter
      * @param  ?string  $jobId
      * @param  ?string  $stage
+     * @phpstan-pure
      */
     public function __construct(?string $updatedAfter = null, ?string $createdAfter = null, ?string $jobId = null, ?string $stage = null)
     {

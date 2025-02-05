@@ -52,6 +52,7 @@ class AtsGetLocationResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\ATSLocationResult  $atsLocationResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ATSLocationResult $atsLocationResult = null, ?array $headers = [])
     {

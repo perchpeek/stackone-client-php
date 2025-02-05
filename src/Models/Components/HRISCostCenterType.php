@@ -33,6 +33,7 @@ class HRISCostCenterType
     /**
      * @param  ?HRISCostCenterValue  $value
      * @param  string|float|bool|HRISCostCenterSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HRISCostCenterValue $value = null, string|float|bool|HRISCostCenterSourceValue4|array|null $sourceValue = null)
     {

@@ -34,6 +34,7 @@ class AssessmentResultResult
     /**
      * @param  ?AssessmentResultValue  $value
      * @param  string|float|bool|AssessmentResultSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AssessmentResultValue $value = null, string|float|bool|AssessmentResultSourceValue4|array|null $sourceValue = null)
     {

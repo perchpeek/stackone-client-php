@@ -33,6 +33,7 @@ class EmploymentContractTypeContractType
     /**
      * @param  ?EmploymentContractTypeValue  $value
      * @param  string|float|bool|EmploymentSourceValueContractType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmploymentContractTypeValue $value = null, string|float|bool|EmploymentSourceValueContractType4|array|null $sourceValue = null)
     {

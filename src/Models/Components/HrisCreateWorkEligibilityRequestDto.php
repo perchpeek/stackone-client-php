@@ -90,6 +90,7 @@ class HrisCreateWorkEligibilityRequestDto
      * @param  ?\DateTime  $validFrom
      * @param  ?\DateTime  $validTo
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?HrisCreateWorkEligibilityRequestDtoDocument $document = null, ?HrisCreateWorkEligibilityRequestDtoIssuedBy $issuedBy = null, ?string $number = null, ?string $subType = null, ?HrisCreateWorkEligibilityRequestDtoType $type = null, ?\DateTime $validFrom = null, ?\DateTime $validTo = null, ?array $passthrough = null)
     {

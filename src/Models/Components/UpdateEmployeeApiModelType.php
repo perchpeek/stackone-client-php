@@ -33,6 +33,7 @@ class UpdateEmployeeApiModelType
     /**
      * @param  ?UpdateEmployeeApiModelNationalIdentityNumberValue  $value
      * @param  string|float|bool|UpdateEmployeeApiModelSourceValueNationalIdentityNumber4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?UpdateEmployeeApiModelNationalIdentityNumberValue $value = null, string|float|bool|UpdateEmployeeApiModelSourceValueNationalIdentityNumber4|array|null $sourceValue = null)
     {

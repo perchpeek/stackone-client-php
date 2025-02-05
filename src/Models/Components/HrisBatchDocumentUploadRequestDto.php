@@ -22,6 +22,7 @@ class HrisBatchDocumentUploadRequestDto
 
     /**
      * @param  array<HrisDocumentsUploadRequestDto>  $items
+     * @phpstan-pure
      */
     public function __construct(array $items)
     {

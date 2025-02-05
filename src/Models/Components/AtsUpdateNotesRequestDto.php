@@ -55,6 +55,7 @@ class AtsUpdateNotesRequestDto
      * @param  ?string  $authorId
      * @param  ?AtsUpdateNotesRequestDtoVisibility  $visibility
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?array $content = null, ?string $authorId = null, ?AtsUpdateNotesRequestDtoVisibility $visibility = null, ?array $passthrough = null)
     {

@@ -38,6 +38,7 @@ class AtsUpdateApplicationRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\AtsUpdateApplicationRequestDto  $atsUpdateApplicationRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\AtsUpdateApplicationRequestDto $atsUpdateApplicationRequestDto)
     {

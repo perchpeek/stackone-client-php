@@ -52,6 +52,7 @@ class AtsGetJobPostingResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\JobPostingResult  $jobPostingResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\JobPostingResult $jobPostingResult = null, ?array $headers = [])
     {

@@ -63,6 +63,7 @@ class MarketingCreateContentBlocksRequestDto
      * @param  ?string  $content
      * @param  ?MarketingCreateContentBlocksRequestDtoType  $type
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?array $tags = null, ?string $content = null, ?MarketingCreateContentBlocksRequestDtoType $type = null, ?array $passthrough = null)
     {

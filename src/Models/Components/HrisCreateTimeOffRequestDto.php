@@ -107,6 +107,7 @@ class HrisCreateTimeOffRequestDto
      * @param  bool|StartHalfDay2|null  $startHalfDay
      * @param  bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null  $endHalfDay
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $employeeId = null, ?string $approverId = null, ?HrisCreateTimeOffRequestDtoStatus $status = null, ?HrisCreateTimeOffRequestDtoType $type = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, bool|StartHalfDay2|null $startHalfDay = null, bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay = null, ?array $passthrough = null)
     {

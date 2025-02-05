@@ -34,6 +34,7 @@ class EmployeeNationalIdentityNumberCountry
     /**
      * @param  ?EmployeeNationalIdentityNumberCountryValue  $value
      * @param  string|float|bool|EmployeeSourceValueNationalIdentityNumberCountry4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?EmployeeNationalIdentityNumberCountryValue $value = null, string|float|bool|EmployeeSourceValueNationalIdentityNumberCountry4|array|null $sourceValue = null)
     {

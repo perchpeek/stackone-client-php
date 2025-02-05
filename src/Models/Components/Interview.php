@@ -194,6 +194,7 @@ class Interview
      * @param  ?string  $meetingUrl
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $applicationId = null, ?string $remoteApplicationId = null, ?string $interviewStageId = null, ?string $remoteInterviewStageId = null, ?InterviewInterviewStage $interviewStage = null, ?InterviewInterviewStatus $interviewStatus = null, ?array $interviewerIds = null, ?array $remoteInterviewerIds = null, ?array $interviewParts = null, ?array $interviewers = null, ?\DateTime $startAt = null, ?\DateTime $endAt = null, ?string $meetingUrl = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

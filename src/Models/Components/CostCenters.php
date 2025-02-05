@@ -50,6 +50,7 @@ class CostCenters
      * @param  ?string  $remoteId
      * @param  ?string  $name
      * @param  ?float  $distributionPercentage
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?float $distributionPercentage = null)
     {

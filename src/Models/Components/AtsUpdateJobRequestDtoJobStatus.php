@@ -35,6 +35,7 @@ class AtsUpdateJobRequestDtoJobStatus
     /**
      * @param  ?AtsUpdateJobRequestDtoValue  $value
      * @param  string|float|bool|AtsUpdateJobRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsUpdateJobRequestDtoValue $value = null, string|float|bool|AtsUpdateJobRequestDtoSourceValue4|array|null $sourceValue = null)
     {

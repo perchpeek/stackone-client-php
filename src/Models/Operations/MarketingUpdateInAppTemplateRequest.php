@@ -38,6 +38,7 @@ class MarketingUpdateInAppTemplateRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\MarketingCreateInAppTemplateRequestDto  $marketingCreateInAppTemplateRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\MarketingCreateInAppTemplateRequestDto $marketingCreateInAppTemplateRequestDto)
     {

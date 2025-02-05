@@ -32,6 +32,7 @@ class HRISGroupsResult
     /**
      * @param  HRISGroup  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(HRISGroup $data, ?array $raw = null)
     {

@@ -84,6 +84,7 @@ class AtsCreateBackgroundCheckOrderRequestDtoCandidate
      * @param  ?array<CandidateEmail>  $emails
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?string  $profileUrl
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $firstName = null, ?string $lastName = null, ?array $emails = null, ?array $passthrough = null, ?string $profileUrl = null)
     {

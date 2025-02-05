@@ -43,6 +43,7 @@ class NationalIdentityNumber
      * @param  ?string  $value
      * @param  ?EmployeeType  $type
      * @param  ?EmployeeNationalIdentityNumberCountry  $country
+     * @phpstan-pure
      */
     public function __construct(?string $value = null, ?EmployeeType $type = null, ?EmployeeNationalIdentityNumberCountry $country = null)
     {

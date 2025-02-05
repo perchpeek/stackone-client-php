@@ -81,6 +81,7 @@ class AtsCreateOfferRequestDto
      * @param  ?string  $currency
      * @param  ?array<OfferHistory>  $offerHistory
      * @param  ?array<string, mixed>  $passthrough
+     * @phpstan-pure
      */
     public function __construct(?string $applicationId = null, ?\DateTime $startDate = null, ?AtsCreateOfferRequestDtoOfferStatus $offerStatus = null, ?float $salary = null, ?string $currency = null, ?array $offerHistory = null, ?array $passthrough = null)
     {

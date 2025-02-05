@@ -34,6 +34,7 @@ class SmsMessagesMessageType
     /**
      * @param  ?SmsMessagesValue  $value
      * @param  string|float|bool|SmsMessagesSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?SmsMessagesValue $value = null, string|float|bool|SmsMessagesSourceValue4|array|null $sourceValue = null)
     {

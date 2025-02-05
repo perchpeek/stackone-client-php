@@ -32,6 +32,7 @@ class CreateResultDataApiModel
     /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null)
     {

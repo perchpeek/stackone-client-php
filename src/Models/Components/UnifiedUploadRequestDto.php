@@ -85,6 +85,7 @@ class UnifiedUploadRequestDto
      * @param  ?string  $path
      * @param  ?UnifiedUploadRequestDtoCategory  $category
      * @param  ?UnifiedUploadRequestDtoConfidential  $confidential
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?UnifiedUploadRequestDtoFileFormat $fileFormat = null, ?string $content = null, ?string $categoryId = null, ?string $path = null, ?UnifiedUploadRequestDtoCategory $category = null, ?UnifiedUploadRequestDtoConfidential $confidential = null)
     {

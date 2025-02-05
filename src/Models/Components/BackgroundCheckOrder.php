@@ -92,6 +92,7 @@ class BackgroundCheckOrder
      * @param  ?BackgroundCheckOrderRequester  $requester
      * @param  ?string  $resultsUpdateUrl
      * @param  ?BackgroundCheckOrderPackage  $package
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?BackgroundCheckOrderApplication $application = null, ?BackgroundCheckOrderJob $job = null, ?BackgroundCheckOrderCandidate $candidate = null, ?BackgroundCheckOrderRequester $requester = null, ?string $resultsUpdateUrl = null, ?BackgroundCheckOrderPackage $package = null)
     {

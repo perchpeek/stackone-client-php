@@ -34,6 +34,7 @@ class BackgroundCheckResultResult
     /**
      * @param  ?BackgroundCheckResultValue  $value
      * @param  string|float|bool|BackgroundCheckResultSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?BackgroundCheckResultValue $value = null, string|float|bool|BackgroundCheckResultSourceValue4|array|null $sourceValue = null)
     {

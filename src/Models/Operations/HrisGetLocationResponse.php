@@ -52,6 +52,7 @@ class HrisGetLocationResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\HRISLocationResult  $hrisLocationResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HRISLocationResult $hrisLocationResult = null, ?array $headers = [])
     {

@@ -61,6 +61,7 @@ class WriteResultApiModel
      * @param  ?\DateTime  $timestamp
      * @param  ?array<ProviderErrorApiModel>  $providerErrors
      * @param  ?array<UnifiedWarningApiModel>  $unifiedWarnings
+     * @phpstan-pure
      */
     public function __construct(?float $statusCode = null, ?string $message = null, ?\DateTime $timestamp = null, ?array $providerErrors = null, ?array $unifiedWarnings = null)
     {

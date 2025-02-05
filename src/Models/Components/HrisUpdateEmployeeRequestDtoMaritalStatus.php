@@ -33,6 +33,7 @@ class HrisUpdateEmployeeRequestDtoMaritalStatus
     /**
      * @param  ?HrisUpdateEmployeeRequestDtoMaritalStatusValue  $value
      * @param  string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueMaritalStatus4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisUpdateEmployeeRequestDtoMaritalStatusValue $value = null, string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueMaritalStatus4|array|null $sourceValue = null)
     {

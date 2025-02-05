@@ -104,6 +104,7 @@ class IamListPoliciesRequest
      * @param  ?string  $next
      * @param  ?string  $updatedAfter
      * @param  ?string  $expand
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, ?array $proxy = null, ?string $fields = null, ?IamListPoliciesQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $expand = null, ?bool $raw = false, ?string $pageSize = '25')
     {

@@ -76,6 +76,7 @@ class StackoneListLinkedAccountsRequest
      * @param  ?float  $pageSize
      * @param  ?string  $provider
      * @param  ?string  $originOwnerId
+     * @phpstan-pure
      */
     public function __construct(?array $providers = null, ?array $accountIds = null, ?array $status = null, ?float $page = null, ?string $provider = null, ?string $originOwnerId = null, ?float $pageSize = 25)
     {

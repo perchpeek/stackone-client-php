@@ -33,6 +33,7 @@ class LmsCreateAssignmentRequestDtoStatus
     /**
      * @param  ?LmsCreateAssignmentRequestDtoValue  $value
      * @param  string|float|bool|LmsCreateAssignmentRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?LmsCreateAssignmentRequestDtoValue $value = null, string|float|bool|LmsCreateAssignmentRequestDtoSourceValue4|array|null $sourceValue = null)
     {

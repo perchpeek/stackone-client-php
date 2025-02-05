@@ -33,6 +33,7 @@ class AtsMoveApplicationRequestDto
     /**
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?string  $interviewStageId
+     * @phpstan-pure
      */
     public function __construct(?array $passthrough = null, ?string $interviewStageId = null)
     {

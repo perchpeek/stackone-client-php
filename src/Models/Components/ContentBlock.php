@@ -103,6 +103,7 @@ class ContentBlock
      * @param  ?ContentBlockStatus  $status
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?array $tags = null, ?string $content = null, ?ContentBlockType $type = null, ?ContentBlockStatus $status = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {

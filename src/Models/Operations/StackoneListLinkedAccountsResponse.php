@@ -52,6 +52,7 @@ class StackoneListLinkedAccountsResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?array<Components\LinkedAccount>  $linkedAccounts
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $linkedAccounts = null, ?array $headers = [])
     {

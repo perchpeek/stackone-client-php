@@ -38,6 +38,7 @@ class LmsCreateUserCompletionRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\LmsCreateCompletionRequestDto  $lmsCreateCompletionRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\LmsCreateCompletionRequestDto $lmsCreateCompletionRequestDto)
     {

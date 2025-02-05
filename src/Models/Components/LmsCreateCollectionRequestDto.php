@@ -118,6 +118,7 @@ class LmsCreateCollectionRequestDto
      * @param  ?string  $coverUrl
      * @param  ?array<CreateCategoriesApiModel>  $categories
      * @param  ?array<CreateSkillsApiModel>  $skills
+     * @phpstan-pure
      */
     public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $learningObjectIds = null, ?array $remoteLearningObjectIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?array $categories = null, ?array $skills = null)
     {

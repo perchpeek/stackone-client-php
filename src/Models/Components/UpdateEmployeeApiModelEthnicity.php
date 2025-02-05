@@ -33,6 +33,7 @@ class UpdateEmployeeApiModelEthnicity
     /**
      * @param  ?UpdateEmployeeApiModelEthnicityValue  $value
      * @param  string|float|bool|UpdateEmployeeApiModelSourceValueEthnicity4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?UpdateEmployeeApiModelEthnicityValue $value = null, string|float|bool|UpdateEmployeeApiModelSourceValueEthnicity4|array|null $sourceValue = null)
     {

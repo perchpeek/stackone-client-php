@@ -32,6 +32,7 @@ class IamRoleResult
     /**
      * @param  IamRole  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(IamRole $data, ?array $raw = null)
     {

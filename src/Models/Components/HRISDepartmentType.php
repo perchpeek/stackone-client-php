@@ -33,6 +33,7 @@ class HRISDepartmentType
     /**
      * @param  ?HRISDepartmentValue  $value
      * @param  string|float|bool|HRISDepartmentSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HRISDepartmentValue $value = null, string|float|bool|HRISDepartmentSourceValue4|array|null $sourceValue = null)
     {

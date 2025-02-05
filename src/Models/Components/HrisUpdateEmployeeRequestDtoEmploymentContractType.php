@@ -33,6 +33,7 @@ class HrisUpdateEmployeeRequestDtoEmploymentContractType
     /**
      * @param  ?HrisUpdateEmployeeRequestDtoEmploymentContractTypeValue  $value
      * @param  string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueEmploymentContractType4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisUpdateEmployeeRequestDtoEmploymentContractTypeValue $value = null, string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueEmploymentContractType4|array|null $sourceValue = null)
     {

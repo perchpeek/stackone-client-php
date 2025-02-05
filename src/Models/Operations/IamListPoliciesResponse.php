@@ -47,11 +47,16 @@ class IamListPoliciesResponse
     public ?Components\IamPoliciesPaginated $iamPoliciesPaginated = null;
 
     /**
+     * @var \Closure(string): ?IamListPoliciesResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\IamPoliciesPaginated  $iamPoliciesPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\IamPoliciesPaginated $iamPoliciesPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class IamListPoliciesResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->iamPoliciesPaginated = $iamPoliciesPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?IamListPoliciesResponse
+     */
+    public function __call($name, $args): ?IamListPoliciesResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

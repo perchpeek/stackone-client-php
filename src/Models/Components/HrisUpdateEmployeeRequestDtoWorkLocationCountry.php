@@ -34,6 +34,7 @@ class HrisUpdateEmployeeRequestDtoWorkLocationCountry
     /**
      * @param  ?HrisUpdateEmployeeRequestDtoWorkLocationValue  $value
      * @param  string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueWorkLocation4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisUpdateEmployeeRequestDtoWorkLocationValue $value = null, string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueWorkLocation4|array|null $sourceValue = null)
     {

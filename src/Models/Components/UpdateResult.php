@@ -36,6 +36,7 @@ class UpdateResult
      * @param  float  $statusCode
      * @param  string  $message
      * @param  \DateTime  $timestamp
+     * @phpstan-pure
      */
     public function __construct(float $statusCode, string $message, \DateTime $timestamp)
     {

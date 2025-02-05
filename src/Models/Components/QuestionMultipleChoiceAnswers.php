@@ -41,6 +41,7 @@ class QuestionMultipleChoiceAnswers
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?string  $text
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $text = null)
     {

@@ -38,6 +38,7 @@ class AtsRejectApplicationRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\AtsRejectApplicationRequestDto  $atsRejectApplicationRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\AtsRejectApplicationRequestDto $atsRejectApplicationRequestDto)
     {

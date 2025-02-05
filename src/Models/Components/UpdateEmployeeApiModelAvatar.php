@@ -31,6 +31,7 @@ class UpdateEmployeeApiModelAvatar
     /**
      * @param  ?string  $url
      * @param  ?string  $base64
+     * @phpstan-pure
      */
     public function __construct(?string $url = null, ?string $base64 = null)
     {

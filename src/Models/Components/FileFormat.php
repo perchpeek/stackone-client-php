@@ -34,6 +34,7 @@ class FileFormat
     /**
      * @param  ?HrisDocumentsUploadRequestDtoValue  $value
      * @param  string|float|bool|HrisDocumentsUploadRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?HrisDocumentsUploadRequestDtoValue $value = null, string|float|bool|HrisDocumentsUploadRequestDtoSourceValue4|array|null $sourceValue = null)
     {

@@ -52,6 +52,7 @@ class HrisGetEmployeeDocumentResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\HrisDocumentResult  $hrisDocumentResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\HrisDocumentResult $hrisDocumentResult = null, ?array $headers = [])
     {

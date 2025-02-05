@@ -47,11 +47,16 @@ class AtsListRejectedReasonsResponse
     public ?Components\RejectedReasonsPaginated $rejectedReasonsPaginated = null;
 
     /**
+     * @var \Closure(string): ?AtsListRejectedReasonsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\RejectedReasonsPaginated  $rejectedReasonsPaginated
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\RejectedReasonsPaginated $rejectedReasonsPaginated = null, ?array $headers = [])
     {
@@ -60,5 +65,18 @@ class AtsListRejectedReasonsResponse
         $this->rawResponse = $rawResponse;
         $this->headers = $headers;
         $this->rejectedReasonsPaginated = $rejectedReasonsPaginated;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?AtsListRejectedReasonsResponse
+     */
+    public function __call($name, $args): ?AtsListRejectedReasonsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

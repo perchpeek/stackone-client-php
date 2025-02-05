@@ -32,6 +32,7 @@ class ResultLink
     /**
      * @param  ?string  $label
      * @param  ?string  $url
+     * @phpstan-pure
      */
     public function __construct(?string $label = null, ?string $url = null)
     {

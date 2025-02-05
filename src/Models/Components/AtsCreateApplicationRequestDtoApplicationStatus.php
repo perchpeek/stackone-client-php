@@ -34,6 +34,7 @@ class AtsCreateApplicationRequestDtoApplicationStatus
     /**
      * @param  ?AtsCreateApplicationRequestDtoValue  $value
      * @param  string|float|bool|AtsCreateApplicationRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsCreateApplicationRequestDtoValue $value = null, string|float|bool|AtsCreateApplicationRequestDtoSourceValue4|array|null $sourceValue = null)
     {

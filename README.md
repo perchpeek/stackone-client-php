@@ -22,6 +22,7 @@ Marketing: The documentation for the StackOne Unified API - MARKETING
   * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
   * [Pagination](#pagination)
+  * [Retries](#retries)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
 * [Development](#development)
@@ -211,6 +212,8 @@ if ($response->connectSession !== null) {
 * [rejectApplication](docs/sdks/ats/README.md#rejectapplication) - Reject Application
 * [updateApplication](docs/sdks/ats/README.md#updateapplication) - Update an Application
 * [updateApplicationNote](docs/sdks/ats/README.md#updateapplicationnote) - Update an Application Note
+* [updateAssessmentsResult](docs/sdks/ats/README.md#updateassessmentsresult) - Update Assessments Result
+* [updateBackgroundCheckResult](docs/sdks/ats/README.md#updatebackgroundcheckresult) - Update Background Check Result
 * [updateCandidate](docs/sdks/ats/README.md#updatecandidate) - Update Candidate
 * [updateJob](docs/sdks/ats/README.md#updatejob) - Update Job
 * [uploadApplicationDocument](docs/sdks/ats/README.md#uploadapplicationdocument) - Upload Application Document
@@ -262,6 +265,7 @@ if ($response->connectSession !== null) {
 * [getGroup](docs/sdks/hris/README.md#getgroup) - Get Group
 * [getJob](docs/sdks/hris/README.md#getjob) - Get Job
 * [getLocation](docs/sdks/hris/README.md#getlocation) - Get Location
+* [getTeamGroup](docs/sdks/hris/README.md#getteamgroup) - Get Team Group
 * [getTimeEntries](docs/sdks/hris/README.md#gettimeentries) - Get Time Entry
 * [getTimeOffRequest](docs/sdks/hris/README.md#gettimeoffrequest) - Get time off request
 * [getTimeOffType](docs/sdks/hris/README.md#gettimeofftype) - Get time off type
@@ -280,6 +284,7 @@ if ($response->connectSession !== null) {
 * [listGroups](docs/sdks/hris/README.md#listgroups) - List Groups
 * [listJobs](docs/sdks/hris/README.md#listjobs) - List Jobs
 * [listLocations](docs/sdks/hris/README.md#listlocations) - List locations
+* [listTeamGroups](docs/sdks/hris/README.md#listteamgroups) - List Team Groups
 * [listTimeEntries](docs/sdks/hris/README.md#listtimeentries) - List Time Entries
 * [listTimeOffRequests](docs/sdks/hris/README.md#listtimeoffrequests) - List time off requests
 * [listTimeOffTypes](docs/sdks/hris/README.md#listtimeofftypes) - List time off types
@@ -307,6 +312,7 @@ if ($response->connectSession !== null) {
 * [createCollection](docs/sdks/lms/README.md#createcollection) - Create Collection
 * [createUserAssignment](docs/sdks/lms/README.md#createuserassignment) - Create User Assignment
 * [createUserCompletion](docs/sdks/lms/README.md#createusercompletion) - Create User Completion
+* [deleteUserCompletion](docs/sdks/lms/README.md#deleteusercompletion) - Delete User Completion
 * [getAssignment](docs/sdks/lms/README.md#getassignment) - Get Assignment
 * [getCategory](docs/sdks/lms/README.md#getcategory) - Get Category
 * [getCompletion](docs/sdks/lms/README.md#getcompletion) - Get Completion
@@ -391,17 +397,15 @@ $sdk = client\StackOne::builder()
     )
     ->build();
 
-$request = new Operations\HrisListEmployeesRequest(
+$request = new Operations\HrisListBenefitsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number',
-    filter: new Operations\HrisListEmployeesQueryParamFilter(
+    fields: 'id,remote_id,name,benefit_type,provider,description,created_at,updated_at',
+    filter: new Operations\HrisListBenefitsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
-    expand: 'company,employments,work_location,home_location,groups',
-    include: 'avatar_url,avatar,custom_fields,job_description,benefits',
 );
 
-$responses = $sdk->hris->listEmployees(
+$responses = $sdk->hris->listBenefits(
     request: $request
 );
 
@@ -413,6 +417,93 @@ foreach ($responses as $response) {
 }
 ```
 <!-- End Pagination [pagination] -->
+
+<!-- Start Retries [retries] -->
+## Retries
+
+Some of the endpoints in this SDK support retries. If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API. However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
+
+To change the default retry strategy for a single API call, simply provide an `Options` object built with a `RetryConfig` object to the call:
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Utils\Retry;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Components\ConnectSessionAuthenticate(
+    token: '<value>',
+);
+
+$response = $sdk->connectSessions->authenticateConnectSession(
+    request: $request,
+    options: Utils\Options->builder()->setRetryConfig(
+        new Retry\RetryConfigBackoff(
+            initialInterval: 1,
+            maxInterval:     50,
+            exponent:        1.1,
+            maxElapsedTime:  100,
+            retryConnectionErrors: false,
+        ))->build()
+);
+
+if ($response->connectSession !== null) {
+    // handle response
+}
+```
+
+If you'd like to override the default retry strategy for all operations that support retries, you can pass a `RetryConfig` object to the `SDKBuilder->setRetryConfig` function when initializing the SDK:
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Utils\Retry;
+
+$sdk = client\StackOne::builder()
+    ->setRetryConfig(
+        new Retry\RetryConfigBackoff(
+            initialInterval: 1,
+            maxInterval:     50,
+            exponent:        1.1,
+            maxElapsedTime:  100,
+            retryConnectionErrors: false,
+        )
+  )
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Components\ConnectSessionAuthenticate(
+    token: '<value>',
+);
+
+$response = $sdk->connectSessions->authenticateConnectSession(
+    request: $request
+);
+
+if ($response->connectSession !== null) {
+    // handle response
+}
+```
+<!-- End Retries [retries] -->
 
 <!-- Start Error Handling [errors] -->
 ## Error Handling

@@ -32,6 +32,7 @@ class CompanyResult
     /**
      * @param  Company  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(Company $data, ?array $raw = null)
     {

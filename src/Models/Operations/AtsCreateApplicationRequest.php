@@ -30,6 +30,7 @@ class AtsCreateApplicationRequest
     /**
      * @param  string  $xAccountId
      * @param  Components\AtsCreateApplicationRequestDto  $atsCreateApplicationRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, Components\AtsCreateApplicationRequestDto $atsCreateApplicationRequestDto)
     {

@@ -52,6 +52,7 @@ class Package
      * @param  ?string  $remoteId
      * @param  ?string  $name
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null)
     {

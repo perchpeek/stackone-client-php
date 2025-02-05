@@ -34,6 +34,7 @@ class ConditionType
     /**
      * @param  ?QuestionParentQuestionValue  $value
      * @param  string|float|bool|QuestionSourceValueParentQuestion4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?QuestionParentQuestionValue $value = null, string|float|bool|QuestionSourceValueParentQuestion4|array|null $sourceValue = null)
     {

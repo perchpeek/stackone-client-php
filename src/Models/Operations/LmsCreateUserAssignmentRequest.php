@@ -38,6 +38,7 @@ class LmsCreateUserAssignmentRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\LmsCreateAssignmentRequestDto  $lmsCreateAssignmentRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\LmsCreateAssignmentRequestDto $lmsCreateAssignmentRequestDto)
     {

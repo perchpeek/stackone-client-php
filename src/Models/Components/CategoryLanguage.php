@@ -34,6 +34,7 @@ class CategoryLanguage
     /**
      * @param  ?CategoryLanguageValue  $value
      * @param  string|float|bool|CategorySourceValueLanguage4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CategoryLanguageValue $value = null, string|float|bool|CategorySourceValueLanguage4|array|null $sourceValue = null)
     {

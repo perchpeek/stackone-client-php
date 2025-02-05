@@ -94,6 +94,7 @@ class ListT
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @param  ?ListType  $type
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?array $items = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?ListType $type = null)
     {

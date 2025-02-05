@@ -65,6 +65,7 @@ class AtsGetCandidateRequest
      * @param  ?array<string, mixed>  $proxy
      * @param  ?string  $fields
      * @param  ?string  $include
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?string $include = null, ?bool $raw = false)
     {

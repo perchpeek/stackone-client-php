@@ -34,6 +34,7 @@ class AtsDocumentApiModelFileFormat
     /**
      * @param  ?AtsDocumentApiModelValue  $value
      * @param  string|float|bool|AtsDocumentApiModelSourceValueFileFormat4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?AtsDocumentApiModelValue $value = null, string|float|bool|AtsDocumentApiModelSourceValueFileFormat4|array|null $sourceValue = null)
     {

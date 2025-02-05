@@ -52,6 +52,7 @@ class MarketingGetPushTemplateResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\PushTemplateResult  $pushTemplateResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\PushTemplateResult $pushTemplateResult = null, ?array $headers = [])
     {

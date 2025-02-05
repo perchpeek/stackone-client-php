@@ -48,6 +48,7 @@ class RawResponse
      * @param  string  $url
      * @param  ?string  $body
      * @param  ?array<string, mixed>  $response
+     * @phpstan-pure
      */
     public function __construct(string $method, string $url, ?string $body = null, ?array $response = null)
     {

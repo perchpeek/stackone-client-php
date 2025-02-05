@@ -38,6 +38,7 @@ class HrisUploadEmployeeDocumentRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\HrisDocumentsUploadRequestDto  $hrisDocumentsUploadRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\HrisDocumentsUploadRequestDto $hrisDocumentsUploadRequestDto)
     {

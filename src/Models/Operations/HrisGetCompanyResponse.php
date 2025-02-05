@@ -52,6 +52,7 @@ class HrisGetCompanyResponse
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<string, array<string>>  $headers
      * @param  ?Components\CompanyResult  $companyResult
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\CompanyResult $companyResult = null, ?array $headers = [])
     {

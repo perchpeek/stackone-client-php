@@ -38,6 +38,7 @@ class HrisCreateEmployeeEmploymentRequest
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  Components\HrisCreateEmploymentRequestDto  $hrisCreateEmploymentRequestDto
+     * @phpstan-pure
      */
     public function __construct(string $xAccountId, string $id, Components\HrisCreateEmploymentRequestDto $hrisCreateEmploymentRequestDto)
     {

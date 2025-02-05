@@ -32,6 +32,7 @@ class IamGroupResult
     /**
      * @param  IamGroup  $data
      * @param  ?array<RawResponse>  $raw
+     * @phpstan-pure
      */
     public function __construct(IamGroup $data, ?array $raw = null)
     {

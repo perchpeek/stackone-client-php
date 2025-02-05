@@ -72,6 +72,7 @@ class CustomFieldDefinition
      * @param  ?string  $description
      * @param  ?Type  $type
      * @param  ?array<string|float|bool|Four|array<mixed>>  $options
+     * @phpstan-pure
      */
     public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?Type $type = null, ?array $options = null)
     {

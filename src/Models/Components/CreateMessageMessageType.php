@@ -35,6 +35,7 @@ class CreateMessageMessageType
     /**
      * @param  ?CreateMessageValue  $value
      * @param  string|float|bool|CreateMessageSourceValue4|array<mixed>|null  $sourceValue
+     * @phpstan-pure
      */
     public function __construct(?CreateMessageValue $value = null, string|float|bool|CreateMessageSourceValue4|array|null $sourceValue = null)
     {
