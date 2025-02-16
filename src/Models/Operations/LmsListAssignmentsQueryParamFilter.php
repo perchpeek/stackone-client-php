@@ -29,23 +29,13 @@ class LmsListAssignmentsQueryParamFilter
     public ?LmsListAssignmentsQueryParamStatus $status = null;
 
     /**
-     * Filter to select assignment by learning object type.
-     *
-     * @var ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType
-     */
-    #[SpeakeasyMetadata('queryParam:name=learning_object_type')]
-    public ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType = null;
-
-    /**
      * @param  ?string  $updatedAfter
      * @param  ?LmsListAssignmentsQueryParamStatus  $status
-     * @param  ?LmsListAssignmentsQueryParamLearningObjectType  $learningObjectType
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?LmsListAssignmentsQueryParamStatus $status = null, ?LmsListAssignmentsQueryParamLearningObjectType $learningObjectType = null)
+    public function __construct(?string $updatedAfter = null, ?LmsListAssignmentsQueryParamStatus $status = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->status = $status;
-        $this->learningObjectType = $learningObjectType;
     }
 }

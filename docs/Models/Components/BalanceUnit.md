@@ -1,0 +1,11 @@
+# BalanceUnit
+
+The duration unit of the current balance
+
+
+## Fields
+
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                      | [?Components\TimeOffBalancesValue](../../Models/Components/TimeOffBalancesValue.md)                                          | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
+| `sourceValue`                                                                                                                | [string\|float\|bool\|Components\TimeOffBalancesSourceValue4\|array\|null](../../Models/Components/TimeOffBalancesSourceValue.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |

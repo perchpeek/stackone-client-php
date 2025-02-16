@@ -78,6 +78,15 @@ class LmsUpsertContentRequestDto
     public ?string $contentUrl = null;
 
     /**
+     * The mobile friendly URL of the content
+     *
+     * @var ?string $mobileLaunchContentUrl
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('mobile_launch_content_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $mobileLaunchContentUrl = null;
+
+    /**
      * The type of content
      *
      * @var ?LmsUpsertContentRequestDtoContentType $contentType
@@ -161,6 +170,7 @@ class LmsUpsertContentRequestDto
      * @param  ?array<AdditionalData>  $additionalData
      * @param  ?array<LanguageEnum>  $languages
      * @param  ?string  $contentUrl
+     * @param  ?string  $mobileLaunchContentUrl
      * @param  ?LmsUpsertContentRequestDtoContentType  $contentType
      * @param  ?string  $coverUrl
      * @param  ?bool  $active
@@ -171,7 +181,7 @@ class LmsUpsertContentRequestDto
      * @param  ?array<CreateCategoriesApiModel>  $categories
      * @phpstan-pure
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $additionalData = null, ?array $languages = null, ?string $contentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $additionalData = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $categories = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -180,6 +190,7 @@ class LmsUpsertContentRequestDto
         $this->additionalData = $additionalData;
         $this->languages = $languages;
         $this->contentUrl = $contentUrl;
+        $this->mobileLaunchContentUrl = $mobileLaunchContentUrl;
         $this->contentType = $contentType;
         $this->coverUrl = $coverUrl;
         $this->active = $active;

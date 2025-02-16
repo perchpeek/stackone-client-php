@@ -62,6 +62,14 @@ class LinkedAccount
     public \DateTime $updatedAt;
 
     /**
+     *
+     * @var ?string $providerName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('provider_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $providerName = null;
+
+    /**
      * $statusReasons
      *
      * @var ?array<StatusReason> $statusReasons
@@ -113,6 +121,7 @@ class LinkedAccount
      * @param  string  $originOwnerName
      * @param  \DateTime  $createdAt
      * @param  \DateTime  $updatedAt
+     * @param  ?string  $providerName
      * @param  ?array<StatusReason>  $statusReasons
      * @param  ?string  $originUsername
      * @param  ?Credentials  $credentials
@@ -120,7 +129,7 @@ class LinkedAccount
      * @param  ?string  $label
      * @phpstan-pure
      */
-    public function __construct(string $id, string $provider, Status $status, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, \DateTime $updatedAt, ?array $statusReasons = null, ?string $originUsername = null, ?Credentials $credentials = null, ?SetupInformation $setupInformation = null, ?string $label = null)
+    public function __construct(string $id, string $provider, Status $status, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, \DateTime $updatedAt, ?string $providerName = null, ?array $statusReasons = null, ?string $originUsername = null, ?Credentials $credentials = null, ?SetupInformation $setupInformation = null, ?string $label = null)
     {
         $this->id = $id;
         $this->provider = $provider;
@@ -129,6 +138,7 @@ class LinkedAccount
         $this->originOwnerName = $originOwnerName;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->providerName = $providerName;
         $this->statusReasons = $statusReasons;
         $this->originUsername = $originUsername;
         $this->credentials = $credentials;

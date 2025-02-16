@@ -21,21 +21,11 @@ class LmsListCompletionsQueryParamFilter
     public ?string $updatedAfter = null;
 
     /**
-     * Filter to select completions by learning object type.
-     *
-     * @var ?LmsListCompletionsQueryParamLearningObjectType $learningObjectType
-     */
-    #[SpeakeasyMetadata('queryParam:name=learning_object_type')]
-    public ?LmsListCompletionsQueryParamLearningObjectType $learningObjectType = null;
-
-    /**
      * @param  ?string  $updatedAfter
-     * @param  ?LmsListCompletionsQueryParamLearningObjectType  $learningObjectType
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?LmsListCompletionsQueryParamLearningObjectType $learningObjectType = null)
+    public function __construct(?string $updatedAfter = null)
     {
         $this->updatedAfter = $updatedAfter;
-        $this->learningObjectType = $learningObjectType;
     }
 }

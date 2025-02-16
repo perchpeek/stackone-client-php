@@ -12,6 +12,15 @@ namespace StackOne\client\Models\Components;
 class CreateContentApiModel
 {
     /**
+     * The external ID associated with this content
+     *
+     * @var ?string $externalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalReference = null;
+
+    /**
      * The title of the content
      *
      * @var ?string $title
@@ -48,14 +57,16 @@ class CreateContentApiModel
     public ?float $order = null;
 
     /**
+     * @param  ?string  $externalReference
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $contentUrl
      * @param  ?float  $order
      * @phpstan-pure
      */
-    public function __construct(?string $title = null, ?string $description = null, ?string $contentUrl = null, ?float $order = null)
+    public function __construct(?string $externalReference = null, ?string $title = null, ?string $description = null, ?string $contentUrl = null, ?float $order = null)
     {
+        $this->externalReference = $externalReference;
         $this->title = $title;
         $this->description = $description;
         $this->contentUrl = $contentUrl;

@@ -605,6 +605,9 @@ class Crm
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listAccountsIndividual(
@@ -739,6 +742,9 @@ class Crm
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listContactCustomFieldDefinitionsIndividual(
@@ -873,6 +879,9 @@ class Crm
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listContactsIndividual(
@@ -1008,6 +1017,9 @@ class Crm
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listListsIndividual(

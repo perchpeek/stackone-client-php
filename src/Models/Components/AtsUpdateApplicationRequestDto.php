@@ -22,16 +22,6 @@ class AtsUpdateApplicationRequestDto
     public ?array $passthrough = null;
 
     /**
-     * Unique identifier of the rejection reason
-     *
-     * @var ?string $rejectedReasonId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('rejected_reason_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $rejectedReasonId = null;
-
-    /**
      * The application custom fields
      *
      * @var ?array<CustomFields> $customFields
@@ -60,30 +50,17 @@ class AtsUpdateApplicationRequestDto
     public ?AtsUpdateApplicationRequestDtoSource $source = null;
 
     /**
-     * Unique identifier of the interview stage
-     *
-     * @var ?string $interviewStageId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $interviewStageId = null;
-
-    /**
      * @param  ?array<string, mixed>  $passthrough
-     * @param  ?string  $rejectedReasonId
      * @param  ?array<CustomFields>  $customFields
      * @param  ?AtsUpdateApplicationRequestDtoApplicationStatus  $applicationStatus
      * @param  ?AtsUpdateApplicationRequestDtoSource  $source
-     * @param  ?string  $interviewStageId
      * @phpstan-pure
      */
-    public function __construct(?array $passthrough = null, ?string $rejectedReasonId = null, ?array $customFields = null, ?AtsUpdateApplicationRequestDtoApplicationStatus $applicationStatus = null, ?AtsUpdateApplicationRequestDtoSource $source = null, ?string $interviewStageId = null)
+    public function __construct(?array $passthrough = null, ?array $customFields = null, ?AtsUpdateApplicationRequestDtoApplicationStatus $applicationStatus = null, ?AtsUpdateApplicationRequestDtoSource $source = null)
     {
         $this->passthrough = $passthrough;
-        $this->rejectedReasonId = $rejectedReasonId;
         $this->customFields = $customFields;
         $this->applicationStatus = $applicationStatus;
         $this->source = $source;
-        $this->interviewStageId = $interviewStageId;
     }
 }
