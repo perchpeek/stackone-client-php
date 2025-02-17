@@ -58,14 +58,14 @@ class Skills
     public ?SkillsHierarchy $hierarchy = null;
 
     /**
-     * The user competency level of the skill ranked out of 5
+     * The user proficiency level of the skill ranked out of 5
      *
-     * @var ?SkillsCompetency $competency
+     * @var ?SkillsProficiency $proficiency
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('competency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SkillsCompetency|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proficiency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SkillsProficiency|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SkillsCompetency $competency = null;
+    public ?SkillsProficiency $proficiency = null;
 
     /**
      * The language associated with this skill
@@ -94,19 +94,19 @@ class Skills
      * @param  ?string  $name
      * @param  ?bool  $active
      * @param  ?SkillsHierarchy  $hierarchy
-     * @param  ?SkillsCompetency  $competency
+     * @param  ?SkillsProficiency  $proficiency
      * @param  ?SkillsLanguage  $language
      * @param  ?SkillsLevel  $level
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?bool $active = null, ?SkillsHierarchy $hierarchy = null, ?SkillsCompetency $competency = null, ?SkillsLanguage $language = null, ?SkillsLevel $level = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?bool $active = null, ?SkillsHierarchy $hierarchy = null, ?SkillsProficiency $proficiency = null, ?SkillsLanguage $language = null, ?SkillsLevel $level = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->name = $name;
         $this->active = $active;
         $this->hierarchy = $hierarchy;
-        $this->competency = $competency;
+        $this->proficiency = $proficiency;
         $this->language = $language;
         $this->level = $level;
     }

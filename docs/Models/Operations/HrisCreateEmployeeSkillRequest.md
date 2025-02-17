@@ -1,0 +1,10 @@
+# HrisCreateEmployeeSkillRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The account identifier                                                                         |
+| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `hrisSkillsCreateRequestDto`                                                                   | [Components\HrisSkillsCreateRequestDto](../../Models/Components/HrisSkillsCreateRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |

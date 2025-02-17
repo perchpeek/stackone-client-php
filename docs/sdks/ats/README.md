@@ -4086,7 +4086,6 @@ $atsUpdateApplicationRequestDto = new Components\AtsUpdateApplicationRequestDto(
         id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
         name: 'LinkedIn',
     ),
-    interviewStageId: '18bcbb1b-3cbc-4198-a999-460861d19480',
 );
 
 $response = $sdk->ats->updateApplication(

@@ -3447,6 +3447,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationCustomFieldDefinitionsIndividual(
@@ -3581,6 +3584,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationDocumentsIndividual(
@@ -3717,6 +3723,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationNotesIndividual(
@@ -3853,6 +3862,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationScorecardsIndividual(
@@ -3989,6 +4001,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationsIndividual(
@@ -4127,6 +4142,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationsOffersIndividual(
@@ -4263,6 +4281,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listApplicationsScheduledInterviewsIndividual(
@@ -4399,6 +4420,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listAssessmentsPackagesIndividual(
@@ -4533,6 +4557,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listBackgroundCheckPackagesIndividual(
@@ -4667,6 +4694,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listBackgroundCheckRequestIndividual(
@@ -4801,6 +4831,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCandidateCustomFieldDefinitionsIndividual(
@@ -4935,6 +4968,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCandidateNotesIndividual(
@@ -5071,6 +5107,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCandidatesIndividual(
@@ -5207,6 +5246,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listDepartmentsIndividual(
@@ -5342,6 +5384,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listInterviewStagesIndividual(
@@ -5477,6 +5522,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listInterviewsIndividual(
@@ -5612,6 +5660,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listJobCustomFieldDefinitionsIndividual(
@@ -5746,6 +5797,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listJobPostingsIndividual(
@@ -5882,6 +5936,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listJobsIndividual(
@@ -6019,6 +6076,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listListsIndividual(
@@ -6153,6 +6213,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listLocationsIndividual(
@@ -6288,6 +6351,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listOffersIndividual(
@@ -6423,6 +6489,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listRejectedReasonsIndividual(
@@ -6558,6 +6627,9 @@ class Ats
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listUsersIndividual(

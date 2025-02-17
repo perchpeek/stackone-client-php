@@ -79,6 +79,7 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                 ),
             ],
             contentUrl: 'https://www.youtube.com/watch?v=16873',
+            mobileLaunchContentUrl: 'https://www.mobile.youtube.com/watch?v=16873',
             coverUrl: 'https://www.googledrive.com/?v=16873',
             active: true,
             duration: 'P3Y6M4DT12H30M5S',
@@ -200,6 +201,7 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
             ],
             content: [
                 new Components\CreateContentApiModel(
+                    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
                     title: 'Software Engineer Lv 1',
                     description: 'This video acts as learning content for software engineers.',
                     contentUrl: 'https://www.youtube.com/watch?v=16873',
@@ -704,7 +706,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetContentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
 );
 
 $response = $sdk->lms->getContent(
@@ -814,7 +816,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetSkillRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active,level,language,hierarchy,competency',
+    fields: 'id,remote_id,name,active,level,language,hierarchy,proficiency',
 );
 
 $response = $sdk->lms->getSkill(
@@ -1215,7 +1217,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
     filter: new Operations\LmsListContentQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1335,7 +1337,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListSkillsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active,level,language,hierarchy,competency',
+    fields: 'id,remote_id,name,active,level,language,hierarchy,proficiency',
     filter: new Operations\LmsListSkillsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1691,6 +1693,7 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
         ),
     ],
     contentUrl: 'https://www.youtube.com/watch?v=16873',
+    mobileLaunchContentUrl: 'https://www.mobile.youtube.com/watch?v=16873',
     coverUrl: 'https://www.googledrive.com/?v=16873',
     active: true,
     duration: 'P3Y6M4DT12H30M5S',
@@ -1808,6 +1811,7 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
     ],
     content: [
         new Components\CreateContentApiModel(
+            externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
             title: 'Software Engineer Lv 1',
             description: 'This video acts as learning content for software engineers.',
             contentUrl: 'https://www.youtube.com/watch?v=16873',

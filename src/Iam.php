@@ -504,6 +504,9 @@ class Iam
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listGroupsIndividual(
@@ -639,6 +642,9 @@ class Iam
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listPoliciesIndividual(
@@ -774,6 +780,9 @@ class Iam
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listRolesIndividual(
@@ -909,6 +918,9 @@ class Iam
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listUsersIndividual(

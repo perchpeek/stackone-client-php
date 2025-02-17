@@ -1,0 +1,11 @@
+# TimeOffPoliciesType
+
+The type of this policy
+
+
+## Fields
+
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                      | [?Components\TimeOffPoliciesValue](../../Models/Components/TimeOffPoliciesValue.md)                                          | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |
+| `sourceValue`                                                                                                                | [string\|float\|bool\|Components\TimeOffPoliciesSourceValue4\|array\|null](../../Models/Components/TimeOffPoliciesSourceValue.md) | :heavy_minus_sign:                                                                                                           | N/A                                                                                                                          |

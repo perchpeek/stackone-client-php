@@ -40,14 +40,14 @@ class CreateSkillsApiModel
     public ?CreateSkillsApiModelHierarchy $hierarchy = null;
 
     /**
-     * The user competency level of the skill ranked out of 5
+     * The user proficiency level of the skill ranked out of 5
      *
-     * @var ?Competency $competency
+     * @var ?Proficiency $proficiency
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('competency')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Competency|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proficiency')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Proficiency|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Competency $competency = null;
+    public ?Proficiency $proficiency = null;
 
     /**
      * The language associated with this skill
@@ -74,17 +74,17 @@ class CreateSkillsApiModel
      * @param  ?string  $id
      * @param  ?string  $name
      * @param  ?CreateSkillsApiModelHierarchy  $hierarchy
-     * @param  ?Competency  $competency
+     * @param  ?Proficiency  $proficiency
      * @param  ?CreateSkillsApiModelLanguage  $language
      * @param  ?CreateSkillsApiModelLevel  $level
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?CreateSkillsApiModelHierarchy $hierarchy = null, ?Competency $competency = null, ?CreateSkillsApiModelLanguage $language = null, ?CreateSkillsApiModelLevel $level = null)
+    public function __construct(?string $id = null, ?string $name = null, ?CreateSkillsApiModelHierarchy $hierarchy = null, ?Proficiency $proficiency = null, ?CreateSkillsApiModelLanguage $language = null, ?CreateSkillsApiModelLevel $level = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->hierarchy = $hierarchy;
-        $this->competency = $competency;
+        $this->proficiency = $proficiency;
         $this->language = $language;
         $this->level = $level;
     }

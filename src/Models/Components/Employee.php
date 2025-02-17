@@ -361,10 +361,20 @@ class Employee
      * The employee company name
      *
      * @var ?string $companyName
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('company_name')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $companyName = null;
+
+    /**
+     * The employee company id
+     *
+     * @var ?string $companyId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('company_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $companyId = null;
 
     /**
      * The citizenships of the Employee
@@ -511,6 +521,7 @@ class Employee
      * @param  ?EmploymentStatus  $employmentStatus
      * @param  ?\DateTime  $terminationDate
      * @param  ?string  $companyName
+     * @param  ?string  $companyId
      * @param  ?array<CountryCodeEnum>  $citizenships
      * @param  ?HomeLocation  $homeLocation
      * @param  ?WorkLocation  $workLocation
@@ -524,7 +535,7 @@ class Employee
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?JobDescription $jobDescription = null, ?string $departmentId = null, ?string $department = null, ?array $groups = null, ?array $costCenters = null, ?string $managerId = null, ?string $remoteManagerId = null, ?Gender $gender = null, ?PreferredLanguage $preferredLanguage = null, ?Ethnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?MaritalStatus $maritalStatus = null, ?Avatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?EmploymentType $employmentType = null, ?EmploymentContractType $employmentContractType = null, ?EmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?array $citizenships = null, ?HomeLocation $homeLocation = null, ?WorkLocation $workLocation = null, ?EmployeeCompany $company = null, ?array $employments = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?NationalIdentityNumber $nationalIdentityNumber = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?JobDescription $jobDescription = null, ?string $departmentId = null, ?string $department = null, ?array $groups = null, ?array $costCenters = null, ?string $managerId = null, ?string $remoteManagerId = null, ?Gender $gender = null, ?PreferredLanguage $preferredLanguage = null, ?Ethnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?MaritalStatus $maritalStatus = null, ?Avatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?EmploymentType $employmentType = null, ?EmploymentContractType $employmentContractType = null, ?EmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?HomeLocation $homeLocation = null, ?WorkLocation $workLocation = null, ?EmployeeCompany $company = null, ?array $employments = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?NationalIdentityNumber $nationalIdentityNumber = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -563,6 +574,7 @@ class Employee
         $this->employmentStatus = $employmentStatus;
         $this->terminationDate = $terminationDate;
         $this->companyName = $companyName;
+        $this->companyId = $companyId;
         $this->citizenships = $citizenships;
         $this->homeLocation = $homeLocation;
         $this->workLocation = $workLocation;

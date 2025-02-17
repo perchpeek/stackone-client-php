@@ -620,7 +620,7 @@ class Lms
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
-        if (Utils\Utils::matchStatusCodes($statusCode, ['201'])) {
+        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
 
@@ -637,6 +637,14 @@ class Lms
             } else {
                 throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['204'])) {
+            $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+            return new Operations\LmsDeleteUserCompletionResponse(
+                statusCode: $statusCode,
+                contentType: $contentType,
+                rawResponse: $httpResponse
+            );
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['408'])) {
             throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '412', '429', '4XX'])) {
@@ -1571,6 +1579,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listAssignmentsIndividual(
@@ -1707,6 +1718,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCategoriesIndividual(
@@ -1841,6 +1855,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCompletionsIndividual(
@@ -1975,6 +1992,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listContentIndividual(
@@ -2109,6 +2129,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCoursesIndividual(
@@ -2243,6 +2266,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listSkillsIndividual(
@@ -2377,6 +2403,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listUserAssignmentsIndividual(
@@ -2514,6 +2543,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listUserCompletionsIndividual(
@@ -2649,6 +2681,9 @@ class Lms
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listUsersIndividual(

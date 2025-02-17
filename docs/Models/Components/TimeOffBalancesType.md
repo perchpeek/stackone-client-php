@@ -1,0 +1,11 @@
+# TimeOffBalancesType
+
+The type of this policy
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                                                  | [?Components\TimeOffBalancesPolicyValue](../../Models/Components/TimeOffBalancesPolicyValue.md)                                          | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |
+| `sourceValue`                                                                                                                            | [string\|float\|bool\|Components\TimeOffBalancesSourceValuePolicy4\|array\|null](../../Models/Components/TimeOffBalancesPolicySourceValue.md) | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      |

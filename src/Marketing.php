@@ -1388,6 +1388,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listCampaignsIndividual(
@@ -1522,6 +1525,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listContentBlocksIndividual(
@@ -1656,6 +1662,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listEmailTemplatesIndividual(
@@ -1790,6 +1799,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listInAppTemplatesIndividual(
@@ -1926,6 +1938,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listOmniChannelTemplatesIndividual(
@@ -2061,6 +2076,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listPushTemplatesIndividual(
@@ -2195,6 +2213,9 @@ class Marketing
                         return null;
                     } else {
                         $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
                     }
 
                     return $sdk->listSmsTemplatesIndividual(
