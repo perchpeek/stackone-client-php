@@ -235,15 +235,17 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
         ),
     ],
     employeeNumber: '125',
-    nationalIdentityNumber: new Components\HrisCreateEmployeeRequestDtoNationalIdentityNumber(
-        value: '123456789',
-        type: new Components\HrisCreateEmployeeRequestDtoType(
-            value: Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberValue::Ssn,
+    nationalIdentityNumbers: [
+        new Components\NationalIdentityNumberApiModel(
+            value: '123456789',
+            type: new Components\NationalIdentityNumberApiModelType(
+                value: Components\NationalIdentityNumberApiModelValue::Ssn,
+            ),
+            country: new Components\Country(
+                value: Components\NationalIdentityNumberApiModelCountryValue::Us,
+            ),
         ),
-        country: new Components\HrisCreateEmployeeRequestDtoCountry(
-            value: Components\HrisCreateEmployeeRequestDtoNationalIdentityNumberCountryValue::Us,
-        ),
-    ),
+    ],
     homeLocation: new Components\HrisCreateEmployeeRequestDtoHomeLocation(
         id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
         name: 'Woolsthorpe Manor',
@@ -966,7 +968,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmployeeRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers',
     expand: 'company,employments,work_location,home_location,groups',
     include: 'avatar_url,avatar,custom_fields,job_description,benefits',
 );
@@ -2636,7 +2638,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers',
     filter: new Operations\HrisListEmployeesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -3293,15 +3295,17 @@ $hrisUpdateEmployeeRequestDto = new Components\HrisUpdateEmployeeRequestDto(
         ),
     ],
     employeeNumber: '125',
-    nationalIdentityNumber: new Components\HrisUpdateEmployeeRequestDtoNationalIdentityNumber(
-        value: '123456789',
-        type: new Components\HrisUpdateEmployeeRequestDtoType(
-            value: Components\HrisUpdateEmployeeRequestDtoNationalIdentityNumberValue::Ssn,
+    nationalIdentityNumbers: [
+        new Components\NationalIdentityNumberApiModel(
+            value: '123456789',
+            type: new Components\NationalIdentityNumberApiModelType(
+                value: Components\NationalIdentityNumberApiModelValue::Ssn,
+            ),
+            country: new Components\Country(
+                value: Components\NationalIdentityNumberApiModelCountryValue::Us,
+            ),
         ),
-        country: new Components\HrisUpdateEmployeeRequestDtoCountry(
-            value: Components\HrisUpdateEmployeeRequestDtoNationalIdentityNumberCountryValue::Us,
-        ),
-    ),
+    ],
     homeLocation: new Components\HrisUpdateEmployeeRequestDtoHomeLocation(
         id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
         name: 'Woolsthorpe Manor',

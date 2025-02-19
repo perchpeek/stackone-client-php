@@ -123,12 +123,12 @@ class HRISLocation
     /**
      * The country code
      *
-     * @var ?Country $country
+     * @var ?HRISLocationCountry $country
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Country|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HRISLocationCountry|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Country $country = null;
+    public ?HRISLocationCountry $country = null;
 
     /**
      * The location type
@@ -171,13 +171,13 @@ class HRISLocation
      * @param  ?string  $city
      * @param  ?string  $state
      * @param  ?string  $zipCode
-     * @param  ?Country  $country
+     * @param  ?HRISLocationCountry  $country
      * @param  ?LocationType  $locationType
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $state = null, ?string $zipCode = null, ?Country $country = null, ?LocationType $locationType = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $name = null, ?string $phoneNumber = null, ?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $state = null, ?string $zipCode = null, ?HRISLocationCountry $country = null, ?LocationType $locationType = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

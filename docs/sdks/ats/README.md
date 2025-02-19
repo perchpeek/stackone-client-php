@@ -2192,7 +2192,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetUserRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,email',
+    fields: 'id,remote_id,first_name,last_name,name,email,phone',
 );
 
 $response = $sdk->ats->getUser(
@@ -3642,7 +3642,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListUsersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,email',
+    fields: 'id,remote_id,first_name,last_name,name,email,phone',
     filter: new Operations\AtsListUsersQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),

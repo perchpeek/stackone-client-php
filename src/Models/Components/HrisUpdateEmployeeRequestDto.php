@@ -342,11 +342,22 @@ class HrisUpdateEmployeeRequestDto
      * The national identity number
      *
      * @var ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('national_identity_number')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisUpdateEmployeeRequestDtoNationalIdentityNumber|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null;
+
+    /**
+     * The national identity numbers
+     *
+     * @var ?array<NationalIdentityNumberApiModel> $nationalIdentityNumbers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('national_identity_numbers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\NationalIdentityNumberApiModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $nationalIdentityNumbers = null;
 
     /**
      * The employee home location
@@ -415,12 +426,13 @@ class HrisUpdateEmployeeRequestDto
      * @param  ?array<CreateHRISBenefit>  $benefits
      * @param  ?string  $employeeNumber
      * @param  ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber  $nationalIdentityNumber
+     * @param  ?array<NationalIdentityNumberApiModel>  $nationalIdentityNumbers
      * @param  ?HrisUpdateEmployeeRequestDtoHomeLocation  $homeLocation
      * @param  ?HrisUpdateEmployeeRequestDtoWorkLocation  $workLocation
      * @param  ?array<string, mixed>  $passthrough
      * @phpstan-pure
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $department = null, ?string $managerId = null, ?HrisUpdateEmployeeRequestDtoGender $gender = null, ?HrisUpdateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null, ?HrisUpdateEmployeeRequestDtoEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?HrisUpdateEmployeeRequestDtoMaritalStatus $maritalStatus = null, ?HrisUpdateEmployeeRequestDtoAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?HrisUpdateEmployeeRequestDtoEmploymentType $employmentType = null, ?HrisUpdateEmployeeRequestDtoEmploymentContractType $employmentContractType = null, ?HrisUpdateEmployeeRequestDtoEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null, ?HrisUpdateEmployeeRequestDtoHomeLocation $homeLocation = null, ?HrisUpdateEmployeeRequestDtoWorkLocation $workLocation = null, ?array $passthrough = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $department = null, ?string $managerId = null, ?HrisUpdateEmployeeRequestDtoGender $gender = null, ?HrisUpdateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null, ?HrisUpdateEmployeeRequestDtoEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?HrisUpdateEmployeeRequestDtoMaritalStatus $maritalStatus = null, ?HrisUpdateEmployeeRequestDtoAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?HrisUpdateEmployeeRequestDtoEmploymentType $employmentType = null, ?HrisUpdateEmployeeRequestDtoEmploymentContractType $employmentContractType = null, ?HrisUpdateEmployeeRequestDtoEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?HrisUpdateEmployeeRequestDtoHomeLocation $homeLocation = null, ?HrisUpdateEmployeeRequestDtoWorkLocation $workLocation = null, ?array $passthrough = null)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -458,6 +470,7 @@ class HrisUpdateEmployeeRequestDto
         $this->benefits = $benefits;
         $this->employeeNumber = $employeeNumber;
         $this->nationalIdentityNumber = $nationalIdentityNumber;
+        $this->nationalIdentityNumbers = $nationalIdentityNumbers;
         $this->homeLocation = $homeLocation;
         $this->workLocation = $workLocation;
         $this->passthrough = $passthrough;

@@ -23,19 +23,19 @@ class HrisListTimeOffRequestsQueryParamFilter
     /**
      * List of time off type ids to filter by.
      *
-     * @var ?array<string> $type
+     * @var ?array<string> $typeIds
      */
-    #[SpeakeasyMetadata('queryParam:name=type')]
-    public ?array $type = null;
+    #[SpeakeasyMetadata('queryParam:name=type_ids')]
+    public ?array $typeIds = null;
 
     /**
      * @param  ?string  $updatedAfter
-     * @param  ?array<string>  $type
+     * @param  ?array<string>  $typeIds
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?array $type = null)
+    public function __construct(?string $updatedAfter = null, ?array $typeIds = null)
     {
         $this->updatedAfter = $updatedAfter;
-        $this->type = $type;
+        $this->typeIds = $typeIds;
     }
 }
