@@ -15,28 +15,28 @@ class Country
     /**
      * The ISO3166-1 Alpha2 Code of the Country
      *
-     * @var ?HRISLocationValue $value
+     * @var ?NationalIdentityNumberApiModelCountryValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HRISLocationValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\NationalIdentityNumberApiModelCountryValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?HRISLocationValue $value = null;
+    public ?NationalIdentityNumberApiModelCountryValue $value = null;
 
     /**
      *
-     * @var string|float|bool|HRISLocationSourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|NationalIdentityNumberApiModelSourceValueCountry4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HRISLocationSourceValue4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\NationalIdentityNumberApiModelSourceValueCountry4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|HRISLocationSourceValue4|array|null $sourceValue = null;
+    public string|float|bool|NationalIdentityNumberApiModelSourceValueCountry4|array|null $sourceValue = null;
 
     /**
-     * @param  ?HRISLocationValue  $value
-     * @param  string|float|bool|HRISLocationSourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?NationalIdentityNumberApiModelCountryValue  $value
+     * @param  string|float|bool|NationalIdentityNumberApiModelSourceValueCountry4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?HRISLocationValue $value = null, string|float|bool|HRISLocationSourceValue4|array|null $sourceValue = null)
+    public function __construct(?NationalIdentityNumberApiModelCountryValue $value = null, string|float|bool|NationalIdentityNumberApiModelSourceValueCountry4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

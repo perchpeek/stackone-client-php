@@ -40,7 +40,7 @@ class TimeEntries
     public ?array $unifiedCustomFields = null;
 
     /**
-     * The employee ID associated with this employment
+     * The employee ID associated with this time entry
      *
      * @var ?string $employeeId
      */
@@ -49,7 +49,7 @@ class TimeEntries
     public ?string $employeeId = null;
 
     /**
-     * Provider's unique identifier of the employee associated with this employment
+     * Provider's unique identifier of the employee associated with this time entry
      *
      * @var ?string $remoteEmployeeId
      */
@@ -85,7 +85,7 @@ class TimeEntries
     public ?float $hoursWorked = null;
 
     /**
-     * The duration of the break in hours
+     * The duration of the break taken during time entry in hours
      *
      * @var ?float $breakDuration
      */
