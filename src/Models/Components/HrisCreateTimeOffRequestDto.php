@@ -88,6 +88,24 @@ class HrisCreateTimeOffRequestDto
     public bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay = null;
 
     /**
+     * The time off policy id associated with this time off request
+     *
+     * @var ?string $timeOffPolicyId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('time_off_policy_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timeOffPolicyId = null;
+
+    /**
+     *
+     * @var ?HrisCreateTimeOffRequestDtoReason $reason
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reason')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateTimeOffRequestDtoReason|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?HrisCreateTimeOffRequestDtoReason $reason = null;
+
+    /**
      * Value to pass through to the provider
      *
      * @var ?array<string, mixed> $passthrough
@@ -106,10 +124,12 @@ class HrisCreateTimeOffRequestDto
      * @param  ?\DateTime  $endDate
      * @param  bool|StartHalfDay2|null  $startHalfDay
      * @param  bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null  $endHalfDay
+     * @param  ?string  $timeOffPolicyId
+     * @param  ?HrisCreateTimeOffRequestDtoReason  $reason
      * @param  ?array<string, mixed>  $passthrough
      * @phpstan-pure
      */
-    public function __construct(?string $employeeId = null, ?string $approverId = null, ?HrisCreateTimeOffRequestDtoStatus $status = null, ?HrisCreateTimeOffRequestDtoType $type = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, bool|StartHalfDay2|null $startHalfDay = null, bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay = null, ?array $passthrough = null)
+    public function __construct(?string $employeeId = null, ?string $approverId = null, ?HrisCreateTimeOffRequestDtoStatus $status = null, ?HrisCreateTimeOffRequestDtoType $type = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, bool|StartHalfDay2|null $startHalfDay = null, bool|HrisCreateTimeOffRequestDtoEndHalfDay2|null $endHalfDay = null, ?string $timeOffPolicyId = null, ?HrisCreateTimeOffRequestDtoReason $reason = null, ?array $passthrough = null)
     {
         $this->employeeId = $employeeId;
         $this->approverId = $approverId;
@@ -119,6 +139,8 @@ class HrisCreateTimeOffRequestDto
         $this->endDate = $endDate;
         $this->startHalfDay = $startHalfDay;
         $this->endHalfDay = $endHalfDay;
+        $this->timeOffPolicyId = $timeOffPolicyId;
+        $this->reason = $reason;
         $this->passthrough = $passthrough;
     }
 }

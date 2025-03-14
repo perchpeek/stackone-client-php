@@ -31,15 +31,6 @@ class HrisCreateEmploymentRequestDto
     public ?array $unifiedCustomFields = null;
 
     /**
-     * The employee ID associated with this employment
-     *
-     * @var ?string $employeeId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $employeeId = null;
-
-    /**
      * The job title of the employee
      *
      * @var ?string $jobTitle
@@ -90,6 +81,7 @@ class HrisCreateEmploymentRequestDto
      * The effective date of the employment contract
      *
      * @var ?\DateTime $effectiveDate
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('effective_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -137,7 +129,6 @@ class HrisCreateEmploymentRequestDto
     /**
      * @param  ?string  $id
      * @param  ?array<string, mixed>  $unifiedCustomFields
-     * @param  ?string  $employeeId
      * @param  ?string  $jobTitle
      * @param  ?string  $payRate
      * @param  ?HrisCreateEmploymentRequestDtoPayPeriod  $payPeriod
@@ -150,11 +141,10 @@ class HrisCreateEmploymentRequestDto
      * @param  ?array<string, mixed>  $passthrough
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?HrisCreateEmploymentRequestDtoPayPeriod $payPeriod = null, ?HrisCreateEmploymentRequestDtoPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?HrisCreateEmploymentRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmploymentRequestDtoEmploymentContractType $employmentContractType = null, ?string $timeWorked = null, ?array $passthrough = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $jobTitle = null, ?string $payRate = null, ?HrisCreateEmploymentRequestDtoPayPeriod $payPeriod = null, ?HrisCreateEmploymentRequestDtoPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?HrisCreateEmploymentRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmploymentRequestDtoEmploymentContractType $employmentContractType = null, ?string $timeWorked = null, ?array $passthrough = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
-        $this->employeeId = $employeeId;
         $this->jobTitle = $jobTitle;
         $this->payRate = $payRate;
         $this->payPeriod = $payPeriod;

@@ -34,6 +34,14 @@ class HrisGetEmployeeTimeOffBalanceRequest
     public string $subResourceId;
 
     /**
+     * Indicates that the raw request result should be returned in addition to the mapped result (default value is false)
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
      *
      * @var ?array<string, mixed> $proxy
@@ -58,14 +66,6 @@ class HrisGetEmployeeTimeOffBalanceRequest
     public ?string $expand = null;
 
     /**
-     * Indicates that the raw request result is returned
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  string  $subResourceId
@@ -75,14 +75,14 @@ class HrisGetEmployeeTimeOffBalanceRequest
      * @param  ?string  $expand
      * @phpstan-pure
      */
-    public function __construct(string $xAccountId, string $id, string $subResourceId, ?array $proxy = null, ?string $fields = null, ?string $expand = null, ?bool $raw = false)
+    public function __construct(string $xAccountId, string $id, string $subResourceId, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?string $expand = null)
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
         $this->subResourceId = $subResourceId;
+        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
         $this->expand = $expand;
-        $this->raw = $raw;
     }
 }

@@ -40,7 +40,7 @@ class HrisGetLocationResponse
     public array $headers;
 
     /**
-     * The Location with the given identifier was retrieved.
+     * The work location with the given identifier was retrieved.
      *
      * @var ?Components\HRISLocationResult $hrisLocationResult
      */

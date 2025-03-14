@@ -40,7 +40,7 @@ class HrisListLocationsResponse
     public array $headers;
 
     /**
-     * The list of Locations was retrieved.
+     * The list of work locations was retrieved.
      *
      * @var ?Components\HRISLocationsPaginated $hrisLocationsPaginated
      */

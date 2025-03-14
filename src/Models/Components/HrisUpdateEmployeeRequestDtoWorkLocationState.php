@@ -13,13 +13,13 @@ namespace StackOne\client\Models\Components;
 class HrisUpdateEmployeeRequestDtoWorkLocationState
 {
     /**
+     * state (ISO3166-2 Sub Division Code) - value must be a valid enum value
      *
-     * @var ?HrisUpdateEmployeeRequestDtoWorkLocationStateValue $value
+     * @var ?string $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisUpdateEmployeeRequestDtoWorkLocationStateValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?HrisUpdateEmployeeRequestDtoWorkLocationStateValue $value = null;
+    public ?string $value = null;
 
     /**
      *
@@ -31,11 +31,11 @@ class HrisUpdateEmployeeRequestDtoWorkLocationState
     public string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueWorkLocationState4|array|null $sourceValue = null;
 
     /**
-     * @param  ?HrisUpdateEmployeeRequestDtoWorkLocationStateValue  $value
+     * @param  ?string  $value
      * @param  string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueWorkLocationState4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?HrisUpdateEmployeeRequestDtoWorkLocationStateValue $value = null, string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueWorkLocationState4|array|null $sourceValue = null)
+    public function __construct(?string $value = null, string|float|bool|HrisUpdateEmployeeRequestDtoSourceValueWorkLocationState4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

@@ -13,29 +13,30 @@ namespace StackOne\client\Models\Components;
 class TimeOffBalancesType
 {
     /**
+     * The unified value for the type of the time off policy. If the provider does not specify this unit, the value will be set to unmapped_value
      *
-     * @var ?TimeOffBalancesPolicyValue $value
+     * @var ?TimeOffBalancesPolicyTypeValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\TimeOffBalancesPolicyValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\TimeOffBalancesPolicyTypeValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?TimeOffBalancesPolicyValue $value = null;
+    public ?TimeOffBalancesPolicyTypeValue $value = null;
 
     /**
      *
-     * @var string|float|bool|TimeOffBalancesSourceValuePolicy4|array<mixed>|null $sourceValue
+     * @var string|float|bool|TimeOffBalancesSourceValuePolicyType4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\TimeOffBalancesSourceValuePolicy4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\TimeOffBalancesSourceValuePolicyType4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|TimeOffBalancesSourceValuePolicy4|array|null $sourceValue = null;
+    public string|float|bool|TimeOffBalancesSourceValuePolicyType4|array|null $sourceValue = null;
 
     /**
-     * @param  ?TimeOffBalancesPolicyValue  $value
-     * @param  string|float|bool|TimeOffBalancesSourceValuePolicy4|array<mixed>|null  $sourceValue
+     * @param  ?TimeOffBalancesPolicyTypeValue  $value
+     * @param  string|float|bool|TimeOffBalancesSourceValuePolicyType4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?TimeOffBalancesPolicyValue $value = null, string|float|bool|TimeOffBalancesSourceValuePolicy4|array|null $sourceValue = null)
+    public function __construct(?TimeOffBalancesPolicyTypeValue $value = null, string|float|bool|TimeOffBalancesSourceValuePolicyType4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

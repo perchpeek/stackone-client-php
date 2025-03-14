@@ -96,6 +96,15 @@ class PatchAccountExternalDto
     public ?Label $label = null;
 
     /**
+     *
+     * @var ?PatchAccountExternalDtoMetadata $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\PatchAccountExternalDtoMetadata|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PatchAccountExternalDtoMetadata $metadata = null;
+
+    /**
      * @param  ?string  $provider
      * @param  ?string  $originOwnerId
      * @param  ?string  $originOwnerName
@@ -106,9 +115,10 @@ class PatchAccountExternalDto
      * @param  ?string  $authenticationConfigKey
      * @param  ?string  $environment
      * @param  ?Label  $label
+     * @param  ?PatchAccountExternalDtoMetadata  $metadata
      * @phpstan-pure
      */
-    public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?PatchAccountExternalDtoSetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null)
+    public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?PatchAccountExternalDtoSetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null, ?PatchAccountExternalDtoMetadata $metadata = null)
     {
         $this->provider = $provider;
         $this->originOwnerId = $originOwnerId;
@@ -120,5 +130,6 @@ class PatchAccountExternalDto
         $this->authenticationConfigKey = $authenticationConfigKey;
         $this->environment = $environment;
         $this->label = $label;
+        $this->metadata = $metadata;
     }
 }

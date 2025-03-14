@@ -125,6 +125,16 @@ class LmsUpsertCourseRequestDto
     public ?array $content = null;
 
     /**
+     * The localization data for this course
+     *
+     * @var ?array<LocalizationModel> $localizations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('localizations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LocalizationModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $localizations = null;
+
+    /**
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $externalReference
      * @param  ?string  $title
@@ -137,9 +147,10 @@ class LmsUpsertCourseRequestDto
      * @param  ?array<CreateCategoriesApiModel>  $categories
      * @param  ?array<CreateSkillsApiModel>  $skills
      * @param  ?array<CreateContentApiModel>  $content
+     * @param  ?array<LocalizationModel>  $localizations
      * @phpstan-pure
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?array $content = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?array $content = null, ?array $localizations = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -153,5 +164,6 @@ class LmsUpsertCourseRequestDto
         $this->categories = $categories;
         $this->skills = $skills;
         $this->content = $content;
+        $this->localizations = $localizations;
     }
 }

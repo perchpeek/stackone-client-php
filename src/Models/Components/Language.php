@@ -9,34 +9,34 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** Language - The language associated with this category */
+/** Language - The language associated with this skill */
 class Language
 {
     /**
      * The Locale Code of the language
      *
-     * @var ?CreateCategoriesApiModelLanguageValue $value
+     * @var ?EntitySkillsValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelLanguageValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EntitySkillsValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreateCategoriesApiModelLanguageValue $value = null;
+    public ?EntitySkillsValue $value = null;
 
     /**
      *
-     * @var string|float|bool|CreateCategoriesApiModelSourceValueLanguage4|array<mixed>|null $sourceValue
+     * @var string|float|bool|EntitySkillsSourceValue4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\CreateCategoriesApiModelSourceValueLanguage4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\EntitySkillsSourceValue4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|CreateCategoriesApiModelSourceValueLanguage4|array|null $sourceValue = null;
+    public string|float|bool|EntitySkillsSourceValue4|array|null $sourceValue = null;
 
     /**
-     * @param  ?CreateCategoriesApiModelLanguageValue  $value
-     * @param  string|float|bool|CreateCategoriesApiModelSourceValueLanguage4|array<mixed>|null  $sourceValue
+     * @param  ?EntitySkillsValue  $value
+     * @param  string|float|bool|EntitySkillsSourceValue4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?CreateCategoriesApiModelLanguageValue $value = null, string|float|bool|CreateCategoriesApiModelSourceValueLanguage4|array|null $sourceValue = null)
+    public function __construct(?EntitySkillsValue $value = null, string|float|bool|EntitySkillsSourceValue4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

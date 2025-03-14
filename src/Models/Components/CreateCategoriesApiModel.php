@@ -63,12 +63,12 @@ class CreateCategoriesApiModel
     /**
      * The language associated with this category
      *
-     * @var ?Language $language
+     * @var ?CreateCategoriesApiModelLanguage $language
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('language')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Language|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateCategoriesApiModelLanguage|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Language $language = null;
+    public ?CreateCategoriesApiModelLanguage $language = null;
 
     /**
      * @param  ?string  $id
@@ -76,10 +76,10 @@ class CreateCategoriesApiModel
      * @param  ?string  $name
      * @param  ?Hierarchy  $hierarchy
      * @param  ?Level  $level
-     * @param  ?Language  $language
+     * @param  ?CreateCategoriesApiModelLanguage  $language
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $name = null, ?Hierarchy $hierarchy = null, ?Level $level = null, ?Language $language = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $name = null, ?Hierarchy $hierarchy = null, ?Level $level = null, ?CreateCategoriesApiModelLanguage $language = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;

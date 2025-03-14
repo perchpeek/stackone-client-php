@@ -22,13 +22,14 @@
 * [getEmployeeDocument](#getemployeedocument) - Get Employee Document
 * [getEmployeeDocumentCategory](#getemployeedocumentcategory) - Get Employee Document Category
 * [getEmployeeEmployment](#getemployeeemployment) - Get Employee Employment
+* [getEmployeeSkill](#getemployeeskill) - Get Employee Skill
 * [getEmployeeTimeOffBalance](#getemployeetimeoffbalance) - Get Employee Time Off Balance
 * [getEmployeesTimeOffRequest](#getemployeestimeoffrequest) - Get Employees Time Off Request
 * [getEmployeesWorkEligibility](#getemployeesworkeligibility) - Get Employees Work Eligibility
 * [getEmployment](#getemployment) - Get Employment
 * [getGroup](#getgroup) - Get Group
 * [getJob](#getjob) - Get Job
-* [getLocation](#getlocation) - Get Location
+* [getLocation](#getlocation) - Get Work Location
 * [getTeamGroup](#getteamgroup) - Get Team Group
 * [getTimeEntries](#gettimeentries) - Get Time Entry
 * [getTimeOffPolicy](#gettimeoffpolicy) - Get Time Off Policy
@@ -43,6 +44,7 @@
 * [listEmployeeCustomFieldDefinitions](#listemployeecustomfielddefinitions) - List employee Custom Field Definitions
 * [listEmployeeDocuments](#listemployeedocuments) - List Employee Documents
 * [listEmployeeEmployments](#listemployeeemployments) - List Employee Employments
+* [listEmployeeSkills](#listemployeeskills) - List Employee Skills
 * [listEmployeeTimeOffBalances](#listemployeetimeoffbalances) - List Employee Time Off Balances
 * [listEmployeeTimeOffRequests](#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [listEmployeeWorkEligibility](#listemployeeworkeligibility) - List Employee Work Eligibility
@@ -50,7 +52,7 @@
 * [listEmployments](#listemployments) - List Employments
 * [listGroups](#listgroups) - List Groups
 * [listJobs](#listjobs) - List Jobs
-* [listLocations](#listlocations) - List locations
+* [listLocations](#listlocations) - List Work Locations
 * [listTeamGroups](#listteamgroups) - List Team Groups
 * [listTimeEntries](#listtimeentries) - List Time Entries
 * [listTimeOffPolicies](#listtimeoffpolicies) - List Time Off Policies
@@ -172,6 +174,7 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
     jobId: 'R-6789',
     jobTitle: 'Physicist',
     departmentId: '3093',
+    teamId: '2913',
     department: 'Physics',
     managerId: '67890',
     gender: new Components\HrisCreateEmployeeRequestDtoGender(),
@@ -183,8 +186,6 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
     avatar: new Components\HrisCreateEmployeeRequestDtoAvatar(),
     hireDate: Utils\Utils::parseDateTime('2021-01-01T00:00.000Z'),
     startDate: Utils\Utils::parseDateTime('2021-01-01T00:00.000Z'),
-    tenure: 2,
-    workAnniversary: Utils\Utils::parseDateTime('2021-01-01T00:00:00Z'),
     employmentType: new Components\HrisCreateEmployeeRequestDtoEmploymentType(),
     employmentContractType: new Components\HrisCreateEmployeeRequestDtoEmploymentContractType(),
     employmentStatus: new Components\HrisCreateEmployeeRequestDtoEmploymentStatus(),
@@ -195,25 +196,21 @@ $hrisCreateEmployeeRequestDto = new Components\HrisCreateEmployeeRequestDto(
             value: Components\Value::Us,
         ),
     ],
-    employments: [
-        new Components\CreateEmploymentApiModel(
-            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            unifiedCustomFields: [
-                'my_project_custom_field_1' => 'REF-1236',
-                'my_project_custom_field_2' => 'some other value',
-            ],
-            employeeId: '1687-3',
-            jobTitle: 'Software Engineer',
-            payRate: '40.00',
-            payPeriod: new Components\CreateEmploymentApiModelPayPeriod(),
-            payFrequency: new Components\CreateEmploymentApiModelPayFrequency(),
-            payCurrency: 'USD',
-            effectiveDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
-            employmentType: new Components\CreateEmploymentApiModelEmploymentType(),
-            employmentContractType: new Components\CreateEmploymentApiModelEmploymentContractType(),
-            timeWorked: 'P0Y0M0DT8H0M0S',
-        ),
-    ],
+    employment: new Components\HrisCreateEmployeeRequestDtoEmployment(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        unifiedCustomFields: [
+            'my_project_custom_field_1' => 'REF-1236',
+            'my_project_custom_field_2' => 'some other value',
+        ],
+        jobTitle: 'Software Engineer',
+        payRate: '40.00',
+        payPeriod: new Components\HrisCreateEmployeeRequestDtoPayPeriod(),
+        payFrequency: new Components\HrisCreateEmployeeRequestDtoPayFrequency(),
+        payCurrency: 'USD',
+        employmentType: new Components\HrisCreateEmployeeRequestDtoEmploymentEmploymentType(),
+        employmentContractType: new Components\HrisCreateEmployeeRequestDtoEmploymentEmploymentContractType(),
+        timeWorked: 'P0Y0M0DT8H0M0S',
+    ),
     customFields: [
         new Components\CustomFields(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
@@ -331,7 +328,6 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
-use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -348,13 +344,11 @@ $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
         'my_project_custom_field_1' => 'REF-1236',
         'my_project_custom_field_2' => 'some other value',
     ],
-    employeeId: '1687-3',
     jobTitle: 'Software Engineer',
     payRate: '40.00',
     payPeriod: new Components\HrisCreateEmploymentRequestDtoPayPeriod(),
     payFrequency: new Components\HrisCreateEmploymentRequestDtoPayFrequency(),
     payCurrency: 'USD',
-    effectiveDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
     employmentType: new Components\HrisCreateEmploymentRequestDtoEmploymentType(),
     employmentContractType: new Components\HrisCreateEmploymentRequestDtoEmploymentContractType(),
     timeWorked: 'P0Y0M0DT8H0M0S',
@@ -416,15 +410,25 @@ $sdk = client\StackOne::builder()
     )
     ->build();
 
-$hrisSkillsCreateRequestDto = new Components\HrisSkillsCreateRequestDto(
+$entitySkillsCreateRequestDto = new Components\EntitySkillsCreateRequestDto(
     id: '16873-IT345',
     name: 'Information-Technology',
+    maximumProficiency: new Components\EntitySkillsCreateRequestDtoMaximumProficiency(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        name: 'Expert',
+    ),
+    minimumProficiency: new Components\EntitySkillsCreateRequestDtoMinimumProficiency(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        name: 'Expert',
+    ),
 );
 
 $response = $sdk->hris->createEmployeeSkill(
     xAccountId: '<id>',
     id: '<id>',
-    hrisSkillsCreateRequestDto: $hrisSkillsCreateRequestDto
+    entitySkillsCreateRequestDto: $entitySkillsCreateRequestDto
 
 );
 
@@ -435,11 +439,11 @@ if ($response->createResult !== null) {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `xAccountId`                                                                                   | *string*                                                                                       | :heavy_check_mark:                                                                             | The account identifier                                                                         |
-| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
-| `hrisSkillsCreateRequestDto`                                                                   | [Components\HrisSkillsCreateRequestDto](../../Models/Components/HrisSkillsCreateRequestDto.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `xAccountId`                                                                                       | *string*                                                                                           | :heavy_check_mark:                                                                                 | The account identifier                                                                             |
+| `id`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `entitySkillsCreateRequestDto`                                                                     | [Components\EntitySkillsCreateRequestDto](../../Models/Components/EntitySkillsCreateRequestDto.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
 
 ### Response
 
@@ -482,6 +486,11 @@ $hrisCreateTimeOffRequestDto = new Components\HrisCreateTimeOffRequestDto(
     endDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
     startHalfDay: true,
     endHalfDay: true,
+    timeOffPolicyId: 'cx280928933',
+    reason: new Components\HrisCreateTimeOffRequestDtoReason(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    ),
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
@@ -631,6 +640,11 @@ $hrisCreateTimeOffRequestDto = new Components\HrisCreateTimeOffRequestDto(
     endDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
     startHalfDay: true,
     endHalfDay: true,
+    timeOffPolicyId: 'cx280928933',
+    reason: new Components\HrisCreateTimeOffRequestDtoReason(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    ),
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
@@ -858,7 +872,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetCostCenterGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+    fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
 );
 
 $response = $sdk->hris->getCostCenterGroup(
@@ -968,8 +982,8 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmployeeRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers',
-    expand: 'company,employments,work_location,home_location,groups',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers,skills',
+    expand: 'company,employments,work_location,home_location,groups,skills',
     include: 'avatar_url,avatar,custom_fields,job_description,benefits',
 );
 
@@ -1195,7 +1209,7 @@ $request = new Operations\HrisGetEmployeeEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager',
     expand: 'groups',
 );
 
@@ -1217,6 +1231,62 @@ if ($response->employmentResult !== null) {
 ### Response
 
 **[?Operations\HrisGetEmployeeEmploymentResponse](../../Models/Operations/HrisGetEmployeeEmploymentResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## getEmployeeSkill
+
+Get Employee Skill
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisGetEmployeeSkillRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    subResourceId: '<id>',
+    fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency',
+);
+
+$response = $sdk->hris->getEmployeeSkill(
+    request: $request
+);
+
+if ($response->entitySkillResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                       | [Operations\HrisGetEmployeeSkillRequest](../../Models/Operations/HrisGetEmployeeSkillRequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+### Response
+
+**[?Operations\HrisGetEmployeeSkillResponse](../../Models/Operations/HrisGetEmployeeSkillResponse.md)**
 
 ### Errors
 
@@ -1309,7 +1379,7 @@ $request = new Operations\HrisGetEmployeesTimeOffRequestRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,time_off_policy_id,remote_time_off_policy_id,reason,created_at,updated_at',
 );
 
 $response = $sdk->hris->getEmployeesTimeOffRequest(
@@ -1420,7 +1490,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager',
     expand: 'groups',
 );
 
@@ -1561,7 +1631,7 @@ if ($response->jobResult !== null) {
 
 ## getLocation
 
-Get Location
+Get Work Location
 
 ### Example Usage
 
@@ -1751,7 +1821,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTimeOffPolicyRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,updated_at,created_at',
+    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
 );
 
 $response = $sdk->hris->getTimeOffPolicy(
@@ -1806,7 +1876,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTimeOffRequestRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,time_off_policy_id,remote_time_off_policy_id,reason,created_at,updated_at',
 );
 
 $response = $sdk->hris->getTimeOffRequest(
@@ -2094,7 +2164,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListCostCenterGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+    fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
     filter: new Operations\HrisListCostCenterGroupsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -2393,7 +2463,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeEmploymentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmployeeEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -2421,6 +2491,67 @@ foreach ($responses as $response) {
 ### Response
 
 **[?Operations\HrisListEmployeeEmploymentsResponse](../../Models/Operations/HrisListEmployeeEmploymentsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## listEmployeeSkills
+
+List Employee Skills
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisListEmployeeSkillsRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency',
+    filter: new Operations\HrisListEmployeeSkillsQueryParamFilter(
+        updatedAfter: '2020-01-01T00:00:00.000Z',
+    ),
+);
+
+$responses = $sdk->hris->listEmployeeSkills(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [Operations\HrisListEmployeeSkillsRequest](../../Models/Operations/HrisListEmployeeSkillsRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+
+### Response
+
+**[?Operations\HrisListEmployeeSkillsResponse](../../Models/Operations/HrisListEmployeeSkillsResponse.md)**
 
 ### Errors
 
@@ -2517,7 +2648,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeTimeOffRequestsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,time_off_policy_id,remote_time_off_policy_id,reason,created_at,updated_at',
     filter: new Operations\HrisListEmployeeTimeOffRequestsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -2638,11 +2769,11 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers,skills',
     filter: new Operations\HrisListEmployeesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
-    expand: 'company,employments,work_location,home_location,groups',
+    expand: 'company,employments,work_location,home_location,groups,skills',
     include: 'avatar_url,avatar,custom_fields,job_description,benefits',
 );
 
@@ -2700,7 +2831,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmploymentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,division,job,type,contract_type,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,time_worked,created_at,updated_at,start_date,end_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmploymentsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -2857,7 +2988,7 @@ foreach ($responses as $response) {
 
 ## listLocations
 
-List locations
+List Work Locations
 
 ### Example Usage
 
@@ -2947,12 +3078,15 @@ $request = new Operations\HrisListTeamGroupsRequest(
     ),
 );
 
-$response = $sdk->hris->listTeamGroups(
+$responses = $sdk->hris->listTeamGroups(
     request: $request
 );
 
-if ($response->hrisTeamsPaginated !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -3060,7 +3194,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTimeOffPoliciesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,updated_at,created_at',
+    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
     filter: new Operations\HrisListTimeOffPoliciesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -3120,7 +3254,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTimeOffRequestsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,duration,time_off_policy_id,remote_time_off_policy_id,reason,created_at,updated_at',
     filter: new Operations\HrisListTimeOffRequestsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -3251,6 +3385,7 @@ $hrisUpdateEmployeeRequestDto = new Components\HrisUpdateEmployeeRequestDto(
     jobId: 'R-6789',
     jobTitle: 'Physicist',
     departmentId: '3093',
+    teamId: '2913',
     department: 'Physics',
     managerId: '67890',
     gender: new Components\HrisUpdateEmployeeRequestDtoGender(),
@@ -3262,8 +3397,6 @@ $hrisUpdateEmployeeRequestDto = new Components\HrisUpdateEmployeeRequestDto(
     avatar: new Components\HrisUpdateEmployeeRequestDtoAvatar(),
     hireDate: Utils\Utils::parseDateTime('2021-01-01T00:00.000Z'),
     startDate: Utils\Utils::parseDateTime('2021-01-01T00:00.000Z'),
-    tenure: 2,
-    workAnniversary: Utils\Utils::parseDateTime('2021-01-01T00:00:00Z'),
     employmentType: new Components\HrisUpdateEmployeeRequestDtoEmploymentType(),
     employmentContractType: new Components\HrisUpdateEmployeeRequestDtoEmploymentContractType(),
     employmentStatus: new Components\HrisUpdateEmployeeRequestDtoEmploymentStatus(),
@@ -3274,6 +3407,21 @@ $hrisUpdateEmployeeRequestDto = new Components\HrisUpdateEmployeeRequestDto(
             value: Components\Value::Us,
         ),
     ],
+    employment: new Components\HrisUpdateEmployeeRequestDtoEmployment(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        unifiedCustomFields: [
+            'my_project_custom_field_1' => 'REF-1236',
+            'my_project_custom_field_2' => 'some other value',
+        ],
+        jobTitle: 'Software Engineer',
+        payRate: '40.00',
+        payPeriod: new Components\HrisUpdateEmployeeRequestDtoPayPeriod(),
+        payFrequency: new Components\HrisUpdateEmployeeRequestDtoPayFrequency(),
+        payCurrency: 'USD',
+        employmentType: new Components\HrisUpdateEmployeeRequestDtoEmploymentEmploymentType(),
+        employmentContractType: new Components\HrisUpdateEmployeeRequestDtoEmploymentEmploymentContractType(),
+        timeWorked: 'P0Y0M0DT8H0M0S',
+    ),
     customFields: [
         new Components\CustomFields(
             id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
@@ -3386,7 +3534,6 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
-use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3403,13 +3550,11 @@ $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
         'my_project_custom_field_1' => 'REF-1236',
         'my_project_custom_field_2' => 'some other value',
     ],
-    employeeId: '1687-3',
     jobTitle: 'Software Engineer',
     payRate: '40.00',
     payPeriod: new Components\HrisCreateEmploymentRequestDtoPayPeriod(),
     payFrequency: new Components\HrisCreateEmploymentRequestDtoPayFrequency(),
     payCurrency: 'USD',
-    effectiveDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
     employmentType: new Components\HrisCreateEmploymentRequestDtoEmploymentType(),
     employmentContractType: new Components\HrisCreateEmploymentRequestDtoEmploymentContractType(),
     timeWorked: 'P0Y0M0DT8H0M0S',
@@ -3566,6 +3711,11 @@ $hrisCreateTimeOffRequestDto = new Components\HrisCreateTimeOffRequestDto(
     endDate: Utils\Utils::parseDateTime('2021-01-01T01:01:01.000Z'),
     startHalfDay: true,
     endHalfDay: true,
+    timeOffPolicyId: 'cx280928933',
+    reason: new Components\HrisCreateTimeOffRequestDtoReason(
+        id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+        remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+    ),
     passthrough: [
         'other_known_names' => 'John Doe',
     ],

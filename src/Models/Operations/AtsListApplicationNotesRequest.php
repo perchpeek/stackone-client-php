@@ -27,6 +27,14 @@ class AtsListApplicationNotesRequest
     public string $id;
 
     /**
+     * Indicates that the raw request result should be returned in addition to the mapped result (default value is false)
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
      *
      * @var ?array<string, mixed> $proxy
@@ -60,6 +68,14 @@ class AtsListApplicationNotesRequest
     public ?string $page = null;
 
     /**
+     * The number of results per page (default value is 25)
+     *
+     * @var ?string $pageSize
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
+    public ?string $pageSize = null;
+
+    /**
      * The unified cursor
      *
      * @var ?string $next
@@ -86,22 +102,6 @@ class AtsListApplicationNotesRequest
     public ?string $syncToken = null;
 
     /**
-     * Indicates that the raw request result is returned
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
-     * The number of results per page
-     *
-     * @var ?string $pageSize
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page_size')]
-    public ?string $pageSize = null;
-
-    /**
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  ?bool  $raw
@@ -115,18 +115,18 @@ class AtsListApplicationNotesRequest
      * @param  ?string  $syncToken
      * @phpstan-pure
      */
-    public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?AtsListApplicationNotesQueryParamFilter $filter = null, ?string $page = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null, ?bool $raw = false, ?string $pageSize = '25')
+    public function __construct(string $xAccountId, string $id, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?AtsListApplicationNotesQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null)
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
+        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
         $this->filter = $filter;
         $this->page = $page;
+        $this->pageSize = $pageSize;
         $this->next = $next;
         $this->updatedAfter = $updatedAfter;
         $this->syncToken = $syncToken;
-        $this->raw = $raw;
-        $this->pageSize = $pageSize;
     }
 }

@@ -96,6 +96,16 @@ class ConnectSession
     public ?string $label = null;
 
     /**
+     * Arbitrary set of key and values defined during the session token creation. This can be used to tag an account (eg. based on their pricing plan)
+     *
+     * @var ?ConnectSessionMetadata $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ConnectSessionMetadata|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ConnectSessionMetadata $metadata = null;
+
+    /**
      * @param  float  $id
      * @param  float  $organizationId
      * @param  string  $projectId
@@ -107,9 +117,10 @@ class ConnectSession
      * @param  ?string  $originUsername
      * @param  ?string  $accountId
      * @param  ?string  $label
+     * @param  ?ConnectSessionMetadata  $metadata
      * @phpstan-pure
      */
-    public function __construct(float $id, float $organizationId, string $projectId, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, ?array $categories = null, ?string $provider = null, ?string $originUsername = null, ?string $accountId = null, ?string $label = null)
+    public function __construct(float $id, float $organizationId, string $projectId, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, ?array $categories = null, ?string $provider = null, ?string $originUsername = null, ?string $accountId = null, ?string $label = null, ?ConnectSessionMetadata $metadata = null)
     {
         $this->id = $id;
         $this->organizationId = $organizationId;
@@ -122,5 +133,6 @@ class ConnectSession
         $this->originUsername = $originUsername;
         $this->accountId = $accountId;
         $this->label = $label;
+        $this->metadata = $metadata;
     }
 }

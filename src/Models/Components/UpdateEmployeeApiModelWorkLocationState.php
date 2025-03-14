@@ -13,13 +13,13 @@ namespace StackOne\client\Models\Components;
 class UpdateEmployeeApiModelWorkLocationState
 {
     /**
+     * state (ISO3166-2 Sub Division Code) - value must be a valid enum value
      *
-     * @var ?UpdateEmployeeApiModelWorkLocationStateValue $value
+     * @var ?string $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\UpdateEmployeeApiModelWorkLocationStateValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?UpdateEmployeeApiModelWorkLocationStateValue $value = null;
+    public ?string $value = null;
 
     /**
      *
@@ -31,11 +31,11 @@ class UpdateEmployeeApiModelWorkLocationState
     public string|float|bool|UpdateEmployeeApiModelSourceValueWorkLocationState4|array|null $sourceValue = null;
 
     /**
-     * @param  ?UpdateEmployeeApiModelWorkLocationStateValue  $value
+     * @param  ?string  $value
      * @param  string|float|bool|UpdateEmployeeApiModelSourceValueWorkLocationState4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?UpdateEmployeeApiModelWorkLocationStateValue $value = null, string|float|bool|UpdateEmployeeApiModelSourceValueWorkLocationState4|array|null $sourceValue = null)
+    public function __construct(?string $value = null, string|float|bool|UpdateEmployeeApiModelSourceValueWorkLocationState4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

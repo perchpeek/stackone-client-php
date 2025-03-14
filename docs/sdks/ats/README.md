@@ -12,6 +12,7 @@
 * [createCandidateNote](#createcandidatenote) - Create Candidate Note
 * [createJob](#createjob) - Create Job
 * [createOffer](#createoffer) - Creates an offer
+* [deleteBackgroundCheckPackage](#deletebackgroundcheckpackage) - Delete Background Check Package
 * [downloadApplicationDocument](#downloadapplicationdocument) - Download Application Document
 * [getApplication](#getapplication) - Get Application
 * [getApplicationCustomFieldDefinition](#getapplicationcustomfielddefinition) - Get Application Custom Field Definition
@@ -71,6 +72,7 @@
 * [updateApplication](#updateapplication) - Update an Application
 * [updateApplicationNote](#updateapplicationnote) - Update an Application Note
 * [updateAssessmentsResult](#updateassessmentsresult) - Update Assessments Result
+* [updateBackgroundCheckPackage](#updatebackgroundcheckpackage) - Update Background Check Package
 * [updateBackgroundCheckResult](#updatebackgroundcheckresult) - Update Background Check Result
 * [updateCandidate](#updatecandidate) - Update Candidate
 * [updateJob](#updatejob) - Update Job
@@ -138,7 +140,11 @@ $atsCreateApplicationRequestDto = new Components\AtsCreateApplicationRequestDto(
             'my_project_custom_field_1' => 'REF-1236',
             'my_project_custom_field_2' => 'some other value',
         ],
-        phoneNumber: '+1234567890',
+        phoneNumbers: [
+            new Components\PhoneNumber(
+                phone: '+447700112233',
+            ),
+        ],
         name: 'Romain Sestier',
         firstName: 'Romain',
         lastName: 'Sestier',
@@ -357,7 +363,11 @@ $atsCreateCandidateRequestDto = new Components\AtsCreateCandidateRequestDto(
         'my_project_custom_field_1' => 'REF-1236',
         'my_project_custom_field_2' => 'some other value',
     ],
-    phoneNumber: '+1234567890',
+    phoneNumbers: [
+        new Components\PhoneNumber(
+            phone: '+447700112233',
+        ),
+    ],
     name: 'Romain Sestier',
     firstName: 'Romain',
     lastName: 'Sestier',
@@ -651,6 +661,59 @@ if ($response->createResult !== null) {
 ### Response
 
 **[?Operations\AtsCreateOfferResponse](../../Models/Operations/AtsCreateOfferResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## deleteBackgroundCheckPackage
+
+Delete Background Check Package
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+
+
+$response = $sdk->ats->deleteBackgroundCheckPackage(
+    xAccountId: '<id>',
+    id: '<id>'
+
+);
+
+if ($response->deleteResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `xAccountId`           | *string*               | :heavy_check_mark:     | The account identifier |
+| `id`                   | *string*               | :heavy_check_mark:     | N/A                    |
+
+### Response
+
+**[?Operations\AtsDeleteBackgroundCheckPackageResponse](../../Models/Operations/AtsDeleteBackgroundCheckPackageResponse.md)**
 
 ### Errors
 
@@ -4267,6 +4330,74 @@ if ($response->updateResult !== null) {
 ### Response
 
 **[?Operations\AtsUpdateAssessmentsResultResponse](../../Models/Operations/AtsUpdateAssessmentsResultResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |
+
+## updateBackgroundCheckPackage
+
+Update Background Check Package
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$atsUpdateBackgroundCheckPackagesRequestDto = new Components\AtsUpdateBackgroundCheckPackagesRequestDto(
+    name: 'Test 1',
+    description: 'Skills test to gauge a candidate\'s proficiency in job-specific skills',
+    tests: [
+        new Components\UpdatePackage(
+            id: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            name: 'Test 1',
+            description: 'Skills test to gauge a candidate\'s proficiency in job-specific skills',
+        ),
+    ],
+    passthrough: [
+        'other_known_names' => 'John Doe',
+    ],
+);
+
+$response = $sdk->ats->updateBackgroundCheckPackage(
+    xAccountId: '<id>',
+    id: '<id>',
+    atsUpdateBackgroundCheckPackagesRequestDto: $atsUpdateBackgroundCheckPackagesRequestDto
+
+);
+
+if ($response->updateResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `xAccountId`                                                                                                                   | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | The account identifier                                                                                                         |
+| `id`                                                                                                                           | *string*                                                                                                                       | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |
+| `atsUpdateBackgroundCheckPackagesRequestDto`                                                                                   | [Components\AtsUpdateBackgroundCheckPackagesRequestDto](../../Models/Components/AtsUpdateBackgroundCheckPackagesRequestDto.md) | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |
+
+### Response
+
+**[?Operations\AtsUpdateBackgroundCheckPackageResponse](../../Models/Operations/AtsUpdateBackgroundCheckPackageResponse.md)**
 
 ### Errors
 
