@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class BalanceUnit
 {
     /**
+     * The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown
      *
      * @var ?TimeOffBalancesValue $value
      */

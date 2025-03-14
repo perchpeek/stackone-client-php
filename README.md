@@ -67,11 +67,11 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,benefits,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,employee_number,national_identity_number,national_identity_numbers,skills',
     filter: new Operations\HrisListEmployeesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
-    expand: 'company,employments,work_location,home_location,groups',
+    expand: 'company,employments,work_location,home_location,groups,skills',
     include: 'avatar_url,avatar,custom_fields,job_description,benefits',
 );
 
@@ -154,6 +154,7 @@ if ($response->connectSession !== null) {
 * [createCandidateNote](docs/sdks/ats/README.md#createcandidatenote) - Create Candidate Note
 * [createJob](docs/sdks/ats/README.md#createjob) - Create Job
 * [createOffer](docs/sdks/ats/README.md#createoffer) - Creates an offer
+* [deleteBackgroundCheckPackage](docs/sdks/ats/README.md#deletebackgroundcheckpackage) - Delete Background Check Package
 * [downloadApplicationDocument](docs/sdks/ats/README.md#downloadapplicationdocument) - Download Application Document
 * [getApplication](docs/sdks/ats/README.md#getapplication) - Get Application
 * [getApplicationCustomFieldDefinition](docs/sdks/ats/README.md#getapplicationcustomfielddefinition) - Get Application Custom Field Definition
@@ -213,6 +214,7 @@ if ($response->connectSession !== null) {
 * [updateApplication](docs/sdks/ats/README.md#updateapplication) - Update an Application
 * [updateApplicationNote](docs/sdks/ats/README.md#updateapplicationnote) - Update an Application Note
 * [updateAssessmentsResult](docs/sdks/ats/README.md#updateassessmentsresult) - Update Assessments Result
+* [updateBackgroundCheckPackage](docs/sdks/ats/README.md#updatebackgroundcheckpackage) - Update Background Check Package
 * [updateBackgroundCheckResult](docs/sdks/ats/README.md#updatebackgroundcheckresult) - Update Background Check Result
 * [updateCandidate](docs/sdks/ats/README.md#updatecandidate) - Update Candidate
 * [updateJob](docs/sdks/ats/README.md#updatejob) - Update Job
@@ -260,13 +262,14 @@ if ($response->connectSession !== null) {
 * [getEmployeeDocument](docs/sdks/hris/README.md#getemployeedocument) - Get Employee Document
 * [getEmployeeDocumentCategory](docs/sdks/hris/README.md#getemployeedocumentcategory) - Get Employee Document Category
 * [getEmployeeEmployment](docs/sdks/hris/README.md#getemployeeemployment) - Get Employee Employment
+* [getEmployeeSkill](docs/sdks/hris/README.md#getemployeeskill) - Get Employee Skill
 * [getEmployeeTimeOffBalance](docs/sdks/hris/README.md#getemployeetimeoffbalance) - Get Employee Time Off Balance
 * [getEmployeesTimeOffRequest](docs/sdks/hris/README.md#getemployeestimeoffrequest) - Get Employees Time Off Request
 * [getEmployeesWorkEligibility](docs/sdks/hris/README.md#getemployeesworkeligibility) - Get Employees Work Eligibility
 * [getEmployment](docs/sdks/hris/README.md#getemployment) - Get Employment
 * [getGroup](docs/sdks/hris/README.md#getgroup) - Get Group
 * [getJob](docs/sdks/hris/README.md#getjob) - Get Job
-* [getLocation](docs/sdks/hris/README.md#getlocation) - Get Location
+* [getLocation](docs/sdks/hris/README.md#getlocation) - Get Work Location
 * [getTeamGroup](docs/sdks/hris/README.md#getteamgroup) - Get Team Group
 * [getTimeEntries](docs/sdks/hris/README.md#gettimeentries) - Get Time Entry
 * [getTimeOffPolicy](docs/sdks/hris/README.md#gettimeoffpolicy) - Get Time Off Policy
@@ -281,6 +284,7 @@ if ($response->connectSession !== null) {
 * [listEmployeeCustomFieldDefinitions](docs/sdks/hris/README.md#listemployeecustomfielddefinitions) - List employee Custom Field Definitions
 * [listEmployeeDocuments](docs/sdks/hris/README.md#listemployeedocuments) - List Employee Documents
 * [listEmployeeEmployments](docs/sdks/hris/README.md#listemployeeemployments) - List Employee Employments
+* [listEmployeeSkills](docs/sdks/hris/README.md#listemployeeskills) - List Employee Skills
 * [listEmployeeTimeOffBalances](docs/sdks/hris/README.md#listemployeetimeoffbalances) - List Employee Time Off Balances
 * [listEmployeeTimeOffRequests](docs/sdks/hris/README.md#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [listEmployeeWorkEligibility](docs/sdks/hris/README.md#listemployeeworkeligibility) - List Employee Work Eligibility
@@ -288,7 +292,7 @@ if ($response->connectSession !== null) {
 * [listEmployments](docs/sdks/hris/README.md#listemployments) - List Employments
 * [listGroups](docs/sdks/hris/README.md#listgroups) - List Groups
 * [listJobs](docs/sdks/hris/README.md#listjobs) - List Jobs
-* [listLocations](docs/sdks/hris/README.md#listlocations) - List locations
+* [listLocations](docs/sdks/hris/README.md#listlocations) - List Work Locations
 * [listTeamGroups](docs/sdks/hris/README.md#listteamgroups) - List Team Groups
 * [listTimeEntries](docs/sdks/hris/README.md#listtimeentries) - List Time Entries
 * [listTimeOffPolicies](docs/sdks/hris/README.md#listtimeoffpolicies) - List Time Off Policies

@@ -46,6 +46,7 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -66,13 +67,6 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
             externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
             title: 'Software Engineer Lv 1',
             description: 'This video acts as learning content for software engineers.',
-            additionalData: [
-                new Components\AdditionalData(
-                    id: 'learning_outcomes',
-                    remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-                    value: 'This is additional data',
-                ),
-            ],
             languages: [
                 new Components\LanguageEnum(
                     value: Components\LanguageEnumValue::EnGB,
@@ -90,6 +84,22 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                 ),
             ],
             order: 1,
+            localizations: [
+                new Components\LocalizationModel(
+                    title: 'Software Engineer Lv 1',
+                    description: 'This course acts as learning resource for software engineers.',
+                ),
+                new Components\LocalizationModel(
+                    title: 'Software Engineer: A comprehensive guide',
+                    description: 'This course acts as learning resource for software engineers.',
+                ),
+            ],
+            tags: [
+                'Sales Techniques',
+                'Customer Service',
+            ],
+            updatedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
+            createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
             categories: [
                 new Components\CreateCategoriesApiModel(
                     id: '16873-IT345',
@@ -98,9 +108,16 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                         'my_project_custom_field_2' => 'some other value',
                     ],
                     name: 'Information-Technology',
-                    language: new Components\Language(
+                    language: new Components\CreateCategoriesApiModelLanguage(
                         value: Components\CreateCategoriesApiModelLanguageValue::EnGB,
                     ),
+                ),
+            ],
+            additionalData: [
+                new Components\AdditionalData(
+                    id: 'learning_outcomes',
+                    remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+                    value: 'This is additional data',
                 ),
             ],
         ),
@@ -185,7 +202,7 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
                         'my_project_custom_field_2' => 'some other value',
                     ],
                     name: 'Information-Technology',
-                    language: new Components\Language(
+                    language: new Components\CreateCategoriesApiModelLanguage(
                         value: Components\CreateCategoriesApiModelLanguageValue::EnGB,
                     ),
                 ),
@@ -205,7 +222,18 @@ $lmsBatchUpsertCourseRequestDto = new Components\LmsBatchUpsertCourseRequestDto(
                     title: 'Software Engineer Lv 1',
                     description: 'This video acts as learning content for software engineers.',
                     contentUrl: 'https://www.youtube.com/watch?v=16873',
+                    mobileLaunchContentUrl: 'https://www.mobile.youtube.com/watch?v=16873',
                     order: 1,
+                ),
+            ],
+            localizations: [
+                new Components\LocalizationModel(
+                    title: 'Software Engineer Lv 1',
+                    description: 'This course acts as learning resource for software engineers.',
+                ),
+                new Components\LocalizationModel(
+                    title: 'Software Engineer: A comprehensive guide',
+                    description: 'This course acts as learning resource for software engineers.',
                 ),
             ],
         ),
@@ -288,7 +316,7 @@ $lmsCreateCollectionRequestDto = new Components\LmsCreateCollectionRequestDto(
                 'my_project_custom_field_2' => 'some other value',
             ],
             name: 'Information-Technology',
-            language: new Components\Language(
+            language: new Components\CreateCategoriesApiModelLanguage(
                 value: Components\CreateCategoriesApiModelLanguageValue::EnGB,
             ),
         ),
@@ -365,7 +393,7 @@ $lmsCreateAssignmentRequestDto = new Components\LmsCreateAssignmentRequestDto(
     createdAt: '2021-07-21T14:00:00.000Z',
     dueDate: '2021-07-21T14:00:00.000Z',
     status: new Components\LmsCreateAssignmentRequestDtoStatus(
-        value: Components\LmsCreateAssignmentRequestDtoValue::Pending,
+        value: Components\LmsCreateAssignmentRequestDtoValue::InProgress,
     ),
 );
 
@@ -706,7 +734,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetContentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags',
 );
 
 $response = $sdk->lms->getContent(
@@ -761,7 +789,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetCourseRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider',
+    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations',
 );
 
 $response = $sdk->lms->getCourse(
@@ -816,7 +844,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\LmsGetSkillRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active,level,language,hierarchy,proficiency',
+    fields: 'id,remote_id,name,active,hierarchy,language',
 );
 
 $response = $sdk->lms->getSkill(
@@ -1217,7 +1245,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider',
+    fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags',
     filter: new Operations\LmsListContentQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1277,7 +1305,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListCoursesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider',
+    fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations',
     filter: new Operations\LmsListCoursesQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1337,7 +1365,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\LmsListSkillsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active,level,language,hierarchy,proficiency',
+    fields: 'id,remote_id,name,active,hierarchy,language',
     filter: new Operations\LmsListSkillsQueryParamFilter(
         updatedAfter: '2020-01-01T00:00:00.000Z',
     ),
@@ -1603,7 +1631,7 @@ $lmsCreateCollectionRequestDto = new Components\LmsCreateCollectionRequestDto(
                 'my_project_custom_field_2' => 'some other value',
             ],
             name: 'Information-Technology',
-            language: new Components\Language(
+            language: new Components\CreateCategoriesApiModelLanguage(
                 value: Components\CreateCategoriesApiModelLanguageValue::EnGB,
             ),
         ),
@@ -1662,6 +1690,7 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1680,13 +1709,6 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
     externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
     title: 'Software Engineer Lv 1',
     description: 'This video acts as learning content for software engineers.',
-    additionalData: [
-        new Components\AdditionalData(
-            id: 'learning_outcomes',
-            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
-            value: 'This is additional data',
-        ),
-    ],
     languages: [
         new Components\LanguageEnum(
             value: Components\LanguageEnumValue::EnGB,
@@ -1704,6 +1726,22 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
         ),
     ],
     order: 1,
+    localizations: [
+        new Components\LocalizationModel(
+            title: 'Software Engineer Lv 1',
+            description: 'This course acts as learning resource for software engineers.',
+        ),
+        new Components\LocalizationModel(
+            title: 'Software Engineer: A comprehensive guide',
+            description: 'This course acts as learning resource for software engineers.',
+        ),
+    ],
+    tags: [
+        'Sales Techniques',
+        'Customer Service',
+    ],
+    updatedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
+    createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     categories: [
         new Components\CreateCategoriesApiModel(
             id: '16873-IT345',
@@ -1712,9 +1750,16 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
                 'my_project_custom_field_2' => 'some other value',
             ],
             name: 'Information-Technology',
-            language: new Components\Language(
+            language: new Components\CreateCategoriesApiModelLanguage(
                 value: Components\CreateCategoriesApiModelLanguageValue::EnGB,
             ),
+        ),
+    ],
+    additionalData: [
+        new Components\AdditionalData(
+            id: 'learning_outcomes',
+            remoteId: '8187e5da-dc77-475e-9949-af0f1fa4e4e3',
+            value: 'This is additional data',
         ),
     ],
 );
@@ -1795,7 +1840,7 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
                 'my_project_custom_field_2' => 'some other value',
             ],
             name: 'Information-Technology',
-            language: new Components\Language(
+            language: new Components\CreateCategoriesApiModelLanguage(
                 value: Components\CreateCategoriesApiModelLanguageValue::EnGB,
             ),
         ),
@@ -1815,7 +1860,18 @@ $lmsUpsertCourseRequestDto = new Components\LmsUpsertCourseRequestDto(
             title: 'Software Engineer Lv 1',
             description: 'This video acts as learning content for software engineers.',
             contentUrl: 'https://www.youtube.com/watch?v=16873',
+            mobileLaunchContentUrl: 'https://www.mobile.youtube.com/watch?v=16873',
             order: 1,
+        ),
+    ],
+    localizations: [
+        new Components\LocalizationModel(
+            title: 'Software Engineer Lv 1',
+            description: 'This course acts as learning resource for software engineers.',
+        ),
+        new Components\LocalizationModel(
+            title: 'Software Engineer: A comprehensive guide',
+            description: 'This course acts as learning resource for software engineers.',
         ),
     ],
 );

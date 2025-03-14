@@ -89,13 +89,15 @@ $request = new Components\ConnectSessionCreate(
     categories: [
         Components\Categories::Ats,
         Components\Categories::Hris,
-        Components\Categories::Crm,
+        Components\Categories::Iam,
         Components\Categories::Crm,
         Components\Categories::Iam,
         Components\Categories::Marketing,
         Components\Categories::Lms,
         Components\Categories::Ats,
         Components\Categories::Documents,
+        Components\Categories::Ticketing,
+        Components\Categories::Screening,
     ],
 );
 

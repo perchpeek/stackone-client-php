@@ -49,16 +49,6 @@ class LmsUpsertContentRequestDto
     public ?string $description = null;
 
     /**
-     * The additional_data associated with this content
-     *
-     * @var ?array<AdditionalData> $additionalData
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('additional_data')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AdditionalData>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $additionalData = null;
-
-    /**
      * The languages associated with this content
      *
      * @var ?array<LanguageEnum> $languages
@@ -153,6 +143,44 @@ class LmsUpsertContentRequestDto
     public ?string $shortDescription = null;
 
     /**
+     * The localization data for this course
+     *
+     * @var ?array<LocalizationModel> $localizations
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('localizations')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\LocalizationModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $localizations = null;
+
+    /**
+     * A list of tags associated with the content
+     *
+     * @var ?array<string> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
+
+    /**
+     * The date on which the content was last updated.
+     *
+     * @var ?\DateTime $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $updatedAt = null;
+
+    /**
+     * The date on which the content was created.
+     *
+     * @var ?\DateTime $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?\DateTime $createdAt = null;
+
+    /**
      * The categories associated with this content
      *
      * @var ?array<CreateCategoriesApiModel> $categories
@@ -163,11 +191,20 @@ class LmsUpsertContentRequestDto
     public ?array $categories = null;
 
     /**
+     * The additional_data associated with this content
+     *
+     * @var ?array<AdditionalData> $additionalData
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('additional_data')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AdditionalData>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $additionalData = null;
+
+    /**
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $externalReference
      * @param  ?string  $title
      * @param  ?string  $description
-     * @param  ?array<AdditionalData>  $additionalData
      * @param  ?array<LanguageEnum>  $languages
      * @param  ?string  $contentUrl
      * @param  ?string  $mobileLaunchContentUrl
@@ -178,16 +215,20 @@ class LmsUpsertContentRequestDto
      * @param  ?array<CreateSkillsApiModel>  $skills
      * @param  ?float  $order
      * @param  ?string  $shortDescription
+     * @param  ?array<LocalizationModel>  $localizations
+     * @param  ?array<string>  $tags
+     * @param  ?\DateTime  $updatedAt
+     * @param  ?\DateTime  $createdAt
      * @param  ?array<CreateCategoriesApiModel>  $categories
+     * @param  ?array<AdditionalData>  $additionalData
      * @phpstan-pure
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $additionalData = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $categories = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $localizations = null, ?array $tags = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?array $categories = null, ?array $additionalData = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
         $this->title = $title;
         $this->description = $description;
-        $this->additionalData = $additionalData;
         $this->languages = $languages;
         $this->contentUrl = $contentUrl;
         $this->mobileLaunchContentUrl = $mobileLaunchContentUrl;
@@ -198,6 +239,11 @@ class LmsUpsertContentRequestDto
         $this->skills = $skills;
         $this->order = $order;
         $this->shortDescription = $shortDescription;
+        $this->localizations = $localizations;
+        $this->tags = $tags;
+        $this->updatedAt = $updatedAt;
+        $this->createdAt = $createdAt;
         $this->categories = $categories;
+        $this->additionalData = $additionalData;
     }
 }

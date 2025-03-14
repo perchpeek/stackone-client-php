@@ -16,4 +16,5 @@ enum HRISDepartmentValue: string
     case Division = 'division';
     case Group = 'group';
     case Project = 'project';
+    case Team = 'team';
 }

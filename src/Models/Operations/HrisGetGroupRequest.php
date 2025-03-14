@@ -27,6 +27,14 @@ class HrisGetGroupRequest
     public string $id;
 
     /**
+     * Indicates that the raw request result should be returned in addition to the mapped result (default value is false)
+     *
+     * @var ?bool $raw
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
+    public ?bool $raw = null;
+
+    /**
      * Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with 'proxy' key
      *
      * @var ?array<string, mixed> $proxy
@@ -43,14 +51,6 @@ class HrisGetGroupRequest
     public ?string $fields = null;
 
     /**
-     * Indicates that the raw request result is returned
-     *
-     * @var ?bool $raw
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=raw')]
-    public ?bool $raw = null;
-
-    /**
      * @param  string  $xAccountId
      * @param  string  $id
      * @param  ?bool  $raw
@@ -58,12 +58,12 @@ class HrisGetGroupRequest
      * @param  ?string  $fields
      * @phpstan-pure
      */
-    public function __construct(string $xAccountId, string $id, ?array $proxy = null, ?string $fields = null, ?bool $raw = false)
+    public function __construct(string $xAccountId, string $id, ?bool $raw = null, ?array $proxy = null, ?string $fields = null)
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;
+        $this->raw = $raw;
         $this->proxy = $proxy;
         $this->fields = $fields;
-        $this->raw = $raw;
     }
 }

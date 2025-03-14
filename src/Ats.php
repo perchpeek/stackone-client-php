@@ -752,6 +752,101 @@ class Ats
     }
 
     /**
+     * Delete Background Check Package
+     *
+     * @param  string  $xAccountId
+     * @param  string  $id
+     * @return Operations\AtsDeleteBackgroundCheckPackageResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function deleteBackgroundCheckPackage(string $xAccountId, string $id, ?Options $options = null): Operations\AtsDeleteBackgroundCheckPackageResponse
+    {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
+        $request = new Operations\AtsDeleteBackgroundCheckPackageRequest(
+            xAccountId: $xAccountId,
+            id: $id,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/background_checks/packages/{id}', Operations\AtsDeleteBackgroundCheckPackageRequest::class, $request);
+        $urlOverride = null;
+        $httpOptions = ['http_errors' => false];
+        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $httpOptions)) {
+            $httpOptions['headers'] = [];
+        }
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
+        $hookContext = new HookContext('ats_delete_background_check_package', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
+        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
+        try {
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
+            $httpResponse = $res;
+        }
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '408', '412', '429', '4XX', '500', '501', '5XX'])) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
+            $httpResponse = $res;
+        }
+        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\StackOne\client\Models\Components\DeleteResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AtsDeleteBackgroundCheckPackageResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    deleteResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['408'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '412', '429', '4XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['500', '501', '5XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
      * Download Application Document
      *
      * @param  string  $xAccountId
@@ -7371,6 +7466,108 @@ class Ats
                 $responseData = (string) $httpResponse->getBody();
                 $obj = $serializer->deserialize($responseData, '\StackOne\client\Models\Components\UpdateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\AtsUpdateAssessmentsResultResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    updateResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['408'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '412', '429', '4XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['500', '501', '5XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Update Background Check Package
+     *
+     * @param  Components\AtsUpdateBackgroundCheckPackagesRequestDto  $atsUpdateBackgroundCheckPackagesRequestDto
+     * @param  string  $xAccountId
+     * @param  string  $id
+     * @return Operations\AtsUpdateBackgroundCheckPackageResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function updateBackgroundCheckPackage(Components\AtsUpdateBackgroundCheckPackagesRequestDto $atsUpdateBackgroundCheckPackagesRequestDto, string $xAccountId, string $id, ?Options $options = null): Operations\AtsUpdateBackgroundCheckPackageResponse
+    {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
+        $request = new Operations\AtsUpdateBackgroundCheckPackageRequest(
+            xAccountId: $xAccountId,
+            id: $id,
+            atsUpdateBackgroundCheckPackagesRequestDto: $atsUpdateBackgroundCheckPackagesRequestDto,
+        );
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/ats/background_checks/packages/{id}', Operations\AtsUpdateBackgroundCheckPackageRequest::class, $request);
+        $urlOverride = null;
+        $httpOptions = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'atsUpdateBackgroundCheckPackagesRequestDto', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $httpOptions = array_merge_recursive($httpOptions, $body);
+        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $httpOptions)) {
+            $httpOptions['headers'] = [];
+        }
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
+        $hookContext = new HookContext('ats_update_background_check_package', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
+        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
+        try {
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
+            $httpResponse = $res;
+        }
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '408', '412', '429', '4XX', '500', '501', '5XX'])) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
+            $httpResponse = $res;
+        }
+        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\StackOne\client\Models\Components\UpdateResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\AtsUpdateBackgroundCheckPackageResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,

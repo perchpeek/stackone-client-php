@@ -1,0 +1,52 @@
+# HrisUpdateEmployeeRequestDtoEmploymentPayFrequencySourceValue
+
+The source value of the pay frequency.
+
+
+## Supported Types
+
+### `string`
+
+```php
+/**
+* @var string
+*/
+string $value = /* values here */
+```
+
+### `float`
+
+```php
+/**
+* @var float
+*/
+float $value = /* values here */
+```
+
+### `bool`
+
+```php
+/**
+* @var bool
+*/
+bool $value = /* values here */
+```
+
+### `Components\HrisUpdateEmployeeRequestDtoSourceValueEmploymentPayFrequency4`
+
+```php
+/**
+* @var Components\HrisUpdateEmployeeRequestDtoSourceValueEmploymentPayFrequency4
+*/
+Components\HrisUpdateEmployeeRequestDtoSourceValueEmploymentPayFrequency4 $value = /* values here */
+```
+
+### `array`
+
+```php
+/**
+* @var array<mixed>
+*/
+array $value = /* values here */
+```
+

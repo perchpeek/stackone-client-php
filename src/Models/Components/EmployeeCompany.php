@@ -50,6 +50,15 @@ class EmployeeCompany
     public ?string $name = null;
 
     /**
+     * The full name of the company
+     *
+     * @var ?string $fullName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('full_name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $fullName = null;
+
+    /**
      * The display name of the company
      *
      * @var ?string $displayName
@@ -81,17 +90,19 @@ class EmployeeCompany
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
+     * @param  ?string  $fullName
      * @param  ?string  $displayName
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $displayName = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $fullName = null, ?string $displayName = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->name = $name;
+        $this->fullName = $fullName;
         $this->displayName = $displayName;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;

@@ -58,6 +58,26 @@ class TimeOffPolicies
     public ?TimeOffPoliciesType $type = null;
 
     /**
+     * The duration unit of the current policy
+     *
+     * @var ?DurationUnit $durationUnit
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('duration_unit')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\DurationUnit|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?DurationUnit $durationUnit = null;
+
+    /**
+     * $reasons
+     *
+     * @var ?array<Reason> $reasons
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reasons')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Reason>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $reasons = null;
+
+    /**
      * The created_at date of this policy
      *
      * @var ?\DateTime $createdAt
@@ -81,17 +101,21 @@ class TimeOffPolicies
      * @param  ?string  $name
      * @param  ?string  $description
      * @param  ?TimeOffPoliciesType  $type
+     * @param  ?DurationUnit  $durationUnit
+     * @param  ?array<Reason>  $reasons
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?TimeOffPoliciesType $type = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, ?string $description = null, ?TimeOffPoliciesType $type = null, ?DurationUnit $durationUnit = null, ?array $reasons = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->name = $name;
         $this->description = $description;
         $this->type = $type;
+        $this->durationUnit = $durationUnit;
+        $this->reasons = $reasons;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
     }

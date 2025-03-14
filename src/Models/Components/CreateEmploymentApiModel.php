@@ -31,15 +31,6 @@ class CreateEmploymentApiModel
     public ?array $unifiedCustomFields = null;
 
     /**
-     * The employee ID associated with this employment
-     *
-     * @var ?string $employeeId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('employee_id')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $employeeId = null;
-
-    /**
      * The job title of the employee
      *
      * @var ?string $jobTitle
@@ -90,6 +81,7 @@ class CreateEmploymentApiModel
      * The effective date of the employment contract
      *
      * @var ?\DateTime $effectiveDate
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('effective_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -127,7 +119,6 @@ class CreateEmploymentApiModel
     /**
      * @param  ?string  $id
      * @param  ?array<string, mixed>  $unifiedCustomFields
-     * @param  ?string  $employeeId
      * @param  ?string  $jobTitle
      * @param  ?string  $payRate
      * @param  ?CreateEmploymentApiModelPayPeriod  $payPeriod
@@ -139,11 +130,10 @@ class CreateEmploymentApiModel
      * @param  ?string  $timeWorked
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $employeeId = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?string $timeWorked = null)
+    public function __construct(?string $id = null, ?array $unifiedCustomFields = null, ?string $jobTitle = null, ?string $payRate = null, ?CreateEmploymentApiModelPayPeriod $payPeriod = null, ?CreateEmploymentApiModelPayFrequency $payFrequency = null, ?string $payCurrency = null, ?\DateTime $effectiveDate = null, ?CreateEmploymentApiModelEmploymentType $employmentType = null, ?CreateEmploymentApiModelEmploymentContractType $employmentContractType = null, ?string $timeWorked = null)
     {
         $this->id = $id;
         $this->unifiedCustomFields = $unifiedCustomFields;
-        $this->employeeId = $employeeId;
         $this->jobTitle = $jobTitle;
         $this->payRate = $payRate;
         $this->payPeriod = $payPeriod;

@@ -354,13 +354,13 @@ class Hris
     /**
      * Create Employee Skill
      *
-     * @param  Components\HrisSkillsCreateRequestDto  $hrisSkillsCreateRequestDto
+     * @param  Components\EntitySkillsCreateRequestDto  $entitySkillsCreateRequestDto
      * @param  string  $xAccountId
      * @param  string  $id
      * @return Operations\HrisCreateEmployeeSkillResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function createEmployeeSkill(Components\HrisSkillsCreateRequestDto $hrisSkillsCreateRequestDto, string $xAccountId, string $id, ?Options $options = null): Operations\HrisCreateEmployeeSkillResponse
+    public function createEmployeeSkill(Components\EntitySkillsCreateRequestDto $entitySkillsCreateRequestDto, string $xAccountId, string $id, ?Options $options = null): Operations\HrisCreateEmployeeSkillResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -390,13 +390,13 @@ class Hris
         $request = new Operations\HrisCreateEmployeeSkillRequest(
             xAccountId: $xAccountId,
             id: $id,
-            hrisSkillsCreateRequestDto: $hrisSkillsCreateRequestDto,
+            entitySkillsCreateRequestDto: $entitySkillsCreateRequestDto,
         );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/skills', Operations\HrisCreateEmployeeSkillRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'hrisSkillsCreateRequestDto', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'entitySkillsCreateRequestDto', 'json');
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
@@ -1694,6 +1694,99 @@ class Hris
     }
 
     /**
+     * Get Employee Skill
+     *
+     * @param  Operations\HrisGetEmployeeSkillRequest  $request
+     * @return Operations\HrisGetEmployeeSkillResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function getEmployeeSkill(Operations\HrisGetEmployeeSkillRequest $request, ?Options $options = null): Operations\HrisGetEmployeeSkillResponse
+    {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/skills/{subResourceId}', Operations\HrisGetEmployeeSkillRequest::class, $request);
+        $urlOverride = null;
+        $httpOptions = ['http_errors' => false];
+
+        $qp = Utils\Utils::getQueryParams(Operations\HrisGetEmployeeSkillRequest::class, $request, $urlOverride);
+        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $httpOptions)) {
+            $httpOptions['headers'] = [];
+        }
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $hookContext = new HookContext('hris_get_employee_skill', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
+        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
+        try {
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
+            $httpResponse = $res;
+        }
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '408', '412', '429', '4XX', '500', '501', '5XX'])) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
+            $httpResponse = $res;
+        }
+        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\StackOne\client\Models\Components\EntitySkillResult', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\HrisGetEmployeeSkillResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    entitySkillResult: $obj);
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['408'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '412', '429', '4XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['500', '501', '5XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
      * Get Employee Time Off Balance
      *
      * @param  Operations\HrisGetEmployeeTimeOffBalanceRequest  $request
@@ -2252,7 +2345,7 @@ class Hris
     }
 
     /**
-     * Get Location
+     * Get Work Location
      *
      * @param  Operations\HrisGetLocationRequest  $request
      * @return Operations\HrisGetLocationResponse
@@ -3967,6 +4060,144 @@ class Hris
     }
 
     /**
+     * List Employee Skills
+     *
+     * @param  Operations\HrisListEmployeeSkillsRequest  $request
+     * @return Operations\HrisListEmployeeSkillsResponse
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    private function listEmployeeSkillsIndividual(Operations\HrisListEmployeeSkillsRequest $request, ?Options $options = null): Operations\HrisListEmployeeSkillsResponse
+    {
+        $retryConfig = null;
+        if ($options) {
+            $retryConfig = $options->retryConfig;
+        }
+        if ($retryConfig === null && $this->sdkConfiguration->retryConfig) {
+            $retryConfig = $this->sdkConfiguration->retryConfig;
+        } else {
+            $retryConfig = new Retry\RetryConfigBackoff(
+                initialIntervalMs: 500,
+                maxIntervalMs: 60000,
+                exponent: 1.5,
+                maxElapsedTimeMs: 3600000,
+                retryConnectionErrors: true,
+            );
+        }
+        $retryCodes = null;
+        if ($options) {
+            $retryCodes = $options->retryCodes;
+        }
+        if ($retryCodes === null) {
+            $retryCodes = [
+                '429',
+                '408',
+            ];
+        }
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/unified/hris/employees/{id}/skills', Operations\HrisListEmployeeSkillsRequest::class, $request);
+        $urlOverride = null;
+        $httpOptions = ['http_errors' => false];
+
+        $qp = Utils\Utils::getQueryParams(Operations\HrisListEmployeeSkillsRequest::class, $request, $urlOverride);
+        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request));
+        if (! array_key_exists('headers', $httpOptions)) {
+            $httpOptions['headers'] = [];
+        }
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $hookContext = new HookContext('hris_list_employee_skills', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
+        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
+        try {
+            $httpResponse = RetryUtils::retryWrapper(fn () => $this->sdkConfiguration->client->send($httpRequest, $httpOptions), $retryConfig, $retryCodes);
+        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
+            $httpResponse = $res;
+        }
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '408', '412', '429', '4XX', '500', '501', '5XX'])) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
+            $httpResponse = $res;
+        }
+        if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\StackOne\client\Models\Components\EntitySkillsPaginated', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\HrisListEmployeeSkillsResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    entitySkillsPaginated: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\HrisListEmployeeSkillsResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
+                    }
+
+                    return $sdk->listEmployeeSkillsIndividual(
+                        request: new Operations\HrisListEmployeeSkillsRequest(
+                            xAccountId: $request != null ? $request->xAccountId : '',
+                            id: $request != null ? $request->id : '',
+                            raw: $request != null ? $request->raw : null,
+                            proxy: $request != null ? $request->proxy : null,
+                            fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
+                            page: $request != null ? $request->page : null,
+                            pageSize: $request != null ? $request->pageSize : null,
+                            next: $nextCursor,
+                            updatedAfter: $request != null ? $request->updatedAfter : null,
+                        ),
+                    );
+                };
+
+
+                return $response;
+            } else {
+                throw new \StackOne\client\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['408'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '403', '412', '429', '4XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['500', '501', '5XX'])) {
+            throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+    /**
+     * List Employee Skills
+     *
+     * @param  Operations\HrisListEmployeeSkillsRequest  $request
+     * @return \Generator<Operations\HrisListEmployeeSkillsResponse>
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function listEmployeeSkills(Operations\HrisListEmployeeSkillsRequest $request, ?Options $options = null): \Generator
+    {
+        $res = $this->listEmployeeSkillsIndividual($request, $options);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
+        }
+    }
+
+    /**
      * List Employee Time Off Balances
      *
      * @param  Operations\HrisListEmployeeTimeOffBalancesRequest  $request
@@ -4933,7 +5164,7 @@ class Hris
     }
 
     /**
-     * List locations
+     * List Work Locations
      *
      * @param  Operations\HrisListLocationsRequest  $request
      * @return Operations\HrisListLocationsResponse
@@ -5054,7 +5285,7 @@ class Hris
         }
     }
     /**
-     * List locations
+     * List Work Locations
      *
      * @param  Operations\HrisListLocationsRequest  $request
      * @return \Generator<Operations\HrisListLocationsResponse>
@@ -5076,7 +5307,7 @@ class Hris
      * @return Operations\HrisListTeamGroupsResponse
      * @throws \StackOne\client\Models\Errors\SDKException
      */
-    public function listTeamGroups(Operations\HrisListTeamGroupsRequest $request, ?Options $options = null): Operations\HrisListTeamGroupsResponse
+    private function listTeamGroupsIndividual(Operations\HrisListTeamGroupsRequest $request, ?Options $options = null): Operations\HrisListTeamGroupsResponse
     {
         $retryConfig = null;
         if ($options) {
@@ -5146,6 +5377,35 @@ class Hris
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     hrisTeamsPaginated: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\HrisListTeamGroupsResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$.next');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null) {
+                            return null;
+                        }
+                    }
+
+                    return $sdk->listTeamGroupsIndividual(
+                        request: new Operations\HrisListTeamGroupsRequest(
+                            xAccountId: $request != null ? $request->xAccountId : '',
+                            raw: $request != null ? $request->raw : null,
+                            proxy: $request != null ? $request->proxy : null,
+                            fields: $request != null ? $request->fields : null,
+                            filter: $request != null ? $request->filter : null,
+                            page: $request != null ? $request->page : null,
+                            pageSize: $request != null ? $request->pageSize : null,
+                            next: $nextCursor,
+                            updatedAfter: $request != null ? $request->updatedAfter : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -5159,6 +5419,21 @@ class Hris
             throw new \StackOne\client\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } else {
             throw new \StackOne\client\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+    /**
+     * List Team Groups
+     *
+     * @param  Operations\HrisListTeamGroupsRequest  $request
+     * @return \Generator<Operations\HrisListTeamGroupsResponse>
+     * @throws \StackOne\client\Models\Errors\SDKException
+     */
+    public function listTeamGroups(Operations\HrisListTeamGroupsRequest $request, ?Options $options = null): \Generator
+    {
+        $res = $this->listTeamGroupsIndividual($request, $options);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
         }
     }
 

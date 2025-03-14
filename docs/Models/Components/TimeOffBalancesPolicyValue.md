@@ -1,17 +1,16 @@
 # TimeOffBalancesPolicyValue
 
+The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown
+
 
 ## Values
 
-| Name            | Value           |
-| --------------- | --------------- |
-| `Paid`          | paid            |
-| `Unpaid`        | unpaid          |
-| `Holiday`       | holiday         |
-| `Vacation`      | vacation        |
-| `Sick`          | sick            |
-| `Personal`      | personal        |
-| `InLieu`        | in_lieu         |
-| `Bereavement`   | bereavement     |
-| `JuryDuty`      | jury_duty       |
-| `UnmappedValue` | unmapped_value  |
+| Name      | Value     |
+| --------- | --------- |
+| `Minutes` | minutes   |
+| `Hours`   | hours     |
+| `Days`    | days      |
+| `Weeks`   | weeks     |
+| `Months`  | months    |
+| `Years`   | years     |
+| `Unknown` | unknown   |

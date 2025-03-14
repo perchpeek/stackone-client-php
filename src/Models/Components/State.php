@@ -13,13 +13,13 @@ namespace StackOne\client\Models\Components;
 class State
 {
     /**
+     * state (ISO3166-2 Sub Division Code) - value must be a valid enum value
      *
-     * @var ?HrisCreateEmployeeRequestDtoHomeLocationStateValue $value
+     * @var ?string $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisCreateEmployeeRequestDtoHomeLocationStateValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?HrisCreateEmployeeRequestDtoHomeLocationStateValue $value = null;
+    public ?string $value = null;
 
     /**
      *
@@ -31,11 +31,11 @@ class State
     public string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocationState4|array|null $sourceValue = null;
 
     /**
-     * @param  ?HrisCreateEmployeeRequestDtoHomeLocationStateValue  $value
+     * @param  ?string  $value
      * @param  string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocationState4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?HrisCreateEmployeeRequestDtoHomeLocationStateValue $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocationState4|array|null $sourceValue = null)
+    public function __construct(?string $value = null, string|float|bool|HrisCreateEmployeeRequestDtoSourceValueHomeLocationState4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

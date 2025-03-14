@@ -16,3 +16,5 @@ The provider service category
 | `Lms`        | lms          |
 | `Stackone`   | stackone     |
 | `Documents`  | documents    |
+| `Ticketing`  | ticketing    |
+| `Screening`  | screening    |

@@ -9,16 +9,14 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
+/** The unified value for the duration unit. If the provider does not specify this unit, the value will be set to unknown */
 enum TimeOffBalancesPolicyValue: string
 {
-    case Paid = 'paid';
-    case Unpaid = 'unpaid';
-    case Holiday = 'holiday';
-    case Vacation = 'vacation';
-    case Sick = 'sick';
-    case Personal = 'personal';
-    case InLieu = 'in_lieu';
-    case Bereavement = 'bereavement';
-    case JuryDuty = 'jury_duty';
-    case UnmappedValue = 'unmapped_value';
+    case Minutes = 'minutes';
+    case Hours = 'hours';
+    case Days = 'days';
+    case Weeks = 'weeks';
+    case Months = 'months';
+    case Years = 'years';
+    case Unknown = 'unknown';
 }

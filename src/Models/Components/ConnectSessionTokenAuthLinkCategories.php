@@ -20,4 +20,6 @@ enum ConnectSessionTokenAuthLinkCategories: string
     case Lms = 'lms';
     case Stackone = 'stackone';
     case Documents = 'documents';
+    case Ticketing = 'ticketing';
+    case Screening = 'screening';
 }
