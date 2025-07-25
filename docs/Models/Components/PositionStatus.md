@@ -1,0 +1,11 @@
+# PositionStatus
+
+Status of the position
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    | Example                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                        | [?Components\PositionValue](../../Models/Components/PositionValue.md)                                          | :heavy_minus_sign:                                                                                             | The status of the position.                                                                                    | open                                                                                                           |
+| `sourceValue`                                                                                                  | [string\|float\|bool\|Components\PositionSourceValue4\|array\|null](../../Models/Components/PositionSourceValue.md) | :heavy_minus_sign:                                                                                             | The source value of the position status.                                                                       |                                                                                                                |

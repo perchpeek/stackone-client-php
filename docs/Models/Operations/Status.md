@@ -1,13 +1,13 @@
-# ~~Status~~
+# Status
 
-The status of the job
-
-> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+Filter positions by status
 
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Open`  | open    |
-| `Draft` | draft   |
+| Name            | Value           |
+| --------------- | --------------- |
+| `Open`          | open            |
+| `Closed`        | closed          |
+| `Paused`        | paused          |
+| `UnmappedValue` | unmapped_value  |

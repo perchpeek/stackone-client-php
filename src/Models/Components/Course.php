@@ -117,11 +117,12 @@ class Course
     /**
      * Whether the course is active and available for users.
      *
-     * @var ?bool $active
+     * @var bool|CourseActive2|null $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\CourseActive2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $active = null;
+    public bool|CourseActive2|null $active = null;
 
     /**
      * The duration of the course following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string
@@ -162,6 +163,16 @@ class Course
     public ?string $provider = null;
 
     /**
+     * The authors of the course
+     *
+     * @var ?array<AuthorModel> $authors
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('authors')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AuthorModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $authors = null;
+
+    /**
      * The date on which the course was last updated.
      *
      * @var ?string $updatedAt
@@ -191,16 +202,17 @@ class Course
      * @param  ?array<LanguageEnum>  $languages
      * @param  ?string  $coverUrl
      * @param  ?string  $url
-     * @param  ?bool  $active
+     * @param  bool|CourseActive2|null  $active
      * @param  ?string  $duration
      * @param  ?array<Category>  $categories
      * @param  ?array<Skills>  $skills
      * @param  ?string  $provider
+     * @param  ?array<AuthorModel>  $authors
      * @param  ?string  $updatedAt
      * @param  ?string  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, ?bool $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $provider = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, bool|CourseActive2|null $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $provider = null, ?array $authors = null, ?string $updatedAt = null, ?string $createdAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -218,6 +230,7 @@ class Course
         $this->categories = $categories;
         $this->skills = $skills;
         $this->provider = $provider;
+        $this->authors = $authors;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;
     }

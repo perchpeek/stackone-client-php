@@ -98,11 +98,12 @@ class LmsUpsertContentRequestDto
     /**
      * Whether the content is active and available for users.
      *
-     * @var ?bool $active
+     * @var bool|LmsUpsertContentRequestDtoActive2|null $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\LmsUpsertContentRequestDtoActive2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $active = null;
+    public bool|LmsUpsertContentRequestDtoActive2|null $active = null;
 
     /**
      * The duration of the content following the ISO8601 standard. If duration_unit is applicable we will derive this from the smallest unit given in the duration string or the minimum unit accepted by the provider.
@@ -163,6 +164,16 @@ class LmsUpsertContentRequestDto
     public ?array $tags = null;
 
     /**
+     * The authors of the content
+     *
+     * @var ?array<AuthorModel> $authors
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('authors')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\AuthorModel>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $authors = null;
+
+    /**
      * The date on which the content was last updated.
      *
      * @var ?\DateTime $updatedAt
@@ -210,20 +221,21 @@ class LmsUpsertContentRequestDto
      * @param  ?string  $mobileLaunchContentUrl
      * @param  ?LmsUpsertContentRequestDtoContentType  $contentType
      * @param  ?string  $coverUrl
-     * @param  ?bool  $active
+     * @param  bool|LmsUpsertContentRequestDtoActive2|null  $active
      * @param  ?string  $duration
      * @param  ?array<CreateSkillsApiModel>  $skills
      * @param  ?float  $order
      * @param  ?string  $shortDescription
      * @param  ?array<LocalizationModel>  $localizations
      * @param  ?array<string>  $tags
+     * @param  ?array<AuthorModel>  $authors
      * @param  ?\DateTime  $updatedAt
      * @param  ?\DateTime  $createdAt
      * @param  ?array<CreateCategoriesApiModel>  $categories
      * @param  ?array<AdditionalData>  $additionalData
      * @phpstan-pure
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, ?bool $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $localizations = null, ?array $tags = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?array $categories = null, ?array $additionalData = null)
+    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsUpsertContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsUpsertContentRequestDtoActive2|null $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $localizations = null, ?array $tags = null, ?array $authors = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?array $categories = null, ?array $additionalData = null)
     {
         $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
@@ -241,6 +253,7 @@ class LmsUpsertContentRequestDto
         $this->shortDescription = $shortDescription;
         $this->localizations = $localizations;
         $this->tags = $tags;
+        $this->authors = $authors;
         $this->updatedAt = $updatedAt;
         $this->createdAt = $createdAt;
         $this->categories = $categories;
