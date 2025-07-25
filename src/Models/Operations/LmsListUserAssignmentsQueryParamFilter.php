@@ -23,17 +23,17 @@ class LmsListUserAssignmentsQueryParamFilter
     /**
      * Filter to select assignment by status
      *
-     * @var ?QueryParamStatus $status
+     * @var ?LmsListUserAssignmentsQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
-    public ?QueryParamStatus $status = null;
+    public ?LmsListUserAssignmentsQueryParamStatus $status = null;
 
     /**
      * @param  ?string  $updatedAfter
-     * @param  ?QueryParamStatus  $status
+     * @param  ?LmsListUserAssignmentsQueryParamStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?QueryParamStatus $status = null)
+    public function __construct(?string $updatedAfter = null, ?LmsListUserAssignmentsQueryParamStatus $status = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->status = $status;

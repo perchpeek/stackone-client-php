@@ -78,11 +78,12 @@ class LmsUser
     /**
      * The user active status
      *
-     * @var ?bool $active
+     * @var bool|LmsUserActive2|null $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\LmsUserActive2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $active = null;
+    public bool|LmsUserActive2|null $active = null;
 
     /**
      * The created_at date
@@ -110,12 +111,12 @@ class LmsUser
      * @param  ?string  $name
      * @param  ?string  $email
      * @param  ?string  $phoneNumber
-     * @param  ?bool  $active
+     * @param  bool|LmsUserActive2|null  $active
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $name = null, ?string $email = null, ?string $phoneNumber = null, ?bool $active = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $name = null, ?string $email = null, ?string $phoneNumber = null, bool|LmsUserActive2|null $active = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

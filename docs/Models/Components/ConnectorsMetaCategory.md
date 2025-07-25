@@ -18,3 +18,5 @@ The provider service category
 | `Documents`  | documents    |
 | `Ticketing`  | ticketing    |
 | `Screening`  | screening    |
+| `Messaging`  | messaging    |
+| `Accounting` | accounting   |

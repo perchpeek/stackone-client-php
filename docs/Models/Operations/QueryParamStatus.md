@@ -1,12 +1,14 @@
 # QueryParamStatus
 
-Filter to select assignment by status
+Filter to select shifts by status
 
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Pending`    | pending      |
-| `InProgress` | in_progress  |
-| `Completed`  | completed    |
+| Name            | Value           |
+| --------------- | --------------- |
+| `Draft`         | draft           |
+| `Published`     | published       |
+| `Confirmed`     | confirmed       |
+| `Cancelled`     | cancelled       |
+| `UnmappedValue` | unmapped_value  |

@@ -22,4 +22,6 @@ enum Categories: string
     case Documents = 'documents';
     case Ticketing = 'ticketing';
     case Screening = 'screening';
+    case Messaging = 'messaging';
+    case Accounting = 'accounting';
 }

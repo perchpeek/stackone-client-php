@@ -51,32 +51,33 @@ class Category
     /**
      * Whether the category is active and therefore available for use
      *
-     * @var ?bool $active
+     * @var bool|CategoryActive2|null $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\CategoryActive2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $active = null;
+    public bool|CategoryActive2|null $active = null;
 
     /**
      * The hierarchal level of the category
      *
-     * @var ?CategoryHierarchy $hierarchy
+     * @var ?Hierarchy $hierarchy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('hierarchy')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryHierarchy|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Hierarchy|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CategoryHierarchy $hierarchy = null;
+    public ?Hierarchy $hierarchy = null;
 
     /**
      * The hierarchal level of the category
      *
-     * @var ?CategoryLevel $level
+     * @var ?Level $level
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('level')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CategoryLevel|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Level|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CategoryLevel $level = null;
+    public ?Level $level = null;
 
     /**
      * The language associated with this category
@@ -93,13 +94,13 @@ class Category
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $name
-     * @param  ?bool  $active
-     * @param  ?CategoryHierarchy  $hierarchy
-     * @param  ?CategoryLevel  $level
+     * @param  bool|CategoryActive2|null  $active
+     * @param  ?Hierarchy  $hierarchy
+     * @param  ?Level  $level
      * @param  ?CategoryLanguage  $language
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?bool $active = null, ?CategoryHierarchy $hierarchy = null, ?CategoryLevel $level = null, ?CategoryLanguage $language = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, bool|CategoryActive2|null $active = null, ?Hierarchy $hierarchy = null, ?Level $level = null, ?CategoryLanguage $language = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

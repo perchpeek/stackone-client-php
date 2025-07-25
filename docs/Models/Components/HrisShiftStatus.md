@@ -1,0 +1,11 @@
+# HrisShiftStatus
+
+The status of the shift
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      | Example                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `value`                                                                                                          | [?Components\HrisShiftValue](../../Models/Components/HrisShiftValue.md)                                          | :heavy_minus_sign:                                                                                               | The status of the shift                                                                                          | confirmed                                                                                                        |
+| `sourceValue`                                                                                                    | [string\|float\|bool\|Components\HrisShiftSourceValue4\|array\|null](../../Models/Components/HrisShiftSourceValue.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              | Confirmed                                                                                                        |
