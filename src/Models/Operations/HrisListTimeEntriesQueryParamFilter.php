@@ -15,10 +15,10 @@ class HrisListTimeEntriesQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Filter to select time entries by employee_id
@@ -45,13 +45,13 @@ class HrisListTimeEntriesQueryParamFilter
     public ?string $endTime = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?string  $employeeId
      * @param  ?string  $startTime
      * @param  ?string  $endTime
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?string $employeeId = null, ?string $startTime = null, ?string $endTime = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?string $employeeId = null, ?string $startTime = null, ?string $endTime = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->employeeId = $employeeId;

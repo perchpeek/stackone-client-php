@@ -241,7 +241,7 @@ class Employee
     public ?Ethnicity $ethnicity = null;
 
     /**
-     * The employee date_of_birth
+     * The date when the employee was born
      *
      * @var ?\DateTime $dateOfBirth
      */
@@ -250,7 +250,7 @@ class Employee
     public ?\DateTime $dateOfBirth = null;
 
     /**
-     * The employee birthday
+     * The next birthday of the employee (upcoming birthday)
      *
      * @var ?\DateTime $birthday
      */

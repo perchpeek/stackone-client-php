@@ -15,10 +15,10 @@ class LmsListUserAssignmentsQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Filter to select assignment by status
@@ -29,11 +29,11 @@ class LmsListUserAssignmentsQueryParamFilter
     public ?LmsListUserAssignmentsQueryParamStatus $status = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?LmsListUserAssignmentsQueryParamStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?LmsListUserAssignmentsQueryParamStatus $status = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?LmsListUserAssignmentsQueryParamStatus $status = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->status = $status;

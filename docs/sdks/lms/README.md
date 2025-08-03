@@ -36,6 +36,7 @@ List Courses
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_courses" method="get" path="/unified/lms/courses" -->
 ```php
 declare(strict_types=1);
 
@@ -44,6 +45,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -58,7 +60,7 @@ $request = new Operations\LmsListCoursesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,external_reference,content_ids,remote_content_ids,title,description,languages,cover_url,url,active,duration,categories,skills,updated_at,created_at,content,provider,localizations,authors',
     filter: new Operations\LmsListCoursesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -108,6 +110,7 @@ Get Course
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_course" method="get" path="/unified/lms/courses/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -175,6 +178,7 @@ List User Assignments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_user_assignments" method="get" path="/unified/lms/users/{id}/assignments" -->
 ```php
 declare(strict_types=1);
 
@@ -183,6 +187,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -198,7 +203,7 @@ $request = new Operations\LmsListUserAssignmentsRequest(
     id: '<id>',
     fields: 'id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference',
     filter: new Operations\LmsListUserAssignmentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     userId: 'c28xyrc55866bvuv',
     remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
@@ -250,6 +255,7 @@ Create User Assignment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_create_user_assignment" method="post" path="/unified/lms/users/{id}/assignments" -->
 ```php
 declare(strict_types=1);
 
@@ -257,6 +263,7 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -274,8 +281,8 @@ $lmsCreateAssignmentRequestDto = new Components\LmsCreateAssignmentRequestDto(
     learningObjectId: 'e3gd34-23tr21-er234-345er56',
     learningObjectExternalReference: 'learning-content-123',
     progress: 40,
-    createdAt: '2021-07-21T14:00:00.000Z',
-    dueDate: '2021-07-21T14:00:00.000Z',
+    createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
+    dueDate: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     status: new Components\LmsCreateAssignmentRequestDtoStatus(
         value: Components\LmsCreateAssignmentRequestDtoValue::InProgress,
     ),
@@ -329,6 +336,7 @@ Get User Assignment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_user_assignment" method="get" path="/unified/lms/users/{id}/assignments/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -396,6 +404,7 @@ Batch Upsert Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_batch_upsert_content" method="post" path="/unified/lms/content/batch" -->
 ```php
 declare(strict_types=1);
 
@@ -533,6 +542,7 @@ List Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_content" method="get" path="/unified/lms/content" -->
 ```php
 declare(strict_types=1);
 
@@ -541,6 +551,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -555,7 +566,7 @@ $request = new Operations\LmsListContentRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,external_reference,course_ids,remote_course_ids,title,description,additional_data,languages,content_url,mobile_launch_content_url,content_type,cover_url,active,duration,order,categories,skills,updated_at,created_at,provider,localizations,tags,authors',
     filter: new Operations\LmsListContentQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -605,6 +616,7 @@ Upsert Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_upsert_content" method="put" path="/unified/lms/content" -->
 ```php
 declare(strict_types=1);
 
@@ -738,6 +750,7 @@ Get Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_content" method="get" path="/unified/lms/content/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -805,6 +818,7 @@ Update Content
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_update_content" method="patch" path="/unified/lms/content/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -932,6 +946,7 @@ List User Completions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_user_completions" method="get" path="/unified/lms/users/{id}/completions" -->
 ```php
 declare(strict_types=1);
 
@@ -940,6 +955,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -955,7 +971,7 @@ $request = new Operations\LmsListUserCompletionsRequest(
     id: '<id>',
     fields: 'id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent',
     filter: new Operations\LmsListUserCompletionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1005,6 +1021,7 @@ Create User Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_create_user_completion" method="post" path="/unified/lms/users/{id}/completions" -->
 ```php
 declare(strict_types=1);
 
@@ -1012,6 +1029,7 @@ require 'vendor/autoload.php';
 
 use StackOne\client;
 use StackOne\client\Models\Components;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1026,7 +1044,7 @@ $lmsCreateCompletionRequestDto = new Components\LmsCreateCompletionRequestDto(
     passthrough: [
         'other_known_names' => 'John Doe',
     ],
-    completedAt: '2021-07-21T14:00:00.000Z',
+    completedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     learningObjectId: 'e3gd34-23tr21-er234-345er56',
     learningObjectExternalReference: 'learning-content-123',
     timeSpent: 'PT1H30M45S',
@@ -1080,6 +1098,7 @@ Get User Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_user_completion" method="get" path="/unified/lms/users/{id}/completions/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1147,6 +1166,7 @@ Delete User Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_delete_user_completion" method="delete" path="/unified/lms/users/{id}/completions/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1214,6 +1234,7 @@ List Completions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_completions" method="get" path="/unified/lms/completions" -->
 ```php
 declare(strict_types=1);
 
@@ -1222,6 +1243,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1236,7 +1258,7 @@ $request = new Operations\LmsListCompletionsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,external_id,remote_external_id,external_reference,content_id,remote_content_id,course_id,remote_course_id,user_id,remote_user_id,completed_at,updated_at,created_at,result,content_external_reference,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference,time_spent',
     filter: new Operations\LmsListCompletionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1286,6 +1308,7 @@ Get Completion
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_completion" method="get" path="/unified/lms/completions/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1352,6 +1375,7 @@ Get Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_category" method="get" path="/unified/lms/categories/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1419,6 +1443,7 @@ List Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_categories" method="get" path="/unified/lms/categories" -->
 ```php
 declare(strict_types=1);
 
@@ -1427,6 +1452,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1441,7 +1467,7 @@ $request = new Operations\LmsListCategoriesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,active,hierarchy,level,language',
     filter: new Operations\LmsListCategoriesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1491,6 +1517,7 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_users" method="get" path="/unified/lms/users" -->
 ```php
 declare(strict_types=1);
 
@@ -1561,6 +1588,7 @@ Get User
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_user" method="get" path="/unified/lms/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1628,6 +1656,7 @@ Get Skill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_skill" method="get" path="/unified/lms/skills/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1695,6 +1724,7 @@ List Skills
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_skills" method="get" path="/unified/lms/skills" -->
 ```php
 declare(strict_types=1);
 
@@ -1703,6 +1733,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1717,7 +1748,7 @@ $request = new Operations\LmsListSkillsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,active,hierarchy,language',
     filter: new Operations\LmsListSkillsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1767,6 +1798,7 @@ List Assignments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_list_assignments" method="get" path="/unified/lms/assignments" -->
 ```php
 declare(strict_types=1);
 
@@ -1775,6 +1807,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1789,7 +1822,7 @@ $request = new Operations\LmsListAssignmentsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,external_reference,user_id,remote_user_id,course_id,remote_course_id,updated_at,created_at,due_date,status,progress,learning_object_type,learning_object_id,remote_learning_object_id,learning_object_external_reference',
     filter: new Operations\LmsListAssignmentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     userId: 'c28xyrc55866bvuv',
     remoteUserId: 'e3cb75bf-aa84-466e-a6c1-b8322b257a48',
@@ -1841,6 +1874,7 @@ Get Assignment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="lms_get_assignment" method="get" path="/unified/lms/assignments/{id}" -->
 ```php
 declare(strict_types=1);
 

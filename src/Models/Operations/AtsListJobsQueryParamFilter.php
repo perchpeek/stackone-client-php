@@ -15,18 +15,18 @@ class AtsListJobsQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Use a string with a date to only select results created after that given date
      *
-     * @var ?string $createdAfter
+     * @var ?\DateTime $createdAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=created_after')]
-    public ?string $createdAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=created_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $createdAfter = null;
 
     /**
      * The status of the job
@@ -46,13 +46,13 @@ class AtsListJobsQueryParamFilter
     public ?JobStatus $jobStatus = null;
 
     /**
-     * @param  ?string  $updatedAfter
-     * @param  ?string  $createdAfter
+     * @param  ?\DateTime  $updatedAfter
+     * @param  ?\DateTime  $createdAfter
      * @param  ?AtsListJobsQueryParamStatus  $status
      * @param  ?JobStatus  $jobStatus
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?string $createdAfter = null, ?AtsListJobsQueryParamStatus $status = null, ?JobStatus $jobStatus = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?\DateTime $createdAfter = null, ?AtsListJobsQueryParamStatus $status = null, ?JobStatus $jobStatus = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->createdAfter = $createdAfter;

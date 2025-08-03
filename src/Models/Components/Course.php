@@ -175,20 +175,20 @@ class Course
     /**
      * The date on which the course was last updated.
      *
-     * @var ?string $updatedAt
+     * @var ?\DateTime $updatedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $updatedAt = null;
+    public ?\DateTime $updatedAt = null;
 
     /**
      * The date on which the course was created.
      *
-     * @var ?string $createdAt
+     * @var ?\DateTime $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdAt = null;
+    public ?\DateTime $createdAt = null;
 
     /**
      * @param  ?string  $id
@@ -208,11 +208,11 @@ class Course
      * @param  ?array<Skills>  $skills
      * @param  ?string  $provider
      * @param  ?array<AuthorModel>  $authors
-     * @param  ?string  $updatedAt
-     * @param  ?string  $createdAt
+     * @param  ?\DateTime  $updatedAt
+     * @param  ?\DateTime  $createdAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, bool|CourseActive2|null $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $provider = null, ?array $authors = null, ?string $updatedAt = null, ?string $createdAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?array $contentIds = null, ?array $remoteContentIds = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $coverUrl = null, ?string $url = null, bool|CourseActive2|null $active = null, ?string $duration = null, ?array $categories = null, ?array $skills = null, ?string $provider = null, ?array $authors = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

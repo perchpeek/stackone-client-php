@@ -48,7 +48,7 @@ class Crm
     }
 
     /**
-     * Creates a new Contact
+     * Create Contact
      *
      * @param  Components\CrmCreateContactRequestDto  $crmCreateContactRequestDto
      * @param  string  $xAccountId

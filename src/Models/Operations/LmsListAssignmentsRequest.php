@@ -79,11 +79,11 @@ class LmsListAssignmentsRequest
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * The user ID associated with this assignment
@@ -110,12 +110,12 @@ class LmsListAssignmentsRequest
      * @param  ?string  $page
      * @param  ?string  $pageSize
      * @param  ?string  $next
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?string  $userId
      * @param  ?string  $remoteUserId
      * @phpstan-pure
      */
-    public function __construct(string $xAccountId, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?LmsListAssignmentsQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?string $updatedAfter = null, ?string $userId = null, ?string $remoteUserId = null)
+    public function __construct(string $xAccountId, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?LmsListAssignmentsQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?\DateTime $updatedAfter = null, ?string $userId = null, ?string $remoteUserId = null)
     {
         $this->xAccountId = $xAccountId;
         $this->raw = $raw;

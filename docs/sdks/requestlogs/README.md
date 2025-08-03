@@ -8,8 +8,9 @@ API requests and response logs.
 ### Available Operations
 
 * [listStepLogs](#liststeplogs) - List Step Logs
-* [getLog](#getlog) - Get a Log
+* [getLog](#getlog) - Get Log
 * [listLogs](#listlogs) - List Logs
+* [listPlatformLogs](#listplatformlogs) - List Platform Logs
 
 ## listStepLogs
 
@@ -17,6 +18,7 @@ List Step Logs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_list_step_logs" method="get" path="/requests/logs/steps" -->
 ```php
 declare(strict_types=1);
 
@@ -25,6 +27,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -40,8 +43,8 @@ $request = new Operations\StackoneListStepLogsRequest(
     orderDirection: Operations\OrderDirection::Asc,
     filter: new Operations\Filter(
         accountIds: '45355976281015164504,45355976281015164505',
-        startDate: '2020-01-01T00:00:00.000Z',
-        endDate: '2020-01-01T00:00:00.000Z',
+        startDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        endDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         requestIds: 'adbf752f-6457-4ddd-89b3-98ae2252b83b,adbf752f-6457-4ddd-89b3-98ae2252b83c',
         httpMethods: 'GET,POST',
         providers: 'ashby,greenhouse',
@@ -93,10 +96,11 @@ if ($response->stepLogsPaginated !== null) {
 
 ## getLog
 
-Get a Log
+Get Log
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_get_log" method="get" path="/requests/logs/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -162,6 +166,7 @@ List Logs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_list_logs" method="get" path="/requests/logs" -->
 ```php
 declare(strict_types=1);
 
@@ -170,6 +175,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -186,8 +192,8 @@ $request = new Operations\StackoneListLogsRequest(
     include: Operations\QueryParamInclude::StepLogs,
     filter: new Operations\QueryParamFilter(
         accountIds: '45355976281015164504,45355976281015164505',
-        startDate: '2020-01-01T00:00:00.000Z',
-        endDate: '2020-01-01T00:00:00.000Z',
+        startDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        endDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         requestIds: 'adbf752f-6457-4ddd-89b3-98ae2252b83b,adbf752f-6457-4ddd-89b3-98ae2252b83c',
         sourceTypes: 'DASHBOARD,SYNTHETIC_WEBHOOK',
         httpMethods: 'GET,POST',
@@ -222,6 +228,88 @@ if ($response->unifiedLogsPaginated !== null) {
 ### Response
 
 **[?Operations\StackoneListLogsResponse](../../Models/Operations/StackoneListLogsResponse.md)**
+
+### Errors
+
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Errors\BadRequestResponse          | 400                                | application/json                   |
+| Errors\UnauthorizedResponse        | 401                                | application/json                   |
+| Errors\ForbiddenResponse           | 403                                | application/json                   |
+| Errors\NotFoundResponse            | 404                                | application/json                   |
+| Errors\RequestTimedOutResponse     | 408                                | application/json                   |
+| Errors\ConflictResponse            | 409                                | application/json                   |
+| Errors\UnprocessableEntityResponse | 422                                | application/json                   |
+| Errors\TooManyRequestsResponse     | 429                                | application/json                   |
+| Errors\InternalServerErrorResponse | 500                                | application/json                   |
+| Errors\NotImplementedResponse      | 501                                | application/json                   |
+| Errors\BadGatewayResponse          | 502                                | application/json                   |
+| Errors\SDKException                | 4XX, 5XX                           | \*/\*                              |
+
+## listPlatformLogs
+
+List Platform Logs
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="stackone_list_platform_logs" method="get" path="/requests/platform-logs" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\StackoneListPlatformLogsRequest(
+    orderBy: Operations\StackoneListPlatformLogsQueryParamOrderBy::Duration,
+    orderDirection: Operations\StackoneListPlatformLogsQueryParamOrderDirection::Asc,
+    filter: new Operations\StackoneListPlatformLogsQueryParamFilter(
+        accountIds: '45355976281015164504,45355976281015164505',
+        startDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        endDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        requestIds: 'adbf752f-6457-4ddd-89b3-98ae2252b83b,adbf752f-6457-4ddd-89b3-98ae2252b83c',
+        sourceTypes: 'DASHBOARD,SYNTHETIC_WEBHOOK',
+        httpMethods: 'GET,POST',
+        categories: 'hris,ats',
+        resources: 'employees,users',
+        actions: 'download,upload',
+        statusCodes: '200,400',
+        success: true,
+        orderBy: Operations\StackoneListPlatformLogsQueryParamRequestLogsOrderBy::EventDatetime,
+        orderDirection: Operations\StackoneListPlatformLogsQueryParamRequestLogsOrderDirection::Asc,
+    ),
+);
+
+$response = $sdk->requestLogs->listPlatformLogs(
+    request: $request
+);
+
+if ($response->platformLogsPaginated !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\StackoneListPlatformLogsRequest](../../Models/Operations/StackoneListPlatformLogsRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\StackoneListPlatformLogsResponse](../../Models/Operations/StackoneListPlatformLogsResponse.md)**
 
 ### Errors
 

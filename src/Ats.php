@@ -1432,7 +1432,7 @@ class Ats
     }
 
     /**
-     * Creates an offer
+     * Create Offer
      *
      * @param  Components\AtsCreateOfferRequestDto  $atsCreateOfferRequestDto
      * @param  string  $xAccountId
@@ -15533,7 +15533,7 @@ class Ats
     }
 
     /**
-     * Update an Application
+     * Update Application
      *
      * @param  Components\AtsUpdateApplicationRequestDto  $atsUpdateApplicationRequestDto
      * @param  string  $xAccountId
@@ -15765,7 +15765,7 @@ class Ats
     }
 
     /**
-     * Update an Application Note
+     * Update Application Note
      *
      * @param  Components\AtsUpdateNotesRequestDto  $atsUpdateNotesRequestDto
      * @param  string  $xAccountId

@@ -515,7 +515,7 @@ class Hris
     }
 
     /**
-     * Creates an employee
+     * Create Employee
      *
      * @param  Components\HrisCreateEmployeeRequestDto  $hrisCreateEmployeeRequestDto
      * @param  string  $xAccountId
@@ -16135,7 +16135,7 @@ class Hris
     }
 
     /**
-     * Updates an employee
+     * Update Employee
      *
      * @param  Components\HrisUpdateEmployeeRequestDto  $hrisUpdateEmployeeRequestDto
      * @param  string  $xAccountId

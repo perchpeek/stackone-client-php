@@ -88,29 +88,29 @@ class Assignment
     /**
      * The date the assignment was last updated
      *
-     * @var ?string $updatedAt
+     * @var ?\DateTime $updatedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $updatedAt = null;
+    public ?\DateTime $updatedAt = null;
 
     /**
      * The date the assignment was created
      *
-     * @var ?string $createdAt
+     * @var ?\DateTime $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdAt = null;
+    public ?\DateTime $createdAt = null;
 
     /**
      * The date the assignment is due to be completed
      *
-     * @var ?string $dueDate
+     * @var ?\DateTime $dueDate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $dueDate = null;
+    public ?\DateTime $dueDate = null;
 
     /**
      * The status of the assignment
@@ -179,9 +179,9 @@ class Assignment
      * @param  ?string  $remoteLearningObjectId
      * @param  ?string  $learningObjectExternalReference
      * @param  ?float  $progress
-     * @param  ?string  $updatedAt
-     * @param  ?string  $createdAt
-     * @param  ?string  $dueDate
+     * @param  ?\DateTime  $updatedAt
+     * @param  ?\DateTime  $createdAt
+     * @param  ?\DateTime  $dueDate
      * @param  ?AssignmentStatus  $status
      * @param  ?LearningObjectType  $learningObjectType
      * @param  ?string  $userId
@@ -190,7 +190,7 @@ class Assignment
      * @param  ?string  $remoteCourseId
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $updatedAt = null, ?string $createdAt = null, ?string $dueDate = null, ?AssignmentStatus $status = null, ?LearningObjectType $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null, ?string $courseId = null, ?string $remoteCourseId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?\DateTime $dueDate = null, ?AssignmentStatus $status = null, ?LearningObjectType $learningObjectType = null, ?string $userId = null, ?string $remoteUserId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

@@ -23,18 +23,18 @@ class QueryParamFilter
     /**
      * A ISO8601 date string to filter the results by start_date.
      *
-     * @var ?string $startDate
+     * @var ?\DateTime $startDate
      */
-    #[SpeakeasyMetadata('queryParam:name=start_date')]
-    public ?string $startDate = null;
+    #[SpeakeasyMetadata('queryParam:name=start_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $startDate = null;
 
     /**
      * A ISO8601 date string to filter the results by end_date.
      *
-     * @var ?string $endDate
+     * @var ?\DateTime $endDate
      */
-    #[SpeakeasyMetadata('queryParam:name=end_date')]
-    public ?string $endDate = null;
+    #[SpeakeasyMetadata('queryParam:name=end_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $endDate = null;
 
     /**
      * A comma-separated list of request IDs to filter the results by.
@@ -158,8 +158,8 @@ class QueryParamFilter
 
     /**
      * @param  ?string  $accountIds
-     * @param  ?string  $startDate
-     * @param  ?string  $endDate
+     * @param  ?\DateTime  $startDate
+     * @param  ?\DateTime  $endDate
      * @param  ?string  $requestIds
      * @param  ?string  $sourceTypes
      * @param  ?string  $sourceValues
@@ -177,7 +177,7 @@ class QueryParamFilter
      * @param  ?StackoneListLogsQueryParamOrderDirection  $orderDirection
      * @phpstan-pure
      */
-    public function __construct(?string $accountIds = null, ?string $startDate = null, ?string $endDate = null, ?string $requestIds = null, ?string $sourceTypes = null, ?string $sourceValues = null, ?string $sourceIds = null, ?string $httpMethods = null, ?string $providers = null, ?string $services = null, ?string $resources = null, ?string $childResources = null, ?string $subResources = null, ?string $actions = null, ?string $statusCodes = null, ?bool $success = null, ?StackoneListLogsQueryParamOrderBy $orderBy = null, ?StackoneListLogsQueryParamOrderDirection $orderDirection = null)
+    public function __construct(?string $accountIds = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null, ?string $requestIds = null, ?string $sourceTypes = null, ?string $sourceValues = null, ?string $sourceIds = null, ?string $httpMethods = null, ?string $providers = null, ?string $services = null, ?string $resources = null, ?string $childResources = null, ?string $subResources = null, ?string $actions = null, ?string $statusCodes = null, ?bool $success = null, ?StackoneListLogsQueryParamOrderBy $orderBy = null, ?StackoneListLogsQueryParamOrderDirection $orderDirection = null)
     {
         $this->accountIds = $accountIds;
         $this->startDate = $startDate;

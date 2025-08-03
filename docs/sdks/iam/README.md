@@ -22,6 +22,7 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_list_users" method="get" path="/unified/iam/users" -->
 ```php
 declare(strict_types=1);
 
@@ -30,6 +31,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -44,7 +46,7 @@ $request = new Operations\IamListUsersRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
     filter: new Operations\IamListUsersQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'roles,groups',
 );
@@ -95,6 +97,7 @@ Get User
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_get_user" method="get" path="/unified/iam/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -163,6 +166,7 @@ Delete User
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_delete_user" method="delete" path="/unified/iam/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -228,6 +232,7 @@ Update User
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_update_user" method="patch" path="/unified/iam/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -308,6 +313,7 @@ List Roles
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_list_roles" method="get" path="/unified/iam/roles" -->
 ```php
 declare(strict_types=1);
 
@@ -316,6 +322,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -330,7 +337,7 @@ $request = new Operations\IamListRolesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,policies,description,created_at,updated_at',
     filter: new Operations\IamListRolesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'policies',
 );
@@ -381,6 +388,7 @@ Get Role
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_get_role" method="get" path="/unified/iam/roles/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -449,6 +457,7 @@ List Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_list_groups" method="get" path="/unified/iam/groups" -->
 ```php
 declare(strict_types=1);
 
@@ -520,6 +529,7 @@ Get Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_get_group" method="get" path="/unified/iam/groups/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -588,6 +598,7 @@ List Policies
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_list_policies" method="get" path="/unified/iam/policies" -->
 ```php
 declare(strict_types=1);
 
@@ -659,6 +670,7 @@ Get Policy
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="iam_get_policy" method="get" path="/unified/iam/policies/{id}" -->
 ```php
 declare(strict_types=1);
 

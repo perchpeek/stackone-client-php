@@ -61,20 +61,20 @@ class LmsCreateAssignmentRequestDto
     /**
      * The date the assignment was created
      *
-     * @var ?string $createdAt
+     * @var ?\DateTime $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdAt = null;
+    public ?\DateTime $createdAt = null;
 
     /**
      * The date the assignment is due to be completed
      *
-     * @var ?string $dueDate
+     * @var ?\DateTime $dueDate
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('due_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $dueDate = null;
+    public ?\DateTime $dueDate = null;
 
     /**
      * The status of the assignment
@@ -92,12 +92,12 @@ class LmsCreateAssignmentRequestDto
      * @param  ?string  $learningObjectId
      * @param  ?string  $learningObjectExternalReference
      * @param  ?float  $progress
-     * @param  ?string  $createdAt
-     * @param  ?string  $dueDate
+     * @param  ?\DateTime  $createdAt
+     * @param  ?\DateTime  $dueDate
      * @param  ?LmsCreateAssignmentRequestDtoStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?array $passthrough = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?string $createdAt = null, ?string $dueDate = null, ?LmsCreateAssignmentRequestDtoStatus $status = null)
+    public function __construct(?array $passthrough = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?\DateTime $createdAt = null, ?\DateTime $dueDate = null, ?LmsCreateAssignmentRequestDtoStatus $status = null)
     {
         $this->passthrough = $passthrough;
         $this->externalReference = $externalReference;

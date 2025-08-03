@@ -15,10 +15,10 @@ class AtsListApplicationChangesQueryParamFilter
     /**
      * Use a string with a date to only select results created after that given date
      *
-     * @var ?string $createdAfter
+     * @var ?\DateTime $createdAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=created_after')]
-    public ?string $createdAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=created_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $createdAfter = null;
 
     /**
      * Filter by the type of change that occurred to the application
@@ -29,11 +29,11 @@ class AtsListApplicationChangesQueryParamFilter
     public ?ChangeType $changeType = null;
 
     /**
-     * @param  ?string  $createdAfter
+     * @param  ?\DateTime  $createdAfter
      * @param  ?ChangeType  $changeType
      * @phpstan-pure
      */
-    public function __construct(?string $createdAfter = null, ?ChangeType $changeType = null)
+    public function __construct(?\DateTime $createdAfter = null, ?ChangeType $changeType = null)
     {
         $this->createdAfter = $createdAfter;
         $this->changeType = $changeType;

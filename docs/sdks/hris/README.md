@@ -10,9 +10,9 @@
 * [listEmployeeCustomFieldDefinitions](#listemployeecustomfielddefinitions) - List employee Custom Field Definitions
 * [getEmployeeCustomFieldDefinition](#getemployeecustomfielddefinition) - Get employee Custom Field Definition
 * [listEmployees](#listemployees) - List Employees
-* [createEmployee](#createemployee) - Creates an employee
+* [createEmployee](#createemployee) - Create Employee
 * [getEmployee](#getemployee) - Get Employee
-* [updateEmployee](#updateemployee) - Updates an employee
+* [updateEmployee](#updateemployee) - Update Employee
 * [inviteEmployee](#inviteemployee) - Invite Employee
 * [listEmployeeTimeOffRequests](#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [createEmployeeTimeOffRequest](#createemployeetimeoffrequest) - Create Employee Time Off Request
@@ -83,6 +83,7 @@ List Companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_companies" method="get" path="/unified/hris/companies" -->
 ```php
 declare(strict_types=1);
 
@@ -91,6 +92,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -105,7 +107,7 @@ $request = new Operations\HrisListCompaniesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at',
     filter: new Operations\HrisListCompaniesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -155,6 +157,7 @@ Get Company
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_company" method="get" path="/unified/hris/companies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -222,6 +225,7 @@ List employee Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_custom_field_definitions" method="get" path="/unified/hris/custom_field_definitions/employees" -->
 ```php
 declare(strict_types=1);
 
@@ -230,6 +234,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -244,7 +249,7 @@ $request = new Operations\HrisListEmployeeCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\HrisListEmployeeCustomFieldDefinitionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -294,6 +299,7 @@ Get employee Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_custom_field_definition" method="get" path="/unified/hris/custom_field_definitions/employees/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -302,6 +308,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -317,7 +324,7 @@ $request = new Operations\HrisGetEmployeeCustomFieldDefinitionRequest(
     id: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\HrisGetEmployeeCustomFieldDefinitionQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -364,6 +371,7 @@ List Employees
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employees" method="get" path="/unified/hris/employees" -->
 ```php
 declare(strict_types=1);
 
@@ -372,6 +380,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -386,7 +395,7 @@ $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,documents,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills',
     filter: new Operations\HrisListEmployeesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'company,employments,work_location,home_location,groups,skills',
     include: 'avatar_url,avatar,custom_fields,job_description,benefits',
@@ -434,10 +443,11 @@ foreach ($responses as $response) {
 
 ## createEmployee
 
-Creates an employee
+Create Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_create_employee" method="post" path="/unified/hris/employees" -->
 ```php
 declare(strict_types=1);
 
@@ -598,6 +608,7 @@ Get Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee" method="get" path="/unified/hris/employees/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -663,10 +674,11 @@ if ($response->employeeResult !== null) {
 
 ## updateEmployee
 
-Updates an employee
+Update Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_update_employee" method="patch" path="/unified/hris/employees/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -828,6 +840,7 @@ Invite Employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_invite_employee" method="post" path="/unified/hris/employees/{id}/invite" -->
 ```php
 declare(strict_types=1);
 
@@ -899,6 +912,7 @@ List Employee Time Off Requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_time_off_requests" method="get" path="/unified/hris/employees/{id}/time_off" -->
 ```php
 declare(strict_types=1);
 
@@ -907,6 +921,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -922,7 +937,7 @@ $request = new Operations\HrisListEmployeeTimeOffRequestsRequest(
     id: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy',
     filter: new Operations\HrisListEmployeeTimeOffRequestsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'policy',
 );
@@ -973,6 +988,7 @@ Create Employee Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_create_employee_time_off_request" method="post" path="/unified/hris/employees/{id}/time_off" -->
 ```php
 declare(strict_types=1);
 
@@ -1055,6 +1071,7 @@ Get Employees Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employees_time_off_request" method="get" path="/unified/hris/employees/{id}/time_off/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1124,6 +1141,7 @@ Cancel Employee Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_cancel_employee_time_off_request" method="delete" path="/unified/hris/employees/{id}/time_off/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1191,6 +1209,7 @@ Update Employee Time Off Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_update_employee_time_off_request" method="patch" path="/unified/hris/employees/{id}/time_off/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1275,6 +1294,7 @@ Batch Upload Employee Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_batch_upload_employee_document" method="post" path="/unified/hris/employees/{id}/documents/upload/batch" -->
 ```php
 declare(strict_types=1);
 
@@ -1360,6 +1380,7 @@ Upload Employee Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_upload_employee_document" method="post" path="/unified/hris/employees/{id}/documents/upload" -->
 ```php
 declare(strict_types=1);
 
@@ -1441,6 +1462,7 @@ Download Employee Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_download_employee_document" method="get" path="/unified/hris/employees/{id}/documents/{subResourceId}/download" -->
 ```php
 declare(strict_types=1);
 
@@ -1510,6 +1532,7 @@ List Employee Documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_documents" method="get" path="/unified/hris/employees/{id}/documents" -->
 ```php
 declare(strict_types=1);
 
@@ -1518,6 +1541,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1533,7 +1557,7 @@ $request = new Operations\HrisListEmployeeDocumentsRequest(
     id: '<id>',
     fields: 'id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format',
     filter: new Operations\HrisListEmployeeDocumentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1583,6 +1607,7 @@ Get Employee Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_document" method="get" path="/unified/hris/employees/{id}/documents/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1651,6 +1676,7 @@ List Employee Document Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_categories" method="get" path="/unified/hris/documents/employee_categories" -->
 ```php
 declare(strict_types=1);
 
@@ -1659,6 +1685,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1673,7 +1700,7 @@ $request = new Operations\HrisListEmployeeCategoriesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,active',
     filter: new Operations\HrisListEmployeeCategoriesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1723,6 +1750,7 @@ Get Employee Document Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_document_category" method="get" path="/unified/hris/documents/employee_categories/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1790,6 +1818,7 @@ List Employee Work Eligibility
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_work_eligibility" method="get" path="/unified/hris/employees/{id}/work_eligibility" -->
 ```php
 declare(strict_types=1);
 
@@ -1798,6 +1827,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1812,7 +1842,7 @@ $request = new Operations\HrisListEmployeeWorkEligibilityRequest(
     id: '<id>',
     fields: 'id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number',
     filter: new Operations\HrisListEmployeeWorkEligibilityQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     xAccountId: '<id>',
 );
@@ -1863,6 +1893,7 @@ Create Employee Work Eligibility Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_create_employee_work_eligibility_request" method="post" path="/unified/hris/employees/{id}/work_eligibility" -->
 ```php
 declare(strict_types=1);
 
@@ -1955,6 +1986,7 @@ Get Employees Work Eligibility
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employees_work_eligibility" method="get" path="/unified/hris/employees/{id}/work_eligibility/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -2023,6 +2055,7 @@ Update Employee Work Eligibility Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_update_employee_work_eligibility_request" method="patch" path="/unified/hris/employees/{id}/work_eligibility/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -2120,6 +2153,7 @@ List Employee Time Off Balances
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_time_off_balances" method="get" path="/unified/hris/employees/{id}/time_off_balances" -->
 ```php
 declare(strict_types=1);
 
@@ -2128,6 +2162,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2143,7 +2178,7 @@ $request = new Operations\HrisListEmployeeTimeOffBalancesRequest(
     id: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at',
     filter: new Operations\HrisListEmployeeTimeOffBalancesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'policy',
 );
@@ -2194,6 +2229,7 @@ Get Employee Time Off Balance
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_time_off_balance" method="get" path="/unified/hris/employees/{id}/time_off_balances/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -2263,6 +2299,7 @@ List Employments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employments" method="get" path="/unified/hris/employments" -->
 ```php
 declare(strict_types=1);
 
@@ -2271,6 +2308,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2285,7 +2323,7 @@ $request = new Operations\HrisListEmploymentsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmploymentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'groups',
 );
@@ -2336,6 +2374,7 @@ Get Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employment" method="get" path="/unified/hris/employments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2404,6 +2443,7 @@ List Employee Employments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_employments" method="get" path="/unified/hris/employees/{id}/employments" -->
 ```php
 declare(strict_types=1);
 
@@ -2412,6 +2452,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2427,7 +2468,7 @@ $request = new Operations\HrisListEmployeeEmploymentsRequest(
     id: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,type,contract_type,manager',
     filter: new Operations\HrisListEmployeeEmploymentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'groups',
 );
@@ -2478,6 +2519,7 @@ Create Employee Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_create_employee_employment" method="post" path="/unified/hris/employees/{id}/employments" -->
 ```php
 declare(strict_types=1);
 
@@ -2581,6 +2623,7 @@ Get Employee Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_employment" method="get" path="/unified/hris/employees/{id}/employments/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -2650,6 +2693,7 @@ Update Employee Employment
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_update_employee_employment" method="patch" path="/unified/hris/employees/{id}/employments/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -2754,6 +2798,7 @@ List Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_groups" method="get" path="/unified/hris/groups" -->
 ```php
 declare(strict_types=1);
 
@@ -2762,6 +2807,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2776,7 +2822,7 @@ $request = new Operations\HrisListGroupsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
     filter: new Operations\HrisListGroupsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2826,6 +2872,7 @@ List Department Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_department_groups" method="get" path="/unified/hris/groups/departments" -->
 ```php
 declare(strict_types=1);
 
@@ -2834,6 +2881,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2848,7 +2896,7 @@ $request = new Operations\HrisListDepartmentGroupsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
     filter: new Operations\HrisListDepartmentGroupsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2898,6 +2946,7 @@ List Cost Center Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_cost_center_groups" method="get" path="/unified/hris/groups/cost_centers" -->
 ```php
 declare(strict_types=1);
 
@@ -2906,6 +2955,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2920,7 +2970,7 @@ $request = new Operations\HrisListCostCenterGroupsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
     filter: new Operations\HrisListCostCenterGroupsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2970,6 +3020,7 @@ List Team Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_team_groups" method="get" path="/unified/hris/groups/teams" -->
 ```php
 declare(strict_types=1);
 
@@ -2978,6 +3029,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2992,7 +3044,7 @@ $request = new Operations\HrisListTeamGroupsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
     filter: new Operations\HrisListTeamGroupsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3042,6 +3094,7 @@ List Division Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_division_groups" method="get" path="/unified/hris/groups/divisions" -->
 ```php
 declare(strict_types=1);
 
@@ -3050,6 +3103,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3064,7 +3118,7 @@ $request = new Operations\HrisListDivisionGroupsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
     filter: new Operations\HrisListDivisionGroupsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3114,6 +3168,7 @@ List Companies Groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_companies_groups" method="get" path="/unified/hris/groups/companies" -->
 ```php
 declare(strict_types=1);
 
@@ -3122,6 +3177,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3136,7 +3192,7 @@ $request = new Operations\HrisListCompaniesGroupsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at',
     filter: new Operations\HrisListCompaniesGroupsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3186,6 +3242,7 @@ Get Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_group" method="get" path="/unified/hris/groups/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3253,6 +3310,7 @@ Get Department Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_department_group" method="get" path="/unified/hris/groups/departments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3320,6 +3378,7 @@ Get Cost Center Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_cost_center_group" method="get" path="/unified/hris/groups/cost_centers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3387,6 +3446,7 @@ Get Team Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_team_group" method="get" path="/unified/hris/groups/teams/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3454,6 +3514,7 @@ Get Division Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_division_group" method="get" path="/unified/hris/groups/divisions/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3521,6 +3582,7 @@ Get Company Group
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_company_group" method="get" path="/unified/hris/groups/companies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3588,6 +3650,7 @@ List Jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_jobs" method="get" path="/unified/hris/jobs" -->
 ```php
 declare(strict_types=1);
 
@@ -3596,6 +3659,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3610,7 +3674,7 @@ $request = new Operations\HrisListJobsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
     filter: new Operations\HrisListJobsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3660,6 +3724,7 @@ Get Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_job" method="get" path="/unified/hris/jobs/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3727,6 +3792,7 @@ List Work Locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_locations" method="get" path="/unified/hris/locations" -->
 ```php
 declare(strict_types=1);
 
@@ -3735,6 +3801,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3749,7 +3816,7 @@ $request = new Operations\HrisListLocationsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at',
     filter: new Operations\HrisListLocationsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3799,6 +3866,7 @@ Get Work Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_location" method="get" path="/unified/hris/locations/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3866,6 +3934,7 @@ List Positions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_positions" method="get" path="/unified/hris/positions" -->
 ```php
 declare(strict_types=1);
 
@@ -3874,6 +3943,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3887,7 +3957,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListPositionsRequest(
     xAccountId: '<id>',
     filter: new Operations\HrisListPositionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     status: Operations\Status::Open,
 );
@@ -3938,6 +4008,7 @@ Get Position
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_position" method="get" path="/unified/hris/positions/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4004,6 +4075,7 @@ List Time Entries
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_time_entries" method="get" path="/unified/hris/time_entries" -->
 ```php
 declare(strict_types=1);
 
@@ -4012,6 +4084,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4026,7 +4099,7 @@ $request = new Operations\HrisListTimeEntriesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at',
     filter: new Operations\HrisListTimeEntriesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         startTime: '2020-01-01T00:00:00.000Z',
         endTime: '2020-01-01T00:00:00.000Z',
     ),
@@ -4078,6 +4151,7 @@ Get Time Entry
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_time_entries" method="get" path="/unified/hris/time_entries/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4145,6 +4219,7 @@ List time off requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_time_off_requests" method="get" path="/unified/hris/time_off" -->
 ```php
 declare(strict_types=1);
 
@@ -4216,6 +4291,7 @@ Get time off request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_time_off_request" method="get" path="/unified/hris/time_off/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4284,6 +4360,7 @@ List Shifts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_shifts" method="get" path="/unified/hris/shifts" -->
 ```php
 declare(strict_types=1);
 
@@ -4292,6 +4369,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4305,7 +4383,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListShiftsRequest(
     xAccountId: '<id>',
     filter: new Operations\HrisListShiftsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4355,6 +4433,7 @@ Get Shift
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_shift" method="get" path="/unified/hris/shifts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4423,6 +4502,7 @@ List time off types
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_time_off_types" method="get" path="/unified/hris/time_off_types" -->
 ```php
 declare(strict_types=1);
 
@@ -4431,6 +4511,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4445,7 +4526,7 @@ $request = new Operations\HrisListTimeOffTypesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,active',
     filter: new Operations\HrisListTimeOffTypesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4497,6 +4578,7 @@ Get time off type
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_time_off_type" method="get" path="/unified/hris/time_off_types/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4564,6 +4646,7 @@ List Time Off Policies
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_time_off_policies" method="get" path="/unified/hris/time_off_policies" -->
 ```php
 declare(strict_types=1);
 
@@ -4572,6 +4655,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4586,7 +4670,7 @@ $request = new Operations\HrisListTimeOffPoliciesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
     filter: new Operations\HrisListTimeOffPoliciesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4636,6 +4720,7 @@ Get Time Off Policy
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_time_off_policy" method="get" path="/unified/hris/time_off_policies/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4703,6 +4788,7 @@ List Assigned Time Off Policies
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_time_off_policies" method="get" path="/unified/hris/employees/{id}/time_off_policies" -->
 ```php
 declare(strict_types=1);
 
@@ -4711,6 +4797,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4726,7 +4813,7 @@ $request = new Operations\HrisListEmployeeTimeOffPoliciesRequest(
     id: '<id>',
     fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
     filter: new Operations\HrisListEmployeeTimeOffPoliciesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4776,6 +4863,7 @@ List benefits
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_benefits" method="get" path="/unified/hris/benefits" -->
 ```php
 declare(strict_types=1);
 
@@ -4784,6 +4872,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4798,7 +4887,7 @@ $request = new Operations\HrisListBenefitsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,benefit_type,provider,description,created_at,updated_at',
     filter: new Operations\HrisListBenefitsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4848,6 +4937,7 @@ Get Benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_benefit" method="get" path="/unified/hris/benefits/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4915,6 +5005,7 @@ List Employee Skills
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_skills" method="get" path="/unified/hris/employees/{id}/skills" -->
 ```php
 declare(strict_types=1);
 
@@ -4923,6 +5014,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4938,7 +5030,7 @@ $request = new Operations\HrisListEmployeeSkillsRequest(
     id: '<id>',
     fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency',
     filter: new Operations\HrisListEmployeeSkillsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4988,6 +5080,7 @@ Create Employee Skill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_create_employee_skill" method="post" path="/unified/hris/employees/{id}/skills" -->
 ```php
 declare(strict_types=1);
 
@@ -5064,6 +5157,7 @@ Get Employee Skill
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_skill" method="get" path="/unified/hris/employees/{id}/skills/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -5132,6 +5226,7 @@ List Employee Tasks
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_employee_tasks" method="get" path="/unified/hris/employees/{id}/tasks" -->
 ```php
 declare(strict_types=1);
 
@@ -5140,6 +5235,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -5155,7 +5251,7 @@ $request = new Operations\HrisListEmployeeTasksRequest(
     id: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at',
     filter: new Operations\HrisListEmployeeTasksQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'attachments',
 );
@@ -5206,6 +5302,7 @@ Get Employee Task
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_employee_task" method="get" path="/unified/hris/employees/{id}/tasks/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -5275,6 +5372,7 @@ List Tasks
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_list_tasks" method="get" path="/unified/hris/tasks" -->
 ```php
 declare(strict_types=1);
 
@@ -5283,6 +5381,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -5297,7 +5396,7 @@ $request = new Operations\HrisListTasksRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at',
     filter: new Operations\HrisListTasksQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'attachments',
 );
@@ -5348,6 +5447,7 @@ Get Task
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="hris_get_task" method="get" path="/unified/hris/tasks/{id}" -->
 ```php
 declare(strict_types=1);
 

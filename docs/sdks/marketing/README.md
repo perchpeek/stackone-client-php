@@ -38,6 +38,7 @@ List Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_email_templates" method="get" path="/unified/marketing/templates/email" -->
 ```php
 declare(strict_types=1);
 
@@ -46,6 +47,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -60,7 +62,7 @@ $request = new Operations\MarketingListEmailTemplatesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
     filter: new Operations\MarketingListEmailTemplatesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -110,6 +112,7 @@ Create Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_create_email_template" method="post" path="/unified/marketing/templates/email" -->
 ```php
 declare(strict_types=1);
 
@@ -186,6 +189,7 @@ Get Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_email_template" method="get" path="/unified/marketing/templates/email/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -253,6 +257,7 @@ Update Email Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_update_email_template" method="patch" path="/unified/marketing/templates/email/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -334,6 +339,7 @@ List In-App Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_in_app_templates" method="get" path="/unified/marketing/templates/in_app" -->
 ```php
 declare(strict_types=1);
 
@@ -404,6 +410,7 @@ Create In-App Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_create_in_app_template" method="post" path="/unified/marketing/templates/in_app" -->
 ```php
 declare(strict_types=1);
 
@@ -483,6 +490,7 @@ Get In-App Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_in_app_template" method="get" path="/unified/marketing/templates/in_app/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -550,6 +558,7 @@ Update In-App Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_update_in_app_template" method="patch" path="/unified/marketing/templates/in_app/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -631,6 +640,7 @@ List SMS Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_sms_templates" method="get" path="/unified/marketing/templates/sms" -->
 ```php
 declare(strict_types=1);
 
@@ -639,6 +649,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -653,7 +664,7 @@ $request = new Operations\MarketingListSmsTemplatesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
     filter: new Operations\MarketingListSmsTemplatesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -703,6 +714,7 @@ Create SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_create_sms_template" method="post" path="/unified/marketing/templates/sms" -->
 ```php
 declare(strict_types=1);
 
@@ -782,6 +794,7 @@ Get SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_sms_template" method="get" path="/unified/marketing/templates/sms/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -849,6 +862,7 @@ Update SMS Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_update_sms_template" method="patch" path="/unified/marketing/templates/sms/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -932,6 +946,7 @@ List Omni-Channel Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_omni_channel_templates" method="get" path="/unified/marketing/templates/omni_channel" -->
 ```php
 declare(strict_types=1);
 
@@ -940,6 +955,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -954,7 +970,7 @@ $request = new Operations\MarketingListOmniChannelTemplatesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
     filter: new Operations\MarketingListOmniChannelTemplatesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1006,6 +1022,7 @@ Create Omni-Channel Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_create_omni_channel_template" method="post" path="/unified/marketing/templates/omni_channel" -->
 ```php
 declare(strict_types=1);
 
@@ -1086,6 +1103,7 @@ Get Omni-Channel Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_omni_channel_template" method="get" path="/unified/marketing/templates/omni_channel/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1155,6 +1173,7 @@ Update Omni-Channel Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_update_omni_channel_template" method="patch" path="/unified/marketing/templates/omni_channel/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1235,6 +1254,7 @@ List Push Templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_push_templates" method="get" path="/unified/marketing/templates/push" -->
 ```php
 declare(strict_types=1);
 
@@ -1243,6 +1263,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1257,7 +1278,7 @@ $request = new Operations\MarketingListPushTemplatesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
     filter: new Operations\MarketingListPushTemplatesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1307,6 +1328,7 @@ Create Push Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_create_push_template" method="post" path="/unified/marketing/templates/push" -->
 ```php
 declare(strict_types=1);
 
@@ -1386,6 +1408,7 @@ Get Push Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_push_template" method="get" path="/unified/marketing/templates/push/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1453,6 +1476,7 @@ Update Push Template
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_update_push_template" method="patch" path="/unified/marketing/templates/push/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1534,6 +1558,7 @@ List campaigns
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_campaigns" method="get" path="/unified/marketing/campaigns" -->
 ```php
 declare(strict_types=1);
 
@@ -1542,6 +1567,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1556,7 +1582,7 @@ $request = new Operations\MarketingListCampaignsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages',
     filter: new Operations\MarketingListCampaignsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1606,6 +1632,7 @@ Get campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_campaign" method="get" path="/unified/marketing/campaigns/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1673,6 +1700,7 @@ List Content Blocks
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_list_content_blocks" method="get" path="/unified/marketing/content_blocks" -->
 ```php
 declare(strict_types=1);
 
@@ -1681,6 +1709,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1695,7 +1724,7 @@ $request = new Operations\MarketingListContentBlocksRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,type,content,status,tags,created_at,updated_at',
     filter: new Operations\MarketingListContentBlocksQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1745,6 +1774,7 @@ Create Content Block
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_create_content_block" method="post" path="/unified/marketing/content_blocks" -->
 ```php
 declare(strict_types=1);
 
@@ -1818,6 +1848,7 @@ Get Content Blocks
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_get_content_block" method="get" path="/unified/marketing/content_blocks/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1885,6 +1916,7 @@ Update Content Block
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="marketing_update_content_block" method="patch" path="/unified/marketing/content_blocks/{id}" -->
 ```php
 declare(strict_types=1);
 

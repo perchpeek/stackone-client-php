@@ -47,7 +47,7 @@ class Connectors
     }
 
     /**
-     * Get Connector Meta information for the given provider key
+     * Get Connector Meta Information
      *
      * @param  string  $provider
      * @param  ?string  $include
@@ -260,7 +260,7 @@ class Connectors
     }
 
     /**
-     * List Connectors Meta Information for all providers
+     * List Connector Meta Information
      *
      * @param  ?string  $include
      * @return Operations\StackoneListConnectorsMetaResponse

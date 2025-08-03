@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [listContacts](#listcontacts) - List Contacts
-* [createContact](#createcontact) - Creates a new Contact
+* [createContact](#createcontact) - Create Contact
 * [getContact](#getcontact) - Get Contact
 * [updateContact](#updatecontact) - Update Contact (early access)
 * [listAccounts](#listaccounts) - List Accounts
@@ -22,6 +22,7 @@ List Contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_list_contacts" method="get" path="/unified/crm/contacts" -->
 ```php
 declare(strict_types=1);
 
@@ -30,6 +31,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -44,7 +46,7 @@ $request = new Operations\CrmListContactsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at',
     filter: new Operations\CrmListContactsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     include: 'custom_fields',
 );
@@ -91,10 +93,11 @@ foreach ($responses as $response) {
 
 ## createContact
 
-Creates a new Contact
+Create Contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_create_contact" method="post" path="/unified/crm/contacts" -->
 ```php
 declare(strict_types=1);
 
@@ -191,6 +194,7 @@ Get Contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_get_contact" method="get" path="/unified/crm/contacts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -259,6 +263,7 @@ Update Contact (early access)
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_update_contact" method="patch" path="/unified/crm/contacts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -357,6 +362,7 @@ List Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_list_accounts" method="get" path="/unified/crm/accounts" -->
 ```php
 declare(strict_types=1);
 
@@ -365,6 +371,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -379,7 +386,7 @@ $request = new Operations\CrmListAccountsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at',
     filter: new Operations\CrmListAccountsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -429,6 +436,7 @@ Get Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_get_account" method="get" path="/unified/crm/accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -496,6 +504,7 @@ Get all Lists
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_list_lists" method="get" path="/unified/crm/lists" -->
 ```php
 declare(strict_types=1);
 
@@ -504,6 +513,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -518,7 +528,7 @@ $request = new Operations\CrmListListsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,created_at,updated_at,items,type',
     filter: new Operations\CrmListListsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -568,6 +578,7 @@ Get List
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_get_list" method="get" path="/unified/crm/lists/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -635,6 +646,7 @@ List Contact Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_list_contact_custom_field_definitions" method="get" path="/unified/crm/custom_field_definitions/contacts" -->
 ```php
 declare(strict_types=1);
 
@@ -643,6 +655,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -657,7 +670,7 @@ $request = new Operations\CrmListContactCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\CrmListContactCustomFieldDefinitionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -707,6 +720,7 @@ Get Contact Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="crm_get_contact_custom_field_definition" method="get" path="/unified/crm/custom_field_definitions/contacts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -715,6 +729,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -730,7 +745,7 @@ $request = new Operations\CrmGetContactCustomFieldDefinitionRequest(
     id: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\CrmGetContactCustomFieldDefinitionQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
