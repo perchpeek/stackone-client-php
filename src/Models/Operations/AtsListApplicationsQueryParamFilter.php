@@ -15,18 +15,18 @@ class AtsListApplicationsQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Use a string with a date to only select results created after that given date
      *
-     * @var ?string $createdAfter
+     * @var ?\DateTime $createdAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=created_after')]
-    public ?string $createdAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=created_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $createdAfter = null;
 
     /**
      * Filter to select applications by job_id
@@ -45,13 +45,13 @@ class AtsListApplicationsQueryParamFilter
     public ?string $stage = null;
 
     /**
-     * @param  ?string  $updatedAfter
-     * @param  ?string  $createdAfter
+     * @param  ?\DateTime  $updatedAfter
+     * @param  ?\DateTime  $createdAfter
      * @param  ?string  $jobId
      * @param  ?string  $stage
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?string $createdAfter = null, ?string $jobId = null, ?string $stage = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?\DateTime $createdAfter = null, ?string $jobId = null, ?string $stage = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->createdAfter = $createdAfter;

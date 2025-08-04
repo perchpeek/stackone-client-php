@@ -464,7 +464,7 @@ class Accounts
     }
 
     /**
-     * Get meta information of the account
+     * Get Account Meta Information
      *
      * @param  string  $id
      * @return Operations\StackoneGetAccountMetaInfoResponse

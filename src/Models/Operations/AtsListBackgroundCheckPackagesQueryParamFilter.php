@@ -15,16 +15,16 @@ class AtsListBackgroundCheckPackagesQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null)
+    public function __construct(?\DateTime $updatedAfter = null)
     {
         $this->updatedAfter = $updatedAfter;
     }

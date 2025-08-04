@@ -15,10 +15,10 @@ class AtsListApplicationDocumentsQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Filter to select documents by type
@@ -29,11 +29,11 @@ class AtsListApplicationDocumentsQueryParamFilter
     public ?string $type = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?string  $type
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?string $type = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?string $type = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->type = $type;

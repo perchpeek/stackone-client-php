@@ -8,7 +8,7 @@
 * [listApplications](#listapplications) - List Applications
 * [createApplication](#createapplication) - Create Application
 * [getApplication](#getapplication) - Get Application
-* [updateApplication](#updateapplication) - Update an Application
+* [updateApplication](#updateapplication) - Update Application
 * [listApplicationsOffers](#listapplicationsoffers) - List Application Offers
 * [moveApplication](#moveapplication) - Move Application
 * [rejectApplication](#rejectapplication) - Reject Application
@@ -19,7 +19,7 @@
 * [listApplicationNotes](#listapplicationnotes) - List Application Notes
 * [createApplicationNote](#createapplicationnote) - Create Application Note
 * [getApplicationNote](#getapplicationnote) - Get Application Note
-* [updateApplicationNote](#updateapplicationnote) - Update an Application Note
+* [updateApplicationNote](#updateapplicationnote) - Update Application Note
 * [listApplicationsScheduledInterviews](#listapplicationsscheduledinterviews) - List Applications scheduled interviews
 * [getApplicationScheduledInterview](#getapplicationscheduledinterview) - Get Applications scheduled interview
 * [uploadApplicationDocument](#uploadapplicationdocument) - Upload Application Document
@@ -60,7 +60,7 @@
 * [listJobPostings](#listjobpostings) - List Job Postings
 * [getJobPosting](#getjobposting) - Get Job Posting
 * [listOffers](#listoffers) - List Offers
-* [createOffer](#createoffer) - Creates an offer
+* [createOffer](#createoffer) - Create Offer
 * [getOffer](#getoffer) - Get Offer
 * [listAssessmentsPackages](#listassessmentspackages) - List Assessments Packages
 * [getAssessmentsPackage](#getassessmentspackage) - Get Assessments Package
@@ -84,6 +84,7 @@ List Applications
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_applications" method="get" path="/unified/ats/applications" -->
 ```php
 declare(strict_types=1);
 
@@ -92,6 +93,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -106,8 +108,8 @@ $request = new Operations\AtsListApplicationsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate',
     filter: new Operations\AtsListApplicationsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-        createdAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'documents',
     include: 'attachments,custom_fields',
@@ -159,6 +161,7 @@ Create Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_application" method="post" path="/unified/ats/applications" -->
 ```php
 declare(strict_types=1);
 
@@ -310,6 +313,7 @@ Get Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application" method="get" path="/unified/ats/applications/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -375,10 +379,11 @@ if ($response->applicationResult !== null) {
 
 ## updateApplication
 
-Update an Application
+Update Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_application" method="patch" path="/unified/ats/applications/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -468,6 +473,7 @@ List Application Offers
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_applications_offers" method="get" path="/unified/ats/applications/{id}/offers" -->
 ```php
 declare(strict_types=1);
 
@@ -476,6 +482,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -491,7 +498,7 @@ $request = new Operations\AtsListApplicationsOffersRequest(
     id: '<id>',
     fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history',
     filter: new Operations\AtsListApplicationsOffersQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -541,6 +548,7 @@ Move Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_move_application" method="post" path="/unified/ats/applications/{id}/move" -->
 ```php
 declare(strict_types=1);
 
@@ -613,6 +621,7 @@ Reject Application
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_reject_application" method="post" path="/unified/ats/applications/{id}/reject" -->
 ```php
 declare(strict_types=1);
 
@@ -685,6 +694,7 @@ Get Application Offer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_offer" method="get" path="/unified/ats/applications/{id}/offers/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -753,6 +763,7 @@ List Application Scorecards
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_application_scorecards" method="get" path="/unified/ats/applications/{id}/scorecards" -->
 ```php
 declare(strict_types=1);
 
@@ -761,6 +772,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -776,7 +788,7 @@ $request = new Operations\AtsListApplicationScorecardsRequest(
     id: '<id>',
     fields: 'id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at',
     filter: new Operations\AtsListApplicationScorecardsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -826,6 +838,7 @@ Get Application Scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_scorecard" method="get" path="/unified/ats/applications/{id}/scorecards/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -894,6 +907,7 @@ List Application Changes
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_application_changes" method="get" path="/unified/ats/applications/{id}/changes" -->
 ```php
 declare(strict_types=1);
 
@@ -902,6 +916,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -917,7 +932,7 @@ $request = new Operations\AtsListApplicationChangesRequest(
     id: '<id>',
     fields: 'event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values',
     filter: new Operations\AtsListApplicationChangesQueryParamFilter(
-        createdAfter: '2020-01-01T00:00:00.000Z',
+        createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -967,6 +982,7 @@ List Application Notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_application_notes" method="get" path="/unified/ats/applications/{id}/notes" -->
 ```php
 declare(strict_types=1);
 
@@ -975,6 +991,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -990,7 +1007,7 @@ $request = new Operations\AtsListApplicationNotesRequest(
     id: '<id>',
     fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at',
     filter: new Operations\AtsListApplicationNotesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1040,6 +1057,7 @@ Create Application Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_application_note" method="post" path="/unified/ats/applications/{id}/notes" -->
 ```php
 declare(strict_types=1);
 
@@ -1121,6 +1139,7 @@ Get Application Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_note" method="get" path="/unified/ats/applications/{id}/notes/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1185,10 +1204,11 @@ if ($response->noteResult !== null) {
 
 ## updateApplicationNote
 
-Update an Application Note
+Update Application Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_application_note" method="patch" path="/unified/ats/applications/{id}/notes/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1272,6 +1292,7 @@ List Applications scheduled interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_applications_scheduled_interviews" method="get" path="/unified/ats/applications/{id}/scheduled_interviews" -->
 ```php
 declare(strict_types=1);
 
@@ -1280,6 +1301,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1295,7 +1317,7 @@ $request = new Operations\AtsListApplicationsScheduledInterviewsRequest(
     id: '<id>',
     fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at',
     filter: new Operations\AtsListApplicationsScheduledInterviewsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1345,6 +1367,7 @@ Get Applications scheduled interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_scheduled_interview" method="get" path="/unified/ats/applications/{id}/scheduled_interviews/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1413,6 +1436,7 @@ Upload Application Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_upload_application_document" method="post" path="/unified/ats/applications/{id}/documents/upload" -->
 ```php
 declare(strict_types=1);
 
@@ -1494,6 +1518,7 @@ Download Application Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_download_application_document" method="get" path="/unified/ats/applications/{id}/documents/{subResourceId}/download" -->
 ```php
 declare(strict_types=1);
 
@@ -1563,6 +1588,7 @@ List Application Documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_application_documents" method="get" path="/unified/ats/applications/{id}/documents" -->
 ```php
 declare(strict_types=1);
 
@@ -1571,6 +1597,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1586,7 +1613,7 @@ $request = new Operations\AtsListApplicationDocumentsRequest(
     id: '<id>',
     fields: 'id,remote_id,name,path,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format',
     filter: new Operations\AtsListApplicationDocumentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -1636,6 +1663,7 @@ Get Application Document
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_document" method="get" path="/unified/ats/applications/{id}/documents/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -1704,6 +1732,7 @@ List Candidates
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_candidates" method="get" path="/unified/ats/candidates" -->
 ```php
 declare(strict_types=1);
 
@@ -1712,6 +1741,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -1726,8 +1756,8 @@ $request = new Operations\AtsListCandidatesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at',
     filter: new Operations\AtsListCandidatesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-        createdAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     include: 'custom_fields',
 );
@@ -1778,6 +1808,7 @@ Create Candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_candidate" method="post" path="/unified/ats/candidates" -->
 ```php
 declare(strict_types=1);
 
@@ -1881,6 +1912,7 @@ Get Candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_candidate" method="get" path="/unified/ats/candidates/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -1949,6 +1981,7 @@ Update Candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_candidate" method="patch" path="/unified/ats/candidates/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2055,6 +2088,7 @@ List Candidate Notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_candidate_notes" method="get" path="/unified/ats/candidates/{id}/notes" -->
 ```php
 declare(strict_types=1);
 
@@ -2063,6 +2097,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2078,7 +2113,7 @@ $request = new Operations\AtsListCandidateNotesRequest(
     id: '<id>',
     fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at',
     filter: new Operations\AtsListCandidateNotesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2128,6 +2163,7 @@ Create Candidate Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_candidate_note" method="post" path="/unified/ats/candidates/{id}/notes" -->
 ```php
 declare(strict_types=1);
 
@@ -2209,6 +2245,7 @@ Get Candidate Note
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_candidate_note" method="get" path="/unified/ats/candidates/{id}/notes/{subResourceId}" -->
 ```php
 declare(strict_types=1);
 
@@ -2277,6 +2314,7 @@ List Application Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_application_custom_field_definitions" method="get" path="/unified/ats/custom_field_definitions/applications" -->
 ```php
 declare(strict_types=1);
 
@@ -2347,6 +2385,7 @@ Get Application Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_custom_field_definition" method="get" path="/unified/ats/custom_field_definitions/applications/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2415,6 +2454,7 @@ List Candidate Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_candidate_custom_field_definitions" method="get" path="/unified/ats/custom_field_definitions/candidates" -->
 ```php
 declare(strict_types=1);
 
@@ -2423,6 +2463,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2437,7 +2478,7 @@ $request = new Operations\AtsListCandidateCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\AtsListCandidateCustomFieldDefinitionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2487,6 +2528,7 @@ Get Candidate Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_candidate_custom_field_definition" method="get" path="/unified/ats/custom_field_definitions/candidates/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2495,6 +2537,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2510,7 +2553,7 @@ $request = new Operations\AtsGetCandidateCustomFieldDefinitionRequest(
     id: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\AtsGetCandidateCustomFieldDefinitionQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2557,6 +2600,7 @@ List Job Custom Field Definitions
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_job_custom_field_definitions" method="get" path="/unified/ats/custom_field_definitions/jobs" -->
 ```php
 declare(strict_types=1);
 
@@ -2565,6 +2609,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2579,7 +2624,7 @@ $request = new Operations\AtsListJobCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\AtsListJobCustomFieldDefinitionsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2629,6 +2674,7 @@ Get Job Custom Field Definition
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_job_custom_field_definition" method="get" path="/unified/ats/custom_field_definitions/jobs/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2637,6 +2683,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2652,7 +2699,7 @@ $request = new Operations\AtsGetJobCustomFieldDefinitionRequest(
     id: '<id>',
     fields: 'id,remote_id,name,description,type,options',
     filter: new Operations\AtsGetJobCustomFieldDefinitionQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2699,6 +2746,7 @@ List Departments
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_departments" method="get" path="/unified/ats/departments" -->
 ```php
 declare(strict_types=1);
 
@@ -2707,6 +2755,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2721,7 +2770,7 @@ $request = new Operations\AtsListDepartmentsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name',
     filter: new Operations\AtsListDepartmentsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2771,6 +2820,7 @@ Get Department
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_department" method="get" path="/unified/ats/departments/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2838,6 +2888,7 @@ List Interview Stages
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_interview_stages" method="get" path="/unified/ats/interview_stages" -->
 ```php
 declare(strict_types=1);
 
@@ -2846,6 +2897,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2860,7 +2912,7 @@ $request = new Operations\AtsListInterviewStagesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,order,created_at,updated_at',
     filter: new Operations\AtsListInterviewStagesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -2910,6 +2962,7 @@ Get Interview Stage
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_interview_stage" method="get" path="/unified/ats/interview_stages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -2977,6 +3030,7 @@ List Interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_interviews" method="get" path="/unified/ats/interviews" -->
 ```php
 declare(strict_types=1);
 
@@ -2985,6 +3039,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -2999,8 +3054,8 @@ $request = new Operations\AtsListInterviewsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at',
     filter: new Operations\AtsListInterviewsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-        createdAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3050,6 +3105,7 @@ Get Interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_interview" method="get" path="/unified/ats/interviews/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3117,6 +3173,7 @@ List Jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_jobs" method="get" path="/unified/ats/jobs" -->
 ```php
 declare(strict_types=1);
 
@@ -3125,6 +3182,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3139,8 +3197,8 @@ $request = new Operations\AtsListJobsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at',
     filter: new Operations\AtsListJobsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-        createdAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'job_postings,interview_stages',
     include: 'custom_fields',
@@ -3192,6 +3250,7 @@ Create Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_job" method="post" path="/unified/ats/jobs" -->
 ```php
 declare(strict_types=1);
 
@@ -3315,6 +3374,7 @@ Get Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_job" method="get" path="/unified/ats/jobs/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3384,6 +3444,7 @@ Update Job
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_job" method="patch" path="/unified/ats/jobs/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3488,6 +3549,7 @@ Get all Lists
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_lists" method="get" path="/unified/ats/lists" -->
 ```php
 declare(strict_types=1);
 
@@ -3558,6 +3620,7 @@ Get List
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_list" method="get" path="/unified/ats/lists/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3625,6 +3688,7 @@ List locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_locations" method="get" path="/unified/ats/locations" -->
 ```php
 declare(strict_types=1);
 
@@ -3633,6 +3697,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3647,7 +3712,7 @@ $request = new Operations\AtsListLocationsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name',
     filter: new Operations\AtsListLocationsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3697,6 +3762,7 @@ Get Location
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_location" method="get" path="/unified/ats/locations/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3764,6 +3830,7 @@ List Rejected Reasons
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_rejected_reasons" method="get" path="/unified/ats/rejected_reasons" -->
 ```php
 declare(strict_types=1);
 
@@ -3772,6 +3839,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -3786,7 +3854,7 @@ $request = new Operations\AtsListRejectedReasonsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,label,type,rejected_reason_type',
     filter: new Operations\AtsListRejectedReasonsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -3836,6 +3904,7 @@ Get Rejected Reason
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_rejected_reason" method="get" path="/unified/ats/rejected_reasons/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -3903,6 +3972,7 @@ List Users
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_users" method="get" path="/unified/ats/users" -->
 ```php
 declare(strict_types=1);
 
@@ -3973,6 +4043,7 @@ Get User
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_user" method="get" path="/unified/ats/users/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4040,6 +4111,7 @@ List Job Postings
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_job_postings" method="get" path="/unified/ats/job_postings" -->
 ```php
 declare(strict_types=1);
 
@@ -4048,6 +4120,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4062,8 +4135,8 @@ $request = new Operations\AtsListJobPostingsRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at',
     filter: new Operations\AtsListJobPostingsQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
-        createdAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     include: 'questionnaires',
 );
@@ -4114,6 +4187,7 @@ Get Job Posting
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_job_posting" method="get" path="/unified/ats/job_postings/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4182,6 +4256,7 @@ List Offers
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_offers" method="get" path="/unified/ats/offers" -->
 ```php
 declare(strict_types=1);
 
@@ -4190,6 +4265,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4204,7 +4280,7 @@ $request = new Operations\AtsListOffersRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history',
     filter: new Operations\AtsListOffersQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4250,10 +4326,11 @@ foreach ($responses as $response) {
 
 ## createOffer
 
-Creates an offer
+Create Offer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_offer" method="post" path="/unified/ats/offers" -->
 ```php
 declare(strict_types=1);
 
@@ -4336,6 +4413,7 @@ Get Offer
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_offer" method="get" path="/unified/ats/offers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4403,6 +4481,7 @@ List Assessments Packages
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_assessments_packages" method="get" path="/unified/ats/assessments/packages" -->
 ```php
 declare(strict_types=1);
 
@@ -4411,6 +4490,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4424,7 +4504,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListAssessmentsPackagesRequest(
     xAccountId: '<id>',
     filter: new Operations\AtsListAssessmentsPackagesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4474,6 +4554,7 @@ Get Assessments Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_assessments_package" method="get" path="/unified/ats/assessments/packages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -4540,6 +4621,7 @@ Order Assessments Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_order_assessments_request" method="post" path="/unified/ats/assessments/orders" -->
 ```php
 declare(strict_types=1);
 
@@ -4670,6 +4752,7 @@ Update Assessments Result
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_assessments_result" method="patch" path="/unified/ats/assessments/orders/{id}/result" -->
 ```php
 declare(strict_types=1);
 
@@ -4765,6 +4848,7 @@ Get Assessments Results
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_assessments_result" method="get" path="/unified/ats/assessments/orders/{id}/results" -->
 ```php
 declare(strict_types=1);
 
@@ -4832,6 +4916,7 @@ List Background Check Packages
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_background_check_packages" method="get" path="/unified/ats/background_checks/packages" -->
 ```php
 declare(strict_types=1);
 
@@ -4840,6 +4925,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -4854,7 +4940,7 @@ $request = new Operations\AtsListBackgroundCheckPackagesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,description,tests',
     filter: new Operations\AtsListBackgroundCheckPackagesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -4904,6 +4990,7 @@ Create Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_create_background_check_package" method="post" path="/unified/ats/background_checks/packages" -->
 ```php
 declare(strict_types=1);
 
@@ -4981,6 +5068,7 @@ Get Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_background_check_package" method="get" path="/unified/ats/background_checks/packages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -5048,6 +5136,7 @@ Delete Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_delete_background_check_package" method="delete" path="/unified/ats/background_checks/packages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -5113,6 +5202,7 @@ Update Background Check Package
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_background_check_package" method="patch" path="/unified/ats/background_checks/packages/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -5193,6 +5283,7 @@ Order Background Check Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_order_background_check_request" method="post" path="/unified/ats/background_checks/orders" -->
 ```php
 declare(strict_types=1);
 
@@ -5315,6 +5406,7 @@ Update Background Check Result
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_update_background_check_result" method="patch" path="/unified/ats/background_checks/orders/{id}/result" -->
 ```php
 declare(strict_types=1);
 
@@ -5415,6 +5507,7 @@ Get Background Check Results
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_background_check_result" method="get" path="/unified/ats/background_checks/orders/{id}/results" -->
 ```php
 declare(strict_types=1);
 
@@ -5482,6 +5575,7 @@ List Application Document Categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_list_application_document_categories" method="get" path="/unified/ats/documents/application_categories" -->
 ```php
 declare(strict_types=1);
 
@@ -5490,6 +5584,7 @@ require 'vendor/autoload.php';
 use StackOne\client;
 use StackOne\client\Models\Components;
 use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
 
 $sdk = client\StackOne::builder()
     ->setSecurity(
@@ -5504,7 +5599,7 @@ $request = new Operations\AtsListApplicationDocumentCategoriesRequest(
     xAccountId: '<id>',
     fields: 'id,remote_id,name,active',
     filter: new Operations\AtsListApplicationDocumentCategoriesQueryParamFilter(
-        updatedAfter: '2020-01-01T00:00:00.000Z',
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
 );
 
@@ -5554,6 +5649,7 @@ Get Application Document Category
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="ats_get_application_document_category" method="get" path="/unified/ats/documents/application_categories/{id}" -->
 ```php
 declare(strict_types=1);
 

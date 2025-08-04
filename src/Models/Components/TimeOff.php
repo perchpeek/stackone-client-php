@@ -107,12 +107,12 @@ class TimeOff
     /**
      * True if the start of the time off request begins half way through the day
      *
-     * @var bool|Two|null $startHalfDay
+     * @var bool|StartHalfDay2|null $startHalfDay
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_half_day')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Two|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\StartHalfDay2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public bool|Two|null $startHalfDay = null;
+    public bool|StartHalfDay2|null $startHalfDay = null;
 
     /**
      * True if the end of the time off request ends half way through the day
@@ -208,7 +208,7 @@ class TimeOff
      * @param  ?TimeOffType  $type
      * @param  ?string  $startDate
      * @param  ?string  $endDate
-     * @param  bool|Two|null  $startHalfDay
+     * @param  bool|StartHalfDay2|null  $startHalfDay
      * @param  bool|EndHalfDay2|null  $endHalfDay
      * @param  ?string  $duration
      * @param  ?string  $timeOffPolicyId
@@ -220,7 +220,7 @@ class TimeOff
      * @param  ?string  $comment
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $approverId = null, ?string $remoteApproverId = null, ?TimeOffStatus $status = null, ?TimeOffType $type = null, ?string $startDate = null, ?string $endDate = null, bool|Two|null $startHalfDay = null, bool|EndHalfDay2|null $endHalfDay = null, ?string $duration = null, ?string $timeOffPolicyId = null, ?string $remoteTimeOffPolicyId = null, ?TimeOffReason $reason = null, ?\DateTime $createdDate = null, ?\DateTime $updatedDate = null, ?Policy $policy = null, ?string $comment = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $approverId = null, ?string $remoteApproverId = null, ?TimeOffStatus $status = null, ?TimeOffType $type = null, ?string $startDate = null, ?string $endDate = null, bool|StartHalfDay2|null $startHalfDay = null, bool|EndHalfDay2|null $endHalfDay = null, ?string $duration = null, ?string $timeOffPolicyId = null, ?string $remoteTimeOffPolicyId = null, ?TimeOffReason $reason = null, ?\DateTime $createdDate = null, ?\DateTime $updatedDate = null, ?Policy $policy = null, ?string $comment = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

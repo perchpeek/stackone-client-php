@@ -14,12 +14,12 @@ True if the start of the time off request begins half way through the day
 bool $value = /* values here */
 ```
 
-### `Components\StartHalfDay2`
+### `Components\HrisCreateTimeOffRequestDtoStartHalfDay2`
 
 ```php
 /**
-* @var Components\StartHalfDay2
+* @var Components\HrisCreateTimeOffRequestDtoStartHalfDay2
 */
-Components\StartHalfDay2 $value = /* values here */
+Components\HrisCreateTimeOffRequestDtoStartHalfDay2 $value = /* values here */
 ```
 

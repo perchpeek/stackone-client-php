@@ -7,15 +7,16 @@ Retrieve metadata for connectors.
 
 ### Available Operations
 
-* [listConnectorsMeta](#listconnectorsmeta) - List Connectors Meta Information for all providers
-* [getConnectorMeta](#getconnectormeta) - Get Connector Meta information for the given provider key
+* [listConnectorsMeta](#listconnectorsmeta) - List Connector Meta Information
+* [getConnectorMeta](#getconnectormeta) - Get Connector Meta Information
 
 ## listConnectorsMeta
 
-List Connectors Meta Information for all providers
+List Connector Meta Information
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_list_connectors_meta" method="get" path="/connectors/meta" -->
 ```php
 declare(strict_types=1);
 
@@ -73,10 +74,11 @@ if ($response->connectorsMetas !== null) {
 
 ## getConnectorMeta
 
-Get Connector Meta information for the given provider key
+Get Connector Meta Information
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_get_connector_meta" method="get" path="/connectors/meta/{provider}" -->
 ```php
 declare(strict_types=1);
 

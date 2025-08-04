@@ -15,10 +15,10 @@ class HrisListShiftsQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Filter to select shifts by employee ID
@@ -53,14 +53,14 @@ class HrisListShiftsQueryParamFilter
     public ?\DateTime $endsBefore = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?string  $employeeId
      * @param  ?QueryParamStatus  $status
      * @param  ?\DateTime  $startsAfter
      * @param  ?\DateTime  $endsBefore
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?string $employeeId = null, ?QueryParamStatus $status = null, ?\DateTime $startsAfter = null, ?\DateTime $endsBefore = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?string $employeeId = null, ?QueryParamStatus $status = null, ?\DateTime $startsAfter = null, ?\DateTime $endsBefore = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->employeeId = $employeeId;

@@ -1,4 +1,4 @@
-speakeasyVersion: 1.590.0
+speakeasyVersion: 1.596.0
 sources:
     hris:
         sourceNamespace: hris
@@ -8,20 +8,20 @@ sources:
             - latest
     stackone-specs:
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:ef81356f71cf0790b8409b2d340769d58e14d5127eb565cfe2b3510f1cbc88f6
-        sourceBlobDigest: sha256:dd186a696c0562e7e4c817f1fd00dabda0d702f3b0cc10a8c5b7db391ac4c73a
+        sourceRevisionDigest: sha256:7e0c541ad62a0d3fb522665e1a973fee172b517410541bbf3b4d70bbcf70c49b
+        sourceBlobDigest: sha256:321aa4c3c6c7be7f49364c2cf78819a65f60f427169f5767585f0c01ba5af2db
         tags:
             - latest
-            - speakeasy-sdk-regen-1753453953
+            - speakeasy-sdk-regen-1754179460
             - 1.0.0
 targets:
     stack-one:
         source: stackone-specs
         sourceNamespace: stackone-specs
-        sourceRevisionDigest: sha256:ef81356f71cf0790b8409b2d340769d58e14d5127eb565cfe2b3510f1cbc88f6
-        sourceBlobDigest: sha256:dd186a696c0562e7e4c817f1fd00dabda0d702f3b0cc10a8c5b7db391ac4c73a
+        sourceRevisionDigest: sha256:7e0c541ad62a0d3fb522665e1a973fee172b517410541bbf3b4d70bbcf70c49b
+        sourceBlobDigest: sha256:321aa4c3c6c7be7f49364c2cf78819a65f60f427169f5767585f0c01ba5af2db
         codeSamplesNamespace: stackone-specs-php-code-samples
-        codeSamplesRevisionDigest: sha256:dbc7887ac82bd538d78bda5ea0f5f2d1e9b95965b8b114ccfa5b7da29802b4e0
+        codeSamplesRevisionDigest: sha256:4d406dd6d57b3f56d2b6e7068aa5cf9bc82dfd3d7bffb7c28953e6cec1bfa529
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

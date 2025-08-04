@@ -210,6 +210,15 @@ class UnifiedLogsPartial
     public ?string $sourceId = null;
 
     /**
+     * The requests source IPV4 ip address
+     *
+     * @var ?string $sourceIp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_ip')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceIp = null;
+
+    /**
      * The list of provider requests
      *
      * @var ?array<StepLogPartial> $stepRequests
@@ -242,10 +251,11 @@ class UnifiedLogsPartial
      * @param  ?string  $sourceType
      * @param  ?string  $sourceValue
      * @param  ?string  $sourceId
+     * @param  ?string  $sourceIp
      * @param  ?array<StepLogPartial>  $stepRequests
      * @phpstan-pure
      */
-    public function __construct(?string $requestId = null, ?\DateTime $eventDatetime = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $accountId = null, ?string $projectId = null, ?string $httpMethod = null, ?string $path = null, ?string $url = null, ?float $status = null, ?float $duration = null, ?bool $success = null, ?string $provider = null, ?string $service = null, ?string $resource = null, ?string $childResource = null, ?string $subResource = null, ?string $action = null, ?bool $isWorker = null, ?string $sourceType = null, ?string $sourceValue = null, ?string $sourceId = null, ?array $stepRequests = null)
+    public function __construct(?string $requestId = null, ?\DateTime $eventDatetime = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $accountId = null, ?string $projectId = null, ?string $httpMethod = null, ?string $path = null, ?string $url = null, ?float $status = null, ?float $duration = null, ?bool $success = null, ?string $provider = null, ?string $service = null, ?string $resource = null, ?string $childResource = null, ?string $subResource = null, ?string $action = null, ?bool $isWorker = null, ?string $sourceType = null, ?string $sourceValue = null, ?string $sourceId = null, ?string $sourceIp = null, ?array $stepRequests = null)
     {
         $this->requestId = $requestId;
         $this->eventDatetime = $eventDatetime;
@@ -269,6 +279,7 @@ class UnifiedLogsPartial
         $this->sourceType = $sourceType;
         $this->sourceValue = $sourceValue;
         $this->sourceId = $sourceId;
+        $this->sourceIp = $sourceIp;
         $this->stepRequests = $stepRequests;
     }
 }

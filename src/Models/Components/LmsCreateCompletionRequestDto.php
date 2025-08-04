@@ -34,11 +34,11 @@ class LmsCreateCompletionRequestDto
     /**
      * The date the content was completed
      *
-     * @var ?string $completedAt
+     * @var ?\DateTime $completedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('completed_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $completedAt = null;
+    public ?\DateTime $completedAt = null;
 
     /**
      * The id of the learning object associated with this completion. This is not required unless specified in an integration.
@@ -90,7 +90,7 @@ class LmsCreateCompletionRequestDto
     /**
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?LmsCreateCompletionRequestDtoResult  $result
-     * @param  ?string  $completedAt
+     * @param  ?\DateTime  $completedAt
      * @param  ?string  $learningObjectId
      * @param  ?string  $learningObjectExternalReference
      * @param  ?string  $timeSpent
@@ -98,7 +98,7 @@ class LmsCreateCompletionRequestDto
      * @param  ?string  $contentId
      * @phpstan-pure
      */
-    public function __construct(?array $passthrough = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?string $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $timeSpent = null, ?string $contentExternalReference = null, ?string $contentId = null)
+    public function __construct(?array $passthrough = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?\DateTime $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $timeSpent = null, ?string $contentExternalReference = null, ?string $contentId = null)
     {
         $this->passthrough = $passthrough;
         $this->result = $result;

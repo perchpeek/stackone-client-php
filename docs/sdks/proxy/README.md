@@ -15,6 +15,7 @@ Proxy Request
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_proxy_request" method="post" path="/unified/proxy" -->
 ```php
 declare(strict_types=1);
 

@@ -41,21 +41,21 @@ class Reference
     /**
      * The reference status
      *
-     * @var bool|Active2|null $active
+     * @var bool|ReferenceActive2|null $active
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('active')]
-    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\Active2|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\ReferenceActive2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public bool|Active2|null $active = null;
+    public bool|ReferenceActive2|null $active = null;
 
     /**
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?string  $name
-     * @param  bool|Active2|null  $active
+     * @param  bool|ReferenceActive2|null  $active
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, bool|Active2|null $active = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $name = null, bool|ReferenceActive2|null $active = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

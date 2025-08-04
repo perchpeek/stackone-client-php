@@ -62,29 +62,29 @@ class Completion
     /**
      * The date the content was completed
      *
-     * @var ?string $completedAt
+     * @var ?\DateTime $completedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('completed_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $completedAt = null;
+    public ?\DateTime $completedAt = null;
 
     /**
      * The created date of the completion
      *
-     * @var ?string $createdAt
+     * @var ?\DateTime $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('created_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $createdAt = null;
+    public ?\DateTime $createdAt = null;
 
     /**
      * The updated date of the completion
      *
-     * @var ?string $updatedAt
+     * @var ?\DateTime $updatedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updated_at')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $updatedAt = null;
+    public ?\DateTime $updatedAt = null;
 
     /**
      * The learning object type of the completion
@@ -226,9 +226,9 @@ class Completion
      * @param  ?array<string, mixed>  $unifiedCustomFields
      * @param  ?string  $externalReference
      * @param  ?CompletionResult1  $result
-     * @param  ?string  $completedAt
-     * @param  ?string  $createdAt
-     * @param  ?string  $updatedAt
+     * @param  ?\DateTime  $completedAt
+     * @param  ?\DateTime  $createdAt
+     * @param  ?\DateTime  $updatedAt
      * @param  ?CompletionLearningObjectType  $learningObjectType
      * @param  ?string  $learningObjectId
      * @param  ?string  $remoteLearningObjectId
@@ -245,7 +245,7 @@ class Completion
      * @param  ?string  $remoteCourseId
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?CompletionResult1 $result = null, ?string $completedAt = null, ?string $createdAt = null, ?string $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $timeSpent = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?CompletionResult1 $result = null, ?\DateTime $completedAt = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $timeSpent = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

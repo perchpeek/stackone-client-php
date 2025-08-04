@@ -50,11 +50,12 @@ class ShiftBreak
     /**
      * Whether the break is paid
      *
-     * @var ?bool $isPaid
+     * @var bool|IsPaid2|null $isPaid
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('is_paid')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\IsPaid2|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $isPaid = null;
+    public bool|IsPaid2|null $isPaid = null;
 
     /**
      * The date and time the break was created
@@ -79,12 +80,12 @@ class ShiftBreak
      * @param  ?\DateTime  $startTime
      * @param  ?\DateTime  $endTime
      * @param  ?string  $duration
-     * @param  ?bool  $isPaid
+     * @param  bool|IsPaid2|null  $isPaid
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $duration = null, ?bool $isPaid = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $duration = null, bool|IsPaid2|null $isPaid = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->startTime = $startTime;

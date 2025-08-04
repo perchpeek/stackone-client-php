@@ -15,10 +15,10 @@ class HrisListTimeOffPoliciesQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * Filter to select time-off policies by type
@@ -29,11 +29,11 @@ class HrisListTimeOffPoliciesQueryParamFilter
     public ?Type $type = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?Type  $type
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?Type $type = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?Type $type = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->type = $type;

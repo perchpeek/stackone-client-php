@@ -11,7 +11,7 @@ Customer or business accounts.
 * [getAccount](#getaccount) - Get Account
 * [deleteAccount](#deleteaccount) - Delete Account
 * [updateAccount](#updateaccount) - Update Account
-* [getAccountMetaInfo](#getaccountmetainfo) - Get meta information of the account
+* [getAccountMetaInfo](#getaccountmetainfo) - Get Account Meta Information
 
 ## listLinkedAccounts
 
@@ -19,6 +19,7 @@ List Accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_list_linked_accounts" method="get" path="/accounts" -->
 ```php
 declare(strict_types=1);
 
@@ -81,6 +82,7 @@ Get Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_get_account" method="get" path="/accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -142,6 +144,7 @@ Delete Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_delete_account" method="delete" path="/accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -203,6 +206,7 @@ Update Account
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_update_account" method="patch" path="/accounts/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -265,10 +269,11 @@ if ($response->linkedAccount !== null) {
 
 ## getAccountMetaInfo
 
-Get meta information of the account
+Get Account Meta Information
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_get_account_meta_info" method="get" path="/accounts/{id}/meta" -->
 ```php
 declare(strict_types=1);
 

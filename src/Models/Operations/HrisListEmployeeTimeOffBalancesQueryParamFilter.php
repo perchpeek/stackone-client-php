@@ -15,10 +15,10 @@ class HrisListEmployeeTimeOffBalancesQueryParamFilter
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      */
-    #[SpeakeasyMetadata('queryParam:name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * List of policy ids to filter time off balances by.
@@ -29,11 +29,11 @@ class HrisListEmployeeTimeOffBalancesQueryParamFilter
     public ?array $policyIds = null;
 
     /**
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?array<string>  $policyIds
      * @phpstan-pure
      */
-    public function __construct(?string $updatedAfter = null, ?array $policyIds = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?array $policyIds = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->policyIds = $policyIds;

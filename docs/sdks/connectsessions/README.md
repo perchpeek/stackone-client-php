@@ -16,6 +16,7 @@ Create Connect Session
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_create_connect_session" method="post" path="/connect_sessions" -->
 ```php
 declare(strict_types=1);
 
@@ -95,6 +96,7 @@ Authenticate Connect Session
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="stackone_authenticate_connect_session" method="post" path="/connect_sessions/authenticate" -->
 ```php
 declare(strict_types=1);
 

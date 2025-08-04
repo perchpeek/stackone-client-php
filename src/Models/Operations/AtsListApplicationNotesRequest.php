@@ -86,11 +86,11 @@ class AtsListApplicationNotesRequest
     /**
      * Use a string with a date to only select results updated after that given date
      *
-     * @var ?string $updatedAfter
+     * @var ?\DateTime $updatedAfter
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=updated_after')]
-    public ?string $updatedAfter = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=updated_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $updatedAfter = null;
 
     /**
      * The sync token to select the only updated results
@@ -111,11 +111,11 @@ class AtsListApplicationNotesRequest
      * @param  ?string  $page
      * @param  ?string  $pageSize
      * @param  ?string  $next
-     * @param  ?string  $updatedAfter
+     * @param  ?\DateTime  $updatedAfter
      * @param  ?string  $syncToken
      * @phpstan-pure
      */
-    public function __construct(string $xAccountId, string $id, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?AtsListApplicationNotesQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?string $updatedAfter = null, ?string $syncToken = null)
+    public function __construct(string $xAccountId, string $id, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?AtsListApplicationNotesQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?\DateTime $updatedAfter = null, ?string $syncToken = null)
     {
         $this->xAccountId = $xAccountId;
         $this->id = $id;

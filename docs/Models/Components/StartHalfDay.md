@@ -14,12 +14,12 @@ True if the start of the time off request begins half way through the day
 bool $value = /* values here */
 ```
 
-### `Components\Two`
+### `Components\StartHalfDay2`
 
 ```php
 /**
-* @var Components\Two
+* @var Components\StartHalfDay2
 */
-Components\Two $value = /* values here */
+Components\StartHalfDay2 $value = /* values here */
 ```
 

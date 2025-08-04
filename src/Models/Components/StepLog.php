@@ -174,6 +174,15 @@ class StepLog
     public ?bool $isWorker = null;
 
     /**
+     * The requests source IPV4 ip address
+     *
+     * @var ?string $sourceIp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_ip')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceIp = null;
+
+    /**
      * The provider request ID
      *
      * @var ?string $id
@@ -221,12 +230,13 @@ class StepLog
      * @param  ?string  $subResource
      * @param  ?string  $action
      * @param  ?bool  $isWorker
+     * @param  ?string  $sourceIp
      * @param  ?string  $id
      * @param  ?StepLogRequest  $request
      * @param  ?StepLogResponse  $response
      * @phpstan-pure
      */
-    public function __construct(?string $requestId = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $accountId = null, ?string $projectId = null, ?string $httpMethod = null, ?string $path = null, ?string $url = null, ?float $status = null, ?float $duration = null, ?bool $success = null, ?string $provider = null, ?string $service = null, ?string $resource = null, ?string $childResource = null, ?string $subResource = null, ?string $action = null, ?bool $isWorker = null, ?string $id = null, ?StepLogRequest $request = null, ?StepLogResponse $response = null)
+    public function __construct(?string $requestId = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $accountId = null, ?string $projectId = null, ?string $httpMethod = null, ?string $path = null, ?string $url = null, ?float $status = null, ?float $duration = null, ?bool $success = null, ?string $provider = null, ?string $service = null, ?string $resource = null, ?string $childResource = null, ?string $subResource = null, ?string $action = null, ?bool $isWorker = null, ?string $sourceIp = null, ?string $id = null, ?StepLogRequest $request = null, ?StepLogResponse $response = null)
     {
         $this->requestId = $requestId;
         $this->startTime = $startTime;
@@ -246,6 +256,7 @@ class StepLog
         $this->subResource = $subResource;
         $this->action = $action;
         $this->isWorker = $isWorker;
+        $this->sourceIp = $sourceIp;
         $this->id = $id;
         $this->request = $request;
         $this->response = $response;

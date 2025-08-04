@@ -178,7 +178,7 @@ class HrisUpdateEmployeeRequestDto
     public ?HrisUpdateEmployeeRequestDtoEthnicity $ethnicity = null;
 
     /**
-     * The employee date_of_birth
+     * The date when the employee was born
      *
      * @var ?\DateTime $dateOfBirth
      */
@@ -187,7 +187,7 @@ class HrisUpdateEmployeeRequestDto
     public ?\DateTime $dateOfBirth = null;
 
     /**
-     * The employee birthday
+     * The next birthday of the employee (upcoming birthday)
      *
      * @var ?\DateTime $birthday
      */

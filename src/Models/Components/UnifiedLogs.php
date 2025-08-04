@@ -230,6 +230,15 @@ class UnifiedLogs
     public ?Response $response = null;
 
     /**
+     * The requests source IPV4 ip address
+     *
+     * @var ?string $sourceIp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('source_ip')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $sourceIp = null;
+
+    /**
      * The list of provider requests
      *
      * @var ?array<StepLog> $stepRequests
@@ -264,10 +273,11 @@ class UnifiedLogs
      * @param  ?string  $sourceId
      * @param  ?Request  $request
      * @param  ?Response  $response
+     * @param  ?string  $sourceIp
      * @param  ?array<StepLog>  $stepRequests
      * @phpstan-pure
      */
-    public function __construct(?string $requestId = null, ?\DateTime $eventDatetime = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $accountId = null, ?string $projectId = null, ?string $httpMethod = null, ?string $path = null, ?string $url = null, ?float $status = null, ?float $duration = null, ?bool $success = null, ?string $provider = null, ?string $service = null, ?string $resource = null, ?string $childResource = null, ?string $subResource = null, ?string $action = null, ?bool $isWorker = null, ?string $sourceType = null, ?string $sourceValue = null, ?string $sourceId = null, ?Request $request = null, ?Response $response = null, ?array $stepRequests = null)
+    public function __construct(?string $requestId = null, ?\DateTime $eventDatetime = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $accountId = null, ?string $projectId = null, ?string $httpMethod = null, ?string $path = null, ?string $url = null, ?float $status = null, ?float $duration = null, ?bool $success = null, ?string $provider = null, ?string $service = null, ?string $resource = null, ?string $childResource = null, ?string $subResource = null, ?string $action = null, ?bool $isWorker = null, ?string $sourceType = null, ?string $sourceValue = null, ?string $sourceId = null, ?Request $request = null, ?Response $response = null, ?string $sourceIp = null, ?array $stepRequests = null)
     {
         $this->requestId = $requestId;
         $this->eventDatetime = $eventDatetime;
@@ -293,6 +303,7 @@ class UnifiedLogs
         $this->sourceId = $sourceId;
         $this->request = $request;
         $this->response = $response;
+        $this->sourceIp = $sourceIp;
         $this->stepRequests = $stepRequests;
     }
 }
