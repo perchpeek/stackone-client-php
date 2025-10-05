@@ -53,7 +53,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\TicketingListTicketsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at',
+    fields: 'id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields',
     filter: new Operations\TicketingListTicketsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -228,7 +228,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingGetTicketRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at',
+    fields: 'id,remote_id,type,ticket_number,title,creator_id,remote_creator_id,reporters,assignees,content,parent_id,remote_parent_id,closed_at,ticket_url,status,priority,tags,projects,components,organization,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getTicket(
@@ -404,7 +404,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\TicketingListUsersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at',
+    fields: 'id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields',
     filter: new Operations\TicketingListUsersQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -478,7 +478,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingGetUserRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at',
+    fields: 'id,remote_id,type,name,primary_email,primary_phone,username,active,first_name,last_name,customer_account_reference,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getUser(
@@ -547,7 +547,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingListCommentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at',
+    fields: 'id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields',
     filter: new Operations\TicketingListCommentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -622,7 +622,7 @@ $request = new Operations\TicketingGetCommentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at',
+    fields: 'id,remote_id,ticket_id,remote_ticket_id,content,user_id,remote_user_id,internal,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getComment(
@@ -761,7 +761,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingListAttachmentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at',
+    fields: 'id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at,unified_custom_fields',
     filter: new Operations\TicketingListAttachmentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -836,7 +836,7 @@ $request = new Operations\TicketingGetAttachmentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at',
+    fields: 'id,remote_id,ticket_id,remote_ticket_id,user_id,remote_user_id,file_name,file_format,file_url,size,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getAttachment(
@@ -904,7 +904,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\TicketingListTicketTypesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,project_id,remote_project_id',
+    fields: 'id,remote_id,name,project_id,remote_project_id,unified_custom_fields',
     filter: new Operations\TicketingListTicketTypesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -978,7 +978,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingGetTicketTypeRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,project_id,remote_project_id',
+    fields: 'id,remote_id,name,project_id,remote_project_id,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getTicketType(
@@ -1046,7 +1046,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\TicketingListProjectsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at',
+    fields: 'id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields',
     filter: new Operations\TicketingListProjectsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1120,7 +1120,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingGetProjectRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at',
+    fields: 'id,remote_id,organization_id,remote_organization_id,name,description,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getProject(
@@ -1188,7 +1188,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingListProjectComponentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at',
+    fields: 'id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields',
     filter: null,
 );
 
@@ -1261,7 +1261,7 @@ $request = new Operations\TicketingGetProjectComponentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at',
+    fields: 'id,remote_id,organization_id,remote_organization_id,project_id,remote_project_id,name,description,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ticketing->getProjectComponent(
@@ -1330,7 +1330,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\TicketingListProjectTicketTypesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,project_id,remote_project_id',
+    fields: 'id,remote_id,name,project_id,remote_project_id,unified_custom_fields',
     filter: new Operations\TicketingListProjectTicketTypesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),

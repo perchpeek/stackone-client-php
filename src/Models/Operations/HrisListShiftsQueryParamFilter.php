@@ -13,6 +13,22 @@ use StackOne\client\Utils\SpeakeasyMetadata;
 class HrisListShiftsQueryParamFilter
 {
     /**
+     * Filter shifts that start after this date
+     *
+     * @var ?string $startsAfter
+     */
+    #[SpeakeasyMetadata('queryParam:name=starts_after')]
+    public ?string $startsAfter = null;
+
+    /**
+     * Filter shifts that end before this date
+     *
+     * @var ?string $endsBefore
+     */
+    #[SpeakeasyMetadata('queryParam:name=ends_before')]
+    public ?string $endsBefore = null;
+
+    /**
      * Use a string with a date to only select results updated after that given date
      *
      * @var ?\DateTime $updatedAfter
@@ -21,51 +37,25 @@ class HrisListShiftsQueryParamFilter
     public ?\DateTime $updatedAfter = null;
 
     /**
-     * Filter to select shifts by employee ID
-     *
-     * @var ?string $employeeId
-     */
-    #[SpeakeasyMetadata('queryParam:name=employee_id')]
-    public ?string $employeeId = null;
-
-    /**
      * Filter to select shifts by status
      *
-     * @var ?QueryParamStatus $status
+     * @var ?HrisListShiftsQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:name=status')]
-    public ?QueryParamStatus $status = null;
+    public ?HrisListShiftsQueryParamStatus $status = null;
 
     /**
-     * Filter shifts that start after this date
-     *
-     * @var ?\DateTime $startsAfter
-     */
-    #[SpeakeasyMetadata('queryParam:name=starts_after,dateTimeFormat=Y-m-d\TH:i:s.up')]
-    public ?\DateTime $startsAfter = null;
-
-    /**
-     * Filter shifts that end before this date
-     *
-     * @var ?\DateTime $endsBefore
-     */
-    #[SpeakeasyMetadata('queryParam:name=ends_before,dateTimeFormat=Y-m-d\TH:i:s.up')]
-    public ?\DateTime $endsBefore = null;
-
-    /**
+     * @param  ?string  $startsAfter
+     * @param  ?string  $endsBefore
      * @param  ?\DateTime  $updatedAfter
-     * @param  ?string  $employeeId
-     * @param  ?QueryParamStatus  $status
-     * @param  ?\DateTime  $startsAfter
-     * @param  ?\DateTime  $endsBefore
+     * @param  ?HrisListShiftsQueryParamStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedAfter = null, ?string $employeeId = null, ?QueryParamStatus $status = null, ?\DateTime $startsAfter = null, ?\DateTime $endsBefore = null)
+    public function __construct(?string $startsAfter = null, ?string $endsBefore = null, ?\DateTime $updatedAfter = null, ?HrisListShiftsQueryParamStatus $status = null)
     {
-        $this->updatedAfter = $updatedAfter;
-        $this->employeeId = $employeeId;
-        $this->status = $status;
         $this->startsAfter = $startsAfter;
         $this->endsBefore = $endsBefore;
+        $this->updatedAfter = $updatedAfter;
+        $this->status = $status;
     }
 }

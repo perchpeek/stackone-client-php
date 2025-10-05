@@ -34,4 +34,5 @@ enum QueryParamType: string
     case Personal = 'personal';
     case InLieu = 'in_lieu';
     case Bereavement = 'bereavement';
+    case Other = 'other';
 }

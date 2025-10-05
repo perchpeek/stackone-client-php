@@ -46,18 +46,18 @@ class StackOne
     public Connectors $connectors;
 
     /**
-     * Routing API requests through StackOne directly to the underlying provider.
-     *
-     * @var Proxy $$proxy
-     */
-    public Proxy $proxy;
-
-    /**
      * Model Context Protocol endpoint.
      *
      * @var Mcp $$mcp
      */
     public Mcp $mcp;
+
+    /**
+     * Routing API requests through StackOne directly to the underlying provider.
+     *
+     * @var Proxy $$proxy
+     */
+    public Proxy $proxy;
 
     /**
      * Retrieve Actions metadata and definitions.
@@ -108,8 +108,8 @@ class StackOne
         $this->accounts = new Accounts($this->sdkConfiguration);
         $this->requestLogs = new RequestLogs($this->sdkConfiguration);
         $this->connectors = new Connectors($this->sdkConfiguration);
-        $this->proxy = new Proxy($this->sdkConfiguration);
         $this->mcp = new Mcp($this->sdkConfiguration);
+        $this->proxy = new Proxy($this->sdkConfiguration);
         $this->actions = new Actions($this->sdkConfiguration);
         $this->hris = new Hris($this->sdkConfiguration);
         $this->ats = new Ats($this->sdkConfiguration);

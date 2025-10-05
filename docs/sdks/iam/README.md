@@ -44,7 +44,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\IamListUsersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
+    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields',
     filter: new Operations\IamListUsersQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -119,7 +119,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\IamGetUserRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled',
+    fields: 'id,remote_id,first_name,last_name,name,primary_email_address,username,roles,groups,status,avatar,is_bot_user,last_active_at,last_login_at,created_at,updated_at,multi_factor_enabled,unified_custom_fields',
     expand: 'roles,groups',
 );
 
@@ -335,7 +335,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\IamListRolesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,policies,description,created_at,updated_at',
+    fields: 'id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields',
     filter: new Operations\IamListRolesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -410,7 +410,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\IamGetRoleRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,policies,description,created_at,updated_at',
+    fields: 'id,remote_id,name,type,policies,description,created_at,updated_at,unified_custom_fields',
     expand: 'policies',
 );
 
@@ -478,7 +478,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\IamListGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at',
+    fields: 'id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields',
     filter: null,
     expand: 'roles',
 );
@@ -551,7 +551,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\IamGetGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at',
+    fields: 'id,remote_id,parent_id,remote_parent_id,name,description,roles,type,created_at,updated_at,unified_custom_fields',
     expand: 'roles',
 );
 
@@ -619,7 +619,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\IamListPoliciesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,permissions,description,created_at,updated_at',
+    fields: 'id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields',
     filter: null,
     expand: 'permissions',
 );
@@ -692,7 +692,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\IamGetPolicyRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,permissions,description,created_at,updated_at',
+    fields: 'id,remote_id,name,permissions,description,created_at,updated_at,unified_custom_fields',
     expand: 'permissions',
 );
 

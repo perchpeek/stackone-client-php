@@ -44,7 +44,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\CrmListContactsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at',
+    fields: 'id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields',
     filter: new Operations\CrmListContactsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -216,7 +216,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\CrmGetContactRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at',
+    fields: 'id,remote_id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,remote_deal_ids,account_ids,remote_account_ids,custom_fields,created_at,updated_at,unified_custom_fields',
     include: 'custom_fields',
 );
 
@@ -384,7 +384,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\CrmListAccountsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at',
+    fields: 'id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields',
     filter: new Operations\CrmListAccountsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -458,7 +458,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\CrmGetAccountRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at',
+    fields: 'id,remote_id,owner_id,remote_owner_id,name,description,industries,annual_revenue,website,addresses,phone_numbers,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->crm->getAccount(
@@ -526,7 +526,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\CrmListListsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,created_at,updated_at,items,type',
+    fields: 'id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields',
     filter: new Operations\CrmListListsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -600,7 +600,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\CrmGetListRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,created_at,updated_at,items,type',
+    fields: 'id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields',
 );
 
 $response = $sdk->crm->getList(
@@ -668,7 +668,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\CrmListContactCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\CrmListContactCustomFieldDefinitionsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -743,7 +743,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\CrmGetContactCustomFieldDefinitionRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\CrmGetContactCustomFieldDefinitionQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),

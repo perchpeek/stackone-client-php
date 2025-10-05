@@ -20,23 +20,59 @@ class ActionsRpcRequestDto
     public string $action;
 
     /**
-     * Input parameters for the action
+     * Path parameters for the action
      *
-     * @var ?Input $input
+     * @var ?array<string, mixed> $path
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Input|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('path')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Input $input = null;
+    public ?array $path = null;
+
+    /**
+     * Query parameters for the action
+     *
+     * @var ?array<string, mixed> $query
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('query')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $query = null;
+
+    /**
+     * Headers for the action
+     *
+     * @var ?array<string, mixed> $headers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('headers')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $headers = null;
+
+    /**
+     * Request body for the action
+     *
+     * @var ?array<string, mixed> $body
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('body')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $body = null;
 
     /**
      * @param  string  $action
-     * @param  ?Input  $input
+     * @param  ?array<string, mixed>  $path
+     * @param  ?array<string, mixed>  $query
+     * @param  ?array<string, mixed>  $headers
+     * @param  ?array<string, mixed>  $body
      * @phpstan-pure
      */
-    public function __construct(string $action, ?Input $input = null)
+    public function __construct(string $action, ?array $path = null, ?array $query = null, ?array $body = null, ?array $headers = null)
     {
         $this->action = $action;
-        $this->input = $input;
+        $this->path = $path;
+        $this->query = $query;
+        $this->headers = $headers;
+        $this->body = $body;
     }
 }

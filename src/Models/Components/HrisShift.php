@@ -57,22 +57,22 @@ class HrisShift
     public ?string $companyId = null;
 
     /**
-     * The start time of the shift
+     * The start time of the shift (ISO8601 date-time without timezone)
      *
-     * @var ?\DateTime $startTime
+     * @var ?string $startTime
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_time')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $startTime = null;
+    public ?string $startTime = null;
 
     /**
-     * The end time of the shift
+     * The end time of the shift (ISO8601 date-time without timezone)
      *
-     * @var ?\DateTime $endTime
+     * @var ?string $endTime
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('end_time')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?\DateTime $endTime = null;
+    public ?string $endTime = null;
 
     /**
      * The total break duration for this shift in ISO 8601 duration format
@@ -137,8 +137,8 @@ class HrisShift
      * @param  ?string  $employeeId
      * @param  ?string  $locationId
      * @param  ?string  $companyId
-     * @param  ?\DateTime  $startTime
-     * @param  ?\DateTime  $endTime
+     * @param  ?string  $startTime
+     * @param  ?string  $endTime
      * @param  ?string  $breakDuration
      * @param  ?HrisShiftStatus  $status
      * @param  ?ApprovalStatus  $approvalStatus
@@ -147,7 +147,7 @@ class HrisShift
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $locationId = null, ?string $companyId = null, ?\DateTime $startTime = null, ?\DateTime $endTime = null, ?string $breakDuration = null, ?HrisShiftStatus $status = null, ?ApprovalStatus $approvalStatus = null, ?array $breaks = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $locationId = null, ?string $companyId = null, ?string $startTime = null, ?string $endTime = null, ?string $breakDuration = null, ?HrisShiftStatus $status = null, ?ApprovalStatus $approvalStatus = null, ?array $breaks = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;

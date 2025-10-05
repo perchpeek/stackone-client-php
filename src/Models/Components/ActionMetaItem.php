@@ -21,13 +21,13 @@ class ActionMetaItem
     public ?string $id = null;
 
     /**
-     * The action name
+     * The action label
      *
-     * @var ?string $name
+     * @var ?string $label
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('label')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $name = null;
+    public ?string $label = null;
 
     /**
      * The action description
@@ -46,6 +46,16 @@ class ActionMetaItem
     #[\Speakeasy\Serializer\Annotation\SerializedName('schema_type')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $schemaType = null;
+
+    /**
+     * The tags associated with this action
+     *
+     * @var ?array<string> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
 
     /**
      * The authentication methods supported by this action
@@ -69,19 +79,21 @@ class ActionMetaItem
 
     /**
      * @param  ?string  $id
-     * @param  ?string  $name
+     * @param  ?string  $label
      * @param  ?string  $description
      * @param  ?string  $schemaType
+     * @param  ?array<string>  $tags
      * @param  ?array<AuthenticationMetaItem>  $authentication
      * @param  ?array<string, mixed>  $operationDetails
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $description = null, ?string $schemaType = null, ?array $authentication = null, ?array $operationDetails = null)
+    public function __construct(?string $id = null, ?string $label = null, ?string $description = null, ?string $schemaType = null, ?array $tags = null, ?array $authentication = null, ?array $operationDetails = null)
     {
         $this->id = $id;
-        $this->name = $name;
+        $this->label = $label;
         $this->description = $description;
         $this->schemaType = $schemaType;
+        $this->tags = $tags;
         $this->authentication = $authentication;
         $this->operationDetails = $operationDetails;
     }

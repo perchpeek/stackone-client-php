@@ -29,13 +29,33 @@ class HrisListEmployeeTimeOffRequestsQueryParamFilter
     public ?array $policyIds = null;
 
     /**
+     * Filter to include time off requests that start on or after this date.
+     *
+     * @var ?\DateTime $startDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=start_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $startDate = null;
+
+    /**
+     * Filter to include time off requests that end on or before this date.
+     *
+     * @var ?\DateTime $endDate
+     */
+    #[SpeakeasyMetadata('queryParam:name=end_date,dateTimeFormat=Y-m-d\TH:i:s.up')]
+    public ?\DateTime $endDate = null;
+
+    /**
      * @param  ?\DateTime  $updatedAfter
      * @param  ?array<string>  $policyIds
+     * @param  ?\DateTime  $startDate
+     * @param  ?\DateTime  $endDate
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedAfter = null, ?array $policyIds = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?array $policyIds = null, ?\DateTime $startDate = null, ?\DateTime $endDate = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->policyIds = $policyIds;
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
     }
 }

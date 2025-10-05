@@ -14,6 +14,8 @@
 * [getEmployee](#getemployee) - Get Employee
 * [updateEmployee](#updateemployee) - Update Employee
 * [inviteEmployee](#inviteemployee) - Invite Employee
+* [listEmployeeShifts](#listemployeeshifts) - List Employee Shifts
+* [getEmployeeShift](#getemployeeshift) - Get Employee Shift
 * [listEmployeeTimeOffRequests](#listemployeetimeoffrequests) - List Employee Time Off Requests
 * [createEmployeeTimeOffRequest](#createemployeetimeoffrequest) - Create Employee Time Off Request
 * [getEmployeesTimeOffRequest](#getemployeestimeoffrequest) - Get Employees Time Off Request
@@ -106,7 +108,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListCompaniesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at',
+    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListCompaniesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -180,7 +182,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetCompanyRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at',
+    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getCompany(
@@ -248,7 +250,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeeCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\HrisListEmployeeCustomFieldDefinitionsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -323,7 +325,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmployeeCustomFieldDefinitionRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\HrisGetEmployeeCustomFieldDefinitionQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -394,7 +396,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields',
     filter: new Operations\HrisListEmployeesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -631,7 +633,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmployeeRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills',
+    fields: 'id,remote_id,first_name,last_name,name,display_name,gender,ethnicity,date_of_birth,birthday,marital_status,avatar_url,avatar,personal_email,personal_phone_number,work_email,work_phone_number,job_id,remote_job_id,job_title,job_description,department_id,remote_department_id,department,cost_centers,company,manager_id,remote_manager_id,hire_date,start_date,tenure,work_anniversary,employment_type,employment_contract_type,employment_status,termination_date,company_name,company_id,remote_company_id,preferred_language,citizenships,home_location,work_location,employments,custom_fields,created_at,updated_at,benefits,employee_number,national_identity_number,national_identity_numbers,skills,unified_custom_fields',
     expand: 'company,employments,work_location,home_location,groups,skills',
     include: 'avatar_url,avatar,custom_fields,job_description,benefits',
 );
@@ -907,6 +909,150 @@ if ($response->inviteEmployeeResult !== null) {
 | Errors\BadGatewayResponse          | 502                                | application/json                   |
 | Errors\SDKException                | 4XX, 5XX                           | \*/\*                              |
 
+## listEmployeeShifts
+
+List Employee Shifts
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="hris_list_employee_shifts" method="get" path="/unified/hris/employees/{id}/shifts" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+use StackOne\client\Utils;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisListEmployeeShiftsRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    filter: new Operations\HrisListEmployeeShiftsQueryParamFilter(
+        updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        startsAfter: '2024-01-15T09:00',
+        endsBefore: '2024-01-15T17:00',
+    ),
+);
+
+$responses = $sdk->hris->listEmployeeShifts(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [Operations\HrisListEmployeeShiftsRequest](../../Models/Operations/HrisListEmployeeShiftsRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+
+### Response
+
+**[?Operations\HrisListEmployeeShiftsResponse](../../Models/Operations/HrisListEmployeeShiftsResponse.md)**
+
+### Errors
+
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Errors\BadRequestResponse          | 400                                | application/json                   |
+| Errors\UnauthorizedResponse        | 401                                | application/json                   |
+| Errors\ForbiddenResponse           | 403                                | application/json                   |
+| Errors\NotFoundResponse            | 404                                | application/json                   |
+| Errors\RequestTimedOutResponse     | 408                                | application/json                   |
+| Errors\ConflictResponse            | 409                                | application/json                   |
+| Errors\PreconditionFailedResponse  | 412                                | application/json                   |
+| Errors\UnprocessableEntityResponse | 422                                | application/json                   |
+| Errors\TooManyRequestsResponse     | 429                                | application/json                   |
+| Errors\InternalServerErrorResponse | 500                                | application/json                   |
+| Errors\NotImplementedResponse      | 501                                | application/json                   |
+| Errors\BadGatewayResponse          | 502                                | application/json                   |
+| Errors\SDKException                | 4XX, 5XX                           | \*/\*                              |
+
+## getEmployeeShift
+
+Get Employee Shift
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="hris_get_employee_shift" method="get" path="/unified/hris/employees/{id}/shifts/{subResourceId}" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use StackOne\client;
+use StackOne\client\Models\Components;
+use StackOne\client\Models\Operations;
+
+$sdk = client\StackOne::builder()
+    ->setSecurity(
+        new Components\Security(
+            username: '',
+            password: '',
+        )
+    )
+    ->build();
+
+$request = new Operations\HrisGetEmployeeShiftRequest(
+    xAccountId: '<id>',
+    id: '<id>',
+    subResourceId: '<id>',
+);
+
+$response = $sdk->hris->getEmployeeShift(
+    request: $request
+);
+
+if ($response->hrisShiftResult !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                       | [Operations\HrisGetEmployeeShiftRequest](../../Models/Operations/HrisGetEmployeeShiftRequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+### Response
+
+**[?Operations\HrisGetEmployeeShiftResponse](../../Models/Operations/HrisGetEmployeeShiftResponse.md)**
+
+### Errors
+
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| Errors\BadRequestResponse          | 400                                | application/json                   |
+| Errors\UnauthorizedResponse        | 401                                | application/json                   |
+| Errors\ForbiddenResponse           | 403                                | application/json                   |
+| Errors\NotFoundResponse            | 404                                | application/json                   |
+| Errors\RequestTimedOutResponse     | 408                                | application/json                   |
+| Errors\ConflictResponse            | 409                                | application/json                   |
+| Errors\PreconditionFailedResponse  | 412                                | application/json                   |
+| Errors\UnprocessableEntityResponse | 422                                | application/json                   |
+| Errors\TooManyRequestsResponse     | 429                                | application/json                   |
+| Errors\InternalServerErrorResponse | 500                                | application/json                   |
+| Errors\NotImplementedResponse      | 501                                | application/json                   |
+| Errors\BadGatewayResponse          | 502                                | application/json                   |
+| Errors\SDKException                | 4XX, 5XX                           | \*/\*                              |
+
 ## listEmployeeTimeOffRequests
 
 List Employee Time Off Requests
@@ -936,9 +1082,11 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeTimeOffRequestsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields',
     filter: new Operations\HrisListEmployeeTimeOffRequestsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        startDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        endDate: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
     expand: 'policy',
 );
@@ -1095,7 +1243,7 @@ $request = new Operations\HrisGetEmployeesTimeOffRequestRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields',
     expand: 'policy',
 );
 
@@ -1556,7 +1704,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeDocumentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format',
+    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields',
     filter: new Operations\HrisListEmployeeDocumentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1631,7 +1779,7 @@ $request = new Operations\HrisGetEmployeeDocumentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format',
+    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields',
 );
 
 $response = $sdk->hris->getEmployeeDocument(
@@ -1699,7 +1847,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeeCategoriesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active',
+    fields: 'id,remote_id,name,active,unified_custom_fields',
     filter: new Operations\HrisListEmployeeCategoriesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1773,7 +1921,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmployeeDocumentCategoryRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active',
+    fields: 'id,remote_id,name,active,unified_custom_fields',
 );
 
 $response = $sdk->hris->getEmployeeDocumentCategory(
@@ -1841,7 +1989,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmployeeWorkEligibilityRequest(
     id: '<id>',
-    fields: 'id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number',
+    fields: 'id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields',
     filter: new Operations\HrisListEmployeeWorkEligibilityQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2008,7 +2156,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmployeesWorkEligibilityRequest(
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number',
+    fields: 'id,remote_id,type,sub_type,document,valid_from,valid_to,issued_by,number,unified_custom_fields',
     xAccountId: '<id>',
 );
 
@@ -2175,7 +2323,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeTimeOffBalancesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at,unified_custom_fields',
     filter: new Operations\HrisListEmployeeTimeOffBalancesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2251,7 +2399,7 @@ $request = new Operations\HrisGetEmployeeTimeOffBalanceRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,policy_id,remote_policy_id,policy,current_balance,initial_balance,balance_unit,balance_start_date,balance_expiry_date,updated_at,unified_custom_fields',
     expand: 'policy',
 );
 
@@ -2320,7 +2468,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListEmploymentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields',
     filter: new Operations\HrisListEmploymentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2395,7 +2543,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields',
     expand: 'groups',
 );
 
@@ -2465,7 +2613,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeEmploymentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields',
     filter: new Operations\HrisListEmployeeEmploymentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2657,7 +2805,7 @@ $request = new Operations\HrisGetEmployeeEmploymentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager',
+    fields: 'id,remote_id,employee_id,remote_employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,end_date,employment_type,employment_contract_type,type,contract_type,change_reason,grade,work_time,payroll_code,fte,created_at,updated_at,start_date,active,department,team,cost_center,cost_centers,division,job,manager,groups,unified_custom_fields',
     expand: 'groups',
 );
 
@@ -2843,7 +2991,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
     filter: new Operations\HrisListGroupsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2917,7 +3065,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListDepartmentGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
     filter: new Operations\HrisListDepartmentGroupsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2991,7 +3139,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListCostCenterGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
     filter: new Operations\HrisListCostCenterGroupsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3065,7 +3213,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTeamGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,unified_custom_fields',
     filter: new Operations\HrisListTeamGroupsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3139,7 +3287,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListDivisionGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
     filter: new Operations\HrisListDivisionGroupsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3213,7 +3361,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListCompaniesGroupsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at',
+    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListCompaniesGroupsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3287,7 +3435,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
 );
 
 $response = $sdk->hris->getGroup(
@@ -3355,7 +3503,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetDepartmentGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
 );
 
 $response = $sdk->hris->getDepartmentGroup(
@@ -3423,7 +3571,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetCostCenterGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,distribution_percentage,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
 );
 
 $response = $sdk->hris->getCostCenterGroup(
@@ -3491,7 +3639,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTeamGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,unified_custom_fields',
 );
 
 $response = $sdk->hris->getTeamGroup(
@@ -3559,7 +3707,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetDivisionGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id',
+    fields: 'id,remote_id,name,type,parent_ids,remote_parent_ids,owner_ids,remote_owner_ids,company_id,remote_company_id,unified_custom_fields',
 );
 
 $response = $sdk->hris->getDivisionGroup(
@@ -3627,7 +3775,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetCompanyGroupRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at',
+    fields: 'id,remote_id,name,full_name,display_name,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getCompanyGroup(
@@ -3695,7 +3843,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListJobsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,code,title,description,status,created_at,updated_at',
+    fields: 'id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListJobsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3769,7 +3917,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetJobRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,code,title,description,status,created_at,updated_at',
+    fields: 'id,remote_id,code,title,description,status,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getJob(
@@ -3837,7 +3985,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListLocationsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListLocationsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3911,7 +4059,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetLocationRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getLocation(
@@ -3982,7 +4130,7 @@ $request = new Operations\HrisListPositionsRequest(
     filter: new Operations\HrisListPositionsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
-    status: Operations\Status::Open,
+    status: Operations\QueryParamStatus::Open,
 );
 
 $responses = $sdk->hris->listPositions(
@@ -4120,7 +4268,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTimeEntriesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListTimeEntriesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         startTime: '2020-01-01T00:00:00.000Z',
@@ -4196,7 +4344,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTimeEntriesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,start_time,end_time,hours_worked,break_duration,labor_type,location,status,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getTimeEntries(
@@ -4263,7 +4411,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTimeOffRequestsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields',
     filter: null,
     expand: 'policy',
 );
@@ -4336,7 +4484,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTimeOffRequestRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy',
+    fields: 'id,remote_id,employee_id,remote_employee_id,approver_id,remote_approver_id,status,type,start_date,end_date,start_half_day,end_half_day,time_off_policy_id,remote_time_off_policy_id,reason,comment,duration,created_at,updated_at,policy,unified_custom_fields',
     expand: 'policy',
 );
 
@@ -4407,6 +4555,8 @@ $request = new Operations\HrisListShiftsRequest(
     xAccountId: '<id>',
     filter: new Operations\HrisListShiftsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
+        startsAfter: '2024-01-15T09:00',
+        endsBefore: '2024-01-15T17:00',
     ),
 );
 
@@ -4547,7 +4697,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTimeOffTypesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active',
+    fields: 'id,remote_id,name,active,unified_custom_fields',
     filter: new Operations\HrisListTimeOffTypesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4623,7 +4773,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTimeOffTypeRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active',
+    fields: 'id,remote_id,name,active,unified_custom_fields',
 );
 
 $response = $sdk->hris->getTimeOffType(
@@ -4691,7 +4841,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTimeOffPoliciesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
+    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields',
     filter: new Operations\HrisListTimeOffPoliciesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4765,7 +4915,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTimeOffPolicyRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
+    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getTimeOffPolicy(
@@ -4834,7 +4984,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeTimeOffPoliciesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at',
+    fields: 'id,remote_id,name,description,type,duration_unit,reasons,updated_at,created_at,unified_custom_fields',
     filter: new Operations\HrisListEmployeeTimeOffPoliciesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4908,7 +5058,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListBenefitsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,benefit_type,provider,description,created_at,updated_at',
+    fields: 'id,remote_id,name,benefit_type,provider,description,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListBenefitsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4982,7 +5132,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetBenefitRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,benefit_type,provider,description,created_at,updated_at',
+    fields: 'id,remote_id,name,benefit_type,provider,description,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->hris->getBenefit(
@@ -5051,7 +5201,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeSkillsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency',
+    fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency,unified_custom_fields',
     filter: new Operations\HrisListEmployeeSkillsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -5203,7 +5353,7 @@ $request = new Operations\HrisGetEmployeeSkillRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency',
+    fields: 'id,remote_id,name,active,language,maximum_proficiency,minimum_proficiency,unified_custom_fields',
 );
 
 $response = $sdk->hris->getEmployeeSkill(
@@ -5272,7 +5422,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisListEmployeeTasksRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListEmployeeTasksQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -5348,7 +5498,7 @@ $request = new Operations\HrisGetEmployeeTaskRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields',
     expand: 'attachments',
 );
 
@@ -5492,7 +5642,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\HrisListTasksRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields',
     filter: new Operations\HrisListTasksQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -5567,7 +5717,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\HrisGetTaskRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at',
+    fields: 'id,remote_id,employee_id,remote_employee_id,name,description,type,status,due_date,completion_date,assigned_by_employee_id,remote_assigned_by_employee_id,assigned_by_employee_name,link_to_task,extracted_links,next_task_id,remote_next_task_id,parent_process_name,comments,attachments,created_at,updated_at,unified_custom_fields',
     expand: 'attachments',
 );
 
