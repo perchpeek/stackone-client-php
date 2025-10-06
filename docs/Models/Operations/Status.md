@@ -1,13 +1,14 @@
 # Status
 
-Filter positions by status
+Filter to select shifts by status
 
 
 ## Values
 
 | Name            | Value           |
 | --------------- | --------------- |
-| `Open`          | open            |
-| `Closed`        | closed          |
-| `Paused`        | paused          |
+| `Draft`         | draft           |
+| `Published`     | published       |
+| `Confirmed`     | confirmed       |
+| `Cancelled`     | cancelled       |
 | `UnmappedValue` | unmapped_value  |

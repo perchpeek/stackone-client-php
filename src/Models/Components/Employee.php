@@ -292,7 +292,6 @@ class Employee
      * The employee start date
      *
      * @var ?\DateTime $startDate
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('start_date')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]

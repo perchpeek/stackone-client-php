@@ -88,10 +88,10 @@ class HrisListPositionsRequest
     /**
      * Filter positions by status
      *
-     * @var ?Status $status
+     * @var ?QueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
-    public ?Status $status = null;
+    public ?QueryParamStatus $status = null;
 
     /**
      * @param  string  $xAccountId
@@ -103,10 +103,10 @@ class HrisListPositionsRequest
      * @param  ?string  $pageSize
      * @param  ?string  $next
      * @param  ?\DateTime  $updatedAfter
-     * @param  ?Status  $status
+     * @param  ?QueryParamStatus  $status
      * @phpstan-pure
      */
-    public function __construct(string $xAccountId, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?HrisListPositionsQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?\DateTime $updatedAfter = null, ?Status $status = null)
+    public function __construct(string $xAccountId, ?bool $raw = null, ?array $proxy = null, ?string $fields = null, ?HrisListPositionsQueryParamFilter $filter = null, ?string $page = null, ?string $pageSize = null, ?string $next = null, ?\DateTime $updatedAfter = null, ?QueryParamStatus $status = null)
     {
         $this->xAccountId = $xAccountId;
         $this->raw = $raw;

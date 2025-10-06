@@ -9,11 +9,12 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Operations;
 
 
-/** Filter positions by status */
+/** Filter to select shifts by status */
 enum Status: string
 {
-    case Open = 'open';
-    case Closed = 'closed';
-    case Paused = 'paused';
+    case Draft = 'draft';
+    case Published = 'published';
+    case Confirmed = 'confirmed';
+    case Cancelled = 'cancelled';
     case UnmappedValue = 'unmapped_value';
 }

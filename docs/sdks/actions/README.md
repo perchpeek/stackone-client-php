@@ -112,18 +112,19 @@ $sdk = client\StackOne::builder()
 
 $request = new Components\ActionsRpcRequestDto(
     action: 'create_employee',
-    input: new Components\Input(
-        query: [
-            'param1' => 'value1',
-            'param2' => 'value2',
-        ],
-        headers: [
-            'Content-Type' => 'application/json',
-        ],
-        body: [
-            'data' => 'example',
-        ],
-    ),
+    path: [
+        'id' => '123',
+    ],
+    query: [
+        'param1' => 'value1',
+        'param2' => 'value2',
+    ],
+    headers: [
+        'Content-Type' => 'application/json',
+    ],
+    body: [
+        'data' => 'example',
+    ],
 );
 
 $response = $sdk->actions->rpcAction(

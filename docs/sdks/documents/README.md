@@ -195,7 +195,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\DocumentsListFilesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids',
+    fields: 'id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields',
     filter: new Operations\DocumentsListFilesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         name: 'john_doe_resume.pdf',
@@ -277,7 +277,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\DocumentsGetFileRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids',
+    fields: 'id,remote_id,name,description,url,size,file_format,path,owner_id,remote_owner_id,folder_id,remote_folder_id,drive_id,remote_drive_id,export_formats,default_download_format,created_at,updated_at,has_content,has_children,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields',
     include: 'all_parent_folder_ids',
 );
 
@@ -346,7 +346,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\DocumentsListFoldersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids',
+    fields: 'id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields',
     filter: new Operations\DocumentsListFoldersQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         driveId: '1234567890',
@@ -425,7 +425,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\DocumentsGetFolderRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids',
+    fields: 'id,remote_id,name,description,url,size,path,owner_id,remote_owner_id,parent_folder_id,remote_parent_folder_id,drive_id,remote_drive_id,created_at,updated_at,has_content,has_children,is_root,all_parent_folder_ids,remote_all_parent_folder_ids,unified_custom_fields',
     include: 'all_parent_folder_ids',
 );
 
@@ -494,7 +494,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\DocumentsListDrivesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,url,created_at,updated_at',
+    fields: 'id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields',
     filter: new Operations\DocumentsListDrivesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -568,7 +568,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\DocumentsGetDriveRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,url,created_at,updated_at',
+    fields: 'id,remote_id,name,description,url,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->documents->getDrive(

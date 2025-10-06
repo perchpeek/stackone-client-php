@@ -38,7 +38,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\ScreeningListScreeningPackagesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description',
+    fields: 'id,remote_id,name,description,unified_custom_fields',
     filter: new Operations\ScreeningListScreeningPackagesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -112,7 +112,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\ScreeningGetScreeningPackageRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description',
+    fields: 'id,remote_id,name,description,unified_custom_fields',
 );
 
 $response = $sdk->screening->getScreeningPackage(

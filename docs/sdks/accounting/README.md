@@ -44,7 +44,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AccountingListCompaniesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day',
+    fields: 'id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields',
     filter: new Operations\AccountingListCompaniesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -118,7 +118,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AccountingGetCompanyRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day',
+    fields: 'id,remote_id,name,base_currency,fiscal_year_start_month,fiscal_year_start_day,unified_custom_fields',
 );
 
 $response = $sdk->accounting->getCompany(
@@ -186,7 +186,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AccountingListCompanyAccountsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,company_id,remote_company_id,code,name,type,active',
+    fields: 'id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields',
     filter: null,
 );
 
@@ -259,7 +259,7 @@ $request = new Operations\AccountingGetCompanyAccountRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,company_id,remote_company_id,code,name,type,active',
+    fields: 'id,remote_id,company_id,remote_company_id,code,name,type,active,unified_custom_fields',
 );
 
 $response = $sdk->accounting->getCompanyAccount(
@@ -328,7 +328,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AccountingListCompanyTaxRatesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,company_id,remote_company_id,name,code,percentage,active',
+    fields: 'id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields',
     filter: new Operations\AccountingListCompanyTaxRatesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -403,7 +403,7 @@ $request = new Operations\AccountingGetCompanyTaxRateRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,company_id,remote_company_id,name,code,percentage,active',
+    fields: 'id,remote_id,company_id,remote_company_id,name,code,percentage,active,unified_custom_fields',
 );
 
 $response = $sdk->accounting->getCompanyTaxRate(
@@ -541,7 +541,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AccountingListCompanyJournalsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at',
+    fields: 'id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields',
     filter: null,
 );
 
@@ -701,7 +701,7 @@ $request = new Operations\AccountingGetCompanyJournalRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at',
+    fields: 'id,remote_id,company_id,remote_company_id,reference,memo,transaction_date,status,lines,created_at,updated_at,posted_at,unified_custom_fields',
 );
 
 $response = $sdk->accounting->getCompanyJournal(

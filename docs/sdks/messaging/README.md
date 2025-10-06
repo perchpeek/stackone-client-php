@@ -45,7 +45,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MessagingListConversationsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,participants,name,private,created_at,last_message_at',
+    fields: 'id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields',
     filter: new Operations\MessagingListConversationsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -192,7 +192,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MessagingGetConversationRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,participants,name,private,created_at,last_message_at',
+    fields: 'id,remote_id,participants,name,private,created_at,last_message_at,unified_custom_fields',
 );
 
 $response = $sdk->messaging->getConversation(
@@ -331,7 +331,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MessagingListAttachmentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,file_name,file_size,file_type',
+    fields: 'id,remote_id,file_name,file_size,file_type,unified_custom_fields',
     filter: new Operations\MessagingListAttachmentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -406,7 +406,7 @@ $request = new Operations\MessagingGetAttachmentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,file_name,file_size,file_type',
+    fields: 'id,remote_id,file_name,file_size,file_type,unified_custom_fields',
 );
 
 $response = $sdk->messaging->getAttachment(
@@ -474,7 +474,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MessagingListUsersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,email,username,name,first_name,last_name,bot,active',
+    fields: 'id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields',
     filter: new Operations\MessagingListUsersQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -548,7 +548,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MessagingGetUserRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,email,username,name,first_name,last_name,bot,active',
+    fields: 'id,remote_id,email,username,name,first_name,last_name,bot,active,unified_custom_fields',
 );
 
 $response = $sdk->messaging->getUser(
@@ -617,7 +617,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MessagingListConversationMessagesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at',
+    fields: 'id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields',
     filter: new Operations\MessagingListConversationMessagesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -691,7 +691,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MessagingGetMessageRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at',
+    fields: 'id,remote_id,content,parent_message_id,remote_parent_message_id,attachments,author,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->messaging->getMessage(

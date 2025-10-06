@@ -60,7 +60,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListEmailTemplatesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
     filter: new Operations\MarketingListEmailTemplatesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -211,7 +211,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetEmailTemplateRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getEmailTemplate(
@@ -360,7 +360,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListInAppTemplatesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
     filter: null,
 );
 
@@ -512,7 +512,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetInAppTemplateRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getInAppTemplate(
@@ -662,7 +662,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListSmsTemplatesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
     filter: new Operations\MarketingListSmsTemplatesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -816,7 +816,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetSmsTemplateRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getSmsTemplate(
@@ -968,7 +968,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListOmniChannelTemplatesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
     filter: new Operations\MarketingListOmniChannelTemplatesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1125,7 +1125,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetOmniChannelTemplateRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getOmniChannelTemplate(
@@ -1276,7 +1276,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListPushTemplatesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
     filter: new Operations\MarketingListPushTemplatesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1430,7 +1430,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetPushTemplateRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,messages,created_at,updated_at,tags',
+    fields: 'id,remote_id,name,messages,created_at,updated_at,tags,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getPushTemplate(
@@ -1580,7 +1580,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListCampaignsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages',
+    fields: 'id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields',
     filter: new Operations\MarketingListCampaignsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1654,7 +1654,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetCampaignRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages',
+    fields: 'id,remote_id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getCampaign(
@@ -1722,7 +1722,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\MarketingListContentBlocksRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,type,content,status,tags,created_at,updated_at',
+    fields: 'id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields',
     filter: new Operations\MarketingListContentBlocksQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1870,7 +1870,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\MarketingGetContentBlockRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,content,status,tags,created_at,updated_at',
+    fields: 'id,remote_id,name,type,content,status,tags,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->marketing->getContentBlock(

@@ -51,10 +51,10 @@ class MessagingMessage
     /**
      * List of attachments in the message
      *
-     * @var ?array<string> $attachments
+     * @var ?array<MessagingAttachment> $attachments
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('attachments')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\MessagingAttachment>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $attachments = null;
 
@@ -91,7 +91,7 @@ class MessagingMessage
      * @param  ?string  $remoteId
      * @param  ?MessagingMessageContent  $content
      * @param  ?string  $parentMessageId
-     * @param  ?array<string>  $attachments
+     * @param  ?array<MessagingAttachment>  $attachments
      * @param  ?Author  $author
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt

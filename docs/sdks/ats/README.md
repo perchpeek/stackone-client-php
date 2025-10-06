@@ -108,7 +108,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListApplicationsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate',
+    fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields',
     filter: new Operations\AtsListApplicationsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
@@ -337,7 +337,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetApplicationRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate',
+    fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields',
     expand: 'documents',
     include: 'attachments,custom_fields',
 );
@@ -498,7 +498,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListApplicationsOffersRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history',
+    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields',
     filter: new Operations\AtsListApplicationsOffersQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -719,7 +719,7 @@ $request = new Operations\AtsGetApplicationOfferRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history',
+    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationOffer(
@@ -788,7 +788,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListApplicationScorecardsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at',
+    fields: 'id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListApplicationScorecardsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -863,7 +863,7 @@ $request = new Operations\AtsGetApplicationScorecardRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at',
+    fields: 'id,remote_id,sections,label,candidate_id,remote_candidate_id,application_id,remote_application_id,interview_id,remote_interview_id,author_id,remote_author_id,overall_recommendation,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationScorecard(
@@ -932,7 +932,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListApplicationChangesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values',
+    fields: 'event_id,remote_event_id,created_at,effective_at,change_type,actor,new_values,unified_custom_fields',
     filter: new Operations\AtsListApplicationChangesQueryParamFilter(
         createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1007,7 +1007,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListApplicationNotesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at',
+    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields',
     filter: new Operations\AtsListApplicationNotesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1164,7 +1164,7 @@ $request = new Operations\AtsGetApplicationNoteRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at',
+    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationNote(
@@ -1317,7 +1317,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListApplicationsScheduledInterviewsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at',
+    fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListApplicationsScheduledInterviewsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1392,7 +1392,7 @@ $request = new Operations\AtsGetApplicationScheduledInterviewRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate',
+    fields: 'id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationScheduledInterview(
@@ -1610,7 +1610,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListApplicationDocumentsRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format',
+    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields',
     filter: new Operations\AtsListApplicationDocumentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -1685,7 +1685,7 @@ $request = new Operations\AtsGetApplicationDocumentRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format',
+    fields: 'id,remote_id,name,type,category,category_id,remote_category_id,contents,created_at,updated_at,remote_url,file_format,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationDocument(
@@ -1753,7 +1753,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListCandidatesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at',
+    fields: 'id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListCandidatesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
@@ -1933,7 +1933,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetCandidateRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at',
+    fields: 'id,remote_id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,country,title,application_ids,remote_application_ids,hired_at,custom_fields,created_at,updated_at,unified_custom_fields',
     include: 'custom_fields',
 );
 
@@ -2110,7 +2110,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListCandidateNotesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at',
+    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields',
     filter: new Operations\AtsListCandidateNotesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2267,7 +2267,7 @@ $request = new Operations\AtsGetCandidateNoteRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at',
+    fields: 'id,remote_id,content,author_id,remote_author_id,visibility,created_at,updated_at,deleted_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getCandidateNote(
@@ -2334,7 +2334,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListApplicationCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: null,
 );
 
@@ -2406,7 +2406,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetApplicationCustomFieldDefinitionRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: null,
 );
 
@@ -2475,7 +2475,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListCandidateCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\AtsListCandidateCustomFieldDefinitionsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2550,7 +2550,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetCandidateCustomFieldDefinitionRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\AtsGetCandidateCustomFieldDefinitionQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2621,7 +2621,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListJobCustomFieldDefinitionsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\AtsListJobCustomFieldDefinitionsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2696,7 +2696,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetJobCustomFieldDefinitionRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,type,options',
+    fields: 'id,remote_id,name,description,type,options,unified_custom_fields',
     filter: new Operations\AtsGetJobCustomFieldDefinitionQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2767,7 +2767,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListDepartmentsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name',
+    fields: 'id,remote_id,name,unified_custom_fields',
     filter: new Operations\AtsListDepartmentsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2841,7 +2841,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetDepartmentRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name',
+    fields: 'id,remote_id,name,unified_custom_fields',
 );
 
 $response = $sdk->ats->getDepartment(
@@ -2911,7 +2911,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListInterviewStagesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,order,created_at,updated_at',
+    fields: 'id,remote_id,name,order,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListInterviewStagesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -2987,7 +2987,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetInterviewStageRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,order,created_at,updated_at',
+    fields: 'id,remote_id,name,order,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getInterviewStage(
@@ -3055,7 +3055,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListApplicationStagesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,order,created_at,updated_at',
+    fields: 'id,remote_id,name,order,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListApplicationStagesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3129,7 +3129,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetApplicationStageRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,order,created_at,updated_at',
+    fields: 'id,remote_id,name,order,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationStage(
@@ -3197,7 +3197,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListInterviewsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at',
+    fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListInterviewsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
@@ -3272,7 +3272,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetInterviewRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at',
+    fields: 'id,remote_id,application_id,remote_application_id,interview_stage_id,remote_interview_stage_id,interview_stage,status,interview_status,interviewer_ids,remote_interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getInterview(
@@ -3340,7 +3340,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListJobsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at',
+    fields: 'id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListJobsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
@@ -3542,7 +3542,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsListJobApplicationStagesRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,order,created_at,updated_at',
+    fields: 'id,remote_id,name,order,created_at,updated_at,unified_custom_fields',
     filter: new Operations\AtsListJobApplicationStagesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -3616,7 +3616,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetJobRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at',
+    fields: 'id,remote_id,code,title,description,status,job_status,department_ids,remote_department_ids,location_ids,remote_location_ids,hiring_team,interview_stages,confidential,custom_fields,created_at,updated_at,unified_custom_fields',
     expand: 'job_postings,interview_stages',
     include: 'custom_fields',
 );
@@ -3792,7 +3792,7 @@ $request = new Operations\AtsGetJobApplicationStageRequest(
     xAccountId: '<id>',
     id: '<id>',
     subResourceId: '<id>',
-    fields: 'id,remote_id,name,order,created_at,updated_at',
+    fields: 'id,remote_id,name,order,created_at,updated_at,unified_custom_fields',
 );
 
 $response = $sdk->ats->getJobApplicationStage(
@@ -3859,7 +3859,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListListsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,created_at,updated_at,items,type',
+    fields: 'id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields',
     filter: null,
 );
 
@@ -3931,7 +3931,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetListRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,created_at,updated_at,items,type',
+    fields: 'id,remote_id,name,created_at,updated_at,items,type,unified_custom_fields',
 );
 
 $response = $sdk->ats->getList(
@@ -3999,7 +3999,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListLocationsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name',
+    fields: 'id,remote_id,name,unified_custom_fields',
     filter: new Operations\AtsListLocationsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4073,7 +4073,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetLocationRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name',
+    fields: 'id,remote_id,name,unified_custom_fields',
 );
 
 $response = $sdk->ats->getLocation(
@@ -4141,7 +4141,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListRejectedReasonsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,label,type,rejected_reason_type',
+    fields: 'id,remote_id,label,type,rejected_reason_type,unified_custom_fields',
     filter: new Operations\AtsListRejectedReasonsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4215,7 +4215,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetRejectedReasonRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,label,type,rejected_reason_type',
+    fields: 'id,remote_id,label,type,rejected_reason_type,unified_custom_fields',
 );
 
 $response = $sdk->ats->getRejectedReason(
@@ -4282,7 +4282,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListUsersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,email,phone',
+    fields: 'id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields',
     filter: null,
 );
 
@@ -4354,7 +4354,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetUserRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,first_name,last_name,name,email,phone',
+    fields: 'id,remote_id,first_name,last_name,name,email,phone,unified_custom_fields',
 );
 
 $response = $sdk->ats->getUser(
@@ -4422,7 +4422,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListJobPostingsRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at',
+    fields: 'id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields',
     filter: new Operations\AtsListJobPostingsQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
         createdAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
@@ -4498,7 +4498,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetJobPostingRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at',
+    fields: 'id,remote_id,title,locations,internal,status,job_id,remote_job_id,content,compensation,employment_type,employment_contract_type,external_url,external_apply_url,questionnaires,start_date,updated_at,created_at,unified_custom_fields',
     include: 'questionnaires',
 );
 
@@ -4567,7 +4567,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListOffersRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history',
+    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields',
     filter: new Operations\AtsListOffersQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -4724,7 +4724,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetOfferRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history',
+    fields: 'id,remote_id,application_id,remote_application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history,unified_custom_fields',
 );
 
 $response = $sdk->ats->getOffer(
@@ -5158,7 +5158,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListBackgroundCheckPackagesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,description,tests',
+    fields: 'id,remote_id,name,description,tests,unified_custom_fields',
     filter: new Operations\AtsListBackgroundCheckPackagesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -5310,7 +5310,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetBackgroundCheckPackageRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,description,tests',
+    fields: 'id,remote_id,name,description,tests,unified_custom_fields',
 );
 
 $response = $sdk->ats->getBackgroundCheckPackage(
@@ -5748,7 +5748,7 @@ $sdk = client\StackOne::builder()
 
 $request = new Operations\AtsListApplicationDocumentCategoriesRequest(
     xAccountId: '<id>',
-    fields: 'id,remote_id,name,active',
+    fields: 'id,remote_id,name,active,unified_custom_fields',
     filter: new Operations\AtsListApplicationDocumentCategoriesQueryParamFilter(
         updatedAfter: Utils\Utils::parseDateTime('2020-01-01T00:00:00.000Z'),
     ),
@@ -5822,7 +5822,7 @@ $sdk = client\StackOne::builder()
 $request = new Operations\AtsGetApplicationDocumentCategoryRequest(
     xAccountId: '<id>',
     id: '<id>',
-    fields: 'id,remote_id,name,active',
+    fields: 'id,remote_id,name,active,unified_custom_fields',
 );
 
 $response = $sdk->ats->getApplicationDocumentCategory(
