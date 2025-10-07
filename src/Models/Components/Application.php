@@ -78,6 +78,7 @@ class Application
     /**
      *
      * @var ?ApplicationInterviewStage $interviewStage
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage')]
     #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ApplicationInterviewStage|null')]
@@ -85,9 +86,19 @@ class Application
     public ?ApplicationInterviewStage $interviewStage = null;
 
     /**
+     *
+     * @var ?ApplicationApplicationStage $applicationStage
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_stage')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\ApplicationApplicationStage|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ApplicationApplicationStage $applicationStage = null;
+
+    /**
      * Unique identifier of the interview stage
      *
      * @var ?string $interviewStageId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('interview_stage_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -97,10 +108,29 @@ class Application
      * Provider's unique identifier of the interview stage
      *
      * @var ?string $remoteInterviewStageId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('remote_interview_stage_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteInterviewStageId = null;
+
+    /**
+     * Unique identifier of the application stage
+     *
+     * @var ?string $applicationStageId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application_stage_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $applicationStageId = null;
+
+    /**
+     * Unique identifier of the application stage
+     *
+     * @var ?string $remoteApplicationStageId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('remote_application_stage_id')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $remoteApplicationStageId = null;
 
     /**
      * $rejectedReasons
@@ -286,8 +316,11 @@ class Application
      * @param  ?string  $jobId
      * @param  ?string  $remoteJobId
      * @param  ?ApplicationInterviewStage  $interviewStage
+     * @param  ?ApplicationApplicationStage  $applicationStage
      * @param  ?string  $interviewStageId
      * @param  ?string  $remoteInterviewStageId
+     * @param  ?string  $applicationStageId
+     * @param  ?string  $remoteApplicationStageId
      * @param  ?array<RejectedReason>  $rejectedReasons
      * @param  ?array<string>  $rejectedReasonIds
      * @param  ?array<string>  $remoteRejectedReasonIds
@@ -308,7 +341,7 @@ class Application
      * @param  ?array<CustomFields>  $customFields
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $candidateId = null, ?string $remoteCandidateId = null, ?string $jobId = null, ?string $remoteJobId = null, ?ApplicationInterviewStage $interviewStage = null, ?string $interviewStageId = null, ?string $remoteInterviewStageId = null, ?array $rejectedReasons = null, ?array $rejectedReasonIds = null, ?array $remoteRejectedReasonIds = null, ?\DateTime $rejectedAt = null, ?string $locationId = null, ?string $remoteLocationId = null, ?array $locationIds = null, ?array $remoteLocationIds = null, ?ApplicationStatus $applicationStatus = null, ?array $questionnaires = null, ?ApplicationCandidate $candidate = null, ?array $attachments = null, ?array $documents = null, ?array $resultLinks = null, ?Source $source = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $customFields = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $candidateId = null, ?string $remoteCandidateId = null, ?string $jobId = null, ?string $remoteJobId = null, ?ApplicationInterviewStage $interviewStage = null, ?ApplicationApplicationStage $applicationStage = null, ?string $interviewStageId = null, ?string $remoteInterviewStageId = null, ?string $applicationStageId = null, ?string $remoteApplicationStageId = null, ?array $rejectedReasons = null, ?array $rejectedReasonIds = null, ?array $remoteRejectedReasonIds = null, ?\DateTime $rejectedAt = null, ?string $locationId = null, ?string $remoteLocationId = null, ?array $locationIds = null, ?array $remoteLocationIds = null, ?ApplicationStatus $applicationStatus = null, ?array $questionnaires = null, ?ApplicationCandidate $candidate = null, ?array $attachments = null, ?array $documents = null, ?array $resultLinks = null, ?Source $source = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?array $customFields = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -318,8 +351,11 @@ class Application
         $this->jobId = $jobId;
         $this->remoteJobId = $remoteJobId;
         $this->interviewStage = $interviewStage;
+        $this->applicationStage = $applicationStage;
         $this->interviewStageId = $interviewStageId;
         $this->remoteInterviewStageId = $remoteInterviewStageId;
+        $this->applicationStageId = $applicationStageId;
+        $this->remoteApplicationStageId = $remoteApplicationStageId;
         $this->rejectedReasons = $rejectedReasons;
         $this->rejectedReasonIds = $rejectedReasonIds;
         $this->remoteRejectedReasonIds = $remoteRejectedReasonIds;

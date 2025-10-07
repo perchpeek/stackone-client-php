@@ -45,17 +45,27 @@ class AtsListApplicationsQueryParamFilter
     public ?string $stage = null;
 
     /**
+     * Filter to select applications by application_stage_id
+     *
+     * @var ?string $applicationStageId
+     */
+    #[SpeakeasyMetadata('queryParam:name=application_stage_id')]
+    public ?string $applicationStageId = null;
+
+    /**
      * @param  ?\DateTime  $updatedAfter
      * @param  ?\DateTime  $createdAfter
      * @param  ?string  $jobId
      * @param  ?string  $stage
+     * @param  ?string  $applicationStageId
      * @phpstan-pure
      */
-    public function __construct(?\DateTime $updatedAfter = null, ?\DateTime $createdAfter = null, ?string $jobId = null, ?string $stage = null)
+    public function __construct(?\DateTime $updatedAfter = null, ?\DateTime $createdAfter = null, ?string $jobId = null, ?string $stage = null, ?string $applicationStageId = null)
     {
         $this->updatedAfter = $updatedAfter;
         $this->createdAfter = $createdAfter;
         $this->jobId = $jobId;
         $this->stage = $stage;
+        $this->applicationStageId = $applicationStageId;
     }
 }

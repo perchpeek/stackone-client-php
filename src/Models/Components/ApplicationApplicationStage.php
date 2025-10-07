@@ -9,12 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/**
- * ApplicationInterviewStage
- *
- * @deprecated  class: This will be removed in a future release, please migrate away from it as soon as possible.
- */
-class ApplicationInterviewStage
+class ApplicationApplicationStage
 {
     /**
      * Unique identifier
@@ -45,6 +40,7 @@ class ApplicationInterviewStage
     public ?array $unifiedCustomFields = null;
 
     /**
+     * Application Stage name
      *
      * @var ?string $name
      */
@@ -53,6 +49,7 @@ class ApplicationInterviewStage
     public ?string $name = null;
 
     /**
+     * Application Stage order
      *
      * @var ?float $order
      */
@@ -61,7 +58,7 @@ class ApplicationInterviewStage
     public ?float $order = null;
 
     /**
-     * Interview Stage created date
+     * Application Stage created date
      *
      * @var ?\DateTime $createdAt
      */
@@ -70,7 +67,7 @@ class ApplicationInterviewStage
     public ?\DateTime $createdAt = null;
 
     /**
-     * Interview Stage updated date
+     * Application Stage updated date
      *
      * @var ?\DateTime $updatedAt
      */

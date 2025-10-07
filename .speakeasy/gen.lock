@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 3759371f-a095-4585-b437-50529a0eb248
 management:
-  docChecksum: 2d9b70699c7e0695169da901996a30b7
+  docChecksum: f71b25f335657c47adac9c25b31d4aba
   docVersion: 1.0.0
-  speakeasyVersion: 1.634.2
-  generationVersion: 2.721.3
-  releaseVersion: 0.26.1
-  configChecksum: 743a501f3eabcf4068c0d6d5b94b79f2
+  speakeasyVersion: 1.635.2
+  generationVersion: 2.722.5
+  releaseVersion: 0.26.2
+  configChecksum: eaa6d0482d68297d11eb6f5f275dfaca
   repoURL: https://github.com/StackOneHQ/stackone-client-php.git
   installationURL: https://github.com/StackOneHQ/stackone-client-php
   published: true
@@ -19,14 +19,14 @@ features:
     flattening: 2.81.1
     globalSecurity: 2.81.9
     globalServerURLs: 2.82.2
-    groups: 2.81.2
+    groups: 2.81.3
     methodArguments: 0.1.0
     methodSecurity: 2.82.2
     nameOverrides: 2.81.2
     nullables: 1.0.1
     pagination: 0.1.4
     responseFormat: 0.1.0
-    retries: 0.1.0
+    retries: 0.1.1
     unions: 0.1.5
 generatedFiles:
   - .gitattributes
@@ -116,6 +116,7 @@ generatedFiles:
   - docs/Models/Components/AnswerType.md
   - docs/Models/Components/AnswerValue.md
   - docs/Models/Components/Application.md
+  - docs/Models/Components/ApplicationApplicationStage.md
   - docs/Models/Components/ApplicationAttachment.md
   - docs/Models/Components/ApplicationAttachmentSourceValue.md
   - docs/Models/Components/ApplicationAttachmentSourceValue4.md
@@ -2448,7 +2449,6 @@ generatedFiles:
   - docs/sdks/proxy/README.md
   - docs/sdks/requestlogs/README.md
   - docs/sdks/screening/README.md
-  - docs/sdks/stackone/README.md
   - docs/sdks/ticketing/README.md
   - phpstan.neon
   - phpunit.xml
@@ -2552,6 +2552,7 @@ generatedFiles:
   - src/Models/Components/AnswerType.php
   - src/Models/Components/AnswerValue.php
   - src/Models/Components/Application.php
+  - src/Models/Components/ApplicationApplicationStage.php
   - src/Models/Components/ApplicationAttachment.php
   - src/Models/Components/ApplicationAttachmentSourceValue4.php
   - src/Models/Components/ApplicationAttachmentValue.php
@@ -7639,7 +7640,7 @@ examples:
     speakeasy-default-ats-list-applications:
       parameters:
         query:
-          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
+          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
           filter: {"updated_after": "2020-01-01T00:00:00.000Z", "created_after": "2020-01-01T00:00:00.000Z"}
           expand: "documents"
           include: "attachments,custom_fields"
@@ -7712,14 +7713,14 @@ examples:
         path:
           id: "<id>"
         query:
-          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
+          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
           expand: "documents"
           include: "attachments,custom_fields"
         header:
           x-account-id: "<id>"
       responses:
         "200":
-          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "remote_candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "remote_job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "interview_stage": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "remote_interview_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "rejected_reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "label": "Failed Phone Screen", "rejected_reason_type": {"value": "rejected_by_organization", "source_value": "RejectedByOrg"}}], "rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "remote_rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "rejected_at": "2021-01-01T01:01:01.000Z", "location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "remote_location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "application_status": {"value": "hired", "source_value": "Hired"}, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "candidate": null, "documents": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}], "result_links": [{"label": "test result link", "url": "http://example.com/test-result/4565765/data"}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}}
+          application/json: {"data": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "remote_candidate_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48", "job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "remote_job_id": "4071538b-3cac-4fbf-ac76-f78ed250ffdd", "application_stage": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "name": "Review", "order": 1, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z"}, "application_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "remote_application_stage_id": "18bcbb1b-3cbc-4198-a999-460861d19480", "rejected_reasons": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}, "label": "Failed Phone Screen", "rejected_reason_type": {"value": "rejected_by_organization", "source_value": "RejectedByOrg"}}], "rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "remote_rejected_reason_ids": ["f223d7f6-908b-48f0-9237-b201c307f609"], "rejected_at": "2021-01-01T01:01:01.000Z", "location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "remote_location_ids": ["dd8d41d1-5eb8-4408-9c87-9ba44604eae4"], "application_status": {"value": "hired", "source_value": "Hired"}, "questionnaires": [{"id": "right_to_work", "answers": [{"id": "answer1", "type": {"value": "short_text", "source_value": "Short Text"}, "values": ["Yes"]}]}], "candidate": null, "documents": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "My Document", "category": {}, "category_id": "6530", "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-02T01:01:01.000Z", "remote_url": "https://example.com/file.pdf", "file_format": {"value": "pdf", "source_value": "application/pdf"}, "unified_custom_fields": {"my_project_custom_field_1": "REF-1236", "my_project_custom_field_2": "some other value"}}], "result_links": [{"label": "test result link", "url": "http://example.com/test-result/4565765/data"}], "source": {"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "LinkedIn"}, "created_at": "2021-01-01T01:01:01.000Z", "updated_at": "2021-01-01T01:01:01.000Z", "custom_fields": [{"id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "remote_id": "8187e5da-dc77-475e-9949-af0f1fa4e4e3", "name": "Training Completion Status", "value": "Completed", "value_id": "value_456", "remote_value_id": "e3cb75bf-aa84-466e-a6c1-b8322b257a48"}]}}
         "400":
           application/json: {"statusCode": 400, "message": "Bad Request", "timestamp": "2023-05-30T00:00:00.000Z", "data": {"statusCode": 400, "message": "Bad Request", "headers": {}}, "provider_errors": [{"status": 400, "url": "https://api.provider.com/v1/resource", "raw": {}, "headers": {}}]}
         "401":
@@ -8228,7 +8229,7 @@ examples:
           id: "<id>"
           subResourceId: "<id>"
         query:
-          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
+          fields: "id,remote_id,candidate_id,remote_candidate_id,job_id,remote_job_id,job_posting_id,remote_job_posting_id,interview_stage,interview_stage_id,remote_interview_stage_id,application_stage,application_stage_id,remote_application_stage_id,rejected_reason,rejected_reason_id,remote_rejected_reason_id,rejected_reason_ids,remote_rejected_reason_ids,rejected_reasons,rejected_at,location_id,remote_location_id,location_ids,remote_location_ids,status,application_status,questionnaires,attachments,result_links,source,created_at,updated_at,documents,custom_fields,candidate,unified_custom_fields"
         header:
           x-account-id: "<id>"
       responses:
@@ -15118,4 +15119,4 @@ examples:
           application/json: {"statusCode": 502, "message": "Bad Gateway", "timestamp": "2023-05-30T00:00:00.000Z"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes Detected:\n* `stackone->actions->listActionsMeta()`:  `response.data->[]->actions->[]` **Changed** **Breaking** :warning:\n* `stackone->actions->rpcAction()`:  `request` **Changed** **Breaking** :warning:\n* `stackone->hris->listShifts()`: \n  *  `request->filter` **Changed** **Breaking** :warning:\n  *  `response.data->[]` **Changed** **Breaking** :warning:\n* `stackone->hris->getShift()`:  `response.data` **Changed** **Breaking** :warning:\n* `stackone->messaging->listConversationMessages()`:  `response.data->[]->attachments->[]` **Changed** **Breaking** :warning:\n* `stackone->messaging->getMessage()`:  `response.data->attachments->[]` **Changed** **Breaking** :warning:\n* `stackone->hris->listEmployeeShifts()`: **Added**\n* `stackone->hris->getEmployeeShift()`: **Added**\n* `stackone->hris->listEmployeeTimeOffRequests()`: \n  *  `request->filter` **Changed**\n* `stackone->hris->listTimeOffRequests()`: \n  *  `request->filter` **Changed**\n* `stackone->hris->listTimeOffPolicies()`: \n  *  `request->filter` **Changed**\n* `stackone->hris->listEmployeeTimeOffPolicies()`: \n  *  `request->filter` **Changed**\n"
+releaseNotes: "## Php SDK Changes Detected:\n* `stackone->ats->listApplications()`: \n  *  `request->filter` **Changed**\n  *  `response.data->[]` **Changed**\n* `stackone->ats->getApplication()`:  `response.data` **Changed**\n"

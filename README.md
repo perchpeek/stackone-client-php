@@ -509,7 +509,6 @@ if ($response->statusCode === 200) {
 * [webhookScreeningResult](docs/sdks/screening/README.md#webhookscreeningresult) - Webhook Screening Result
 * [createScreeningOrder](docs/sdks/screening/README.md#createscreeningorder) - Create Screening Order
 
-
 ### [ticketing](docs/sdks/ticketing/README.md)
 
 * [listTickets](docs/sdks/ticketing/README.md#listtickets) - List Tickets
