@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
+/** The StackOne unified result status. */
 enum AssignmentResultValue: string
 {
     case Pass = 'Pass';

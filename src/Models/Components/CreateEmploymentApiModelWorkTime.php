@@ -21,23 +21,23 @@ class CreateEmploymentApiModelWorkTime
     public ?string $duration = null;
 
     /**
-     * The duration unit of the work time
+     * The period of the work time
      *
-     * @var ?CreateEmploymentApiModelDurationUnit $durationUnit
+     * @var ?CreateEmploymentApiModelPeriod $period
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('duration_unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelDurationUnit|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('period')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CreateEmploymentApiModelPeriod|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreateEmploymentApiModelDurationUnit $durationUnit = null;
+    public ?CreateEmploymentApiModelPeriod $period = null;
 
     /**
      * @param  ?string  $duration
-     * @param  ?CreateEmploymentApiModelDurationUnit  $durationUnit
+     * @param  ?CreateEmploymentApiModelPeriod  $period
      * @phpstan-pure
      */
-    public function __construct(?string $duration = null, ?CreateEmploymentApiModelDurationUnit $durationUnit = null)
+    public function __construct(?string $duration = null, ?CreateEmploymentApiModelPeriod $period = null)
     {
         $this->duration = $duration;
-        $this->durationUnit = $durationUnit;
+        $this->period = $period;
     }
 }

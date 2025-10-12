@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** EmploymentDurationUnit - The duration unit of the work time */
-class EmploymentDurationUnit
+/** Period - The period of the work time */
+class Period
 {
     /**
      * The unified value for the period.

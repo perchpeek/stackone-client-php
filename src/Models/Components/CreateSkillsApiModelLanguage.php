@@ -13,7 +13,7 @@ namespace StackOne\client\Models\Components;
 class CreateSkillsApiModelLanguage
 {
     /**
-     * The Locale Code of the language
+     * The unified locale code. For write operations: provide one of the listed enum values, or omit/set to "unmapped_value" to use source_value instead.
      *
      * @var ?CreateSkillsApiModelLanguageValue $value
      */
@@ -23,6 +23,7 @@ class CreateSkillsApiModelLanguage
     public ?CreateSkillsApiModelLanguageValue $value = null;
 
     /**
+     * For read operations: the original language code from the provider. For write operations: fallback value used when value is omitted or "unmapped_value". You must ensure this matches the provider's format.
      *
      * @var string|float|bool|CreateSkillsApiModelSourceValueLanguage4|array<mixed>|null $sourceValue
      */

@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
+/** The StackOne unified content type. */
 enum LmsCreateContentRequestDtoValue: string
 {
     case Video = 'video';

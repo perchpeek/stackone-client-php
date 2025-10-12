@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
+/** The StackOne unified learning object type. */
 enum CompletionLearningObjectTypeValue: string
 {
     case Content = 'content';

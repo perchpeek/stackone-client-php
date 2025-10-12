@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
+/** The StackOne unified assignment status. */
 enum LmsCreateAssignmentRequestDtoValue: string
 {
     case Pending = 'pending';

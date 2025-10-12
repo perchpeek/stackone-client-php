@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class LmsCreateContentRequestDtoContentType
 {
     /**
+     * The StackOne unified content type.
      *
      * @var ?LmsCreateContentRequestDtoValue $value
      */
@@ -22,6 +23,7 @@ class LmsCreateContentRequestDtoContentType
     public ?LmsCreateContentRequestDtoValue $value = null;
 
     /**
+     * The original value from the provider before normalization.
      *
      * @var string|float|bool|LmsCreateContentRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */

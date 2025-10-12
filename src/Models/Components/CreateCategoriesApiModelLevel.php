@@ -17,6 +17,7 @@ namespace StackOne\client\Models\Components;
 class CreateCategoriesApiModelLevel
 {
     /**
+     * The unified category level. For write operations: provide one of the listed enum values, or omit/set to "unmapped_value" to use source_value instead.
      *
      * @var ?CreateCategoriesApiModelLevelValue $value
      */
@@ -26,6 +27,7 @@ class CreateCategoriesApiModelLevel
     public ?CreateCategoriesApiModelLevelValue $value = null;
 
     /**
+     * For read operations: the original category level from the provider. For write operations: fallback value used when value is omitted or "unmapped_value". You must ensure this matches the provider's format.
      *
      * @var string|float|bool|CreateCategoriesApiModelSourceValueLevel4|array<mixed>|null $sourceValue
      */

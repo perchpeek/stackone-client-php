@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** HrisUpdateEmployeeRequestDtoDurationUnit - The duration unit of the work time */
-class HrisUpdateEmployeeRequestDtoDurationUnit
+/** HrisUpdateEmployeeRequestDtoPeriod - The period of the work time */
+class HrisUpdateEmployeeRequestDtoPeriod
 {
     /**
      * The unified value for the period.

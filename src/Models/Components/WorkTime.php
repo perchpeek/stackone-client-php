@@ -21,23 +21,23 @@ class WorkTime
     public ?string $duration = null;
 
     /**
-     * The duration unit of the work time
+     * The period of the work time
      *
-     * @var ?EmploymentDurationUnit $durationUnit
+     * @var ?Period $period
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('duration_unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\EmploymentDurationUnit|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('period')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\Period|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?EmploymentDurationUnit $durationUnit = null;
+    public ?Period $period = null;
 
     /**
      * @param  ?string  $duration
-     * @param  ?EmploymentDurationUnit  $durationUnit
+     * @param  ?Period  $period
      * @phpstan-pure
      */
-    public function __construct(?string $duration = null, ?EmploymentDurationUnit $durationUnit = null)
+    public function __construct(?string $duration = null, ?Period $period = null)
     {
         $this->duration = $duration;
-        $this->durationUnit = $durationUnit;
+        $this->period = $period;
     }
 }

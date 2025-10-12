@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class LearningObjectType
 {
     /**
+     * The StackOne unified learning object type.
      *
      * @var ?AssignmentLearningObjectTypeValue $value
      */
@@ -22,6 +23,7 @@ class LearningObjectType
     public ?AssignmentLearningObjectTypeValue $value = null;
 
     /**
+     * The original learning object type from the provider before normalization.
      *
      * @var string|float|bool|AssignmentSourceValueLearningObjectType4|array<mixed>|null $sourceValue
      */

@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** CreateEmploymentApiModelDurationUnit - The duration unit of the work time */
-class CreateEmploymentApiModelDurationUnit
+/** CreateEmploymentApiModelPeriod - The period of the work time */
+class CreateEmploymentApiModelPeriod
 {
     /**
      * The unified value for the period.
