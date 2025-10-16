@@ -17,6 +17,7 @@ namespace StackOne\client\Models\Components;
 class SkillsLevel
 {
     /**
+     * The unified skill level. For write operations: provide one of the listed enum values, or omit/set to "unmapped_value" to use source_value instead.
      *
      * @var ?SkillsLevelValue $value
      */
@@ -26,6 +27,7 @@ class SkillsLevel
     public ?SkillsLevelValue $value = null;
 
     /**
+     * For read operations: the original skill level from the provider. For write operations: fallback value used when value is omitted or "unmapped_value". You must ensure this matches the provider's format.
      *
      * @var string|float|bool|SkillsSourceValueLevel4|array<mixed>|null $sourceValue
      */

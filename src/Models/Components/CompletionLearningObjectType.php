@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class CompletionLearningObjectType
 {
     /**
+     * The StackOne unified learning object type.
      *
      * @var ?CompletionLearningObjectTypeValue $value
      */
@@ -22,6 +23,7 @@ class CompletionLearningObjectType
     public ?CompletionLearningObjectTypeValue $value = null;
 
     /**
+     * The original learning object type from the provider before normalization.
      *
      * @var string|float|bool|CompletionSourceValueLearningObjectType4|array<mixed>|null $sourceValue
      */

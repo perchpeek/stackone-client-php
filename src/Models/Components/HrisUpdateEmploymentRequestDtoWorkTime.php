@@ -21,23 +21,23 @@ class HrisUpdateEmploymentRequestDtoWorkTime
     public ?string $duration = null;
 
     /**
-     * The duration unit of the work time
+     * The period of the work time
      *
-     * @var ?HrisUpdateEmploymentRequestDtoDurationUnit $durationUnit
+     * @var ?HrisUpdateEmploymentRequestDtoPeriod $period
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('duration_unit')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisUpdateEmploymentRequestDtoDurationUnit|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('period')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HrisUpdateEmploymentRequestDtoPeriod|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?HrisUpdateEmploymentRequestDtoDurationUnit $durationUnit = null;
+    public ?HrisUpdateEmploymentRequestDtoPeriod $period = null;
 
     /**
      * @param  ?string  $duration
-     * @param  ?HrisUpdateEmploymentRequestDtoDurationUnit  $durationUnit
+     * @param  ?HrisUpdateEmploymentRequestDtoPeriod  $period
      * @phpstan-pure
      */
-    public function __construct(?string $duration = null, ?HrisUpdateEmploymentRequestDtoDurationUnit $durationUnit = null)
+    public function __construct(?string $duration = null, ?HrisUpdateEmploymentRequestDtoPeriod $period = null)
     {
         $this->duration = $duration;
-        $this->durationUnit = $durationUnit;
+        $this->period = $period;
     }
 }

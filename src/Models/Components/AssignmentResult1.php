@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class AssignmentResult1
 {
     /**
+     * The StackOne unified result status.
      *
      * @var ?AssignmentResultValue $value
      */
@@ -22,6 +23,7 @@ class AssignmentResult1
     public ?AssignmentResultValue $value = null;
 
     /**
+     * The original result status from the provider before normalization.
      *
      * @var string|float|bool|AssignmentSourceValueResult4|array<mixed>|null $sourceValue
      */

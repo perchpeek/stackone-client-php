@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class LmsCreateCompletionRequestDtoResult
 {
     /**
+     * The StackOne unified result status.
      *
      * @var ?LmsCreateCompletionRequestDtoValue $value
      */
@@ -22,6 +23,7 @@ class LmsCreateCompletionRequestDtoResult
     public ?LmsCreateCompletionRequestDtoValue $value = null;
 
     /**
+     * The original result status from the provider before normalization.
      *
      * @var string|float|bool|LmsCreateCompletionRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */

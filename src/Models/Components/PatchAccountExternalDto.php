@@ -129,7 +129,7 @@ class PatchAccountExternalDto
      * @param  ?PatchAccountExternalDtoType  $type
      * @phpstan-pure
      */
-    public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?PatchAccountExternalDtoSetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null, ?PatchAccountExternalDtoMetadata $metadata = null, ?PatchAccountExternalDtoType $type = PatchAccountExternalDtoType::Production)
+    public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?PatchAccountExternalDtoSetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null, ?PatchAccountExternalDtoMetadata $metadata = null, ?PatchAccountExternalDtoType $type = null)
     {
         $this->provider = $provider;
         $this->originOwnerId = $originOwnerId;

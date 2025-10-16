@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class AssignmentStatus
 {
     /**
+     * The StackOne unified assignment status.
      *
      * @var ?AssignmentValue $value
      */
@@ -22,6 +23,7 @@ class AssignmentStatus
     public ?AssignmentValue $value = null;
 
     /**
+     * The original status value from the provider before normalization.
      *
      * @var string|float|bool|AssignmentSourceValue4|array<mixed>|null $sourceValue
      */

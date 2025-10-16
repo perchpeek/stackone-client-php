@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class LmsCreateAssignmentRequestDtoStatus
 {
     /**
+     * The StackOne unified assignment status.
      *
      * @var ?LmsCreateAssignmentRequestDtoValue $value
      */
@@ -22,6 +23,7 @@ class LmsCreateAssignmentRequestDtoStatus
     public ?LmsCreateAssignmentRequestDtoValue $value = null;
 
     /**
+     * The original status value from the provider before normalization.
      *
      * @var string|float|bool|LmsCreateAssignmentRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */

@@ -2723,7 +2723,7 @@ $hrisCreateEmploymentRequestDto = new Components\HrisCreateEmploymentRequestDto(
     ),
     workTime: new Components\HrisCreateEmploymentRequestDtoWorkTime(
         duration: 'P0Y0M0DT8H0M0S',
-        durationUnit: new Components\HrisCreateEmploymentRequestDtoDurationUnit(
+        period: new Components\HrisCreateEmploymentRequestDtoPeriod(
             value: Components\HrisCreateEmploymentRequestDtoWorkTimeValue::Month,
         ),
     ),
@@ -2909,7 +2909,7 @@ $hrisUpdateEmploymentRequestDto = new Components\HrisUpdateEmploymentRequestDto(
     ),
     workTime: new Components\HrisUpdateEmploymentRequestDtoWorkTime(
         duration: 'P0Y0M0DT8H0M0S',
-        durationUnit: new Components\HrisUpdateEmploymentRequestDtoDurationUnit(
+        period: new Components\HrisUpdateEmploymentRequestDtoPeriod(
             value: Components\HrisUpdateEmploymentRequestDtoWorkTimeValue::Month,
         ),
     ),

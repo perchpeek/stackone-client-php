@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class LmsUpsertContentRequestDtoContentType
 {
     /**
+     * The content type for write operations. Provide one of the listed enum values. If omitted or set to "unmapped_value", the source_value will be sent to the provider instead.
      *
      * @var ?LmsUpsertContentRequestDtoValue $value
      */
@@ -22,6 +23,7 @@ class LmsUpsertContentRequestDtoContentType
     public ?LmsUpsertContentRequestDtoValue $value = null;
 
     /**
+     * The provider-specific value to use when value is omitted or set to "unmapped_value". You are responsible for ensuring this matches the provider's expected format.
      *
      * @var string|float|bool|LmsUpsertContentRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */

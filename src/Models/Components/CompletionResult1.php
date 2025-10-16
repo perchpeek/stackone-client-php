@@ -13,6 +13,7 @@ namespace StackOne\client\Models\Components;
 class CompletionResult1
 {
     /**
+     * The StackOne unified result status.
      *
      * @var ?CompletionValue $value
      */
@@ -22,6 +23,7 @@ class CompletionResult1
     public ?CompletionValue $value = null;
 
     /**
+     * The original result status from the provider before normalization.
      *
      * @var string|float|bool|CompletionSourceValue4|array<mixed>|null $sourceValue
      */
