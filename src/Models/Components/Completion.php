@@ -40,6 +40,15 @@ class Completion
     public ?array $unifiedCustomFields = null;
 
     /**
+     * The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
+     *
+     * @var ?string $learningObjectExternalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $learningObjectExternalReference = null;
+
+    /**
      * The external reference associated with this completion
      *
      * @var ?string $externalReference
@@ -113,15 +122,6 @@ class Completion
     #[\Speakeasy\Serializer\Annotation\SerializedName('remote_learning_object_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $remoteLearningObjectId = null;
-
-    /**
-     * The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
-     *
-     * @var ?string $learningObjectExternalReference
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $learningObjectExternalReference = null;
 
     /**
      * The user ID associated with this completion
@@ -233,6 +233,7 @@ class Completion
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
+     * @param  ?string  $learningObjectExternalReference
      * @param  ?string  $externalReference
      * @param  ?CompletionResult1  $result
      * @param  ?\DateTime  $completedAt
@@ -241,7 +242,6 @@ class Completion
      * @param  ?CompletionLearningObjectType  $learningObjectType
      * @param  ?string  $learningObjectId
      * @param  ?string  $remoteLearningObjectId
-     * @param  ?string  $learningObjectExternalReference
      * @param  ?string  $userId
      * @param  ?string  $remoteUserId
      * @param  ?string  $timeSpent
@@ -255,11 +255,12 @@ class Completion
      * @param  ?string  $remoteCourseId
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $externalReference = null, ?CompletionResult1 $result = null, ?\DateTime $completedAt = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $learningObjectExternalReference = null, ?string $userId = null, ?string $remoteUserId = null, ?string $timeSpent = null, ?string $certificateUrl = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $learningObjectExternalReference = null, ?string $externalReference = null, ?CompletionResult1 $result = null, ?\DateTime $completedAt = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null, ?CompletionLearningObjectType $learningObjectType = null, ?string $learningObjectId = null, ?string $remoteLearningObjectId = null, ?string $userId = null, ?string $remoteUserId = null, ?string $timeSpent = null, ?string $certificateUrl = null, ?string $externalId = null, ?string $contentExternalReference = null, ?string $remoteExternalId = null, ?string $contentId = null, ?string $remoteContentId = null, ?string $courseId = null, ?string $remoteCourseId = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
+        $this->learningObjectExternalReference = $learningObjectExternalReference;
         $this->externalReference = $externalReference;
         $this->result = $result;
         $this->completedAt = $completedAt;
@@ -268,7 +269,6 @@ class Completion
         $this->learningObjectType = $learningObjectType;
         $this->learningObjectId = $learningObjectId;
         $this->remoteLearningObjectId = $remoteLearningObjectId;
-        $this->learningObjectExternalReference = $learningObjectExternalReference;
         $this->userId = $userId;
         $this->remoteUserId = $remoteUserId;
         $this->timeSpent = $timeSpent;

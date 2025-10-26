@@ -54,12 +54,12 @@ class PatchAccountExternalDto
 
     /**
      *
-     * @var ?PatchAccountExternalDtoSetupInformation $setupInformation
+     * @var ?SetupInformation $setupInformation
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('setup_information')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\PatchAccountExternalDtoSetupInformation|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SetupInformation|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PatchAccountExternalDtoSetupInformation $setupInformation = null;
+    public ?SetupInformation $setupInformation = null;
 
     /**
      *
@@ -120,7 +120,7 @@ class PatchAccountExternalDto
      * @param  ?string  $originOwnerName
      * @param  ?string  $originUsername
      * @param  ?PatchAccountExternalDtoCredentials  $credentials
-     * @param  ?PatchAccountExternalDtoSetupInformation  $setupInformation
+     * @param  ?SetupInformation  $setupInformation
      * @param  ?Secrets  $secrets
      * @param  ?string  $authenticationConfigKey
      * @param  ?string  $environment
@@ -129,7 +129,7 @@ class PatchAccountExternalDto
      * @param  ?PatchAccountExternalDtoType  $type
      * @phpstan-pure
      */
-    public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?PatchAccountExternalDtoSetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null, ?PatchAccountExternalDtoMetadata $metadata = null, ?PatchAccountExternalDtoType $type = null)
+    public function __construct(?string $provider = null, ?string $originOwnerId = null, ?string $originOwnerName = null, ?string $originUsername = null, ?PatchAccountExternalDtoCredentials $credentials = null, ?SetupInformation $setupInformation = null, ?Secrets $secrets = null, ?string $authenticationConfigKey = null, ?string $environment = null, ?Label $label = null, ?PatchAccountExternalDtoMetadata $metadata = null, ?PatchAccountExternalDtoType $type = null)
     {
         $this->provider = $provider;
         $this->originOwnerId = $originOwnerId;

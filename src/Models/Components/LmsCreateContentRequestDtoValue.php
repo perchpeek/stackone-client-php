@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** The StackOne unified content type. */
+/** The content type for write operations. Provide one of the listed enum values. If omitted or set to "unmapped_value", the source_value will be sent to the provider instead. */
 enum LmsCreateContentRequestDtoValue: string
 {
     case Video = 'video';
@@ -17,5 +17,10 @@ enum LmsCreateContentRequestDtoValue: string
     case Document = 'document';
     case Audio = 'audio';
     case Article = 'article';
+    case Book = 'book';
+    case Event = 'event';
+    case Course = 'course';
+    case Collection = 'collection';
+    case Interactive = 'interactive';
     case UnmappedValue = 'unmapped_value';
 }

@@ -122,6 +122,16 @@ class TimeOffBalances
     public ?\DateTime $balanceExpiryDate = null;
 
     /**
+     * Indicates if this time off balance represents unlimited leave
+     *
+     * @var bool|IsUnlimited2|null $isUnlimited
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('is_unlimited')]
+    #[\Speakeasy\Serializer\Annotation\Type('bool|\StackOne\client\Models\Components\IsUnlimited2|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public bool|IsUnlimited2|null $isUnlimited = null;
+
+    /**
      * The updated_at date of this time off balance
      *
      * @var ?\DateTime $updatedAt
@@ -143,10 +153,11 @@ class TimeOffBalances
      * @param  ?BalanceUnit  $balanceUnit
      * @param  ?\DateTime  $balanceStartDate
      * @param  ?\DateTime  $balanceExpiryDate
+     * @param  bool|IsUnlimited2|null  $isUnlimited
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $policyId = null, ?string $remotePolicyId = null, ?TimeOffBalancesPolicy $policy = null, ?float $currentBalance = null, ?float $initialBalance = null, ?BalanceUnit $balanceUnit = null, ?\DateTime $balanceStartDate = null, ?\DateTime $balanceExpiryDate = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?string $employeeId = null, ?string $remoteEmployeeId = null, ?string $policyId = null, ?string $remotePolicyId = null, ?TimeOffBalancesPolicy $policy = null, ?float $currentBalance = null, ?float $initialBalance = null, ?BalanceUnit $balanceUnit = null, ?\DateTime $balanceStartDate = null, ?\DateTime $balanceExpiryDate = null, bool|IsUnlimited2|null $isUnlimited = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -160,6 +171,7 @@ class TimeOffBalances
         $this->balanceUnit = $balanceUnit;
         $this->balanceStartDate = $balanceStartDate;
         $this->balanceExpiryDate = $balanceExpiryDate;
+        $this->isUnlimited = $isUnlimited;
         $this->updatedAt = $updatedAt;
     }
 }

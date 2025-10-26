@@ -613,7 +613,7 @@ $sdk = client\StackOne::builder()
 $accountingJournalCreateRequestDto = new Components\AccountingJournalCreateRequestDto(
     reference: 'JRN-2024-001',
     memo: 'Monthly closing entries',
-    currencyCode: new Components\CurrencyCode(
+    currencyCode: new Components\AccountingJournalCreateRequestDtoCurrencyCode(
         value: Components\AccountingJournalCreateRequestDtoValue::Usd,
         sourceValue: 'USD',
     ),

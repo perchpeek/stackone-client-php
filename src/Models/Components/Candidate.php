@@ -182,6 +182,16 @@ class Candidate
     public ?array $customFields = null;
 
     /**
+     * List of candidate tags indicating metadata associated with the candidate
+     *
+     * @var ?array<Tag> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\Tag>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
+
+    /**
      * Candidate created date
      *
      * @var ?\DateTime $createdAt
@@ -218,11 +228,12 @@ class Candidate
      * @param  ?\DateTime  $hiredAt
      * @param  ?string  $country
      * @param  ?array<CustomFields>  $customFields
+     * @param  ?array<Tag>  $tags
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?array $emails = null, ?array $socialLinks = null, ?string $phone = null, ?array $phoneNumbers = null, ?string $company = null, ?string $title = null, ?array $applicationIds = null, ?array $remoteApplicationIds = null, ?\DateTime $hiredAt = null, ?string $country = null, ?array $customFields = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $email = null, ?array $emails = null, ?array $socialLinks = null, ?string $phone = null, ?array $phoneNumbers = null, ?string $company = null, ?string $title = null, ?array $applicationIds = null, ?array $remoteApplicationIds = null, ?\DateTime $hiredAt = null, ?string $country = null, ?array $customFields = null, ?array $tags = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
@@ -242,6 +253,7 @@ class Candidate
         $this->hiredAt = $hiredAt;
         $this->country = $country;
         $this->customFields = $customFields;
+        $this->tags = $tags;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
     }

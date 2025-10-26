@@ -40,6 +40,15 @@ class Employee
     public ?array $unifiedCustomFields = null;
 
     /**
+     * The prefix of the employee's name (e.g., Mr, Ms, Dr)
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
      * The employee first name
      *
      * @var ?string $firstName
@@ -455,6 +464,16 @@ class Employee
     public ?string $employeeNumber = null;
 
     /**
+     * Bank account details for the employee
+     *
+     * @var ?array<HRISBankDetails> $bankDetails
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('bank_details')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\StackOne\client\Models\Components\HRISBankDetails>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $bankDetails = null;
+
+    /**
      * The national identity number
      *
      * @var ?NationalIdentityNumber $nationalIdentityNumber
@@ -507,6 +526,7 @@ class Employee
      * @param  ?string  $id
      * @param  ?string  $remoteId
      * @param  ?array<string, mixed>  $unifiedCustomFields
+     * @param  ?string  $title
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $name
@@ -550,6 +570,7 @@ class Employee
      * @param  ?array<CustomFields>  $customFields
      * @param  ?array<HRISBenefit>  $benefits
      * @param  ?string  $employeeNumber
+     * @param  ?array<HRISBankDetails>  $bankDetails
      * @param  ?NationalIdentityNumber  $nationalIdentityNumber
      * @param  ?array<NationalIdentityNumberApiModel>  $nationalIdentityNumbers
      * @param  ?array<EntitySkills>  $skills
@@ -557,11 +578,12 @@ class Employee
      * @param  ?\DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?JobDescription $jobDescription = null, ?string $departmentId = null, ?string $department = null, ?array $groups = null, ?array $costCenters = null, ?string $managerId = null, ?string $remoteManagerId = null, ?Gender $gender = null, ?PreferredLanguage $preferredLanguage = null, ?Ethnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?MaritalStatus $maritalStatus = null, ?Avatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?EmploymentType $employmentType = null, ?EmploymentContractType $employmentContractType = null, ?EmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?HomeLocation $homeLocation = null, ?WorkLocation $workLocation = null, ?EmployeeCompany $company = null, ?array $employments = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?NationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?array $skills = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
+    public function __construct(?string $id = null, ?string $remoteId = null, ?array $unifiedCustomFields = null, ?string $title = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?JobDescription $jobDescription = null, ?string $departmentId = null, ?string $department = null, ?array $groups = null, ?array $costCenters = null, ?string $managerId = null, ?string $remoteManagerId = null, ?Gender $gender = null, ?PreferredLanguage $preferredLanguage = null, ?Ethnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?MaritalStatus $maritalStatus = null, ?Avatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?float $tenure = null, ?\DateTime $workAnniversary = null, ?EmploymentType $employmentType = null, ?EmploymentContractType $employmentContractType = null, ?EmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?HomeLocation $homeLocation = null, ?WorkLocation $workLocation = null, ?EmployeeCompany $company = null, ?array $employments = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?array $bankDetails = null, ?NationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?array $skills = null, ?\DateTime $createdAt = null, ?\DateTime $updatedAt = null)
     {
         $this->id = $id;
         $this->remoteId = $remoteId;
         $this->unifiedCustomFields = $unifiedCustomFields;
+        $this->title = $title;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->name = $name;
@@ -605,6 +627,7 @@ class Employee
         $this->customFields = $customFields;
         $this->benefits = $benefits;
         $this->employeeNumber = $employeeNumber;
+        $this->bankDetails = $bankDetails;
         $this->nationalIdentityNumber = $nationalIdentityNumber;
         $this->nationalIdentityNumbers = $nationalIdentityNumbers;
         $this->skills = $skills;

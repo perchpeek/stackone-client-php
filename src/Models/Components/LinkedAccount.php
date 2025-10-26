@@ -97,13 +97,14 @@ class LinkedAccount
     public ?Credentials $credentials = null;
 
     /**
+     * $setupInformation
      *
-     * @var ?SetupInformation $setupInformation
+     * @var ?array<string, mixed> $setupInformation
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('setup_information')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\SetupInformation|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SetupInformation $setupInformation = null;
+    public ?array $setupInformation = null;
 
     /**
      *
@@ -135,12 +136,12 @@ class LinkedAccount
      * @param  ?array<StatusReason>  $statusReasons
      * @param  ?string  $originUsername
      * @param  ?Credentials  $credentials
-     * @param  ?SetupInformation  $setupInformation
+     * @param  ?array<string, mixed>  $setupInformation
      * @param  ?string  $label
      * @param  ?LinkedAccountType  $type
      * @phpstan-pure
      */
-    public function __construct(string $id, string $provider, Status $status, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, \DateTime $updatedAt, ?string $providerName = null, ?array $statusReasons = null, ?string $originUsername = null, ?Credentials $credentials = null, ?SetupInformation $setupInformation = null, ?string $label = null, ?LinkedAccountType $type = null)
+    public function __construct(string $id, string $provider, Status $status, string $originOwnerId, string $originOwnerName, \DateTime $createdAt, \DateTime $updatedAt, ?string $providerName = null, ?array $statusReasons = null, ?string $originUsername = null, ?Credentials $credentials = null, ?array $setupInformation = null, ?string $label = null, ?LinkedAccountType $type = null)
     {
         $this->id = $id;
         $this->provider = $provider;

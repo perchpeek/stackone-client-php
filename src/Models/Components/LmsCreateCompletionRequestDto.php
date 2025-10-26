@@ -12,6 +12,14 @@ namespace StackOne\client\Models\Components;
 class LmsCreateCompletionRequestDto
 {
     /**
+     * The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
+     *
+     * @var string $learningObjectExternalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
+    public string $learningObjectExternalReference;
+
+    /**
      * Value to pass through to the provider
      *
      * @var ?array<string, mixed> $passthrough
@@ -50,15 +58,6 @@ class LmsCreateCompletionRequestDto
     public ?string $learningObjectId = null;
 
     /**
-     * The external reference of the learning object associated with this completion, this is the main identifier for creating completions.
-     *
-     * @var ?string $learningObjectExternalReference
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $learningObjectExternalReference = null;
-
-    /**
      * ISO 8601 duration format representing the time spent on completing the learning object
      *
      * @var ?string $timeSpent
@@ -88,23 +87,23 @@ class LmsCreateCompletionRequestDto
     public ?string $contentId = null;
 
     /**
+     * @param  string  $learningObjectExternalReference
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?LmsCreateCompletionRequestDtoResult  $result
      * @param  ?\DateTime  $completedAt
      * @param  ?string  $learningObjectId
-     * @param  ?string  $learningObjectExternalReference
      * @param  ?string  $timeSpent
      * @param  ?string  $contentExternalReference
      * @param  ?string  $contentId
      * @phpstan-pure
      */
-    public function __construct(?array $passthrough = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?\DateTime $completedAt = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?string $timeSpent = null, ?string $contentExternalReference = null, ?string $contentId = null)
+    public function __construct(string $learningObjectExternalReference, ?array $passthrough = null, ?LmsCreateCompletionRequestDtoResult $result = null, ?\DateTime $completedAt = null, ?string $learningObjectId = null, ?string $timeSpent = null, ?string $contentExternalReference = null, ?string $contentId = null)
     {
+        $this->learningObjectExternalReference = $learningObjectExternalReference;
         $this->passthrough = $passthrough;
         $this->result = $result;
         $this->completedAt = $completedAt;
         $this->learningObjectId = $learningObjectId;
-        $this->learningObjectExternalReference = $learningObjectExternalReference;
         $this->timeSpent = $timeSpent;
         $this->contentExternalReference = $contentExternalReference;
         $this->contentId = $contentId;
