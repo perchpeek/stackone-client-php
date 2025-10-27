@@ -12,6 +12,15 @@ namespace StackOne\client\Models\Components;
 class HrisUpdateEmployeeRequestDto
 {
     /**
+     * The prefix of the employee's name (e.g., Mr, Ms, Dr)
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
      * The employee first name
      *
      * @var ?string $firstName
@@ -394,6 +403,7 @@ class HrisUpdateEmployeeRequestDto
     public ?array $passthrough = null;
 
     /**
+     * @param  ?string  $title
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $name
@@ -436,8 +446,9 @@ class HrisUpdateEmployeeRequestDto
      * @param  ?array<string, mixed>  $passthrough
      * @phpstan-pure
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $teamId = null, ?string $department = null, ?string $managerId = null, ?HrisUpdateEmployeeRequestDtoGender $gender = null, ?HrisUpdateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null, ?HrisUpdateEmployeeRequestDtoEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?HrisUpdateEmployeeRequestDtoMaritalStatus $maritalStatus = null, ?HrisUpdateEmployeeRequestDtoAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?HrisUpdateEmployeeRequestDtoEmploymentType $employmentType = null, ?HrisUpdateEmployeeRequestDtoEmploymentContractType $employmentContractType = null, ?HrisUpdateEmployeeRequestDtoEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?HrisUpdateEmployeeRequestDtoEmployment $employment = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?HrisUpdateEmployeeRequestDtoHomeLocation $homeLocation = null, ?HrisUpdateEmployeeRequestDtoWorkLocation $workLocation = null, ?array $passthrough = null)
+    public function __construct(?string $title = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $teamId = null, ?string $department = null, ?string $managerId = null, ?HrisUpdateEmployeeRequestDtoGender $gender = null, ?HrisUpdateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null, ?HrisUpdateEmployeeRequestDtoEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?HrisUpdateEmployeeRequestDtoMaritalStatus $maritalStatus = null, ?HrisUpdateEmployeeRequestDtoAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?HrisUpdateEmployeeRequestDtoEmploymentType $employmentType = null, ?HrisUpdateEmployeeRequestDtoEmploymentContractType $employmentContractType = null, ?HrisUpdateEmployeeRequestDtoEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?HrisUpdateEmployeeRequestDtoEmployment $employment = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?HrisUpdateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?HrisUpdateEmployeeRequestDtoHomeLocation $homeLocation = null, ?HrisUpdateEmployeeRequestDtoWorkLocation $workLocation = null, ?array $passthrough = null)
     {
+        $this->title = $title;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->name = $name;

@@ -12,6 +12,14 @@ namespace StackOne\client\Models\Components;
 class LmsCreateContentRequestDto
 {
     /**
+     * The external ID associated with this content
+     *
+     * @var string $externalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
+    public string $externalReference;
+
+    /**
      * Custom Unified Fields configured in your StackOne project
      *
      * @var ?array<string, mixed> $unifiedCustomFields
@@ -20,15 +28,6 @@ class LmsCreateContentRequestDto
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $unifiedCustomFields = null;
-
-    /**
-     * The external ID associated with this content
-     *
-     * @var ?string $externalReference
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('external_reference')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalReference = null;
 
     /**
      * The title of the content
@@ -212,8 +211,8 @@ class LmsCreateContentRequestDto
     public ?array $additionalData = null;
 
     /**
+     * @param  string  $externalReference
      * @param  ?array<string, mixed>  $unifiedCustomFields
-     * @param  ?string  $externalReference
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?array<LanguageEnum>  $languages
@@ -235,10 +234,10 @@ class LmsCreateContentRequestDto
      * @param  ?array<AdditionalData>  $additionalData
      * @phpstan-pure
      */
-    public function __construct(?array $unifiedCustomFields = null, ?string $externalReference = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsCreateContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsCreateContentRequestDtoActive2|null $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $localizations = null, ?array $tags = null, ?array $authors = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?array $categories = null, ?array $additionalData = null)
+    public function __construct(string $externalReference, ?array $unifiedCustomFields = null, ?string $title = null, ?string $description = null, ?array $languages = null, ?string $contentUrl = null, ?string $mobileLaunchContentUrl = null, ?LmsCreateContentRequestDtoContentType $contentType = null, ?string $coverUrl = null, bool|LmsCreateContentRequestDtoActive2|null $active = null, ?string $duration = null, ?array $skills = null, ?float $order = null, ?string $shortDescription = null, ?array $localizations = null, ?array $tags = null, ?array $authors = null, ?\DateTime $updatedAt = null, ?\DateTime $createdAt = null, ?array $categories = null, ?array $additionalData = null)
     {
-        $this->unifiedCustomFields = $unifiedCustomFields;
         $this->externalReference = $externalReference;
+        $this->unifiedCustomFields = $unifiedCustomFields;
         $this->title = $title;
         $this->description = $description;
         $this->languages = $languages;

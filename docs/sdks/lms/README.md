@@ -279,13 +279,13 @@ $lmsCreateAssignmentRequestDto = new Components\LmsCreateAssignmentRequestDto(
         'other_known_names' => 'John Doe',
     ],
     learningObjectId: 'e3gd34-23tr21-er234-345er56',
-    learningObjectExternalReference: 'learning-content-123',
     progress: 40,
     createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     dueDate: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     status: new Components\LmsCreateAssignmentRequestDtoStatus(
         value: Components\LmsCreateAssignmentRequestDtoValue::InProgress,
     ),
+    learningObjectExternalReference: 'learning-content-123',
 );
 
 $response = $sdk->lms->createUserAssignment(
@@ -430,7 +430,6 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
                 'my_project_custom_field_1' => 'REF-1236',
                 'my_project_custom_field_2' => 'some other value',
             ],
-            externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
             title: 'Software Engineer Lv 1',
             description: 'This video acts as learning content for software engineers.',
             languages: [
@@ -472,6 +471,7 @@ $lmsBatchUpsertContentRequestDto = new Components\LmsBatchUpsertContentRequestDt
             ],
             updatedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
             createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
+            externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
             categories: [
                 new Components\CreateCategoriesApiModel(
                     id: '16873-IT345',
@@ -640,7 +640,6 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
         'my_project_custom_field_1' => 'REF-1236',
         'my_project_custom_field_2' => 'some other value',
     ],
-    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
     title: 'Software Engineer Lv 1',
     description: 'This video acts as learning content for software engineers.',
     languages: [
@@ -682,6 +681,7 @@ $lmsUpsertContentRequestDto = new Components\LmsUpsertContentRequestDto(
     ],
     updatedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
+    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
     categories: [
         new Components\CreateCategoriesApiModel(
             id: '16873-IT345',
@@ -842,7 +842,6 @@ $lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
         'my_project_custom_field_1' => 'REF-1236',
         'my_project_custom_field_2' => 'some other value',
     ],
-    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
     title: 'Software Engineer Lv 1',
     description: 'This video acts as learning content for software engineers.',
     languages: [
@@ -884,6 +883,7 @@ $lmsCreateContentRequestDto = new Components\LmsCreateContentRequestDto(
     ],
     updatedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     createdAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
+    externalReference: 'SOFTWARE-ENG-LV1-TRAINING-VIDEO-1',
     categories: [
         new Components\CreateCategoriesApiModel(
             name: 'Technology',
@@ -1046,8 +1046,8 @@ $lmsCreateCompletionRequestDto = new Components\LmsCreateCompletionRequestDto(
     ],
     completedAt: Utils\Utils::parseDateTime('2021-07-21T14:00:00.000Z'),
     learningObjectId: 'e3gd34-23tr21-er234-345er56',
-    learningObjectExternalReference: 'learning-content-123',
     timeSpent: 'PT1H30M45S',
+    learningObjectExternalReference: 'learning-content-123',
 );
 
 $response = $sdk->lms->createUserCompletion(

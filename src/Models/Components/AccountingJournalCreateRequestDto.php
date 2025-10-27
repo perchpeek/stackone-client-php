@@ -32,12 +32,12 @@ class AccountingJournalCreateRequestDto
     /**
      * Currency code for the journal and all lines
      *
-     * @var ?CurrencyCode $currencyCode
+     * @var ?AccountingJournalCreateRequestDtoCurrencyCode $currencyCode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency_code')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\CurrencyCode|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountingJournalCreateRequestDtoCurrencyCode|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CurrencyCode $currencyCode = null;
+    public ?AccountingJournalCreateRequestDtoCurrencyCode $currencyCode = null;
 
     /**
      * Exchange rate to company base currency to apply to all lines
@@ -70,13 +70,13 @@ class AccountingJournalCreateRequestDto
     /**
      * @param  ?string  $reference
      * @param  ?string  $memo
-     * @param  ?CurrencyCode  $currencyCode
+     * @param  ?AccountingJournalCreateRequestDtoCurrencyCode  $currencyCode
      * @param  ?float  $exchangeRate
      * @param  ?\DateTime  $transactionDate
      * @param  ?array<CreateJournalLine>  $lines
      * @phpstan-pure
      */
-    public function __construct(?string $reference = null, ?string $memo = null, ?CurrencyCode $currencyCode = null, ?float $exchangeRate = null, ?\DateTime $transactionDate = null, ?array $lines = null)
+    public function __construct(?string $reference = null, ?string $memo = null, ?AccountingJournalCreateRequestDtoCurrencyCode $currencyCode = null, ?float $exchangeRate = null, ?\DateTime $transactionDate = null, ?array $lines = null)
     {
         $this->reference = $reference;
         $this->memo = $memo;

@@ -32,12 +32,12 @@ class JournalLine
     /**
      * Type of the account
      *
-     * @var ?AccountType $accountType
+     * @var ?JournalLineAccountType $accountType
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('account_type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountType|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JournalLineAccountType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?AccountType $accountType = null;
+    public ?JournalLineAccountType $accountType = null;
 
     /**
      * Description of the journal line
@@ -97,7 +97,7 @@ class JournalLine
     /**
      * @param  ?string  $id
      * @param  ?string  $accountId
-     * @param  ?AccountType  $accountType
+     * @param  ?JournalLineAccountType  $accountType
      * @param  ?string  $description
      * @param  ?JournalLineCurrencyCode  $currencyCode
      * @param  ?float  $exchangeRate
@@ -106,7 +106,7 @@ class JournalLine
      * @param  ?float  $taxRatePercentage
      * @phpstan-pure
      */
-    public function __construct(?string $id = null, ?string $accountId = null, ?AccountType $accountType = null, ?string $description = null, ?JournalLineCurrencyCode $currencyCode = null, ?float $exchangeRate = null, ?float $amount = null, ?float $taxAmount = null, ?float $taxRatePercentage = null)
+    public function __construct(?string $id = null, ?string $accountId = null, ?JournalLineAccountType $accountType = null, ?string $description = null, ?JournalLineCurrencyCode $currencyCode = null, ?float $exchangeRate = null, ?float $amount = null, ?float $taxAmount = null, ?float $taxRatePercentage = null)
     {
         $this->id = $id;
         $this->accountId = $accountId;

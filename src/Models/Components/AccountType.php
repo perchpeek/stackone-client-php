@@ -9,34 +9,34 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** AccountType - Type of the account */
+/** AccountType - The type of bank account */
 class AccountType
 {
     /**
-     * Type of account
+     * The type of bank account
      *
-     * @var ?JournalLineValue $value
+     * @var ?HRISBankDetailsAccountTypeValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\JournalLineValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HRISBankDetailsAccountTypeValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?JournalLineValue $value = null;
+    public ?HRISBankDetailsAccountTypeValue $value = null;
 
     /**
      *
-     * @var string|float|bool|JournalLineSourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|HRISBankDetailsSourceValueAccountType4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\JournalLineSourceValue4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HRISBankDetailsSourceValueAccountType4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|JournalLineSourceValue4|array|null $sourceValue = null;
+    public string|float|bool|HRISBankDetailsSourceValueAccountType4|array|null $sourceValue = null;
 
     /**
-     * @param  ?JournalLineValue  $value
-     * @param  string|float|bool|JournalLineSourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?HRISBankDetailsAccountTypeValue  $value
+     * @param  string|float|bool|HRISBankDetailsSourceValueAccountType4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?JournalLineValue $value = null, string|float|bool|JournalLineSourceValue4|array|null $sourceValue = null)
+    public function __construct(?HRISBankDetailsAccountTypeValue $value = null, string|float|bool|HRISBankDetailsSourceValueAccountType4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

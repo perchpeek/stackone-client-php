@@ -9,34 +9,34 @@ declare(strict_types=1);
 namespace StackOne\client\Models\Components;
 
 
-/** CurrencyCode - Currency code for the journal and all lines */
+/** CurrencyCode - The currency code for the account */
 class CurrencyCode
 {
     /**
-     * Default currency for the company
+     * ISO 4217 currency code
      *
-     * @var ?AccountingJournalCreateRequestDtoValue $value
+     * @var ?HRISBankDetailsCurrencyCodeValue $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
-    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\AccountingJournalCreateRequestDtoValue|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\StackOne\client\Models\Components\HRISBankDetailsCurrencyCodeValue|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?AccountingJournalCreateRequestDtoValue $value = null;
+    public ?HRISBankDetailsCurrencyCodeValue $value = null;
 
     /**
      *
-     * @var string|float|bool|AccountingJournalCreateRequestDtoSourceValue4|array<mixed>|null $sourceValue
+     * @var string|float|bool|HRISBankDetailsSourceValueCurrencyCode4|array<mixed>|null $sourceValue
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('source_value')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\AccountingJournalCreateRequestDtoSourceValue4|array<mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|float|bool|\StackOne\client\Models\Components\HRISBankDetailsSourceValueCurrencyCode4|array<mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public string|float|bool|AccountingJournalCreateRequestDtoSourceValue4|array|null $sourceValue = null;
+    public string|float|bool|HRISBankDetailsSourceValueCurrencyCode4|array|null $sourceValue = null;
 
     /**
-     * @param  ?AccountingJournalCreateRequestDtoValue  $value
-     * @param  string|float|bool|AccountingJournalCreateRequestDtoSourceValue4|array<mixed>|null  $sourceValue
+     * @param  ?HRISBankDetailsCurrencyCodeValue  $value
+     * @param  string|float|bool|HRISBankDetailsSourceValueCurrencyCode4|array<mixed>|null  $sourceValue
      * @phpstan-pure
      */
-    public function __construct(?AccountingJournalCreateRequestDtoValue $value = null, string|float|bool|AccountingJournalCreateRequestDtoSourceValue4|array|null $sourceValue = null)
+    public function __construct(?HRISBankDetailsCurrencyCodeValue $value = null, string|float|bool|HRISBankDetailsSourceValueCurrencyCode4|array|null $sourceValue = null)
     {
         $this->value = $value;
         $this->sourceValue = $sourceValue;

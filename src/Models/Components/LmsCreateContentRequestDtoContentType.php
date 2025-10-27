@@ -13,7 +13,7 @@ namespace StackOne\client\Models\Components;
 class LmsCreateContentRequestDtoContentType
 {
     /**
-     * The StackOne unified content type.
+     * The content type for write operations. Provide one of the listed enum values. If omitted or set to "unmapped_value", the source_value will be sent to the provider instead.
      *
      * @var ?LmsCreateContentRequestDtoValue $value
      */
@@ -23,7 +23,7 @@ class LmsCreateContentRequestDtoContentType
     public ?LmsCreateContentRequestDtoValue $value = null;
 
     /**
-     * The original value from the provider before normalization.
+     * The provider-specific value to use when value is omitted or set to "unmapped_value". You are responsible for ensuring this matches the provider's expected format.
      *
      * @var string|float|bool|LmsCreateContentRequestDtoSourceValue4|array<mixed>|null $sourceValue
      */

@@ -12,6 +12,14 @@ namespace StackOne\client\Models\Components;
 class LmsCreateAssignmentRequestDto
 {
     /**
+     * The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments.
+     *
+     * @var string $learningObjectExternalReference
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
+    public string $learningObjectExternalReference;
+
+    /**
      * Value to pass through to the provider
      *
      * @var ?array<string, mixed> $passthrough
@@ -39,15 +47,6 @@ class LmsCreateAssignmentRequestDto
     #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_id')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $learningObjectId = null;
-
-    /**
-     * The external reference of the learning object associated with this assignment, this is the main identifier for creating assignments.
-     *
-     * @var ?string $learningObjectExternalReference
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('learning_object_external_reference')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $learningObjectExternalReference = null;
 
     /**
      * The progress associated with this assigment
@@ -87,22 +86,22 @@ class LmsCreateAssignmentRequestDto
     public ?LmsCreateAssignmentRequestDtoStatus $status = null;
 
     /**
+     * @param  string  $learningObjectExternalReference
      * @param  ?array<string, mixed>  $passthrough
      * @param  ?string  $externalReference
      * @param  ?string  $learningObjectId
-     * @param  ?string  $learningObjectExternalReference
      * @param  ?float  $progress
      * @param  ?\DateTime  $createdAt
      * @param  ?\DateTime  $dueDate
      * @param  ?LmsCreateAssignmentRequestDtoStatus  $status
      * @phpstan-pure
      */
-    public function __construct(?array $passthrough = null, ?string $externalReference = null, ?string $learningObjectId = null, ?string $learningObjectExternalReference = null, ?float $progress = null, ?\DateTime $createdAt = null, ?\DateTime $dueDate = null, ?LmsCreateAssignmentRequestDtoStatus $status = null)
+    public function __construct(string $learningObjectExternalReference, ?array $passthrough = null, ?string $externalReference = null, ?string $learningObjectId = null, ?float $progress = null, ?\DateTime $createdAt = null, ?\DateTime $dueDate = null, ?LmsCreateAssignmentRequestDtoStatus $status = null)
     {
+        $this->learningObjectExternalReference = $learningObjectExternalReference;
         $this->passthrough = $passthrough;
         $this->externalReference = $externalReference;
         $this->learningObjectId = $learningObjectId;
-        $this->learningObjectExternalReference = $learningObjectExternalReference;
         $this->progress = $progress;
         $this->createdAt = $createdAt;
         $this->dueDate = $dueDate;

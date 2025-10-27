@@ -12,6 +12,15 @@ namespace StackOne\client\Models\Components;
 class HrisCreateEmployeeRequestDto
 {
     /**
+     * The prefix of the employee's name (e.g., Mr, Ms, Dr)
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
      * The employee first name
      *
      * @var ?string $firstName
@@ -415,6 +424,7 @@ class HrisCreateEmployeeRequestDto
     public ?array $passthrough = null;
 
     /**
+     * @param  ?string  $title
      * @param  ?string  $firstName
      * @param  ?string  $lastName
      * @param  ?string  $name
@@ -459,8 +469,9 @@ class HrisCreateEmployeeRequestDto
      * @param  ?array<string, mixed>  $passthrough
      * @phpstan-pure
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $teamId = null, ?string $department = null, ?string $managerId = null, ?HrisCreateEmployeeRequestDtoGender $gender = null, ?HrisCreateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null, ?HrisCreateEmployeeRequestDtoEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?HrisCreateEmployeeRequestDtoMaritalStatus $maritalStatus = null, ?HrisCreateEmployeeRequestDtoAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?HrisCreateEmployeeRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmployeeRequestDtoEmploymentContractType $employmentContractType = null, ?HrisCreateEmployeeRequestDtoEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?array $employments = null, ?HrisCreateEmployeeRequestDtoEmployment $employment = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?HrisCreateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?HrisCreateEmployeeRequestDtoHomeLocation $homeLocation = null, ?HrisCreateEmployeeRequestDtoWorkLocation $workLocation = null, ?array $costCenters = null, ?array $passthrough = null)
+    public function __construct(?string $title = null, ?string $firstName = null, ?string $lastName = null, ?string $name = null, ?string $displayName = null, ?string $avatarUrl = null, ?string $personalEmail = null, ?string $personalPhoneNumber = null, ?string $workEmail = null, ?string $workPhoneNumber = null, ?string $jobId = null, ?string $jobTitle = null, ?string $departmentId = null, ?string $teamId = null, ?string $department = null, ?string $managerId = null, ?HrisCreateEmployeeRequestDtoGender $gender = null, ?HrisCreateEmployeeRequestDtoPreferredLanguage $preferredLanguage = null, ?HrisCreateEmployeeRequestDtoEthnicity $ethnicity = null, ?\DateTime $dateOfBirth = null, ?\DateTime $birthday = null, ?HrisCreateEmployeeRequestDtoMaritalStatus $maritalStatus = null, ?HrisCreateEmployeeRequestDtoAvatar $avatar = null, ?\DateTime $hireDate = null, ?\DateTime $startDate = null, ?HrisCreateEmployeeRequestDtoEmploymentType $employmentType = null, ?HrisCreateEmployeeRequestDtoEmploymentContractType $employmentContractType = null, ?HrisCreateEmployeeRequestDtoEmploymentStatus $employmentStatus = null, ?\DateTime $terminationDate = null, ?string $companyName = null, ?string $companyId = null, ?array $citizenships = null, ?array $employments = null, ?HrisCreateEmployeeRequestDtoEmployment $employment = null, ?array $customFields = null, ?array $benefits = null, ?string $employeeNumber = null, ?HrisCreateEmployeeRequestDtoNationalIdentityNumber $nationalIdentityNumber = null, ?array $nationalIdentityNumbers = null, ?HrisCreateEmployeeRequestDtoHomeLocation $homeLocation = null, ?HrisCreateEmployeeRequestDtoWorkLocation $workLocation = null, ?array $costCenters = null, ?array $passthrough = null)
     {
+        $this->title = $title;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->name = $name;
